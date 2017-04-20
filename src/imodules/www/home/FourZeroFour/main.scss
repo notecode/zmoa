@@ -1,0 +1,100 @@
+@import "src/sass/global/mixin";
+@import "src/sass/global/libs/variable";
+
+
+#FourZeroFour {
+  .infos{
+    margin-top: 100px;
+  }
+  h1 {
+    font-size: 24px;
+    padding-bottom: 4px;
+    margin-top: 94px;
+    color: #83848e;
+  }
+  h3{
+    font-size: 18px;
+    margin-top: 81px;
+    color: $orange;
+  }
+  p{
+    color: #9B9B9B;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 35px;
+  }
+
+  .btn {
+    width: 239px;
+    height: 50px;
+    margin-top: 29px;
+    font-size: 15px;
+    padding: 0;
+    line-height: 50px;
+    border-radius: 2px;
+  }
+  .btn:hover {
+    background-color: #357ae8;
+    border-color: #357ae8;
+  }
+  .error-logo {
+    color: #e3e8ee;
+    margin-top: 50px;
+    .icon-logo {
+      font-size: 27px;
+    }
+  }
+
+
+  @media (min-width: 1024px) {
+   
+
+  }
+
+  @media (max-height: 600px) {
+    .infos{
+      margin-top: 50px;
+    }
+
+  }
+  @media (min-height: 600px) {
+    .infos{
+      margin-top: 30px;
+    }
+
+  }
+  @media (min-height: 650px) {
+    .infos{
+      margin-top: 40px;
+    }
+
+  }
+  @media (min-height: 700px) {
+    .infos{
+      margin-top: 60px;
+    }
+  }
+  @media (min-height: 750px) {
+    .infos{
+      margin-top: 80px;
+    }
+
+  }
+  @media (min-height: 800px) {
+    .infos{
+      margin-top: 100px;
+    }
+
+  }
+  @media (min-height: 900px) {
+    .infos{
+      margin-top: 200px;
+    }
+  }
+
+  @media (min-height: 1000px) {
+    .bigpic {
+      height: 326px;
+    }
+  }
+}

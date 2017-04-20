@@ -1,0 +1,99 @@
+@import "src/sass/global/mixin";
+@import "src/sass/global/libs/variable";
+
+
+#FiveZeroTwo {
+  .infos{
+    margin-top: 130px;
+  }
+  h3{
+    font-size: 24px;
+    margin-top: 50px;
+    color: $orange;
+    padding-bottom: 11px;
+  }
+  h1 {
+    font-size: 24px;
+    padding-bottom: 4px;
+    margin-top: 94px;
+    color: #83848e;
+  }
+  p{
+    color: #9B9B9B;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 35px;
+  }
+
+  .btn {
+    width: 212px;
+    height: 50px;
+    margin-top: 29px;
+    font-size: 15px;
+    padding: 0;
+    line-height: 50px;
+    border-radius: 2px;
+  }
+  .btn:hover {
+    background-color: #357ae8;
+    border-color: #357ae8;
+  }
+  .error-logo {
+    color: #e3e8ee;
+    margin-top: 50px;
+    .icon-logo {
+      font-size: 27px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    
+  }
+
+  @media (max-height: 600px) {
+    .infos{
+      margin-top: 50px;
+    }
+
+  }
+  @media (min-height: 600px) {
+    .infos{
+      margin-top: 30px;
+    }
+
+  }
+  @media (min-height: 650px) {
+    .infos{
+      margin-top: 40px;
+    }
+
+  }
+  @media (min-height: 700px) {
+    .infos{
+      margin-top: 60px;
+    }
+  }
+  @media (min-height: 750px) {
+    .infos{
+      margin-top: 80px;
+    }
+
+  }
+  @media (min-height: 800px) {
+    .infos{
+      margin-top: 100px;
+    }
+
+  }
+  @media (min-height: 900px) {
+    .infos{
+      margin-top: 120px;
+    }
+  }
+
+  @media (min-height: 1000px) {
+    .bigpic {
+      height: 456px;
+    }
+  }
+}
