@@ -1,6 +1,17 @@
 @import "src/sass/global/mixin";
 
 #assignTasks {
+    .box {
+        width: 100%;
+        background-color:rgba(0,0,0,0.25);
+        padding: 40px 0;
+    }
+    .content {
+        width: 1320px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 4px;
+    }
     .title-block{
         height: 80px;
         padding: 24px 30px;
@@ -19,9 +30,9 @@
         }
     }
     .detail-block{
-        width: 422px;
+        width: 426px;
         padding: 30px 64px;
-        display: inline-block;
+        float: left;
         vertical-align: top;
 
         span[class^="icon-"]{
@@ -37,7 +48,7 @@
             line-height: 25px;
             margin-bottom: 30px;
             position: relative;
-            .icon-weixiu{
+            .icon-xiangmu{
                 color: $blue;
                 font-size: 24px;
                 left: -40px;
@@ -92,15 +103,33 @@
                 padding:12px 30px;
             }
             tr td:first-of-type{
-                color: $gray;
+                color: #8b9aab;
                 padding: 13px 15px;
             }
         }
+        p {
+            span[class^="icon-"]{
+            top: 2px;
+            }
+        }
+        .pro-bname {
+            font-size: 14px;
+            color: #666;
+            margin-top: -16px;
+            cite {
+                font-style: normal;
+                margin-right: 20px;
+            }
+        }
+        .pro-bshuo {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
     }
     .date-block{
-        width: 897px;
-        min-height: 800px;
-        margin-left: -5px;
+        width: 894px;
+        min-height: 1160px;
         display: inline-block;
         vertical-align: top;
         border-left: 1px solid $bordercolor;
@@ -143,7 +172,7 @@
             }
         }
         .date-day{
-            width: 110px;
+            width: 111px;
             height: 60px;
             color: $grayblue;
             margin-right: -6px;
