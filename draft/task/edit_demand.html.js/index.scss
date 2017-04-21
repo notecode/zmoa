@@ -1,0 +1,106 @@
+@import 'src/node_modules/static/www/css/mixin';
+@import 'src/node_modules/static/www/css/common';
+#task_edit_demand {
+    .demand-title{
+        height: 42px;
+        line-height: 42px;
+        font-family: PingFangSC-Thin;
+        font-size: 30px;
+        color: $black;
+        letter-spacing: 0;
+    }
+    .demand-tips{
+        display: inline-block;
+        height: 42px;
+        line-height: 42px;
+        margin-left:31px;
+        .colot-tangle{
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #F7FAFF;
+            border: 1px solid $backblue;
+            margin-right: 7px;
+        }
+        .must-color{
+            font-family: PingFangSC-Light;
+            font-size: 14px;
+            color: $blue;
+            letter-spacing: 0;
+            vertical-align: middle;
+        }
+    }
+    .title{
+        font-family: PingFangSC-Thin;
+        font-size: 12px;
+        color: $black;
+        letter-spacing: 0;
+        margin-bottom:14px;
+    }
+    [class^="information-"]{
+        margin-top:40px;
+    }
+    .line{
+        display:-webkit-flex;
+        display:flex;
+        justify-content:space-between;
+        align-items: flex-end;
+        margin-bottom:20px;
+    }
+    .input-half {
+        width: 320px;
+    }
+    .must{
+        background: #F7FAFF!important;
+    }
+    .btn-demand{
+        background-color:#fff;
+        width: 320px;
+        height:50px;
+        line-height: 50px;
+        background: #fff;
+        border: 1px solid $backblue;
+        border-radius: 2px;
+        font-family: PingFangSC-Light;
+        font-size: 14px;
+        color: $grayblue;
+        letter-spacing: 0;
+        cursor: pointer;
+        white-space: nowrap;
+        text-align: left;
+        padding-left:15px;
+    }
+    .city-select{
+        width: 206px!important;
+    }
+    .caret{
+        position: absolute;
+        top:50%;
+        right:15px;
+        transform: translate(-50%,-50%);
+    }
+    .add-stock{
+        display: inline-block;
+        background-color:#fff;
+        width: 320px;
+        height:50px;
+        line-height: 50px;
+        border: 1px dashed $backblue;
+        border-radius: 2px;
+        text-align: center;
+        font-family: PingFangSC-Light;
+        font-size: 14px;
+        color: #003894;
+        letter-spacing: 0;
+    }
+    .btn {
+        width: 120px;
+        height: 46px;
+        background: #003894;
+        border-radius: 2px;
+        padding: 0;
+        margin: 61px 0 40px 0;
+        font-weight:600;
+    }
+}

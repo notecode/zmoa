@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="keywords"  content="<%- keywords %>">
+    <meta name="description" content="<%- description %>">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="`$$STATICURL`/www/css/www.css">
+</head>
+<body id="application" data-vpid="`$$MODVPID`" data-vpcon="`$$MODVPCON`">
+    <div id="application_mask"><div class="loading"></div></div>
+    <div id="application_dialog">
+        <div id="application_page">
+            <%-head%>
+            <%-body%>
+            <%-foot%>
+        </div>
+    </div>
+    <script src="`$$STATICURL`/www/www.js"></script>
+    <script>
+        globalsConfig(<%- JSON.stringify(init) %>);
+    </script>
+</body>
+</html>
+
+
+
+
+
+

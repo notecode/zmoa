@@ -1,0 +1,127 @@
+<div id="`$$ID`">
+    <style>
+        /*<$$ include index.css $$>*/
+    </style>
+<div class="container">
+    <div class="demand-title">
+        填写项目信息
+        <div class="demand-tips">
+            <span class="colot-tangle"></span><span class="must-color">必填</span>
+        </div>
+    </div>
+    <div class="information-basic">
+        <div class="title">基础信息</div>
+        <div class="line">
+            <input type="text" class="must input-half demand-id" placeholder="合同编号">
+            <input type="text" class="must input-half demand-name" placeholder="项目名称">
+        </div>
+        <div class="line">
+            <input type="text" class="must input-half demand-size" placeholder="屏幕面积">
+            <input type="text" class="must input-half demand-span" placeholder="点间距（如P10、P4）">
+        </div>
+        <div class="line">
+            <div class="dropdown ">
+                <button class="must dropdown-toggle btn-demand demand-color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    屏幕颜色
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <!---->
+            <div class="dropdown ">
+                <button class="must dropdown-toggle btn-demand demand-environment" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    应用环境
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+        <input type="text" class=" demand-time" placeholder="保质期截止日期（如2017.08.12）">
+    </div>
+    <div class="information-stock">
+        <div class="title">备品备料</div>
+        <div class="stock-list">
+            <div class="line">
+                <input type="text" class=" input-half stock-name" placeholder="备料类型">
+                <input type="text" class=" input-half stock-num" placeholder="数量">
+            </div>
+        </div>
+        <div class="add-stock"><span class="icon"></span>添加备品</div>
+    </div>
+    <div class="information-address">
+        <div class="title">所在地</div>
+        <div class="line">
+            <div class="dropdown ">
+                <button class="must dropdown-toggle btn-demand city-select demand-province" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                    所在省份
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <!---->
+            <div class="dropdown ">
+                <button class="must dropdown-toggle btn-demand city-select demand-city" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                    城市
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            <div class="dropdown ">
+                <button class="must dropdown-toggle btn-demand city-select demand-county" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
+                    区/县
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div> 
+        <input type="text" class="must demand-time" placeholder="保质期截止日期（如2017.08.12）">
+    </div>
+    <div class="information-person">
+        <div class="title">联络人</div>
+        <div class="line">
+            <input type="text" class="must input-half person-name" placeholder="姓名">
+            <input type="text" class="must input-half person-tel" placeholder="联系方式">
+        </div>
+        <div class="line">
+            <input type="text" class=" input-half person-compony-name" placeholder="单位名称">
+            <input type="text" class=" input-half person-position" placeholder="职位">
+        </div>
+    </div>
+    <button id="submit" type="submit" class="btn btn-primary">提交</button>
+</div>
+</div>

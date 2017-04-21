@@ -1,0 +1,46 @@
+@import 'src/node_modules/static/www/css/mixin';
+
+.container,.container-fluid{
+  position: relative;
+}
+.container-fluid{
+  padding: 0;
+}
+div[class^="col-"]{
+  position: relative;
+}
+.content{
+  width: 1320px;
+  background: #fff;
+  margin: 0 auto;
+}
+.btn-primary{
+    background-color: $blue;
+    color: #fff;
+}
+input{
+  outline:none;
+  width: 100%;
+  height:50px;
+  line-height: 50px;
+  background: #fff;
+  border: 1px solid #e3e8ee;
+  border-radius: 2px;
+  padding-left: 15px;
+  font-family: PingFangSC-Light;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 0;
+}
+input::-webkit-input-placeholder {
+  color: #8B9AAB !important; /* WebKit browsers */
+}
+input:-moz-placeholder {
+  color: #8B9AAB !important; /*Mozilla Firefox 4 to 18 */
+}
+input::-moz-placeholder {
+  color: #8B9AAB !important; /*Mozilla Firefox 19+ */
+}
+input:-ms-input-placeholder {
+  color: #8B9AAB !important; /*Internet Explorer 10+ */
+}

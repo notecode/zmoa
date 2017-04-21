@@ -1,0 +1,57 @@
+@import 'src/node_modules/static/www/css/mixin';
+
+#login_page{
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .cell{
+        display: table-cell; 
+        vertical-align: middle;
+    }
+    .wrap{
+        width: 921px;
+        height: 500px;
+        margin: auto;
+    }
+    h2{
+        font-size: 30px;
+        font-weight: 100;
+        margin: 0;
+        margin-bottom: 74px; 
+    }
+    .form{
+        width:430px;
+        height:500px;
+        border:1px solid $backblue;
+        padding: 55px;
+        float: right;
+        input{
+            margin-bottom: 25px; 
+        }
+
+        button{
+            margin-top: 80px;
+            width: 120px;
+            height: 46px;
+            background: $blue;
+            border-radius: 2px;
+            font-size: 15px;
+            color: #FFF;
+            border:none;
+        }
+    }
+    .flag{
+        height: 500px;
+        padding-right: 256px; 
+        padding-top: 195px; 
+        float: left;
+    }
+    .logo{
+        display: block;
+        margin-bottom: 66px;
+    }
+    .welcome{
+        display: block;
+    }
+}

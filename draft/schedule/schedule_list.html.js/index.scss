@@ -1,0 +1,149 @@
+@import 'src/node_modules/static/www/css/mixin';
+
+#schedule_schedule_list{
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .left-section,.right-section{
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+    }
+    .left-section{
+        width: 290px;
+        height: 100%;
+        border-right: 1px solid $backblue;
+        overflow: visible;
+
+        .pro-title{
+            width: 100%;
+            height: 50px;
+            background-color: $backblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            padding: 15px 30px;
+            font-size: 14px;
+            color: $black;
+            line-height: 20px;
+        }
+        .pro-list－scroll{
+            position: relative;
+            width: 100%;
+            height: calc(100% - 50px);
+            margin-top: 50px;
+        }
+        .pro-list{
+            width: 100%;
+            height: 2000px;
+        }
+        .item{
+            width: 100%;
+            height: 40px;
+            padding: 10px 30px;
+            border-bottom: 1px solid $backblue;
+            background-color: #fff;
+            font-size: 14px;
+            color: $lightblack;
+            line-height: 20px;
+
+            span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .item-name{
+                margin-left: 6px;
+                @include text-ellipsis(124px);
+            }
+            .item-city{
+                text-align: right;
+                @include text-ellipsis(56px);
+            }
+        }
+        .active{
+            color: $black;
+            background-color: #f8f8f8;
+        }
+    }
+    .right-section{
+        width: -webkit-calc(100% - 295px);
+        width: -moz-calc(100% - 295px);
+        width: calc(100% - 295px);
+        margin-left: -5px;
+        height: 100%;
+        overflow: visible;
+        
+        .r-sec-scroll{
+            position: relative;
+            width: 100%;
+            height: calc(100% - 50px);
+            margin-top: 50px;
+            overflow: scroll;
+        }
+        .month{
+                position: fixed;
+                top: 60px;
+                left: 290px;
+                width: 28px;
+                height: 28px;
+                padding: 2px 3px;
+                background-color: #8b9aab;
+                color: #fff;
+                font-size: 12px;
+                z-index: 9;
+                -webkit-clip-path: polygon(100% 0, 0 100%, 0 0);
+            }
+        .date-list-pane{
+            width: -webkit-calc(100% - 295px);
+            width: -moz-calc(100% - 295px);
+            width: calc(100% - 295px);
+            height: 50px;
+            border-top: 1px solid $backblue;
+            border-right: 1px solid $backblue;
+            border-bottom: 1px solid $backblue;
+            position: fixed;
+            top: 60px;
+            left: 290px;
+            overflow: hidden;
+        }
+        .date-list{
+            position: relative;
+            width: 2000px;
+            height: 100%;
+
+            .date-item{
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                font-size: 14px;
+                color: $black;
+                line-height: 20px;
+                text-align: center;
+                padding: 7px 0;
+                border-right: 1px solid $backblue;
+                margin: 0;
+
+                &:nth-child(n+2){
+                    margin-left: -5px;
+                }
+
+                .week{
+                    font-size: 12px;
+                    color: $gray;
+                    line-height: 17px;
+                    display: block;
+                }
+            }
+        }
+        .pro-date{
+            width: 2000px;
+            height: 2000px;
+            background: #edde42;
+        }
+    }
+}

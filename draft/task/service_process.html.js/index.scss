@@ -1,0 +1,59 @@
+@import 'src/node_modules/static/www/css/mixin';
+
+#task_service_process{
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f7faff;
+    padding: 87px 0 0 60px;
+    overflow-x: scroll;
+    
+    .taskbox-pane{
+        width: 2200px;
+        padding-bottom: 64px;
+        height: 100%;
+    }
+    .task-box{
+        width: 290px;
+        height: 100%;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 15px;
+        overflow: hidden;
+        background: #FFFFFF;
+        border: 1px solid $backblue;
+        box-shadow: 0 2px 6px 0 rgba(227,232,238,0.70);
+        border-radius: 4px;
+       
+        .box-title{
+            width: 100％;
+            height: 60px;
+            padding: 19px 15px;
+            line-height: 22px;
+            font-size: 16px;
+            color: $blue;
+            background: $backblue;
+            position: relative;
+        }
+        .task-item{
+            height: 85px;
+            padding: 20px 20px 20px 50px;
+            border-bottom:1px solid $backblue;
+
+            .task-item-name{
+                font-size: 14px;
+                line-height: 20px;
+                color: $black;
+                margin-bottom: 8px;
+            }
+            .task-item-time{
+                font-size: 12px;
+                line-height: 17px;
+                color: $gray;
+            }
+        }
+    }
+}
