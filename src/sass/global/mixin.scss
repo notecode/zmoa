@@ -108,3 +108,53 @@ $bggray: #f8f8f8;     //灰色背景色
   -webkit-transition: all $speed cubic-bezier(.4,.5,.5,.4);
   transition: all $speed cubic-bezier(.4,.5,.5,.4);
 }
+
+// huhaos'
+
+//全局颜色变量
+$black: #333;
+$lightblack: #666;
+$gray: #999;
+$blue: #003894;
+$grayblue:#8B9AAB;
+$backblue:#E3E8EE;
+$bordercolor:#DADEE4;
+$yellow: #F6A623;
+$green:#61A417;
+
+
+//---opacity---
+/*
+ *     支持单个参数,数值在 0-1 之间;
+*/
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+//---单行文本不换行---
+/*
+ *     支持参数,宽度的百分比值,默认100%;
+*/
+@mixin text-ellipsis($width:100%) {
+  width: $width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin behavior($url){
+  background:url($url) no-repeat center;
+  -ms-behavior: url(/iscripts/libs/ie8/backgroundsize.min.htc);
+  behavior: url(/iscripts/libs/ie8/backgroundsize.min.htc);
+}
+//现在UI设计的字体大小和行高要一样，我嫌麻烦，谢了这个方法
+@mixin font($size){
+  font-size:$size;
+  line-height:$size;
+}
+@mixin hover($speed){
+  -webkit-transition: all $speed cubic-bezier(.4,.5,.5,.4);
+  transition: all $speed cubic-bezier(.4,.5,.5,.4);
+}
