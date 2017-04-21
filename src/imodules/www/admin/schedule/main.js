@@ -12,8 +12,31 @@ define(function() {
 
         CON.prototype.foo = function() {
             var _this = this;
+            var data = [
+                {
+                    "project": "太古里SOHO",
+                    "in_city": "北京",
+                    "day_start": "2017-4-22",
+                    "day_ended": "2017-4-28",
+                },
+                {
+                    "project": "布达拉宫广场",
+                    "in_city": "拉萨",
+                    "day_start": "2017-5-1",
+                    "day_ended": "2017-5-4",
+                }
+            ];
             var dom = Mustache.render(this.tpl, {
-                count: [1, 1, 1, 3] 
+                projects: data,
+                cells: ['', '', '', 'today', ''],
+                util: {
+                    bar_start: function() {
+                        return 50; 
+                    },
+                    bar_length: function() {
+                        return 50 * 3;
+                    }
+                }
             }); 
             this.find('#foo').html(dom);
         }
