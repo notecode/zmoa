@@ -1,0 +1,41 @@
+
+#schedule {
+
+	.table {
+		.row {
+			font-size: 0px;
+			letter-spacing: 0px;
+			word-spacing: 0px;
+
+			border-top: 1px dotted gray;
+
+			.cell {
+				display: inline-block;
+				width: 50px;
+				height: 40px;
+				border-left: 1px solid green;
+				margin: 0px;
+				z-index: 1;
+			}
+
+			.cell:last-child {
+				border-right: 1px solid green;
+			}
+
+			.bar {
+				position: absolute;
+				height: 14px;
+				background-color: #4990E2;
+				margin-top: -27px;
+				z-index: 10;
+				border-radius: 7px;
+
+				width: 102px;
+			}
+		}
+
+		.row:last-child {
+			border-bottom: 1px dotted gray;
+		}
+	}
+}
