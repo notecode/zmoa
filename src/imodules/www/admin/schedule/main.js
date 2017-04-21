@@ -1,4 +1,4 @@
-define(function() {
+define(["/global/iscripts/libs/time/twix.js"], function(Twix) {
     var Module = (function() {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
@@ -6,9 +6,19 @@ define(function() {
             this.tpl = this._els.tpl[0].text;
 
             //test
-            this.foo();
+            //this.foo();
+            this.bar();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
+
+        CON.prototype.bar = function() {
+            var itr = new Twix(new Date('2012-01-15'),new Date('2012-01-20')).iterate("days");
+            var range=[];
+            while(itr.hasNext()){
+                range.push(itr.next().format("YYYY-M-D"))
+            }
+            console.log(range);
+        }
 
         CON.prototype.foo = function() {
             var _this = this;

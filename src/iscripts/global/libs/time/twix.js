@@ -660,7 +660,7 @@
   }
 
   if (typeof define === 'function') {
-    define('twix', ['moment'], function(moment) {
+    define(["/global/iscripts/libs/time/moment.js"], function(moment) {
       return makeTwix(moment);
     });
   }
