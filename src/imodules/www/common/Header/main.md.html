@@ -1,14 +1,16 @@
-{{DONE}}
-<div class="header bf @@shadow" id="Header" {{IMODULE}}>
+<header id="Header" {{IMODULE}}>
     <style>@@include('{{MCSS}}')</style>
-    <div class="content">
-        <a class="headLogo" href="/index.html">万屏汇</a>
-        <span class="unilumin">上市公司洲明旗下</span>
-        <div class="nav login-out">
-            <a class="ch" href="/supplier.html"target="_blank">工程商加盟</a>
-            <a class="ll" href="#" ievent='showLoginForm'><i class="ll-icon"></i>登录</a>
-            <a class="lo" href="#" ievent="loginOut"><i class="lo-icon"></i>注销&nbsp<span class="user-nick"></span></a>
-            <a class="join" href="/supplier.html">工程商加盟</a>
-        </div>
+
+    <a class="logo" href="#" title="洲明logo">
+        <img src="{{MIMAGE}}/logo.png" alt="洲明logo">
+    </a>
+    <div class="links">
+        <a href="#" class="active">服务</a>
+        <a href="#">人员</a>
+        <a href="#">排期</a>
+    </div> 
+    <div class="loginInfo pull-right">
+        您好，<span>咸蛋</span>
+        <span class="logout" evt="logout">退出</span>
     </div>
-</div>
+</header>
