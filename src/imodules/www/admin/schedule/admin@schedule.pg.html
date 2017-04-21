@@ -4,10 +4,13 @@
     @@include('www/common/InsertTop/main.html',{"title": ""})
 </head>
 <body id="{{ID}}" {{IMODULE}}>
-@@include('www/common/Header/main.md.html')
+	{{IncludeMCSS}}
+	@@include('www/common/Header/main.md.html')
 
-<p>Hello</p>
+	Hello
+	<div id="foo"></div>
 
-@@include('www/common/InsertBottom/main.html')
+	{{IncludeMTPL}}
+	@@include('www/common/InsertBottom/main.html')
 </body>
 </html>

@@ -378,6 +378,9 @@
         });
         */
 
+        //temp
+        afterLogin();
+
         function afterLogin(user) {
             project.data.user = user;
             project.autoCreateIModules();
