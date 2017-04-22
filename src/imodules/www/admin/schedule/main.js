@@ -20,6 +20,10 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
                 }
             ];
 
+            if (1 == qs('test')) {
+                return;
+            }
+            
             var ctx = this.prepare(data);
             var toUse = this.genReadyToUseData(ctx);
             this.doRender(toUse);
@@ -79,7 +83,8 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
                             return this.date();
                         },
                         weekday: function() {
-                            return this.day();
+                            var wd = ['日', '一', '二', '三', '四', '五', '六'];
+                            return wd[this.day()];
                         }
                     },
                 },
@@ -100,7 +105,7 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
         CON.prototype.doRender = function(ctx) {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
-            this.find('#foo').html(dom);
+            this.find('#main-body').append(dom);
         }
 
         CON.prototype._ievent_ = function(data, target, hit) {

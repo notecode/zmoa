@@ -1,47 +1,66 @@
 
 #schedule {
+	.total-table {
+		width: 100%;
+		max-width: 100%;
 
-	.table {
-		.row {
-			font-size: 0px;
-			letter-spacing: 0px;
-			word-spacing: 0px;
-			position: relative;
+		.left-list {
+			position: absolute;
 
-			border-top: 1px dotted gray;
-
-			.cell {
-				display: inline-block;
-				width: 50px;
-				height: 40px;
-				border-left: 1px solid green;
-				margin: 0px;
-				z-index: 1;
-			}
-
-			.cell:last-child {
-				border-right: 1px solid green;
-			}
-
-			.cell.today {
-				background-color: #E3E8EE;
-			}
-
-			.bar {
-				position: absolute;
-				background-color: #4990E2;
-				z-index: 10;
-				border-radius: 7px;
-				top: 13px;
-				height: 14px;
-
-				left: 50px;
-				width: 102px;
-			}
+			width: 100px;
+			height: 200px;
+			border: 1px solid black;
 		}
+		.main-table {
+			position: absolute;
+			left: 100px;
 
-		.row:last-child {
-			border-bottom: 1px dotted gray;
+			.a-row {
+				font-size: 0px;
+				letter-spacing: 0px;
+				word-spacing: 0px;
+				position: relative;
+
+				border-top: 1px dotted gray;
+
+				.cell {
+					display: inline-block;
+					width: 50px;
+					height: 40px;
+					border-left: 1px solid green;
+					margin: 0px;
+					z-index: 1;
+
+					span {
+						font-size: 14px;
+						display: block;
+					}
+				}
+
+				.cell:last-child {
+					border-right: 1px solid green;
+				}
+
+				.cell.today {
+					background-color: #E3E8EE;
+				}
+
+				.bar {
+					position: absolute;
+					background-color: #4990E2;
+					z-index: 10;
+					border-radius: 7px;
+					top: 13px;
+					height: 14px;
+
+					left: 50px;
+					width: 102px;
+				}
+			}
+
+			.a-row:last-child {
+				border-bottom: 1px dotted gray;
+			}
 		}
 	}
 }

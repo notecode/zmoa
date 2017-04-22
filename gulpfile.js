@@ -208,3 +208,8 @@ gulp.task('release', function(callback){runSequence('build','global',use_cdn?'re
 gulp.task('zhuanti', ['release'], function() {
     return gulp.src([cfg.distSite + '/track/*']).pipe(gulp.dest(cfg.distSite + '/landing/track/'));
 });
+
+gulp.task('dist', function() {
+	gulp.src('dist/www/**/*')
+    .pipe(gulp.dest('../notecode/'));
+});

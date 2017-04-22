@@ -1,12 +1,30 @@
-<div class="table">
-	{{#projects}}
-	<div class="row">
-		<div class="cells">
-			{{#cells}}
-			<p class="cell {{.}}"></p>
-			{{/cells}}
-		</div>
-		<div class="bar" style="left: {{util.bar_start}}px; width: {{util.bar_length}}px"></div>
+<div class="total-table">
+	<div class="left-list">
+		
 	</div>
-	{{/projects}}
+	<div class="main-table">
+		<div class="a-row header-row">
+			<div class="header-cells">
+				{{#header}}
+					{{#days}}
+					<p class="cell">
+						<span class="date">{{fn.date}}</span>
+						<span class="weekday">{{fn.weekday}}</span>
+					</p>
+					{{/days}}
+				{{/header}}
+			</div>
+		</div>
+
+		{{#projects}}
+		<div class="a-row">
+			<div class="cells">
+				{{#cells}}
+				<p class="cell {{.}}"></p>
+				{{/cells}}
+			</div>
+			<div class="bar" style="left: {{util.bar_start}}px; width: {{util.bar_length}}px"></div>
+		</div>
+		{{/projects}}
+	</div>
 </div>
