@@ -17,7 +17,7 @@
     }
     
     .taskbox-pane{
-        width: auto;
+        width: 1904px;
         padding-bottom: 64px;
         height: 100%;
     }
@@ -81,6 +81,20 @@
             border-bottom: none;
         }
 
+    }
+    .task-over {
+         .task-item{
+            .icon-xiangmu {
+                color: #61A417;
+            }
+        }
+    }
+    .task-duan {
+         .task-item{
+            .icon-xiangmu {
+                color: #999;
+            }
+        }
     }
 
 }
