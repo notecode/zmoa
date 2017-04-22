@@ -1,0 +1,207 @@
+@import "src/sass/global/mixin";
+
+#demandDetail{
+    .content {
+        width: 100%;
+        border-radius: 4px;
+    }
+    
+    p{
+        margin:0;
+    }
+    .title{
+        height:42px;
+        line-height: 42px;
+        font-family: PingFangSC-Thin;
+        font-size: 30px;
+        color: $black;
+        letter-spacing: 0;
+        margin:0;
+        margin-left:40px;
+        margin-top:40px;
+    }
+    .icon-success{
+        display: inline-block;
+        height: 42px;
+        line-height: 42px;
+        vertical-align: top;
+        color: $blue;
+        font-size: 15px;
+        margin-left:15px;
+    }
+     .detail-block{
+        width: 740px;
+        padding: 40px 74px 56px 74px;
+        display: inline-block;
+        vertical-align: top;
+        span[class^="icon-"]{
+            position: absolute;
+            top: 0;
+            left: -30px;
+            color: $gray;
+            font-size: 16px;
+        }
+        .pro-name{
+            font-size: 18px;
+            color: $black;
+            line-height: 25px;
+            margin:0;
+            margin-bottom: 30px;
+            position: relative;
+            .icon-xiangmu{
+                color: $blue;
+                font-size: 24px;
+                left: -40px;
+            }
+        }
+        .pro-client{
+            display:inline-block;
+            font-size: 18px;
+            color: $black;
+            line-height: 22px;
+            margin:0;
+            .pro-client-name{
+                margin-right: 11px;
+            }
+        }
+        .pro-pos{
+            display:inline-block;
+            font-size: 12px;
+            color: $gray;
+            line-height: 17px;
+            margin-bottom: 30px;
+            margin-left: 15px;
+        }
+        .pro-service{
+            margin-bottom: 30px;
+            font-size: 14px;
+            letter-spacing: 0;
+            position: relative;
+            .pro-service-name{
+                color: $lightblack;
+            }
+            .pro-service-time{
+                color: $gray;
+                margin-left:20px;
+            }
+        }
+        .pro-info{
+            font-size: 14px;
+            color: $gray;
+            line-height: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .pro-img{
+            width: 286px;
+            height:178px;
+            margin-bottom: 30px;
+        }
+        .pro-addr{
+            font-size: 14px;
+            color: $gray;
+            line-height: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .pro-programme{
+            position: relative;
+            margin-bottom: 30px;
+            font-size: 14px;
+            letter-spacing: 0;
+            .pro-programme-name{
+                color: $lightblack;
+            }
+            .pro-programme-details{
+                display:block;
+                color: $gray;
+                margin-top:14px;
+            }
+        }
+        .pro-recall{
+            position: relative;
+            .pro-recall-name{
+                font-size: 14px;
+                color: $gray;
+                letter-spacing: 0;
+                margin-bottom: 14px;
+            }
+            .pro-recall-textarea{
+                margin-bottom: 25px;
+                outline: none;
+                list-style: none;
+                width: 100%;
+                height: 114px;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 1;
+                color: #333;
+                border: none;
+                box-shadow: none;
+                -webkit-appearance: none;
+                padding:15px;
+                background: #FFFFFF;
+                border: 1px solid #E3E8EE;
+                border-radius: 2px;
+                resize: none;
+            }
+            .pro-recall-save{
+                width: 120px;
+                height: 46px;
+                background: $blue;
+                border-radius: 2px;
+                padding: 0;
+                margin: 0 0 40px 0;
+                font-weight:600;
+            }
+            .pro-recall-textarea::-webkit-input-placeholder {
+                color: #8B9AAB !important; /* WebKit browsers */
+            }
+            .pro-recall-textarea:-moz-placeholder {
+                color: #8B9AAB !important; /*Mozilla Firefox 4 to 18 */
+            }
+            .pro-recall-textarea::-moz-placeholder {
+                color: #8B9AAB !important; /*Mozilla Firefox 19+ */
+            }
+            .pro-recall-textarea:-ms-input-placeholder {
+                color: #8B9AAB !important; /*Internet Explorer 10+ */
+            }
+        }
+        .pro-note{
+            font-size: 14px;
+            color: $gray;
+            line-height: 20px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .table-bordered{
+            width: 100%;
+            margin-bottom:30px;
+            td{
+                height: 45px;
+                line-height: 45px;
+                color: $black;
+                font-size: 14px;
+                padding:0 0 0 40px;
+            }
+            tr td:first-of-type{
+                color: $grayblue;
+                padding:0 0 0 15px;
+            }
+        }
+        .pro-record{
+            position: relative;
+            font-size: 14px;
+            letter-spacing: 0;
+            .pro-record-name{
+                color: $lightblack;
+            }
+            .pro-record-details{
+                display:block;
+                color: $gray;
+                margin-top:14px;
+            }
+        }
+    }
+
+}
