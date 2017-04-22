@@ -3,13 +3,13 @@
 <head>
     @@include('www/common/InsertTop/main.html',{"title": ""})
 </head>
-<body id="{{ID}}" {{IMODULE}}>
-@@include('www/common/Header/main.md.html',{"sh": "hide"})
+<body>
+@@include('www/common/Header/main.md.html',{"link": "hide"})
 
     <style>@@include('{{MCSS}}')</style>
-    <div class="box">
+    <div class="box" id="{{ID}}" {{IMODULE}}>
         <div class="content">
-           <div class="all-demand content">
+           <div class="all-demand">
                 <h4>平台正在进行的项目&nbsp;·&nbsp;<span class="all-demand-count">14</span></h4>
                 <div class="all-demand-step">
                     <div class="steps">
@@ -32,45 +32,81 @@
             </div>
             <div class="no-demand hide">
                 <h2>您尚未提交需求</h2>
-                <button id="new-demand" type="submit" class="btn btn-primary">添加新需求</button>
+                <button id="new-demand" type="submit" class="btn btn-primary">提交新需求</button>
             </div>
-            <div class="demand-list-title content ">
+            <div class="demand-list-title">
                 我提交的需求&nbsp;·&nbsp;<span class="my-demand-count">0</span>
-                <button id="new-demand" type="submit" class="btn btn-primary">添加新需求</button>
+                <button id="new-demand" type="submit" class="btn btn-primary">提交新需求</button>
             </div>
-            <div class="has-demand content ">
-                <div class="demand-list">
-                    <div class="demand-name">
-                        <span class="icon-xiangmu"></span >
-                        <span class="demand-name-span">济南泉城路万达广场（888003）</span>
-                    </div>
-                    <div class="demand-state">
-                        <div id="progressBar">
-                            <!-- 进度条 -->
-                            <div>
-                                <span></span>
+
+            <div class="de-list-box">
+                <div class="has-demand">
+                    <div class="demand-list">
+                        <div class="demand-name">
+                            <span class="icon-xiangmu"></span >
+                            <span class="demand-name-span">济南泉城路万达广场（888003）</span>
+                        </div>
+                        <div class="demand-state">
+                            <div id="progressBar">
+                                <!-- 进度条 -->
+                                <div>
+                                    <span class="jindu3"></span>
+                                </div>
+                                <!-- 五个圆 -->
+                                <span class="stepIco stepIco1 active">
+                                    <div class="stepText active">已立项，待派人</div>
+                                </span>
+                                <span class="stepIco stepIco2 active">
+                                    <div class="stepText active" >排期中</div>
+                                </span>
+                                <span class="stepIco stepIco3 active">
+                                    <div class="stepText active">服务中</div>
+                                </span>
+                                <span class="stepIco stepIco4">
+                                    <div class="stepText">已完成，待回访</div>
+                                </span>
+                                <span class="stepIco stepIco5">
+                                    <div class="stepText">已结束</div>
+                                </span>
                             </div>
-                            <!-- 五个圆 -->
-                            <span class="stepIco stepIco1 active">
-                                <div class="stepText active">已立项，待派人</div>
-                            </span>
-                            <span class="stepIco stepIco2 active">
-                                <div class="stepText active" >排期中</div>
-                            </span>
-                            <span class="stepIco stepIco3">
-                                <div class="stepText">服务中</div>
-                            </span>
-                            <span class="stepIco stepIco4">
-                                <div class="stepText">已完成，待回访</div>
-                            </span>
-                            <span class="stepIco stepIco5">
-                                <div class="stepText">已结束</div>
-                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="has-demand">
+                    <div class="demand-list">
+                        <div class="demand-name">
+                            <span class="icon-xiangmu"></span >
+                            <span class="demand-name-span">济南泉城路万达广场（888003）</span>
+                        </div>
+                        <div class="demand-state">
+                            <div id="progressBar">
+                                <!-- 进度条 -->
+                                <div>
+                                    <span class="jindu2"></span>
+                                </div>
+                                <!-- 五个圆 -->
+                                <span class="stepIco stepIco1 active">
+                                    <div class="stepText active">已立项，待派人</div>
+                                </span>
+                                <span class="stepIco stepIco2 active">
+                                    <div class="stepText active" >排期中</div>
+                                </span>
+                                <span class="stepIco stepIco3">
+                                    <div class="stepText">服务中</div>
+                                </span>
+                                <span class="stepIco stepIco4">
+                                    <div class="stepText">已完成，待回访</div>
+                                </span>
+                                <span class="stepIco stepIco5">
+                                    <div class="stepText">已结束</div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+    
         </div>
     </div>
 </div>

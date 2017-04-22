@@ -1,20 +1,15 @@
 @import "src/sass/global/mixin";
 
 #demandList {
-    .box {
-        width: 100%;
-        background-color:rgba(0,0,0,0.25);
-        padding: 40px 0;
-    }
-    .content {
-        width: 1320px;
-        margin: 0 auto;
-        background-color: #fff;
-        border-radius: 4px;
-    }
     background-color:#f7faff;
     padding-top:40px;
     min-height:840px;
+    
+    .content {
+        width: 1320px;
+        margin: 0 auto;
+        border-radius: 4px;
+    }
     .all-demand{
         height:120px;
         border-radius: 4px;
@@ -23,6 +18,7 @@
         justify-content:space-between;
         align-items: flex-end;
         padding:0 204px 0 40px;
+        background-color: #fff;
         h4{
           display: inline-block;
           height:120px;
@@ -69,11 +65,10 @@
     }
       .demand-list-title{
         background-color:#f7faff;
-        font-family: PingFangSC-Thin;
         font-size: 24px;
         color: #333;
         letter-spacing: 0;
-        margin-top: 66px;
+        margin-top: 60px;
         height: 45px;
         line-height: 45px;
 
@@ -86,6 +81,7 @@
           padding: 0;
           margin: 0 0 0 0;
           font-weight:600;
+          font-size: 15px;
         }
       }
   .no-demand{
@@ -111,9 +107,12 @@
       font-weight:600;
     }
   }
+  .de-list-box {
+    padding-top: 21px;
+  }
   .has-demand{
     background-color:#f7faff;
-    margin-top:46px;
+    margin-top:25px;
   }
   .demand-list{
     display:-webkit-flex;
@@ -183,8 +182,23 @@
     display: inline-block;
     background: $blue;
     height: 6px;
-    width: 26%;
+    width: 1%;
     top:-2px;
+  }
+  #progressBar div span.jindu1{
+    width: 1%;
+  }
+  #progressBar div span.jindu2{
+    width: 26%;
+  }
+  #progressBar div span.jindu3{
+    width: 51%;
+  }
+  #progressBar div span.jindu4{
+    width: 76%;
+  }
+  #progressBar div span.jindu5{
+    width: 101%;
   }
   #progressBar>span{
     position: absolute;
