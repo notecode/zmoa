@@ -1,8 +1,23 @@
 @import "src/sass/global/mixin";
 
 #demandDetail{
+    width: 100%;
+    background-color:rgba(0,0,0,0.25);
+    padding: 40px 0;
+
     .content {
-        width: 100%;
+        width: 1320px;
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+    .my-demand {
+        font-size: 24px;
+        color: #333;
+    }
+    .de-content {
+        width: 740px;
+        margin: 0 auto;
+        background-color: #fff;
         border-radius: 4px;
     }
     
@@ -10,7 +25,6 @@
         margin:0;
     }
     .title{
-        height:42px;
         line-height: 42px;
         font-family: PingFangSC-Thin;
         font-size: 30px;
@@ -19,6 +33,7 @@
         margin:0;
         margin-left:40px;
         margin-top:40px;
+        padding-top: 35px;
     }
     .icon-success{
         display: inline-block;
@@ -51,7 +66,7 @@
             .icon-xiangmu{
                 color: $blue;
                 font-size: 24px;
-                left: -40px;
+                left: -32px;
             }
         }
         .pro-client{
@@ -62,6 +77,22 @@
             margin:0;
             .pro-client-name{
                 margin-right: 11px;
+            }
+        }
+        .pro-img-box {
+            width: 286px;
+            height: 178px;
+            background: #F4F8FF;
+            margin-bottom: 30px;
+            position: relative;
+
+            .pri-img-none {
+                font-size: 14px;
+                color: #8B9AAB;
+                display: inline-block;
+                text-align: center;
+                padding-top: 79px;
+                width: 100%;
             }
         }
         .pro-pos{
@@ -95,7 +126,11 @@
         .pro-img{
             width: 286px;
             height:178px;
-            margin-bottom: 30px;
+            position: absolute;
+            background: #F4F8FF;
+            top: 0;
+            left: 0;
+            border: none;
         }
         .pro-addr{
             font-size: 14px;
@@ -131,7 +166,7 @@
                 outline: none;
                 list-style: none;
                 width: 100%;
-                height: 114px;
+                height: 50px;
                 font-size: 14px;
                 font-weight: 300;
                 line-height: 1;
@@ -144,6 +179,7 @@
                 border: 1px solid #E3E8EE;
                 border-radius: 2px;
                 resize: none;
+                margin-top: 30px;
             }
             .pro-recall-save{
                 width: 120px;
@@ -165,6 +201,22 @@
             }
             .pro-recall-textarea:-ms-input-placeholder {
                 color: #8B9AAB !important; /*Internet Explorer 10+ */
+            }
+            .pro-bname {
+                font-size: 14px;
+                color: #666;
+                margin-top: 16px;
+                display: block;
+                cite {
+                    font-style: normal;
+                    margin-right: 20px;
+                }
+            }
+            .pro-bshuo {
+                font-size: 12px;
+                color: #999;
+                margin-top: 8px;
+                display: block;
             }
         }
         .pro-note{
