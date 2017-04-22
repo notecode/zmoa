@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('www/common/InsertTop/main.html',{"title": ""})
+</head>
+<body>
+<style>@@include('{{MCSS}}')</style>
+<div class="cell"  id="{{ID}}" {{IMODULE}}>
+    <div class="wrap">
+        <div class="flag">
+            <img class="logo" width="234" height="30" src="{{MIMAGE}}/logo.png" />
+            <img class="welcome" width="196" height="14" src="{{MIMAGE}}/welcome.png" />
+        </div>
+        <div class="form">
+            <h2>洲明售后管理系统</h2>
+            <form>
+                <input type="text" placeholder="账号" />
+                <input type="password" placeholder="密码" />
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+</div>
+@@include('www/common/InsertBottom/main.html')
+</body>
+</html>
