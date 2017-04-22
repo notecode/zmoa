@@ -1,0 +1,12 @@
+// Text
+msgid "text_subject"
+msgstr "%s - Password reset request"
+
+msgid "text_greeting"
+msgstr "A new password was requested for %s customer account."
+
+msgid "text_change"
+msgstr "To reset your password click on the link below:"
+
+msgid "text_ip"
+msgstr "The IP used to make this request was: %s"

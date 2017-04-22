@@ -1,0 +1,143 @@
+msgid "heading_title"
+msgstr "Orders"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_fba"
+msgstr "Fulfillment By Amazon"
+
+msgid "button_ship"
+msgstr "Ship fulfillment"
+
+msgid "button_resend"
+msgstr "Resend fulfillment request"
+
+msgid "tab_history"
+msgstr "Request history"
+
+msgid "entry_start_date"
+msgstr "Start date (format YYYY-MM-DD)"
+
+msgid "entry_end_date"
+msgstr "End date (format YYYY-MM-DD)"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "text_no_results"
+msgstr "No orders found"
+
+msgid "text_fulfillment_list"
+msgstr "Amazon Fulfillment list"
+
+msgid "text_option_all"
+msgstr "All"
+
+msgid "text_option_new"
+msgstr "New / pending"
+
+msgid "text_option_error"
+msgstr "Error"
+
+msgid "text_option_held"
+msgstr "Held"
+
+msgid "text_option_shipped"
+msgstr "Shipped"
+
+msgid "text_option_cancelled"
+msgstr "Cancelled"
+
+msgid "text_order"
+msgstr "Order information"
+
+msgid "text_shipping_address"
+msgstr "Shipping address"
+
+msgid "text_history"
+msgstr "Fulfillment History"
+
+msgid "text_opencart_order"
+msgstr "OpenCart order ID"
+
+msgid "text_order_info"
+msgstr "Order info"
+
+msgid "text_status"
+msgstr "Fulfillment status"
+
+msgid "text_errors"
+msgstr "Response errors"
+
+msgid "text_show_errors"
+msgstr "Show errors"
+
+msgid "text_no_errors"
+msgstr "There are no errors for this fulfillment request"
+
+msgid "text_no_sku"
+msgstr "No SKU found"
+
+msgid "text_show_request"
+msgstr "Show request body"
+
+msgid "text_show_response"
+msgstr "Show response body"
+
+msgid "text_fulfillment_id"
+msgstr "Fulfillment ID"
+
+msgid "text_type_new"
+msgstr "Create"
+
+msgid "text_type_ship"
+msgstr "Shipment"
+
+msgid "text_type_cancel"
+msgstr "Cancellation"
+
+msgid "text_no_requests"
+msgstr "No requests have been made yet!"
+
+msgid "text_order_list"
+msgstr "Amazon order list"
+
+msgid "column_order_id"
+msgstr "Order ID"
+
+msgid "column_created"
+msgstr "Created"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "column_sku"
+msgstr "SKU"
+
+msgid "column_product"
+msgstr "Product"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_fba"
+msgstr "Amazon Fulfillment"
+
+msgid "column_fulfillment_id"
+msgstr "Fulfillment Request Reference"
+
+msgid "column_response_code"
+msgstr "Response code"
+
+msgid "column_actions"
+msgstr "Actions"
+
+msgid "column_type"
+msgstr "Request type"
+
+msgid "column_fba_item_count"
+msgstr "FBA item count"

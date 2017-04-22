@@ -1,0 +1,65 @@
+msgid "heading_title"
+msgstr "Purchase a Gift Certificate"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_voucher"
+msgstr "Gift Certificate"
+
+msgid "text_description"
+msgstr "This gift certificate will be emailed to the recipient after your order has been paid for."
+
+msgid "text_agree"
+msgstr "I understand that gift certificates are non-refundable."
+
+msgid "text_message"
+msgstr "<p>Thank you for purchasing a gift certificate! Once you have completed your order your gift certificate recipient will be sent an e-mail with details how to redeem their gift certificate.</p>"
+
+msgid "text_for"
+msgstr "%s Gift Certificate for %s"
+
+msgid "entry_to_name"
+msgstr "Recipient\'s Name"
+
+msgid "entry_to_email"
+msgstr "Recipient\'s e-mail"
+
+msgid "entry_from_name"
+msgstr "Your Name"
+
+msgid "entry_from_email"
+msgstr "Your e-mail"
+
+msgid "entry_theme"
+msgstr "Gift Certificate Theme"
+
+msgid "entry_message"
+msgstr "Message"
+
+msgid "entry_amount"
+msgstr "Amount"
+
+msgid "help_message"
+msgstr "Optional"
+
+msgid "help_amount"
+msgstr "Value must be between %s and %s"
+
+msgid "error_to_name"
+msgstr "Recipient\'s Name must be between 1 and 64 characters!"
+
+msgid "error_from_name"
+msgstr "Your Name must be between 1 and 64 characters!"
+
+msgid "error_email"
+msgstr "E-Mail Address does not appear to be valid!"
+
+msgid "error_theme"
+msgstr "You must select a theme!"
+
+msgid "error_amount"
+msgstr "Amount must be between %s and %s!"
+
+msgid "error_agree"
+msgstr "Warning: You must agree that the gift certificates are non-refundable!"

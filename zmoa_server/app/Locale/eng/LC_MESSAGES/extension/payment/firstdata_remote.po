@@ -1,0 +1,149 @@
+// Text
+msgid "text_title"
+msgstr "Credit or Debit Card"
+
+msgid "text_credit_card"
+msgstr "Credit Card Details"
+
+msgid "text_wait"
+msgstr "Please wait!"
+
+
+// Entry
+msgid "entry_cc_number"
+msgstr "Card number"
+
+msgid "entry_cc_name"
+msgstr "Cardholder name"
+
+msgid "entry_cc_expire_date"
+msgstr "Card expiry date"
+
+msgid "entry_cc_cvv2"
+msgstr "Card security code (CVV2)"
+
+
+// Help
+msgid "help_start_date"
+msgstr "(if available)"
+
+msgid "help_issue"
+msgstr "(for Maestro and Solo cards only)"
+
+
+// Text
+msgid "text_result"
+msgstr "Result: "
+
+msgid "text_approval_code"
+msgstr "Approval code: "
+
+msgid "text_reference_number"
+msgstr "Reference: "
+
+msgid "text_card_number_ref"
+msgstr "Card last 4 digits: xxxx "
+
+msgid "text_card_brand"
+msgstr "Card brand: "
+
+msgid "text_response_code"
+msgstr "Response code: "
+
+msgid "text_fault"
+msgstr "Fault message: "
+
+msgid "text_error"
+msgstr "Error message: "
+
+msgid "text_avs"
+msgstr "Address verification: "
+
+msgid "text_address_ppx"
+msgstr "No address data provided or Address not checked by the Card Issuer"
+
+msgid "text_address_yyy"
+msgstr "Card Issuer confirmed that street and postcode match with their records"
+
+msgid "text_address_yna"
+msgstr "Card Issuer confirmed that street matches with their records but postcode does not match"
+
+msgid "text_address_nyz"
+msgstr "Card Issuer confirmed that postcode matches with their records but street does not match"
+
+msgid "text_address_nnn"
+msgstr "Both street and postcode do not match with the Card Issuer records"
+
+msgid "text_address_ypx"
+msgstr "Card Issuer confirmed that street matches with their records. The Issuer did not check the postcode"
+
+msgid "text_address_pyx"
+msgstr "Card Issuer confirmed that postcode matches with their records. The Issuer did not check the street"
+
+msgid "text_address_xxu"
+msgstr "Card Issuer did not check the AVS information"
+
+msgid "text_card_code_verify"
+msgstr "Security code: "
+
+msgid "text_card_code_m"
+msgstr "Card security code match"
+
+msgid "text_card_code_n"
+msgstr "Card security code does not match"
+
+msgid "text_card_code_p"
+msgstr "Not processed"
+
+msgid "text_card_code_s"
+msgstr "Merchant has indicated that the card security code is not present on the card"
+
+msgid "text_card_code_u"
+msgstr "Issuer is not certified and/or has not provided encryption keys"
+
+msgid "text_card_code_x"
+msgstr "No response from the credit card association was received"
+
+msgid "text_card_code_blank"
+msgstr "A blank response should indicate that no code was sent and that there was no indication that the code was not present on the card."
+
+msgid "text_card_accepted"
+msgstr "Accepted cards: "
+
+msgid "text_card_type_m"
+msgstr "Mastercard"
+
+msgid "text_card_type_v"
+msgstr "Visa (Credit/Debit/Electron/Delta)"
+
+msgid "text_card_type_c"
+msgstr "Diners"
+
+msgid "text_card_type_a"
+msgstr "American Express"
+
+msgid "text_card_type_ma"
+msgstr "Maestro"
+
+msgid "text_card_new"
+msgstr "New card"
+
+msgid "text_response_proc_code"
+msgstr "Processor code: "
+
+msgid "text_response_ref"
+msgstr "Ref number: "
+
+
+// Error
+msgid "error_card_number"
+msgstr "Please check your card number is valid"
+
+msgid "error_card_name"
+msgstr "Please check the card holder name is valid"
+
+msgid "error_card_cvv"
+msgstr "Please check the CVV2 is valid"
+
+msgid "error_failed"
+msgstr "Unable to process your payment, please contact the merchant"

@@ -1,0 +1,42 @@
+msgid "heading_title"
+msgstr "Customer Credit Report"
+
+
+msgid "text_list"
+msgstr "Customer Credit List"
+
+
+msgid "column_customer"
+msgstr "Customer Name"
+
+
+msgid "column_email"
+msgstr "E-Mail"
+
+
+msgid "column_customer_group"
+msgstr "Customer Group"
+
+
+msgid "column_status"
+msgstr "Status"
+
+
+msgid "column_total"
+msgstr "Total"
+
+
+msgid "column_action"
+msgstr "Action"
+
+
+msgid "entry_date_start"
+msgstr "Date Start"
+
+
+msgid "entry_date_end"
+msgstr "Date End"
+
+
+msgid "entry_customer"
+msgstr "Customer"

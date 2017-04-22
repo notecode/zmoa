@@ -1,0 +1,87 @@
+
+msgid "heading_title"
+msgstr "Downloads"
+
+
+msgid "text_success"
+msgstr "Success: You have modified downloads!"
+
+
+msgid "text_list"
+msgstr "Download List"
+
+
+msgid "text_add"
+msgstr "Add Download"
+
+
+msgid "text_edit"
+msgstr "Edit Download"
+
+
+msgid "text_upload"
+msgstr "Your file was successfully uploaded!"
+
+
+msgid "column_name"
+msgstr "Download Name"
+
+
+msgid "column_date_added"
+msgstr "Date Added"
+
+
+msgid "column_action"
+msgstr "Action"
+
+
+msgid "entry_name"
+msgstr "Download Name"
+
+
+msgid "entry_filename"
+msgstr "Filename"
+
+
+msgid "entry_mask"
+msgstr "Mask"
+
+
+msgid "help_filename"
+msgstr "You can upload via the upload button or use FTP to upload to the download directory and enter the details below."
+
+
+msgid "help_mask"
+msgstr "It is recommended that the filename and the mask are different to stop people trying to directly link to your downloads."
+
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify downloads!"
+
+
+msgid "error_name"
+msgstr "Download Name must be between 3 and 64 characters!"
+
+
+msgid "error_upload"
+msgstr "Upload required!"
+
+
+msgid "error_filename"
+msgstr "Filename must be between 3 and 128 characters!"
+
+
+msgid "error_exists"
+msgstr "File does not exist!"
+
+
+msgid "error_mask"
+msgstr "Mask must be between 3 and 128 characters!"
+
+
+msgid "error_filetype"
+msgstr "Invalid file type!"
+
+
+msgid "error_product"
+msgstr "Warning: This download cannot be deleted as it is currently assigned to %s products!"

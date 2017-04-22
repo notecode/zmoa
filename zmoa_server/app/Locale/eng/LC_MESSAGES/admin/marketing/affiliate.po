@@ -1,0 +1,227 @@
+msgid "heading_title"
+msgstr "Affiliates"
+
+msgid "text_success"
+msgstr "Success: You have modified affiliates!"
+
+msgid "text_approved"
+msgstr "You have approved %s accounts!"
+
+msgid "text_list"
+msgstr "Affiliate List"
+
+msgid "text_add"
+msgstr "Add Affiliate"
+
+msgid "text_edit"
+msgstr "Edit Affiliate"
+
+msgid "text_affiliate_detail"
+msgstr "Affiliate Details"
+
+msgid "text_affiliate_address"
+msgstr "Affiliate Address"
+
+msgid "text_balance"
+msgstr "Balance"
+
+msgid "text_cheque"
+msgstr "Cheque"
+
+msgid "text_paypal"
+msgstr "PayPal"
+
+msgid "text_bank"
+msgstr "Bank Transfer"
+
+msgid "column_name"
+msgstr "Affiliate Name"
+
+msgid "column_email"
+msgstr "E-Mail"
+
+msgid "column_code"
+msgstr "Tracking Code"
+
+msgid "column_balance"
+msgstr "Balance"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_approved"
+msgstr "Approved"
+
+msgid "column_date_added"
+msgstr "Date Added"
+
+msgid "column_description"
+msgstr "Description"
+
+msgid "column_amount"
+msgstr "Amount"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_email"
+msgstr "E-Mail"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_confirm"
+msgstr "Confirm"
+
+msgid "entry_company"
+msgstr "Company"
+
+msgid "entry_website"
+msgstr "Web Site"
+
+msgid "entry_address_1"
+msgstr "Address 1"
+
+msgid "entry_address_2"
+msgstr "Address 2"
+
+msgid "entry_city"
+msgstr "City"
+
+msgid "entry_postcode"
+msgstr "Postcode"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_zone"
+msgstr "Region / State"
+
+msgid "entry_code"
+msgstr "Tracking Code"
+
+msgid "entry_commission"
+msgstr "Commission (%)"
+
+msgid "entry_tax"
+msgstr "Tax ID"
+
+msgid "entry_payment"
+msgstr "Payment Method"
+
+msgid "entry_cheque"
+msgstr "Cheque Payee Name"
+
+msgid "entry_paypal"
+msgstr "PayPal Email Account"
+
+msgid "entry_bank_name"
+msgstr "Bank Name"
+
+msgid "entry_bank_branch_number"
+msgstr "ABA/BSB number (Branch Number)"
+
+msgid "entry_bank_swift_code"
+msgstr "SWIFT Code"
+
+msgid "entry_bank_account_name"
+msgstr "Account Name"
+
+msgid "entry_bank_account_number"
+msgstr "Account Number"
+
+msgid "entry_amount"
+msgstr "Amount"
+
+msgid "entry_description"
+msgstr "Description"
+
+msgid "entry_name"
+msgstr "Affiliate Name"
+
+msgid "entry_approved"
+msgstr "Approved"
+
+msgid "entry_date_added"
+msgstr "Date Added"
+
+msgid "help_code"
+msgstr "The tracking code that will be used to track referrals."
+
+msgid "help_commission"
+msgstr "Percentage the affiliate receives on each order."
+
+msgid "error_warning"
+msgstr "Warning: Please check the form carefully for errors!"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify affiliates!"
+
+msgid "error_exists"
+msgstr "Warning: E-Mail Address is already registered!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_email"
+msgstr "E-Mail Address does not appear to be valid!"
+
+msgid "error_cheque"
+msgstr "Cheque Payee Name required!"
+
+msgid "error_paypal"
+msgstr "PayPal Email Address does not appear to be valid!"
+
+msgid "error_bank_account_name"
+msgstr "Account Name required!"
+
+msgid "error_bank_account_number"
+msgstr "Account Number required!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"
+
+msgid "error_password"
+msgstr "Password must be between 4 and 20 characters!"
+
+msgid "error_confirm"
+msgstr "Password and password confirmation do not match!"
+
+msgid "error_address_1"
+msgstr "Address 1 must be between 3 and 128 characters!"
+
+msgid "error_city"
+msgstr "City must be between 2 and 128 characters!"
+
+msgid "error_postcode"
+msgstr "Postcode must be between 2 and 10 characters for this country!"
+
+msgid "error_country"
+msgstr "Please select a country!"
+
+msgid "error_zone"
+msgstr "Please select a region / state!"
+
+msgid "error_code"
+msgstr "Tracking Code required!"
+
+msgid "error_code_exists"
+msgstr "Tracking code is being used by another affiliate!"

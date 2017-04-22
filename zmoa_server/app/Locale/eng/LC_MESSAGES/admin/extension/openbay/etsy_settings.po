@@ -1,0 +1,89 @@
+msgid "heading_title"
+msgstr "Marketplace settings"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_etsy"
+msgstr "Etsy"
+
+msgid "text_success"
+msgstr "Your settings have been saved"
+
+msgid "text_status"
+msgstr "Status"
+
+msgid "text_account_ok"
+msgstr "Connection to Etsy OK"
+
+msgid "text_api_other"
+msgstr "Links"
+
+msgid "text_token_register"
+msgstr "Register"
+
+msgid "text_api_ok"
+msgstr "API connection OK"
+
+msgid "text_pull_orders"
+msgstr "Pull orders"
+
+msgid "text_sync_settings"
+msgstr "Sync settings"
+
+msgid "text_complete"
+msgstr "Complete"
+
+msgid "text_failed"
+msgstr "Failed"
+
+msgid "text_orders_imported"
+msgstr "Order pull has been requested"
+
+msgid "text_api_status"
+msgstr "API connection"
+
+msgid "text_edit"
+msgstr "Edit Etsy settings"
+
+msgid "entry_import_def_id"
+msgstr "Import default status (unpaid):"
+
+msgid "entry_import_paid_id"
+msgstr "Paid status:"
+
+msgid "entry_import_shipped_id"
+msgstr "Shipped status:"
+
+msgid "entry_enc1"
+msgstr "API Encryption 1"
+
+msgid "entry_enc2"
+msgstr "API Encryption 2"
+
+msgid "entry_token"
+msgstr "API token"
+
+msgid "entry_address_format"
+msgstr "Default address format"
+
+msgid "entry_debug"
+msgstr "Enable logging"
+
+msgid "error_api_connect"
+msgstr "Failed to connect to the API"
+
+msgid "error_account_info"
+msgstr "Unable to verify API connection to Etsy "
+
+msgid "tab_api_info"
+msgstr "API details"
+
+msgid "help_address_format"
+msgstr "Only used if the linked country does not have an address format set-up already."
+
+msgid "help_sync_settings"
+msgstr "This will update your database with the latest setting options such as condition types, dates and more."
+
+msgid "help_pull_orders"
+msgstr "This will trigger a manual import of new and updated orders."

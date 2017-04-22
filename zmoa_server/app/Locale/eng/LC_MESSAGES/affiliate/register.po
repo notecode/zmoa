@@ -1,0 +1,156 @@
+// Heading
+msgid "heading_title"
+msgstr "Affiliate Program"
+
+
+// Text
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_register"
+msgstr "Affiliate Register"
+
+msgid "text_account_already"
+msgstr'%s'>login page</a>."
+
+msgid "text_signup"
+msgstr "To create an affiliate account, fill in the form below ensuring you complete all the required fields:"
+
+msgid "text_your_details"
+msgstr "Your Personal Details"
+
+msgid "text_your_address"
+msgstr "Your Address Details"
+
+msgid "text_payment"
+msgstr "Payment Information"
+
+msgid "text_your_password"
+msgstr "Your Password"
+
+msgid "text_cheque"
+msgstr "Cheque"
+
+msgid "text_paypal"
+msgstr "PayPal"
+
+msgid "text_bank"
+msgstr "Bank Transfer"
+
+msgid "text_agree"
+msgstr'agree'><b>%s</b></a>"
+
+
+// Entry
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_email"
+msgstr "E-Mail"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "entry_company"
+msgstr "Company"
+
+msgid "entry_website"
+msgstr "Web Site"
+
+msgid "entry_address_1"
+msgstr "Address 1"
+
+msgid "entry_address_2"
+msgstr "Address 2"
+
+msgid "entry_postcode"
+msgstr "Post Code"
+
+msgid "entry_city"
+msgstr "City"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_zone"
+msgstr "Region / State"
+
+msgid "entry_tax"
+msgstr "Tax ID"
+
+msgid "entry_payment"
+msgstr "Payment Method"
+
+msgid "entry_cheque"
+msgstr "Cheque Payee Name"
+
+msgid "entry_paypal"
+msgstr "PayPal Email Account"
+
+msgid "entry_bank_name"
+msgstr "Bank Name"
+
+msgid "entry_bank_branch_number"
+msgstr "ABA/BSB number (Branch Number)"
+
+msgid "entry_bank_swift_code"
+msgstr "SWIFT Code"
+
+msgid "entry_bank_account_name"
+msgstr "Account Name"
+
+msgid "entry_bank_account_number"
+msgstr "Account Number"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_confirm"
+msgstr "Password Confirm"
+
+
+// Error
+msgid "error_exists"
+msgstr "Warning: E-Mail Address is already registered!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_email"
+msgstr "E-Mail Address does not appear to be valid!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"
+
+msgid "error_password"
+msgstr "Password must be between 4 and 20 characters!"
+
+msgid "error_confirm"
+msgstr "Password confirmation does not match password!"
+
+msgid "error_address_1"
+msgstr "Address 1 must be between 3 and 128 characters!"
+
+msgid "error_city"
+msgstr "City must be between 2 and 128 characters!"
+
+msgid "error_country"
+msgstr "Please select a country!"
+
+msgid "error_zone"
+msgstr "Please select a region / state!"
+
+msgid "error_postcode"
+msgstr "Postcode must be between 2 and 10 characters!"
+
+msgid "error_agree"
+msgstr "Warning: You must agree to the %s!"

@@ -1,0 +1,36 @@
+// Calculator
+msgid "text_checkout_title"
+msgstr "Pay in instalments"
+
+msgid "text_choose_plan"
+msgstr "Choose your plan"
+
+msgid "text_choose_deposit"
+msgstr "Choose your deposit"
+
+msgid "text_monthly_payments"
+msgstr "monthly payments of"
+
+msgid "text_months"
+msgstr "months"
+
+msgid "text_term"
+msgstr "Term"
+
+msgid "text_deposit"
+msgstr "Deposit"
+
+msgid "text_credit_amount"
+msgstr "Cost of credit"
+
+msgid "text_amount_payable"
+msgstr "Total payable"
+
+msgid "text_total_interest"
+msgstr "Total interest APR"
+
+msgid "text_monthly_installment"
+msgstr "Monthly installment"
+
+msgid "text_redirection"
+msgstr "You will be redirected to Divido to complete this finance application when you confirm your order"

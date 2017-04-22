@@ -1,0 +1,76 @@
+// Text
+msgid "text_title"
+msgstr "Credit Card / Debit Card (SagePay)"
+
+msgid "text_credit_card"
+msgstr "Card Details"
+
+msgid "text_description"
+msgstr "Items on %s Order No: %s"
+
+msgid "text_card_type"
+msgstr "Card Type: "
+
+msgid "text_card_name"
+msgstr "Card Name: "
+
+msgid "text_card_digits"
+msgstr "Last Digits: "
+
+msgid "text_card_expiry"
+msgstr "Expiry: "
+
+msgid "text_trial"
+msgstr "%s every %s %s for %s payments then "
+
+msgid "text_recurring"
+msgstr "%s every %s %s"
+
+msgid "text_length"
+msgstr " for %s payments"
+
+msgid "text_success"
+msgstr "Your payment has been authorised."
+
+msgid "text_decline"
+msgstr "Your payment has been declined."
+
+msgid "text_bank_error"
+msgstr "There was an error processing your request with the bank."
+
+msgid "text_transaction_error"
+msgstr "There was an error processing your transaction."
+
+msgid "text_generic_error"
+msgstr "There was an error processing your request."
+
+msgid "text_hash_failed"
+msgstr "Hash check failed. Do not try your payment again as the payment status is unknown. Please contact the merchant."
+
+msgid "text_link"
+msgstr"%s">here</a> to continue"
+
+msgid "text_confirm_delete"
+msgstr "Are you sure you want to delete the card?"
+
+
+// Entry
+msgid "entry_card"
+msgstr "New or Existing Card: "
+
+msgid "entry_card_existing"
+msgstr "Existing"
+
+msgid "entry_card_new"
+msgstr "New"
+
+msgid "entry_card_save"
+msgstr "Remember card details for future use"
+
+msgid "entry_cc_choice"
+msgstr "Choose an Existing Card"
+
+
+// Button
+msgid "button_delete_card"
+msgstr "Delete selected card"

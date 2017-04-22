@@ -1,0 +1,23 @@
+// Heading
+msgid "heading_title"
+msgstr "Thank you for shopping with %s .... "
+
+
+// Text
+msgid "text_title"
+msgstr "Credit Card / Debit Card (PayPoint)"
+
+msgid "text_response"
+msgstr "Response from PayPoint:"
+
+msgid "text_success"
+msgstr "... your payment was successfully received."
+
+msgid "text_success_wait"
+msgstr"%s">here</a>."
+
+msgid "text_failure"
+msgstr "... Your payment has been cancelled!"
+
+msgid "text_failure_wait"
+msgstr "%s\">here</a>."

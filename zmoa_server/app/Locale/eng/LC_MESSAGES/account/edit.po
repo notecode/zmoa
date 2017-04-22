@@ -1,0 +1,47 @@
+msgid "heading_title"
+msgstr "My Account Information"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_edit"
+msgstr "Edit Information"
+
+msgid "text_your_details"
+msgstr "Your Personal Details"
+
+msgid "text_success"
+msgstr "Success: Your account has been successfully updated."
+
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_email"
+msgstr "E-Mail"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "error_exists"
+msgstr "Warning: E-Mail address is already registered!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_email"
+msgstr "E-Mail Address does not appear to be valid!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"
+
+msgid "error_custom_field"
+msgstr "%s required!"

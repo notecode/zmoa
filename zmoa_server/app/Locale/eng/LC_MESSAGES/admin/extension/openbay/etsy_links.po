@@ -1,0 +1,71 @@
+msgid "heading_title"
+msgstr "Etsy links"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_etsy"
+msgstr "Etsy"
+
+msgid "text_loading"
+msgstr "Loading items"
+
+msgid "text_new_link"
+msgstr "Create new link"
+
+msgid "text_current_links"
+msgstr "Current links"
+
+msgid "text_link_saved"
+msgstr "Item has been linked"
+
+msgid "text_no_links"
+msgstr "You have no products linked to Etsy items"
+
+msgid "column_product"
+msgstr "Product name"
+
+msgid "column_item_id"
+msgstr "Etsy ID"
+
+msgid "column_store_stock"
+msgstr "Stock"
+
+msgid "column_etsy_stock"
+msgstr "Etsy Stock"
+
+msgid "column_status"
+msgstr "Link Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Product name"
+
+msgid "entry_etsy_id"
+msgstr "Etsy item ID"
+
+msgid "error_product"
+msgstr "Product does not exist in your store"
+
+msgid "error_stock"
+msgstr "You cannot link an item that has no stock"
+
+msgid "error_product_id"
+msgstr "Product ID required"
+
+msgid "error_etsy_id"
+msgstr "Etsy item ID required"
+
+msgid "error_link_id"
+msgstr "Link ID required"
+
+msgid "error_link_exists"
+msgstr "An active link already exists for this item"
+
+msgid "error_etsy"
+msgstr "Unable to link item, Etsy API response: "
+
+msgid "error_status"
+msgstr "Status filter required"

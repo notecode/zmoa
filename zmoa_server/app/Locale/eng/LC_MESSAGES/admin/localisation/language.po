@@ -1,0 +1,74 @@
+msgid "heading_title"
+msgstr "Languages"
+
+msgid "text_success"
+msgstr "Success: You have modified languages!"
+
+msgid "text_list"
+msgstr "Language List"
+
+msgid "text_add"
+msgstr "Add Language"
+
+msgid "text_edit"
+msgstr "Edit Language"
+
+msgid "column_name"
+msgstr "Language Name"
+
+msgid "column_code"
+msgstr "Code"
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Language Name"
+
+msgid "entry_code"
+msgstr "Code"
+
+msgid "entry_locale"
+msgstr "Locale"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_locale"
+msgstr "Example: en-US,en_US.UTF-8,en_US,en-gb,english"
+
+msgid "help_status"
+msgstr "Hide/Show it in language dropdown."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify languages!"
+
+msgid "error_exists"
+msgstr "Warning: You added before the language!"
+
+msgid "error_name"
+msgstr "Language Name must be between 3 and 32 characters!"
+
+msgid "error_code"
+msgstr "Language Code must at least 2 characters!"
+
+msgid "error_locale"
+msgstr "Locale required!"
+
+msgid "error_default"
+msgstr "Warning: This language cannot be deleted as it is currently assigned as the default store language!"
+
+msgid "error_admin"
+msgstr "Warning: This Language cannot be deleted as it is currently assigned as the administration language!"
+
+msgid "error_store"
+msgstr "Warning: This language cannot be deleted as it is currently assigned to %s stores!"
+
+msgid "error_order"
+msgstr "Warning: This language cannot be deleted as it is currently assigned to %s orders!"

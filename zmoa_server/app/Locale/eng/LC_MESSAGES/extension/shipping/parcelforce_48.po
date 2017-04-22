@@ -1,0 +1,15 @@
+// Text
+msgid "text_title"
+msgstr "Parcelforce 48"
+
+msgid "text_description"
+msgstr "Parcelforce 48"
+
+msgid "text_weight"
+msgstr "Weight:"
+
+msgid "text_insurance"
+msgstr "Insured upto:"
+
+msgid "text_time"
+msgstr "Estimated Time: Within 48 Hours"

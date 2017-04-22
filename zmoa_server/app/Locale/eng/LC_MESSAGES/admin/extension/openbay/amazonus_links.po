@@ -1,0 +1,62 @@
+msgid "heading_title"
+msgstr "Item links"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_amazon"
+msgstr "Amazon US"
+
+msgid "text_desc1"
+msgstr "Linking your items will allow for stock control on your Amazon listings."
+
+msgid "text_desc2"
+msgstr "For each item that is updated the local stock (the stock available in your OpenCart store) will update your Amazon listing"
+
+msgid "text_desc3"
+msgstr "You can link items manually by entering Amazon SKU and product name or load all unlinked products and then enter amazon SKUs. (Uploading products from OpenCart to Amazon will automatically add links)"
+
+msgid "text_new_link"
+msgstr "New link"
+
+msgid "text_autocomplete_product"
+msgstr "Product (Auto complete from name)"
+
+msgid "text_amazon_sku"
+msgstr "Amazon item SKU"
+
+msgid "text_action"
+msgstr "Action"
+
+msgid "text_linked_items"
+msgstr "Linked items"
+
+msgid "text_unlinked_items"
+msgstr "Unlinked items"
+
+msgid "text_name"
+msgstr "Name"
+
+msgid "text_model"
+msgstr "Model"
+
+msgid "text_combination"
+msgstr "Variant Combination"
+
+msgid "text_sku"
+msgstr "Product SKU"
+
+msgid "text_sku_variant"
+msgstr "Variant SKU"
+
+msgid "button_load"
+msgstr "Load"
+
+msgid "error_empty_sku"
+msgstr "Amazon SKU can not be empty!"
+
+msgid "error_empty_name"
+msgstr "Product name can not be empty!"
+
+msgid "error_no_product_exists"
+msgstr "Product does not exist. Please use auto complete values."

@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Refund Transaction"
+
+msgid "text_pp_express"
+msgstr "PayPal Express Checkout"
+
+msgid "text_current_refunds"
+msgstr "Refunds have already been done for this transaction. The max refund is"
+
+msgid "text_refund"
+msgstr "Refund"
+
+msgid "entry_transaction_id"
+msgstr "Transaction ID"
+
+msgid "entry_full_refund"
+msgstr "Full refund"
+
+msgid "entry_amount"
+msgstr "Amount"
+
+msgid "entry_message"
+msgstr "Message"
+
+msgid "button_refund"
+msgstr "Issue refund"
+
+msgid "error_partial_amt"
+msgstr "You must enter a partial refund amount"
+
+msgid "error_data"
+msgstr "Data missing from request"

@@ -1,0 +1,194 @@
+msgid "heading_title"
+msgstr "Search Transactions"
+
+msgid "text_pp_express"
+msgstr "PayPal Express Checkout"
+
+msgid "text_date_search"
+msgstr "Search by date"
+
+msgid "text_searching"
+msgstr "Searching"
+
+msgid "text_name"
+msgstr "Name"
+
+msgid "text_buyer_info"
+msgstr "Buyer information"
+
+msgid "text_view"
+msgstr "View"
+
+msgid "text_format"
+msgstr "Format"
+
+msgid "column_date"
+msgstr "Date"
+
+msgid "column_type"
+msgstr "Type"
+
+msgid "column_email"
+msgstr "Email"
+
+msgid "column_name"
+msgstr "Name"
+
+msgid "column_transid"
+msgstr "Transaction ID"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_currency"
+msgstr "Currency"
+
+msgid "column_amount"
+msgstr "Amount"
+
+msgid "column_fee"
+msgstr "Fee"
+
+msgid "column_netamt"
+msgstr "Net Amount"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_trans_all"
+msgstr "All"
+
+msgid "entry_trans_sent"
+msgstr "Sent"
+
+msgid "entry_trans_received"
+msgstr "Received"
+
+msgid "entry_trans_masspay"
+msgstr "Mass Pay"
+
+msgid "entry_trans_money_req"
+msgstr "Money Request"
+
+msgid "entry_trans_funds_add"
+msgstr "Funds Added"
+
+msgid "entry_trans_funds_with"
+msgstr "Funds Withdrawn"
+
+msgid "entry_trans_referral"
+msgstr "Referral"
+
+msgid "entry_trans_fee"
+msgstr "Fee"
+
+msgid "entry_trans_subscription"
+msgstr "Subscription"
+
+msgid "entry_trans_dividend"
+msgstr "Dividend"
+
+msgid "entry_trans_billpay"
+msgstr "Bill Pay"
+
+msgid "entry_trans_refund"
+msgstr "Refund"
+
+msgid "entry_trans_conv"
+msgstr "Currency Conversion"
+
+msgid "entry_trans_bal_trans"
+msgstr "Balance Transfer"
+
+msgid "entry_trans_reversal"
+msgstr "Reversal"
+
+msgid "entry_trans_shipping"
+msgstr "Shipping"
+
+msgid "entry_trans_bal_affect"
+msgstr "Balance Affecting"
+
+msgid "entry_trans_echeque"
+msgstr "E Check"
+
+msgid "entry_date"
+msgstr "Date"
+
+msgid "entry_date_start"
+msgstr "Start"
+
+msgid "entry_date_end"
+msgstr "End"
+
+msgid "entry_date_to"
+msgstr "to"
+
+msgid "entry_transaction"
+msgstr "Transaction"
+
+msgid "entry_transaction_type"
+msgstr "Type"
+
+msgid "entry_transaction_status"
+msgstr "Status"
+
+msgid "entry_email"
+msgstr "Email"
+
+msgid "entry_email_buyer"
+msgstr "Buyer"
+
+msgid "entry_email_merchant"
+msgstr "Receiver"
+
+msgid "entry_receipt"
+msgstr "Receipt ID"
+
+msgid "entry_transaction_id"
+msgstr "Transaction ID"
+
+msgid "entry_invoice_no"
+msgstr "Invoice number"
+
+msgid "entry_auction"
+msgstr "Auction item number"
+
+msgid "entry_amount"
+msgstr "Amount"
+
+msgid "entry_recurring_id"
+msgstr "Recurring Profile ID"
+
+msgid "entry_salutation"
+msgstr "Salutation"
+
+msgid "entry_firstname"
+msgstr "First"
+
+msgid "entry_middlename"
+msgstr "Middle"
+
+msgid "entry_lastname"
+msgstr "Last"
+
+msgid "entry_suffix"
+msgstr "Suffix"
+
+msgid "entry_status_all"
+msgstr "All"
+
+msgid "entry_status_pending"
+msgstr "Pending"
+
+msgid "entry_status_processing"
+msgstr "Processing"
+
+msgid "entry_status_success"
+msgstr "Success"
+
+msgid "entry_status_denied"
+msgstr "Denied"
+
+msgid "entry_status_reversed"
+msgstr "Reversed"

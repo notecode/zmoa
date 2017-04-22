@@ -1,0 +1,93 @@
+// Heading
+msgid "heading_title"
+msgstr "My Account Information"
+
+
+// Text
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_edit"
+msgstr "Edit Information"
+
+msgid "text_your_details"
+msgstr "Your Personal Details"
+
+msgid "text_your_address"
+msgstr "Your Address"
+
+msgid "text_success"
+msgstr "Success: Your account has been successfully updated."
+
+
+// Entry
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_email"
+msgstr "E-Mail"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "entry_company"
+msgstr "Company"
+
+msgid "entry_website"
+msgstr "Web Site"
+
+msgid "entry_address_1"
+msgstr "Address 1"
+
+msgid "entry_address_2"
+msgstr "Address 2"
+
+msgid "entry_postcode"
+msgstr "Post Code"
+
+msgid "entry_city"
+msgstr "City"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_zone"
+msgstr "Region / State"
+
+
+// Error
+msgid "error_exists"
+msgstr "Warning: E-Mail address is already registered!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_email"
+msgstr "E-Mail Address does not appear to be valid!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"
+
+msgid "error_address_1"
+msgstr "Address 1 must be between 3 and 128 characters!"
+
+msgid "error_city"
+msgstr "City must be between 2 and 128 characters!"
+
+msgid "error_country"
+msgstr "Please select a country!"
+
+msgid "error_zone"
+msgstr "Please select a region / state!"
+
+msgid "error_postcode"
+msgstr "Postcode must be between 2 and 10 characters!"

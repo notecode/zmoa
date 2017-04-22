@@ -1,0 +1,62 @@
+msgid "heading_title"
+msgstr "eBay"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_dashboard"
+msgstr "eBay Dashboard"
+
+msgid "text_success"
+msgstr "You have saved your changes to the eBay extension"
+
+msgid "text_heading_settings"
+msgstr "Settings"
+
+msgid "text_heading_sync"
+msgstr "Synchronise"
+
+msgid "text_heading_subscription"
+msgstr "Change plan"
+
+msgid "text_heading_usage"
+msgstr "Usage"
+
+msgid "text_heading_links"
+msgstr "Item links"
+
+msgid "text_heading_item_import"
+msgstr "Import items"
+
+msgid "text_heading_order_import"
+msgstr "Import orders"
+
+msgid "text_heading_adds"
+msgstr "Installed add-ons"
+
+msgid "text_heading_summary"
+msgstr "eBay summary"
+
+msgid "text_heading_profile"
+msgstr "Profiles"
+
+msgid "text_heading_template"
+msgstr "Templates"
+
+msgid "text_heading_ebayacc"
+msgstr "eBay account"
+
+msgid "text_heading_register"
+msgstr "Register here"
+
+msgid "error_category_nosuggestions"
+msgstr "Could not load any suggested categories"
+
+msgid "error_loading_catalog"
+msgstr "eBay catalog search failed"
+
+msgid "error_generic_fail"
+msgstr "An unknown error just happened!"
+
+msgid "error_no_products"
+msgstr "No products found"

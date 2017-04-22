@@ -1,0 +1,71 @@
+msgid "heading_title"
+msgstr "Countries"
+
+msgid "text_success"
+msgstr "Success: You have modified countries!"
+
+msgid "text_list"
+msgstr "Country List"
+
+msgid "text_add"
+msgstr "Add Country"
+
+msgid "text_edit"
+msgstr "Edit Country"
+
+msgid "column_name"
+msgstr "Country Name"
+
+msgid "column_iso_code_2"
+msgstr "ISO Code (2)"
+
+msgid "column_iso_code_3"
+msgstr "ISO Code (3)"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Country Name"
+
+msgid "entry_iso_code_2"
+msgstr "ISO Code (2)"
+
+msgid "entry_iso_code_3"
+msgstr "ISO Code (3)"
+
+msgid "entry_address_format"
+msgstr "Address Format"
+
+msgid "entry_postcode_required"
+msgstr "Postcode Required"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "help_address_format"
+msgstr "First Name = {firstname}<br />Last Name = {lastname}<br />Company = {company}<br />Address 1 = {address_1}<br />Address 2 = {address_2}<br />City = {city}<br />Postcode = {postcode}<br />Zone = {zone}<br />Zone Code = {zone_code}<br />Country = {country}"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify countries!"
+
+msgid "error_name"
+msgstr "Country Name must be between 3 and 128 characters!"
+
+msgid "error_default"
+msgstr "Warning: This country cannot be deleted as it is currently assigned as the default store country!"
+
+msgid "error_store"
+msgstr "Warning: This country cannot be deleted as it is currently assigned to %s stores!"
+
+msgid "error_address"
+msgstr "Warning: This country cannot be deleted as it is currently assigned to %s address book entries!"
+
+msgid "error_affiliate"
+msgstr "Warning: This country cannot be deleted as it is currently assigned to %s affiliates!"
+
+msgid "error_zone"
+msgstr "Warning: This country cannot be deleted as it is currently assigned to %s zones!"
+
+msgid "error_zone_to_geo_zone"
+msgstr "Warning: This country cannot be deleted as it is currently assigned to %s zones to geo zones!"

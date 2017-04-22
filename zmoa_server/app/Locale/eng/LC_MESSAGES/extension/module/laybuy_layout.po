@@ -1,0 +1,64 @@
+// Heading
+msgid "heading_title"
+msgstr "Lay-Buy Information"
+
+
+// Text
+msgid "text_reference_info"
+msgstr "Reference Information"
+
+msgid "text_laybuy_ref_no"
+msgstr "Lay-Buy Reference ID:"
+
+msgid "text_paypal_profile_id"
+msgstr "PayPal Profile ID:"
+
+msgid "text_payment_plan"
+msgstr "Payment Plan"
+
+msgid "text_status"
+msgstr "Status:"
+
+msgid "text_amount"
+msgstr "Amount:"
+
+msgid "text_downpayment_percent"
+msgstr "Down Payment Percent:"
+
+msgid "text_months"
+msgstr "Months:"
+
+msgid "text_downpayment_amount"
+msgstr "Down Payment Amount:"
+
+msgid "text_payment_amounts"
+msgstr "Payment Amounts:"
+
+msgid "text_first_payment_due"
+msgstr "First Payment Due:"
+
+msgid "text_last_payment_due"
+msgstr "Last Payment Due:"
+
+msgid "text_downpayment"
+msgstr "Down Payment"
+
+msgid "text_month"
+msgstr "Month"
+
+
+// Column
+msgid "column_instalment"
+msgstr "Instalment"
+
+msgid "column_amount"
+msgstr "Amount"
+
+msgid "column_date"
+msgstr "Date"
+
+msgid "column_pp_trans_id"
+msgstr "PayPal Transaction ID"
+
+msgid "column_status"
+msgstr "Status"

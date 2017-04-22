@@ -1,0 +1,20 @@
+msgid "heading_title"
+msgstr "Store"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified store module!"
+
+msgid "text_edit"
+msgstr "Edit Store Module"
+
+msgid "entry_admin"
+msgstr "Admin Users Only"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify store module!"

@@ -1,0 +1,11 @@
+// Text
+msgid "text_title"
+msgstr "Credit or Debit Card"
+
+msgid "text_secure_connection"
+msgstr "Creating a secure connection..."
+
+
+// Error
+msgid "error_connection"
+msgstr "Could not connect to PayPal. Please contact the shop\"s administrator for assistance or choose a different payment method."

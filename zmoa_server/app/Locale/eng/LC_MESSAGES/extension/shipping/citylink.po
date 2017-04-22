@@ -1,0 +1,6 @@
+// Text
+msgid "text_title"
+msgstr "Citylink"
+
+msgid "text_weight"
+msgstr "Weight:"

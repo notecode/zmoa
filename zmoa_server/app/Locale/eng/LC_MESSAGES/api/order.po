@@ -1,0 +1,38 @@
+// Text
+msgid "text_success"
+msgstr "Success: You have modified orders!"
+
+
+// Error
+msgid "error_permission"
+msgstr "Warning: You do not have permission to access the API!"
+
+msgid "error_customer"
+msgstr "Warning: Customer details needs to be set!"
+
+msgid "error_payment_address"
+msgstr "Warning: Payment address required!"
+
+msgid "error_payment_method"
+msgstr "Warning: Payment method required!"
+
+msgid "error_no_payment"
+msgstr "Warning: No Payment options are available!"
+
+msgid "error_shipping_address"
+msgstr "Warning: Shipping address required!"
+
+msgid "error_shipping_method"
+msgstr "Warning: Shipping method required!"
+
+msgid "error_no_shipping"
+msgstr "Warning: No Shipping options are available!"
+
+msgid "error_stock"
+msgstr "Warning: Products marked with *** are not available in the desired quantity or not in stock!"
+
+msgid "error_minimum"
+msgstr "Warning: Minimum order amount for %s is %s!"
+
+msgid "error_not_found"
+msgstr "Warning: Order could not be found!"

@@ -1,0 +1,6 @@
+// Text
+msgid "text_title"
+msgstr "PiliExpress"
+
+msgid "text_description"
+msgstr "PiliExpress (仅限霹雳爸爸支付, Only for Pilibaba checkout)"

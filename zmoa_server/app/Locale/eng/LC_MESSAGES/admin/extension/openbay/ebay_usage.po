@@ -1,0 +1,14 @@
+msgid "heading_title"
+msgstr "Usage"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_ebay"
+msgstr "eBay"
+
+msgid "text_usage"
+msgstr "Your account usage"
+
+msgid "error_ajax_load"
+msgstr "Sorry, could not get a response. Try later."

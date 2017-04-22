@@ -1,0 +1,29 @@
+msgid "heading_title"
+msgstr "Free Shipping"
+
+msgid "text_shipping"
+msgstr "Shipping"
+
+msgid "text_success"
+msgstr "Success: You have modified free shipping!"
+
+msgid "text_edit"
+msgstr "Edit Free Shipping"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_geo_zone"
+msgstr "Geo Zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_total"
+msgstr "Sub-Total amount needed before the free shipping module becomes available."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify free shipping!"

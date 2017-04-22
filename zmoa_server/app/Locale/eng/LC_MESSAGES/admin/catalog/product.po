@@ -1,0 +1,287 @@
+msgid "heading_title"
+msgstr "Products"
+
+msgid "text_success"
+msgstr "Success: You have modified products!"
+
+msgid "text_list"
+msgstr "Product List"
+
+msgid "text_add"
+msgstr "Add Product"
+
+msgid "text_edit"
+msgstr "Edit Product"
+
+msgid "text_plus"
+msgstr "+"
+
+msgid "text_minus"
+msgstr "-"
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "text_option"
+msgstr "Option"
+
+msgid "text_option_value"
+msgstr "Option Value"
+
+msgid "text_percent"
+msgstr "Percentage"
+
+msgid "text_amount"
+msgstr "Fixed Amount"
+
+msgid "column_name"
+msgstr "Product Name"
+
+msgid "column_model"
+msgstr "Model"
+
+msgid "column_image"
+msgstr "Image"
+
+msgid "column_price"
+msgstr "Price"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Product Name"
+
+msgid "entry_description"
+msgstr "Description"
+
+msgid "entry_meta_title"
+msgstr "Meta Tag Title"
+
+msgid "entry_meta_keyword"
+msgstr "Meta Tag Keywords"
+
+msgid "entry_meta_description"
+msgstr "Meta Tag Description"
+
+msgid "entry_keyword"
+msgstr "SEO URL"
+
+msgid "entry_model"
+msgstr "Model"
+
+msgid "entry_sku"
+msgstr "SKU"
+
+msgid "entry_upc"
+msgstr "UPC"
+
+msgid "entry_ean"
+msgstr "EAN"
+
+msgid "entry_jan"
+msgstr "JAN"
+
+msgid "entry_isbn"
+msgstr "ISBN"
+
+msgid "entry_mpn"
+msgstr "MPN"
+
+msgid "entry_location"
+msgstr "Location"
+
+msgid "entry_shipping"
+msgstr "Requires Shipping"
+
+msgid "entry_manufacturer"
+msgstr "Manufacturer"
+
+msgid "entry_store"
+msgstr "Stores"
+
+msgid "entry_date_available"
+msgstr "Date Available"
+
+msgid "entry_quantity"
+msgstr "Quantity"
+
+msgid "entry_minimum"
+msgstr "Minimum Quantity"
+
+msgid "entry_stock_status"
+msgstr "Out Of Stock Status"
+
+msgid "entry_price"
+msgstr "Price"
+
+msgid "entry_tax_class"
+msgstr "Tax Class"
+
+msgid "entry_points"
+msgstr "Points"
+
+msgid "entry_option_points"
+msgstr "Points"
+
+msgid "entry_subtract"
+msgstr "Subtract Stock"
+
+msgid "entry_weight_class"
+msgstr "Weight Class"
+
+msgid "entry_weight"
+msgstr "Weight"
+
+msgid "entry_dimension"
+msgstr "Dimensions (L x W x H)"
+
+msgid "entry_length_class"
+msgstr "Length Class"
+
+msgid "entry_length"
+msgstr "Length"
+
+msgid "entry_width"
+msgstr "Width"
+
+msgid "entry_height"
+msgstr "Height"
+
+msgid "entry_image"
+msgstr "Image"
+
+msgid "entry_additional_image"
+msgstr "Additional Images"
+
+msgid "entry_customer_group"
+msgstr "Customer Group"
+
+msgid "entry_date_start"
+msgstr "Date Start"
+
+msgid "entry_date_end"
+msgstr "Date End"
+
+msgid "entry_priority"
+msgstr "Priority"
+
+msgid "entry_attribute"
+msgstr "Attribute"
+
+msgid "entry_attribute_group"
+msgstr "Attribute Group"
+
+msgid "entry_text"
+msgstr "Text"
+
+msgid "entry_option"
+msgstr "Option"
+
+msgid "entry_option_value"
+msgstr "Option Value"
+
+msgid "entry_required"
+msgstr "Required"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "entry_category"
+msgstr "Categories"
+
+msgid "entry_filter"
+msgstr "Filters"
+
+msgid "entry_download"
+msgstr "Downloads"
+
+msgid "entry_related"
+msgstr "Related Products"
+
+msgid "entry_tag"
+msgstr "Product Tags"
+
+msgid "entry_reward"
+msgstr "Reward Points"
+
+msgid "entry_layout"
+msgstr "Layout Override"
+
+msgid "entry_recurring"
+msgstr "Recurring Profile"
+
+msgid "help_keyword"
+msgstr "Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique."
+
+msgid "help_sku"
+msgstr "Stock Keeping Unit"
+
+msgid "help_upc"
+msgstr "Universal Product Code"
+
+msgid "help_ean"
+msgstr "European Article Number"
+
+msgid "help_jan"
+msgstr "Japanese Article Number"
+
+msgid "help_isbn"
+msgstr "International Standard Book Number"
+
+msgid "help_mpn"
+msgstr "Manufacturer Part Number"
+
+msgid "help_manufacturer"
+msgstr "(Autocomplete)"
+
+msgid "help_minimum"
+msgstr "Force a minimum ordered amount"
+
+msgid "help_stock_status"
+msgstr "Status shown when a product is out of stock"
+
+msgid "help_points"
+msgstr "Number of points needed to buy this item. If you don\'t want this product to be purchased with points leave as 0."
+
+msgid "help_category"
+msgstr "(Autocomplete)"
+
+msgid "help_filter"
+msgstr "(Autocomplete)"
+
+msgid "help_download"
+msgstr "(Autocomplete)"
+
+msgid "help_related"
+msgstr "(Autocomplete)"
+
+msgid "help_tag"
+msgstr "Comma separated"
+
+msgid "error_warning"
+msgstr "Warning: Please check the form carefully for errors!"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify products!"
+
+msgid "error_name"
+msgstr "Product Name must be greater than 3 and less than 255 characters!"
+
+msgid "error_meta_title"
+msgstr "Meta Title must be greater than 3 and less than 255 characters!"
+
+msgid "error_model"
+msgstr "Product Model must be greater than 1 and less than 64 characters!"
+
+msgid "error_keyword"
+msgstr "SEO URL already in use!"

@@ -1,0 +1,24 @@
+// Text
+msgid "text_paid_amazon"
+msgstr "Paid on Amazon"
+
+msgid "text_total_shipping"
+msgstr "Shipping"
+
+msgid "text_total_shipping_tax"
+msgstr "Shipping tax"
+
+msgid "text_total_giftwrap"
+msgstr "Gift wrap"
+
+msgid "text_total_giftwrap_tax"
+msgstr "Gift wrap tax"
+
+msgid "text_total_sub"
+msgstr "Sub-total"
+
+msgid "text_tax"
+msgstr "Tax"
+
+msgid "text_total"
+msgstr "Total"

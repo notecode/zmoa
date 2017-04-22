@@ -1,0 +1,3 @@
+// Text
+msgid "text_handling"
+msgstr "Handling Fee"

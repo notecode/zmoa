@@ -1,0 +1,72 @@
+// Text
+msgid "text_title"
+msgstr "Fedex"
+
+msgid "text_weight"
+msgstr "Weight:"
+
+msgid "text_eta"
+msgstr "Estimated Time:"
+
+msgid "text_europe_first_international_priority"
+msgstr "Europe First International Priority"
+
+msgid "text_fedex_1_day_freight"
+msgstr "Fedex 1 Day Freight"
+
+msgid "text_fedex_2_day"
+msgstr "Fedex 2 Day"
+
+msgid "text_fedex_2_day_am"
+msgstr "Fedex 2 Day AM"
+
+msgid "text_fedex_2_day_freight"
+msgstr "Fedex 2 Day Freight"
+
+msgid "text_fedex_3_day_freight"
+msgstr "Fedex 3 Day Freight"
+
+msgid "text_fedex_express_saver"
+msgstr "Fedex Express Saver"
+
+msgid "text_fedex_first_freight"
+msgstr "Fedex First Freight"
+
+msgid "text_fedex_freight_economy"
+msgstr "Fedex Freight Economy"
+
+msgid "text_fedex_freight_priority"
+msgstr "Fedex Freight Priority"
+
+msgid "text_fedex_ground"
+msgstr "Fedex Ground"
+
+msgid "text_first_overnight"
+msgstr "First Overnight"
+
+msgid "text_ground_home_delivery"
+msgstr "Ground Home Delivery"
+
+msgid "text_international_economy"
+msgstr "International Economy"
+
+msgid "text_international_economy_freight"
+msgstr "International Economy Freight"
+
+msgid "text_international_first"
+msgstr "International First"
+
+msgid "text_international_priority"
+msgstr "International Priority"
+
+msgid "text_international_priority_freight"
+msgstr "International Priority Freight"
+
+msgid "text_priority_overnight"
+msgstr "Priority Overnight"
+
+msgid "text_smart_post"
+msgstr "Smart Post"
+
+msgid "text_standard_overnight"
+msgstr "Standard Overnight"

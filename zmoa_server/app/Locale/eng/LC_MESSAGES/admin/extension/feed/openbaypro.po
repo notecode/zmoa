@@ -1,0 +1,8 @@
+msgid "heading_title"
+msgstr "OpenBay Pro"
+
+msgid "text_module"
+msgstr "Modules"
+
+msgid "text_installed"
+msgstr "OpenBay Pro module is now installed. It is available under Extensions -> OpenBay Pro"

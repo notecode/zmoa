@@ -1,0 +1,53 @@
+msgid "heading_title"
+msgstr "My Account"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_my_account"
+msgstr "My Account"
+
+msgid "text_my_orders"
+msgstr "My Orders"
+
+msgid "text_my_newsletter"
+msgstr "Newsletter"
+
+msgid "text_edit"
+msgstr "Edit your account information"
+
+msgid "text_password"
+msgstr "Change your password"
+
+msgid "text_address"
+msgstr "Modify your address book entries"
+
+msgid "text_credit_card"
+msgstr "Manage Stored Credit Cards"
+
+msgid "text_wishlist"
+msgstr "Modify your wish list"
+
+msgid "text_order"
+msgstr "View your order history"
+
+msgid "text_download"
+msgstr "Downloads"
+
+msgid "text_reward"
+msgstr "Your Reward Points"
+
+msgid "text_return"
+msgstr "View your return requests"
+
+msgid "text_transaction"
+msgstr "Your Transactions"
+
+msgid "text_newsletter"
+msgstr "Subscribe / unsubscribe to newsletter"
+
+msgid "text_recurring"
+msgstr "Recurring payments"
+
+msgid "text_transactions"
+msgstr "Transactions"

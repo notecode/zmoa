@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Etsy"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_dashboard"
+msgstr "Etsy Dashboard"
+
+msgid "text_success"
+msgstr "You have saved your changes to the Etsy extension"
+
+msgid "text_heading_settings"
+msgstr "Settings"
+
+msgid "text_heading_sync"
+msgstr "Synchronise"
+
+msgid "text_heading_register"
+msgstr "Register here"
+
+msgid "text_heading_products"
+msgstr "Item links"
+
+msgid "text_heading_listings"
+msgstr "Etsy listings"
+
+msgid "error_generic_fail"
+msgstr "An unknown error just happened!"
+
+msgid "error_permission"
+msgstr "You do not have permission to Etsy settings"

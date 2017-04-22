@@ -1,0 +1,26 @@
+msgid "heading_title"
+msgstr "Dashboard"
+
+msgid "text_success"
+msgstr "Success: You have modified dashboards!"
+
+msgid "text_list"
+msgstr "Dashboard List"
+
+msgid "column_name"
+msgstr "Dashboard Name"
+
+msgid "column_width"
+msgstr "Width"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify dashboards!"

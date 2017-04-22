@@ -1,0 +1,251 @@
+msgid "heading_title"
+msgstr "Globalpay Redirect"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Globalpay account details!"
+
+msgid "text_edit"
+msgstr "Edit Globalpay Redirect"
+
+msgid "text_live"
+msgstr "Live"
+
+msgid "text_demo"
+msgstr "Demo"
+
+msgid "text_card_type"
+msgstr "Card type"
+
+msgid "text_enabled"
+msgstr "Enabled"
+
+msgid "text_use_default"
+msgstr "Use default"
+
+msgid "text_merchant_id"
+msgstr "Merchant ID"
+
+msgid "text_subaccount"
+msgstr "Subaccount"
+
+msgid "text_secret"
+msgstr "Shared secret"
+
+msgid "text_card_visa"
+msgstr "Visa"
+
+msgid "text_card_master"
+msgstr "Mastercard"
+
+msgid "text_card_amex"
+msgstr "American Express"
+
+msgid "text_card_switch"
+msgstr "Switch/Maestro"
+
+msgid "text_card_laser"
+msgstr "Laser"
+
+msgid "text_card_diners"
+msgstr "Diners"
+
+msgid "text_capture_ok"
+msgstr "Capture was successful"
+
+msgid "text_capture_ok_order"
+msgstr "Capture was successful, order status updated to success - settled"
+
+msgid "text_rebate_ok"
+msgstr "Rebate was successful"
+
+msgid "text_rebate_ok_order"
+msgstr "Rebate was successful, order status updated to rebated"
+
+msgid "text_void_ok"
+msgstr "Void was successful, order status updated to voided"
+
+msgid "text_settle_auto"
+msgstr "Auto"
+
+msgid "text_settle_delayed"
+msgstr "Delayed"
+
+msgid "text_settle_multi"
+msgstr "Multi"
+
+msgid "text_url_message"
+msgstr "You must supply the store URL to your Globalpay account manager before going live"
+
+msgid "text_payment_info"
+msgstr "Payment information"
+
+msgid "text_capture_status"
+msgstr "Payment captured"
+
+msgid "text_void_status"
+msgstr "Payment voided"
+
+msgid "text_rebate_status"
+msgstr "Payment rebated"
+
+msgid "text_order_ref"
+msgstr "Order ref"
+
+msgid "text_order_total"
+msgstr "Total authorised"
+
+msgid "text_total_captured"
+msgstr "Total captured"
+
+msgid "text_transactions"
+msgstr "Transactions"
+
+msgid "text_column_amount"
+msgstr "Amount"
+
+msgid "text_column_type"
+msgstr "Type"
+
+msgid "text_column_date_added"
+msgstr "Created"
+
+msgid "text_confirm_void"
+msgstr "Are you sure you want to void the payment?"
+
+msgid "text_confirm_capture"
+msgstr "Are you sure you want to capture the payment?"
+
+msgid "text_confirm_rebate"
+msgstr "Are you sure you want to rebate the payment?"
+
+msgid "text_globalpay"
+msgstr "<a target="_blank" href="https://resourcecentre.globaliris.com/getting-started.php?id=OpenCart"><img src="view/image/payment/globalpay.png" alt="Globalpay" title="Globalpay" style="border: 1px solid #EEEEEE;" /></a>"
+
+msgid "entry_merchant_id"
+msgstr "Merchant ID"
+
+msgid "entry_secret"
+msgstr "Shared secret"
+
+msgid "entry_rebate_password"
+msgstr "Rebate password"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_sort_order"
+msgstr "Sort order"
+
+msgid "entry_geo_zone"
+msgstr "Geo zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_debug"
+msgstr "Debug logging"
+
+msgid "entry_live_demo"
+msgstr "Live / Demo"
+
+msgid "entry_auto_settle"
+msgstr "Settlement type"
+
+msgid "entry_card_select"
+msgstr "Select card"
+
+msgid "entry_tss_check"
+msgstr "TSS checks"
+
+msgid "entry_live_url"
+msgstr "Live connection URL"
+
+msgid "entry_demo_url"
+msgstr "Demo connection URL"
+
+msgid "entry_status_success_settled"
+msgstr "Success - settled"
+
+msgid "entry_status_success_unsettled"
+msgstr "Success - not settled"
+
+msgid "entry_status_decline"
+msgstr "Decline"
+
+msgid "entry_status_decline_pending"
+msgstr "Decline - offline auth"
+
+msgid "entry_status_decline_stolen"
+msgstr "Decline - lost or stolen card"
+
+msgid "entry_status_decline_bank"
+msgstr "Decline - bank error"
+
+msgid "entry_status_void"
+msgstr "Voided"
+
+msgid "entry_status_rebate"
+msgstr "Rebated"
+
+msgid "entry_notification_url"
+msgstr "Notification URL"
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active"
+
+msgid "help_card_select"
+msgstr "Ask the user to choose their card type before they are redirected"
+
+msgid "help_notification"
+msgstr "You need to supply this URL to Globalpay to get payment notifications"
+
+msgid "help_debug"
+msgstr "Enabling debug will write sensitive data to a log file. You should always disable unless instructed otherwise"
+
+msgid "help_dcc_settle"
+msgstr "If your subaccount is DCC enabled you must use Autosettle"
+
+msgid "tab_api"
+msgstr "API Details"
+
+msgid "tab_account"
+msgstr "Accounts"
+
+msgid "tab_order_status"
+msgstr "Order status"
+
+msgid "tab_payment"
+msgstr "Payment settings"
+
+msgid "tab_advanced"
+msgstr "Advanced"
+
+msgid "button_capture"
+msgstr "Capture"
+
+msgid "button_rebate"
+msgstr "Rebate / refund"
+
+msgid "button_void"
+msgstr "Void"
+
+msgid "error_merchant_id"
+msgstr "Merchant ID is required"
+
+msgid "error_secret"
+msgstr "Shared secret is required"
+
+msgid "error_live_url"
+msgstr "Live URL is required"
+
+msgid "error_demo_url"
+msgstr "Demo URL is required"
+
+msgid "error_data_missing"
+msgstr "Data missing"
+
+msgid "error_use_select_card"
+msgstr "You must have "Select Card" enabled for subaccount routing by card type to work"

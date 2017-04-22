@@ -1,0 +1,93 @@
+// Heading
+msgid "heading_title"
+msgid  "Order History"
+
+
+// Text
+msgid "text_account"
+msgid  "Account"
+
+msgid "text_order"
+msgid  "Order Information"
+
+msgid "text_order_detail"
+msgid  "Order Details"
+
+msgid "text_invoice_no"
+msgid  "Invoice No.:"
+
+msgid "text_order_id"
+msgid  "Order ID:"
+
+msgid "text_date_added"
+msgid  "Date Added:"
+
+msgid "text_shipping_address"
+msgid  "Shipping Address"
+
+msgid "text_shipping_method"
+msgid  "Shipping Method:"
+
+msgid "text_payment_address"
+msgid  "Payment Address"
+
+msgid "text_payment_method"
+msgid  "Payment Method:"
+
+msgid "text_comment"
+msgid  "Order Comments"
+
+msgid "text_history"
+msgid  "Order History"
+
+msgid "text_success"
+msgid "%s">shopping cart</a>!"
+
+msgid "text_empty"
+msgid  "You have not made any previous orders!"
+
+msgid "text_error"
+msgid  "The order you requested could not be found!"
+
+
+// Column
+msgid "column_order_id"
+msgid  "Order ID"
+
+msgid "column_customer"
+msgid  "Customer"
+
+msgid "column_product"
+msgid  "No. of Products"
+
+msgid "column_name"
+msgid  "Product Name"
+
+msgid "column_model"
+msgid  "Model"
+
+msgid "column_quantity"
+msgid  "Quantity"
+
+msgid "column_price"
+msgid  "Price"
+
+msgid "column_total"
+msgid  "Total"
+
+msgid "column_action"
+msgid  "Action"
+
+msgid "column_date_added"
+msgid  "Date Added"
+
+msgid "column_status"
+msgid  "Status"
+
+msgid "column_comment"
+msgid  "Comment"
+
+
+// Error
+msgid "error_reorder"
+msgid  "%s is not currently available to be reordered."

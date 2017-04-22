@@ -1,0 +1,281 @@
+msgid "heading_title"
+msgstr "Profiles"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_ebay"
+msgstr "eBay"
+
+//Tabs
+
+msgid "tab_returns"
+msgstr "Returns"
+
+msgid "tab_template"
+msgstr "Template"
+
+msgid "tab_gallery"
+msgstr "Gallery"
+
+msgid "tab_settings"
+msgstr "Settings"
+
+//Shipping Profile
+
+msgid "text_shipping_dispatch_country"
+msgstr "Shipping from country"
+
+msgid "text_shipping_postcode"
+msgstr "Postal/Zip code location"
+
+msgid "text_shipping_location"
+msgstr "Town or State location"
+
+msgid "text_shipping_despatch"
+msgstr "Despatch time"
+
+msgid "text_shipping_despatch_help"
+msgstr "This is the maximum number of days you will take to send the item"
+
+msgid "text_shipping_nat"
+msgstr "National shipping services"
+
+msgid "text_shipping_intnat"
+msgstr "International shipping services"
+
+msgid "text_shipping_first"
+msgstr "First item"
+
+msgid "text_shipping_add"
+msgstr "Additional items"
+
+msgid "text_shipping_service"
+msgstr "Service"
+
+msgid "text_shipping_in_desc"
+msgstr "Freight info in description"
+
+msgid "text_shipping_getitfast"
+msgstr "Get It Fast!"
+
+msgid "text_shipping_zones"
+msgstr "Ship to zones"
+
+msgid "text_shipping_worldwide"
+msgstr "Worldwide"
+
+msgid "text_shipping_type_nat"
+msgstr "National shipping type"
+
+msgid "text_shipping_type_int"
+msgstr "International shipping type"
+
+msgid "text_shipping_flat"
+msgstr "Flat rate"
+
+msgid "text_shipping_calculated"
+msgstr "Calculated"
+
+msgid "text_shipping_freight"
+msgstr "Freight"
+
+msgid "text_shipping_handling"
+msgstr "Handling fee"
+
+msgid "text_shipping_cod"
+msgstr "Cash on delivery fee"
+
+msgid "text_shipping_handling_nat"
+msgstr "Handling fee (national)"
+
+msgid "entry_shipping_handling_int"
+msgstr "Handling fee (international)"
+
+msgid "entry_shipping_pickupdropoff"
+msgstr "Click and Collect"
+
+msgid "entry_shipping_pickupinstore"
+msgstr "Available for In-Store Pickup"
+
+msgid "entry_shipping_global_shipping"
+msgstr "Use eBay global shipping service"
+
+msgid "entry_shipping_promotion_discount"
+msgstr "Combined shipping discounts (national)"
+
+msgid "entry_shipping_promotion_discount_international"
+msgstr "Combined shipping discounts (international)"
+
+//Returns profile
+
+msgid "text_returns_accept"
+msgstr "Returns accepted"
+
+msgid "text_returns_inst"
+msgstr "Return Policy"
+
+msgid "text_returns_days"
+msgstr "Return Days"
+
+msgid "text_returns_days10"
+msgstr "10 Days"
+
+msgid "text_returns_days14"
+msgstr "14 Days"
+
+msgid "text_returns_days30"
+msgstr "30 Days"
+
+msgid "text_returns_days60"
+msgstr "60 Days"
+
+msgid "text_returns_type"
+msgstr "Return Type"
+
+msgid "text_returns_type_money"
+msgstr "Money back"
+
+msgid "text_returns_type_exch"
+msgstr "Money back or exchange"
+
+msgid "text_returns_costs"
+msgstr "Return Shipping costs"
+
+msgid "text_returns_costs_b"
+msgstr "Buyer pays"
+
+msgid "text_returns_costs_s"
+msgstr "Seller pays"
+
+msgid "text_returns_restock"
+msgstr "Restocking Fee"
+
+msgid "text_list"
+msgstr "Profile list"
+
+//Template profile
+
+msgid "text_template_choose"
+msgstr "Default template"
+
+msgid "text_template_choose_help"
+msgstr "A default template will auto load when listing to save time"
+
+msgid "text_image_gallery"
+msgstr "Gallery image size"
+
+msgid "text_image_gallery_help"
+msgstr "Pixel size of gallery images that are added to your template."
+
+msgid "text_image_thumb"
+msgstr "Thumbnail image size"
+
+msgid "text_image_thumb_help"
+msgstr "Pixel size of thumbnail images that are added to your template."
+
+msgid "text_image_super"
+msgstr "Supersize images"
+
+msgid "text_image_gallery_plus"
+msgstr "Gallery plus"
+
+msgid "text_image_all_ebay"
+msgstr "Add all images to eBay"
+
+msgid "text_image_all_template"
+msgstr "Add all images to template"
+
+msgid "text_image_exclude_default"
+msgstr "Exclude default image"
+
+msgid "text_image_exclude_default_help"
+msgstr "Only for bulk listing feature! Will not include the default product image in theme image list"
+
+msgid "text_confirm_delete"
+msgstr "Are you sure you want to delete the profile?"
+
+msgid "text_width"
+msgstr "Width"
+
+msgid "text_height"
+msgstr "Height"
+
+msgid "text_px"
+msgstr "px"
+
+msgid "text_add"
+msgstr "Add profile"
+
+msgid "text_edit"
+msgstr "Edit profile"
+
+//General profile
+
+msgid "text_general_private"
+msgstr "List items as private auction"
+
+msgid "text_general_price"
+msgstr "Price % modification"
+
+msgid "text_general_price_help"
+msgstr "0 is default, -10 will reduce by 10%, 10 will increase by 10% (only used on bulk listing)"
+
+//General profile options
+
+msgid "text_profile_name"
+msgstr "Name"
+
+msgid "text_profile_default"
+msgstr "Default"
+
+msgid "text_profile_type"
+msgstr "Type"
+
+msgid "text_profile_desc"
+msgstr "Description"
+
+msgid "text_profile_action"
+msgstr "Action"
+
+msgid "text_type_shipping"
+msgstr "Shipping"
+
+msgid "text_type_returns"
+msgstr "Returns"
+
+msgid "text_type_template"
+msgstr "Template &amp; gallery"
+
+msgid "text_type_general"
+msgstr "General settings"
+
+//Success messages
+
+msgid "text_added"
+msgstr "New profile has been added"
+
+msgid "text_updated"
+msgstr "Profile has been updated"
+
+//Errors
+
+msgid "error_permission"
+msgstr "You do not have permission to edit profiles"
+
+msgid "error_name"
+msgstr "You must enter a profile name"
+
+msgid "error_no_template"
+msgstr "Template ID does not exist"
+
+msgid "error_missing_settings"
+msgstr "You cannot add,edit or delete profiles until you syncronise your eBay settings"
+
+//Help
+
+msgid "help_shipping_promotion_discount"
+msgstr "Offer national buyers a discount on shipping if they buy multiple items. Discounts must have been setup in eBay to take effect."
+
+msgid "help_shipping_promotion_discount_international"
+msgstr "Offer international buyers a discount on shipping if they buy multiple items. Discounts must have been setup in eBay to take effect."

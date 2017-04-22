@@ -1,0 +1,23 @@
+msgid "heading_title"
+msgstr "Fulfillment by Amazon"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_dashboard"
+msgstr "Fulfillment by Amazon Dashboard"
+
+msgid "text_heading_settings"
+msgstr "Settings"
+
+msgid "text_heading_account"
+msgstr "Account/subscription"
+
+msgid "text_heading_fulfillments"
+msgstr "Fulfillments"
+
+msgid "text_heading_register"
+msgstr "Register"
+
+msgid "text_heading_orders"
+msgstr "Orders"

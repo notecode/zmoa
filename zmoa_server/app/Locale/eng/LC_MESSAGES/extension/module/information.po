@@ -1,0 +1,8 @@
+msgid "heading_title"
+msgstr "Information"
+
+msgid "text_contact"
+msgstr "Contact Us"
+
+msgid "text_sitemap"
+msgstr "Site Map"

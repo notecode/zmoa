@@ -1,0 +1,161 @@
+msgid "heading_title"
+msgstr "New listing"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_etsy"
+msgstr "Etsy"
+
+msgid "tab_additional"
+msgstr "Additional information"
+
+msgid "text_option"
+msgstr "Select option"
+
+msgid "text_category_selected"
+msgstr "Category selected"
+
+msgid "text_material_add"
+msgstr "Add Material"
+
+msgid "text_material_remove"
+msgstr "Remove Material"
+
+msgid "text_tag_add"
+msgstr "Add Tag"
+
+msgid "text_tag_remove"
+msgstr "Remove Tag"
+
+msgid "text_created"
+msgstr "Your listing has been created"
+
+msgid "text_listing_id"
+msgstr "Listing ID"
+
+msgid "text_img_upload"
+msgstr "Uploading image"
+
+msgid "text_img_upload_done"
+msgstr "Uploaded image"
+
+msgid "text_create"
+msgstr "Create a new Etsy listing"
+
+msgid "entry_title"
+msgstr "Product title"
+
+msgid "entry_description"
+msgstr "Description"
+
+msgid "entry_price"
+msgstr "Price"
+
+msgid "entry_non_taxable"
+msgstr "Non taxable"
+
+msgid "entry_category"
+msgstr "Category selection"
+
+msgid "entry_who_made"
+msgstr "Who made it?"
+
+msgid "entry_when_made"
+msgstr "When was it made?"
+
+msgid "entry_recipient"
+msgstr "Who is it for?"
+
+msgid "entry_occasion"
+msgstr "What occasion is it for?"
+
+msgid "entry_is_supply"
+msgstr "Is this a supply?"
+
+msgid "entry_state"
+msgstr "Listing status"
+
+msgid "entry_style"
+msgstr "Style Tag 1"
+
+msgid "entry_style_2"
+msgstr "Style Tag 2"
+
+msgid "entry_processing_min"
+msgstr "Processing time min"
+
+msgid "entry_processing_max"
+msgstr "Processing time max"
+
+msgid "entry_materials"
+msgstr "Materials"
+
+msgid "entry_tags"
+msgstr "Tags"
+
+msgid "entry_shipping"
+msgstr "Shipping profile"
+
+msgid "entry_shop"
+msgstr "Shop section"
+
+msgid "entry_is_custom"
+msgstr "Can it be customised?"
+
+msgid "entry_image"
+msgstr "Main image"
+
+msgid "entry_image_other"
+msgstr "Other images"
+
+msgid "help_description"
+msgstr "All HTML has been removed from your description as it is not supported on Etsy"
+
+msgid "error_no_shipping"
+msgstr "You have not setup any shipping profiles!"
+
+msgid "error_no_shop_secton"
+msgstr "You have not setup any shop sections!"
+
+msgid "error_no_img_url"
+msgstr "No image selected for upload"
+
+msgid "error_no_listing_id"
+msgstr "No listing ID supplied"
+
+msgid "error_title_length"
+msgstr "Title is too long"
+
+msgid "error_title_missing"
+msgstr "Title is missing"
+
+msgid "error_desc_missing"
+msgstr "Description is missing or empty"
+
+msgid "error_price_missing"
+msgstr "Price is missing or empty"
+
+msgid "error_category"
+msgstr "Category not selected"
+
+msgid "error_style_1_tag"
+msgstr "Style 1 tag is not valid"
+
+msgid "error_style_2_tag"
+msgstr "Style 2 tag is not valid"
+
+msgid "error_materials"
+msgstr "You can only add 13 materials"
+
+msgid "error_tags"
+msgstr "You can only add 13 tags"
+
+msgid "error_stock_max"
+msgstr "The maximum stock you can list on Etsy is 999, you have %s in stock"
+
+msgid "error_image_max"
+msgstr "The maximum number of images you can use on Etsy is 5, you have chosen %s"
+
+msgid "error_variant"
+msgstr "Variant items on Etsy.com are not yet supported by OpenBay Pro"

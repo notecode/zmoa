@@ -1,0 +1,29 @@
+msgid "heading_title"
+msgstr "Google Analytics"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Google Analytics!"
+
+msgid "text_edit"
+msgstr "Edit Google Analytics"
+
+msgid "text_signup"
+msgstr "Login to your <a href="http://www.google.com/analytics/" target="_blank"><u>Google Analytics</u></a> account and after creating your website profile copy and paste the analytics code into this field."
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "entry_code"
+msgstr "Google Analytics Code"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify Google Analytics!"
+
+msgid "error_code"
+msgstr "Code required!"

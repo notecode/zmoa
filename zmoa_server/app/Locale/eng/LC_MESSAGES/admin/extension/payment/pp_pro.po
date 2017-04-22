@@ -1,0 +1,65 @@
+msgid "heading_title"
+msgstr "PayPal Pro"
+
+msgid "text_success"
+msgstr "Success: You have modified PayPal Website Payment Pro Checkout account details!"
+
+msgid "text_edit"
+msgstr "Edit PayPal Pro"
+
+msgid "text_pp_pro"
+msgstr "<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>"
+
+msgid "text_authorization"
+msgstr "Authorization"
+
+msgid "text_sale"
+msgstr "Sale"
+
+msgid "entry_username"
+msgstr "API Username"
+
+msgid "entry_password"
+msgstr "API Password"
+
+msgid "entry_signature"
+msgstr "API Signature"
+
+msgid "entry_test"
+msgstr "Test Mode"
+
+msgid "entry_transaction"
+msgstr "Transaction Method:"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_order_status"
+msgstr "Order Status"
+
+msgid "entry_geo_zone"
+msgstr "Geo Zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_test"
+msgstr "Use the live or testing (sandbox) gateway server to process transactions?"
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify payment PayPal Website Payment Pro Checkout!"
+
+msgid "error_username"
+msgstr "API Username Required!"
+
+msgid "error_password"
+msgstr "API Password Required!"
+
+msgid "error_signature"
+msgstr "API Signature Required!"

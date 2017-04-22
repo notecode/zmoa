@@ -1,0 +1,97 @@
+<?php
+// Text
+msgid "text_title"
+msgstr "Klarna Account - Pay from %s/month"
+
+msgid "text_terms"
+msgstr "new Klarna.Terms.Account({el: \"klarna_account_toc\", eid: \"%s\", country: \"%s\"})</script>"
+
+msgid "text_information"
+msgstr "Klarna Account Information"
+
+msgid "text_additional"
+msgstr "Klarna Account requires some additional information before they can proccess your order."
+
+msgid "text_male"
+msgstr "Male"
+
+msgid "text_female"
+msgstr "Female"
+
+msgid "text_year"
+msgstr "Year"
+
+msgid "text_month"
+msgstr "Month"
+
+msgid "text_day"
+msgstr "Day"
+
+msgid "text_payment_option"
+msgstr "Payment options"
+
+msgid "text_single_payment"
+msgstr "Single Payment"
+
+msgid "text_monthly_payment"
+msgstr "%s - %s per month"
+
+msgid "text_comment"
+msgstr "Klarna\"s Invoice ID: %s\" . \"\n\" . \"%s/%s: %.4f"
+
+
+// Entry
+msgid "entry_gender"
+msgstr "Gender"
+
+msgid "entry_pno"
+msgstr "Personal Number"
+
+msgid "entry_dob"
+msgstr "Date of Birth"
+
+msgid "entry_phone_no"
+msgstr "Phone number"
+
+msgid "entry_street"
+msgstr "Street"
+
+msgid "entry_house_no"
+msgstr "House No."
+
+msgid "entry_house_ext"
+msgstr "House Ext."
+
+msgid "entry_company"
+msgstr "Company Registration Number"
+
+
+// Help
+msgid "help_pno"
+msgstr "Please enter your Social Security number here."
+
+msgid "help_phone_no"
+msgstr "Please enter your phone number."
+
+msgid "help_street"
+msgstr "Please note that delivery can only take place to the registered address when paying with Klarna."
+
+msgid "help_house_no"
+msgstr "Please enter your house number."
+
+msgid "help_house_ext"
+msgstr "Please submit your house extension here. E.g. A, B, C, Red, Blue ect."
+
+msgid "help_company"
+msgstr "Please enter your Company\"s registration number"
+
+
+// Error
+msgid "error_deu_terms"
+msgstr "You must agree to Klarna\"s privacy policy (Datenschutz)"
+
+msgid "error_address_match"
+msgstr "Billing and Shipping addresses must match if you want to use Klarna Payments"
+
+msgid "error_network"
+msgstr "Error occurred while connecting to Klarna. Please try again later."

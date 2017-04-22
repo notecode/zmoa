@@ -1,0 +1,8 @@
+msgid "text_success"
+msgstr "Success: Your coupon discount has been applied!"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to access the API!"
+
+msgid "error_coupon"
+msgstr "Warning: Coupon is either invalid, expired or reached it\"s usage limit!"

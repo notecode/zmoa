@@ -1,0 +1,35 @@
+msgid "heading_title"
+msgstr "Products Purchased Report"
+
+msgid "text_list"
+msgstr "Products Purchased List"
+
+msgid "text_all_status"
+msgstr "All Statuses"
+
+msgid "column_date_start"
+msgstr "Date Start"
+
+msgid "column_date_end"
+msgstr "Date End"
+
+msgid "column_name"
+msgstr "Product Name"
+
+msgid "column_model"
+msgstr "Model"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_total"
+msgstr "Total"
+
+msgid "entry_date_start"
+msgstr "Date Start"
+
+msgid "entry_date_end"
+msgstr "Date End"
+
+msgid "entry_status"
+msgstr "Order Status"

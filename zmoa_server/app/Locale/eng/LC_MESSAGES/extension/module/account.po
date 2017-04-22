@@ -1,0 +1,50 @@
+msgid "heading_title"
+msgstr "Account"
+
+msgid "text_register"
+msgstr "Register"
+
+msgid "text_login"
+msgstr "Login"
+
+msgid "text_logout"
+msgstr "Logout"
+
+msgid "text_forgotten"
+msgstr "Forgotten Password"
+
+msgid "text_account"
+msgstr "My Account"
+
+msgid "text_edit"
+msgstr "Edit Account"
+
+msgid "text_password"
+msgstr "Password"
+
+msgid "text_address"
+msgstr "Address Book"
+
+msgid "text_wishlist"
+msgstr "Wish List"
+
+msgid "text_order"
+msgstr "Order History"
+
+msgid "text_download"
+msgstr "Downloads"
+
+msgid "text_reward"
+msgstr "Reward Points"
+
+msgid "text_return"
+msgstr "Returns"
+
+msgid "text_transaction"
+msgstr "Transactions"
+
+msgid "text_newsletter"
+msgstr "Newsletter"
+
+msgid "text_recurring"
+msgstr "Recurring payments"

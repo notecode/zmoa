@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Modifications"
+
+msgid "text_success"
+msgstr "Success: You have modified modifications!"
+
+msgid "text_refresh"
+msgstr "Whenever you enable / disable or delete a modification you need to click the refresh button to rebuild your modification cache!"
+
+msgid "text_list"
+msgstr "Modification List"
+
+msgid "column_name"
+msgstr "Modification Name"
+
+msgid "column_author"
+msgstr "Author"
+
+msgid "column_version"
+msgstr "Version"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_date_added"
+msgstr "Date Added"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify modifications!"

@@ -1,0 +1,14 @@
+msgid "heading_title"
+msgstr  "Newsletter Subscription"
+
+msgid "text_account"
+msgstr  "Account"
+
+msgid "text_newsletter"
+msgstr  "Newsletter"
+
+msgid "text_success"
+msgstr  "Success: Your newsletter subscription has been successfully updated!"
+
+msgid "entry_newsletter"
+msgstr  "Subscribe"

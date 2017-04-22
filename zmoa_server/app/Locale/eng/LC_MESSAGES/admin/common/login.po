@@ -1,0 +1,26 @@
+msgid "heading_title"
+msgstr "Administration"
+
+msgid "text_heading"
+msgstr "Administration"
+
+msgid "text_login"
+msgstr "Please enter your login details."
+
+msgid "text_forgotten"
+msgstr "Forgotten Password"
+
+msgid "entry_username"
+msgstr "Username"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "button_login"
+msgstr "Login"
+
+msgid "error_login"
+msgstr "No match for Username and/or Password."
+
+msgid "error_token"
+msgstr "Invalid token session. Please login again."

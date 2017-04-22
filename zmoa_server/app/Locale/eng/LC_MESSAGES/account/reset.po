@@ -1,0 +1,33 @@
+// Heading
+msgid "heading_title"
+msgstr "Reset your password"
+
+
+// Text
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_password"
+msgstr "Enter the new password you wish to use."
+
+msgid "text_success"
+msgstr "Success: Your password has been successfully updated."
+
+
+// Entry
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_confirm"
+msgstr "Confirm"
+
+
+// Error
+msgid "error_password"
+msgstr "Password must be between 4 and 20 characters!"
+
+msgid "error_confirm"
+msgstr "Password and password confirmation do not match!"
+
+msgid "error_code"
+msgstr "Password reset code is invalid or was used previously!"

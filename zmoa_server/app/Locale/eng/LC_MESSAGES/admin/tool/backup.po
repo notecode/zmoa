@@ -1,0 +1,20 @@
+msgid "heading_title"
+msgstr "Backup &amp; Restore"
+
+msgid "text_success"
+msgstr "Success: You have successfully imported your database!"
+
+msgid "entry_import"
+msgstr "Import"
+
+msgid "entry_export"
+msgstr "Export"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify Backup &amp; Restore!"
+
+msgid "error_export"
+msgstr "Warning: You must select at least one table to export!"
+
+msgid "error_empty"
+msgstr "Warning: The file you uploaded was empty!"

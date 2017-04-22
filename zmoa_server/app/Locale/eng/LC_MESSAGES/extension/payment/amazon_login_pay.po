@@ -1,0 +1,72 @@
+// Heading
+msgid "heading_title"
+msgstr "Login and Pay with Amazon"
+
+msgid "heading_address"
+msgstr "Please choose a delivery address"
+
+msgid "heading_payment"
+msgstr "Please select a payment method"
+
+msgid "heading_confirm"
+msgstr "Order summary"
+
+// Text
+msgid "text_back"
+msgstr "Back"
+
+msgid "text_cart"
+msgstr "Cart"
+
+msgid "text_confirm"
+msgstr "Confirm"
+
+msgid "text_continue"
+msgstr "Continue"
+
+msgid "text_lpa"
+msgstr "Login and Pay with Amazon"
+
+msgid "text_enter_coupon"
+msgstr "Enter your coupon code here. If you don\"t have one, leave it empty."
+
+msgid "text_coupon"
+msgstr "Coupon"
+
+msgid "text_tax_other"
+msgstr "Taxes / Other handling fees"
+
+msgid "text_success_title"
+msgstr "Your order has been placed!"
+
+msgid "text_payment_success"
+msgstr "Your order was successfully placed. Order details are below"
+
+// Error
+msgid "error_payment_method"
+msgstr "Please select a payment method"
+
+msgid "error_shipping"
+msgstr "Please select a shipping method"
+
+msgid "error_shipping_address"
+msgstr "Please select a delivery address"
+
+msgid "error_shipping_methods"
+msgstr "There was an error retrieving your address from Amazon. Please contact the shop administrator for help."
+
+msgid "error_no_shipping_methods"
+msgstr "There are no shipping options to the selected address. Please select a different shipping address."
+
+msgid "error_process_order"
+msgstr "There was an error processing your order. Please contact the shop administrator for help."
+
+msgid "error_login"
+msgstr "Login failed"
+
+msgid "error_login_email"
+msgstr "Login failed: %s account email address did not match Amazon account email address"
+
+msgid "error_minimum"
+msgstr "Minimum order amount for Login and Pay with Amazon is %s!"
+

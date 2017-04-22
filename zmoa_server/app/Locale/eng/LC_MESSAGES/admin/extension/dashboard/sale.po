@@ -1,0 +1,26 @@
+msgid "heading_title"
+msgstr "Total Sales"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified dashboard sales!"
+
+msgid "text_edit"
+msgstr "Edit Dashboard Sales"
+
+msgid "text_view"
+msgstr "View more..."
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "entry_width"
+msgstr "Width"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify dashboard sales!"

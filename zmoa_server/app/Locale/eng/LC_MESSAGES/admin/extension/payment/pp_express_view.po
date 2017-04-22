@@ -1,0 +1,242 @@
+msgid "heading_title"
+msgstr "View Transaction"
+
+msgid "text_pp_express"
+msgstr "PayPal Express Checkout"
+
+msgid "text_product_lines"
+msgstr "Product lines"
+
+msgid "text_ebay_txn_id"
+msgstr "eBay transaction ID"
+
+msgid "text_name"
+msgstr "Name"
+
+msgid "text_qty"
+msgstr "Quantity"
+
+msgid "text_price"
+msgstr "Price"
+
+msgid "text_number"
+msgstr "Number"
+
+msgid "text_coupon_id"
+msgstr "Coupon ID"
+
+msgid "text_coupon_amount"
+msgstr "Coupon amount"
+
+msgid "text_coupon_currency"
+msgstr "Coupon currency"
+
+msgid "text_loyalty_disc_amt"
+msgstr "Loyalty card disc amount"
+
+msgid "text_loyalty_currency"
+msgstr "Loyalty card currency"
+
+msgid "text_options_name"
+msgstr "Options name"
+
+msgid "text_tax_amt"
+msgstr "Tax amount"
+
+msgid "text_currency_code"
+msgstr "Currency code"
+
+msgid "text_amount"
+msgstr "Amount"
+
+msgid "text_gift_msg"
+msgstr "Gift message"
+
+msgid "text_gift_receipt"
+msgstr "Gift receipt"
+
+msgid "text_gift_wrap_name"
+msgstr "Gift wrap name"
+
+msgid "text_gift_wrap_amt"
+msgstr "Gift wrap amount"
+
+msgid "text_buyer_email_market"
+msgstr "Buyer marketing email"
+
+msgid "text_survey_question"
+msgstr "Survey question"
+
+msgid "text_survey_chosen"
+msgstr "Survey choice selected"
+
+msgid "text_receiver_business"
+msgstr "Receiver business"
+
+msgid "text_receiver_email"
+msgstr "Receiver email"
+
+msgid "text_receiver_id"
+msgstr "Receiver ID"
+
+msgid "text_buyer_email"
+msgstr "Buyer email"
+
+msgid "text_payer_id"
+msgstr "Payer ID"
+
+msgid "text_payer_status"
+msgstr "Payer status"
+
+msgid "text_country_code"
+msgstr "Country code"
+
+msgid "text_payer_business"
+msgstr "Payer business"
+
+msgid "text_payer_salute"
+msgstr "Payer salutation"
+
+msgid "text_payer_firstname"
+msgstr "Payer first name"
+
+msgid "text_payer_middlename"
+msgstr "Payer middle name"
+
+msgid "text_payer_lastname"
+msgstr "Payer last name"
+
+msgid "text_payer_suffix"
+msgstr "Payer suffix"
+
+msgid "text_address_owner"
+msgstr "Address owner"
+
+msgid "text_address_status"
+msgstr "Address status"
+
+msgid "text_ship_sec_name"
+msgstr "Ship to secondary name"
+
+msgid "text_ship_name"
+msgstr "Ship to name"
+
+msgid "text_ship_street1"
+msgstr "Ship to address 1"
+
+msgid "text_ship_street2"
+msgstr "Ship to address 2"
+
+msgid "text_ship_city"
+msgstr "Ship to city"
+
+msgid "text_ship_state"
+msgstr "Ship to state"
+
+msgid "text_ship_zip"
+msgstr "Ship to ZIP"
+
+msgid "text_ship_country"
+msgstr "Ship to country code"
+
+msgid "text_ship_phone"
+msgstr "Ship to phone number"
+
+msgid "text_ship_sec_add1"
+msgstr "Ship to secondary address 1"
+
+msgid "text_ship_sec_add2"
+msgstr "Ship to secondary address 2"
+
+msgid "text_ship_sec_city"
+msgstr "Ship to secondary city"
+
+msgid "text_ship_sec_state"
+msgstr "Ship to secondary state"
+
+msgid "text_ship_sec_zip"
+msgstr "Ship to secondary ZIP"
+
+msgid "text_ship_sec_country"
+msgstr "Ship to secondary country code"
+
+msgid "text_ship_sec_phone"
+msgstr "Ship to secondary phone"
+
+msgid "text_trans_id"
+msgstr "Transaction ID"
+
+msgid "text_receipt_id"
+msgstr "Receipt ID"
+
+msgid "text_parent_trans_id"
+msgstr "Parent transaction ID"
+
+msgid "text_trans_type"
+msgstr "Transaction type"
+
+msgid "text_payment_type"
+msgstr "Payment type"
+
+msgid "text_order_time"
+msgstr "Order time"
+
+msgid "text_fee_amount"
+msgstr "Fee amount"
+
+msgid "text_settle_amount"
+msgstr "Settle amount"
+
+msgid "text_tax_amount"
+msgstr "Tax amount"
+
+msgid "text_exchange"
+msgstr "Exchange rate"
+
+msgid "text_payment_status"
+msgstr "Payment status"
+
+msgid "text_pending_reason"
+msgstr "Pending reason"
+
+msgid "text_reason_code"
+msgstr "Reason code"
+
+msgid "text_protect_elig"
+msgstr "Protection eligibility"
+
+msgid "text_protect_elig_type"
+msgstr "Protection eligibility type"
+
+msgid "text_store_id"
+msgstr "Store ID"
+
+msgid "text_terminal_id"
+msgstr "Terminal ID"
+
+msgid "text_invoice_number"
+msgstr "Invoice number"
+
+msgid "text_custom"
+msgstr "Custom"
+
+msgid "text_note"
+msgstr "Note"
+
+msgid "text_sales_tax"
+msgstr "Sales tax"
+
+msgid "text_buyer_id"
+msgstr "Buyer ID"
+
+msgid "text_close_date"
+msgstr "Closing date"
+
+msgid "text_multi_item"
+msgstr "Multi item"
+
+msgid "text_sub_amt"
+msgstr "Subscription amount"
+
+msgid "text_sub_period"
+msgstr "Subscription period"

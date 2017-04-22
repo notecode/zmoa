@@ -1,0 +1,12 @@
+// Text
+msgid "text_title"
+msgstr "Australia Post"
+
+msgid "text_express"
+msgstr "Express"
+
+msgid "text_standard"
+msgstr "Standard"
+
+msgid "text_eta"
+msgstr "days"

@@ -1,0 +1,189 @@
+msgid "code"
+msgstr "en"
+
+msgid "direction"
+msgstr "ltr"
+
+msgid "date_format_short"
+msgstr "d/m/Y"
+
+msgid "date_format_long"
+msgstr "l dS F Y"
+
+msgid "time_format"
+msgstr "h:i:s A"
+
+msgid "datetime_format"
+msgstr "d/m/Y H:i:s"
+
+msgid "decimal_point"
+msgstr "."
+
+msgid "thousand_point"
+msgstr ","
+
+msgid "text_home"
+msgstr "<i class=\"fa fa-home\"></i>"
+
+msgid "text_yes"
+msgstr "Yes"
+
+msgid "text_no"
+msgstr "No"
+
+msgid "text_none"
+msgstr " --- None --- "
+
+msgid "text_select"
+msgstr " --- Please Select --- "
+
+msgid "text_all_zones"
+msgstr "All Zones"
+
+msgid "text_pagination"
+msgstr "Showing %d to %d of %d (%d Pages)"
+
+msgid "text_loading"
+msgstr "Loading..."
+
+msgid "text_no_results"
+msgstr "No results!"
+
+msgid "button_address_add"
+msgstr "Add Address"
+
+msgid "button_back"
+msgstr "Back"
+
+msgid "button_continue"
+msgstr "Continue"
+
+msgid "button_cart"
+msgstr "Add to Cart"
+
+msgid "button_cancel"
+msgstr "Cancel"
+
+msgid "button_compare"
+msgstr "Compare this Product"
+
+msgid "button_wishlist"
+msgstr "Add to Wish List"
+
+msgid "button_checkout"
+msgstr "Checkout"
+
+msgid "button_confirm"
+msgstr "Confirm Order"
+
+msgid "button_coupon"
+msgstr "Apply Coupon"
+
+msgid "button_delete"
+msgstr "Delete"
+
+msgid "button_download"
+msgstr "Download"
+
+msgid "button_edit"
+msgstr "Edit"
+
+msgid "button_filter"
+msgstr "Refine Search"
+
+msgid "button_new_address"
+msgstr "New Address"
+
+msgid "button_change_address"
+msgstr "Change Address"
+
+msgid "button_reviews"
+msgstr "Reviews"
+
+msgid "button_write"
+msgstr "Write Review"
+
+msgid "button_login"
+msgstr "Login"
+
+msgid "button_update"
+msgstr "Update"
+
+msgid "button_remove"
+msgstr "Remove"
+
+msgid "button_reorder"
+msgstr "Reorder"
+
+msgid "button_return"
+msgstr "Return"
+
+msgid "button_shopping"
+msgstr "Continue Shopping"
+
+msgid "button_search"
+msgstr "Search"
+
+msgid "button_shipping"
+msgstr "Apply Shipping"
+
+msgid "button_submit"
+msgstr "Submit"
+
+msgid "button_guest"
+msgstr "Guest Checkout"
+
+msgid "button_view"
+msgstr "View"
+
+msgid "button_voucher"
+msgstr "Apply Gift Certificate"
+
+msgid "button_upload"
+msgstr "Upload File"
+
+msgid "button_reward"
+msgstr "Apply Points"
+
+msgid "button_quote"
+msgstr "Get Quotes"
+
+msgid "button_list"
+msgstr "List"
+
+msgid "button_grid"
+msgstr "Grid"
+
+msgid "button_map"
+msgstr "View Google Map"
+
+
+msgid "error_exception"
+msgstr "Error Code(%s): %s in %s on line %s"
+
+msgid "error_upload_1"
+msgstr "Warning: The uploaded file exceeds the upload_max_filesize directive in php.ini!"
+
+msgid "error_upload_2"
+msgstr "Warning: The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form!"
+
+msgid "error_upload_3"
+msgstr "Warning: The uploaded file was only partially uploaded!"
+
+msgid "error_upload_4"
+msgstr "Warning: No file was uploaded!"
+
+msgid "error_upload_6"
+msgstr "Warning: Missing a temporary folder!"
+
+msgid "error_upload_7"
+msgstr "Warning: Failed to write file to disk!"
+
+msgid "error_upload_8"
+msgstr "Warning: File upload stopped by extension!"
+
+msgid "error_upload_999"
+msgstr "Warning: No error code available!"
+
+msgid "error_curl"
+msgstr "CURL: Error Code(%s): %s"

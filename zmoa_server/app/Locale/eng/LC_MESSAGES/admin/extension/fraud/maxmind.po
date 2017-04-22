@@ -1,0 +1,335 @@
+msgid "heading_title"
+msgstr "MaxMind Anti-Fraud"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified MaxMind anti-fraud!"
+
+msgid "text_edit"
+msgstr "Edit MaxMind Anti-Fraud"
+
+msgid "text_signup"
+msgstr "MaxMind is a fraud detection service. If you don\'t have a license key you can <a href="http://www.maxmind.com/?rId=opencart" target="_blank"><u>sign up here</u></a>."
+
+msgid "text_country_match"
+msgstr "Country Match:"
+
+msgid "text_country_code"
+msgstr "Country Code:"
+
+msgid "text_high_risk_country"
+msgstr "High Risk Country:"
+
+msgid "text_distance"
+msgstr "Distance:"
+
+msgid "text_ip_region"
+msgstr "IP Region:"
+
+msgid "text_ip_city"
+msgstr "IP City:"
+
+msgid "text_ip_latitude"
+msgstr "IP Latitude:"
+
+msgid "text_ip_longitude"
+msgstr "IP Longitude:"
+
+msgid "text_ip_isp"
+msgstr "ISP:"
+
+msgid "text_ip_org"
+msgstr "IP Organization:"
+
+msgid "text_ip_asnum"
+msgstr "ASNUM:"
+
+msgid "text_ip_user_type"
+msgstr "IP User Type:"
+
+msgid "text_ip_country_confidence"
+msgstr "IP Country Confidence:"
+
+msgid "text_ip_region_confidence"
+msgstr "IP Region Confidence:"
+
+msgid "text_ip_city_confidence"
+msgstr "IP City Confidence:"
+
+msgid "text_ip_postal_confidence"
+msgstr "IP Postal Confidence:"
+
+msgid "text_ip_postal_code"
+msgstr "IP Postal Code:"
+
+msgid "text_ip_accuracy_radius"
+msgstr "IP Accuracy Radius:"
+
+msgid "text_ip_net_speed_cell"
+msgstr "IP Net Speed Cell"
+
+msgid "text_ip_metro_code"
+msgstr "IP Metro Code:"
+
+msgid "text_ip_area_code"
+msgstr "IP Area Code:"
+
+msgid "text_ip_time_zone"
+msgstr "IP Time Zone:"
+
+msgid "text_ip_region_name"
+msgstr "IP Region Name:"
+
+msgid "text_ip_domain"
+msgstr "IP Domain:"
+
+msgid "text_ip_country_name"
+msgstr "IP Country Name:"
+
+msgid "text_ip_continent_code"
+msgstr "IP Continent Code:"
+
+msgid "text_ip_corporate_proxy"
+msgstr "IP Corporate Proxy:"
+
+msgid "text_anonymous_proxy"
+msgstr "Anonymous Proxy:"
+
+msgid "text_proxy_score"
+msgstr "Proxy Score:"
+
+msgid "text_is_trans_proxy"
+msgstr "Is Transparent Proxy:"
+
+msgid "text_free_mail"
+msgstr "Free Mail:"
+
+msgid "text_carder_email"
+msgstr "Carder Email:"
+
+msgid "text_high_risk_username"
+msgstr "High Risk Username:"
+
+msgid "text_high_risk_password"
+msgstr "High Risk Password:"
+
+msgid "text_bin_match"
+msgstr "Bin Match:"
+
+msgid "text_bin_country"
+msgstr "Bin Country:"
+
+msgid "text_bin_name_match"
+msgstr "Bin Name Match:"
+
+msgid "text_bin_name"
+msgstr "Bin Name:"
+
+msgid "text_bin_phone_match"
+msgstr "Bin Phone Match:"
+
+msgid "text_bin_phone"
+msgstr "Bin Phone:"
+
+msgid "text_customer_phone_in_billing_location"
+msgstr "Customer Phone Number in Billing Location:"
+
+msgid "text_ship_forward"
+msgstr "Shipping Forward:"
+
+msgid "text_city_postal_match"
+msgstr "City Postal Match:"
+
+msgid "text_ship_city_postal_match"
+msgstr "Shipping City Postal Match:"
+
+msgid "text_score"
+msgstr "Score:"
+
+msgid "text_explanation"
+msgstr "Explanation:"
+
+msgid "text_risk_score"
+msgstr "Risk Score:"
+
+msgid "text_queries_remaining"
+msgstr "Queries Remaining:"
+
+msgid "text_maxmind_id"
+msgstr "Maxmind ID:"
+
+msgid "text_error"
+msgstr "Error:"
+
+msgid "entry_key"
+msgstr "MaxMind License Key"
+
+msgid "entry_score"
+msgstr "Risk Score"
+
+msgid "entry_order_status"
+msgstr "Order Status"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "help_order_status"
+msgstr "Orders that have a score over your set risk score will be assigned this order status and will not be allowed to reach the complete status automatically."
+
+msgid "help_country_match"
+msgstr "Whether country of IP address matches billing address country (mismatch = higher risk)."
+
+msgid "help_country_code"
+msgstr "Country Code of the IP address."
+
+msgid "help_high_risk_country"
+msgstr "Whether IP address or billing address country is in Ghana, Nigeria, or Vietnam."
+
+msgid "help_distance"
+msgstr "Distance from IP address to Billing Location in kilometers (large distance = higher risk)."
+
+msgid "help_ip_region"
+msgstr "Estimated State/Region of the IP address."
+
+msgid "help_ip_city"
+msgstr "Estimated City of the IP address."
+
+msgid "help_ip_latitude"
+msgstr "Estimated Latitude of the IP address."
+
+msgid "help_ip_longitude"
+msgstr "Estimated Longitude of the IP address."
+
+msgid "help_ip_isp"
+msgstr "ISP of the IP address."
+
+msgid "help_ip_org"
+msgstr "Organization of the IP address."
+
+msgid "help_ip_asnum"
+msgstr "Estimated Autonomous System Number of the IP address."
+
+msgid "help_ip_user_type"
+msgstr "Estimated user type of the IP address."
+
+msgid "help_ip_country_confidence"
+msgstr "Representing our confidence that the country location is correct."
+
+msgid "help_ip_region_confidence"
+msgstr "Representing our confidence that the region location is correct."
+
+msgid "help_ip_city_confidence"
+msgstr "Representing our confidence that the city location is correct."
+
+msgid "help_ip_postal_confidence"
+msgstr "Representing our confidence that the postal code location is correct."
+
+msgid "help_ip_postal_code"
+msgstr "Estimated Postal Code of the IP address."
+
+msgid "help_ip_accuracy_radius"
+msgstr "The average distance between the actual location of the end user using the IP address and the location returned by the GeoIP City database, in miles."
+
+msgid "help_ip_net_speed_cell"
+msgstr "Estimated network type of the IP address."
+
+msgid "help_ip_metro_code"
+msgstr "Estimated Metro Code of the IP address."
+
+msgid "help_ip_area_code"
+msgstr "Estimated Area Code of the IP address."
+
+msgid "help_ip_time_zone"
+msgstr "Estimated Time Zone of the IP address."
+
+msgid "help_ip_region_name"
+msgstr "Estimated Region name of the IP address."
+
+msgid "help_ip_domain"
+msgstr "Estimated domain of the IP address."
+
+msgid "help_ip_country_name"
+msgstr "Estimated Country name of the IP address."
+
+msgid "help_ip_continent_code"
+msgstr "Estimated Continent code of the IP address."
+
+msgid "help_ip_corporate_proxy"
+msgstr "Whether the IP is an Corporate Proxy in the database or not."
+
+msgid "help_anonymous_proxy"
+msgstr "Whether IP address is Anonymous Proxy (anonymous proxy = very high risk)."
+
+msgid "help_proxy_score"
+msgstr "Likelihood of IP Address being an Open Proxy."
+
+msgid "help_is_trans_proxy"
+msgstr "Whether IP address is in our database of known transparent proxy servers, returned if forwardedIP is passed as an input."
+
+msgid "help_free_mail"
+msgstr "Whether e-mail is from free e-mail provider (free e-mail = higher risk)."
+
+msgid "help_carder_email"
+msgstr "Whether e-mail is in database of high risk e-mails."
+
+msgid "help_high_risk_username"
+msgstr "Whether usernameMD5 input is in database of high risk usernames. Only returned if usernameMD5 is included in inputs."
+
+msgid "help_high_risk_password"
+msgstr "Whether passwordMD5 input is in database of high risk passwords. Only returned if passwordMD5 is included in inputs."
+
+msgid "help_bin_match"
+msgstr "Whether country of issuing bank based on BIN number matches billing address country."
+
+msgid "help_bin_country"
+msgstr "Country Code of the bank which issued the credit card based on BIN number."
+
+msgid "help_bin_name_match"
+msgstr "Whether name of issuing bank matches inputted  BIN name. A return value of Yes provides a positive indication that cardholder is in possession of credit card."
+
+msgid "help_bin_name"
+msgstr "Name of the bank which issued the credit card based on BIN number. Available for approximately 96% of BIN numbers."
+
+msgid "help_bin_phone_match"
+msgstr "Whether customer service phone number matches inputed BIN Phone. A return value of Yes provides a positive indication that cardholder is in possession of credit card."
+
+msgid "help_bin_phone"
+msgstr "Customer service phone number listed on back of credit card. Available for approximately 75% of BIN numbers. In some cases phone number returned may be outdated."
+
+msgid "help_customer_phone_in_billing_location"
+msgstr "Whether the customer phone number is in the billing zip code. A return value of Yes provides a positive indication that the phone number listed belongs to the cardholder. A return value of No indicates that the phone number may be in a different area, or may not be listed in our database. NotFound is returned when the phone number prefix cannot be found in our database at all. Currently we only support US Phone numbers."
+
+msgid "help_ship_forward"
+msgstr "Whether shipping address is in database of known mail drops."
+
+msgid "help_city_postal_match"
+msgstr "Whether billing city and state match zipcode. Currently available for US addresses only, returns empty string outside the US."
+
+msgid "help_ship_city_postal_match"
+msgstr "Whether shipping city and state match zipcode. Currently available for US addresses only, returns empty string outside the US."
+
+msgid "help_score"
+msgstr "Overall fraud score based on outputs listed above. This is the original fraud score, and is based on a simple formula. It has been replaced with risk score (see below), but is kept for backwards compatibility."
+
+msgid "help_explanation"
+msgstr "A brief explanation of the score, detailing what factors contributed to it, according to our formula. Please note this corresponds to the score, not the riskScore."
+
+msgid "help_risk_score"
+msgstr "New fraud score representing the estimated probability that the order is fraud, based off of analysis of past minFraud transactions. Requires an upgrade for clients who signed up before February 2007."
+
+msgid "help_queries_remaining"
+msgstr "Number of queries remaining in your account, can be used to alert you when you may need to add more queries to your account."
+
+msgid "help_maxmind_id"
+msgstr "Unique identifier, used to reference transactions when reporting fraudulent activity back to MaxMind. This reporting will help MaxMind improve its service to you and will enable a planned feature to customize the fraud scoring formula based on your chargeback history."
+
+msgid "help_error"
+msgstr "Returns an error string with a warning message or a reason why the request failed."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify MaxMind anti-fraud!"
+
+msgid "error_key"
+msgstr "License Key Required!"

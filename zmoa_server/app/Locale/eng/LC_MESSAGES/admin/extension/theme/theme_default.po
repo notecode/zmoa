@@ -1,0 +1,113 @@
+msgid "heading_title"
+msgstr "Default Store Theme"
+
+msgid "text_theme"
+msgstr "Themes"
+
+msgid "text_success"
+msgstr "Success: You have modified the default store theme!"
+
+msgid "text_edit"
+msgstr "Edit Default Store Theme"
+
+msgid "text_general"
+msgstr "General"
+
+msgid "text_product"
+msgstr "Products"
+
+msgid "text_image"
+msgstr "Images"
+
+msgid "entry_directory"
+msgstr "Theme Directory"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_product_limit"
+msgstr "Default Items Per Page"
+
+msgid "entry_product_description_length"
+msgstr "List Description Limit"
+
+msgid "entry_image_category"
+msgstr "Category Image Size (W x H)"
+
+msgid "entry_image_thumb"
+msgstr "Product Image Thumb Size (W x H)"
+
+msgid "entry_image_popup"
+msgstr "Product Image Popup Size (W x H)"
+
+msgid "entry_image_product"
+msgstr "Product Image List Size (W x H)"
+
+msgid "entry_image_additional"
+msgstr "Additional Product Image Size (W x H)"
+
+msgid "entry_image_related"
+msgstr "Related Product Image Size (W x H)"
+
+msgid "entry_image_compare"
+msgstr "Compare Image Size (W x H)"
+
+msgid "entry_image_wishlist"
+msgstr "Wish List Image Size (W x H)"
+
+msgid "entry_image_cart"
+msgstr "Cart Image Size (W x H)"
+
+msgid "entry_image_location"
+msgstr "Store Image Size (W x H)"
+
+msgid "entry_width"
+msgstr "Width"
+
+msgid "entry_height"
+msgstr "Height"
+
+msgid "help_directory"
+msgstr "This field is only to enable older themes to be compatible with the new theme system. You can set the theme directory to use on the image size settings defined here."
+
+msgid "help_product_limit"
+msgstr "Determines how many catalog items are shown per page (products, categories, etc)"
+
+msgid "help_product_description_length"
+msgstr "In the list view, short description character limit (categories, special etc)"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify the default store theme!"
+
+msgid "error_limit"
+msgstr "Product Limit required!"
+
+msgid "error_image_thumb"
+msgstr "Product Image Thumb Size dimensions required!"
+
+msgid "error_image_popup"
+msgstr "Product Image Popup Size dimensions required!"
+
+msgid "error_image_product"
+msgstr "Product List Size dimensions required!"
+
+msgid "error_image_category"
+msgstr "Category List Size dimensions required!"
+
+msgid "error_image_additional"
+msgstr "Additional Product Image Size dimensions required!"
+
+msgid "error_image_related"
+msgstr "Related Product Image Size dimensions required!"
+
+msgid "error_image_compare"
+msgstr "Compare Image Size dimensions required!"
+
+msgid "error_image_wishlist"
+msgstr "Wish List Image Size dimensions required!"
+
+msgid "error_image_cart"
+msgstr "Cart Image Size dimensions required!"
+
+msgid "error_image_location"
+msgstr "Store Image Size dimensions required!"

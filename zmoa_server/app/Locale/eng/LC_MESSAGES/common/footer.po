@@ -1,0 +1,51 @@
+msgid "text_information"
+msgstr "Information"
+
+msgid "text_service"
+msgstr "Customer Service"
+
+msgid "text_extra"
+msgstr "Extras"
+
+msgid "text_contact"
+msgstr "Contact Us"
+
+msgid "text_return"
+msgstr "Returns"
+
+msgid "text_sitemap"
+msgstr "Site Map"
+
+msgid "text_manufacturer"
+msgstr "Brands"
+
+msgid "text_voucher"
+msgstr "Gift Vouchers"
+
+msgid "text_affiliate"
+msgstr "Affiliates"
+
+msgid "text_special"
+msgstr "Specials"
+
+msgid "text_account"
+msgstr "My Account"
+
+msgid "text_order"
+msgstr "Order History"
+
+msgid "text_wishlist"
+msgstr "Wish List"
+
+msgid "text_newsletter"
+msgstr "Newsletter"
+
+msgid "text_newsletter"
+msgstr "Newsletter"
+
+msgid "text_mycompany"
+msgstr "My Company"
+
+
+msgid "text_powered"
+msgstr "<a href=\"http://www.opencart.com\">Jinland Cart</a> © 2017"

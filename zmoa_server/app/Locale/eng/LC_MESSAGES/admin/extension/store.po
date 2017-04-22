@@ -1,0 +1,65 @@
+msgid "heading_title"
+msgstr "Extension Store"
+
+msgid "text_success"
+msgstr "Success: You have modified extensions!"
+
+msgid "text_license"
+msgstr "License"
+
+msgid "text_price"
+msgstr "Price"
+
+msgid "text_free"
+msgstr "Free"
+
+msgid "text_commercial"
+msgstr "Commercial"
+
+msgid "text_rating"
+msgstr "Rating"
+
+msgid "text_compatibility"
+msgstr "Compatibility"
+
+msgid "text_category"
+msgstr "All Categories"
+
+msgid "text_theme"
+msgstr "Themes"
+
+msgid "text_payment"
+msgstr "Payment Gateways"
+
+msgid "text_shipping"
+msgstr "Shipping Methods"
+
+msgid "text_module"
+msgstr "Modules"
+
+msgid "text_total"
+msgstr "Order Totals"
+
+msgid "text_feed"
+msgstr "Product Feeds"
+
+msgid "text_report"
+msgstr "Reports"
+
+msgid "text_other"
+msgstr "Other"
+
+msgid "tab_description"
+msgstr "Description"
+
+msgid "tab_documentation"
+msgstr "Documentation"
+
+msgid "tab_download"
+msgstr "Download"
+
+msgid "tab_comment"
+msgstr "Comment"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify extensions!"

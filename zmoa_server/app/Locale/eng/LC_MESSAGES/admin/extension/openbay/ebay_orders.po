@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Import orders"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_ebay"
+msgstr "eBay"
+
+msgid "button_pull_orders"
+msgstr "Start"
+
+msgid "entry_pull_orders"
+msgstr "Pull new orders"
+
+msgid "text_sync_pull_notice"
+msgstr "This will pull new orders since the last automated check. If you have just installed then it will default to the last 24 hours."
+
+msgid "text_ajax_orders_import"
+msgstr "Any new orders should appear within a few minutes"
+
+msgid "text_complete"
+msgstr "Import requested"
+
+msgid "text_failed"
+msgstr "Failed to load"
+
+msgid "text_pull"
+msgstr "Request a manual import"
+
+msgid "error_validation"
+msgstr "You need to register for your API token and enable the module."

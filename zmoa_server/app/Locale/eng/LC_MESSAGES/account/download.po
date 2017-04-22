@@ -1,0 +1,28 @@
+// Heading
+msgid "heading_title"
+msgstr "Account Downloads"
+
+
+// Text
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_downloads"
+msgstr "Downloads"
+
+msgid "text_empty"
+msgstr "You have not made any previous downloadable orders!"
+
+
+// Column
+msgid "column_order_id"
+msgstr "Order ID"
+
+msgid "column_name"
+msgstr "Name"
+
+msgid "column_size"
+msgstr "Size"
+
+msgid "column_date_added"
+msgstr "Date Added"

@@ -1,0 +1,77 @@
+msgid "heading_title"
+msgstr "Layouts"
+
+msgid "text_success"
+msgstr "Success: You have modified layouts!"
+
+msgid "text_list"
+msgstr "Layout List"
+
+msgid "text_add"
+msgstr "Add Layout"
+
+msgid "text_edit"
+msgstr "Edit Layout"
+
+msgid "text_remove"
+msgstr "Remove"
+
+msgid "text_route"
+msgstr "Choose the store and routes to be used with this layout"
+
+msgid "text_module"
+msgstr "Choose the position of the modules"
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "text_content_top"
+msgstr "Content Top"
+
+msgid "text_content_bottom"
+msgstr "Content Bottom"
+
+msgid "text_column_left"
+msgstr "Column Left"
+
+msgid "text_column_right"
+msgstr "Column Right"
+
+msgid "column_name"
+msgstr "Layout Name"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Layout Name"
+
+msgid "entry_store"
+msgstr "Store"
+
+msgid "entry_route"
+msgstr "Route"
+
+msgid "entry_module"
+msgstr "Module"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify layouts!"
+
+msgid "error_name"
+msgstr "Layout Name must be between 3 and 64 characters!"
+
+msgid "error_default"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned as the default store layout!"
+
+msgid "error_store"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned to %s stores!"
+
+msgid "error_product"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned to %s products!"
+
+msgid "error_category"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned to %s categories!"
+
+msgid "error_information"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned to %s information pages!"

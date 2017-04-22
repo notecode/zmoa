@@ -1,0 +1,53 @@
+msgid "heading_title"
+msgstr "Synchronise"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_ebay"
+msgstr "eBay"
+
+msgid "button_update"
+msgstr "Update"
+
+msgid "entry_sync_categories"
+msgstr "Get eBay categories"
+
+msgid "entry_sync_shop"
+msgstr "Get shop categories"
+
+msgid "entry_sync_setting"
+msgstr "Get settings"
+
+msgid "text_complete"
+msgstr "Complete"
+
+msgid "text_sync_desc"
+msgstr "Sync your store with the latest available shipping and categories options from eBay, this data is only for the options when listing an item to eBay - it will not import categories to your store etc."
+
+msgid "text_ebay_categories"
+msgstr "This may take a while, wait 5 minutes before you do anything else."
+
+msgid "text_category_import"
+msgstr "Your eBay shop categories have been imported."
+
+msgid "text_setting_import"
+msgstr "Your settings have been imported."
+
+msgid "text_sync"
+msgstr "Update settings from eBay"
+
+msgid "help_sync_categories"
+msgstr "This does not import any categories to your store!"
+
+msgid "help_sync_shop"
+msgstr "This does not import any categories to your store!"
+
+msgid "help_sync_setting"
+msgstr "This imports available payment types, shipping, locations and more."
+
+msgid "error_settings"
+msgstr "There was an error loading the settings."
+
+msgid "error_failed"
+msgstr "Failed to load"

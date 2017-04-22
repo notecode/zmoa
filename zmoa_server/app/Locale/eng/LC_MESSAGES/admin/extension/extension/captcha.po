@@ -1,0 +1,20 @@
+msgid "heading_title"
+msgstr "Captchas"
+
+msgid "text_success"
+msgstr "Success: You have modified captchas!"
+
+msgid "text_list"
+msgstr "Captcha List"
+
+msgid "column_name"
+msgstr "Captcha Name"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify captchas!"

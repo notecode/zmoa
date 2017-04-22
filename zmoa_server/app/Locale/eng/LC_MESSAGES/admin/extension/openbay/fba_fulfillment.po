@@ -1,0 +1,119 @@
+msgid "heading_title"
+msgstr "Fulfillments"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_fba"
+msgstr "Fulfillment By Amazon"
+
+msgid "heading_order_info"
+msgstr "Order info"
+
+msgid "heading_products"
+msgstr "Products"
+
+msgid "entry_seller_fulfillment_order_id"
+msgstr "Seller fulfillment order ID"
+
+msgid "entry_displayable_order_id"
+msgstr "Displayable order ID"
+
+msgid "entry_displayable_date"
+msgstr "Displayable date/time"
+
+msgid "entry_displayable_comment"
+msgstr "Displayable comment"
+
+msgid "entry_shipping_speed_category"
+msgstr "Shipping speed category"
+
+msgid "entry_fulfillment_policy"
+msgstr "Fulfillment policy"
+
+msgid "entry_fulfillment_order_status"
+msgstr "Status"
+
+msgid "entry_notification_email_list"
+msgstr "Notification email list"
+
+msgid "entry_button_cancel"
+msgstr "Cancel fulfillment"
+
+msgid "entry_button_ship"
+msgstr "Ship fulfillment"
+
+msgid "text_no_results"
+msgstr "No fulfillment\'s found on Amazon"
+
+msgid "text_fulfillment_list"
+msgstr "Amazon Fulfillment list"
+
+msgid "text_form"
+msgstr "Amazon Fulfillment"
+
+msgid "text_ship_success"
+msgstr "Fulfillment has been confirmed to ship, it may take a few minutes for Amazon to update"
+
+msgid "text_cancel_success"
+msgstr "Fulfillment has been cancelled, it may take a few minutes for Amazon to update"
+
+msgid "text_cancel_confirm"
+msgstr "Are you sure you want to cancel this fulfillment?"
+
+msgid "text_ship_confirm"
+msgstr "Are you sure you want to ship this fulfillment?"
+
+msgid "text_status"
+msgstr "Fulfillment status"
+
+msgid "text_fulfillment_sent"
+msgstr "Fulfillment has been sent!"
+
+msgid "text_fulfillment_shipped"
+msgstr "Fulfillment has been shipped!"
+
+msgid "text_fulfillment_cancelled"
+msgstr "Fulfillment has been cancelled!"
+
+msgid "column_sku"
+msgstr "SKU"
+
+msgid "column_order_item_id"
+msgstr "Order item ID"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_cancelled_quantity"
+msgstr "Cancelled Quantity"
+
+msgid "column_unfulfillable_quantity"
+msgstr "Unfulfillable Quantity"
+
+msgid "column_estimated_ship"
+msgstr "Estimated ship"
+
+msgid "column_estimated_arrive"
+msgstr "Estimated arrive"
+
+msgid "error_loading_fulfillment"
+msgstr "There was a problem getting the fulfillment order information from Amazon"
+
+msgid "error_ship"
+msgstr "There was a problem confirming the shipment with Amazon"
+
+msgid "error_cancel"
+msgstr "There was a problem cancelling the fulfillment with Amazon"
+
+msgid "error_missing_id"
+msgstr "Missing ID in the request"
+
+msgid "error_no_shipping"
+msgstr "No shipping method found"
+
+msgid "error_no_items"
+msgstr "No items found for this order"
+
+msgid "error_amazon_request"
+msgstr "There was an error response from Amazon, please check the errors for the request"

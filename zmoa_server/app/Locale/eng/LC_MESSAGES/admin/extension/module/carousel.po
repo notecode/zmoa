@@ -1,0 +1,38 @@
+msgid "heading_title"
+msgstr "Carousel"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified carousel module!"
+
+msgid "text_edit"
+msgstr "Edit Carousel Module"
+
+msgid "entry_name"
+msgstr "Module Name"
+
+msgid "entry_banner"
+msgstr "Banner"
+
+msgid "entry_width"
+msgstr "Width"
+
+msgid "entry_height"
+msgstr "Height"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify carousel module!"
+
+msgid "error_name"
+msgstr "Module Name must be between 3 and 64 characters!"
+
+msgid "error_width"
+msgstr "Width required!"
+
+msgid "error_height"
+msgstr "Height required!"

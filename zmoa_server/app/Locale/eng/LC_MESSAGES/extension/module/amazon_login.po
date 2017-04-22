@@ -1,0 +1,81 @@
+// Heading
+msgid "heading_title"
+msgstr "Login with Amazon"
+
+
+// Text
+msgid "text_module"
+msgstr "Modules"
+
+msgid "text_success"
+msgstr "Success: You have modified module Login with Amazon!"
+
+msgid "text_content_top"
+msgstr "Content Top"
+
+msgid "text_content_bottom"
+msgstr "Content Bottom"
+
+msgid "text_column_left"
+msgstr "Column Left"
+
+msgid "text_column_right"
+msgstr "Column Right"
+
+msgid "text_lwa_button"
+msgstr "Login with Amazon"
+
+msgid "text_login_button"
+msgstr "Login"
+
+msgid "text_a_button"
+msgstr "A"
+
+msgid "text_gold_button"
+msgstr "Gold"
+
+msgid "text_darkgray_button"
+msgstr "Dark Gray"
+
+msgid "text_lightgray_button"
+msgstr "Light Gray"
+
+msgid "text_small_button"
+msgstr "Small"
+
+msgid "text_medium_button"
+msgstr "Medium"
+
+msgid "text_large_button"
+msgstr "Large"
+
+msgid "text_x_large_button"
+msgstr "X-Large"
+
+
+//Entry
+msgid "entry_button_type"
+msgstr "Button Type"
+
+msgid "entry_button_colour"
+msgstr "Button Colour"
+
+msgid "entry_button_size"
+msgstr "Button Size"
+
+msgid "entry_layout"
+msgstr "Layout"
+
+msgid "entry_position"
+msgstr "Position"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+
+//Error
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify module Login with Amazon!"

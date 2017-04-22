@@ -1,0 +1,9 @@
+// Text
+msgid "text_title"
+msgstr "United States Postal Service"
+
+msgid "text_weight"
+msgstr "Weight:"
+
+msgid "text_eta"
+msgstr "Estimated Time:"

@@ -1,0 +1,6 @@
+// Text
+msgid "text_title"
+msgstr "Pilibaba (霹雳爸爸支付)"
+
+msgid "text_redirecting"
+msgstr "Redirecting..."

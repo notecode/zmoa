@@ -1,0 +1,15 @@
+// Heading
+msgid "heading_title"
+msgstr "Your Account Has Been Created!"
+
+msgid "text_message"
+msgstr "<p>Congratulations! Your new account has been successfully created!</p> <p>You can now take advantage of member privileges to enhance your online shopping experience with us.</p> <p>If you have ANY questions about the operation of this online shop, please e-mail the store owner.</p> <p>A confirmation has been sent to the provided e-mail address. If you have not received it within the hour, please <a href=\"%s\">contact us</a>.</p>"
+
+msgid "text_approval"
+msgstr "<p>Thank you for registering with %s!</p><p>You will be notified by e-mail once your account has been activated by the store owner.</p><p>If you have ANY questions about the operation of this online shop, please <a href=\"%s\">contact the store owner</a>.</p>";
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_success"
+msgstr "Success"

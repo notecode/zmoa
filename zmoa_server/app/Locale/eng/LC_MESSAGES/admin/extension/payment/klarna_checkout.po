@@ -1,0 +1,483 @@
+msgid "heading_title"
+msgstr "Klarna Checkout"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Klarna Checkout account details!"
+
+msgid "text_edit"
+msgstr "Edit Klarna Checkout"
+
+msgid "text_live"
+msgstr "Live"
+
+msgid "text_test"
+msgstr "Test"
+
+msgid "text_payment_info"
+msgstr "Payment information"
+
+msgid "text_na"
+msgstr "N/A"
+
+msgid "text_confirm_cancel"
+msgstr "Are you sure you want to cancel this transaction?"
+
+msgid "text_confirm_capture"
+msgstr "Are you sure you want to capture"
+
+msgid "text_confirm_refund"
+msgstr "Are you sure you want to refund"
+
+msgid "text_confirm_extend_authorization"
+msgstr "Are you sure you want to extend the authorization?"
+
+msgid "text_confirm_release_authorization"
+msgstr "Are you sure you want to release the remaining authorization?"
+
+msgid "text_confirm_merchant_reference"
+msgstr "Are you sure you want to update merchant reference 1?"
+
+msgid "text_confirm_shipping_info"
+msgstr "Are you sure you want to save shipping information?"
+
+msgid "text_confirm_billing_address"
+msgstr "Are you sure you want to update the billing address?"
+
+msgid "text_confirm_shipping_address"
+msgstr "Are you sure you want to extend the shipping address?"
+
+msgid "text_confirm_trigger_send_out"
+msgstr "Are you sure you want to trigger a new send out?"
+
+msgid "text_confirm_settlement"
+msgstr "Are you sure you want to process settlement files?"
+
+msgid "text_no_capture"
+msgstr "No captures"
+
+msgid "text_no_refund"
+msgstr "No refunds"
+
+msgid "text_success_action"
+msgstr "Success"
+
+msgid "text_error_generic"
+msgstr "Error: There was an error with your request."
+
+msgid "text_capture_shipping_info_title"
+msgstr "Capture %d - Shipping Info"
+
+msgid "text_capture_billing_address_title"
+msgstr "Capture %d - Billing Address"
+
+msgid "text_new_capture_title"
+msgstr "New Capture"
+
+msgid "text_new_refund_title"
+msgstr "New Refund"
+
+msgid "text_downloading_settlement"
+msgstr "Downloading settlement files..."
+
+msgid "text_processing_orders"
+msgstr "Processing orders..."
+
+msgid "text_processing_order"
+msgstr "Processing order"
+
+msgid "text_no_files"
+msgstr "No files to download."
+
+msgid "text_version"
+msgstr "1.2"
+
+msgid "column_order_id"
+msgstr "Order ID"
+
+msgid "column_capture_id"
+msgstr "Capture ID"
+
+msgid "column_reference"
+msgstr "Klarna Reference"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_merchant_reference_1"
+msgstr "Merchant Reference 1"
+
+msgid "column_customer_details"
+msgstr "Customer Details"
+
+msgid "column_billing_address"
+msgstr "Billing Details"
+
+msgid "column_shipping_address"
+msgstr "Shipping Details"
+
+msgid "column_order_lines"
+msgstr "Item Details"
+
+msgid "column_amount"
+msgstr "Amount"
+
+msgid "column_authorization_remaining"
+msgstr "Authorization Remaining"
+
+msgid "column_authorization_expiry"
+msgstr "Authorization Expiry Date"
+
+msgid "column_item_reference"
+msgstr "Reference"
+
+msgid "column_type"
+msgstr "Type"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_quantity_unit"
+msgstr "Quantity Unit"
+
+msgid "column_name"
+msgstr "Name"
+
+msgid "column_total_amount"
+msgstr "Total Amount"
+
+msgid "column_unit_price"
+msgstr "Unit Price"
+
+msgid "column_total_discount_amount"
+msgstr "Total Discount Amount"
+
+msgid "column_tax_rate"
+msgstr "Tax Rate"
+
+msgid "column_total_tax_amount"
+msgstr "Total Tax Amount"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "column_cancel"
+msgstr "Cancel"
+
+msgid "column_capture"
+msgstr "Captures"
+
+msgid "column_refund"
+msgstr "Refunds"
+
+msgid "column_date"
+msgstr "Date"
+
+msgid "column_title"
+msgstr "Title"
+
+msgid "column_given_name"
+msgstr "Given Name"
+
+msgid "column_family_name"
+msgstr "Family Name"
+
+msgid "column_street_address"
+msgstr "Street Address"
+
+msgid "column_street_address2"
+msgstr "Street Address 2"
+
+msgid "column_city"
+msgstr "City"
+
+msgid "column_postal_code"
+msgstr "Postal Code"
+
+msgid "column_region"
+msgstr "Region"
+
+msgid "column_country"
+msgstr "Country"
+
+msgid "column_email"
+msgstr "Email"
+
+msgid "column_phone"
+msgstr "Phone"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "column_shipping_info"
+msgstr "Shipping Info"
+
+msgid "column_shipping_company"
+msgstr "Shipping Company"
+
+msgid "column_shipping_method"
+msgstr "Shipping Method"
+
+msgid "column_tracking_number"
+msgstr "Tracking Number"
+
+msgid "column_tracking_uri"
+msgstr "Tracking URI"
+
+msgid "column_return_shipping_company"
+msgstr "Return Shipping Company"
+
+msgid "column_return_tracking_number"
+msgstr "Return Tracking Number"
+
+msgid "column_return_tracking_uri"
+msgstr "Return Tracking URI"
+
+msgid "entry_debug"
+msgstr "Debug Logging"
+
+msgid "entry_colour_button"
+msgstr "Button Background Colour"
+
+msgid "entry_colour_button_text"
+msgstr "Button Text Colour"
+
+msgid "entry_colour_checkbox"
+msgstr "Checkbox Background Colour"
+
+msgid "entry_colour_checkbox_checkmark"
+msgstr "Checkbox Tick Colour"
+
+msgid "entry_colour_header"
+msgstr "Heading Text Colour"
+
+msgid "entry_colour_link"
+msgstr "Link Text Colour"
+
+msgid "entry_separate_shipping_address"
+msgstr "Allow Separate Shipping Address"
+
+msgid "entry_dob_mandatory"
+msgstr "Date Of Birth Mandatory (UK stores only)"
+
+msgid "entry_title_mandatory"
+msgstr "Title Mandatory (UK stores only)"
+
+msgid "entry_additional_text_box"
+msgstr "Allow Newsletter Signup"
+
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_order_status"
+msgstr "Order Status"
+
+msgid "entry_order_status_authorised"
+msgstr "Authorized"
+
+msgid "entry_order_status_part_captured"
+msgstr "Part Captured"
+
+msgid "entry_order_status_captured"
+msgstr "Captured"
+
+msgid "entry_order_status_cancelled"
+msgstr "Cancelled"
+
+msgid "entry_order_status_refund"
+msgstr "Full Refund"
+
+msgid "entry_order_status_fraud_rejected"
+msgstr "Fraud - Rejected"
+
+msgid "entry_order_status_fraud_pending"
+msgstr "Fraud - Pending Decision"
+
+msgid "entry_order_status_fraud_accepted"
+msgstr "Fraud - Accepted"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_terms"
+msgstr "Terms & Conditions"
+
+msgid "entry_locale"
+msgstr "Locale"
+
+msgid "entry_currency"
+msgstr "Currency"
+
+msgid "entry_merchant_id"
+msgstr "Merchant ID (MID)"
+
+msgid "entry_secret"
+msgstr "Shared Secret"
+
+msgid "entry_environment"
+msgstr "Environment (Live/Test)"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_shipping"
+msgstr "Shipping Countries"
+
+msgid "entry_api"
+msgstr "API Location"
+
+msgid "entry_shipping_company"
+msgstr "Shipping Company"
+
+msgid "entry_shipping_method"
+msgstr "Shipping Method"
+
+msgid "entry_tracking_number"
+msgstr "Tracking Number"
+
+msgid "entry_tracking_uri"
+msgstr "Tracking URI"
+
+msgid "entry_return_shipping_company"
+msgstr "Return Shipping Company"
+
+msgid "entry_return_tracking_number"
+msgstr "Return Tracking Number"
+
+msgid "entry_return_tracking_uri"
+msgstr "Return Tracking URI"
+
+msgid "entry_sftp_username"
+msgstr "SFTP Username"
+
+msgid "entry_sftp_password"
+msgstr "SFTP Password"
+
+msgid "entry_process_settlement"
+msgstr "Process Settlement Files"
+
+msgid "entry_settlement_order_status"
+msgstr "Order Status"
+
+msgid "entry_version"
+msgstr "Extension Version"
+
+msgid "help_debug"
+msgstr "Enabling debug will write sensitive data to a log file. You should always disable unless instructed otherwise."
+
+msgid "help_separate_shipping_address"
+msgstr "If yes, the consumer can enter different billing and shipping addresses."
+
+msgid "help_dob_mandatory"
+msgstr "If yes, the consumer cannot skip date of birth."
+
+msgid "help_title_mandatory"
+msgstr "If specified to no, title becomes optional in countries that by default require title."
+
+msgid "help_additional_text_box"
+msgstr "Allows newsletter signup within the iFrame for logged in users."
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active."
+
+msgid "help_locale"
+msgstr "Locale code for each account. Two-letter language code combined with two-letter country code according to RFC 1766. (e.g. en-gb for British English or sv-se for Swedish)"
+
+msgid "help_api"
+msgstr "For Europe users, Klarna Checkout doesn\'t provide the customer region. This means that region specific shipping options will not work (Country specific shipping is fine)"
+
+msgid "help_sftp_username"
+msgstr "SFTP username provided by your account manager"
+
+msgid "help_sftp_password"
+msgstr "SFTP password provided by your account manager"
+
+msgid "help_settlement_order_status"
+msgstr "Order status that processed settlement orders will change to."
+
+msgid "help_shipping"
+msgstr "All countries within this geo zone will be available to select in the Klarna iFrame."
+
+msgid "button_account_remove"
+msgstr "Remove Account"
+
+msgid "button_account_add"
+msgstr "Add Account"
+
+msgid "button_capture"
+msgstr "Capture"
+
+msgid "button_refund"
+msgstr "Refund"
+
+msgid "button_extend_authorization"
+msgstr "Extend"
+
+msgid "button_release_authorization"
+msgstr "Release"
+
+msgid "button_update"
+msgstr "Update"
+
+msgid "button_add_shipping_info"
+msgstr "Add Shipping Info"
+
+msgid "button_trigger_send_out"
+msgstr "Trigger New Send Out"
+
+msgid "button_edit_shipping_info"
+msgstr "Edit Shipping Info"
+
+msgid "button_edit_billing_address"
+msgstr "Edit Billing Address"
+
+msgid "button_new_capture"
+msgstr "New Capture"
+
+msgid "button_new_refund"
+msgstr "New Refund"
+
+msgid "button_process_settlement"
+msgstr "Process Settlement Files"
+
+msgid "error_warning"
+msgstr "Warning: Please check the form carefully for errors!"
+
+msgid "error_php_version"
+msgstr "Minimum version of PHP 5.4.0 is required!"
+
+msgid "error_ssl"
+msgstr "You must enable "Use SSL" in the store settings and have an SSL certificate installed!"
+
+msgid "error_account_minimum"
+msgstr "Please add at least one account."
+
+msgid "error_locale"
+msgstr "Please enter a valid locale."
+
+msgid "error_account_currency"
+msgstr "Account list contains one or more duplicate currencies."
+
+msgid "error_merchant_id"
+msgstr "Merchant ID Required!"
+
+msgid "error_secret"
+msgstr "Shared Secret Required!"
+
+msgid "error_tax_warning"
+msgstr "Warning: Some of your products use a Payment Address based Tax Class. Klarna Checkout will not work when any of these are placed in the cart."
+
+msgid "tab_setting"
+msgstr "Settings"
+
+msgid "tab_order_status"
+msgstr "Order Statuses"
+
+msgid "tab_account"
+msgstr "Accounts"
+
+msgid "tab_settlement"
+msgstr "Settlement"

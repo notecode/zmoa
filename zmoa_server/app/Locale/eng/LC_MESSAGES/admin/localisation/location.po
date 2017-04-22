@@ -1,0 +1,77 @@
+msgid "heading_title"
+msgstr "Store Locations"
+
+msgid "text_success"
+msgstr "Success: You have modified store locations!"
+
+msgid "text_list"
+msgstr "Store Location List"
+
+msgid "text_add"
+msgstr "Add Store Location"
+
+msgid "text_edit"
+msgstr "Edit Store Location"
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "text_time"
+msgstr "Opening Times"
+
+msgid "text_geocode"
+msgstr "Geocode was not successful for the following reason:"
+
+msgid "column_name"
+msgstr "Store Name"
+
+msgid "column_address"
+msgstr "Address"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Store Name"
+
+msgid "entry_address"
+msgstr "Address"
+
+msgid "entry_geocode"
+msgstr "Geocode"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "entry_image"
+msgstr "Image"
+
+msgid "entry_open"
+msgstr "Opening Times"
+
+msgid "entry_comment"
+msgstr "Comment"
+
+msgid "help_geocode"
+msgstr "Please enter your store location geocode manually."
+
+msgid "help_open"
+msgstr "Fill in your stores opening times."
+
+msgid "help_comment"
+msgstr "This field is for any special notes you would like to tell the customer i.e. Store does not accept cheques."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify store locations!"
+
+msgid "error_name"
+msgstr "Store name must be between 3 and 32 characters!"
+
+msgid "error_address"
+msgstr "Address must be between 3 and 128 characters!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"

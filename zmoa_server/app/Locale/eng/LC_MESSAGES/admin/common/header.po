@@ -1,0 +1,56 @@
+msgid "heading_title"
+msgstr "OpenCart"
+
+msgid "text_order"
+msgstr "Orders"
+
+msgid "text_processing_status"
+msgstr "Processing"
+
+msgid "text_complete_status"
+msgstr "Completed"
+
+msgid "text_customer"
+msgstr "Customers"
+
+msgid "text_online"
+msgstr "Customers Online"
+
+msgid "text_approval"
+msgstr "Pending approval"
+
+msgid "text_product"
+msgstr "Products"
+
+msgid "text_stock"
+msgstr "Out of stock"
+
+msgid "text_review"
+msgstr "Reviews"
+
+msgid "text_return"
+msgstr "Returns"
+
+msgid "text_affiliate"
+msgstr "Affiliates"
+
+msgid "text_store"
+msgstr "Stores"
+
+msgid "text_front"
+msgstr "Store Front"
+
+msgid "text_help"
+msgstr "Help"
+
+msgid "text_homepage"
+msgstr "OpenCart Homepage"
+
+msgid "text_support"
+msgstr "Support Forum"
+
+msgid "text_documentation"
+msgstr "Documentation"
+
+msgid "text_logout"
+msgstr "Logout"

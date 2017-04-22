@@ -1,0 +1,30 @@
+// Heading
+msgid "heading_title"
+msgstr "Use Reward Points (Available %s)"
+
+
+// Text
+msgid "text_reward"
+msgstr "Reward Points (%s)"
+
+msgid "text_order_id"
+msgstr "Order ID: #%s"
+
+msgid "text_success"
+msgstr "Success: Your reward points discount has been applied!"
+
+
+// Entry
+msgid "entry_reward"
+msgstr "Points to use (Max %s)"
+
+
+// Error
+msgid "error_reward"
+msgstr "Warning: Please enter the amount of reward points to use!"
+
+msgid "error_points"
+msgstr "Warning: You don\"t have %s reward points!"
+
+msgid "error_maximum"
+msgstr "Warning: The maximum number of points that can be applied is %s!"

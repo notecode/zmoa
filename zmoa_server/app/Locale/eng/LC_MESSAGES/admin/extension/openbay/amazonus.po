@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Amazon USA"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_dashboard"
+msgstr "Amazon US Dashboard"
+
+msgid "text_heading_settings"
+msgstr "Settings"
+
+msgid "text_heading_account"
+msgstr "Change plan"
+
+msgid "text_heading_links"
+msgstr "Item links"
+
+msgid "text_heading_register"
+msgstr "Register"
+
+msgid "text_heading_bulk_listing"
+msgstr "Bulk listing"
+
+msgid "text_heading_stock_updates"
+msgstr "Stock updates"
+
+msgid "text_heading_saved_listings"
+msgstr "Saved listings"
+
+msgid "text_heading_bulk_linking"
+msgstr "Bulk linking"

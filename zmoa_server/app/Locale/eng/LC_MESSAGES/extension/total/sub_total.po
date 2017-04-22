@@ -1,0 +1,2 @@
+msgid "text_sub_total"
+msgstr "Sub-Total"

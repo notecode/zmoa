@@ -1,0 +1,29 @@
+// Heading
+msgid "heading_title"
+msgstr "Klarna Checkout"
+
+msgid "heading_title_success"
+msgstr "Your Klarna Checkout order has been placed!"
+
+
+// Text
+msgid "text_title"
+msgstr "Klarna Checkout"
+
+msgid "text_basket"
+msgstr "Shopping Cart"
+
+msgid "text_checkout"
+msgstr "Checkout"
+
+msgid "text_success"
+msgstr "Success"
+
+msgid "text_choose_shipping_method"
+msgstr "Choose shipping method"
+
+msgid "text_sales_tax"
+msgstr "Sales Tax"
+
+msgid "text_newsletter"
+msgstr "Subscribe to our newsletter"

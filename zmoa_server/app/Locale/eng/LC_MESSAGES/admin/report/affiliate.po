@@ -1,0 +1,32 @@
+msgid "heading_title"
+msgstr "Affiliate Commission Report"
+
+msgid "text_list"
+msgstr "Affiliate Commission List"
+
+msgid "column_affiliate"
+msgstr "Affiliate Name"
+
+msgid "column_email"
+msgstr "E-Mail"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_commission"
+msgstr "Commission"
+
+msgid "column_orders"
+msgstr "No. Orders"
+
+msgid "column_total"
+msgstr "Total"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_date_start"
+msgstr "Date Start"
+
+msgid "entry_date_end"
+msgstr "Date End"

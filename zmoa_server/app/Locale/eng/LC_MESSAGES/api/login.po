@@ -1,0 +1,11 @@
+// Text
+msgid "text_success"
+msgstr "Success: API session successfully started!"
+
+
+// Error
+msgid "error_key"
+msgstr "Warning: Incorrect API Key!"
+
+msgid "error_ip"
+msgstr "Warning: Your IP %s is not allowed to access this API!"

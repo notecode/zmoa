@@ -1,0 +1,53 @@
+msgid "heading_title"
+msgstr "Customer Groups"
+
+msgid "text_success"
+msgstr "Success: You have modified customer groups!"
+
+msgid "text_list"
+msgstr "Customer Group List"
+
+msgid "text_add"
+msgstr "Add Customer Group"
+
+msgid "text_edit"
+msgstr "Edit Customer Group"
+
+msgid "column_name"
+msgstr "Customer Group Name"
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Customer Group Name"
+
+msgid "entry_description"
+msgstr "Description"
+
+msgid "entry_approval"
+msgstr "Approve New Customers"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_approval"
+msgstr "Customers must be approved by an administrator before they can login."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify customer groups!"
+
+msgid "error_name"
+msgstr "Customer Group Name must be between 3 and 32 characters!"
+
+msgid "error_default"
+msgstr "Warning: This customer group cannot be deleted as it is currently assigned as the default store customer group!"
+
+msgid "error_store"
+msgstr "Warning: This customer group cannot be deleted as it is currently assigned to %s stores!"
+
+msgid "error_customer"
+msgstr "Warning: This customer group cannot be deleted as it is currently assigned to %s customers!"

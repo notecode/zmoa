@@ -1,0 +1,39 @@
+// Text
+msgid "text_title"
+msgstr "Royal Mail"
+
+msgid "text_weight"
+msgstr "Weight:"
+
+msgid "text_insurance"
+msgstr "Insured upto:"
+
+msgid "text_special_delivery"
+msgstr "Special Delivery Next Day"
+
+msgid "text_1st_class_signed"
+msgstr "First Class Signed Post"
+
+msgid "text_2nd_class_signed"
+msgstr "Second Class Signed Post"
+
+msgid "text_1st_class_standard"
+msgstr "First Class Standard Post"
+
+msgid "text_2nd_class_standard"
+msgstr "Second Class Standard Post"
+
+msgid "text_international_standard"
+msgstr "International Standard"
+
+msgid "text_international_tracked_signed"
+msgstr "International Tracked & Signed"
+
+msgid "text_international_tracked"
+msgstr "International Tracked"
+
+msgid "text_international_signed"
+msgstr "International Signed"
+
+msgid "text_international_economy"
+msgstr "International Economy"

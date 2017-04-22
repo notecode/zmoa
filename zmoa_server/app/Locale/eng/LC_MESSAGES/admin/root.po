@@ -1,0 +1,425 @@
+msgid "code"
+msgstr "en"
+
+msgid "direction"
+msgstr "ltr"
+
+msgid "date_format_short"
+msgstr "d/m/Y"
+
+msgid "date_format_long"
+msgstr "l dS F Y"
+
+msgid "time_format"
+msgstr "h:i:s A"
+
+msgid "datetime_format"
+msgstr "d/m/Y H:i:s"
+
+msgid "decimal_point"
+msgstr "."
+
+msgid "thousand_point"
+msgstr ","
+
+msgid "text_yes"
+msgstr "Yes"
+
+msgid "text_no"
+msgstr "No"
+
+msgid "text_enabled"
+msgstr "Enabled"
+
+msgid "text_disabled"
+msgstr "Disabled"
+
+msgid "text_none"
+msgstr " --- None --- "
+
+msgid "text_select"
+msgstr " --- Please Select --- "
+
+msgid "text_select_all"
+msgstr "Select All"
+
+msgid "text_unselect_all"
+msgstr "Unselect All"
+
+msgid "text_all_zones"
+msgstr "All Zones"
+
+msgid "text_default"
+msgstr " <b>(Default)</b>"
+
+msgid "text_close"
+msgstr "Close"
+
+msgid "text_pagination"
+msgstr "Showing %d to %d of %d (%d Pages)"
+
+msgid "text_loading"
+msgstr "Loading..."
+
+msgid "text_no_results"
+msgstr "No results!"
+
+msgid "text_confirm"
+msgstr "Are you sure?"
+
+msgid "text_home"
+msgstr "Home"
+
+msgid "button_add"
+msgstr "Add New"
+
+msgid "button_delete"
+msgstr "Delete"
+
+msgid "button_save"
+msgstr "Save"
+
+msgid "button_cancel"
+msgstr "Cancel"
+
+msgid "button_cancel_recurring"
+msgstr "Cancel Recurring Payments"
+
+msgid "button_continue"
+msgstr "Continue"
+
+msgid "button_clear"
+msgstr "Clear"
+
+msgid "button_close"
+msgstr "Close"
+
+msgid "button_enable"
+msgstr "Enable"
+
+msgid "button_disable"
+msgstr "Disable"
+
+msgid "button_filter"
+msgstr "Filter"
+
+msgid "button_send"
+msgstr "Send"
+
+msgid "button_edit"
+msgstr "Edit"
+
+msgid "button_copy"
+msgstr "Copy"
+
+msgid "button_back"
+msgstr "Back"
+
+msgid "button_remove"
+msgstr "Remove"
+
+msgid "button_refresh"
+msgstr "Refresh"
+
+msgid "button_export"
+msgstr "Export"
+
+msgid "button_import"
+msgstr "Import"
+
+msgid "button_download"
+msgstr "Download"
+
+msgid "button_rebuild"
+msgstr "Rebuild"
+
+msgid "button_upload"
+msgstr "Upload"
+
+msgid "button_submit"
+msgstr "Submit"
+
+msgid "button_invoice_print"
+msgstr "Print Invoice"
+
+msgid "button_shipping_print"
+msgstr "Print Shipping List"
+
+msgid "button_address_add"
+msgstr "Add Address"
+
+msgid "button_attribute_add"
+msgstr "Add Attribute"
+
+msgid "button_banner_add"
+msgstr "Add Banner"
+
+msgid "button_custom_field_value_add"
+msgstr "Add Custom Field"
+
+msgid "button_product_add"
+msgstr "Add Product"
+
+msgid "button_filter_add"
+msgstr "Add Filter"
+
+msgid "button_option_add"
+msgstr "Add Option"
+
+msgid "button_option_value_add"
+msgstr "Add Option Value"
+
+msgid "button_recurring_add"
+msgstr "Add Recurring"
+
+msgid "button_discount_add"
+msgstr "Add Discount"
+
+msgid "button_special_add"
+msgstr "Add Special"
+
+msgid "button_image_add"
+msgstr "Add Image"
+
+msgid "button_geo_zone_add"
+msgstr "Add Geo Zone"
+
+msgid "button_history_add"
+msgstr "Add History"
+
+msgid "button_translation"
+msgstr "Load Default Translation"
+
+msgid "button_translation_add"
+msgstr "Add Translation"
+
+msgid "button_transaction_add"
+msgstr "Add Transaction"
+
+msgid "button_route_add"
+msgstr "Add Route"
+
+msgid "button_rule_add"
+msgstr "Add Rule"
+
+msgid "button_module_add"
+msgstr "Add Module"
+
+msgid "button_link_add"
+msgstr "Add Link"
+
+msgid "button_approve"
+msgstr "Approve"
+
+msgid "button_reset"
+msgstr "Reset"
+
+msgid "button_generate"
+msgstr "Generate"
+
+msgid "button_voucher_add"
+msgstr "Add Voucher"
+
+msgid "button_reward_add"
+msgstr "Add Reward Points"
+
+msgid "button_reward_remove"
+msgstr "Remove Reward Points"
+
+msgid "button_commission_add"
+msgstr "Add Commission"
+
+msgid "button_commission_remove"
+msgstr "Remove Commission"
+
+msgid "button_credit_add"
+msgstr "Add Credit"
+
+msgid "button_credit_remove"
+msgstr "Remove Credit"
+
+msgid "button_ip_add"
+msgstr "Add IP"
+
+msgid "button_parent"
+msgstr "Parent"
+
+msgid "button_folder"
+msgstr "New Folder"
+
+msgid "button_search"
+msgstr "Search"
+
+msgid "button_view"
+msgstr "View"
+
+msgid "button_install"
+msgstr "Install"
+
+msgid "button_uninstall"
+msgstr "Uninstall"
+
+msgid "button_login"
+msgstr "Login into Store"
+
+msgid "button_unlock"
+msgstr "Unlock Account"
+
+msgid "button_link"
+msgstr "Link"
+
+msgid "button_currency"
+msgstr "Refresh Currency Values"
+
+msgid "button_apply"
+msgstr "Apply"
+
+msgid "button_category_add"
+msgstr "Add Category"
+
+msgid "button_order"
+msgstr "View Order"
+
+msgid "button_order_recurring"
+msgstr "View Recurring Order"
+
+msgid "tab_address"
+msgstr "Address"
+
+msgid "tab_additional"
+msgstr "Additional"
+
+msgid "tab_admin"
+msgstr "Admin"
+
+msgid "tab_attribute"
+msgstr "Attribute"
+
+msgid "tab_customer"
+msgstr "Customer Details"
+
+msgid "tab_data"
+msgstr "Data"
+
+msgid "tab_design"
+msgstr "Design"
+
+msgid "tab_discount"
+msgstr "Discount"
+
+msgid "tab_general"
+msgstr "General"
+
+msgid "tab_history"
+msgstr "History"
+
+msgid "tab_ftp"
+msgstr "FTP"
+
+msgid "tab_ip"
+msgstr "IP Addresses"
+
+msgid "tab_links"
+msgstr "Links"
+
+msgid "tab_log"
+msgstr "Log"
+
+msgid "tab_image"
+msgstr "Image"
+
+msgid "tab_option"
+msgstr "Option"
+
+msgid "tab_server"
+msgstr "Server"
+
+msgid "tab_store"
+msgstr "Store"
+
+msgid "tab_special"
+msgstr "Special"
+
+msgid "tab_session"
+msgstr "Session"
+
+msgid "tab_local"
+msgstr "Local"
+
+msgid "tab_mail"
+msgstr "Mail"
+
+msgid "tab_module"
+msgstr "Module"
+
+msgid "tab_payment"
+msgstr "Payment Details"
+
+msgid "tab_product"
+msgstr "Products"
+
+msgid "tab_reward"
+msgstr "Reward Points"
+
+msgid "tab_shipping"
+msgstr "Shipping Details"
+
+msgid "tab_total"
+msgstr "Totals"
+
+msgid "tab_transaction"
+msgstr "Transactions"
+
+msgid "tab_voucher"
+msgstr "Vouchers"
+
+msgid "tab_sale"
+msgstr "Sales"
+
+msgid "tab_marketing"
+msgstr "Marketing"
+
+msgid "tab_online"
+msgstr "People Online"
+
+msgid "tab_activity"
+msgstr "Recent Activity"
+
+msgid "tab_recurring"
+msgstr "Recurring"
+
+msgid "tab_action"
+msgstr "Action"
+
+msgid "tab_google"
+msgstr "Google"
+
+msgid "error_exception"
+msgstr "Error Code(%s): %s in %s on line %s"
+
+msgid "error_upload_1"
+msgstr "Warning: The uploaded file exceeds the upload_max_filesize directive in php.ini!"
+
+msgid "error_upload_2"
+msgstr "Warning: The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form!"
+
+msgid "error_upload_3"
+msgstr "Warning: The uploaded file was only partially uploaded!"
+
+msgid "error_upload_4"
+msgstr "Warning: No file was uploaded!"
+
+msgid "error_upload_6"
+msgstr "Warning: Missing a temporary folder!"
+
+msgid "error_upload_7"
+msgstr "Warning: Failed to write file to disk!"
+
+msgid "error_upload_8"
+msgstr "Warning: File upload stopped by extension!"
+
+msgid "error_upload_999"
+msgstr "Warning: No error code available!"
+
+msgid "error_curl"
+msgstr "CURL: Error Code(%s): %s"

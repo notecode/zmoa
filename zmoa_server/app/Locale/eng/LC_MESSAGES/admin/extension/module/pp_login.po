@@ -1,0 +1,74 @@
+msgid "heading_title"
+msgstr "Log In with PayPal"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Log In with PayPal module!"
+
+msgid "text_edit"
+msgstr "Edit Log In with PayPal Module"
+
+msgid "text_button_grey"
+msgstr "Grey"
+
+msgid "text_button_blue"
+msgstr "Blue (Recommended)"
+
+msgid "entry_client_id"
+msgstr "Client ID"
+
+msgid "entry_secret"
+msgstr "Secret"
+
+msgid "entry_sandbox"
+msgstr "Sandbox Mode"
+
+msgid "entry_debug"
+msgstr "Debug Logging"
+
+msgid "entry_customer_group"
+msgstr "Customer Group"
+
+msgid "entry_button"
+msgstr "Button Colour"
+
+msgid "entry_seamless"
+msgstr "Allow "Seamless Checkout""
+
+msgid "entry_locale"
+msgstr "Locale"
+
+msgid "entry_return_url"
+msgstr "Return URL"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "help_sandbox"
+msgstr "Use sandbox (testing) environment?"
+
+msgid "help_customer_group"
+msgstr "For new customers, which Customer Group should they get created as?"
+
+msgid "help_debug_logging"
+msgstr "Enabling this will allow data to be added to your error log to help debug any problems."
+
+msgid "help_seamless"
+msgstr "Allows auto-login when customers choose PayPal Express Checkout. To use this, the option must be enabled in your Log in With PayPal account. You must also use the same account as the one used in Express Checkout."
+
+msgid "help_locale"
+msgstr "This is the PayPal locale setting for your store languages"
+
+msgid "help_return_url"
+msgstr "This needs to be added in the PayPal app configuration under app redirect URLs."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify Log In with PayPal module!"
+
+msgid "error_client_id"
+msgstr "Client ID required!"
+
+msgid "error_secret"
+msgstr "Secret required!"

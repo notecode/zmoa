@@ -1,0 +1,24 @@
+// Text
+msgid "text_title"
+msgstr "Credit Card / Debit Card (Paymate)"
+
+msgid "text_unable"
+msgstr "Unable to locate or update your order status"
+
+msgid "text_declined"
+msgstr "Payment was declined by Paymate"
+
+msgid "text_failed"
+msgstr "Paymate Transaction Failed"
+
+msgid "text_failed_message"
+msgstr "%s\">Contact Us</a> with your order details.</p>"
+
+msgid "text_basket"
+msgstr "Basket"
+
+msgid "text_checkout"
+msgstr "Checkout"
+
+msgid "text_success"
+msgstr "Success"

@@ -1,0 +1,131 @@
+msgid "heading_title"
+msgstr "Settings"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_fba"
+msgstr "Fulfillment by Amazon"
+
+msgid "text_success"
+msgstr "Your settings have been saved"
+
+msgid "text_status"
+msgstr "Status"
+
+msgid "text_account_ok"
+msgstr "Connection to Fulfillment by Amazon OK"
+
+msgid "text_api_ok"
+msgstr "API connection OK"
+
+msgid "text_api_status"
+msgstr "API connection"
+
+msgid "text_edit"
+msgstr "Edit Fulfillment by Amazon settings"
+
+msgid "text_standard"
+msgstr "Standard"
+
+msgid "text_expedited"
+msgstr "Expedited"
+
+msgid "text_priority"
+msgstr "Priority"
+
+msgid "text_fillorkill"
+msgstr "Fill or Kill"
+
+msgid "text_fillall"
+msgstr "Fill All"
+
+msgid "text_fillallavailable"
+msgstr "Fill All Available"
+
+msgid "text_prefix_warning"
+msgstr "Do not change this setting after orders have been sent to Amazon, only set this when you first install."
+
+msgid "text_disabled_cancel"
+msgstr "Disabled - do not automatically cancel fulfillments"
+
+msgid "text_validate_success"
+msgstr "Your API details are working correctly! You must press save to ensure settings are saved."
+
+msgid "text_register_banner"
+msgstr "Click here if you need to register for an account"
+
+msgid "entry_api_key"
+msgstr "API key"
+
+msgid "entry_account_id"
+msgstr "Account ID"
+
+msgid "entry_send_orders"
+msgstr "Send orders automatically"
+
+msgid "entry_fulfill_policy"
+msgstr "Fulfillment policy"
+
+msgid "entry_shipping_speed"
+msgstr "Default shipping speed"
+
+msgid "entry_debug_log"
+msgstr "Enable debug logging"
+
+msgid "entry_new_order_status"
+msgstr "New fulfillment trigger"
+
+msgid "entry_order_id_prefix"
+msgstr "Order ID Prefix"
+
+msgid "entry_only_fill_complete"
+msgstr "All items must be FBA"
+
+msgid "help_api_key"
+msgstr "This is your API key, obtain this from your OpenBay Pro account area"
+
+msgid "help_account_id"
+msgstr "This is the account ID that matches the registered Amazon account for OpenBay Pro, obtain this from your OpenBay Pro account area"
+
+msgid "help_send_orders"
+msgstr "Orders containing matching Fulfillment by Amazon products will be send to Amazon automatically"
+
+msgid "help_fulfill_policy"
+msgstr "The default fulfillment policy (FillAll - All fulfillable items in the fulfillment order are shipped. The fulfillment order remains in a processing state until all items are either shipped by Amazon or cancelled by the seller. FillAllAvailable - All fulfillable items in the fulfillment order are shipped. All unfulfillable items in the order are cancelled by Amazon.FillOrKill - If an item in a fulfillment order is determined to be unfulfillable before any shipment in the order moves to the Pending status (the process of picking units from inventory has begun), then the entire order is considered unfulfillable. However, if an item in a fulfillment order is determined to be unfulfillable after a shipment in the order moves to the Pending status, Amazon cancels as much of the fulfillment order as possible.)"
+
+msgid "help_shipping_speed"
+msgstr "This is the default shipping speed category to apply to new orders, different service levels may incurr different costs"
+
+msgid "help_debug_log"
+msgstr "Debug logs will record information to a log file about actions the module does. This should be left enabled to help find the cause of any problems."
+
+msgid "help_new_order_status"
+msgstr "This is the order status which will trigger the order to be created for fulfillment. Ensure that this is using a status only after you have received payment."
+
+msgid "help_order_id_prefix"
+msgstr "Having an order prefix will help identify orders that have come from your store not from other integrations. This is very helpful when merchants sell on many marketplaces and use FBA"
+
+msgid "help_only_fill_complete"
+msgstr "This will only allow orders to be sent for fulfillment if ALL items in the order are matched to a Fulfillment by Amazon item. If any item is not then the whole order will remain unfilled."
+
+msgid "error_api_connect"
+msgstr "Failed to connect to the API"
+
+msgid "error_account_info"
+msgstr "Unable to verify API connection to Fulfillment by Amazon "
+
+msgid "error_api_key"
+msgstr "The API key is invalid"
+
+msgid "error_api_account_id"
+msgstr "The Account ID is invalid"
+
+msgid "error_validation"
+msgstr "There was an error validating your details"
+
+msgid "tab_api_info"
+msgstr "API details"
+
+msgid "button_verify"
+msgstr "Verify details"

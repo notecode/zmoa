@@ -1,0 +1,6 @@
+// Text
+msgid "text_title"
+msgstr "Pickup"
+
+msgid "text_description"
+msgstr "Pickup From Store"

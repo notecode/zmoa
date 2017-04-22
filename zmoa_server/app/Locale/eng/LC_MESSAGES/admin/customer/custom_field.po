@@ -1,0 +1,119 @@
+msgid "heading_title"
+msgstr "Custom Fields"
+
+msgid "text_success"
+msgstr "Success: You have modified custom fields!"
+
+msgid "text_list"
+msgstr "Custom Field List"
+
+msgid "text_add"
+msgstr "Add Custom Field"
+
+msgid "text_edit"
+msgstr "Edit Custom Field"
+
+msgid "text_choose"
+msgstr "Choose"
+
+msgid "text_select"
+msgstr "Select"
+
+msgid "text_radio"
+msgstr "Radio"
+
+msgid "text_checkbox"
+msgstr "Checkbox"
+
+msgid "text_input"
+msgstr "Input"
+
+msgid "text_text"
+msgstr "Text"
+
+msgid "text_textarea"
+msgstr "Textarea"
+
+msgid "text_file"
+msgstr "File"
+
+msgid "text_date"
+msgstr "Date"
+
+msgid "text_datetime"
+msgstr "Date &amp; Time"
+
+msgid "text_time"
+msgstr "Time"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_address"
+msgstr "Address"
+
+msgid "text_regex"
+msgstr "Regex"
+
+msgid "column_name"
+msgstr "Custom Field Name"
+
+msgid "column_location"
+msgstr "Location"
+
+msgid "column_type"
+msgstr "Type"
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Custom Field Name"
+
+msgid "entry_location"
+msgstr "Location"
+
+msgid "entry_type"
+msgstr "Type"
+
+msgid "entry_value"
+msgstr "Value"
+
+msgid "entry_validation"
+msgstr "Validation"
+
+msgid "entry_custom_value"
+msgstr "Custom Field Value Name"
+
+msgid "entry_customer_group"
+msgstr "Customer Group"
+
+msgid "entry_required"
+msgstr "Required"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_regex"
+msgstr "Use regex. E.g: /[a-zA-Z0-9_-]/"
+
+msgid "help_sort_order"
+msgstr "Use minus to count backwards from the last field in the set."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify custom fields!"
+
+msgid "error_name"
+msgstr "Custom Field Name must be between 1 and 128 characters!"
+
+msgid "error_type"
+msgstr "Warning: Custom Field Values required!"
+
+msgid "error_custom_value"
+msgstr "Custom Value Name must be between 1 and 128 characters!"

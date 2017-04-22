@@ -1,0 +1,9 @@
+// Text
+msgid "text_title"
+msgstr "PayPal"
+
+msgid "text_testmode"
+msgstr "Warning: The payment gateway is in \"Sandbox Mode\". Your account will not be charged."
+
+msgid "text_total"
+msgstr "Shipping, Handling, Discounts & Taxes"

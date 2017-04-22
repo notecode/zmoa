@@ -1,0 +1,206 @@
+msgid "heading_title"
+msgstr "FraudLabs Pro"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified FraudLabs Pro Settings!"
+
+msgid "text_edit"
+msgstr "Settings"
+
+msgid "text_signup"
+msgstr "FraudLabs Pro is a fraud detection service. You can <a href="http://www.fraudlabspro.com/plan?ref=1730" target="_blank"><u>sign up here</u></a> for a free API Key."
+
+msgid "text_id"
+msgstr "FraudLabs Pro ID"
+
+msgid "text_ip_address"
+msgstr "IP Address"
+
+msgid "text_ip_net_speed"
+msgstr "IP Net Speed"
+
+msgid "text_ip_isp_name"
+msgstr "IP ISP Name"
+
+msgid "text_ip_usage_type"
+msgstr "IP Usage Type"
+
+msgid "text_ip_domain"
+msgstr "IP Domain"
+
+msgid "text_ip_time_zone"
+msgstr "IP Time Zone"
+
+msgid "text_ip_location"
+msgstr "IP Location"
+
+msgid "text_ip_distance"
+msgstr "IP Distance"
+
+msgid "text_ip_latitude"
+msgstr "IP Latitude"
+
+msgid "text_ip_longitude"
+msgstr "IP Longitude"
+
+msgid "text_risk_country"
+msgstr "High Risk Country"
+
+msgid "text_free_email"
+msgstr "Free Email"
+
+msgid "text_ship_forward"
+msgstr "Ship Forward"
+
+msgid "text_using_proxy"
+msgstr "Using Proxy"
+
+msgid "text_bin_found"
+msgstr "BIN Found"
+
+msgid "text_email_blacklist"
+msgstr "Email Blacklist"
+
+msgid "text_credit_card_blacklist"
+msgstr "Credit Card Blacklist"
+
+msgid "text_score"
+msgstr "FraudLabs Pro Score"
+
+msgid "text_status"
+msgstr "FraudLabs Pro Status"
+
+msgid "text_message"
+msgstr "Message"
+
+msgid "text_transaction_id"
+msgstr "Transaction ID"
+
+msgid "text_credits"
+msgstr "Balance"
+
+msgid "text_error"
+msgstr "Error:"
+
+msgid "text_flp_upgrade"
+msgstr "<a href="http://www.fraudlabspro.com/plan" target="_blank">[Upgrade]</a>"
+
+msgid "text_flp_merchant_area"
+msgstr "Please login to <a href="http://www.fraudlabspro.com/merchant/login" target="_blank">FraudLabs Pro Merchant Area</a> for more information about this order."
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_key"
+msgstr "API Key"
+
+msgid "entry_score"
+msgstr "Risk Score"
+
+msgid "entry_order_status"
+msgstr "Order Status"
+
+msgid "entry_review_status"
+msgstr "Review Status"
+
+msgid "entry_approve_status"
+msgstr "Approve Status"
+
+msgid "entry_reject_status"
+msgstr "Reject Status"
+
+msgid "entry_simulate_ip"
+msgstr "Simulate IP"
+
+msgid "help_order_status"
+msgstr "Orders that have a score over your set risk score will be assigned this order status."
+
+msgid "help_review_status"
+msgstr "Orders that marked as review by FraudLabs Pro will be assigned this order status."
+
+msgid "help_approve_status"
+msgstr "Orders that marked as approve by FraudLabs Pro will be assigned this order status."
+
+msgid "help_reject_status"
+msgstr "Orders that marked as reject by FraudLabs Pro will be assigned this order status."
+
+msgid "help_simulate_ip"
+msgstr "Simulate the visitor IP address for testing. Leave blank to disable it."
+
+msgid "help_fraudlabspro_id"
+msgstr "Unique identifier for a transaction screened by FraudLabs Pro system."
+
+msgid "help_ip_address"
+msgstr "IP Address."
+
+msgid "help_ip_net_speed"
+msgstr "Connection speed."
+
+msgid "help_ip_isp_name"
+msgstr "ISP of the IP address."
+
+msgid "help_ip_usage_type"
+msgstr "Usage type of the IP address. E.g, ISP, Commercial, Residential."
+
+msgid "help_ip_domain"
+msgstr "Domain name of the IP address."
+
+msgid "help_ip_time_zone"
+msgstr "Time zone of the IP address."
+
+msgid "help_ip_location"
+msgstr "Location of the IP address."
+
+msgid "help_ip_distance"
+msgstr "Distance from IP address to Billing Location."
+
+msgid "help_ip_latitude"
+msgstr "Latitude of the IP address."
+
+msgid "help_ip_longitude"
+msgstr "Longitude of the IP address."
+
+msgid "help_risk_country"
+msgstr "Whether IP address country is in the latest high risk country list."
+
+msgid "help_free_email"
+msgstr "Whether e-mail is from free e-mail provider."
+
+msgid "help_ship_forward"
+msgstr "Whether shipping address is a freight forwarder address."
+
+msgid "help_using_proxy"
+msgstr "Whether IP address is from Anonymous Proxy Server."
+
+msgid "help_bin_found"
+msgstr "Whether the BIN information matches our BIN list."
+
+msgid "help_email_blacklist"
+msgstr "Whether the email address is in our blacklist database."
+
+msgid "help_credit_card_blacklist"
+msgstr "Whether the credit card is in our blacklist database."
+
+msgid "help_score"
+msgstr "Risk score, 0 (low risk) - 100 (high risk)."
+
+msgid "help_status"
+msgstr "FraudLabs Pro status."
+
+msgid "help_message"
+msgstr "FraudLabs Pro error message description."
+
+msgid "help_transaction_id"
+msgstr "Unique identifier for a transaction screened by FraudLabs Pro system."
+
+msgid "help_credits"
+msgstr "Balance of the credits available after this transaction."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify FraudLabs Pro settings!"
+
+msgid "error_key"
+msgstr "API Key Required!"

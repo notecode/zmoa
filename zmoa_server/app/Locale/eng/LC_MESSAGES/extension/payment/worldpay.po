@@ -1,0 +1,66 @@
+// Text
+msgid "text_title"
+msgstr "Credit Card / Debit Card (Worldpay)"
+
+msgid "text_credit_card"
+msgstr "Card Details"
+
+msgid "text_card_type"
+msgstr "Card Type: "
+
+msgid "text_card_name"
+msgstr "Card Name: "
+
+msgid "text_card_digits"
+msgstr "Last Digits: "
+
+msgid "text_card_expiry"
+msgstr "Expiry: "
+
+msgid "text_trial"
+msgstr "%s every %s %s for %s payments then "
+
+msgid "text_recurring"
+msgstr "%s every %s %s"
+
+msgid "text_length"
+msgstr " for %s payments"
+
+msgid "text_confirm_delete"
+msgstr "Are you sure you wish to delete this card"
+
+msgid "text_card_success"
+msgstr "Card has been successfully removed"
+
+msgid "text_card_error"
+msgstr "There are an error removing your card. Please contact the shop administrator for help."
+
+
+// Entry
+msgid "entry_card"
+msgstr "New or Existing Card: "
+
+msgid "entry_card_existing"
+msgstr "Existing"
+
+msgid "entry_card_new"
+msgstr "New"
+
+msgid "entry_card_save"
+msgstr "Remember Card Details"
+
+msgid "entry_cc_cvc"
+msgstr "Card Verification Code (CVC)"
+
+msgid "entry_cc_choice"
+msgstr "Choose an Existing Card"
+
+
+// Button
+msgid "button_delete_card"
+msgstr "Delete Card"
+
+
+// Error
+msgid "error_process_order"
+msgstr "There are an error processing your order. Please contact the shop administrator for help."

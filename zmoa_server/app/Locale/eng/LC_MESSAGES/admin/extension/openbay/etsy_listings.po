@@ -1,0 +1,110 @@
+msgid "heading_title"
+msgstr "Etsy listings"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_etsy"
+msgstr "Etsy"
+
+msgid "text_link_saved"
+msgstr "Item has been linked"
+
+msgid "text_activate"
+msgstr "Activate"
+
+msgid "text_deactivate"
+msgstr "Deactivate"
+
+msgid "text_add_link"
+msgstr "Add link"
+
+msgid "text_delete_link"
+msgstr "Delete link"
+
+msgid "text_delete"
+msgstr "Delete listing"
+
+msgid "text_status_stock"
+msgstr "Stock not synced"
+
+msgid "text_status_ok"
+msgstr "OK"
+
+msgid "text_status_nolink"
+msgstr "Not linked"
+
+msgid "text_link_added"
+msgstr "A product has been linked to the listing"
+
+msgid "text_link_deleted"
+msgstr "The product has been unlinked from the listing"
+
+msgid "text_item_ended"
+msgstr "The item has been removed from Etsy"
+
+msgid "text_item_deactivated"
+msgstr "The item has been deactivated in Etsy"
+
+msgid "text_item_activated"
+msgstr "The item has been activated in Etsy"
+
+msgid "text_confirm_end"
+msgstr "Are you sure you want to remove the listing?"
+
+msgid "text_confirm_deactivate"
+msgstr "Are you sure you want to deactivate the listing?"
+
+msgid "text_confirm_activate"
+msgstr "Are you sure you want to activate the listing?"
+
+msgid "text_listings"
+msgstr "Manage your Etsy listings"
+
+msgid "column_listing_id"
+msgstr "Etsy ID"
+
+msgid "column_title"
+msgstr "Title"
+
+msgid "column_listing_qty"
+msgstr "Listing quantity"
+
+msgid "column_store_qty"
+msgstr "Store quantity"
+
+msgid "column_status"
+msgstr "Status message"
+
+msgid "column_link_status"
+msgstr "Link status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_limit"
+msgstr "Page limit"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_keywords"
+msgstr "Keywords"
+
+msgid "entry_name"
+msgstr "Product name"
+
+msgid "entry_etsy_id"
+msgstr "Etsy item ID"
+
+msgid "help_keywords"
+msgstr "Keywords only apply with active listings"
+
+msgid "error_etsy"
+msgstr "Error! Etsy API response: "
+
+msgid "error_product_id"
+msgstr "Product ID required"
+
+msgid "error_etsy_id"
+msgstr "Etsy item ID required"

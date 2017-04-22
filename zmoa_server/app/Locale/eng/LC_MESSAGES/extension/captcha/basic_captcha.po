@@ -1,0 +1,8 @@
+msgid "text_captcha"
+msgstr "Captcha"
+
+msgid "entry_captcha"
+msgstr "Enter the code in the box below"
+
+msgid "error_captcha"
+msgstr "Verification code does not match the image!"

@@ -1,0 +1,99 @@
+// Text
+msgid "text_new_subject"
+msgstr "%s - Order %s"
+
+msgid "text_new_greeting"
+msgstr "Thank you for your interest in %s products. Your order has been received and will be processed once payment has been confirmed."
+
+msgid "text_new_received"
+msgstr "You have received an order."
+
+msgid "text_new_link"
+msgstr "To view your order click on the link below:"
+
+msgid "text_new_order_detail"
+msgstr "Order Details"
+
+msgid "text_new_instruction"
+msgstr "Instructions"
+
+msgid "text_new_order_id"
+msgstr "Order ID:"
+
+msgid "text_new_date_added"
+msgstr "Date Added:"
+
+msgid "text_new_order_status"
+msgstr "Order Status:"
+
+msgid "text_new_payment_method"
+msgstr "Payment Method:"
+
+msgid "text_new_shipping_method"
+msgstr "Shipping Method:"
+
+msgid "text_new_email"
+msgstr "E-mail:"
+
+msgid "text_new_telephone"
+msgstr "Telephone:"
+
+msgid "text_new_ip"
+msgstr "IP Address:"
+
+msgid "text_new_payment_address"
+msgstr "Payment Address"
+
+msgid "text_new_shipping_address"
+msgstr "Shipping Address"
+
+msgid "text_new_products"
+msgstr "Products"
+
+msgid "text_new_product"
+msgstr "Product"
+
+msgid "text_new_model"
+msgstr "Model"
+
+msgid "text_new_quantity"
+msgstr "Quantity"
+
+msgid "text_new_price"
+msgstr "Price"
+
+msgid "text_new_order_total"
+msgstr "Order Totals"
+
+msgid "text_new_total"
+msgstr "Total"
+
+msgid "text_new_download"
+msgstr "Once your payment has been confirmed you can click on the link below to access your downloadable products:"
+
+msgid "text_new_comment"
+msgstr "The comments for your order are:"
+
+msgid "text_new_footer"
+msgstr "Please reply to this e-mail if you have any questions."
+
+msgid "text_update_subject"
+msgstr "%s - Order Update %s"
+
+msgid "text_update_order"
+msgstr "Order ID:"
+
+msgid "text_update_date_added"
+msgstr "Date Ordered:"
+
+msgid "text_update_order_status"
+msgstr "Your order has been updated to the following status:"
+
+msgid "text_update_comment"
+msgstr "The comments for your order are:"
+
+msgid "text_update_link"
+msgstr "To view your order click on the link below:"
+
+msgid "text_update_footer"
+msgstr "Please reply to this email if you have any questions."

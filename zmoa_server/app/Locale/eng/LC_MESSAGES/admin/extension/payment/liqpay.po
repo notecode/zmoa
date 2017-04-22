@@ -1,0 +1,56 @@
+msgid "heading_title"
+msgstr "LIQPAY"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified LIQPAY account details!"
+
+msgid "text_edit"
+msgstr "Edit LIQPAY"
+
+msgid "text_pay"
+msgstr "LIQPAY"
+
+msgid "text_card"
+msgstr "Credit Card"
+
+msgid "text_liqpay"
+msgstr "<img src="view/image/payment/liqpay.png" alt="LIQPAY" title="LIQPAY" style="border: 1px solid #EEEEEE;" />"
+
+msgid "entry_merchant"
+msgstr "Merchant ID"
+
+msgid "entry_signature"
+msgstr "Signature"
+
+msgid "entry_type"
+msgstr "Type"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_order_status"
+msgstr "Order Status"
+
+msgid "entry_geo_zone"
+msgstr "Geo Zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify payment LIQPAY!"
+
+msgid "error_merchant"
+msgstr "Merchant ID Required!"
+
+msgid "error_signature"
+msgstr "Signature Required!"

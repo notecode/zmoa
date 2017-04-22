@@ -1,0 +1,13 @@
+// Text
+msgid "text_captcha"
+msgstr "Captcha"
+
+
+// Entry
+msgid "entry_captcha"
+msgstr "Please complete the captcha validation below"
+
+
+// Error
+msgid "error_captcha"
+msgstr "Verification is not correct!"

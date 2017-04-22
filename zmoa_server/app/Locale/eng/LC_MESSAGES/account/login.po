@@ -1,0 +1,42 @@
+msgid "heading_title"
+msgstr "Account Login"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_login"
+msgstr "Login"
+
+msgid "text_new_customer"
+msgstr "New Customer"
+
+msgid "text_register"
+msgstr "Register Account"
+
+msgid "text_register_account"
+msgstr "By creating an account you will be able to shop faster, be up to date on an order\"s status, and keep track of the orders you have previously made."
+
+msgid "text_returning_customer"
+msgstr "Returning Customer"
+
+msgid "text_i_am_returning_customer"
+msgstr "I am a returning customer"
+
+msgid "text_forgotten"
+msgstr "Forgotten Password"
+
+
+msgid "entry_email"
+msgstr "E-Mail Address"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "error_login"
+msgstr "Warning: No match for E-Mail Address and/or Password."
+
+msgid "error_attempts"
+msgstr "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+
+msgid "error_approved"
+msgstr "Warning: Your account requires approval before you can login."

@@ -1,0 +1,356 @@
+msgid "heading_title"
+msgstr "Lay-Buy"
+
+msgid "heading_transaction_title"
+msgstr "Transaction"
+
+msgid "tab_settings"
+msgstr "Settings"
+
+msgid "tab_reports"
+msgstr "Reports"
+
+msgid "tab_reference"
+msgstr "Reference Information"
+
+msgid "tab_customer"
+msgstr "Customer Information"
+
+msgid "tab_payment"
+msgstr "Payment Plan"
+
+msgid "tab_modify"
+msgstr "Modify Plan"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Lay-Buy payment module!"
+
+msgid "text_edit"
+msgstr "Edit Lay-Buy"
+
+msgid "text_laybuy"
+msgstr "<a href="https://www.lay-buys.com" target="_blank"><img src="view/image/payment/laybuys.png" style="width:94px;height:25px" alt="Lay-Buys" title="Lay-Buys"></a>"
+
+msgid "text_cancel_success"
+msgstr "Transaction was canceled successfully."
+
+msgid "text_cancel_failure"
+msgstr "Cancel request was unsuccessful. Please try again!"
+
+msgid "text_revise_success"
+msgstr "Revise request was successful."
+
+msgid "text_revise_failure"
+msgstr "Revise request was unsuccessful. Please try again!"
+
+msgid "text_type_laybuy"
+msgstr "Lay-Buy"
+
+msgid "text_type_buynow"
+msgstr "Buy-Now"
+
+msgid "text_status_1"
+msgstr "Pending"
+
+msgid "text_status_5"
+msgstr "Completed"
+
+msgid "text_status_7"
+msgstr "Canceled"
+
+msgid "text_status_50"
+msgstr "Revise Requested"
+
+msgid "text_status_51"
+msgstr "Revised"
+
+msgid "text_fetched_some"
+msgstr "Successfully updated %d transaction(s)"
+
+msgid "text_fetched_none"
+msgstr "There are no transactions to update."
+
+msgid "text_transaction_details"
+msgstr "Transaction Details"
+
+msgid "text_not_found"
+msgstr "There is no transaction with that ID."
+
+msgid "text_paypal_profile_id"
+msgstr "PayPal Profile ID"
+
+msgid "text_laybuy_ref_no"
+msgstr "Lay-Buy Reference ID"
+
+msgid "text_order_id"
+msgstr "Order ID"
+
+msgid "text_status"
+msgstr "Status"
+
+msgid "text_amount"
+msgstr "Amount"
+
+msgid "text_downpayment_percent"
+msgstr "Down Payment Percent"
+
+msgid "text_month"
+msgstr "Month"
+
+msgid "text_months"
+msgstr "Months"
+
+msgid "text_downpayment_amount"
+msgstr "Down Payment Amount"
+
+msgid "text_payment_amounts"
+msgstr "Payment Amounts"
+
+msgid "text_first_payment_due"
+msgstr "First Payment Due"
+
+msgid "text_last_payment_due"
+msgstr "Last Payment Due"
+
+msgid "text_instalment"
+msgstr "Instalment"
+
+msgid "text_date"
+msgstr "Date"
+
+msgid "text_pp_trans_id"
+msgstr "PayPal Transaction ID"
+
+msgid "text_downpayment"
+msgstr "Down Payment"
+
+msgid "text_report"
+msgstr "Payment Record"
+
+msgid "text_revise_plan"
+msgstr "Revise Plan"
+
+msgid "text_today"
+msgstr "Today"
+
+msgid "text_due_date"
+msgstr "Due Date"
+
+msgid "text_cancel_plan"
+msgstr "Cancel Plan"
+
+msgid "text_firstname"
+msgstr "First Name"
+
+msgid "text_lastname"
+msgstr "Last Name"
+
+msgid "text_email"
+msgstr "E-Mail"
+
+msgid "text_address"
+msgstr "Address"
+
+msgid "text_suburb"
+msgstr "Suburb"
+
+msgid "text_state"
+msgstr "State"
+
+msgid "text_country"
+msgstr "Country"
+
+msgid "text_postcode"
+msgstr "Postcode"
+
+msgid "text_payment_info"
+msgstr "Payment Information"
+
+msgid "text_no_cron_time"
+msgstr "The cron has not yet been executed"
+
+msgid "text_comment"
+msgstr "Updated by Lay-Buy"
+
+msgid "text_comment_canceled"
+msgstr "Order canceled and recurring PayPal Profile #%s canceled."
+
+msgid "text_remaining"
+msgstr "Remaining:"
+
+msgid "column_order_id"
+msgstr "Order ID"
+
+msgid "column_customer"
+msgstr "Customer"
+
+msgid "column_amount"
+msgstr "Amount"
+
+msgid "column_dp_percent"
+msgstr "Down Payment Percent"
+
+msgid "column_months"
+msgstr "Months"
+
+msgid "column_dp_amount"
+msgstr "Down Payment Amount"
+
+msgid "column_first_payment"
+msgstr "First Payment Due"
+
+msgid "column_last_payment"
+msgstr "Last Payment Due"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_date_added"
+msgstr "Date Added"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_membership_id"
+msgstr "Lay-Buys Membership ID"
+
+msgid "entry_token"
+msgstr "Secret Token"
+
+msgid "entry_minimum"
+msgstr "Minimum Down Payment (%)"
+
+msgid "entry_maximum"
+msgstr "Maximum Down Payment (%)"
+
+msgid "entry_max_months"
+msgstr "Months"
+
+msgid "entry_category"
+msgstr "Allowed Categories"
+
+msgid "entry_product_ids"
+msgstr "Excluded Product IDs"
+
+msgid "entry_customer_group"
+msgstr "Allowed Customer Groups"
+
+msgid "entry_logging"
+msgstr "Debug Logging"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_order_status_pending"
+msgstr "Order Status (Pending)"
+
+msgid "entry_order_status_canceled"
+msgstr "Order Status (Canceled)"
+
+msgid "entry_order_status_processing"
+msgstr "Order Status (Processing)"
+
+msgid "entry_gateway_url"
+msgstr "Gateway URL"
+
+msgid "entry_api_url"
+msgstr "API URL"
+
+msgid "entry_geo_zone"
+msgstr "Geo Zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "entry_cron_url"
+msgstr "Cron Job URL"
+
+msgid "entry_cron_time"
+msgstr "Cron Job Last Run"
+
+msgid "entry_order_id"
+msgstr "Order ID"
+
+msgid "entry_customer"
+msgstr "Customer"
+
+msgid "entry_dp_percent"
+msgstr "Down Payment Percent"
+
+msgid "entry_months"
+msgstr "Months"
+
+msgid "entry_date_added"
+msgstr "Date Added"
+
+msgid "help_membership_id"
+msgstr "Your personal Lay-Buy account membership number. (attained when you register a merchant account at https://www.lay-buys.com/index.php/vtmob/login)"
+
+msgid "help_token"
+msgstr "Enter a random token for security or use the one generated."
+
+msgid "help_minimum"
+msgstr "Minimum Deposit Amount."
+
+msgid "help_maximum"
+msgstr "Maximum Deposit Amount."
+
+msgid "help_months"
+msgstr "Maximum Number of Months to pay Balance."
+
+msgid "help_category"
+msgstr "Select for which categories the payment option will be available. Leave blank if no restriction."
+
+msgid "help_product_ids"
+msgstr "Add product IDs separated by comma(,) for which the method will not be available."
+
+msgid "help_customer_group"
+msgstr "The customer must be in these customer groups before this payment method becomes active. Leave blank if there is no restriction."
+
+msgid "help_logging"
+msgstr "Enabling debug will write sensitive data to a log file. You should always disable unless instructed otherwise."
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active. Must be a value with no currency sign."
+
+msgid "help_order_status_pending"
+msgstr "The order status after the customer\'s order has been placed."
+
+msgid "help_order_status_canceled"
+msgstr "The order status after the customer\'s order is canceled."
+
+msgid "help_order_status_processing"
+msgstr "The order status after the customer\'s order is paid."
+
+msgid "help_cron_url"
+msgstr "Set a cron job to call this URL so that the reports are auto fetched."
+
+msgid "help_cron_time"
+msgstr "This is the last time that the cron job URL was executed."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify payment Lay-buy!"
+
+msgid "error_membership_id"
+msgstr "Lay-Buys Membership ID Required!"
+
+msgid "error_token"
+msgstr "Lay-Buy Secret Token Required!"
+
+msgid "error_min_deposit"
+msgstr "Cannot exceed the Maximum Down Payment amount!"
+
+msgid "button_fetch"
+msgstr "Fetch"
+
+msgid "button_revise_plan"
+msgstr "Revise Plan"
+
+msgid "button_cancel_plan"
+msgstr "Cancel Plan"

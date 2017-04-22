@@ -1,0 +1,74 @@
+msgid "heading_title"
+msgstr "Item import"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_ebay"
+msgstr "eBay"
+
+msgid "text_sync_import_line1"
+msgstr "<strong>Caution!</strong> This will import all of your eBay products and build a category structure in your store. It is advised that you delete all categories and products before you run this option. <br />The category structure is from the normal eBay categories, not your shop categories (if you have an eBay shop). You can rename, remove and edit the imported categories without affecting your eBay products."
+
+msgid "text_sync_import_line3"
+msgstr "You need to ensure your server can accept and process large POST data sizes. 1000 eBay items is about 40Mb in size, you will need to calculate what you require. If your call fails then it is likely your setting is too small. Your PHP memory limit needs to be about 128Mb."
+
+msgid "text_sync_server_size"
+msgstr "Currently your server can accept: "
+
+msgid "text_sync_memory_size"
+msgstr "Your PHP memory limit: "
+
+msgid "text_import_confirm"
+msgstr "This will import all of your eBay items as new products, are you sure? This CAN NOT be undone! ENSURE you have a backup first!"
+
+msgid "text_import_notify"
+msgstr "Your import request has been sent for processing. An import takes about 1 hour per 1000 items."
+
+msgid "text_import_images_msg1"
+msgstr "images are pending import/copy from eBay. Refresh this page, if the number does not decrease then"
+
+msgid "text_import_images_msg2"
+msgstr "click here"
+
+msgid "text_import_images_msg3"
+msgstr "and wait. More information about why this happened can be found <a href="http://shop.openbaypro.com/index.php?route=information/faq&topic=8_45" target="_blank">here</a>"
+
+msgid "entry_import_item_advanced"
+msgstr "Get advanced data"
+
+msgid "entry_import_categories"
+msgstr "Import categories"
+
+msgid "entry_import_description"
+msgstr "Import item descriptions"
+
+msgid "entry_import"
+msgstr "Import eBay items"
+
+msgid "button_import"
+msgstr "Import"
+
+msgid "button_complete"
+msgstr "Complete"
+
+msgid "help_import_item_advanced"
+msgstr "Will take up to 10 times longer to import items. Imports weights, sizes, ISBN and more if available"
+
+msgid "help_import_categories"
+msgstr "Builds a category structure in your store from the eBay categories"
+
+msgid "help_import_description"
+msgstr "This will import everything including HTML, visit counters etc"
+
+msgid "error_import"
+msgstr "Failed to load"
+
+msgid "error_maintenance"
+msgstr "Your store is in maintenance mode. Importing will fail!"
+
+msgid "error_ajax_load"
+msgstr "Failed to connect to server"
+
+msgid "error_validation"
+msgstr "You need to register for your API token and enable the module."

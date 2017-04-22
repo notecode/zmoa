@@ -1,0 +1,56 @@
+// Heading
+msgid "heading_title"
+msgstr "Product Comparison"
+
+
+// Text
+msgid "text_product"
+msgstr "Product Details"
+
+msgid "text_name"
+msgstr "Product"
+
+msgid "text_image"
+msgstr "Image"
+
+msgid "text_price"
+msgstr "Price"
+
+msgid "text_model"
+msgstr "Model"
+
+msgid "text_manufacturer"
+msgstr "Brand"
+
+msgid "text_availability"
+msgstr "Availability"
+
+msgid "text_instock"
+msgstr "In Stock"
+
+msgid "text_rating"
+msgstr "Rating"
+
+msgid "text_reviews"
+msgstr "Based on %s reviews."
+
+msgid "text_summary"
+msgstr "Summary"
+
+msgid "text_weight"
+msgstr "Weight"
+
+msgid "text_dimension"
+msgstr "Dimensions (L x W x H)"
+
+msgid "text_compare"
+msgstr "Product Compare (%s)"
+
+msgid "text_success"
+msgstr"%s">product comparison</a>!"
+
+msgid "text_remove"
+msgstr "Success: You have modified your product comparison!"
+
+msgid "text_empty"
+msgstr "You have not chosen any products to compare."

@@ -1,0 +1,86 @@
+msgid "heading_title"
+msgstr "Extension Installer"
+
+msgid "text_upload"
+msgstr "Upload your extensions"
+
+msgid "text_success"
+msgstr "Success: The extension has been installed!"
+
+msgid "text_unzip"
+msgstr "Extracting files!"
+
+msgid "text_ftp"
+msgstr "Copying files!"
+
+msgid "text_sql"
+msgstr "Running SQL!"
+
+msgid "text_xml"
+msgstr "Applying modifications!"
+
+msgid "text_php"
+msgstr "Running PHP!"
+
+msgid "text_remove"
+msgstr "Removing temporary files!"
+
+msgid "text_clear"
+msgstr "Success: You have cleared all temporary files!"
+
+msgid "entry_upload"
+msgstr "Upload File"
+
+msgid "entry_overwrite"
+msgstr "Files that will be overwritten"
+
+msgid "entry_progress"
+msgstr "Progress"
+
+msgid "help_upload"
+msgstr "Requires a modification file with extension \'.ocmod.zip\' or \'.ocmod.xml\'."
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify extensions!"
+
+msgid "error_temporary"
+msgstr "Warning: There are some temporary files that require deleting. Click the clear button to remove them!"
+
+msgid "error_upload"
+msgstr "File could not be uploaded!"
+
+msgid "error_filetype"
+msgstr "Invalid file type!"
+
+msgid "error_file"
+msgstr "File could not be found!"
+
+msgid "error_unzip"
+msgstr "Zip file could not be opened!"
+
+msgid "error_code"
+msgstr "Modification requires a unique ID code!"
+
+msgid "error_exists"
+msgstr "Modification %s is using the same ID code as the one you are trying to upload!"
+
+msgid "error_directory"
+msgstr "Directory containing files to be uploaded could not be found!"
+
+msgid "error_ftp_status"
+msgstr "FTP needs to be enabled in the settings"
+
+msgid "error_ftp_connection"
+msgstr "Could not connect as %s:%s"
+
+msgid "error_ftp_login"
+msgstr "Could not login as %s"
+
+msgid "error_ftp_root"
+msgstr "Could not set root directory as %s"
+
+msgid "error_ftp_directory"
+msgstr "Could not change to directory %s"
+
+msgid "error_ftp_file"
+msgstr "Could not upload file %s"

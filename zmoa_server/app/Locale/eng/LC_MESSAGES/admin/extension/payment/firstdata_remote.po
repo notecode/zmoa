@@ -1,0 +1,224 @@
+msgid "heading_title"
+msgstr "First Data EMEA Web Service API"
+
+msgid "text_firstdata_remote"
+msgstr "<img src="view/image/payment/firstdata.png" alt="First Data" title="First Data" style="border: 1px solid #EEEEEE;" />"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified First Data account details!"
+
+msgid "text_edit"
+msgstr "Edit First Data EMEA Web Service API"
+
+msgid "text_card_type"
+msgstr "Card type"
+
+msgid "text_enabled"
+msgstr "Enabled"
+
+msgid "text_merchant_id"
+msgstr "Store ID"
+
+msgid "text_subaccount"
+msgstr "Subaccount"
+
+msgid "text_user_id"
+msgstr "User ID"
+
+msgid "text_capture_ok"
+msgstr "Capture was successful"
+
+msgid "text_capture_ok_order"
+msgstr "Capture was successful, order status updated to success - settled"
+
+msgid "text_refund_ok"
+msgstr "Refund was successful"
+
+msgid "text_refund_ok_order"
+msgstr "Refund was successful, order status updated to refunded"
+
+msgid "text_void_ok"
+msgstr "Void was successful, order status updated to voided"
+
+msgid "text_settle_auto"
+msgstr "Sale"
+
+msgid "text_settle_delayed"
+msgstr "Pre auth"
+
+msgid "text_mastercard"
+msgstr "Mastercard"
+
+msgid "text_visa"
+msgstr "Visa"
+
+msgid "text_diners"
+msgstr "Diners"
+
+msgid "text_amex"
+msgstr "American Express"
+
+msgid "text_maestro"
+msgstr "Maestro"
+
+msgid "text_payment_info"
+msgstr "Payment information"
+
+msgid "text_capture_status"
+msgstr "Payment captured"
+
+msgid "text_void_status"
+msgstr "Payment voided"
+
+msgid "text_refund_status"
+msgstr "Payment refunded"
+
+msgid "text_order_ref"
+msgstr "Order ref"
+
+msgid "text_order_total"
+msgstr "Total authorised"
+
+msgid "text_total_captured"
+msgstr "Total captured"
+
+msgid "text_transactions"
+msgstr "Transactions"
+
+msgid "text_column_amount"
+msgstr "Amount"
+
+msgid "text_column_type"
+msgstr "Type"
+
+msgid "text_column_date_added"
+msgstr "Created"
+
+msgid "text_confirm_void"
+msgstr "Are you sure you want to void the payment?"
+
+msgid "text_confirm_capture"
+msgstr "Are you sure you want to capture the payment?"
+
+msgid "text_confirm_refund"
+msgstr "Are you sure you want to refund the payment?"
+
+msgid "entry_certificate_path"
+msgstr "Certificate path"
+
+msgid "entry_certificate_key_path"
+msgstr "Private key path"
+
+msgid "entry_certificate_key_pw"
+msgstr "Private key password"
+
+msgid "entry_certificate_ca_path"
+msgstr "CA path"
+
+msgid "entry_merchant_id"
+msgstr "Store ID"
+
+msgid "entry_user_id"
+msgstr "User ID"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_sort_order"
+msgstr "Sort order"
+
+msgid "entry_geo_zone"
+msgstr "Geo zone"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_debug"
+msgstr "Debug logging"
+
+msgid "entry_auto_settle"
+msgstr "Settlement type"
+
+msgid "entry_status_success_settled"
+msgstr "Success - settled"
+
+msgid "entry_status_success_unsettled"
+msgstr "Success - not settled"
+
+msgid "entry_status_decline"
+msgstr "Decline"
+
+msgid "entry_status_void"
+msgstr "Voided"
+
+msgid "entry_status_refund"
+msgstr "Refunded"
+
+msgid "entry_enable_card_store"
+msgstr "Enable card storage tokens"
+
+msgid "entry_cards_accepted"
+msgstr "Card types accepted"
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active"
+
+msgid "help_certificate"
+msgstr "Certificates and private keys should be stored outside of your public web folders"
+
+msgid "help_card_select"
+msgstr "Ask the user to choose thier card type before they are redirected"
+
+msgid "help_notification"
+msgstr "You need to supply this URL to First Data to get payment notifications"
+
+msgid "help_debug"
+msgstr "Enabling debug will write sensitive data to a log file. You should always disable unless instructed otherwise ."
+
+msgid "help_settle"
+msgstr "If you use pre-auth you must complete a post-auth action within 3-5 days otherwise your transaction will be dropped"
+
+msgid "tab_account"
+msgstr "API info"
+
+msgid "tab_order_status"
+msgstr "Order status"
+
+msgid "tab_payment"
+msgstr "Payment settings"
+
+msgid "button_capture"
+msgstr "Capture"
+
+msgid "button_refund"
+msgstr "Refund"
+
+msgid "button_void"
+msgstr "Void"
+
+msgid "error_merchant_id"
+msgstr "Store ID is required"
+
+msgid "error_user_id"
+msgstr "User ID is required"
+
+msgid "error_password"
+msgstr "Password is required"
+
+msgid "error_certificate"
+msgstr "Certificate path is required"
+
+msgid "error_key"
+msgstr "Certificate key is required"
+
+msgid "error_key_pw"
+msgstr "Certificate key password is required"
+
+msgid "error_ca"
+msgstr "Certificate Authority (CA) is required"

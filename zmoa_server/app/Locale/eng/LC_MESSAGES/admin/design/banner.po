@@ -1,0 +1,53 @@
+msgid "heading_title"
+msgstr "Banners"
+
+msgid "text_success"
+msgstr "Success: You have modified banners!"
+
+msgid "text_list"
+msgstr "Banner List"
+
+msgid "text_add"
+msgstr "Add Banner"
+
+msgid "text_edit"
+msgstr "Edit Banner"
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "column_name"
+msgstr "Banner Name"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Banner Name"
+
+msgid "entry_title"
+msgstr "Title"
+
+msgid "entry_link"
+msgstr "Link"
+
+msgid "entry_image"
+msgstr "Image"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify banners!"
+
+msgid "error_name"
+msgstr "Banner Name must be between 3 and 64 characters!"
+
+msgid "error_title"
+msgstr "Banner Title must be between 2 and 64 characters!"

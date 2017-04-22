@@ -1,0 +1,23 @@
+msgid "text_approve_subject"
+msgstr "%s - Your Affiliate Account has been activated!"
+
+msgid "text_approve_welcome"
+msgstr "Welcome and thank you for registering at %s!"
+
+msgid "text_approve_login"
+msgstr "Your account has now been created and you can log in by using your email address and password by visiting our website or at the following URL:"
+
+msgid "text_approve_services"
+msgstr "Upon logging in, you will be able to generate tracking codes, track commission payments and edit your account information."
+
+msgid "text_approve_thanks"
+msgstr "Thanks,"
+
+msgid "text_transaction_subject"
+msgstr "%s - Affiliate Commission"
+
+msgid "text_transaction_received"
+msgstr "You have received %s commission!"
+
+msgid "text_transaction_total"
+msgstr "Your total amount of commission is now %s."

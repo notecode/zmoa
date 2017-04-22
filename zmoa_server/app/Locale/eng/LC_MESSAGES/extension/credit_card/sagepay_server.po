@@ -1,0 +1,66 @@
+// Heading
+msgid "heading_title"
+msgstr "Sagepay Server Cards"
+
+
+// Text
+msgid "text_empty"
+msgstr "You have no saved cards"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_card"
+msgstr "SagePay Server Card Management"
+
+msgid "text_fail_card"
+msgstr "There was an issue removing your SagePay card, Please contact the shop administrator for help."
+
+msgid "text_success_card"
+msgstr "SagePay card successfully removed"
+
+msgid "text_success_add_card"
+msgstr "SagePay card successfully added"
+
+
+// Column
+msgid "column_type"
+msgstr "Card Type"
+
+msgid "column_digits"
+msgstr "Last Digits"
+
+msgid "column_expiry"
+msgstr "Expiry"
+
+
+// Entry
+msgid "entry_cc_owner"
+msgstr "Card Owner"
+
+msgid "entry_cc_type"
+msgstr "Card Type"
+
+msgid "entry_cc_number"
+msgstr "Card Number"
+
+msgid "entry_cc_expire_date"
+msgstr "Card Expiry Date"
+
+msgid "entry_cc_cvv2"
+msgstr "Card Security Code (CVV2)"
+
+msgid "entry_cc_choice"
+msgstr "Choose an Existing Card"
+
+
+// Button
+msgid "button_add_card"
+msgstr "Add Card"
+
+msgid "button_new_card"
+msgstr "Add New Card"
+
+
+
+

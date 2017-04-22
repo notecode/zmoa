@@ -1,0 +1,57 @@
+// Text
+msgid "text_subject"
+msgstr "%s - Affiliate Program"
+
+msgid "text_welcome"
+msgstr "Thank you for joining the %s Affiliate Program!"
+
+msgid "text_login"
+msgstr "Your account has now been created and you can log in by using your e-mail address and password by visiting our website or at the following URL:"
+
+msgid "text_approval"
+msgstr "Your account must be approved before you can login. Once approved you can log in by using your e-mail address and password by visiting our website or at the following URL:"
+
+msgid "text_services"
+msgstr "Upon logging in, you will be able to generate tracking codes, track commission payments and edit your account information."
+
+msgid "text_thanks"
+msgstr "Thanks,"
+
+msgid "text_new_affiliate"
+msgstr "New Affiliate"
+
+msgid "text_signup"
+msgstr "A new affiliate has signed up:"
+
+msgid "text_store"
+msgstr "Store:"
+
+msgid "text_firstname"
+msgstr "Firstname:"
+
+msgid "text_lastname"
+msgstr "Lastname:"
+
+msgid "text_company"
+msgstr "Company:"
+
+msgid "text_email"
+msgstr "E-Mail:"
+
+msgid "text_telephone"
+msgstr "Telephone:"
+
+msgid "text_website"
+msgstr "Web Site:"
+
+msgid "text_order_id"
+msgstr "Order ID:"
+
+msgid "text_transaction_subject"
+msgstr "%s - Affiliate Commission"
+
+msgid "text_transaction_received"
+msgstr "You have received %s commission!"
+
+msgid "text_transaction_total"
+msgstr "Your total amount of commission is now %s."

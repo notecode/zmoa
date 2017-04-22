@@ -1,0 +1,141 @@
+// Text
+msgid "text_title"
+msgstr "United Parcel Service"
+
+msgid "text_weight"
+msgstr "Weight:"
+
+msgid "text_us_origin_01"
+msgstr "UPS Next Day Air"
+
+msgid "text_us_origin_02"
+msgstr "UPS 2nd Day Air"
+
+msgid "text_us_origin_03"
+msgstr "UPS Ground"
+
+msgid "text_us_origin_07"
+msgstr "UPS Worldwide Express"
+
+msgid "text_us_origin_08"
+msgstr "UPS Worldwide Expedited"
+
+msgid "text_us_origin_11"
+msgstr "UPS Standard"
+
+msgid "text_us_origin_12"
+msgstr "UPS 3 Day Select"
+
+msgid "text_us_origin_13"
+msgstr "UPS Next Day Air Saver"
+
+msgid "text_us_origin_14"
+msgstr "UPS Next Day Air Early A.M."
+
+msgid "text_us_origin_54"
+msgstr "UPS Worldwide Express Plus"
+
+msgid "text_us_origin_59"
+msgstr "UPS 2nd Day Air A.M."
+
+msgid "text_us_origin_65"
+msgstr "UPS Saver"
+
+msgid "text_ca_origin_01"
+msgstr "UPS Express"
+
+msgid "text_ca_origin_02"
+msgstr "UPS Expedited"
+
+msgid "text_ca_origin_07"
+msgstr "UPS Worldwide Express"
+
+msgid "text_ca_origin_08"
+msgstr "UPS Worldwide Expedited"
+
+msgid "text_ca_origin_11"
+msgstr "UPS Standard"
+
+msgid "text_ca_origin_12"
+msgstr "UPS 3 Day Select"
+
+msgid "text_ca_origin_13"
+msgstr "UPS Saver"
+
+msgid "text_ca_origin_14"
+msgstr "UPS Express Early A.M."
+
+msgid "text_ca_origin_54"
+msgstr "UPS Worldwide Express Plus"
+
+msgid "text_ca_origin_65"
+msgstr "UPS Saver"
+
+msgid "text_eu_origin_07"
+msgstr "UPS Express"
+
+msgid "text_eu_origin_08"
+msgstr "UPS Expedited"
+
+msgid "text_eu_origin_11"
+msgstr "UPS Standard"
+
+msgid "text_eu_origin_54"
+msgstr "UPS Worldwide Express Plus"
+
+msgid "text_eu_origin_65"
+msgstr "UPS Saver"
+
+msgid "text_eu_origin_82"
+msgstr "UPS Today Standard"
+
+msgid "text_eu_origin_83"
+msgstr "UPS Today Dedicated Courier"
+
+msgid "text_eu_origin_84"
+msgstr "UPS Today Intercity"
+
+msgid "text_eu_origin_85"
+msgstr "UPS Today Express"
+
+msgid "text_eu_origin_86"
+msgstr "UPS Today Express Saver"
+
+msgid "text_eu_origin_01"
+msgstr "UPS Next Day Air"
+
+msgid "text_eu_origin_02"
+msgstr "UPS 2nd Day Air"
+
+msgid "text_eu_origin_03"
+msgstr "UPS Ground"
+
+msgid "text_eu_origin_14"
+msgstr "UPS Next Day Air Early A.M."
+
+msgid "text_mx_origin_07"
+msgstr "UPS Express"
+
+msgid "text_mx_origin_08"
+msgstr "UPS Expedited"
+
+msgid "text_mx_origin_54"
+msgstr "UPS Express Plus"
+
+msgid "text_mx_origin_65"
+msgstr "UPS Saver"
+
+msgid "text_other_origin_07"
+msgstr "UPS Express"
+
+msgid "text_other_origin_08"
+msgstr "UPS Worldwide Expedited"
+
+msgid "text_other_origin_11"
+msgstr "UPS Standard"
+
+msgid "text_other_origin_54"
+msgstr "UPS Worldwide Express Plus"
+
+msgid "text_other_origin_65"
+msgstr "UPS Saver"

@@ -1,0 +1,17 @@
+msgid "heading_title"
+msgstr "Use Gift Certificate"
+
+msgid "text_voucher"
+msgstr "Gift Certificate (%s)"
+
+msgid "text_success"
+msgstr "Success: Your gift certificate discount has been applied!"
+
+msgid "entry_voucher"
+msgstr "Enter your gift certificate code here"
+
+msgid "error_voucher"
+msgstr "Warning: Gift Certificate is either invalid or the balance has been used up!"
+
+msgid "error_empty"
+msgstr "Warning: Please enter a gift certificate code!"

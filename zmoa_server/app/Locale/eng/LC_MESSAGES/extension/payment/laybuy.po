@@ -1,0 +1,69 @@
+// Heading
+msgid "heading_title"
+msgstr "Please Choose Your Payment Plan"
+
+
+// Text
+msgid "text_title"
+msgstr "PUT IT ON LAY-BUY powered by PayPal"
+
+msgid "text_plan_preview"
+msgstr "Plan Preview"
+
+msgid "text_payment"
+msgstr "Payment"
+
+msgid "text_due_date"
+msgstr "Due Date"
+
+msgid "text_amount"
+msgstr "Amount"
+
+msgid "text_downpayment"
+msgstr "Down Payment"
+
+msgid "text_today"
+msgstr "Today"
+
+msgid "text_delivery_msg"
+msgstr "Your goods/services will be delivered once your final payment has been received."
+
+msgid "text_fee_msg"
+msgstr "A 0.9% admin fee is payable to Lay-Buys.com."
+
+msgid "text_month"
+msgstr "Month"
+
+msgid "text_months"
+msgstr "Months"
+
+msgid "text_status_1"
+msgstr "Pending"
+
+msgid "text_status_5"
+msgstr "Completed"
+
+msgid "text_status_7"
+msgstr "Canceled"
+
+msgid "text_status_50"
+msgstr "Revise Requested"
+
+msgid "text_status_51"
+msgstr "Revised"
+
+msgid "text_comment"
+msgstr "Updated by Lay-Buy"
+
+
+// Entry
+msgid "entry_initial"
+msgstr "Initial Payment"
+
+msgid "entry_months"
+msgstr "Months"
+
+
+// Button
+msgid "button_confirm"
+msgstr "Confirm Order"

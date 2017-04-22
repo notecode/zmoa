@@ -1,0 +1,21 @@
+// Text
+msgid "text_total_shipping"
+msgstr "Shipping"
+
+msgid "text_total_discount"
+msgstr "Discount"
+
+msgid "text_total_tax"
+msgstr "Tax"
+
+msgid "text_total_sub"
+msgstr "Sub-total"
+
+msgid "text_total"
+msgstr "Total"
+
+msgid "text_smp_id"
+msgstr "Selling Manager sale ID: "
+
+msgid "text_buyer"
+msgstr "Buyer username: "

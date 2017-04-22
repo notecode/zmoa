@@ -1,0 +1,251 @@
+msgid "heading_title"
+msgstr "Checkout"
+
+msgid "text_cart"
+msgstr "Shopping Cart"
+
+msgid "text_checkout_option"
+msgstr "Step %s: Checkout Options"
+
+msgid "text_checkout_account"
+msgstr "Step %s: Account &amp; Billing Details"
+
+msgid "text_checkout_payment_address"
+msgstr "Step %s: Billing Details"
+
+msgid "text_checkout_shipping_address"
+msgstr "Step %s: Delivery Details"
+
+msgid "text_checkout_shipping_method"
+msgstr "Step %s: Delivery Method"
+
+msgid "text_checkout_payment_method"
+msgstr "Step %s: Payment Method"
+
+msgid "text_checkout_confirm"
+msgstr "Step %s: Confirm Order"
+
+msgid "text_modify"
+msgstr "Modify &raquo;"
+
+msgid "text_new_customer"
+msgstr "New Customer"
+
+msgid "text_returning_customer"
+msgstr "Returning Customer"
+
+msgid "text_checkout"
+msgstr "Checkout Options:"
+
+msgid "text_i_am_returning_customer"
+msgstr "I am a returning customer"
+
+msgid "text_register"
+msgstr "Register Account"
+
+msgid "text_guest"
+msgstr "Guest Checkout"
+
+msgid "text_register_account"
+msgstr "By creating an account you will be able to shop faster, be up to date on an order\"s status, and keep track of the orders you have previously made."
+
+msgid "text_forgotten"
+msgstr "Forgotten Password"
+
+msgid "text_your_details"
+msgstr "Your Personal Details"
+
+msgid "text_your_address"
+msgstr "Your Address"
+
+msgid "text_your_password"
+msgstr "Your Password"
+
+msgid "text_agree"
+msgstr "I have read and agree to the <a href=\"%s\" class=\"agree\"><b>%s</b></a>"
+
+msgid "text_address_new"
+msgstr "I want to use a new address"
+
+msgid "text_address_existing"
+msgstr "I want to use an existing address"
+
+msgid "text_shipping_method"
+msgstr "Please select the preferred shipping method to use on this order."
+
+msgid "text_payment_method"
+msgstr "Please select the preferred payment method to use on this order."
+
+msgid "text_comments"
+msgstr "Add Comments About Your Order"
+
+msgid "text_recurring_item"
+msgstr "Recurring Item"
+
+msgid "text_payment_recurring"
+msgstr "Payment Profile"
+
+msgid "text_trial_description"
+msgstr "%s every %d %s(s) for %d payment(s) then"
+
+msgid "text_payment_description"
+msgstr "%s every %d %s(s) for %d payment(s)"
+
+msgid "text_payment_cancel"
+msgstr "%s every %d %s(s) until canceled"
+
+msgid "text_day"
+msgstr "day"
+
+msgid "text_week"
+msgstr "week"
+
+msgid "text_semi_month"
+msgstr "half-month"
+
+msgid "text_month"
+msgstr "month"
+
+msgid "text_year"
+msgstr "year"
+
+msgid "column_name"
+msgstr "Product Name"
+
+msgid "column_model"
+msgstr "Model"
+
+msgid "column_quantity"
+msgstr "Quantity"
+
+msgid "column_price"
+msgstr "Unit Price"
+
+msgid "column_total"
+msgstr "Total"
+
+msgid "entry_email_address"
+msgstr "E-Mail Address"
+
+msgid "entry_email"
+msgstr "E-Mail"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_confirm"
+msgstr "Password Confirm"
+
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_telephone"
+msgstr "Telephone"
+
+msgid "entry_fax"
+msgstr "Fax"
+
+msgid "entry_address"
+msgstr "Choose Address"
+
+msgid "entry_company"
+msgstr "Company"
+
+msgid "entry_customer_group"
+msgstr "Customer Group"
+
+msgid "entry_address_1"
+msgstr "Address 1"
+
+msgid "entry_address_2"
+msgstr "Address 2"
+
+msgid "entry_postcode"
+msgstr "Post Code"
+
+msgid "entry_city"
+msgstr "City"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_zone"
+msgstr "Region / State"
+
+msgid "entry_newsletter"
+msgstr "I wish to subscribe to the %s newsletter."
+
+msgid "entry_shipping"
+msgstr "My delivery and billing addresses are the same."
+
+msgid "error_warning"
+msgstr"%s">clicking here</a>."
+
+msgid "error_login"
+msgstr "Warning: No match for E-Mail Address and/or Password."
+
+msgid "error_attempts"
+msgstr "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
+
+msgid "error_approved"
+msgstr "Warning: Your account requires approval before you can login."
+
+msgid "error_exists"
+msgstr "Warning: E-Mail Address is already registered!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_email"
+msgstr "E-Mail address does not appear to be valid!"
+
+msgid "error_telephone"
+msgstr "Telephone must be between 3 and 32 characters!"
+
+msgid "error_password"
+msgstr "Password must be between 4 and 20 characters!"
+
+msgid "error_confirm"
+msgstr "Password confirmation does not match password!"
+
+msgid "error_address_1"
+msgstr "Address 1 must be between 3 and 128 characters!"
+
+msgid "error_city"
+msgstr "City must be between 2 and 128 characters!"
+
+msgid "error_postcode"
+msgstr "Postcode must be between 2 and 10 characters!"
+
+msgid "error_country"
+msgstr "Please select a country!"
+
+msgid "error_zone"
+msgstr "Please select a region / state!"
+
+msgid "error_agree"
+msgstr "Warning: You must agree to the %s!"
+
+msgid "error_address"
+msgstr "Warning: You must select address!"
+
+msgid "error_shipping"
+msgstr "Warning: Shipping method required!"
+
+msgid "error_no_shipping"
+msgstr "Warning: No Shipping options are available. Please <a href=\"%s\">contact us</a> for assistance!"
+
+msgid "error_payment"
+msgstr "Warning: Payment method required!"
+
+msgid "error_no_payment"
+msgstr "Warning: No Payment options are available. Please <a href=\"%s\">contact us</a> for assistance!"
+
+msgid "error_custom_field"
+msgstr "%s required!"

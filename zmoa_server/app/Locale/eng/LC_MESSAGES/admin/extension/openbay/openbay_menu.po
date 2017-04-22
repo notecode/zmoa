@@ -1,0 +1,44 @@
+msgid "text_openbay_extension"
+msgstr "OpenBay Pro"
+
+msgid "text_openbay_dashboard"
+msgstr "Dashboard"
+
+msgid "text_openbay_orders"
+msgstr "Bulk order update"
+
+msgid "text_openbay_items"
+msgstr "Manage items"
+
+msgid "text_openbay_ebay"
+msgstr "eBay"
+
+msgid "text_openbay_amazon"
+msgstr "Amazon (EU)"
+
+msgid "text_openbay_amazonus"
+msgstr "Amazon (US)"
+
+msgid "text_openbay_etsy"
+msgstr "Etsy"
+
+msgid "text_openbay_settings"
+msgstr "Settings"
+
+msgid "text_openbay_links"
+msgstr "Item links"
+
+msgid "text_openbay_report_price"
+msgstr "Pricing report"
+
+msgid "text_openbay_order_import"
+msgstr "Order import"
+
+msgid "text_openbay_fba"
+msgstr "Fulfillment by Amazon"
+
+msgid "text_openbay_fulfillmentlist"
+msgstr "Fulfillments"
+
+msgid "text_openbay_orderlist"
+msgstr "Orders"

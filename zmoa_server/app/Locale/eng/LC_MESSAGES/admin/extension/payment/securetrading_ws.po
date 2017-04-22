@@ -1,0 +1,306 @@
+
+msgid "heading_title"
+msgstr "Secure Trading Web Service"
+
+
+msgid "tab_settings"
+msgstr "Settings"
+
+msgid "tab_myst"
+msgstr "MyST"
+
+
+msgid "text_securetrading_ws"
+msgstr "<a href="http://www.securetradingfs.com/partner/open-cart/" target="_blank"><img src="view/image/payment/secure_trading.png" alt="Secure Trading" title="Secure Trading" style="border: 1px solid #EEEEEE;" /></a>"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_all_geo_zones"
+msgstr "All Geo Zones"
+
+msgid "text_process_immediately"
+msgstr "Process immediately"
+
+msgid "text_wait_x_days"
+msgstr "Wait %d days"
+
+msgid "text_wait"
+msgstr "Please wait."
+
+msgid "text_authorisation_reversed"
+msgstr "Authorisation was successfully reversed"
+
+msgid "text_refund_issued"
+msgstr "Refund was successfully issued"
+
+msgid "text_success"
+msgstr "Success: You have modified Secure Trading Web Service module!"
+
+msgid "text_pending_settlement"
+msgstr "Pending Settlement"
+
+msgid "text_manual_settlement"
+msgstr "Manual Settlement"
+
+msgid "text_suspended"
+msgstr "Suspended"
+
+msgid "text_cancelled"
+msgstr "Cancelled"
+
+msgid "text_settling"
+msgstr "Settling"
+
+msgid "text_settled"
+msgstr "Settled"
+
+msgid "text_no_transactions"
+msgstr "No transactions to show"
+
+msgid "text_ok"
+msgstr "Ok"
+
+msgid "text_denied"
+msgstr "Denied"
+
+msgid "text_pending_settlement_manually_overriden"
+msgstr "Pending Settlement, manually overriden"
+
+msgid "text_pending_suspended"
+msgstr "Suspended"
+
+msgid "text_pending_settled"
+msgstr "Settled"
+
+msgid "text_payment_info"
+msgstr "Payment information"
+
+msgid "text_release_status"
+msgstr "Payment released"
+
+msgid "text_void_status"
+msgstr "Reverse Authorisation"
+
+msgid "text_rebate_status"
+msgstr "Payment rebated"
+
+msgid "text_order_ref"
+msgstr "Order ref"
+
+msgid "text_order_total"
+msgstr "Total authorised"
+
+msgid "text_total_released"
+msgstr "Total released"
+
+msgid "text_transactions"
+msgstr "Transactions"
+
+msgid "text_column_amount"
+msgstr "Amount"
+
+msgid "text_column_type"
+msgstr "Type"
+
+msgid "text_column_created"
+msgstr "Created"
+
+msgid "text_release_ok"
+msgstr "Release was successful"
+
+msgid "text_release_ok_order"
+msgstr "Release was successful, order status updated to success - settled"
+
+msgid "text_rebate_ok"
+msgstr "Rebate was successful"
+
+msgid "text_rebate_ok_order"
+msgstr "Rebate was successful, order status updated to rebated"
+
+msgid "text_void_ok"
+msgstr "Void was successful, order status updated to voided"
+
+msgid "text_confirm_void"
+msgstr "Are you sure you want to reverse the authorisation?"
+
+msgid "text_confirm_release"
+msgstr "Are you sure you want to release the payment?"
+
+msgid "text_confirm_rebate"
+msgstr "Are you sure you want to rebate the payment?"
+
+
+msgid "entry_site_reference"
+msgstr "Site reference"
+
+msgid "entry_username"
+msgstr "Username"
+
+msgid "entry_password"
+msgstr "Password"
+
+msgid "entry_csv_username"
+msgstr "CSV username"
+
+msgid "entry_csv_password"
+msgstr "CSV password"
+
+msgid "entry_3d_secure"
+msgstr "Use 3D Secure"
+
+msgid "entry_cards_accepted"
+msgstr "Accepted cards"
+
+msgid "entry_order_status"
+msgstr "Order status"
+
+msgid "entry_failed_order_status"
+msgstr "Failed order status"
+
+msgid "entry_declined_order_status"
+msgstr "Declined order status"
+
+msgid "entry_refunded_order_status"
+msgstr "Refunded order status"
+ 
+
+msgid "entry_authorisation_reversed_order_status"
+msgstr "Authorisation reversed order status"
+
+msgid "entry_settle_status"
+msgstr "Settlement status"
+
+msgid "entry_settle_due_date"
+msgstr "Settlement due date"
+ 
+
+msgid "entry_geo_zone"
+msgstr "Geo Zone"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_total"
+msgstr "Total"
+
+msgid "entry_reverse_authorisation"
+msgstr "Reverse Authorisation:"
+
+msgid "entry_refunded"
+msgstr "Refunded:"
+
+msgid "entry_refund"
+msgstr "Issue refund (%s):"
+
+msgid "entry_currency"
+msgstr "Currency"
+
+msgid "entry_status_code"
+msgstr "Error code"
+
+msgid "entry_payment_type"
+msgstr "Payment Type"
+
+msgid "entry_request"
+msgstr "Request"
+
+msgid "entry_date_from"
+msgstr "Date From"
+
+msgid "entry_date_to"
+msgstr "Date To"
+
+msgid "entry_hour"
+msgstr "Hour"
+
+msgid "entry_minute"
+msgstr "Minute"
+
+
+msgid "column_order_id"
+msgstr "Order ID"
+
+msgid "column_transaction_reference"
+msgstr "Transaction reference"
+
+msgid "column_customer"
+msgstr "Customer"
+
+msgid "column_total"
+msgstr "Total"
+
+msgid "column_currency"
+msgstr "Currency"
+
+msgid "column_settle_status"
+msgstr "Settle status"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_type"
+msgstr "Type"
+
+msgid "column_payment_type"
+msgstr "Payment type"
+
+
+msgid "error_permission"
+msgstr "You do not have permissions to modify this module"
+
+msgid "error_site_reference"
+msgstr "Site Reference is required"
+
+msgid "error_cards_accepted"
+msgstr "Accepted cards is required"
+
+msgid "error_username"
+msgstr "Username is required"
+
+msgid "error_password"
+msgstr "Password is required"
+
+msgid "error_connection"
+msgstr "Could not connect to Secure Trading"
+
+msgid "error_data_missing"
+msgstr "Data missing"
+
+
+msgid "help_refund"
+msgstr "Please include the decimal point and the decimal part of the amount"
+
+msgid "help_csv_username"
+msgstr "Username of the Transaction Download service"
+
+msgid "help_csv_password"
+msgstr "Password of the Transaction Download service"
+
+msgid "help_total"
+msgstr "The checkout total the order must reach before this payment method becomes active"
+
+
+msgid "button_reverse_authorisation"
+msgstr "Reverse Authorisation"
+
+msgid "button_refund"
+msgstr "Refund"
+
+msgid "button_show"
+msgstr "Show"
+
+msgid "button_download"
+msgstr "Download"
+
+msgid "button_release"
+msgstr "Release"
+
+msgid "button_rebate"
+msgstr "Rebate / refund"
+
+msgid "button_void"
+msgstr "Reverse Authorisation"

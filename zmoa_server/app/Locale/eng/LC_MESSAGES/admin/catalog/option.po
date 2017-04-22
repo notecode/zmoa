@@ -1,0 +1,115 @@
+
+msgid "heading_title"
+msgstr "Options"
+
+
+msgid "text_success"
+msgstr "Success: You have modified options!"
+
+
+msgid "text_list"
+msgstr "Option List"
+
+
+msgid "text_add"
+msgstr "Add Option"
+
+
+msgid "text_edit"
+msgstr "Edit Option"
+
+
+msgid "text_choose"
+msgstr "Choose"
+
+
+msgid "text_select"
+msgstr "Select"
+
+
+msgid "text_radio"
+msgstr "Radio"
+
+
+msgid "text_checkbox"
+msgstr "Checkbox"
+
+
+msgid "text_input"
+msgstr "Input"
+
+
+msgid "text_text"
+msgstr "Text"
+
+
+msgid "text_textarea"
+msgstr "Textarea"
+
+
+msgid "text_file"
+msgstr "File"
+
+
+msgid "text_date"
+msgstr "Date"
+
+
+msgid "text_datetime"
+msgstr "Date &amp; Time"
+
+
+msgid "text_time"
+msgstr "Time"
+
+
+msgid "column_name"
+msgstr "Option Name"
+
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+
+msgid "column_action"
+msgstr "Action"
+
+
+msgid "entry_name"
+msgstr "Option Name"
+
+
+msgid "entry_type"
+msgstr "Type"
+
+
+msgid "entry_option_value"
+msgstr "Option Value Name"
+
+
+msgid "entry_image"
+msgstr "Image"
+
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify options!"
+
+
+msgid "error_name"
+msgstr "Option Name must be between 1 and 128 characters!"
+
+
+msgid "error_type"
+msgstr "Warning: Option Values required!"
+
+
+msgid "error_option_value"
+msgstr "Option Value Name must be between 1 and 128 characters!"
+
+
+msgid "error_product"
+msgstr "Warning: This option cannot be deleted as it is currently assigned to %s products!"

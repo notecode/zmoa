@@ -1,0 +1,45 @@
+// Heading
+msgid "heading_title"
+msgstr "Forgot Your Password?"
+
+
+// Text
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_forgotten"
+msgstr "Forgotten Password"
+
+msgid "text_your_email"
+msgstr "Your E-Mail Address"
+
+msgid "text_email"
+msgstr "Enter the e-mail address associated with your account. Click submit to have a password reset link e-mailed to you."
+
+msgid "text_success"
+msgstr "An email with a confirmation link has been sent your email address."
+
+
+// Entry
+msgid "entry_email"
+msgstr "E-Mail Address"
+
+msgid "entry_password"
+msgstr "New Password"
+
+msgid "entry_confirm"
+msgstr "Confirm"
+
+
+// Error
+msgid "error_email"
+msgstr "Warning: The E-Mail Address was not found in our records, please try again!"
+
+msgid "error_approved"
+msgstr "Warning: Your account requires approval before you can login."
+
+msgid "error_password"
+msgstr "Password must be between 4 and 20 characters!"
+
+msgid "error_confirm"
+msgstr "Password and password confirmation do not match!"

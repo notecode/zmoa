@@ -1,0 +1,87 @@
+msgid "heading_title"
+msgstr "Address Book"
+
+msgid "text_account"
+msgstr "Account"
+
+msgid "text_address_book"
+msgstr "Address Book Entries"
+
+msgid "text_edit_address"
+msgstr "Edit Address"
+
+msgid "text_add"
+msgstr "Your address has been successfully inserted"
+
+msgid "text_edit"
+msgstr "Your address has been successfully updated"
+
+msgid "text_delete"
+msgstr "Your address has been successfully deleted"
+
+msgid "text_empty"
+msgstr "You have no addresses in your account."
+
+msgid "entry_firstname"
+msgstr "First Name"
+
+msgid "entry_lastname"
+msgstr "Last Name"
+
+msgid "entry_company"
+msgstr "Company"
+
+msgid "entry_address_1"
+msgstr "Address 1"
+
+msgid "entry_address_2"
+msgstr "Address 2"
+
+msgid "entry_postcode"
+msgstr "Post Code"
+
+msgid "entry_city"
+msgstr "City"
+
+msgid "entry_country"
+msgstr "Country"
+
+msgid "entry_zone"
+msgstr "Region / State"
+
+msgid "entry_default"
+msgstr "Default Address"
+
+
+msgid "error_delete"
+msgstr "Warning: You must have at least one address!"
+
+msgid "error_default"
+msgstr "Warning: You can not delete your default address!"
+
+msgid "error_firstname"
+msgstr "First Name must be between 1 and 32 characters!"
+
+msgid "error_lastname"
+msgstr "Last Name must be between 1 and 32 characters!"
+
+msgid "error_vat"
+msgstr "VAT number is invalid!"
+
+msgid "error_address_1"
+msgstr "Address must be between 3 and 128 characters!"
+
+msgid "error_postcode"
+msgstr "Postcode must be between 2 and 10 characters!"
+
+msgid "error_city"
+msgstr "City must be between 2 and 128 characters!"
+
+msgid "error_country"
+msgstr "Please select a country!"
+
+msgid "error_zone"
+msgstr "Please select a region / state!"
+
+msgid "error_custom_field"
+msgstr "%s required!"

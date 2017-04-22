@@ -1,0 +1,20 @@
+msgid "heading_title"
+msgstr "Google Sitemap"
+
+msgid "text_extension"
+msgstr "Extensions"
+
+msgid "text_success"
+msgstr "Success: You have modified Google Sitemap feed!"
+
+msgid "text_edit"
+msgstr "Edit Google Sitemap"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "entry_data_feed"
+msgstr "Data Feed Url"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify Google Sitemap feed!"

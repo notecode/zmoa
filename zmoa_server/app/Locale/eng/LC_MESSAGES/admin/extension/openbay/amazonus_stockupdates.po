@@ -1,0 +1,38 @@
+msgid "heading_title"
+msgstr "Stock updates"
+
+msgid "text_openbay"
+msgstr "OpenBay Pro"
+
+msgid "text_amazon"
+msgstr "Amazon US"
+
+msgid "text_empty"
+msgstr "No results!"
+
+msgid "entry_date_start"
+msgstr "Date Start"
+
+msgid "entry_date_end"
+msgstr "Date End"
+
+msgid "column_ref"
+msgstr "Ref"
+
+msgid "column_date_requested"
+msgstr "Date requested"
+
+msgid "column_date_updated"
+msgstr "Date updated"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_sku"
+msgstr "Amazon SKU"
+
+msgid "column_stock"
+msgstr "Stock"
+
+msgid "error_api_connection"
+msgstr "Could not connect to the API"

@@ -1,0 +1,71 @@
+msgid "heading_title"
+msgstr "Menu"
+
+msgid "text_success"
+msgstr "Success: You have modified layouts!"
+
+msgid "text_list"
+msgstr "Menu List"
+
+msgid "text_add"
+msgstr "Add Menu"
+
+msgid "text_edit"
+msgstr "Edit Menu"
+
+msgid "text_default"
+msgstr "Default"
+
+msgid "text_link"
+msgstr "Link"
+
+msgid "text_module"
+msgstr "Module"
+
+msgid "column_name"
+msgstr "Menu Name"
+
+msgid "column_store"
+msgstr "Store"
+
+msgid "column_type"
+msgstr "Type"
+
+msgid "column_sort_order"
+msgstr "Sort Order"
+
+msgid "column_status"
+msgstr "Status"
+
+msgid "column_action"
+msgstr "Action"
+
+msgid "entry_name"
+msgstr "Menu Name"
+
+msgid "entry_store"
+msgstr "Store"
+
+msgid "entry_type"
+msgstr "Type"
+
+msgid "entry_sort_order"
+msgstr "Sort Order"
+
+msgid "entry_module"
+msgstr "Module"
+
+msgid "entry_status"
+msgstr "Status"
+
+msgid "error_permission"
+msgstr "Warning: You do not have permission to modify layouts!"
+
+msgid "error_name"
+msgstr "Layout Name must be between 3 and 64 characters!"
+
+msgid "error_default"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned as the default store layout!"
+
+msgid "error_store"
+msgstr "Warning: This layout cannot be deleted as it is currently assigned to %s stores!"
