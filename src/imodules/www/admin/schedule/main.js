@@ -7,13 +7,13 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
 
             var data = [
                 {
-                    "project": "太古里SOHO",
+                    "name": "太古里SOHO",
                     "in_city": "北京",
-                    "day_start": "2017-4-22",
+                    "day_start": "2017-4-12",
                     "day_end": "2017-4-28",
                 },
                 {
-                    "project": "布达拉宫广场",
+                    "name": "布达拉宫广场",
                     "in_city": "拉萨",
                     "day_start": "2017-5-1",
                     "day_end": "2017-5-4",
@@ -76,6 +76,7 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
 
             var cell_width = 50;
             return {
+                total: ctx.projects.length,
                 header: {
                     days: ctx.range, // range: [moment]
                     fn: {
