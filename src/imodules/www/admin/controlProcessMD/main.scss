@@ -1,0 +1,50 @@
+@import "src/sass/global/mixin";
+
+#controlProcessMD {
+  .control {
+    width: 260px;
+    height: 389px;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EE;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.07);
+    border-radius: 2px;
+    position: relative;
+    z-index: 100;
+
+    h6 {
+      font-size: 20px;
+      color: #333333;
+      padding: 20px;
+      margin: 0;
+    }
+    .control-list {
+      margin: 0 20px;
+      border-bottom: 2px solid #CCCCCC;
+      padding-bottom: 10px;
+      margin-top: 11px;
+
+      span {
+        float: left;
+        color: #999;
+      }
+      cite {
+        float: right;
+        font-size: 14px;
+        margin-top: 4px;
+        display: inline;
+        display: none;
+      }
+      &.active {
+        span {
+          color: #333;
+        }
+        cite {
+          display: inline;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
