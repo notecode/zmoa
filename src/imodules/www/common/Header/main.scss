@@ -13,7 +13,6 @@
         width: 184px;
        display: inline-block;
        vertical-align: middle;
-       margin-right: 171px;
 
        img{
            width: 184px;
@@ -24,6 +23,7 @@
         width: 360px;
         display: inline-block;
         vertical-align: middle;
+        margin-left: 171px;
         a{
             color: $gray;
             font-size: 14px;
@@ -32,6 +32,12 @@
         .active{
             color:$blue;
         }
+    }
+    .shouhou {
+        display: inline-block;
+        color: #003894;
+        margin-left: 30px;
+        vertical-align: -1px;
     }
     .loginInfo{
         .logout{
