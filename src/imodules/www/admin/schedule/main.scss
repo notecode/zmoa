@@ -1,48 +1,86 @@
 
-#schedule {
-	.total-table {
-		width: 100%;
-		max-width: 100%;
+$left-width: 150px;
+$proj-name-width: 100px;
+$cell-width: 50px;
+$row-height: 40px;
 
+$bdr: 1px solid #E3E8EE;
+$dash-bdr: 1px dashed #E3E8EE;
+$clr-gray: #E3E8EE;
+
+#schedule {
+
+	.total-table {
 		.left-list {
 			position: absolute;
+			width: $left-width; 
+			border-left: $bdr;
+			border-top: $bdr;
 
-			width: 100px;
-			height: 200px;
-			border: 1px solid black;
+            .title {
+                height: $row-height;
+                border-bottom: $bdr;
+                background-color: $clr-gray; 
+            }
+            .proj {
+                height: $row-height;
+                border-bottom: $bdr;
+
+                .name {
+                    width: $proj-name-width; 
+                }
+
+                .city {
+                }
+            }
+
+            .proj:hover {
+                background-color: $clr-gray;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 2000px;
+                    height: $row-height; 
+                    border-top: $dash-bdr;
+                    border-bottom: $dash-bdr;
+                }
+            }
 		}
 		.main-table {
 			position: absolute;
-			left: 100px;
+			left: $left-width; 
+            border-top: $bdr;
+            border-bottom: $bdr;
+            border-right: $bdr;
 
+            .header-row {
+                border-bottom: $bdr;
+            }
 			.a-row {
 				font-size: 0px;
 				letter-spacing: 0px;
 				word-spacing: 0px;
 				position: relative;
 
-				border-top: 1px dotted gray;
+				/* border-top: 1px dotted gray; */
 
 				.cell {
 					display: inline-block;
-					width: 50px;
-					height: 40px;
-					border-left: 1px solid green;
+					width: $cell-width; 
+					height: $row-height; 
+					border-left: $bdr;
 					margin: 0px;
 					z-index: 1;
 
 					span {
-						font-size: 14px;
+						font-size: 10px;
 						display: block;
 					}
 				}
 
-				.cell:last-child {
-					border-right: 1px solid green;
-				}
-
 				.cell.today {
-					background-color: #E3E8EE;
+					background-color: $clr-gray; 
 				}
 
 				.bar {
@@ -58,9 +96,10 @@
 				}
 			}
 
-			.a-row:last-child {
-				border-bottom: 1px dotted gray;
-			}
+            .a-row:hover {
+                border-top: $dash-bdr;
+                border-bottom: $dash-bdr;
+            }
 		}
 	}
 }
