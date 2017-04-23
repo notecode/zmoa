@@ -1,0 +1,70 @@
+@import "src/sass/global/mixin";
+
+#submitContractMD {
+  width: 400px;
+  padding:40px;
+  background-color: #fff;
+  .submit-title{
+    height:42px;
+    line-height: 42px;
+    font-size: 30px;
+    color: #333333;
+    letter-spacing: 0;
+    display:-webkit-flex;
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-end;
+    .project-put-user{
+      height:20px;
+      line-height:20px;
+      font-size: 12px;
+      color: #8B9AAB;
+      letter-spacing: 0;
+      position: relative;
+      top: -6px;
+    }
+  }
+  
+  .project-item {
+    margin-top: 40px;
+  }
+  .project-name  {
+    width: 320px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EE;
+    border-radius: 2px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #8B9AAB;
+  }
+  .pro-lianxiang {
+    width: 320px;
+    height: 114px;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EE;
+    border-radius: 2px;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-top: 10px;
+
+    p {
+      padding: 0 15px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #8B9AAB;
+      letter-spacing: 0;
+    }
+  }
+  
+  .btn {
+    width: 120px;
+    height: 46px;
+    background: $blue;
+    border-radius: 2px;
+    padding: 0;
+    margin: 49px 0 0 0;
+    font-weight:600;
+  }
+  
+}
