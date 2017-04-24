@@ -1,0 +1,14 @@
+{{#persons}}
+<div class="task-box {{iconStatus}}">
+    <div class="box-title">
+        <span>{{status_name}}</span>·<span>{{count}}</span>
+    </div>
+    {{#list}}
+    <div class="task-item">
+    	<span class="icon-xiangmu"></span>
+        <p class="task-item-name">{{name}}</p>
+        <small class="task-item-time">{{transfer_time}}</small>
+    </div>
+    {{/list}}
+</div>
+{{/persons}}

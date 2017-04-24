@@ -5,9 +5,26 @@
     <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
 </head>
 <body id="{{ID}}" {{IMODULE}}>
+	{{IncludeMCSS}}
     <div id="container"></div>
 
-	{{IncludeMCSS}}
+    <div class="tpl">
+	    <div class="marker-pin">
+	        <div class="pin">
+		        <div class="inn"></div>
+		    </div>
+	    </div>
+
+	    <div class="marker-pin-with-bar">
+            <div class="outter-bar">
+                <div class="inner-bar"></div>
+            </div>
+	        <div class="pin">
+		        <div class="inn"></div>
+		    </div>
+	    </div>
+
+    </div>
 	@@include('www/common/Header/main.md.html')
 	@@include('www/common/InsertBottom/main.html')
 </body>
