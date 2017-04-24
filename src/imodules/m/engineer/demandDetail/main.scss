@@ -31,11 +31,11 @@
                 font-size: 0.12rem;
                 color: #B3B5B7;
             }
-            .i-phone {
+            .icon-call {
                 font-size: 0.17rem;
                 color: #4785f9;
                 position: absolute;
-                top: 0.05rem;
+                top: 0.17rem;
                 right: 0.04rem;
             }
         }
@@ -90,18 +90,33 @@
         margin-top: 0.15rem;
     }
     .detail-other {
-        padding: 0.2rem 0.15rem 0.4rem;
+        padding: 0.2rem 0.15rem 0.2rem;
         background: #fcfcfc;
         margin-top: 0.25rem;
         .detail-other-title {
             font-size: 0.12rem;
             color: #212022;
             line-height: 0.38rem;
+
+            .icon-Unfolded {
+                float: right;
+                font-size: 0.12rem;
+                color: #83848e;
+                transform:scale(0.6); 
+                margin-top: 0.11rem;
+            }
+            .icon-Put-away {
+               float: right;
+                font-size: 0.12rem;
+                color: #83848e;
+                transform:scale(0.6); 
+                margin-top: 0.11rem;
+            }
         }
     }
     .table-bordered{
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 0.2rem;
         td{
             height: 0.35rem;
             line-height: 0.35rem;
