@@ -1,24 +1,49 @@
 @import "src/sass/global/mixin";
 
-$bdr: 0px solid blue;
+$clr: #F6A623;
+$bdr: 1px solid #F6A623;
 
 #workersMap {
-    .a-marker {
-        font-size: 0px;
-        letter-spacing: 0px;
-        word-spacing: 0px;
-        border: $bdr;
+    .marker-pin {
+        width: 26px;
+    }
+
+    .marker-pin, 
+    .marker-pin-with-bar {
+        background-color: #000;
 
         .pin {
             overflow: hidden;
+	        width: 26px;
             height: 37px;
 
             .inn {
-	            display: inline-block;
-	            width: 26px;
 	            height: 41px;
         		@include background('{{MIMAGE}}/pin-yellow.png')
             }
+        }
+    }
+
+    .marker-pin-with-bar {
+        .outter-bar {
+            width: 60px;
+            height: 10px;    
+            border: $bdr;
+            background-color: #FFF;
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+            .inner-bar {
+                width: 30px; // 此值会根据计算变化
+                height: 8px;
+                border: 1px solid #FFF;
+                background-color: $clr;
+                border-radius: 4px;
+            }
+        }
+
+        .pin {
+            margin-left: 23px;
         }
     }
 
@@ -27,6 +52,10 @@ $bdr: 0px solid blue;
     	position: absolute;
         left: 300px;
         top: 300px;
+
+        &>div {
+            margin-bottom: 20px;
+        }
     }
 }
 
