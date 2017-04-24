@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"folder_exclude_patterns": ["dist"],
+			"folder_exclude_patterns": ["dist", "node_modules", "zmoa_server", "tasks.gulp"],
 			"file_exclude_patterns": ["*.log", "*.swp", "*.min"]
 		}
 	]
