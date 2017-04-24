@@ -64,8 +64,11 @@ define(function() {
 
             for (var i = 0; i < data.length; i++) {
                 var item = data[i];
+
+                var pin = this.find('.tpl .marker-pin').clone();
                 marker = new AMap.Marker({
-                    position: [item.lng, item.lat]
+                    position: [item.lng, item.lat],
+                    content: pin.get(0)
                 });
                 marker.setMap(this.map);
             }
