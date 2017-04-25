@@ -2,6 +2,7 @@
 <div class="task-box {{iconStatus}}">
     <div class="box-title">
         <span>{{status_name}}</span>·<span>{{count}}</span>
+        <span class="icon-Add-to {{add}}" ievent="addDemand"></span>
     </div>
     {{#list}}
     <div class="task-item">
@@ -12,3 +13,4 @@
     {{/list}}
 </div>
 {{/persons}}
+alert(1)

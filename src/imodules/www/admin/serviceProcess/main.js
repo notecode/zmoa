@@ -19,8 +19,9 @@ define(function() {
                         result.push(json[keys[i]]);
                     }
 
-                    //判断图标的颜色
+                   
                     for(var j=0; j<result.length; j++){
+                         //判断图标的颜色
                         if(result[j].status_name == '已结束'){
                             result[j].iconStatus = 'task-over';
                         }else if(result[j].status_name == '中止'){
@@ -28,7 +29,15 @@ define(function() {
                         }else{
                             result[j].iconStatus = '';
                         }
+
+                        //判断是否显示增加新需求的按钮
+                        if(result[j].status_name == '已立项，待派人'){
+                            result[j].add = '';
+                        }else {
+                           result[j].add = 'hide'; 
+                        }
                     }
+
 
                     //包装成要传入的对象
                     var ctx = {persons: result};
@@ -45,6 +54,9 @@ define(function() {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
             this.find('#task-pane').append(dom);
+        }
+        CON.prototype._ievent_addDemand = function() {
+            
         }
 
         return CON;
