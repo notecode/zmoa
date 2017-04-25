@@ -1,4 +1,6 @@
-define(function() {
+define(["/global/iscripts/libs/time/moment.js", 
+        "/global/iscripts/libs/time/twix.js",
+        "/global/iscripts/test/mock/api-4-map.js"], function(moment, Twix, mock) {
         // step: 
         // 1. add markers(在同一城市，错开，后续加上)
         // 2. bezier curve
@@ -11,67 +13,75 @@ define(function() {
             this.map = null;
             this.flyCanvas = null;
 
-            var data = [
-                {
-                    name: "张三",
-                    in_city: "北京",
-                    lng: "116.306206",
-                    lat: "39.975468",
-
-                    schedule: [
-                        {
-                            from: "2017-4-26",        
-                            to: "2017-4-26",        
-
-                            in_city: "西安",
-                            lng: "108.945964",
-                            lat: "34.269558",
-                        },
-                        {
-                            from: "2017-4-26",        
-                            to: "2017-4-26",        
-
-                            in_city: "昆明",
-                            lng: "102.712938",
-                            lat: "25.038912",
-                        },
-                        {
-                            from: "2017-4-26",        
-                            to: "2017-4-26",        
-
-                            in_city: "武汉",
-                            lng: "114.291019",
-                            lat: "30.579196",
-                        }
-                    ]
-                },
-                {
-                    name: "张三1",
-                    in_city: "深圳",
-                    lng: "113.907306",
-                    lat: "22.527573"
-                }
-            ];
-            this.foo(data);
+            var newData = this.prepare(mock);
+            //tlog(newData);
+            this.render(newData);
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-        CON.prototype.foo = function(data) {
+        CON.prototype.prepare = function(data) {
+            /*
+             * 1. 剔除已经完成的任务
+             * 2. “当前”位置可能的三种情况：
+             *     > 驻地（还没有完成过任务）
+             *     > 正在进行的任务所在地
+             *     > 最后一个完成的任务所在地
+             *
+             * 实现逻辑：projects[]从后往前捣，直到找到今天为临界，进行判断
+             */
+
+            var today = moment();
+            var result = [];
+            for (var ii = 0; ii < data.length; ii++) {
+                var raw_worker = data[ii];
+
+                var start = null;
+                var follow = [];
+                var sch = raw_worker.projects ? raw_worker.projects : [];
+                for (var i = sch.length - 1; i >= 0; i--) {
+                    var the = sch[i];
+                    if (today.isBefore(moment(the.start_date))) {
+                        follow.push(the);
+                    } else {
+                        start = the; 
+                        break;
+                    }
+                }
+
+                // 如果“今天”没有落在某个任务中，或任务后（有已完成任务），则以驻地为起始
+                if (!start) {
+                    start = {
+                        longitude: raw_worker.longitude,
+                        latitude: raw_worker.latitude,
+                        project_name: raw_worker.city_name
+                    };
+                }
+
+                follow.push(start);
+                var worker = {
+                    name: raw_worker.user_name,
+                    proj_list: follow.reverse()
+                };
+                result.push(worker);
+
+                var oo = worker.name + ': ';
+                for (var i = 0; i < worker.proj_list.length; i++) {
+                    oo += (worker.proj_list[i].project_name + ' -> ');
+                }
+                tlog(oo);
+            }
+
+            return result;
+        }
+
+        CON.prototype.render = function(data) {
             this.map = new AMap.Map('container', {
                 center: [116.306206, 39.975468],
                 zoom: 4
+                //zoom: 11 
             }); 
 
-            for (var i = 0; i < data.length; i++) {
-                var item = data[i];
-
-                var pin = this.find('.tpl .marker-pin').clone();
-                marker = new AMap.Marker({
-                    position: [item.lng, item.lat],
-                    content: pin.get(0)
-                });
-                marker.setMap(this.map);
-            }
+            this.addMarkers(data);
 
             var _this = this;
             this.addFlyingLayer(function() {
@@ -79,6 +89,37 @@ define(function() {
             });
         }
 
+        CON.prototype.addMarkers = function(data) {
+            for (var i = 0; i < data.length; i++) {
+                var worker = data[i];
+                var proj_list = worker.proj_list;
+
+                var cnt = proj_list.length;
+                for (var j = 0; j < proj_list.length; j++) {
+                    var proj = proj_list[j];
+                     
+                    if (0 == j) {
+                        var pin = this.find('.tpl .marker-pin').clone();
+                        var marker = new AMap.Marker({
+                            position: [proj.longitude, proj.latitude],
+                            content: pin.get(0),
+                            offset: new AMap.Pixel(-7, -37)  // 钉子宽14，高37
+                        });
+                        marker.setMap(this.map);
+                        tlog(proj.project_name + ' is pin');
+                    } else {
+                        var coin = this.find('.tpl .marker-coin').clone();
+                        var marker = new AMap.Marker({
+                            position: [proj.longitude, proj.latitude],
+                            content: coin.get(0),
+                            offset: new AMap.Pixel(-4, -4)  // 点宽高8
+                        });
+                        marker.setMap(this.map);
+                    }
+                }
+            }
+        }
+        
         CON.prototype.addFlyingLayer = function(render) {
             var _this = this;
             var map = this.map;
@@ -106,12 +147,12 @@ define(function() {
             ctx.lineWidth = 1;
 
             for (var i = 0; i < data.length; i++) {
-                var sch = data[i].schedule;
+                var sch = data[i].projects;
                 if (sch) {
                     ctx.beginPath();
                     for (var j = 0; j < sch.length - 1; j++) {
-                        var px1 = map.lnglatTocontainer([sch[j].lng, sch[j].lat]);
-                        var px2 = map.lnglatTocontainer([sch[j+1].lng, sch[j+1].lat]);
+                        var px1 = map.lnglatTocontainer([sch[j].longitude, sch[j].latitude]);
+                        var px2 = map.lnglatTocontainer([sch[j+1].longitude, sch[j+1].latitude]);
                         this.addFlying(ctx, px1, px2);
                     }
                 }

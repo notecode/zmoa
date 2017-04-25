@@ -4,7 +4,7 @@ module.exports = function (c) {
     return function () {
         return c.gulp.src([c.src + '/iscripts/**/*.*',
 						  '!' + c.src + '/iscripts/' + c.unsite+'/**/*.*', 
-						  '!' + c.src + '/iscripts/global/test/**/*.*'])
+						  '!' + c.src + '/iscripts/global/test/stub/**/*.*'])
             .pipe(c.plugins.fileInclude({basepath: c.iscriptsPath,context: {site: c.site}}))
             .pipe(rename(function (path) {
             var arr = path.dirname.split(/[\\/]/);
