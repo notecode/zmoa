@@ -16,10 +16,25 @@ define(["/global/iscripts/libs/time/moment.js",
             this.flyCanvas = null;
             this.markers = [];
 
-            var newData = this.prepare(mock);
-            this.render(newData);
-            this.renderWorkerList(mock);
-            this.addWorkerListMouseEvens();
+            var _this = this;
+            var doRender = function(raw) {
+                var newData = _this.prepare(raw);
+                _this.render(newData);
+                _this.renderWorkerList(mock);
+                _this.addWorkerListMouseEvens();
+            };
+
+            if (1 == qs('test')) {
+                doRender(mock);
+            } else {
+                api_ajax('project/project_user_schedule', {
+                    succ: function(json) {
+                        doRender(json);
+                    },
+                    fail: function(json) {
+                    }
+                });
+            }
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
