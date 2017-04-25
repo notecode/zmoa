@@ -101,6 +101,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
                         this.renderPin(pin, proj, cnt <= 1);
+                        this.renderPane(pin, proj);
                         var marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: pin.get(0),
@@ -110,6 +111,7 @@ define(["/global/iscripts/libs/time/moment.js",
                         //tlog(proj.project_name + ' is pin');
                     } else {
                         var coin = this.find('.tpl .marker-coin').clone();
+                        this.renderPane(coin, proj);
                         var marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: coin.get(0),
@@ -141,6 +143,15 @@ define(["/global/iscripts/libs/time/moment.js",
 
                 pin.find('.inner-bar').width((60 - 2) * perc);
                 pin.find('.progress-bar').show();
+            }
+        }
+
+        CON.prototype.renderPane = function(marker, proj) {
+            if (proj.start_date) {
+                var pane = marker.find('.pane'); 
+                pane.find('.city').text(proj.city_name);
+                pane.find('.date-from').text(moment(proj.start_date).format("M月DD日"));
+                pane.find('.date-to').text(moment(proj.end_date).format("M月DD日"));
             }
         }
 

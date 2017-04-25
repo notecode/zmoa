@@ -19,6 +19,7 @@ define(function() {
                     start_date: "2017-04-26",        
                     end_date: "2017-04-28",        
 
+                    city_name: "西安",
                     project_name: "西安xxx",
                     longitude: "108.945964",
                     latitude: "34.269558",
@@ -27,6 +28,7 @@ define(function() {
                     start_date: "2017-05-01",        
                     end_date: "2017-05-10",        
 
+                    city_name: "昆明",
                     project_name: "昆明yyy",
                     longitude: "102.712938",
                     latitude: "25.038912",
@@ -45,6 +47,7 @@ define(function() {
                     start_date: "2017-04-22",        
                     end_date: "2017-04-28",        
 
+                    city_name: "西安",
                     project_name: "西安xxx",
                     longitude: "108.945964",
                     latitude: "34.269558",
@@ -53,6 +56,7 @@ define(function() {
                     start_date: "2017-05-01",        
                     end_date: "2017-05-10",        
 
+                    city_name: "武汉",
                     project_name: "武汉xxx",
                     longitude: "114.291019",
                     latitude: "30.579196",
@@ -71,6 +75,7 @@ define(function() {
                     start_date: "2017-04-12",        
                     end_date: "2017-04-22",        
 
+                    city_name: "郑州",
                     project_name: "郑州xxx",
                     longitude: "113.657859",
                     latitude: "34.755872",
@@ -79,6 +84,7 @@ define(function() {
                     start_date: "2017-05-01",        
                     end_date: "2017-05-10",        
 
+                    city_name: "武汉",
                     project_name: "武汉xxx",
                     longitude: "114.291019",
                     latitude: "30.579196",
