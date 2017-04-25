@@ -10,13 +10,12 @@
 
     <div class="tpl">
 	    <div class="marker-pin">
-	        <div class="pin">
-		        <div class="inn"></div>
-		    </div>
-	    </div>
-
-	    <div class="marker-pin-with-bar">
-            <div class="outter-bar">
+            <div class="pane">
+                <div class="progress-bar">
+                    <div class="inner-bar"></div>
+                </div>
+            </div>
+            <div class="progress-bar">
                 <div class="inner-bar"></div>
             </div>
 	        <div class="pin">
@@ -24,6 +23,28 @@
 		    </div>
 	    </div>
 
+        <!--
+	    <div class="marker-pin">
+            <div class="progress-bar">
+                <div class="inner-bar"></div>
+            </div>
+	        <div class="pin">
+		        <div class="inn"></div>
+		    </div>
+	    </div>
+        -->
+
+        <div class="marker-coin">
+            <div class="pane"></div>
+            <div class="coin"></div>
+        </div>
+
+        <!--
+        <div class="marker-coin">
+            <div class="pane" style="visibility: hidden"></div>
+            <div class="coin"></div>
+        </div>
+        -->
     </div>
 	@@include('www/common/Header/main.md.html')
 	@@include('www/common/InsertBottom/main.html')

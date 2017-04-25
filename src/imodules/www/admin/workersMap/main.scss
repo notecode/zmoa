@@ -2,16 +2,52 @@
 
 $clr: #F6A623;
 $bdr: 1px solid #F6A623;
+$coin-size: 8px;
 
 #workersMap {
-    .marker-pin {
-        width: 26px;
+    .progress-bar {
+        width: 60px;
+        height: 10px;    
+        border: $bdr;
+        background-color: #FFF;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        .inner-bar {
+            width: 30px; // 此值会根据计算变化
+            height: 8px;
+            border: 1px solid #FFF;
+            background-color: $clr;
+            border-radius: 4px;
+        }
     }
 
-    .marker-pin, 
-    .marker-pin-with-bar {
-        background-color: #000;
+    .pane {
+        position: absolute;
+        border-radius: 5px;
+        width: 180px;
+        height: 50px;
+        top: -60px;
+        background-color: $clr;
 
+        .progress-bar {
+            position: absolute;
+            left: 100px;
+            top: 20px;
+        }
+    }
+
+
+    .marker-pin {
+        position: relative;
+        /* background-color: #000; */
+
+        &>.progress-bar {
+            position: absolute;
+            left: -23px;
+            top: -20px;
+        }
+        
         .pin {
             overflow: hidden;
 	        width: 26px;
@@ -22,28 +58,26 @@ $bdr: 1px solid #F6A623;
         		@include background('{{MIMAGE}}/pin-yellow.png')
             }
         }
+
+        .pane {
+            left: -82px;
+        }
     }
 
-    .marker-pin-with-bar {
-        .outter-bar {
-            width: 60px;
-            height: 10px;    
-            border: $bdr;
-            background-color: #FFF;
-            border-radius: 5px;
-            margin-bottom: 10px;
+    .marker-coin {
+        position: relative;
+        /* background-color: #000; */
+        width: $coin-size;
 
-            .inner-bar {
-                width: 30px; // 此值会根据计算变化
-                height: 8px;
-                border: 1px solid #FFF;
-                background-color: $clr;
-                border-radius: 4px;
-            }
+        .coin {
+            width: $coin-size;
+            height: $coin-size;
+            background-color: $clr;
+            border-radius: 4px;
         }
 
-        .pin {
-            margin-left: 23px;
+        .pane {
+            left: -86px;
         }
     }
 
@@ -54,7 +88,7 @@ $bdr: 1px solid #F6A623;
         top: 300px;
 
         &>div {
-            margin-bottom: 20px;
+            margin-bottom: 100px;
         }
     }
 }
