@@ -63,6 +63,10 @@ $coin-size: 8px;
             }
         }
 
+        &.free .pin .inn {
+        	@include background('{{MIMAGE}}/pin-gray.png')
+        }
+
         .pane {
             left: -82px;
         }

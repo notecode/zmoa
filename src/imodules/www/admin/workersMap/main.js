@@ -100,13 +100,14 @@ define(["/global/iscripts/libs/time/moment.js",
                      
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
+                        this.renderPin(pin, proj, cnt <= 1);
                         var marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: pin.get(0),
                             offset: new AMap.Pixel(-7, -37)  // 钉子宽14，高37
                         });
                         marker.setMap(this.map);
-                        tlog(proj.project_name + ' is pin');
+                        //tlog(proj.project_name + ' is pin');
                     } else {
                         var coin = this.find('.tpl .marker-coin').clone();
                         var marker = new AMap.Marker({
@@ -120,6 +121,29 @@ define(["/global/iscripts/libs/time/moment.js",
             }
         }
         
+        CON.prototype.renderPin = function(pin, proj, is_free) {
+            if (is_free) {
+                pin.addClass('free');
+            } else if (proj.start_date) {
+                // 可能的进度：进行中、完成
+                var today = moment();
+                var start = moment(proj.start_date);
+                var end = moment(proj.end_date);
+
+                var perc = 0;
+                if (today.isSameOrAfter(end)) {
+                    perc = 1;
+                } else {
+                    var passed = start.twix(today).length("days");
+                    var total = start.twix(end).length("days");
+                    perc = passed / total;
+                }
+
+                pin.find('.inner-bar').width((60 - 2) * perc);
+                pin.find('.progress-bar').show();
+            }
+        }
+
         CON.prototype.addFlyingLayer = function(render) {
             var _this = this;
             var map = this.map;
@@ -144,21 +168,22 @@ define(["/global/iscripts/libs/time/moment.js",
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.setLineDash([6, 4]);
             ctx.lineWidth = 1;
+            ctx.strokeStyle = '#F6A623';
 
             for (var i = 0; i < new_data.length; i++) {
                 var proj = new_data[i].proj_list;
                 if (proj && proj.length > 1) {
                     ctx.beginPath();
+
                     for (var j = 0; j < proj.length - 1; j++) {
                         var px1 = map.lnglatTocontainer([proj[j].longitude, proj[j].latitude]);
                         var px2 = map.lnglatTocontainer([proj[j+1].longitude, proj[j+1].latitude]);
                         this.addFlying(ctx, px1, px2);
                     }
+
+                    ctx.stroke();
                 }
             }
-
-            ctx.strokeStyle = '#F6A623';
-            ctx.stroke();
         }
 
         CON.prototype.addFlying = function(ctx, from, to) {
