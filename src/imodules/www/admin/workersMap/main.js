@@ -10,12 +10,16 @@ define(["/global/iscripts/libs/time/moment.js",
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
+            this.tpl = this._els.tpl[0].text;
+
             this.map = null;
             this.flyCanvas = null;
+            this.markers = [];
 
             var newData = this.prepare(mock);
-            //tlog(newData);
             this.render(newData);
+            this.renderWorkerList(mock);
+            this.addWorkerListMouseEvens();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -91,6 +95,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
         CON.prototype.addMarkers = function(new_data) {
             for (var i = 0; i < new_data.length; i++) {
+                var marker_list = [];
                 var worker = new_data[i];
                 var proj_list = worker.proj_list;
 
@@ -98,34 +103,40 @@ define(["/global/iscripts/libs/time/moment.js",
                 for (var j = 0; j < proj_list.length; j++) {
                     var proj = proj_list[j];
                      
+                    var marker = null;
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
                         this.renderPin(pin, proj, cnt <= 1);
                         this.renderPane(pin, proj);
-                        var marker = new AMap.Marker({
+                        marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: pin.get(0),
                             offset: new AMap.Pixel(-7, -37)  // 钉子宽14，高37
                         });
                         marker.setMap(this.map);
-                        //tlog(proj.project_name + ' is pin');
                     } else {
                         var coin = this.find('.tpl .marker-coin').clone();
                         this.renderPane(coin, proj);
-                        var marker = new AMap.Marker({
+                        marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: coin.get(0),
                             offset: new AMap.Pixel(-4, -4)  // 点宽高8
                         });
                         marker.setMap(this.map);
                     }
+
+                    marker_list.push(marker);
                 }
+
+                this.markers.push(marker_list);
             }
         }
         
         CON.prototype.renderPin = function(pin, proj, is_free) {
             if (is_free) {
                 pin.addClass('free');
+                pin.find('.pane').remove();
+                pin.find('.progress-bar').remove();
             } else if (proj.start_date) {
                 // 可能的进度：进行中、完成
                 var today = moment();
@@ -209,6 +220,54 @@ define(["/global/iscripts/libs/time/moment.js",
             ctx.moveTo(pt1[0], pt1[1]);
 //            ctx.lineTo(pt2[0], pt2[1]);
             ctx.bezierCurveTo(c1[0], c1[1], c2[0], c2[1], pt2[0], pt2[1]);
+        }
+
+        CON.prototype.renderWorkerList = function(raw_data) {
+            var _this = this;
+            var cnt = 0;
+            var dom = Mustache.render(this.tpl, {
+                total: raw_data.length,
+                workers: raw_data,
+                util: {
+                    index: function() {
+                        return cnt++;
+                    },
+                    proj_count: function() {
+                        // @@todo: 这里需要刨去已经完成的任务
+                        var projs = this.projects;
+                        if (projs && projs.length > 0) {
+                            return projs.length;
+                        } else {
+                            return '';
+                        }
+                    }
+                }
+            }); 
+            this.find('#left-list').append(dom);
+        }
+
+        CON.prototype.addWorkerListMouseEvens = function() {
+            var _this = this;
+            var togglePanes = function(idx, show) {
+                var mlist = _this.markers[idx];
+                for (var i = 0; i < mlist.length; i++) {
+                    var jq = $(mlist[i].getContent());
+                    jq.find('.pane').toggle();
+                    jq.find('.progress-bar.alone').toggle();
+                }
+            }
+
+            $('.worker').mouseenter(function() {
+                var i = $(this).attr('data-index');
+                //tlog('you enter ' + i);
+                togglePanes(i);
+            });
+
+            $('.worker').mouseleave(function() {
+                var i = $(this).attr('data-index');
+                //tlog('you leave ' + i);
+                togglePanes(i);
+            });
         }
 
         return CON;

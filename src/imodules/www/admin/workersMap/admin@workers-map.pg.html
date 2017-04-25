@@ -7,23 +7,28 @@
 <body id="{{ID}}" {{IMODULE}}>
 	{{IncludeMCSS}}
     @@include('www/common/Header/main.md.html')
-    <div id="worker-list">
-        <div class="title">
-            <span>全部<span class="total">18</span></span>
+    <div id="left-list">
+        <!--
+        <div id="worker-list">
+            <div class="title">
+                <span>全部<span class="total">18</span></span>
+            </div>
+            <ul>
+                <li class="worker" data-index="0">
+                    <span class="proj-count">2</span>
+                    <span class="name">张三</span>
+                    <span class="city">北京</span>
+                </li>
+                <li class="worker" data-index="1">
+                    <span class="proj-count">2</span>
+                    <span class="name">李四</span>
+                    <span class="city">北京</span>
+                </li>
+            </ul>
         </div>
-        <ul>
-            <li class="worker">
-                <span class="proj-count">2</span>
-                <span class="name">张三</span>
-                <span class="city">北京</span>
-            </li>
-            <li class="worker">
-                <span class="proj-count">2</span>
-                <span class="name">李四</span>
-                <span class="city">北京</span>
-            </li>
-        </ul>
+        -->
     </div>
+
     <div id="container"></div>
 
     <div class="tpl">
@@ -40,7 +45,7 @@
                     </span>
                 </div>
             </div>
-            <div class="progress-bar">
+            <div class="progress-bar alone">
                 <div class="inner-bar"></div>
             </div>
 	        <div class="pin">
@@ -77,6 +82,7 @@
         </div>
         -->
     </div>
+    {{IncludeMTPL}}
 	@@include('www/common/Header/main.md.html')
 	@@include('www/common/InsertBottom/main.html')
 </body>

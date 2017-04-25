@@ -1,0 +1,14 @@
+<div id="worker-list">
+    <div class="title">
+        <span>全部<span class="total">{{total}}</span></span>
+    </div>
+    <ul>
+    	{{#workers}}
+        <li class="worker" data-index="{{util.index}}">
+            <span class="proj-count">{{util.proj_count}}</span>
+            <span class="name">{{user_name}}</span>
+            <span class="city">{{city_name}}</span>
+        </li>
+    	{{/workers}}
+    </ul>
+</div>
