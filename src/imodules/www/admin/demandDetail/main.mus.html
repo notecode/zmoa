@@ -1,0 +1,102 @@
+<h3 class="pro-name">
+    <span class="icon-xiangmu"></span>
+    <span>{{name}}</span>
+</h3>
+<h4 class="pro-client">
+    <span class="pro-client-name">{{contact_name}}</span>
+    <span>{{contact_phone}}</span>
+</h4>
+<p class="pro-pos">
+    <small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small>
+</p>
+<p class="pro-service">
+    <span class="icon-checkmark"></span>
+    <span class="pro-service-name">李康</span>
+    <span class="pro-service-time">4月27-4月29日提供服务</span>
+</p>
+<p class="pro-info">
+    <span class="icon-checkmark"></span>
+    <span>{{apply_environment}}</span>,
+    <span>{{point}}</span>,
+    <span>{{screen_color}}</span>,
+    <span>{{description}}</span>
+</p>
+<div class="pro-img-box">
+    <span class="pri-img-none {{noPic}}">暂无故障图片</span>
+    <img class="pro-img {{hasPic}}" src="http://zmoa.bxland.com/files/{{main_img}}" width="294" />
+</div>
+<p class="pro-addr">
+    <span class="icon-checkmark"></span>
+    <span>{{detail_address}}</span>
+</p>
+<!--项目信息-->
+<p class="pro-note">
+    <span class="icon-checkmark"></span>
+    <span>项目信息</span>
+</p>
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <td>合同编号</td>
+            <td class="td-contract-no">{{contract}}</td>
+        </tr>
+        <tr>
+            <td>屏幕类型</td>
+            <td class="td-screen-type">{{screen_type}}</td>
+        </tr>
+        <tr>
+            <td>屏幕面积</td>
+            <td class="td-screen-size">{{screen_area}}m²</td>
+        </tr>
+        <tr>
+            <td>点间距</td>
+            <td class="td-screen-span">{{point}}</td>
+        </tr>
+        <tr>
+            <td>应用环境</td>
+            <td class="td-screen-environment">{{apply_environment}}</td>
+        </tr>
+        <tr>
+            <td>保质期截止至</td>
+            <td class="td-demand-date">{{expiration_date}}</td>
+        </tr>
+        <tr>
+            <td>备品备料</td>
+            <td class="td-demand-res">
+                {{#preparations}}
+                <span>{{preparation_type}}{{preparation_type_number}}、</span>
+                {{/preparations}}
+            </td>
+        </tr>
+        <tr>
+            <td>项目地址</td>
+            <td class="td-demand-addr">{{detail_address}}</td>
+        </tr>
+        <tr>
+            <td>项目联络人</td>
+            <td class="td-client-user">{{contact_name}}</td>
+        </tr>
+        <tr>
+            <td>联络人电话</td>
+            <td class="td-client-tel">{{contact_phone}}</td>
+        </tr>
+        <tr>
+            <td>销售人员</td>
+            <td class="td-demand-user">{{palesman_name}}</td>
+        </tr>
+        <tr>
+            <td>销售员工号</td>
+            <td class="td-demand-no">{{job_number}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--补充说明-->
+<div class="pro-recall">
+    <span class="icon-checkmark"></span>
+    <p class="pro-recall-name">补充说明</p>
+    {{#comments}}
+    <span class="pro-bname"><cite>{{user_id}}</cite>{{created}}</span>
+    <span class="pro-bshuo">{{comment}}</span>
+    {{/comments}}
+</div>
