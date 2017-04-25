@@ -56,7 +56,9 @@ define(function() {
             this.find('#task-pane').append(dom);
         }
         CON.prototype._ievent_addDemand = function() {
-            
+            project.getIModule('imodule://submitContractMD', null, function (modal) {
+                project.open(modal, '_blank', 'content');
+            });
         }
 
         return CON;
