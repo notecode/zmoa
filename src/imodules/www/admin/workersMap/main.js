@@ -37,9 +37,9 @@ define(["/global/iscripts/libs/time/moment.js",
 
                 var start = null;
                 var follow = [];
-                var sch = raw_worker.projects ? raw_worker.projects : [];
-                for (var i = sch.length - 1; i >= 0; i--) {
-                    var the = sch[i];
+                var proj = raw_worker.projects ? raw_worker.projects : [];
+                for (var i = proj.length - 1; i >= 0; i--) {
+                    var the = proj[i];
                     if (today.isBefore(moment(the.start_date))) {
                         follow.push(the);
                     } else {
@@ -74,24 +74,24 @@ define(["/global/iscripts/libs/time/moment.js",
             return result;
         }
 
-        CON.prototype.render = function(data) {
+        CON.prototype.render = function(new_data) {
             this.map = new AMap.Map('container', {
-                center: [116.306206, 39.975468],
+                center: [116.396359,39.909346], // 天安门
                 zoom: 4
                 //zoom: 11 
             }); 
 
-            this.addMarkers(data);
+            this.addMarkers(new_data);
 
             var _this = this;
             this.addFlyingLayer(function() {
-                _this.addAllFlyings(data);
+                _this.addAllFlyings(new_data);
             });
         }
 
-        CON.prototype.addMarkers = function(data) {
-            for (var i = 0; i < data.length; i++) {
-                var worker = data[i];
+        CON.prototype.addMarkers = function(new_data) {
+            for (var i = 0; i < new_data.length; i++) {
+                var worker = new_data[i];
                 var proj_list = worker.proj_list;
 
                 var cnt = proj_list.length;
@@ -135,10 +135,9 @@ define(["/global/iscripts/libs/time/moment.js",
                 custLayer.render = render;
                 custLayer.setMap(map);
             }); 
-        
         }
 
-        CON.prototype.addAllFlyings = function(data) {
+        CON.prototype.addAllFlyings = function(new_data) {
             var map = this.map;
             var canvas = this.flyCanvas;
             var ctx = canvas.getContext("2d");
@@ -146,20 +145,19 @@ define(["/global/iscripts/libs/time/moment.js",
             ctx.setLineDash([6, 4]);
             ctx.lineWidth = 1;
 
-            for (var i = 0; i < data.length; i++) {
-                var sch = data[i].projects;
-                if (sch) {
+            for (var i = 0; i < new_data.length; i++) {
+                var proj = new_data[i].proj_list;
+                if (proj && proj.length > 1) {
                     ctx.beginPath();
-                    for (var j = 0; j < sch.length - 1; j++) {
-                        var px1 = map.lnglatTocontainer([sch[j].longitude, sch[j].latitude]);
-                        var px2 = map.lnglatTocontainer([sch[j+1].longitude, sch[j+1].latitude]);
+                    for (var j = 0; j < proj.length - 1; j++) {
+                        var px1 = map.lnglatTocontainer([proj[j].longitude, proj[j].latitude]);
+                        var px2 = map.lnglatTocontainer([proj[j+1].longitude, proj[j+1].latitude]);
                         this.addFlying(ctx, px1, px2);
                     }
                 }
             }
 
-//            ctx.strokeStyle = '#F6A623';
-            ctx.strokeStyle = '#0000ff';
+            ctx.strokeStyle = '#F6A623';
             ctx.stroke();
         }
 
