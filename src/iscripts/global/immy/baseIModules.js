@@ -199,14 +199,14 @@
             potato.Dialog.call(this, document.createElement("div"), document.createElement("div"), "", "closed", PT._createHistory.call(this, options.history), new baseIWidgets.IWidgetLoader(dom, this));
             $.addClass(this.body, "-immy-dialog-window " + this.options.className);
             $.addClass(this.mask, "-immy-dialog-mask " + this.options.className);
-            this.mask.innerHTML = '<span class="tool-close icon-cross"></span>';
+            this.mask.innerHTML = '<span class="tool-close icon-close"></span>';
 
             var lang = potato.lang;
             var str = '<div class="-immy-dialog-header" idom="header">';
             str += '<div class="controls" idom="controls">' +
                 '<a class="tool-refresh button" ievent="dialog@refresh" title="refresh"></a>' +
                 '<a class="tool-redo button" ievent="dialog@redo" title="redo"></a>' +
-                '<a class="tool-close button" idom="close" ievent="dialog@close" title="close"><span class="icon-cross"></span></a>' +
+                '<a class="tool-close button" idom="close" ievent="dialog@close" title="close"><span class="icon-close"></span></a>' +
                 '</div><div class="tools" idom="tools">' +
                 '<a class="tool-undo button" idom="undo" ievent="dialog@undo" title="undo"></a>' +
                 '<a class="tool-config button" idom="config" ievent="dialog@config"></a>' +

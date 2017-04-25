@@ -85,11 +85,8 @@
         }
       }
   .no-demand{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
     text-align:center;
+    margin-top: 134px;
     h2{
       font-family: PingFangSC-Thin;
       font-size: 40px;
@@ -147,6 +144,17 @@
         font-size: 18px;
         color: $black;
         letter-spacing: 0;
+        width: 320px;
+        .de-adres {
+          display: inline-block;
+          max-width: 204px;
+          height: 71px;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          vertical-align: -4px;
+          font-style: normal;
+          white-space: nowrap;
+        }
       }
     }
     .demand-state{
@@ -185,20 +193,48 @@
     width: 1%;
     top:-2px;
   }
-  #progressBar div span.jindu1{
+  #state1 div span.jindu{
     width: 1%;
   }
-  #progressBar div span.jindu2{
+  #state2 div span.jindu{
     width: 26%;
   }
-  #progressBar div span.jindu3{
+  #state3 div span.jindu{
     width: 51%;
   }
-  #progressBar div span.jindu4{
+  #state4 div span.jindu{
     width: 76%;
   }
-  #progressBar div span.jindu5{
+  #state5 div span.jindu{
     width: 101%;
+  }
+  #state1 span.stepIco1, #state1 span.stepIco1 .stepText{
+    border:none!important;
+    background-color: $blue;
+    color: $blue!important;
+  }
+  #state2 span.stepIco1, #state2 span.stepIco1 .stepText,#state2 span.stepIco2, #state2 span.stepIco2 .stepText{
+    border:none!important;
+    background-color: $blue;
+    color: $blue!important;
+  }
+  #state3 span.stepIco1, #state3 span.stepIco1 .stepText,#state3 span.stepIco2, #state3 span.stepIco2 .stepText, #state3 span.stepIco3, #state3 span.stepIco3 .stepText{
+    border:none!important;
+    background-color: $blue;
+    color: $blue!important;
+  }
+  #state4 span.stepIco1, #state4 span.stepIco1 .stepText,#state4 span.stepIco2, #state4 span.stepIco2 .stepText, #state4 span.stepIco3, #state4 span.stepIco3 .stepText, #state4 span.stepIco4, #state4 span.stepIco4 .stepText{
+    border:none!important;
+    background-color: $blue;
+    color: $blue!important;
+  }
+  #state5 span.stepIco1, #state5 span.stepIco1 .stepText,#state5 span.stepIco2, #state5 span.stepIco2 .stepText, #state5 span.stepIco3, #state5 span.stepIco3 .stepText, #state5 span.stepIco4, #state5 span.stepIco4 .stepText, #state5 span.stepIco5, #state5 span.stepIco5 .stepText{
+    border:none!important;
+    background-color: $blue;
+    color: $blue!important;
+  }
+  .demand-state > .stepText {
+    background-color: #fff!important;
   }
   #progressBar>span{
     position: absolute;

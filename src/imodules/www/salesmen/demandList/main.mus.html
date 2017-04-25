@@ -1,0 +1,47 @@
+<div class="no-demand {{noDemand}}">
+    <h2>您尚未提交需求</h2>
+    <button id="new-demand" type="submit" class="btn btn-primary"  ievent="addDemand">提交新需求</button>
+</div>
+<div class="have-demand {{haveDemand}}">
+    <div class="demand-list-title">
+        我提交的需求&nbsp;·&nbsp;<span class="my-demand-count">{{count}}</span>
+        <button id="new-demand" type="submit" class="btn btn-primary" ievent="addDemand">提交新需求</button>
+    </div>
+
+    <div class="de-list-box">
+        {{#list}}
+        <div class="has-demand">
+            <div class="demand-list">
+                <div class="demand-name">
+                    <span class="icon-xiangmu"></span >
+                    <span class="demand-name-span"><cite class="de-adres" title="{{name}}">{{name}}</cite>（{{contract}}）</span>
+                </div>
+                <div class="demand-state" id="state{{status}}">
+                    <div id="progressBar">
+                        <!-- 进度条 -->
+                        <div>
+                            <span class="jindu"></span>
+                        </div>
+                        <!-- 五个圆 -->
+                        <span class="stepIco stepIco1">
+                            <div class="stepText">已立项，待派人</div>
+                        </span>
+                        <span class="stepIco stepIco2">
+                            <div class="stepText" >排期中</div>
+                        </span>
+                        <span class="stepIco stepIco3">
+                            <div class="stepText">服务中</div>
+                        </span>
+                        <span class="stepIco stepIco4">
+                            <div class="stepText">已完成，待回访</div>
+                        </span>
+                        <span class="stepIco stepIco5">
+                            <div class="stepText">已结束</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/list}}
+    </div>
+</div>
