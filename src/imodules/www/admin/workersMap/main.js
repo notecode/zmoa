@@ -44,7 +44,7 @@ define(["/global/iscripts/libs/time/moment.js",
              * 2. “当前”位置可能的三种情况：
              *     > 驻地（还没有完成过任务）
              *     > 正在进行的任务所在地
-             *     > 最后一个完成的任务所在地
+             *     > 最后一个完成的任务所在地(x 不再考虑这种情况，完成了就打厮回去）
              *
              * 实现逻辑：projects[]从后往前捣，直到找到今天为临界，进行判断
              */
@@ -54,26 +54,28 @@ define(["/global/iscripts/libs/time/moment.js",
             for (var ii = 0; ii < data.length; ii++) {
                 var raw_worker = data[ii];
 
-                var start = null;
+                var start = {
+                    longitude: raw_worker.longitude,
+                    latitude: raw_worker.latitude,
+                    project_name: raw_worker.city_name
+                };
                 var follow = [];
                 var proj = raw_worker.projects ? raw_worker.projects : [];
                 for (var i = proj.length - 1; i >= 0; i--) {
                     var the = proj[i];
+                    // 今天之后的排期, 无条件纳入
                     if (today.isBefore(moment(the.start_date))) {
                         follow.push(the);
                     } else {
-                        start = the; 
+                        // 进行中的排期
+                        if (today.isSameOrBefore(moment(the.end_date))) {
+                            start = the; 
+                        } else { // 已完成的，忽略
+                            ;
+                        }
+
                         break;
                     }
-                }
-
-                // 如果“今天”没有落在某个任务中，或任务后（有已完成任务），则以驻地为起始
-                if (!start) {
-                    start = {
-                        longitude: raw_worker.longitude,
-                        latitude: raw_worker.latitude,
-                        project_name: raw_worker.city_name
-                    };
                 }
 
                 follow.push(start);
