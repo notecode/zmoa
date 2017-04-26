@@ -1,0 +1,169 @@
+@import "src/sass/global/mixin";
+
+#slickDemo {
+    .box {
+        width: 100%;
+        background-color:rgba(0,0,0,0.25);
+        padding: 40px 0;
+    }
+    .content {
+        width: 1320px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+   
+    .date-block{
+        width: 894px;
+        min-height: 1260px;
+        display: inline-block;
+        vertical-align: top;
+        border-left: 1px solid $bordercolor;
+    }
+    .date-list{
+        width: 100%;
+        height: 60px;
+        background: $backblue;
+        position: relative;
+        overflow: hidden;
+
+        .date-pre,.date-next, .slick-prev, .slick-next{  /*slick改动*/
+            width: 64px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: $grayblue;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer; 
+            position: absolute;
+            background-color: #e3e8ee;
+            border: none;
+            outline:none;
+            padding: 0;
+            top: 0; 
+            z-index: 5;
+            overflow: hidden;
+            span{
+                font-size: 14px;
+            }
+        }
+        .slick-prev {  /*slick改动*/
+            left: -65px;
+        }
+        .date-next, .slick-next{  
+            margin-left: -6px;
+            border-left: 1px solid $bordercolor;
+            right: -64px;
+        }
+        .slick-disabled { /*slick改动*/
+            span {
+                opacity: 0.2;
+            }
+        }
+        .date-pane{  /*slick改动*/
+            width: 765px;
+            height: 60px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: -5px;
+            position: relative;
+            margin-left: 64px;
+            .date-pane-all{
+                width: 100%; 
+                position: relative;
+                transition: all .6s;
+            }
+        }
+        .date-day{
+            width: 111px;
+            height: 60px;
+            color: $grayblue;
+            margin-right: -1px;
+            padding: 8px 0;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            border-right: 1px solid $bordercolor;
+            border-left: 1px solid $bordercolor;
+            p{
+                font-size: 14px;
+                line-height: 22px;
+                margin: 0;
+            }
+            .free-num{
+                color: $lightblack;
+            }
+        }
+        .today{
+            background-color: #fff;
+        }
+    }
+    .table-label{
+        height: 40px;
+        line-height: 40px;
+        background-color: $grayblue;
+        color: #fff;
+        font-size: 14px;
+        padding: 0 64px ;
+
+        .table-label-name{
+            margin-right: 170px;
+        }
+        .table-label-city{
+            margin-right: 180px;
+        }
+        .table-label-status{
+            margin-right: 250px;
+        }
+    }
+    .suppliers-list{
+        .item{
+            width: 100%;
+            height: 80px;
+            padding: 0 30px 0 60px;
+            line-height: 80px;
+            color: $black;
+            font-size: 14px;
+            border-bottom: 1px solid $bordercolor;
+
+            p,button{
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0;
+            }
+            .item-name{
+                width: 200px;
+            }
+            .item-location{
+                width:230px;
+            }
+            .item-status{
+                width:260px;
+                color: $gray;
+            }
+            .item-curr-status{
+                color: $black;
+            }
+            .item-operation{
+                width: 96px;
+                height: 46px;
+                line-height: 28px;
+                font-size: 15px;
+            }
+            .item-distance,.item-date{
+                color: $gray;
+            }
+            .item-icon-free,.item-icon-busy{
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #61A417;
+            }
+            .item-icon-busy{
+                background: #DA921B;
+            }
+        }
+    }
+}
