@@ -7,11 +7,15 @@ define(["/global/iscripts/libs/time/moment.js",
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-
-            this.renderDetail(mock_detail);
-            //this.renderWorkerStats(mock_stat);
-
             this.serv = null;
+
+            // todo:
+            // 1. 点哪个日期，显示那天的情况
+            // 2. slick
+            // 3. 指派
+           
+            this.renderDetail(mock_detail);
+            this.renderWorkerStats(mock_stat);
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -21,52 +25,91 @@ define(["/global/iscripts/libs/time/moment.js",
 		}
 
 		CON.prototype.renderWorkerStats = function(mock) {
-            var tpl = this.find('#day-header-tpl').text();
+            var header = this.prepareStatData(mock);
+            var serv_tpl = this.find('#serv-tpl').text();
+            var dom = Mustache.render(serv_tpl, {header: header});
+            this.find('.body-block').append(dom);
 
-            var newData = this.prepareStatData(mock);
-            //var dom = Mustache.render(tpl, newData);
-            //this.find('.body-block').append(dom);
+            var oneDayServ = this.renderADay(4);
+            this.find('.date-block').append(oneDayServ);
+        }
+
+        CON.prototype.renderADay = function(index) {
+            // serv: 这一天，各worker的情况
+            var todayServ = this.serv.grid[index];
+            var workers = [];
+            for (var i = 0; i < todayServ.length; i++) {
+                if (todayServ[i]) { // 说明在服务中
+                    var worker = todayServ[i];
+                    worker.name = this.serv.obj_workers[worker.user_id].name;
+                    worker.busy = 1;
+                    workers.push(worker);
+                } else { // 说明空闲
+                    workers.push(this.serv.arr_workers[i]);
+                }
+            }
+
+            var grid_tpl = this.find('#grid-tpl').text();
+            var grid = Mustache.render(grid_tpl, {
+                workers: workers,
+                util: {
+                    place: function() {
+                        return this.city || this.city_name;
+                    },
+                    during: function() {
+                        var s = moment(this.start_date).format('M/DD');
+                        var e = moment(this.end_date).format('M/DD');
+                        return (s + '-' + e);
+                    }
+                }
+            });
+            return grid;
         }
 
         CON.prototype.prepareStatData = function(raw) {
             var wd = ['日', '一', '二', '三', '四', '五', '六'];
+            var raw_workers = raw.all_service_user_list;
 
-            var new_data = {
-                header: [],
-                free: []
-            };
+            // 给worker数据加上一个索引（当前所在位置）
+            var keys = Object.keys(raw_workers);
+            var total = keys.length;
+            for (var i = 0; i < total; i++) {
+                var id = keys[i];
+                raw_workers[id].index = i;
+            }
 
-            var workers = raw.all_service_user_list;
+            var header = [];
             var servGrid = [];
 
-            var total = workers.length;
-            var days = raw.date_serving_user_ids;
+            var days = raw.date_serving_user_list;
             for (var i = 0; i < days.length; i++) {
                 var the = days[i];
                 var infoList = the.serving_user_info_list;
                 var mmt = moment(the.date);
-                new_data.header.push({
+                header.push({
                     date: mmt.format('M-DD'),
                     weekDay: wd[mmt.day()],
                     free: total - infoList.length
                 });
 
                 // 先弄一个填满的列，对应于一天
-                var servCol = Array(infoList.length).fill(null);
-                for (var i = 0; i < infoList.length; i++) {
-                    var info = infoList[i];
-                    servCol[info.user_id] = info;
+                var servCol = Array(total).fill(null);
+                for (var j = 0; j < infoList.length; j++) {
+                    var info = infoList[j];
+                    var index = raw_workers[info.user_id].index;
+                    servCol[index] = info;
                 } 
 
                 servGrid.push(servCol);
             }
 
             this.serv = {
-                home: 
+                obj_workers: raw_workers,
+                arr_workers: Object.values(raw_workers),
                 grid: servGrid
             }
-            tlog(new_data);
-            return new_data;
+
+            return header;
         }
 
         return CON;

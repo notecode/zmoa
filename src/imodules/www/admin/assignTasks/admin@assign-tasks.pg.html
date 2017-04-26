@@ -19,7 +19,7 @@
     </div>
 
 {{IncludeMTPL}}
-<script id="day-header-tpl" type="text/tpl">
+<script id="serv-tpl" type="text/tpl">
      <div class="date-block">
         <div class="date-list">
             <div class="date-pre">
@@ -27,11 +27,11 @@
             </div>
             <div class="date-pane">
                 <div class="date-pane-all">
-                    {{header}}
+                    {{#header}}
                     <div class="date-day {{today}}">
                         <p>
                             <span>{{date}}</span>
-                            <span class="date-week">{{weekDay}}</span>
+                            <span class="date-week">周{{weekDay}}</span>
                         </p>
                         <p class="free-num"><span>{{free}}</span>人</p>
                     </div>
@@ -50,33 +50,29 @@
         </div>
     </div>
 </script>
-<script id="worker-list-tpl" type="text/tpl">
+<script id="grid-tpl" type="text/tpl">
     <div class="suppliers-list">
+        {{#workers}}
         <div class="item">
-            <p class="item-name">王伟</p>
+            <p class="item-name">{{name}}</p>
             <p class="item-location">
-                <span class="item-city">深圳</span>&nbsp;&nbsp;
-                <span class="item-distance">3.6km</span>
+                <span class="item-city">{{util.place}}</span>&nbsp;&nbsp;
+                <span class="item-distance">{{distance}}km</span>
             </p>
             <p class="item-status">
-                <span class="item-icon-free"></span>&nbsp;&nbsp;
-                <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
+                {{#busy}}
+                    <span class="item-icon-busy"></span>&nbsp;&nbsp;
+                    <span class="item-curr-status">服务中</span>&nbsp;&nbsp;
+                    (<span class="item-date">{{util.during}}</span>)
+                {{/busy}}
+                {{^busy}}
+                    <span class="item-icon-free"></span>&nbsp;&nbsp;
+                    <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
+                {{/busy}}
             </p>
             <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
         </div>
-        <div class="item">
-            <p class="item-name">王伟</p>
-            <p class="item-location">
-                <span class="item-city">深圳</span>&nbsp;&nbsp;
-                <span class="item-distance">3.6km</span>
-            </p>
-            <p class="item-status">
-                <span class="item-icon-busy"></span>&nbsp;&nbsp;
-                <span class="item-curr-status">服务中</span>&nbsp;&nbsp;
-                (<span class="item-date">04/12-04/28</span>)
-            </p>
-            <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
-        </div>
+        {{/workers}}
     </div>
 </script>
 
