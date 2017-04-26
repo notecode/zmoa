@@ -14,136 +14,72 @@
                 </h2>
             </div>
             <div class="body-block">
-                <div class="date-block">
-                    <div class="date-list">
-                        <div class="date-pre">
-                            <span class="icon-left"></span>
-                        </div>
-                        <div class="date-pane">
-                            <div class="date-pane-all">
-                                <div class="date-day today">
-                                    <p>
-                                        <span>04-28</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>04-29</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>04-30</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-01</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-02</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-03</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-04</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-05</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-06</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-07</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                <div class="date-day">
-                                    <p>
-                                        <span>05-08</span>
-                                        <span class="date-week">周三</span>
-                                    </p>
-                                    <p class="free-num"><span>3</span>人</p>
-                                </div>
-                                
-                            </div>
-                        </div>    
-                        <div class="date-next">
-                            <span class="icon-right"></span>
-                        </div>    
-                    </div>
-                    <div class="table-label">
-                        <span class="table-label-name">姓名</span>
-                        <span class="table-label-city">当前位置</span>
-                        <span class="table-label-status">状态</span>
-                        <span class="table-label-operation">操作</span>
-                    </div>
-                    <div class="suppliers-list">
-                        <div class="item">
-                            <p class="item-name">王伟</p>
-                            <p class="item-location">
-                                <span class="item-city">深圳</span>&nbsp;&nbsp;
-                                <span class="item-distance">3.6km</span>
-                            </p>
-                            <p class="item-status">
-                                <span class="item-icon-free"></span>&nbsp;&nbsp;
-                                <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
-                            </p>
-                            <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
-                        </div>
-                        <div class="item">
-                            <p class="item-name">王伟</p>
-                            <p class="item-location">
-                                <span class="item-city">深圳</span>&nbsp;&nbsp;
-                                <span class="item-distance">3.6km</span>
-                            </p>
-                            <p class="item-status">
-                                <span class="item-icon-busy"></span>&nbsp;&nbsp;
-                                <span class="item-curr-status">服务中</span>&nbsp;&nbsp;
-                                (<span class="item-date">04/12-04/28</span>)
-                            </p>
-                            <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
 {{IncludeMTPL}}
+<script id="day-header-tpl" type="text/tpl">
+     <div class="date-block">
+        <div class="date-list">
+            <div class="date-pre">
+                <span class="icon-left"></span>
+            </div>
+            <div class="date-pane">
+                <div class="date-pane-all">
+                    {{header}}
+                    <div class="date-day {{today}}">
+                        <p>
+                            <span>{{date}}</span>
+                            <span class="date-week">{{weekDay}}</span>
+                        </p>
+                        <p class="free-num"><span>{{free}}</span>人</p>
+                    </div>
+                    {{/header}}
+                </div>
+            </div>    
+            <div class="date-next">
+                <span class="icon-right"></span>
+            </div>    
+        </div>
+        <div class="table-label">
+            <span class="table-label-name">姓名</span>
+            <span class="table-label-city">当前位置</span>
+            <span class="table-label-status">状态</span>
+            <span class="table-label-operation">操作</span>
+        </div>
+    </div>
+</script>
+<script id="worker-list-tpl" type="text/tpl">
+    <div class="suppliers-list">
+        <div class="item">
+            <p class="item-name">王伟</p>
+            <p class="item-location">
+                <span class="item-city">深圳</span>&nbsp;&nbsp;
+                <span class="item-distance">3.6km</span>
+            </p>
+            <p class="item-status">
+                <span class="item-icon-free"></span>&nbsp;&nbsp;
+                <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
+            </p>
+            <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
+        </div>
+        <div class="item">
+            <p class="item-name">王伟</p>
+            <p class="item-location">
+                <span class="item-city">深圳</span>&nbsp;&nbsp;
+                <span class="item-distance">3.6km</span>
+            </p>
+            <p class="item-status">
+                <span class="item-icon-busy"></span>&nbsp;&nbsp;
+                <span class="item-curr-status">服务中</span>&nbsp;&nbsp;
+                (<span class="item-date">04/12-04/28</span>)
+            </p>
+            <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
+        </div>
+    </div>
+</script>
+
 @@include('www/common/InsertBottom/main.html')
 </body>
 </html>

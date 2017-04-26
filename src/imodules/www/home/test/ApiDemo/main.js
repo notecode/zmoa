@@ -6,6 +6,7 @@ define(function() {
 
             this.fooGet();
             this.fooPost();
+            project.tip('申请成功', 'succ');
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
