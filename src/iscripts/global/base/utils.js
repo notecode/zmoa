@@ -464,3 +464,52 @@ function isAndroid() {
     tlog(md.os());
     return /android/i.test(md.os());
 }
+
+// 函数防抖 @Turbo: 691209942
+// debounce接收三个参数:
+// @params fn: 需要进行函数防抖的函数;
+// @params wait: 需要等待的时间, 单位为毫秒;
+// @params immediate: 如果为true, 则debounce会在调用时立刻执行一次fn,而不需要等到wait结束后.
+
+function debounce (fn, wait, immediate) {
+    var timeout,
+        args,
+        context,
+        timestamp,
+        result;
+
+    var later = function() {
+        var last = (+new Date()) - timestamp;
+
+        if(last < wait && last >= 0) {
+            timeout = setTimeout(later, wait - last);
+        } else {
+            timeout = null;
+            if(!immediate) {
+                result = fn.apply(context, args);
+
+                if(!timeout) {
+                    context = args = null;
+                }
+            }
+        }
+    };
+
+    return function() {
+        context = this;
+        args = arguments;
+        timestamp = +new Date();
+        var callNow = immediate && !timeout;
+
+        if(!timeout) {
+            timeout = setTimeout(later, wait);
+        }
+
+        if(callNow) {
+            result = fn.apply(context, args);
+            context = args = null;
+        }
+
+        return result;
+    }
+};
