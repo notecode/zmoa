@@ -45,7 +45,7 @@ define(function() {
                     _this.doRender(ctx);
                 },
                 fail: function(json) {
-
+                    tlog('failed');
                 }
             });
         }
