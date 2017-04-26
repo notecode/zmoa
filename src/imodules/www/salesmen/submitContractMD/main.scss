@@ -45,7 +45,6 @@
     border: 1px solid #E3E8EE;
     border-radius: 2px;
     overflow-y: auto;
-    margin-top: 20px;
     padding-top: 10px;
 
     p {
@@ -54,9 +53,13 @@
       font-size: 14px;
       color: #8B9AAB;
       letter-spacing: 0;
+      cursor: pointer;
     }
   }
-  
+  .project-content {
+    min-height: 114px;
+    margin-top: 20px;
+  }
   .btn {
     width: 120px;
     height: 46px;
