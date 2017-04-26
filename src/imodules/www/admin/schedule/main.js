@@ -1,30 +1,17 @@
-define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix.js"], function(moment, Twix) {
+define(["/global/iscripts/libs/time/moment.js", 
+        "/global/iscripts/libs/time/twix.js",
+        "/global/iscripts/test/mock/api-4-gant.js"], function(moment, Twix, mock) {
     var Module = (function() {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
 
-            var data = [
-                {
-                    "name": "太古里SOHO",
-                    "in_city": "北京",
-                    "day_start": "2017-4-12",
-                    "day_end": "2017-4-28",
-                },
-                {
-                    "name": "布达拉宫广场",
-                    "in_city": "拉萨",
-                    "day_start": "2017-5-1",
-                    "day_end": "2017-5-4",
-                }
-            ];
-
             if (1 == qs('test')) {
                 return;
             }
             
-            var ctx = this.prepare(data);
+            var ctx = this.prepare(mock);
             var toUse = this.genReadyToUseData(ctx);
             this.doRender(toUse);
         };
@@ -75,7 +62,10 @@ define(["/global/iscripts/libs/time/moment.js", "/global/iscripts/libs/time/twix
             }
 
             var cell_width = 50;
+            var cell_height = 40;
             return {
+                width: cell_width * ctx.range.length + 2,
+                height: cell_height * (1 + ctx.projects.length) + 2,
                 total: ctx.projects.length,
                 header: {
                     days: ctx.range, // range: [moment]
