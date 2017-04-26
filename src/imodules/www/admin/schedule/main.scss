@@ -64,7 +64,7 @@ $clr-gray: #E3E8EE;
                 }
             }
 
-            .proj:hover {
+            .proj:hover, .proactive {
             	.proj-set {
             		color: #333;
             	}
@@ -72,15 +72,6 @@ $clr-gray: #E3E8EE;
             		color: #333;
             	}
                 background-color: $clr-gray;
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    width: 2000px;
-                    height: $row-height; 
-                    border-top: $dash-bdr;
-                    border-bottom: $dash-bdr;
-                }
             }
 		}
 		.main-table {
@@ -90,28 +81,36 @@ $clr-gray: #E3E8EE;
             overflow-x: auto;
             white-space: nowrap;
 
-            .header-row {
-                border-bottom: $bdr;
+            .a-row-pro:first-child {
+                
             }
 			.a-row {
 				font-size: 0px;
 				letter-spacing: 0px;
 				word-spacing: 0px;
 				position: relative;
+				.header-cells .cell {
+					border-top: $bdr;
+				}
 
 				/* border-top: 1px dotted gray; */
 
 				.cell {
 					display: inline-block;
 					width: $cell-width; 
-					height: $row-height; 
+					height: 48px;; 
 					border-left: $bdr;
 					margin: 0px;
 					z-index: 1;
+					text-align: center;
 
 					span {
 						font-size: 10px;
 						display: block;
+						margin-top: 2px;
+					}
+					span.date {
+						padding-top: 5px;
 					}
 				}
 
@@ -132,17 +131,27 @@ $clr-gray: #E3E8EE;
 				}
 			}
 
-            .a-row:hover {
-                border-top: $dash-bdr;
-                border-bottom: $dash-bdr;
+            
+            .a-row-pro {
+            	.cell {
+            		height: 41px;
+            	}
+            	 
+            }
 
-                .cell {
-                	height: 38px;
-                }
-                .bar {
-                	top: 12px;
+            .a-row-pro:hover, .active {
+            	.cell {
+            		border-top: $dash-bdr;
+                	border-bottom: $dash-bdr;
+            	}
+            	.bar {
+                	top: 13px;
                 }
             }
+            
+		}
+		.a-row-pro:nth-child(1) .cell { 
+			border-top: $bdr;
 		}
 	}
 }

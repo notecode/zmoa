@@ -14,6 +14,7 @@ define(["/global/iscripts/libs/time/moment.js",
             var ctx = this.prepare(mock);
             var toUse = this.genReadyToUseData(ctx);
             this.doRender(toUse);
+            this.rowHover();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
@@ -100,6 +101,36 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype._ievent_ = function(data, target, hit) {
+        }
+
+         CON.prototype.rowHover = function() {
+            var _this = this;
+            var rwopro = $('.a-row-pro');
+            $(".proj").hover(function(){
+                var index = $(this).index();
+                rwopro.eq(index).addClass('active');
+                if(index == 0){
+                    rwopro.eq(0).find('.cell').css('borderTop','1px dashed #E3E8EE');
+                }
+            },function(){
+                var index = $(this).index();
+                setTimeout(function(){
+                    rwopro.eq(index).removeClass('active');
+                    if(index == 0){
+                        rwopro.eq(0).find('.cell').css('borderTop','1px solid #E3E8EE');
+                    }
+                },10);
+            })
+
+            rwopro.hover(function(){
+                var index2 = $(this).index();
+                $(".proj").eq(index2).addClass('proactive');
+            },function(){
+                var index2 = $(this).index();
+                setTimeout(function(){
+                    $(".proj").eq(index2).removeClass('proactive');
+                },10);
+            })
         }
 
         return CON;

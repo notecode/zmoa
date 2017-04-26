@@ -4,13 +4,15 @@
             <em>全部</em>
             <span class="total">{{total}}</span>
         </div>
-        {{#projects}}
-        <div class="proj">
-        	<span class="proj-set icon-xiangmu"></span>
-            <span class="name">{{name}}</span>
-            <span class="city">{{in_city}}</span>
-        </div>
-        {{/projects}}
+        <div idom="projbox">
+	        {{#projects}}
+	        <div class="proj">
+	        	<span class="proj-set icon-xiangmu"></span>
+	            <span class="name">{{name}}</span>
+	            <span class="city">{{in_city}}</span>
+	        </div>
+	        {{/projects}}
+	    </div>
 	</div>
     <div class="main-table">
 		<div class="a-row header-row">
@@ -25,16 +27,18 @@
 				{{/header}}
 			</div>
 		</div>
-
-		{{#projects}}
-		<div class="a-row">
-			<div class="cells">
-				{{#cells}}
-				<p class="cell {{.}}"></p>
-				{{/cells}}
+		
+		<div idom="aRowBox">
+			{{#projects}}
+			<div class="a-row a-row-pro">
+				<div class="cells">
+					{{#cells}}
+					<p class="cell {{.}}"></p>
+					{{/cells}}
+				</div>
+				<div class="bar" style="left: {{util.bar_start}}px; width: {{util.bar_length}}px"></div>
 			</div>
-			<div class="bar" style="left: {{util.bar_start}}px; width: {{util.bar_length}}px"></div>
+			{{/projects}}
 		</div>
-		{{/projects}}
 	</div>
 </div>
