@@ -53,9 +53,12 @@ define(function() {
                 $(_this._els.tError).addHide();
                 api_ajax_post('project/add_comment_to_project', data, {
                     succ: function(json) {
-                        console.log (json);
+                        project.getIModule('imodule://SubmitSuccess', null, function (modal) {
+                            project.open(modal, '_blank', 'content');
+                        });
                     },
                     fail: function(json) {
+                        alert('提交失败')
                     }
                 }); 
             }

@@ -1,0 +1,27 @@
+@import "src/sass/global/mixin";
+
+#SubmitSuccess {
+  .success-control {
+    width: 740px;
+    height: 80px;
+    background: #FFFFFF;
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(33,32,34,0.10);
+    border-radius: 4px;
+
+    h6 {
+      font-size: 18px;
+      color: #003399;
+      padding: 28px 0;
+      margin: 0;
+      text-align: center;
+      .icon-success {
+        color: #77C61B;
+        height: 20px;
+        line-height: 20px;
+        margin-right: 14px;
+      }
+    }
+    
+  }
+}
