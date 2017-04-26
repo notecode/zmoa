@@ -7,42 +7,33 @@
 <body id="{{ID}}" {{IMODULE}}>
 	{{IncludeMCSS}}
     @@include('www/common/Header/main.md.html')
-    <div id="left-list">
-        <!--
-        <div id="worker-list">
-            <div class="title">
-                <span>全部<span class="total">18</span></span>
-            </div>
-            <ul>
-                <li class="worker" data-index="0">
-                    <span class="proj-count">2</span>
-                    <span class="name">张三</span>
-                    <span class="city">北京</span>
-                </li>
-                <li class="worker" data-index="1">
-                    <span class="proj-count">2</span>
-                    <span class="name">李四</span>
-                    <span class="city">北京</span>
-                </li>
-            </ul>
+    <div class="map-con clearfix">
+        <div class="person-list clearfix" id="left-list">
+            
         </div>
-        -->
+        <div class="map-pic">
+            <div id="container"></div>
+        </div>
     </div>
-
-    <div id="container"></div>
 
     <div class="tpl">
 	    <div class="marker-pin">
-            <div class="pane">
-                <div class="progress-bar">
-                    <div class="inner-bar"></div>
+            <div class="pane panegress">
+                <span class="sanjiao"></span>
+                <div class="pane-yellow clearfix">
+                    <span>王宝强</span>
+                    <div class="progress-bar ">
+                        <div class="inner-bar"></div>
+                    </div>
                 </div>
                 <div>
-                    <span class="city">深圳</span>
-                    <span class="dates">(
-                        <span class="date-from">4月22日</span>~
-                        <span class="data-to">4月28日</span>)
-                    </span>
+                    <p class="pane-date">
+                        <span class="city">深圳</span>
+                        <span class="dates">(
+                            <span class="date-from">4月22日</span>~
+                            <span class="data-to">4月28日</span>)
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="progress-bar alone">
@@ -66,11 +57,14 @@
 
         <div class="marker-coin">
             <div class="pane">
-                <span class="city">深圳</span>
-                <span class="dates">(
-                    <span class="date-from">4月22日</span>~
-                    <span class="data-to">4月28日</span>)
-                </span>
+                <p class="pane-date">
+                    <span class="city">深圳</span>
+                    <span class="dates">(
+                        <span class="date-from">4月22日</span>~
+                        <span class="data-to">4月28日</span>)
+                    </span>
+                </p>
+                <span class="sanjiao"></span>
             </div>
             <div class="coin"></div>
         </div>
@@ -83,7 +77,6 @@
         -->
     </div>
     {{IncludeMTPL}}
-	@@include('www/common/Header/main.md.html')
 	@@include('www/common/InsertBottom/main.html')
 </body>
 </html>

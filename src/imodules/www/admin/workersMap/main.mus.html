@@ -1,11 +1,11 @@
-<div id="worker-list">
-    <div class="title">
-        <span>全部<span class="total">{{total}}</span></span>
+<div class="worker-list clearfix" id="worker-list">
+    <div class="title clearfix">
+        <em>全部</em><span class="total">{{total}}</span>
     </div>
-    <ul>
+    <ul class="list-content">
     	{{#workers}}
-        <li class="worker" data-index="{{util.index}}">
-            <span class="proj-count">{{util.proj_count}}</span>
+        <li class="worker clearfix" data-index="{{util.index}}">
+            <span class="proj-count {{procolor}}">{{util.proj_count}}</span>
             <span class="name">{{user_name}}</span>
             <span class="city">{{city_name}}</span>
         </li>
