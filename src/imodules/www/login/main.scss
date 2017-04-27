@@ -44,7 +44,7 @@
             outline: none;
         }
 
-        button{
+        button {
             margin-top: 80px;
             width: 120px;
             height: 46px;
@@ -54,7 +54,31 @@
             color: #FFF;
             border:none;
         }
+
+        .error-tips {
+            display: none;
+            position: absolute;
+            height: 14px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fe3824;
+
+            .icon-error{
+                width: 15.1px;
+                height: 15.1px;
+                font-size: 15.1px;
+                display: inline;
+                margin-right:8.5px;
+            }
+
+            .error-data{
+                font-size: 14px;
+                display: inline;
+            }
+        }
+
     }
+
     .flag{
         height: 500px;
         padding-right: 256px; 
