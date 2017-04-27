@@ -37,7 +37,7 @@ function _api_ajax(method, uri, data, cb, ext, config) {
 			olog("[<resp](" + uri + "): ", json);
 
 			cb && cb.always && cb.always(json, json.now);
-			var ec = json.errCode;
+			var ec = json.errcode;
 			if (null == ec || 0 == ec) {
 				cb && cb.succ && cb.succ(json);
 			} else {

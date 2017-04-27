@@ -28,7 +28,7 @@
             <div class="date-pane">
                 <div class="date-pane-all">
                     {{#header}}
-                    <div class="date-day" data-index="{{index}}">
+                    <div class="date-day" data-index="{{index}}" data-date="{{fullDate}}">
                         <p>
                             <span>{{date}}</span>
                             <span class="date-week">周{{weekDay}}</span>
@@ -53,7 +53,7 @@
 <script id="grid-tpl" type="text/tpl">
     <div class="suppliers-list">
         {{#workers}}
-        <div class="item">
+        <div class="item" data-index={{util.index}}>
             <p class="item-name">{{name}}</p>
             <p class="item-location">
                 <span class="item-city">{{util.place}}</span>&nbsp;&nbsp;
