@@ -48,11 +48,12 @@
                 cursor: pointer;
             }
         }
-        .task-item{
+        .task-item {
             height: 85px;
             padding: 20px 20px 20px 50px;
             border-bottom:1px solid $backblue;
             position: relative;
+            cursor: pointer;
 
             .icon-xiangmu {
                 position: absolute;
@@ -72,6 +73,10 @@
                 font-size: 12px;
                 line-height: 17px;
                 color: $gray;
+            }
+
+            &:hover {
+                background-color: $backblue;
             }
         }
         .task-item:last-child {

@@ -16,9 +16,10 @@ define(function() {
                     var result = [];
                     var keys = Object.keys(json);
                     for (var i = 0, len = keys.length; i < len; i++) {
-                        result.push(json[keys[i]]);
+                        var value = json[keys[i]];
+                        value.id = keys[i];
+                        result.push(value);
                     }
-
                    
                     for(var j=0; j<result.length; j++){
                          //判断图标的颜色
@@ -54,6 +55,12 @@ define(function() {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
             this.find('#task-pane').append(dom);
+
+            this.find('.task-item').click(function() {
+                var id = $(this).attr('data-id');
+                tlog('project id: ' + id);
+                window.open('/admin/project-detail.html?project=' + id);
+            });
         }
         CON.prototype._ievent_addDemand = function() {
             project.getIModule('imodule://submitContractMD', null, function (modal) {
