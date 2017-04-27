@@ -12,7 +12,7 @@ define(function() {
 
         CON.prototype.byDetail = function() {
             var _this =  this;
-            api_ajax('project/detail/1', {
+            api_ajax('project/detail/' + qs_proj(), {
                 succ: function(json) {
                     //判断有无图片
                     if(json.main_img){
@@ -81,7 +81,7 @@ define(function() {
             });
             
         }
-        
+
         CON.prototype._ievent_showStatus = function() {
             this.find('#controlProcessMD').toggle();
 

@@ -53,6 +53,7 @@ define(["/global/iscripts/libs/time/moment.js",
             var result = [];
             for (var ii = 0; ii < data.length; ii++) {
                 var raw_worker = data[ii];
+                var task_cnt = 0;
 
                 var start = {
                     longitude: raw_worker.longitude,
@@ -66,10 +67,12 @@ define(["/global/iscripts/libs/time/moment.js",
                     // 今天之后的排期, 无条件纳入
                     if (today.isBefore(moment(the.start_date))) {
                         follow.push(the);
+                        task_cnt++;
                     } else {
                         // 进行中的排期
                         if (today.isSameOrBefore(moment(the.end_date))) {
                             start = the; 
+                            task_cnt++;
                         } else { // 已完成的，忽略
                             ;
                         }
@@ -79,6 +82,8 @@ define(["/global/iscripts/libs/time/moment.js",
                 }
 
                 follow.push(start);
+                raw_worker.task_count = task_cnt; // 改变raw数据，供左边列表用
+
                 var worker = {
                     name: raw_worker.user_name,
                     proj_list: follow.reverse()
@@ -249,14 +254,8 @@ define(["/global/iscripts/libs/time/moment.js",
                     index: function() {
                         return cnt++;
                     },
-                    proj_count: function() {
-                        // @@todo: 这里需要刨去已经完成的任务
-                        var projs = this.projects;
-                        if (projs && projs.length > 0) {
-                            return projs.length;
-                        } else {
-                            return '';
-                        }
+                    no_circle: function() {
+                        return this.task_count > 0 ? '' : 'no-circle';
                     }
                 }
             }); 

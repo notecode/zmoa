@@ -204,7 +204,10 @@ $coin-size: 8px;
                     margin: 11px 8px 0 0;
                     display: inline;
                 }
-                .procolor {border-color: #fff;}
+                .no-circle {
+                    // border-color: #fff;
+                    visibility: hidden;
+                }
                 .city {
                     float: right;
                     margin: 0px 0px 0 0;
