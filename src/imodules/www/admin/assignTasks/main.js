@@ -14,6 +14,10 @@ define(["/global/iscripts/libs/time/moment.js",
             this.renderWorkerStats(mock_stat);
             this.bindEvents();
             this.bindSlick();
+
+            project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                mod.render(mock_detail);
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -170,8 +174,9 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype._ievent_showStatus = function() {
-            tlog('click');
             this.find('#controlProcessMD').toggle();
+
+            // todo: 点击其他区域，消失
         }
         return CON;
     })();

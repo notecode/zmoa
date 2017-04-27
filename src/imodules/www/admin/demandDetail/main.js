@@ -26,6 +26,10 @@ define(function() {
                     $(_this._els.deTitle).text(json.status_name);
                     _this.proId = json.id;
                     _this.doRender(json);
+
+                    project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                        mod.render(json);
+                    });
                 },
                 fail: function(json) {
 
@@ -76,6 +80,12 @@ define(function() {
                 }
             });
             
+        }
+        
+        CON.prototype._ievent_showStatus = function() {
+            this.find('#controlProcessMD').toggle();
+
+            // todo: 点击其他区域，消失
         }
 
         return CON;
