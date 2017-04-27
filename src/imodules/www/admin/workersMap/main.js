@@ -58,7 +58,8 @@ define(["/global/iscripts/libs/time/moment.js",
                 var start = {
                     longitude: raw_worker.longitude,
                     latitude: raw_worker.latitude,
-                    project_name: raw_worker.city_name
+                    project_name: raw_worker.city_name,
+                    city_name: raw_worker.city_name
                 };
                 var follow = [];
                 var proj = raw_worker.projects ? raw_worker.projects : [];
@@ -128,7 +129,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     var marker = null;
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
-                        this.renderPin(pin, proj, cnt <= 1);
+                        this.renderPin(pin, worker.name, proj, cnt <= 1);
                         this.renderPane(pin, proj);
                         marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
@@ -154,7 +155,7 @@ define(["/global/iscripts/libs/time/moment.js",
             }
         }
         
-        CON.prototype.renderPin = function(pin, proj, is_free) {
+        CON.prototype.renderPin = function(pin, name, proj, is_free) {
             if (is_free) {
                 pin.addClass('free');
                 pin.find('.pane').remove();
@@ -174,15 +175,22 @@ define(["/global/iscripts/libs/time/moment.js",
                     perc = passed / total;
                 }
 
+                pin.find('.worker-name').text(name);
                 pin.find('.inner-bar').width((60 - 2) * perc);
                 pin.find('.progress-bar').show();
+            } else {
+                // 还在老窝
+                pin.find('.worker-name').text(name);
+                pin.find('.progress-bar').remove();
+                pin.find('.dates').remove();
             }
         }
 
         CON.prototype.renderPane = function(marker, proj) {
+            var pane = marker.find('.pane'); 
+            pane.find('.city').text(proj.city_name);
+
             if (proj.start_date) {
-                var pane = marker.find('.pane'); 
-                pane.find('.city').text(proj.city_name);
                 pane.find('.date-from').text(moment(proj.start_date).format("M月DD日"));
                 pane.find('.date-to').text(moment(proj.end_date).format("M月DD日"));
             }
