@@ -12,7 +12,7 @@ define(function() {
         apply_environment: "场外",
         point: "12",
         status: "2",
-        main_img: "project_1493034998.jpg",
+        main_img: "",
         province_id: "22",
         creator_id: null,
         city_id: "283",

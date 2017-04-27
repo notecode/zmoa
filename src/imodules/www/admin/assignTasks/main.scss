@@ -183,6 +183,7 @@
             vertical-align: middle;
             border-right: 1px solid $bordercolor;
             border-left: 1px solid $bordercolor;
+            cursor: pointer;
             p{
                 font-size: 14px;
                 line-height: 22px;
@@ -190,6 +191,9 @@
             }
             .free-num{
                 color: $lightblack;
+            }
+            &:hover {
+                background-color: #fff;
             }
         }
         .today{

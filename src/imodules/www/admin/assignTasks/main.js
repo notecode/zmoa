@@ -16,6 +16,7 @@ define(["/global/iscripts/libs/time/moment.js",
            
             this.renderDetail(mock_detail);
             this.renderWorkerStats(mock_stat);
+            this.bindEvents();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -30,8 +31,7 @@ define(["/global/iscripts/libs/time/moment.js",
             var dom = Mustache.render(serv_tpl, {header: header});
             this.find('.body-block').append(dom);
 
-            var oneDayServ = this.renderADay(4);
-            this.find('.date-block').append(oneDayServ);
+            this.renderADay(0);
         }
 
         CON.prototype.renderADay = function(index) {
@@ -63,7 +63,9 @@ define(["/global/iscripts/libs/time/moment.js",
                     }
                 }
             });
-            return grid;
+
+            this.find('.date-block').append(grid);
+            this.find('.date-day[data-index=' + index + ']').addClass('today');
         }
 
         CON.prototype.prepareStatData = function(raw) {
@@ -87,6 +89,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 var infoList = the.serving_user_info_list;
                 var mmt = moment(the.date);
                 header.push({
+                    index: i,
                     date: mmt.format('M-DD'),
                     weekDay: wd[mmt.day()],
                     free: total - infoList.length
@@ -110,6 +113,18 @@ define(["/global/iscripts/libs/time/moment.js",
             }
 
             return header;
+        }
+
+        CON.prototype.bindEvents = function() {
+            var _this = this;
+            $('.date-day').click(function() {
+                var idx = $(this).attr('data-index');
+
+                _this.find('.suppliers-list').remove();
+                $(this).siblings().removeClass('today');
+                
+                _this.renderADay(idx);
+            });
         }
 
         return CON;
