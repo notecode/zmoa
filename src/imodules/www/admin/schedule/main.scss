@@ -134,7 +134,7 @@ $clr-gray: #E3E8EE;
             
             .a-row-pro {
             	.cell {
-            		height: 41px;
+            		height: 40px;
             	}
             	 
             }
@@ -152,6 +152,9 @@ $clr-gray: #E3E8EE;
 		}
 		.a-row-pro:nth-child(1) .cell { 
 			border-top: $bdr;
+		}
+		.a-row-pro:last-child .cell { 
+			border-bottom: $bdr;
 		}
 	}
 }

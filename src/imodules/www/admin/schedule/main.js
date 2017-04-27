@@ -18,14 +18,13 @@ define(["/global/iscripts/libs/time/moment.js",
             if (1 == qs('test')) {
                 dodo(mock);
             } else {
-                // todo
-                // api_ajax('project/', {
-                //     succ: function(json) {
-                //         doRender(json);
-                //     },
-                //     fail: function(json) {
-                //     }
-                // });
+                api_ajax('project/project_date_list', {
+                    succ: function(json) {
+                        dodo(json);
+                    },
+                    fail: function(json) {
+                    }
+                });
             }
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -35,18 +34,14 @@ define(["/global/iscripts/libs/time/moment.js",
         // 2. 计算range开始日期距最小日期的差
         // 3. 因工程名和table必须分开，故可能需要js实现hover联动
         CON.prototype.prepare = function(data) {
-            for (var i = 0; i < data.length; i++) {
-                data[i].m_start = moment(data[i].day_start);
-                data[i].m_end = moment(data[i].day_end);
+            var list = data.project_list;
+            for (var i = 0; i < list.length; i++) {
+                list[i].m_start = moment(list[i].start_date);
+                list[i].m_end = moment(list[i].end_date);
             }
 
-            var min = data[0].m_start;
-            var max = data[0].m_end;
-
-            for (var i = 1; i < data.length; i++) {
-                min = moment.min(min, data[i].m_start);
-                max = moment.max(max, data[i].m_end);
-            }
+            var min = moment(data.min_date);
+            var max = moment(data.max_date);
 
             var range = [];
             var iter = min.twix(max).iterate("days");
@@ -54,8 +49,8 @@ define(["/global/iscripts/libs/time/moment.js",
                 range.push(iter.next());
             }
 
-            for (var i = 0; i < data.length; i++) {
-                var the = data[i];
+            for (var i = 0; i < list.length; i++) {
+                var the = list[i];
                 the.displace = min.twix(the.m_start).length("days");
                 the.during = the.m_start.twix(the.m_end).length("days");
 
@@ -63,7 +58,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 tlog(the.during);
             }
 
-            return {range: range, projects: data};
+            return {range: range, projects: list};
         }
 
         CON.prototype.genReadyToUseData = function(ctx) {
