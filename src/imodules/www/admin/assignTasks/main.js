@@ -127,7 +127,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
         CON.prototype.assignTask = function(userIdx) {
             var data = {
-                projectId: qs('project') || qs('projectId'),
+                projectId: qs_proj(),
                 date: this.find('.cur-day').attr('data-date'),
                 userId: this.serv.arr_workers[userIdx].user_id
             };
@@ -167,6 +167,11 @@ define(["/global/iscripts/libs/time/moment.js",
             });
             $('.slick-next').html('<span class="icon-right"></span>');
             $('.slick-prev').html('<span class="icon-left"></span>');
+        }
+
+        CON.prototype._ievent_showStatus = function() {
+            tlog('click');
+            this.find('#controlProcessMD').toggle();
         }
         return CON;
     })();

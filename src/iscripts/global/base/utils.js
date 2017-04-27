@@ -52,6 +52,10 @@ function qs(name) {
 	return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
+function qs_proj() {
+	return qs('project') || qs('projectId');
+}
+
 /*
  * 我们约定：若有N部分取后面的N-1部分，例：
  * 		www.xxtao.com  取：xxtao.com
