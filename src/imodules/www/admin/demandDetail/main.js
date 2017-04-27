@@ -23,10 +23,10 @@ define(function() {
                         json.noPic = '';
                     }
                     //状态
+                    document.title = json.name;
                     $(_this._els.deTitle).text(json.status_name);
                     _this.proId = json.id;
                     _this.doRender(json);
-
                     project.getIModule('imodule://controlProcessMD', null, function(mod) {
                         mod.render(json);
                     });
