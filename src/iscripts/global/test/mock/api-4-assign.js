@@ -75,7 +75,23 @@ define(function() {
             {
                 date: "2017-05-01",
                 serving_user_info_list: [ ]
-            }
+            },
+            {
+                date: "2017-05-02",
+                serving_user_info_list: [ ]
+            },
+            {
+                date: "2017-05-03",
+                serving_user_info_list: [ ]
+            },
+            {
+                date: "2017-05-04",
+                serving_user_info_list: [ ]
+            },
+            {
+                date: "2017-05-05",
+                serving_user_info_list: [ ]
+            },
         ]
     } 
 })

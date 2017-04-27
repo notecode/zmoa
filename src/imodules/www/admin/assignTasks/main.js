@@ -10,9 +10,7 @@ define(["/global/iscripts/libs/time/moment.js",
             this.serv = null;
 
             // todo:
-            // 1. 点哪个日期，显示那天的情况
             // 2. slick
-            // 3. 指派
            
             this.renderDetail(mock_detail);
             this.renderWorkerStats(mock_stat);
