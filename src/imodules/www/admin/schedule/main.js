@@ -7,14 +7,26 @@ define(["/global/iscripts/libs/time/moment.js",
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
 
+            var _this = this;
+            var dodo = function(raw) {
+                var ctx = _this.prepare(raw);
+                var toUse = _this.genReadyToUseData(ctx);
+                _this.doRender(toUse);
+                _this.rowHover();
+            };
+
             if (1 == qs('test')) {
-                return;
+                dodo(mock);
+            } else {
+                // todo
+                // api_ajax('project/', {
+                //     succ: function(json) {
+                //         doRender(json);
+                //     },
+                //     fail: function(json) {
+                //     }
+                // });
             }
-            
-            var ctx = this.prepare(mock);
-            var toUse = this.genReadyToUseData(ctx);
-            this.doRender(toUse);
-            this.rowHover();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
