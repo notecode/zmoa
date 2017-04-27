@@ -142,7 +142,7 @@
         position: relative;
         overflow: hidden;
 
-        .date-pre,.date-next{
+        .date-pre,.date-next, .slick-prev, .slick-next{  /*slick改动*/
             width: 64px;
             height: 60px;
             line-height: 60px;
@@ -150,13 +150,31 @@
             color: $grayblue;
             display: inline-block;
             vertical-align: middle;
+            cursor: pointer; 
+            position: absolute;
+            background-color: #e3e8ee;
+            border: none;
+            outline:none;
+            padding: 0;
+            top: 0; 
+            z-index: 5;
+            overflow: hidden;
             span{
                 font-size: 14px;
             }
         }
-        .date-next{
+        .slick-prev {  /*slick改动*/
+            left: -65px;
+        }
+        .date-next, .slick-next{  
             margin-left: -6px;
             border-left: 1px solid $bordercolor;
+            right: -64px;
+        }
+        .slick-disabled { /*slick改动*/
+            span {
+                opacity: 0.2;
+            }
         }
         .date-pane{
             width: 765px;
@@ -164,10 +182,10 @@
             display: inline-block;
             vertical-align: middle;
             margin-left: -5px;
-            overflow: hidden;
             position: relative;
+            margin-left: 64px;
             .date-pane-all{
-                width: 1000%;
+                width: 100%; 
                 position: relative;
                 transition: all .6s;
             }
@@ -176,7 +194,7 @@
             width: 111px;
             height: 60px;
             color: $grayblue;
-            margin-right: -6px;
+            margin-right: -1px;
             padding: 8px 0;
             text-align: center;
             display: inline-block;

@@ -1,6 +1,7 @@
 define(["/global/iscripts/libs/time/moment.js",
         "/global/iscripts/test/mock/api-4-project-detail.js",
-        "/global/iscripts/test/mock/api-4-assign.js"], 
+        "/global/iscripts/test/mock/api-4-assign.js",
+        "/global/iscripts/tools/slick.js"], 
         function(moment, mock_detail, mock_stat) {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
@@ -9,12 +10,10 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
             this.serv = null;
 
-            // todo:
-            // 2. slick
-           
             this.renderDetail(mock_detail);
             this.renderWorkerStats(mock_stat);
             this.bindEvents();
+            this.bindSlick();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -148,6 +147,8 @@ define(["/global/iscripts/libs/time/moment.js",
             var _this = this;
             $('.date-day').click(function() {
                 var idx = $(this).attr('data-index');
+                var date = $(this).attr('data-date');
+                tlog(date);
 
                 _this.find('.suppliers-list').remove();
                 $(this).siblings().removeClass('cur-day');
@@ -156,6 +157,17 @@ define(["/global/iscripts/libs/time/moment.js",
             });
         }
 
+        CON.prototype.bindSlick = function() {
+            $('.slick').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                autoplay: false,
+                infinite: false,
+                autoplaySpeed: 2000,
+            });
+            $('.slick-next').html('<span class="icon-right"></span>');
+            $('.slick-prev').html('<span class="icon-left"></span>');
+        }
         return CON;
     })();
 
