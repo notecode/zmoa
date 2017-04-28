@@ -18,7 +18,14 @@ define(["/global/iscripts/libs/time/moment.js",
                 monthes: [month, month2],
                 fn: {
                     date: function() {
-                        return this.format('MM/DD');
+                        return this.mmt.date();
+                    },
+                    weekend: function() {
+                        var day = this.mmt.day();
+                        return (0 == day || 6 == day) ? 'weekend' : '';
+                    },
+                    out: function() {
+                        return this.in_month ? '' : 'beyond';
                     }
                 }
             }); 
@@ -56,6 +63,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 next_day0.add('7', 'day');
             }
 
+            // 得到各week中的每一天
             var a_month = {
                 title: date1,
                 weeks: []
@@ -68,7 +76,11 @@ define(["/global/iscripts/libs/time/moment.js",
                 var days = [];
                 var iter = day0.twix(day6).iterate("days");
                 while(iter.hasNext()) {
-                    days.push(iter.next());
+                    var the = iter.next();
+                    days.push({
+                        mmt: the,
+                        in_month: the.isSame(m_date1, 'month') 
+                    });
                 }
 
                 a_month.weeks.push({days: days});

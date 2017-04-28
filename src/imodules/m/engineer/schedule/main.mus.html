@@ -4,7 +4,7 @@
 	{{#weeks}}
     <div class="week-row">
     	{{#days}}
-        <div class="day">{{fn.date}}</div>
+        <div class="day {{fn.weekend}} {{fn.out}}">{{fn.date}}</div>
     	{{/days}}
     </div>
 	{{/weeks}}

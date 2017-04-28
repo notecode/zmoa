@@ -1,5 +1,6 @@
 
 $bdr: 1px solid #E3E8EE;
+$clr-gray: #E3E8EE;
 
 #schedule {
 
@@ -12,6 +13,16 @@ $bdr: 1px solid #E3E8EE;
                 width: 100px;
                 height: 100px;
                 border: $bdr; 
+
+                &.weekend {
+                    color: $clr-gray;
+                }
+
+                // 不在本月内的
+                &.beyond {
+                    border: 1px solid #fff;
+                    color: $clr-gray;
+                }
             }
         }
     }
