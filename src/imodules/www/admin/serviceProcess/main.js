@@ -59,7 +59,7 @@ define(function() {
             this.find('.task-item').click(function() {
                 var id = $(this).attr('data-id');
                 tlog('project id: ' + id);
-                window.open('/admin/project-detail.html?project=' + id);
+                window.open('/project/detail.html?project=' + id);
             });
         }
         CON.prototype._ievent_addDemand = function() {
