@@ -1,0 +1,18 @@
+
+$bdr: 1px solid #E3E8EE;
+
+#schedule {
+
+    .month {
+        /* border: $bdr;  */
+
+        .week-row {
+            .day {
+                float: left;
+                width: 100px;
+                height: 100px;
+                border: $bdr; 
+            }
+        }
+    }
+}
