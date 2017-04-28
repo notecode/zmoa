@@ -117,6 +117,8 @@
     }
     .information-address .dropdown-menu {
       width: 206px;
+      height: 270px;
+      overflow-y: auto;
     }
     .city-select{
         width: 206px!important;
@@ -147,13 +149,20 @@
           vertical-align: -1px;
         }
     }
+    .deman-footer {
+        margin: 61px 0 40px 0;
+    }
+    .text-error {
+        color: #fe3824;
+        margin-left: 220px;
+    }
     .btn {
         width: 120px;
         height: 46px;
         background: #003894;
         border-radius: 2px;
         padding: 0;
-        margin: 61px 0 40px 0;
+        
         font-weight:600;
     }
     .demand-time {

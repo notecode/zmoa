@@ -70,6 +70,40 @@ $.prototype.tplToObj = function() {
 	}
 }
 
+// 表单json 化
+$.fn.serializeJSON=function() {
+  var json = {};
+  $.map($(this).serializeArray(), function(n, i) {
+    var _ = n.name.indexOf('[');
+    if (_ > -1) {
+      var o = json;
+      _name = n.name.replace(/\]/gi, '').split('[');
+      for (var i=0, len=_name.length; i<len; i++) {
+        if (i == len-1) {
+          if (o[_name[i]]) {
+            if (typeof o[_name[i]] == 'string') {
+              o[_name[i]] = [o[_name[i]]];
+            }
+            o[_name[i]].push(n.value);
+          }
+          else o[_name[i]] = n.value || '';
+        }
+        else o = o[_name[i]] = o[_name[i]] || {};
+      }
+    }
+    else {
+      if (json[n.name] !== undefined) {
+        if (!json[n.name].push) {
+          json[n.name] = [json[n.name]];
+        }
+        json[n.name].push(n.value || '');
+      }
+      else json[n.name] = n.value || '';      
+    }
+  });
+  return json;
+};
+
 // 下面这些是我还不会prototype时的扩展策略，未来有时间再改成prototype方式 
 
 function $has(sel) {

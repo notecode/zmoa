@@ -1,113 +1,32 @@
 <div id="{{ID}}" {{IMODULE}}>
     {{IncludeMCSS}}
     <div class="container">
-        <div class="demand-title">
-            填写项目信息
-            <div class="demand-tips">
-                （<span class="colot-tangle"></span><span class="must-color">必填</span>）
-            </div>
-        </div>
-        <div class="information-basic">
-            <div class="title">基础信息</div>
-            <div class="line">
-                <input type="text" class="must input-half demand-id" placeholder="合同编号">
-                <input type="text" class="must input-half demand-name" placeholder="项目名称">
-            </div>
-            <div class="line">
-                <input type="text" class="must input-half demand-size" placeholder="屏幕面积">
-                <input type="text" class="must input-half demand-span" placeholder="点间距（如P10、P4）">
-            </div>
-            <div class="line">
-                <div class="dropdown ">
-                    <button class="must dropdown-toggle btn-demand demand-color" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="true">
-                        屏幕颜色
-                        <span class="icon-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#" class="active">全彩</a></li>
-                        <li><a href="#">双色</a></li>
-                        <li><a href="#">单色</a></li>
-                    </ul>
-                </div>
-                <!---->
-                <div class="dropdown ">
-                    <button class="must dropdown-toggle btn-demand demand-environment" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        应用环境
-                        <span class="icon-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#" class="active">户外</a></li>
-                        <li><a href="#">室内</a></li>
-                        <li><a href="#">半户外</a></li>
-                    </ul>
+        <form method="post" ievent="submitForm" idom="form" autocomplete="off">
+            <div class="demand-title">
+                填写项目信息
+                <div class="demand-tips">
+                    （<span class="colot-tangle"></span><span class="must-color">必填</span>）
                 </div>
             </div>
-            <input type="text" class=" demand-time" placeholder="保质期截止日期（如2017.08.12）">
-        </div>
-        <div class="information-stock">
-            <div class="title">备品备料</div>
-            <div class="stock-list">
-                <div class="line">
-                    <input type="text" class=" input-half stock-name" placeholder="备料类型">
-                    <input type="text" class=" input-half stock-num" placeholder="数量">
-                </div>
+            <div class="demand-content" idom="LContent"></div>
+            <div class="deman-footer">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <span idom="LErrorTip" class="text-error"></span>
             </div>
-            <div class="add-stock"><span class="icon-Add-to"></span>添加备品</div>
-        </div>
-        <div class="information-address">
-            <div class="title">所在地</div>
-            <div class="line">
-                <div class="dropdown ">
-                    <button class="must dropdown-toggle btn-demand city-select demand-province" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        所在省份
-                        <span class="icon-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">辽宁省</a></li>
-                    </ul>
-                </div>
-                <!---->
-                <div class="dropdown ">
-                    <button class="must dropdown-toggle btn-demand city-select demand-city" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        城市
-                        <span class="icon-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">北京市</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown ">
-                    <button class="must dropdown-toggle btn-demand city-select demand-county" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="true">
-                        区/县
-                        <span class="icon-circle-down"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">北京</a></li>
-                    </ul>
-                </div>
-            </div>
-            <input type="text" class="must demand-time" placeholder="项目详细地址">
-        </div>
-        <div class="information-person">
-            <div class="title">联络人</div>
-            <div class="line">
-                <input type="text" class="must input-half person-name" placeholder="姓名">
-                <input type="text" class="must input-half person-tel" placeholder="联系方式">
-            </div>
-            <div class="line">
-                <input type="text" class=" input-half person-compony-name" placeholder="单位名称">
-                <input type="text" class=" input-half person-position" placeholder="职位">
-            </div>
-        </div>
-        <div class="information-buchong">
-            <div class="title">补充说明</div>
-            <textarea class="buchong-area"></textarea>
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">提交</button>
+
+        </form>
     </div>
+    {{IncludeMTPL}}
+    <script idom="tpl" type="x-tmpl-mustache">
+        {{#items}}
+            <li><a class="js-address-drop" href="#" data-id="{{id}}" data-parent="{{parent_id}}" data-name="{{name}}">{{name}}</a></li>
+        {{/items}}
+    </script>
+    <script idom="tpl" type="x-tmpl-mustache">
+        <div class="line">
+            <input name="preparation[name]" type="text" class=" input-half stock-name" placeholder="备料类型">
+            <input name="preparation[number]" type="text" class=" input-half stock-num" placeholder="数量">
+        </div>
+    </script>    
+
 </div>

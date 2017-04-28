@@ -49,15 +49,25 @@ define(function() {
             $(this._els.LProjects).html('');
         }
         // 打开项目基本信息框
-        CON.prototype.openBasicInfo = function() {
-			var onBack = function(mod) {
-				mod.setCtx({a: 4345},676);
-				if(mod.parent){
-					mod.parent.close();
-				}
-				project.open(mod, '_blank', { size: ['content', '600px'] });
-			};            
-            project.getIModule('imodule://editDemandMD', null, onBack);
+        CON.prototype.openBasicInfo = function(id) {
+            api_ajax('project/detail/' + id, {
+                succ: function(json) {
+                    //判断有无需求
+                    var onBack = function(mod) {
+                        // 项目基本信息
+                        mod.setCtx(json.project_info);
+                        if(mod.parent){
+                            mod.parent.close();
+                        }
+                        project.open(mod, '_blank', { size: ['content', '600px'] });
+                    };                    
+                    project.getIModule('imodule://editDemandMD', null, onBack);
+                },
+                fail: function(json) {
+
+                }
+            });                     
+            // 
         }
         // 添加需求
         CON.prototype._ievent_submitForm = function(data, target) {
@@ -66,21 +76,22 @@ define(function() {
             var key = $value.split(' ')[0];
             if (key === this.key) {
                 $value = this.key
+                this.reset();
+                this.parent.close();
+                this.openBasicInfo(this.key, true);
+                return 
             }
-            if(!!$value) {
+            if(!!$value && key !== this.key) {
                 api_ajax_post('project/add', { contract: $value }, {
                     succ: function(data) {
-                        if (!$.isEmptyObject(data) && data.errcode) {
-                            project.tip('温馨提示','succ','项目已存在', true);
-                        } else {
-                            project.tip('温馨提示','succ','项目添加成功', true);
+                        if (data && data.project_id) {
+                            _this.reset();
+                            _this.parent.close();
+                            _this.openBasicInfo(data.project_id, false);
                         }
-                        _this.reset();
-                        _this.parent.close();
-                        _this.openBasicInfo();
                     },
                     fail: function(json) {
-                        alert('提交失败')
+                        project.tip('温馨提示','succ','提交失败', true);
                     }
                 });
             } else {
