@@ -42,7 +42,10 @@
     .loginInfo{
         .logout{
             margin-left: 15px;
+            &:hover {
+                cursor: pointer;
+                color: $blue;
+            }
         }
-
     }
 }
