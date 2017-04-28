@@ -8,6 +8,7 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
 
             this.foo();
+            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -57,7 +58,7 @@ define(["/global/iscripts/libs/time/moment.js",
             var next_day0 = orgDay.clone();
             while (next_day0.isSameOrBefore(m_date1, 'month')) {
                 var nb = next_day0.clone();
-                tlog(nb.format('YYYY-MM-DD'));
+                //tlog(nb.format('YYYY-MM-DD'));
                 arr_day0.push(nb);
 
                 next_day0.add('7', 'day');
@@ -89,6 +90,88 @@ define(["/global/iscripts/libs/time/moment.js",
             return a_month;
         }
 
+        CON.prototype.genPassLines = function(date_from, date_to) {
+            var from = moment(date_from);
+            var to = moment(date_to);
+            var len = from.twix(to).count('days');
+
+            var rules = [7 - from.day(), 7];
+            var segs = [];
+            var bFirst = true;
+            while (len > 0) {
+                var rule = bFirst ? rules[0] : rules[1];
+                var cut = Math.min(len, rule);
+
+                segs.push({
+                    mmt_start: from.clone(),
+                    start: from.day(),
+                    len: cut
+                });
+
+                bFirst = false;
+                len -= cut;
+                from.add(cut, 'days');
+            }
+
+            tlog('[' + date_from + ', ' + date_to + ']');
+            for (var i = 0; i < segs.length; i++) {
+                var the = segs[i];
+                tlog(' (week: ' + the.mmt_start.week() + ')[' + the.start + ', ' + (the.start + the.len - 1) + ']');
+            }
+
+            return segs;
+        }
+
+        CON.prototype.unitTest0 = function() {
+            var seg = this.genPassLines('2017-04-02', '2017-04-05');
+            assert(1 == seg.length);
+            assert(4 ==seg[0].len);
+            assert(0 ==seg[0].start);
+        }
+
+        CON.prototype.unitTest1 = function() {
+            var seg = this.genPassLines('2017-04-02', '2017-04-10');
+            assert(2 == seg.length);
+            assert(7 ==seg[0].len);
+            assert(2 ==seg[1].len);
+        }
+
+        CON.prototype.unitTest2 = function() {
+            var seg = this.genPassLines('2017-04-12', '2017-04-26');
+            assert(3 == seg.length);
+            assert(4 ==seg[0].len);
+            assert(7 ==seg[1].len);
+            assert(4 ==seg[2].len);
+        }
+
+        CON.prototype.unitTest3 = function() {
+            var seg = this.genPassLines('2017-04-19', '2017-05-03');
+            assert(3 == seg.length);
+            assert(4 ==seg[0].len);
+            assert(7 ==seg[1].len);
+            assert(4 ==seg[2].len);
+        }
+
+        CON.prototype.unitTest4 = function() {
+            var seg = this.genPassLines('2017-04-30', '2017-05-01');
+            assert(1 == seg.length);
+            assert(2 ==seg[0].len);
+        }
+        CON.prototype.unitTest5 = function() {
+            var seg = this.genPassLines('2017-04-29', '2017-05-01');
+            assert(2 == seg.length);
+            assert(1 ==seg[0].len);
+            assert(2 ==seg[1].len);
+        }
+
+        CON.prototype.unitTest = function() {
+            this.unitTest0();
+            this.unitTest1();
+            this.unitTest2();
+            this.unitTest3();
+            this.unitTest4();
+            this.unitTest5();
+        }
         return CON;
     })();
 
