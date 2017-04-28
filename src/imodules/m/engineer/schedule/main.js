@@ -1,5 +1,6 @@
 define(["/global/iscripts/libs/time/moment.js", 
-        "/global/iscripts/libs/time/twix.js"], function(moment, Twix) {
+        "/global/iscripts/libs/time/twix.js",
+        "/global/iscripts/tools/slick.js"], function(moment, Twix) {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
@@ -12,8 +13,9 @@ define(["/global/iscripts/libs/time/moment.js",
 		
 		CON.prototype.foo = function() {
             var month = this.getAMonthPane('2017', '04');
+            var month2 = this.getAMonthPane('2017', '05');
             var dom = Mustache.render(this.tpl, {
-                monthes: [month],
+                monthes: [month, month2],
                 fn: {
                     date: function() {
                         return this.format('MM/DD');
@@ -25,6 +27,10 @@ define(["/global/iscripts/libs/time/moment.js",
             var size = $(window).width() / 7 - 2;
             this.find('.day').width(size);
             this.find('.day').height(size);
+
+            this.find('#main-body').slick({
+                infinite: false
+            });
 		}
         
         CON.prototype.getAMonthPane = function(year, month) {
