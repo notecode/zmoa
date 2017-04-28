@@ -91,6 +91,19 @@ $clr-gray: #E3E8EE;
 				position: relative;
 				.header-cells .cell {
 					border-top: $bdr;
+
+					.month {
+						display: none;
+
+						// 这是月份的样式，需要完善一下
+						&.date1 {
+							display: block;
+							position: absolute;
+							color: red;
+							width: 20px;
+							border: 1px solid gray;
+						}
+					}
 				}
 
 				/* border-top: 1px dotted gray; */
@@ -128,6 +141,16 @@ $clr-gray: #E3E8EE;
 
 					left: 50px;
 					width: 102px;
+
+					&.future {
+						background-color: #fff;
+						opacity: 0.5;
+
+						&.span-today {
+							border-top-left-radius: 0px;
+							border-bottom-left-radius: 0px;
+						}
+					}
 				}
 			}
 

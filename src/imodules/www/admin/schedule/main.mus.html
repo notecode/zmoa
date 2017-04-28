@@ -19,7 +19,8 @@
 			<div class="header-cells">
 				{{#header}}
 					{{#days}}
-					<p class="cell">
+					<p class="cell {{fn.today}}">
+						<span class="month {{fn.is_date1}}">{{fn.month}}</span>
 						<span class="date">{{fn.date}}</span>
 						<span class="weekday">{{fn.weekday}}</span>
 					</p>
@@ -37,6 +38,7 @@
 					{{/cells}}
 				</div>
 				<div class="bar" style="left: {{util.bar_start}}px; width: {{util.bar_length}}px"></div>
+				<div class="bar future {{util.in_future}} {{util.span_today}}" style="left: {{util.future_bar_start}}px; width: {{util.future_bar_length}}px"></div>
 			</div>
 			{{/projects}}
 		</div>

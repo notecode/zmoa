@@ -49,13 +49,21 @@ define(["/global/iscripts/libs/time/moment.js",
                 range.push(iter.next());
             }
 
+            // ref: http://isaaccambron.com/twix.js/docs.html#count
+            //      https://momentjs.com/docs/
+            var tomorrow = moment().add(1, 'days');
             for (var i = 0; i < list.length; i++) {
                 var the = list[i];
-                the.displace = min.twix(the.m_start).length("days");
-                the.during = the.m_start.twix(the.m_end).length("days");
+                the.displace = min.twix(the.m_start).count("days") - 1;
+                the.during = the.m_start.twix(the.m_end).count("days");
 
-                tlog(the.displace);
-                tlog(the.during);
+                tlog('bar ' + i + ': [' + the.displace + ', ' + the.during + ']');
+
+                if (the.m_end.isSameOrAfter(tomorrow, 'days')) {
+                    the.tmr_displace = min.twix(tomorrow).count("days") - 1;
+                    the.tmr_during = tomorrow.twix(the.m_end).count("days");
+                    tlog('  future bar ' + i + ': [' + the.tmr_displace + ', ' + the.tmr_during + ']');
+                }
             }
 
             return {range: range, projects: list};
@@ -78,12 +86,21 @@ define(["/global/iscripts/libs/time/moment.js",
                 header: {
                     days: ctx.range, // range: [moment]
                     fn: {
+                        is_date1: function() {
+                            return (1 == this.date()) ? 'date1' : '';
+                        },
+                        month: function() {
+                            return this.month();
+                        },
                         date: function() {
                             return this.date();
                         },
                         weekday: function() {
                             var wd = ['日', '一', '二', '三', '四', '五', '六'];
                             return wd[this.day()];
+                        },
+                        today: function() {
+                            return this.isSame(today, 'days') ? 'today' : ''; 
                         }
                     },
                 },
@@ -96,7 +113,22 @@ define(["/global/iscripts/libs/time/moment.js",
                     },
                     bar_length: function() {
                         return cell_width * this.during; 
-                    }
+                    },
+                    in_future: function() {
+                        return this.tmr_displace ? '' : 'hide';
+                    },
+                    span_today: function() {
+                        return (this.displace < this.tmr_displace) ? "span-today" : "";
+                    },
+                    future_bar_start: function() {
+                        var disp = this.tmr_displace;
+                        //return cell_width * (disp ? disp : 0);
+                        return disp ? (disp * cell_width + 1) : 0;
+                    },
+                    future_bar_length: function() {
+                        var dur = this.tmr_during;
+                        return cell_width * (dur ? dur : 0);
+                    },
                 }
             };
         }
