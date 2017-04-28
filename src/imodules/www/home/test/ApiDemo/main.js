@@ -6,7 +6,6 @@ define(function() {
 
             this.fooGet();
             this.fooPost();
-            project.tip('申请成功', 'succ');
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -64,7 +63,12 @@ define(function() {
             }); 
         }
 		
-		CON.prototype._ievent_ = function(data, target, hit) {
+		CON.prototype._ievent_logout = function(data, target, hit) {
+            api_ajax('user/logout', {
+                succ: function(json) {
+                    tlog('logout succ');
+                }
+            })
 		}
         
         return CON;

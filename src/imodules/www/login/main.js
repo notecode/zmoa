@@ -25,6 +25,21 @@ define(function() {
                 api_ajax_post('user/login', data, {
                     succ: function(json) {
                         tlog('login succ');
+                        // 1: 系统管理员，2: 销售人员，3: 服务人员
+                        if (1 == json.role) {
+                            location.href = '/admin/services.html';
+                        } else if (2 == json.role) {
+                            location.href = '/sales/index.html';
+                        } else {
+                            project.tip('工程商暂不支持在电脑端进行操作', 'fail', '我们正在努力中', true);
+
+                            setTimeout(function() {
+                                api_ajax('user/logout', {
+                                    succ: function(json) {
+                                    }
+                                })
+                            }, 3000);
+                        }
                     },
                     fail: function(json) {
                         _this.showTips(json.errmsg);
