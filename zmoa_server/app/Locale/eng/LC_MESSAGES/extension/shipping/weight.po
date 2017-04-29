@@ -1,6 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Weight Based Shipping"
-
-msgid "text_weight"
-msgstr "Weight:"

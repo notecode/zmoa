@@ -1,5 +1,0 @@
-msgid "text_footer"
-msgstr "<a href="http://www.opencart.com">OpenCart</a> &copy; 2009-' . date('Y') . ' All Rights Reserved."
-
-msgid "text_version"
-msgstr "Version %s"

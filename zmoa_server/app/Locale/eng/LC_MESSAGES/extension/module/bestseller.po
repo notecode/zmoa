@@ -1,5 +1,0 @@
-msgid "heading_title"
-msgstr "Bestsellers"
-
-msgid "text_tax"
-msgstr "Ex Tax:"

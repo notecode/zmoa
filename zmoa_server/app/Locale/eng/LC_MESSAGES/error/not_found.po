@@ -1,8 +1,0 @@
-// Heading
-msgid "heading_title"
-msgstr "The page you requested cannot be found!"
-
-
-// Text
-msgid "text_error"
-msgstr "The page you requested cannot be found."

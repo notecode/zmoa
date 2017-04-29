@@ -1,3 +1,0 @@
-// Heading
-msgid "heading_title"
-msgstr "Live Chat"

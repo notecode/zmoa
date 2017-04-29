@@ -1,2 +1,0 @@
-msgid "heading_title"
-msgstr "Categories"

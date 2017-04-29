@@ -1,2 +1,0 @@
-msgid "text_error"
-msgstr "Information Page Not Found!"

@@ -1,2 +1,0 @@
-msgid "text_klarna_fee"
-msgstr "Klarna Fee"

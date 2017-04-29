@@ -1,5 +1,0 @@
-msgid "heading_title"
-msgstr "Permission Denied!"
-
-msgid "text_permission"
-msgstr "You do not have permission to access this page, please refer to your system administrator."

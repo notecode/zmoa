@@ -1,6 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Per Item"
-
-msgid "text_description"
-msgstr "Per Item Shipping Rate"

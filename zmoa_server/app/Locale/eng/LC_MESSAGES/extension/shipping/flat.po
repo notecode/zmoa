@@ -1,6 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Flat Rate"
-
-msgid "text_description"
-msgstr "Flat Shipping Rate"

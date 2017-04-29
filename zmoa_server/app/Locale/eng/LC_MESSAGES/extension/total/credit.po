@@ -1,5 +1,0 @@
-msgid "text_credit"
-msgstr "Store Credit"
-
-msgid "text_order_id"
-msgstr "Order ID: #%s"

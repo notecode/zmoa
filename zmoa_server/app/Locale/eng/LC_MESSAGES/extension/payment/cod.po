@@ -1,3 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Cash On Delivery"

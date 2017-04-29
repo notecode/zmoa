@@ -1,5 +1,0 @@
-msgid "heading_title"
-msgstr "Page Not Found!"
-
-msgid "text_not_found"
-msgstr "The page you are looking for could not be found! Please contact your administrator if the problem persists."

@@ -1,6 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Free Shipping"
-
-msgid "text_description"
-msgstr "Free Shipping"

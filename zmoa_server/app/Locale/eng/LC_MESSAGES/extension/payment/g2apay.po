@@ -1,3 +1,0 @@
-// Text
-msgid "text_title"
-msgstr "Credit / Debit Card / Paypal / Wallet (G2APay)"

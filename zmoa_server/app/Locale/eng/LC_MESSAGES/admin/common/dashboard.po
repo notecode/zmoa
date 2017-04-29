@@ -1,5 +1,0 @@
-msgid "heading_title"
-msgstr "Dashboard"
-
-msgid "error_install"
-msgstr "Warning: Install folder still exists and should be deleted for security reasons!"

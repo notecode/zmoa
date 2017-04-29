@@ -1,3 +1,0 @@
-// Text
-msgid "text_currency"
-msgstr "Currency"

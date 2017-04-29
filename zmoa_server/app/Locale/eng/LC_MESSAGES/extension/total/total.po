@@ -1,2 +1,0 @@
-msgid "text_total"
-msgstr "Total"
