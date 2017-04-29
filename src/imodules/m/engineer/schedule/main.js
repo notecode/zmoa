@@ -11,6 +11,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
             // 此不完备日历的最小日期
             this.min_date = null;
+            this.date_selected = null;
 
             this.addSunMon();
             this.addMonthPanes();
@@ -263,10 +264,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
         CON.prototype.prepareForSelect = function(sch) {
             this.freezeSome(sch);
-
-            this.find('.day:not(.freeze, .beyond)').click(function() {
-                alert('h');
-            }); 
+            this.bindSelectEvents();
         }
 
         CON.prototype.freezeSome = function(sch) {
@@ -295,6 +293,33 @@ define(["/global/iscripts/libs/time/moment.js",
                 freeze(mmt);
                 mmt.add('1', 'day');
             }
+        }
+
+        CON.prototype.bindSelectEvents = function() {
+            var _this = this;
+            this.find('.day:not(.freeze, .beyond)').click(function() {
+                var date = $(this).attr('data-date');
+                //tlog(date);
+
+                // 如果我先前未被选中
+                if (!$(this).hasClass('ready')) {
+
+                    // 如果别人也未曾被选中, 则就先选我
+                    if (null == _this.date_selected) {
+                        _this.date_selected = date;
+                        $(this).addClass('ready');
+                        tlog('You selected one end: ' + date);
+                    } else {
+                        // 已有别人被选中，则尝试选择区域
+                        // todo: 选择
+                    }
+                } else {
+                    // 如果我先前曾被选中，你又选我，那就取消
+                    $(this).toggleClass('ready');
+                    _this.date_selected = null;
+                    tlog('Cancelled your selection: ' + date);
+                }
+            }); 
         }
 
         CON.prototype.unitTest0 = function() {
