@@ -2,7 +2,7 @@
 {{#monthes}}
 <div class="month">
 	{{#weeks}}
-    <div class="week-row">
+    <div class="week-row" data-week="{{weekNum}}">
     	{{#days}}
         <div class="day {{fn.weekend}} {{fn.out}}">{{fn.date}}</div>
     	{{/days}}
