@@ -36,6 +36,7 @@ $clr-gray: #E3E8EE;
                     border-left: $bdr-fff;
                     color: $clr-gray;
                     background-color: #fff; // 这是为了盖住画到该区域的蓝线
+                    opacity: 0.9;
                     z-index: 20;
                 }
 
@@ -52,12 +53,30 @@ $clr-gray: #E3E8EE;
 
             .line {
                 position: absolute;
-                top: 30px;
+                bottom: 10px;
                 height: 8px;
-                border-radius: 4px;
                 background-color: #4785F9;
                 width: 100px;
                 z-index: 10;
+
+                &.left-tip {
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+                &.right-tip {
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+
+                // 全部在未来
+                &.future {
+                    background-color: #B5CEF9;
+                }
+
+                // 进行中，未来几天
+                &.ahead {
+                    background-color: #78AAFF;
+                }
             }
         }
     }

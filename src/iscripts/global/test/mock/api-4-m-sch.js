@@ -12,5 +12,9 @@ define(function() {
             start_date: "2017-04-28",
             end_date: "2017-05-03"
         },
+        {
+            start_date: "2017-05-05",
+            end_date: "2017-05-08"
+        },
     ]
 })

@@ -103,10 +103,29 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype.addSchedules = function() {
+            //var today = moment('2017-04-21');
+            var today = moment();
             for (var i = 0; i < mock.length; i++) {
                 var the = mock[i];
-                var segs = this.genPassLines(the.start_date, the.end_date);
-                this.renderPassLine(segs);
+                var mmt_start = moment(the.start_date);
+                var mmt_end = moment(the.end_date);
+
+                // 未来的
+                if (mmt_start.isAfter(today, 'day')) {
+                    var segs = this.genPassLines(the.start_date, the.end_date);
+                    this.renderPassLine(segs, 'future');
+                } else if (mmt_end.isAfter(today, 'day')) { // 正在进行中的
+                    // 先画今天及以前的
+                    var passSegs = this.genPassLines(the.start_date, today.format('YYYY-MM-DD'));
+                    this.renderPassLine(passSegs, 'passed');
+
+                    var tomorrow = today.add('1', 'day').format('YYYY-MM-DD');
+                    var aheadSegs = this.genPassLines(tomorrow, the.end_date);
+                    this.renderPassLine(aheadSegs, 'ahead');
+                } else { // 已完成的
+                    var segs = this.genPassLines(the.start_date, the.end_date);
+                    this.renderPassLine(segs);
+                }
             }
         }
 
@@ -142,13 +161,35 @@ define(["/global/iscripts/libs/time/moment.js",
             return segs;
         }
 
-        CON.prototype.renderPassLine = function(segs) {
-            for (var i = 0; i < segs.length; i++) {
+        CON.prototype.renderPassLine = function(segs, extClass) {
+            var cw = this.cell_size + 1; // 需加上一个border宽
+            var adj = cw / 5;
+            var count = segs.length;
+            for (var i = 0; i < count; i++) {
                 var the = segs[i];
-
                 var line = $('<div class="line"></div>');
-                line.css('left', this.cell_size * the.start);
-                line.width(this.cell_size * the.len);
+                if (extClass) {
+                    line.addClass(extClass);
+                }
+
+                var start = the.start * cw;
+                var len = the.len * cw;
+
+                // 首段, 且不是“正在进行中明天的那段"
+                if (0 == i && (extClass !== 'ahead')) {
+                    start += adj;
+                    len -= adj;
+                    line.addClass('left-tip');
+                } 
+
+                // 末段, 且不是“正在进行中已过去的那段"
+                if (i == count - 1 && (extClass !== 'passed')) {
+                    len -= adj;
+                    line.addClass('right-tip');
+                }
+
+                line.css('left', start);
+                line.width(len);
 
                 var nweek = the.mmt_start.week();
                 this.find('[data-week=' + nweek + ']').append(line);
