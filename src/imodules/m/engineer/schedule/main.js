@@ -9,10 +9,14 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
             this.cell_size = $(window).width() / 7 - 1;  // 每个cell只有top/left各一条border. 最后一行加上一个bottom-border
 
+            // 此不完备日历的最小日期
+            this.min_date = null;
+
             this.addSunMon();
             this.addMonthPanes();
             this.bindSlick();
-            this.addSchedules();
+            this.addSchedules(mock);
+            this.prepareForSelect(mock);
 //            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -27,13 +31,23 @@ define(["/global/iscripts/libs/time/moment.js",
             // 下边会一起调整宽高
         }
 
-		CON.prototype.addMonthPanes = function() {
-            var month = this.getAMonthPane('2017', '04');
-            var month2 = this.getAMonthPane('2017', '05');
+		CON.prototype.addMonthPanes = function(sch) {
+            var raw = this.genAfewMonthes(sch);
+            var monthes = [];
+            for (var i = 0; i < raw.length; i++) {
+                monthes.push(this.getAMonthPane(raw[i]));
+            }
+
+            this.min_date = raw[0] + '-01';
+
             var dom = Mustache.render(this.tpl, {
-                monthes: [month, month2],
+                //monthes: [month, month2],
                 //monthes: [month],
+                monthes: monthes,
                 fn: {
+                    full_date: function() {
+                        return this.mmt.format('YYYY-MM-DD');
+                    },
                     date: function() {
                         return this.mmt.date();
                     },
@@ -58,6 +72,30 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('.day, .dayx').height(size).css('line-height', size + 'px');
 		}
 
+        CON.prototype.genAfewMonthes = function(sch) {
+            // todo: 从api数据中得到最小的月份，一般就是近两个月
+            var min_month = moment('2017-04');
+
+            // 得到到今年年底，或最少6个月
+            var nextYear = min_month.year() + 1;
+            var max_month = moment(nextYear + '-01');
+            if (min_month.twix(max_month).count('month') < 6) {
+                max_month = min_month.clone.add('6', 'month');
+            }
+
+            var monthes = [];
+            var cur = min_month;
+            while (cur.isSameOrBefore(max_month)) {
+                var fmt = cur.format('YYYY-MM');
+                monthes.push(fmt);
+
+                tlog('month: ' + fmt);
+                cur.add('1', 'month');
+            };
+
+            return monthes;
+        }
+
         CON.prototype.bindSlick = function() {
             var tgt = '#month-list';
             this.find(tgt).slick({
@@ -77,8 +115,8 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         
-        CON.prototype.getAMonthPane = function(year, month) {
-            var date1 = year + '-' + month + '-01';
+        CON.prototype.getAMonthPane = function(month) {
+            var date1 = month + '-01';
 
             var m_date1 = moment(date1);
             var day = m_date1.day();
@@ -129,11 +167,11 @@ define(["/global/iscripts/libs/time/moment.js",
             return a_month;
         }
 
-        CON.prototype.addSchedules = function() {
+        CON.prototype.addSchedules = function(sch) {
             //var today = moment('2017-04-21');
             var today = moment();
-            for (var i = 0; i < mock.length; i++) {
-                var the = mock[i];
+            for (var i = 0; i < sch.length; i++) {
+                var the = sch[i];
                 var mmt_start = moment(the.start_date);
                 var mmt_end = moment(the.end_date);
 
@@ -220,6 +258,42 @@ define(["/global/iscripts/libs/time/moment.js",
 
                 var nweek = the.mmt_start.week();
                 this.find('[data-week=' + nweek + ']').append(line);
+            }
+        }
+
+        CON.prototype.prepareForSelect = function(sch) {
+            this.freezeSome(sch);
+
+            this.find('.day:not(.freeze, .beyond)').click(function() {
+                alert('h');
+            }); 
+        }
+
+        CON.prototype.freezeSome = function(sch) {
+            var _this = this;
+            var freeze = function(mmt) {
+                var date = mmt.format('YYYY-MM-DD');
+                _this.find('.day[data-date=' + date + ']').addClass('freeze');
+            };
+
+            // 1. 已在排期中的，禁用
+            for (var i = 0; i < sch.length; i++) {
+                var the = sch[i];
+                var mmt_start = moment(the.start_date);
+                var mmt_end = moment(the.end_date);
+
+                while (mmt_start.isSameOrBefore(mmt_end, 'day')) {
+                    freeze(mmt_start);
+                    mmt_start.add('1', 'day');
+                }
+            }
+
+            // 2. 已经逝去的日子，禁用
+            var mmt = moment(this.min_date);
+            var today = moment();
+            while (mmt.isBefore(today, 'day')) {
+                freeze(mmt);
+                mmt.add('1', 'day');
             }
         }
 

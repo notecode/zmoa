@@ -2,7 +2,9 @@
 $bdr-gray: 1px solid #E3E8EE;
 $bdr-fff: 1px solid #fff;
 
-$clr-gray: #E3E8EE;
+$clr-bdr-gray: #E3E8EE;
+$clr-font-gray: #B3B5B7;
+$clr-font-dark: #212022;
 
 #schedule {
     .month-title {
@@ -15,6 +17,7 @@ $clr-gray: #E3E8EE;
             display: inline-block;
             width: 85px; 
             font-size: 15px;
+            color: $clr-font-dark;
         }
 
         .icon-left, .icon-right {
@@ -39,19 +42,20 @@ $clr-gray: #E3E8EE;
                 text-align: center;
                 border-top: $bdr-gray; 
                 border-left: $bdr-gray; 
+                color: $clr-font-dark;
 
                 &:first-child {
                     border-left: $bdr-fff; 
                 }
 
                 &.weekend {
-                    color: $clr-gray;
+                    color: $clr-font-gray;
                 }
 
                 // 不在本月内的
                 &.beyond {
                     border-left: $bdr-fff;
-                    color: $clr-gray;
+                    color: $clr-font-gray;
                     background-color: #fff; // 这是为了盖住画到该区域的蓝线
                     opacity: 0.9;
                     z-index: 20;
@@ -60,12 +64,21 @@ $clr-gray: #E3E8EE;
                 &.beyond.date1 {
                     border-left: $bdr-gray;
                 }
+
+                &.ready {
+                    background-color: #4785F9;
+                }
+
+                &.freeze {
+                    color: red;
+                }
             }
 
             .dayx {
                 width: 30px;
                 border-top: $bdr-fff; 
                 border-left: $bdr-fff; 
+                color: $clr-font-gray;
             }
 
             &:last-child {
