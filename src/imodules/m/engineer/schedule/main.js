@@ -15,7 +15,6 @@ define(["/global/iscripts/libs/time/moment.js",
             this.date_selected1 = null;
             this.selected_range = null;
 
-            this.addSunMon();
             this.addMonthPanes();
             this.bindSlick();
             this.addSchedules(mock);
@@ -25,16 +24,6 @@ define(["/global/iscripts/libs/time/moment.js",
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype.addSunMon = function() {
-            var wk = ['日', '一', '二', '三', '四', '五', '六'];
-            var week = $('<div class="week-row"></div>');
-            for (var i = 0; i < wk.length; i++) {
-                week.append('<div class="dayx">' + wk[i] + '</div>');
-            }
-            this.find('.sun-mon').append(week);
-            // 下边会一起调整宽高
-        }
-
 		CON.prototype.addMonthPanes = function(sch) {
             var raw = this.genAfewMonthes(sch);
             var monthes = [];
@@ -69,12 +58,23 @@ define(["/global/iscripts/libs/time/moment.js",
             }); 
 
             this.find('#month-list').append(dom);
+            this.addSunMon();
 
             var size = this.cell_size;
             this.find('.week-row').height(size + 1);
             this.find('.day, .dayx').width(size);
             this.find('.day, .dayx').height(size).css('line-height', size + 'px');
 		}
+
+		CON.prototype.addSunMon = function() {
+            var wk = ['日', '一', '二', '三', '四', '五', '六'];
+            var week = $('<div class="week-row"></div>');
+            for (var i = 0; i < wk.length; i++) {
+                week.append('<div class="dayx">' + wk[i] + '</div>');
+            }
+            this.find('.sun-mon').append(week);
+            // 下边会一起调整宽高
+        }
 
         CON.prototype.genAfewMonthes = function(sch) {
             // todo: 从api数据中得到最小的月份，一般就是近两个月
