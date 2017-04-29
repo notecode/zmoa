@@ -11,6 +11,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
             this.addSunMon();
             this.addMonthPanes();
+            this.bindSlick();
             this.addSchedules();
 //            this.unitTest();
         };
@@ -22,12 +23,11 @@ define(["/global/iscripts/libs/time/moment.js",
             for (var i = 0; i < wk.length; i++) {
                 week.append('<div class="dayx">' + wk[i] + '</div>');
             }
-            this.find('.month-title').append(week);
+            this.find('.sun-mon').append(week);
             // 下边会一起调整宽高
         }
 
 		CON.prototype.addMonthPanes = function() {
-
             var month = this.getAMonthPane('2017', '04');
             var month2 = this.getAMonthPane('2017', '05');
             var dom = Mustache.render(this.tpl, {
@@ -56,11 +56,26 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('.week-row').height(size + 1);
             this.find('.day, .dayx').width(size);
             this.find('.day, .dayx').height(size).css('line-height', size + 'px');
-
-            this.find('#month-list').slick({
-                infinite: false
-            });
 		}
+
+        CON.prototype.bindSlick = function() {
+            var tgt = '#month-list';
+            this.find(tgt).slick({
+                infinite: false,
+                prevArrow: $('.icon-left'),
+                nextArrow: $('.icon-right')
+            });
+
+            var cap0 = $('.month').first().attr('data-caption');
+            var name = $('.month-name');
+            name.text(cap0);
+
+            this.find(tgt).on('afterChange', function(event, slick, cur){
+                var cap = $(slick.$slides.get(cur)).attr('data-caption');
+                name.text(cap);
+            });
+        }
+
         
         CON.prototype.getAMonthPane = function(year, month) {
             var date1 = year + '-' + month + '-01';
@@ -87,7 +102,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
             // 得到各week中的每一天
             var a_month = {
-                title: date1,
+                caption: m_date1.format('YYYY年M月'),
                 weeks: []
             };
 
