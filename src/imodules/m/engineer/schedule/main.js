@@ -7,7 +7,7 @@ define(["/global/iscripts/libs/time/moment.js",
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-            this.cell_size = $(window).width() / 7 - 2;
+            this.cell_size = $(window).width() / 7 - 1;  // 每个cell只有top/left各一条border. 最后一行加上一个bottom-border
 
             this.addMonthPanes();
             this.addSchedules();
@@ -25,6 +25,9 @@ define(["/global/iscripts/libs/time/moment.js",
                     date: function() {
                         return this.mmt.date();
                     },
+                    date1: function() {
+                        return (1 == this.mmt.date() ? 'date1' : '');
+                    },
                     weekend: function() {
                         var day = this.mmt.day();
                         return (0 == day || 6 == day) ? 'weekend' : '';
@@ -38,9 +41,9 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('#main-body').append(dom);
 
             var size = this.cell_size;
-            this.find('.week-row').height(size);
+            this.find('.week-row').height(size + 1);
             this.find('.day').width(size);
-            this.find('.day').height(size);
+            this.find('.day').height(size).css('line-height', size + 'px');
 
             this.find('#main-body').slick({
                 infinite: false

@@ -1,21 +1,31 @@
 
-$bdr: 1px solid #E3E8EE;
+$bdr-gray: 1px solid #E3E8EE;
+$bdr-fff: 1px solid #fff;
+
 $clr-gray: #E3E8EE;
 
 #schedule {
 
     .month {
         /* border: $bdr;  */
+        padding-bottom: 2px;  // 为了不遮住最后一根横线
 
         .week-row {
             position: relative;
 
             .day {
-                float: left;
-                position: 
+                position: relative;
+                display: inline-block;
                 width: 150px;
                 height: 50px;
-                border: $bdr; 
+                line-height: 50px;
+                text-align: center;
+                border-top: $bdr-gray; 
+                border-left: $bdr-gray; 
+
+                &:first-child {
+                    border-left: $bdr-fff; 
+                }
 
                 &.weekend {
                     color: $clr-gray;
@@ -23,8 +33,20 @@ $clr-gray: #E3E8EE;
 
                 // 不在本月内的
                 &.beyond {
-                    border: 1px solid #fff;
+                    border-left: $bdr-fff;
                     color: $clr-gray;
+                    background-color: #fff; // 这是为了盖住画到该区域的蓝线
+                    z-index: 20;
+                }
+
+                &.beyond.date1 {
+                    border-left: $bdr-gray;
+                }
+            }
+
+            &:last-child {
+                .day {
+                    border-bottom: $bdr-gray;
                 }
             }
 
