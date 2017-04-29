@@ -119,17 +119,33 @@ define(function() {
             api_ajax_post('project/edit', data, {
                 succ: function(res) {
                     $tipEl.html('');
-                    project.tip('温馨提示','succ','提交成功', true);
+                    _this.showDemand();
                 },
                 fail: function(json) {
-                    if($.isObject(json)) {
+                    if(!$.isEmptyObject(json)) {
                         $tipEl.html(json.errmsg);
+                    } else {
+                        $tipEl.html('系统错误');
                     }
-                    $tipEl.html('系统错误');
+                    
                 }
             });
             return false;
-        }        
+        }
+        // 跳转到故障描述
+        CON.prototype.showDemand = function() {
+            // 关闭基本信息框
+            this.parent.close();
+            var onBack = function(mod) {
+                // 项目基本信息
+                // mod.setCtx({});
+                if(mod.parent){
+                    mod.parent.close();
+                }
+                project.open(mod, '_blank', 'content');
+            };
+            project.getIModule('imodule://submitDemandMD', null, onBack);
+        } 
         return CON;
     })();
     return Module;

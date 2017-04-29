@@ -15,6 +15,7 @@ define(function() {
                 var $this = $(e.target);
                 var item = $this.data();
                 _this.key = item.key + '';
+                _this.id = item.id;
                 $(_this._els.LSearch).val(item.key + ' ' + item.name);
             })            
         };
@@ -49,26 +50,46 @@ define(function() {
             $(this._els.LProjects).html('');
         }
         // 打开项目基本信息框
-        CON.prototype.openBasicInfo = function(id) {
+        CON.prototype.openBasicInfo = function(id, isExist) {
+            var _this = this;
             api_ajax('project/detail/' + id, {
                 succ: function(json) {
                     //判断有无需求
-                    var onBack = function(mod) {
-                        // 项目基本信息
-                        mod.setCtx(json.project_info);
-                        if(mod.parent){
-                            mod.parent.close();
-                        }
-                        project.open(mod, '_blank', { size: ['content', '600px'] });
-                    };                    
-                    project.getIModule('imodule://editDemandMD', null, onBack);
+                    if (json.user_role !== '1' && isExist) {
+                        _this.demandInfo(json)
+                    } else {
+                        _this.basicInfo(json)
+                    }
                 },
                 fail: function(json) {
 
                 }
             });                     
-            // 
         }
+        // 打开项目基本信息模态框
+        CON.prototype.basicInfo = function(json) {
+            var onBack = function(mod) {
+                // 项目基本信息
+                mod.setCtx(json.project_info);
+                if(mod.parent){
+                    mod.parent.close();
+                }
+                project.open(mod, '_blank', { size: ['content', '600px'] });
+            };
+            project.getIModule('imodule://editDemandMD', null, onBack);
+        }
+        // 打开项目故障模态框
+        CON.prototype.demandInfo = function(json) {
+            var onBack = function(mod) {
+                // 项目基本信息
+                // mod.setCtx({});
+                if(mod.parent){
+                    mod.parent.close();
+                }
+                project.open(mod, '_blank', 'content');
+            };
+            project.getIModule('imodule://submitDemandMD', null, onBack);
+        }        
         // 添加需求
         CON.prototype._ievent_submitForm = function(data, target) {
             var _this = this;
@@ -78,8 +99,8 @@ define(function() {
                 $value = this.key
                 this.reset();
                 this.parent.close();
-                this.openBasicInfo(this.key, true);
-                return 
+                this.openBasicInfo(this.id, true);
+                return false;
             }
             if(!!$value && key !== this.key) {
                 api_ajax_post('project/add', { contract: $value }, {
