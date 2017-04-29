@@ -9,13 +9,25 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
             this.cell_size = $(window).width() / 7 - 1;  // 每个cell只有top/left各一条border. 最后一行加上一个bottom-border
 
+            this.addSunMon();
             this.addMonthPanes();
             this.addSchedules();
 //            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
+		CON.prototype.addSunMon = function() {
+            var wk = ['日', '一', '二', '三', '四', '五', '六'];
+            var week = $('<div class="week-row"></div>');
+            for (var i = 0; i < wk.length; i++) {
+                week.append('<div class="dayx">' + wk[i] + '</div>');
+            }
+            this.find('.month-title').append(week);
+            // 下边会一起调整宽高
+        }
+
 		CON.prototype.addMonthPanes = function() {
+
             var month = this.getAMonthPane('2017', '04');
             var month2 = this.getAMonthPane('2017', '05');
             var dom = Mustache.render(this.tpl, {
@@ -38,14 +50,14 @@ define(["/global/iscripts/libs/time/moment.js",
                 }
             }); 
 
-            this.find('#main-body').append(dom);
+            this.find('#month-list').append(dom);
 
             var size = this.cell_size;
             this.find('.week-row').height(size + 1);
-            this.find('.day').width(size);
-            this.find('.day').height(size).css('line-height', size + 'px');
+            this.find('.day, .dayx').width(size);
+            this.find('.day, .dayx').height(size).css('line-height', size + 'px');
 
-            this.find('#main-body').slick({
+            this.find('#month-list').slick({
                 infinite: false
             });
 		}

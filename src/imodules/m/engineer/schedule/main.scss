@@ -6,14 +6,14 @@ $clr-gray: #E3E8EE;
 
 #schedule {
 
-    .month {
+    .month, .month-title {
         /* border: $bdr;  */
         padding-bottom: 2px;  // 为了不遮住最后一根横线
 
         .week-row {
             position: relative;
 
-            .day {
+            .day, .dayx {
                 position: relative;
                 display: inline-block;
                 width: 150px;
@@ -43,6 +43,12 @@ $clr-gray: #E3E8EE;
                 &.beyond.date1 {
                     border-left: $bdr-gray;
                 }
+            }
+
+            .dayx {
+                width: 30px;
+                border-top: $bdr-fff; 
+                border-left: $bdr-fff; 
             }
 
             &:last-child {
