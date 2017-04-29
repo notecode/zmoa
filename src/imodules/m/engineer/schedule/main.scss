@@ -70,7 +70,7 @@ $clr-font-dark: #212022;
                 }
 
                 &.freeze {
-                    color: red;
+                    /* color: red; */
                 }
             }
 
@@ -112,6 +112,12 @@ $clr-font-dark: #212022;
                 // 进行中，未来几天
                 &.ahead {
                     background-color: #78AAFF;
+                }
+
+                // 刚刚选中的，还热乎的
+                &.hot {
+                    // todo: 参sketch
+                    background-color: green;
                 }
             }
         }

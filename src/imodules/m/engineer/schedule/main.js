@@ -11,13 +11,16 @@ define(["/global/iscripts/libs/time/moment.js",
 
             // 此不完备日历的最小日期
             this.min_date = null;
-            this.date_selected = null;
+
+            this.date_selected1 = null;
+            this.selected_range = null;
 
             this.addSunMon();
             this.addMonthPanes();
             this.bindSlick();
             this.addSchedules(mock);
             this.prepareForSelect(mock);
+//            this.foo();
 //            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -264,7 +267,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
         CON.prototype.prepareForSelect = function(sch) {
             this.freezeSome(sch);
-            this.bindSelectEvents();
+            this.bindSelectEvents(sch);
         }
 
         CON.prototype.freezeSome = function(sch) {
@@ -295,31 +298,84 @@ define(["/global/iscripts/libs/time/moment.js",
             }
         }
 
-        CON.prototype.bindSelectEvents = function() {
+        CON.prototype.bindSelectEvents = function(sch) {
             var _this = this;
             this.find('.day:not(.freeze, .beyond)').click(function() {
                 var date = $(this).attr('data-date');
-                //tlog(date);
+                if (null == _this.selected_range) {
+                    // 如果我先前未被选中
+                    if (!$(this).hasClass('ready')) {
 
-                // 如果我先前未被选中
-                if (!$(this).hasClass('ready')) {
-
-                    // 如果别人也未曾被选中, 则就先选我
-                    if (null == _this.date_selected) {
-                        _this.date_selected = date;
-                        $(this).addClass('ready');
-                        tlog('You selected one end: ' + date);
+                        // 如果别人也未曾被选中, 则就先选我
+                        if (null == _this.date_selected1) {
+                            _this.date_selected1 = date;
+                            $(this).addClass('ready');
+                            tlog('You selected one end: ' + date);
+                        } else {
+                            // 已有别人被选中，则尝试选择区域
+                            _this.tryToSelect(date, $(this), sch);
+                        }
                     } else {
-                        // 已有别人被选中，则尝试选择区域
-                        // todo: 选择
+                        // 如果我先前曾被选中，你又选我，那就取消
+                        $(this).toggleClass('ready');
+                        _this.date_selected1 = null;
+                        tlog('Cancelled your selection: ' + date);
                     }
                 } else {
-                    // 如果我先前曾被选中，你又选我，那就取消
-                    $(this).toggleClass('ready');
-                    _this.date_selected = null;
-                    tlog('Cancelled your selection: ' + date);
+                    tlog('Sorry, you aleady selected two dates: [' + _this.selected_range.start + ', ' + _this.selected_range.end + ']');
                 }
             }); 
+        }
+
+        CON.prototype.tryToSelect = function(date, jq, sch) {
+            var mmt1 = moment(this.date_selected1);
+            var mmt2 = moment(date);
+
+            var rng = null;
+            var selectd = null;
+            var sRng = '';
+            if (mmt1.isBefore(mmt2, 'day')) {
+                rng = mmt1.twix(mmt2);
+                selected = {
+                    start: this.date_selected1, 
+                    end: date
+                };
+                sRng = '[' + mmt1.format('MM-DD') + ', ' + mmt2.format('MM-DD') + ']';
+            } else {
+                rng = mmt2.twix(mmt1);
+                selected = {
+                    start: date,
+                    end: this.date_selected1
+                };
+                sRng = '[' + mmt2.format('MM-DD') + ', ' + mmt1.format('MM-DD') + ']';
+            }
+
+            var pass = true;
+            for (var i = 0; i < sch.length; i++) {
+                var the = sch[i];
+                var mmt_start = moment(the.start_date);
+                var mmt_end = moment(the.end_date);
+
+                var rngx = mmt_start.twix(mmt_end);
+                if (rng.overlaps(rngx)) {
+                    var sRngx = '[' + mmt_start.format('MM-DD') + ', ' + mmt_end.format('MM-DD') + ']';
+                    tlog('[!!]overlapped: ' + sRng + ' vs. ' + sRngx);
+
+                    pass = false;
+                    break;
+                }
+            }
+
+            if (pass) {
+                this.selected_range = selected;
+                tlog('OK, you selected: ' + sRng);
+
+                var segs = this.genPassLines(selected.start, selected.end);
+                this.renderPassLine(segs, 'hot');
+                this.find('.ready').removeClass('ready');
+            } else {
+                ;
+            }
         }
 
         CON.prototype.unitTest0 = function() {
@@ -372,6 +428,16 @@ define(["/global/iscripts/libs/time/moment.js",
             this.unitTest4();
             this.unitTest5();
         }
+
+        CON.prototype.foo = function() {
+            var r1 = moment('2017-04-12').twix('2017-04-05');
+            var r2 = moment('2017-04-01').twix('2017-04-07');
+            var r3 = moment('2017-04-03').twix('2017-04-07');
+
+            tlog(r1.overlaps(r2));
+            tlog(r1.overlaps(r3));
+        }
+    
         return CON;
     })();
 
