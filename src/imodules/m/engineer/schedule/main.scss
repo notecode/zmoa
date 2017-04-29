@@ -98,10 +98,46 @@ $clr-font-dark: #212022;
                 &.left-tip {
                     border-top-left-radius: 4px;
                     border-bottom-left-radius: 4px;
+
+                    &:before {
+                        content: ' ';
+                        position: absolute;
+                        left: 4px;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 2px;
+                        margin-top: 2px;
+                        background-color: #082865;
+                    }
+
+                    &.future:before {
+                        background-color: #4990E2;
+                    }
+                    &.hot:before {
+                        background-color: #999999;
+                    }
                 }
                 &.right-tip {
                     border-top-right-radius: 4px;
                     border-bottom-right-radius: 4px;
+
+                    &:after {
+                        content: ' ';
+                        position: absolute;
+                        right: 4px;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 2px;
+                        margin-top: 2px;
+                        background-color: #082865;
+                    }
+
+                    &.future:after {
+                        background-color: #4990E2;
+                    }
+                    &.hot:after {
+                        background-color: #999999;
+                    }
                 }
 
                 // 全部在未来
