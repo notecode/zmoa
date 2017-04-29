@@ -8,10 +8,13 @@ $clr-gray: #E3E8EE;
         /* border: $bdr;  */
 
         .week-row {
+            position: relative;
+
             .day {
                 float: left;
-                width: 100px;
-                height: 100px;
+                position: 
+                width: 150px;
+                height: 50px;
                 border: $bdr; 
 
                 &.weekend {
@@ -23,6 +26,16 @@ $clr-gray: #E3E8EE;
                     border: 1px solid #fff;
                     color: $clr-gray;
                 }
+            }
+
+            .line {
+                position: absolute;
+                top: 30px;
+                height: 8px;
+                border-radius: 4px;
+                background-color: #4785F9;
+                width: 100px;
+                z-index: 10;
             }
         }
     }

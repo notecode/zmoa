@@ -1,22 +1,26 @@
 define(["/global/iscripts/libs/time/moment.js", 
         "/global/iscripts/libs/time/twix.js",
-        "/global/iscripts/tools/slick.js"], function(moment, Twix) {
+        "/global/iscripts/tools/slick.js",
+        "/global/iscripts/test/mock/api-4-m-sch.js"], function(moment, Twix, slk, mock) {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
+            this.cell_size = $(window).width() / 7 - 2;
 
-            this.foo();
-            this.unitTest();
+            this.addMonthPanes();
+            this.addSchedules();
+//            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype.foo = function() {
+		CON.prototype.addMonthPanes = function() {
             var month = this.getAMonthPane('2017', '04');
             var month2 = this.getAMonthPane('2017', '05');
             var dom = Mustache.render(this.tpl, {
                 monthes: [month, month2],
+                //monthes: [month],
                 fn: {
                     date: function() {
                         return this.mmt.date();
@@ -30,9 +34,11 @@ define(["/global/iscripts/libs/time/moment.js",
                     }
                 }
             }); 
+
             this.find('#main-body').append(dom);
 
-            var size = $(window).width() / 7 - 2;
+            var size = this.cell_size;
+            this.find('.week-row').height(size);
             this.find('.day').width(size);
             this.find('.day').height(size);
 
@@ -84,10 +90,21 @@ define(["/global/iscripts/libs/time/moment.js",
                     });
                 }
 
-                a_month.weeks.push({days: days});
+                a_month.weeks.push({
+                    weekNum: day0.week(),
+                    days: days
+                });
             }
 
             return a_month;
+        }
+
+        CON.prototype.addSchedules = function() {
+            for (var i = 0; i < mock.length; i++) {
+                var the = mock[i];
+                var segs = this.genPassLines(the.start_date, the.end_date);
+                this.renderPassLine(segs);
+            }
         }
 
         CON.prototype.genPassLines = function(date_from, date_to) {
@@ -120,6 +137,19 @@ define(["/global/iscripts/libs/time/moment.js",
             }
 
             return segs;
+        }
+
+        CON.prototype.renderPassLine = function(segs) {
+            for (var i = 0; i < segs.length; i++) {
+                var the = segs[i];
+
+                var line = $('<div class="line"></div>');
+                line.css('left', this.cell_size * the.start);
+                line.width(this.cell_size * the.len);
+
+                var nweek = the.mmt_start.week();
+                this.find('[data-week=' + nweek + ']').append(line);
+            }
         }
 
         CON.prototype.unitTest0 = function() {
