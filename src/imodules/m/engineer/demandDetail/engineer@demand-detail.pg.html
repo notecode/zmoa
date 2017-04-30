@@ -3,115 +3,10 @@
 <head>
     @@include('www/common/InsertTop/main.html',{"title": ""})
 </head>
-<body>
+<body id="{{ID}}" {{IMODULE}}>
     <style>@@include('{{MCSS}}')</style>
-    <div class="d-detail" id="{{ID}}" {{IMODULE}}>
-        <div class="detail-user">
-            <h3><span class="user-status">维修</span> · 深圳市福永通泰广场</h3>
-            <div class="user-info">
-                <h6>梁先生</h6>
-                <p>深圳市福永通泰集团 总经理</p>
-                <span class="icon-call"></span>
-            </div>
-        </div>
-        <div class="detail-date">
-            <span>4月27日-4月29日</span>
-        </div>
-        <p class="detail-rease">室内，p2.5，全彩，整块不亮</p>
-        <div class="detail-img">
-            <div class="d-img-tip">
-                屏幕故障图尚未上传
-            </div>
-            <div class="d-img-p">
-                <img src="" alt="项目图片">
-            </div>
-        </div>
-        <p class="detail-address">
-            深圳市宝安区宝安大道与福洲大道交汇处
-        </p>
-        <div class="detail-other">
-            <div class="detail-other-title clearfix">
-                <span>其他信息</span>
-                <cite class="icon-Unfolded"></cite>
-                <!--cite class="icon-Put-away"></cite-->
-            </div>
-            <table class="table table-bordered">
-                <tbody>
-                    <tr>
-                        <td>合同编号</td>
-                        <td class="td-contract-no">1209</td>
-                    </tr>
-                    <tr>
-                        <td>大小</td>
-                        <td class="td-screen-size">80m²</td>
-                    </tr>
-                    <tr>
-                        <td>颜色</td>
-                        <td class="td-screen-type">全彩</td>
-                    </tr>
-                    <tr>
-                        <td>间距</td>
-                        <td class="td-screen-span"> p6</td>
-                    </tr>
-                    <tr>
-                        <td>模组</td>
-                        <td class="td-screen-span">洲明 Upanel R2 2.6mm SMD2121</td>
-                    </tr>
-                    <tr>
-                        <td>IC芯片</td>
-                        <td class="td-screen-environment">士兰明芯 T2</td>
-                    </tr>
-                    <tr>
-                        <td>电源</td>
-                        <td class="td-demand-date">诚联 R317 2016</td>
-                    </tr>
-                    <tr>
-                        <td>控制卡</td>
-                        <td class="td-demand-res">诺瓦 w578</td>
-                    </tr>
-                    <tr>
-                        <td>备品</td>
-                        <td class="td-demand-addr">模组1.2平米，1个电源</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p class="detail-bei">备品备件</p>
-        <div class="detail-beijian clearfix">
-            <span class="detail-bj-name">模组</span>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">2</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian clearfix">
-            <span class="detail-bj-name">线缆</span>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">4</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian clearfix">
-            <input class="beijian-type" type="text" placeholder="备料类型"/>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">4</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian text-center clearfix">
-            <a  href="javascript" class="beijian-add">+添加</a>
-        </div>
-        <p class="detail-bei">补充说明</p>
-        <p class="detail-buchong">
-            <span class="pro-bname"><cite>张伟</cite>1天前</span>
-            <span class="pro-bshuo">利用提供的备品备件，更换模组灯珠，调整空调系数。</span>
-        </p>
+        <div id="detail-body"></div>
+
         <div class="edit-shuo clearfix">
             <input class="edit-input" type="text" placeholder="发表补充说明">
             <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
@@ -120,9 +15,9 @@
             立即排期
         </div>
     </div>
-    
 </div>
 
+{{IncludeMTPL}}
 @@include('www/common/InsertBottom/main.html')
 </body>
 </html>
