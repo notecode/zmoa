@@ -28,7 +28,7 @@ define(function() {
             contact_position: "xxxx",
             transfer_time: "2017-04-22 23:55:31",
             transfer_user_id: null,
-            created: null,
+            created: "2017-04-21 19:56:38",
             description: null,
             modified: "2017-04-24 19:56:38",
             province_name: "山东",
