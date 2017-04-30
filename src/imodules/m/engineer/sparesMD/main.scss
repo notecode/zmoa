@@ -1,0 +1,119 @@
+@import "src/sass/global/mixin";
+
+#sparesMD {
+    .detail-bei {
+        font-size: 0.12rem;
+        color: #212022;
+        line-height: 0.38rem;
+        padding: 0 0.15rem;
+        margin-top: 0.2rem;
+    }
+
+    .detail-beijian {
+        border-bottom: 1px solid #E3E8EE;
+        padding-bottom: 0.2rem;
+        padding-top: 0.2rem;
+
+        .detail-bj-name {
+            font-size: 0.18rem;
+            color: #212022;
+            letter-spacing: 0;
+            line-height: 0.23rem;
+            padding-left: 0.15rem;
+            float: left;
+        }
+        .detail-bj-count {
+            float: right;
+            width: 1.58rem;
+            .count-shu {
+                font-size: 0.12rem;
+                color: #83848E;
+                margin-right: 0.2rem;
+            }
+            .count-jian {
+                width: 0.22rem;
+                height: 0.22rem;
+                border: 0.01rem solid #E3E8EE;
+                border-radius: 4px;
+                display: inline-block;
+                text-align: center;
+                line-height: 0.16rem;
+                cursor: pointer;
+            }
+            .count-jia {
+                width: 0.22rem;
+                height: 0.22rem;
+                border: 0.01rem solid #E3E8EE;
+                border-radius: 4px;
+                display: inline-block;
+                text-align: center;
+                line-height: 0.19rem;
+                vertical-align: -1px;
+                cursor: pointer;
+            }
+            .count-liang {
+                font-size: 0.15rem;
+                color: #263547;
+                margin: 0 0.12rem;
+            }
+        }
+
+        .beijian-type {
+           width: 1.5rem;
+           border: none; 
+           padding-left: 0.15rem;
+           outline: none;
+           font-size: 0.14rem;
+        }
+        .beijian-add {
+            font-size: 0.14rem;
+            color: #4785F9;
+            letter-spacing: 0; 
+        }
+    }
+
+    .detail-buchong {
+        .pro-bname {
+            margin-top: 0.2rem;
+            display: block;
+            font-size: 0.14rem;
+            color: #212022;
+            letter-spacing: 0;
+            padding: 0 0.15rem;
+            cite {
+                font-style: normal;
+                margin-right: 0.17rem;
+            }
+        }
+        .pro-bshuo {
+            padding: 0 0.15rem;
+            font-size: 0.12rem;
+            color: #B3B5B7;
+            letter-spacing: 0;
+            line-height: 0.2rem;
+        }
+    }
+
+    .edit-shuo {
+        padding: 0 0.15rem 1.1rem;;
+        .edit-input {
+           width: 68.4%;
+           height: 0.5rem; 
+           border: 1px solid #E3E8EE;
+            border-radius: 0.02rem;
+            color: #B3B5B7;
+            letter-spacing: 0;
+            font-size: 0.14rem;
+            padding: 0 0.15rem;
+            float: left;
+        }
+        .pro-recall-save {
+            width: 20.7%;
+            font-size: 0.15rem;
+            border-radius: 0.02rem;
+            margin-left: 2.7%;
+            height: 0.5rem;
+            float: right;
+        }
+    }
+}

@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @@include('www/common/InsertTop/main.html',{"title": ""})
+    @@include('www/common/InsertTop/main.html',{"title": "项目详情"})
 </head>
 <body id="{{ID}}" {{IMODULE}}>
     <style>@@include('{{MCSS}}')</style>
-        <div id="detail-body"></div>
 
-        <div class="edit-shuo clearfix">
-            <input class="edit-input" type="text" placeholder="发表补充说明">
-            <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
-        </div>
-        <div class="paiqi-btn">
-            立即排期
-        </div>
-    </div>
-</div>
+    @@include('m/engineer/detailsMD/main.md.html')
+    @@include('m/engineer/sparesMD/main.md.html')
 
-{{IncludeMTPL}}
-@@include('www/common/InsertBottom/main.html')
+    <div class="paiqi-btn">立即排期</div>
+    @@include('www/common/InsertBottom/main.html')
 </body>
 </html>
