@@ -186,6 +186,7 @@
                 offset: null,
                 pos: "clientCenterCenter",
                 mask: true,
+                maskCloseable: true,  // 有mask时，点击mask是否关闭
                 size: "content",
                 title: "",
                 controls: ["close"],
@@ -241,7 +242,11 @@
             PT._setMask.call(this);
             var that = this;
             $(this.mask).on("click", function (e) {
-                that.close();
+                if (that.options.maskCloseable || $(e.target).hasClass('tool-close')) {
+                    that.close();
+                } else {
+                    console.log('You disabled maskCloseable option');
+                }
                 return false;
             });
             this._tempData = null;
