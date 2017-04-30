@@ -14,21 +14,22 @@ define(function() {
             var _this =  this;
             api_ajax('project/detail/' + qs_proj(), {
                 succ: function(json) {
-                    //判断有无图片
-                    if(json.main_img){
-                        json.hasPic = '';
-                        json.noPic = 'hide';
-                    }else {
-                        json.hasPic = 'hide';
-                        json.noPic = '';
+                    var proj = json.project_info;
+                    if (proj.main_img) {
+                        proj.hasPic = '';
+                        proj.noPic = 'hide';
+                    } else {
+                        proj.hasPic = 'hide';
+                        proj.noPic = '';
                     }
-                    //状态
-                    document.title = json.name;
-                    $(_this._els.deTitle).text(json.status_name);
-                    _this.proId = json.id;
-                    _this.doRender(json);
+
+                    document.title = proj.name;
+                    $(_this._els.deTitle).text(proj.status_name);
+                    _this.proId = proj.id;
+                    _this.doRender(proj);
+
                     project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                        mod.render(json);
+                        mod.render(proj);
                     });
                 },
                 fail: function(json) {
@@ -37,9 +38,9 @@ define(function() {
             });
         }
 
-        CON.prototype.doRender = function(ctx) {
+        CON.prototype.doRender = function(proj) {
             var _this = this;
-            var dom = Mustache.render(this.tpl, ctx); 
+            var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
         }
 

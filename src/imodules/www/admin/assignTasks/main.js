@@ -10,13 +10,29 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
             this.serv = null;
 
-            this.renderDetail(mock_detail);
-            this.renderWorkerStats(mock_stat);
-            this.bindEvents();
-            this.bindSlick();
+            var _this = this;
+            api_ajax('project/detail/' + qs_proj(), {
+                succ: function(json) {
+                    var proj = json.project_info;
+                    _this.renderDetail(proj);
 
-            project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                mod.render(mock_detail);
+                    project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                        mod.render(proj);
+                    });
+                }
+            });
+
+            var data = {
+                projectId: qs_proj(),
+                startDate: moment().format('YYYY-MM-DD'),
+                pageSize: 30
+            };
+            api_ajax_post('project/project_schedule', data, {
+                succ: function(json) {
+                    _this.renderWorkerStats(json);
+                    _this.bindEvents();
+                    _this.bindSlick();
+                }
             });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -162,9 +178,11 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype.bindSlick = function() {
+            //ref: http://kenwheeler.github.io/slick/
             $('.slick').slick({
                 slidesToShow: 7,
                 slidesToScroll: 1,
+                speed: 100,
                 autoplay: false,
                 infinite: false,
                 autoplaySpeed: 2000,
