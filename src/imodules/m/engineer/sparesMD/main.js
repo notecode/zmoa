@@ -99,6 +99,32 @@ define(function() {
                 }
             });
         }
+
+        CON.prototype._ievent_submitComment = function() {
+            var _this = this;
+            var txt = this.find('#my-comment').val();
+            if (txt.length > 0) {
+                var data = {
+                    projectId: qs_proj(),
+                    comment: txt
+                };
+
+                api_ajax_post('project/add_comment_to_project', data, {
+                    always: function(json) {
+                    //succ: function(json) {
+                        var cmt = $(_this.tpl).find('.comment-tpl > p').clone();
+                        cmt.find('.words').text(txt);
+                        _this.find('.comment-list').append(cmt);
+                        _this.find('#my-comment').val('');
+                    },
+                    fail: function(json) {
+                        alert(json.errmsg);
+                    }
+                });
+            } else {
+                tlog('say a word');
+            }
+        }
         
         return CON;
     })();
