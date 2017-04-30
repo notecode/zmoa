@@ -15,17 +15,37 @@ define(["/global/iscripts/libs/time/moment.js",
             this.date_selected1 = null;
             this.selected_range = null;
 
-            this.addMonthPanes();
-            this.bindSlick();
-            this.addSchedules(mock);
-            this.prepareForSelect(mock);
+            var _this = this;
+            var doRender = function(data) {
+                var sch = data.projects;
+                _this.addMonthPanes(data);
+                _this.bindSlick();
+                _this.addSchedules(sch);
+                _this.prepareForSelect(sch);
+            }
+
+            if (1 == qs("test")) {
+                doRender(mock);
+            } else {
+                var data = {
+                    projectId: qs_proj()
+                };
+                api_ajax_post('project/mobile_show_start_serving', data, {
+                    succ: function(json) {
+                        doRender(json);
+                    },
+                    fail: function(json) {
+                        alert(json.errmsg);
+                    }
+                });
+            }
 //            this.foo();
 //            this.unitTest();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype.addMonthPanes = function(sch) {
-            var raw = this.genAfewMonthes(sch);
+		CON.prototype.addMonthPanes = function(data) {
+            var raw = this.genAfewMonthes(data);
             var monthes = [];
             for (var i = 0; i < raw.length; i++) {
                 monthes.push(this.getAMonthPane(raw[i]));
@@ -77,8 +97,9 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype.genAfewMonthes = function(sch) {
-            // todo: 从api数据中得到最小的月份，一般就是近两个月
-            var min_month = moment('2017-04');
+            //var min_month = moment(sch.'2017-04');
+            assert(sch.min_date);
+            var min_month = sch.min_date ? moment(sch.min_date) : moment();
 
             // 得到到今年年底，或最少6个月
             var nextYear = min_month.year() + 1;
@@ -373,9 +394,29 @@ define(["/global/iscripts/libs/time/moment.js",
                 var segs = this.genPassLines(selected.start, selected.end);
                 this.renderPassLine(segs, 'hot');
                 this.find('.ready').removeClass('ready');
+
+                this.find('.bottom-btn').prop('disabled', false);
             } else {
                 ;
             }
+        }
+
+        CON.prototype._ievent_save = function() {
+            var data = {
+                projectId: qs_proj(),
+                startDate: this.selected_range.start,
+                endDate: this.selected_range.end,
+                description: this.find('#sch-comment').val()
+            };
+
+            api_ajax_post('project/mobile_project_edit_schedule', data, {
+                succ: function(json) {
+                    location.href = '/project/detail.html?projectId=' + qs_proj();
+                },
+                fail: function(json) {
+                    alert(json.errmsg);
+                }
+            });
         }
 
         CON.prototype.unitTest0 = function() {
