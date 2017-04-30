@@ -4,22 +4,35 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
-            var proj = mock.project_info;
-            project.getIModule('imodule://detailsMD', null, function(mod) {
-                mod.render(proj);
-            });
+            var doRender = function(proj) {
+                project.getIModule('imodule://detailsMD', null, function(mod) {
+                    mod.render(proj);
+                });
 
-            project.getIModule('imodule://sparesMD', null, function(mod) {
-                mod.render(proj);
-            });
+                project.getIModule('imodule://sparesMD', null, function(mod) {
+                    mod.render(proj);
+                });
+            }
+
+            if (1 == qs('test')) {
+                doRender(mock.project_info);
+            } else {
+                api_ajax('project/detail/' + qs_proj(), {
+                    succ: function(json) {
+                        doRender(json.project_info);
+                    }
+                });
+            }
+
         };
+
         potato.createClass(CON, baseIModules.BaseIModule);
-		
-		CON.prototype._ievent_action = function(data, target, hit) {
-            alert(0);
-		}
         
-        return CON;
+        CON.prototype._ievent_action = function(data, target, hit) {
+            alert(0);
+        }
+            
+            return CON;
     })();
 
     return Module;
