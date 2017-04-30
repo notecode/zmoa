@@ -1,0 +1,42 @@
+
+<p class="detail-bei">备品备件</p>
+{{#proj.preparations}}
+<div class="detail-beijian clearfix">
+    <span class="detail-bj-name">{{preparation_type}}</span>
+    <div class="detail-bj-count">
+        <span class="count-shu">数量</span>
+        <span class="count-jian">-</span>
+        <span class="count-liang">{{preparation_type_number}}</span>
+        <span class="count-jia">+</span>
+    </div>
+</div>
+{{/proj.preparations}}
+
+<div class="detail-beijian clearfix">
+    <input class="beijian-type" type="text" placeholder="备料类型"/>
+    <div class="detail-bj-count">
+        <span class="count-shu">数量</span>
+        <span class="count-jian">-</span>
+        <span class="count-liang">4</span>
+        <span class="count-jia">+</span>
+    </div>
+</div>
+<div class="detail-beijian text-center clearfix">
+    <a href="javascript" class="beijian-add">+添加</a>
+</div>
+
+<div class="comments">
+    <p class="detail-bei">补充说明</p>
+    {{#proj.comments}}
+    <p class="detail-buchong">
+        <span class="pro-bname"><cite>{{user_name}}</cite>{{created}}</span>
+        <span class="pro-bshuo">{{comment}}</span>
+    </p>
+    {{/proj.comments}}
+
+    <div class="edit-shuo clearfix">
+        <input class="edit-input" type="text" placeholder="发表补充说明">
+        <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
+    </div>
+
+</div>
