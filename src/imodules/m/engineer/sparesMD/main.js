@@ -51,14 +51,12 @@ define(function() {
                         alert('请先填写备料类型');
                     } else {
                         var n = org + 1;
-                        jq.text(n);
-                        _this.postSpare(jqT, n);
+                        _this.postSpare(jqT, n, jq);
                     }
                 } else {
                     if (org > 0) {
                         var n = org - 1;
-                        jq.text(n);
-                        _this.postSpare(jqT, n);
+                        _this.postSpare(jqT, n, jq);
                     }
                 }
             }
@@ -71,7 +69,7 @@ define(function() {
             });
         }
 
-        CON.prototype.postSpare = function(type, num) {
+        CON.prototype.postSpare = function(type, num, ui) {
             var uri = '';
             var add = false;
             if (-1 == this.old_spares.indexOf(type)) {
@@ -93,9 +91,13 @@ define(function() {
             api_ajax_post(uri, data, {
                 //always: function(json) {
                 succ: function(json) {
+                    ui.text(num);
                     if (add) {
                         _this.old_spares.push(type);
                     }
+                },
+                fail: function(json) {
+                    alert(json.errmsg);
                 }
             });
         }
