@@ -97,7 +97,7 @@ define(function() {
         }
         // 提交项目基本信息
         // 添加需求
-        CON.prototype._ievent_submitForm = function(data, target) {
+        CON.prototype._ievent_submitForm = function(el, target) {
             var _this = this;
             var $tipEl = $(this._els.LErrorTip);
             var $checks = $('.js-check-el');
