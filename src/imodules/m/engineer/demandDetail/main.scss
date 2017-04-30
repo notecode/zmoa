@@ -14,5 +14,10 @@
         left: 0;
         bottom: 0;
         border: none;
+        display: none;
+
+        &:disabled {
+            opacity: 0.5;
+        }
     }
 }
