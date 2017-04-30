@@ -21,6 +21,7 @@ define(function() {
             area_id: "2336",
             detail_address: "泉城路万达广场",
             salesman_id: "1",
+            salesman_name: "test1",
             contact_name: "李达",
             contact_phone: "14141411234",
             contact_company: "范德萨",
@@ -57,7 +58,6 @@ define(function() {
                     user_name: "test1"
                 }
             ],
-            salesman_name: "test1",
             preparations: [
                 {
                     preparation_type: "模组",
