@@ -72,48 +72,55 @@
         }
     }
 
-    .detail-buchong {
-        .pro-bname {
-            margin-top: 0.2rem;
-            display: block;
-            font-size: 0.14rem;
-            color: #212022;
-            letter-spacing: 0;
-            padding: 0 0.15rem;
-            cite {
-                font-style: normal;
-                margin-right: 0.17rem;
+    .comments {
+        .detail-buchong {
+            .pro-bname {
+                margin-top: 0.2rem;
+                display: block;
+                font-size: 0.14rem;
+                color: #212022;
+                letter-spacing: 0;
+                padding: 0 0.15rem;
+                cite {
+                    font-style: normal;
+                    margin-right: 0.17rem;
+                }
+            }
+            .pro-bshuo {
+                padding: 0 0.15rem;
+                font-size: 0.12rem;
+                color: #B3B5B7;
+                letter-spacing: 0;
+                line-height: 0.2rem;
             }
         }
-        .pro-bshuo {
-            padding: 0 0.15rem;
-            font-size: 0.12rem;
-            color: #B3B5B7;
-            letter-spacing: 0;
-            line-height: 0.2rem;
+
+        .edit-shuo {
+            padding: 0 0.15rem 1.1rem;;
+            .edit-input {
+               width: 68.4%;
+               height: 0.5rem; 
+               border: 1px solid #E3E8EE;
+                border-radius: 0.02rem;
+                color: #B3B5B7;
+                letter-spacing: 0;
+                font-size: 0.14rem;
+                padding: 0 0.15rem;
+                float: left;
+            }
+            .pro-recall-save {
+                width: 20.7%;
+                font-size: 0.15rem;
+                border-radius: 0.02rem;
+                margin-left: 2.7%;
+                height: 0.5rem;
+                float: right;
+            }
         }
     }
 
-    .edit-shuo {
-        padding: 0 0.15rem 1.1rem;;
-        .edit-input {
-           width: 68.4%;
-           height: 0.5rem; 
-           border: 1px solid #E3E8EE;
-            border-radius: 0.02rem;
-            color: #B3B5B7;
-            letter-spacing: 0;
-            font-size: 0.14rem;
-            padding: 0 0.15rem;
-            float: left;
-        }
-        .pro-recall-save {
-            width: 20.7%;
-            font-size: 0.15rem;
-            border-radius: 0.02rem;
-            margin-left: 2.7%;
-            height: 0.5rem;
-            float: right;
-        }
+    // 编写维修记录页，不显示“补充说明”
+    .hide-comments > .comments {
+        display: none;
     }
 }

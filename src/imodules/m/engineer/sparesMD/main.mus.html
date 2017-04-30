@@ -25,7 +25,7 @@
     <a href="javascript" class="beijian-add">+添加</a>
 </div>
 
-<div class="comments xhide">
+<div class="comments">
     <p class="detail-bei">补充说明</p>
     {{#proj.comments}}
     <p class="detail-buchong">
@@ -33,9 +33,10 @@
         <span class="pro-bshuo">{{comment}}</span>
     </p>
     {{/proj.comments}}
-</div>
 
-<div class="edit-shuo clearfix">
-    <input class="edit-input" type="text" placeholder="发表补充说明">
-    <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
+    <div class="edit-shuo clearfix">
+        <input class="edit-input" type="text" placeholder="发表补充说明">
+        <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
+    </div>
+
 </div>

@@ -1,58 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @@include('www/common/InsertTop/main.html',{"title": ""})
+    @@include('www/common/InsertTop/main.html',{"title": "维修记录"})
 </head>
-<body>
-    <style>@@include('{{MCSS}}')</style>
-    <div class="d-detail" id="{{ID}}" {{IMODULE}}>
+<body id="{{ID}}" {{IMODULE}}>
+    {{IncludeMCSS}}
+    <div class="d-detail" >
         <p class="detail-bei">维修记录</p>
         <div class="wx">
             <textarea placeholder="完成维修后，请及时填写维修记录"></textarea>
         </div>
-        <p class="detail-bei">备品备件</p>
-        <div class="detail-beijian clearfix">
-            <span class="detail-bj-name">模组</span>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">2</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian clearfix">
-            <span class="detail-bj-name">线缆</span>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">4</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian clearfix">
-            <input class="beijian-type" type="text" placeholder="备料类型"/>
-            <div class="detail-bj-count">
-                <span class="count-shu">数量</span>
-                <span class="count-jian">-</span>
-                <span class="count-liang">4</span>
-                <span class="count-jia">+</span>
-            </div>
-        </div>
-        <div class="detail-beijian text-center clearfix">
-            <a  href="javascript" class="beijian-add">+添加</a>
-        </div>
-        <p class="detail-bei">补充说明</p>
-        <p class="detail-buchong">
-            <span class="pro-bname"><cite>张伟</cite>1天前</span>
-            <span class="pro-bshuo">利用提供的备品备件，更换模组灯珠，调整空调系数。</span>
-        </p>
-        <div class="edit-shuo clearfix">
-            <input class="edit-input" type="text" placeholder="发表补充说明">
-            <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
-        </div>
-        <div class="paiqi-btn">
-            保存
-        </div>
+        @@include('m/engineer/sparesMD/main.md.html', {"comment": "hide-comments"})
+        <div class="paiqi-btn">保存</div>
     </div>
     
 </div>
