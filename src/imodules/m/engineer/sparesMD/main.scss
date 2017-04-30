@@ -21,6 +21,8 @@
             line-height: 0.23rem;
             padding-left: 0.15rem;
             float: left;
+            outline: none;
+            border: none;
         }
         .detail-bj-count {
             float: right;
@@ -121,7 +123,7 @@
 
     // 编写维修记录页，不显示“补充说明”
     .hide-comments {
-        margin-bottom: 200px;
+        margin-bottom: 100px;
         .comments {
             display: none;
         }
