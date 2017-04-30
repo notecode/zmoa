@@ -29,7 +29,7 @@ define(function() {
                     tlog('login succ');
                     // 1: 系统管理员，2: 销售人员，3: 服务人员
                     project.tip('登录成功', 'succ', '正在为您跳转...', true);
-                    var url = document.referrer;
+                    var url = $(document).prop('referrer');
                     window.location.href = url;
                 },
                 fail: function(json) {
