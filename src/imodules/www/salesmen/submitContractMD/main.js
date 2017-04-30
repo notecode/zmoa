@@ -39,7 +39,7 @@ define(function() {
                         $(_this._els.LProjects).html(domStr);
                     },
                     fail: function(json) {
-                        alert('提交失败')
+                        project.tip('温馨提示','succ','系统错误', true);
                     }
                 });
             }

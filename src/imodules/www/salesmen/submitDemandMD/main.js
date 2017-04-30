@@ -71,6 +71,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         // 设置默认值
         CON.prototype.setCtx = function(obj, isAdmin) {
             this.info = obj;
+            this.isAdmin = isAdmin;
             $(this._els.LProject).val(obj.contract + ' ' + obj.name);
             if (isAdmin) {
                 var domStr = Mustache.render(this.tpl, obj); 
@@ -84,7 +85,6 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype._ievent_submitForm = function(data, target) {
             var _this = this;
             var data = $(target).serializeJSON();
-            console.log(data);
             data.projectId = this.info.id;
             data.name = this.info.name;
 
@@ -92,6 +92,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 succ: function(res) {
                     _this.reset();
                     _this.parent.close();
+                    _this.getDataRender();
                     project.tip('温馨提示','succ','需求提交成功', true);
                 },
                 fail: function(json) {
@@ -104,7 +105,23 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 }
             });
             return false;
-        }        
+        }
+        // 刷新列表数据
+        CON.prototype.getDataRender = function () {
+            if (this.isAdmin) {
+                debugger
+                project.getIModule('imodule://serviceProcess', null, function(mod) {
+                    mod.byStatus();
+                });
+            } else {
+                project.getIModule('imodule://demandList', null, function(mod) {
+                    mod.getProInfo();
+                    mod.getMyPro();
+                });                
+            }
+
+        }
+        // 重置数据
         CON.prototype.reset = function() {
             // 重置表单
             $('.js-reset-filed').val('');

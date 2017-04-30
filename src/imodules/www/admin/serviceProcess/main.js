@@ -54,7 +54,7 @@ define(function() {
         CON.prototype.doRender = function(ctx) {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
-            this.find('#task-pane').append(dom);
+            this.find('#task-pane').html(dom);
 
             this.find('.task-item').click(function() {
                 var id = $(this).attr('data-id');

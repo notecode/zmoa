@@ -48,7 +48,7 @@ define(function() {
         CON.prototype.proInfoRender = function(ctx) {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
-            this.find('#myProject').append(dom);
+            this.find('#myProject').html(dom);
         }
         // 添加需求
         CON.prototype._ievent_addDemand = function() {

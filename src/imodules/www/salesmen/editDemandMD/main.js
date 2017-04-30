@@ -112,7 +112,7 @@ define(function() {
             }
             var data = $(target).serializeJSON();
             var preparationArr = [];
-            if ($.isArray(data.preparation.name)) {
+            if (!!data.preparation && $.isArray(data.preparation.name)) {
                 data.preparation.name.map(function(item, index) {
                     preparationArr.push({ name: item, number: data.preparation.number[index] })
                 })
