@@ -1,22 +1,21 @@
 @import "src/sass/global/mixin";
-
 #submitDemandMD {
   width: 400px;
-  padding:40px;
+  padding: 40px;
   background-color: #fff;
-  .submit-title{
-    height:42px;
+  .submit-title {
+    height: 42px;
     line-height: 42px;
     font-size: 30px;
     color: #333333;
     letter-spacing: 0;
-    display:-webkit-flex;
-    display:flex;
-    justify-content:space-between;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-end;
-    .project-put-user{
-      height:20px;
-      line-height:20px;
+    .project-put-user {
+      height: 20px;
+      line-height: 20px;
       font-size: 12px;
       color: #8B9AAB;
       letter-spacing: 0;
@@ -24,8 +23,8 @@
       top: -6px;
     }
   }
-  .input-half{
-    width:150px;
+  .input-half {
+    width: 150px;
     height: 50px;
     background: #FFFFFF;
     border: 1px solid #E3E8EE;
@@ -37,7 +36,7 @@
   .project-item {
     margin-top: 40px;
   }
-  .project-name  {
+  .project-name {
     width: 320px;
     height: 50px;
     background: #FFFFFF;
@@ -47,7 +46,7 @@
     font-size: 14px;
     color: #8B9AAB;
   }
-  .input-textarea{
+  .input-textarea {
     outline: none;
     list-style: none;
     width: 100%;
@@ -59,7 +58,7 @@
     border: none;
     box-shadow: none;
     -webkit-appearance: none;
-    padding:15px;
+    padding: 15px;
     background: #FFFFFF;
     border: 1px solid #E3E8EE;
     border-radius: 2px;
@@ -68,19 +67,23 @@
     color: #8B9AAB;
   }
   .input-div::-webkit-input-placeholder {
-     color: #8B9AAB !important; /* WebKit browsers */
+    color: #8B9AAB !important;
+    /* WebKit browsers */
   }
   .input-div:-moz-placeholder {
-     color: #8B9AAB !important; /*Mozilla Firefox 4 to 18 */
+    color: #8B9AAB !important;
+    /*Mozilla Firefox 4 to 18 */
   }
   .input-div::-moz-placeholder {
-     color: #8B9AAB !important; /*Mozilla Firefox 19+ */
+    color: #8B9AAB !important;
+    /*Mozilla Firefox 19+ */
   }
   .input-div:-ms-input-placeholder {
-     color: #8B9AAB !important; /*Internet Explorer 10+ */
+    color: #8B9AAB !important;
+    /*Internet Explorer 10+ */
   }
-  .submit-picture{
-    .file-upload{
+  .submit-picture {
+    .file-upload {
       display: inline-block;
       vertical-align: top;
       width: 113px;
@@ -90,25 +93,24 @@
       border-radius: 2px;
       position: relative;
     }
-
-    .submit-picture-tips{
-      height:70px;
-      line-height:70px;
+    .submit-picture-tips {
+      height: 70px;
+      line-height: 70px;
       display: inline-block;
       font-family: PingFangSC-Light;
       font-size: 14px;
       color: #8B9AAB;
       letter-spacing: 0;
-      margin-left:20px;
+      margin-left: 20px;
       vertical-align: top;
     }
   }
-  .project-set-user{
-    display:-webkit-flex;
-    display:flex;
-    justify-content:space-between;
+  .project-set-user {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
     align-items: flex-end;
-    margin-top:31px;
+    margin-top: 31px;
   }
   .btn {
     width: 120px;
@@ -116,10 +118,9 @@
     background: $blue;
     border-radius: 2px;
     padding: 0;
-    margin: 49px 0 0 0;
-    font-weight:600;
-  }
-  ///////
+    margin: 20px 0 0 0;
+    font-weight: 600;
+  } ///////
   .file-error {
     font-size: 12px;
     color: #fe3824;
@@ -145,6 +146,38 @@
     color: #003894;
     font-size: 12px;
   }
+  .file-preview {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 114px;
+    height: 70px;
+    border: 1px solid #4785f9;
+    text-align: center;
+    background-color: #fff;
+    >img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+    >span {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      background-color: #fe3824;
+      line-height: 23px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }  
+  .text-error {
+    color: #fe3824;
+    margin-left: 20px;
+  }
   .file-add {
     position: absolute;
     left: -1px;
@@ -154,5 +187,15 @@
     text-align: center;
     line-height: 70px;
     cursor: pointer;
+    >input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      opacity: 0;
+      -ms-filter: 'alpha(opacity=0)';
+      direction: ltr;
+      cursor: pointer;
+    }
   }
 }

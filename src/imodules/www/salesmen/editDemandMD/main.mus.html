@@ -2,7 +2,7 @@
     <div class="title">基础信息</div>
     <input type="hidden" value="{{id}}" name="projectId" >
     <div class="line">
-        <input value="{{contract}}" name="contract" type="text" class="must input-half demand-id js-check-el" data-tip="合同编号不能为空" placeholder="合同编号">
+        <input value="{{contract}}" name="contract" type="text" class="must input-half demand-id js-check-el" data-tip="合同编号不能为空" placeholder="合同编号" readonly>
         <input value="{{name}}" name="name" type="text" class="must input-half demand-name js-check-el" data-tip="项目名称不能为空" placeholder="项目名称">
     </div>
     <div class="line">
@@ -53,10 +53,6 @@
             <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="input-half stock-num" placeholder="数量">
         </div>
         {{/preparations}}
-        <div class="line">
-            <input value="{{preparation_type}}" name="preparation[name]" type="text" class=" input-half stock-name" placeholder="备料类型">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class=" input-half stock-num" placeholder="数量">
-        </div>
     </div>
     <div class="add-stock js-add-stock"><span class="icon-Add-to"></span>添加备品</div>
 </div>
@@ -105,7 +101,7 @@
             </ul>
         </div>
     </div>
-    <input value="{{detail_address}}" name="detail_address" type="text" class="must demand-time js-check-el" data-tip="项目详细地址不能为空" placeholder="项目详细地址">
+    <input value="{{detail_address}}" name="detailAddress" type="text" class="must demand-time js-check-el" data-tip="项目详细地址不能为空" placeholder="项目详细地址">
 </div>
 <div class="information-person">
     <div class="title">联络人</div>

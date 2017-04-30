@@ -2,30 +2,36 @@
     {{IncludeMCSS}}
     <div class="submit-title">
         <span class="submit-title-name">提交新需求</span>
-        <span class="project-put-user">销售员  乐乔佳  0012</span>
+        <span class="project-put-user" idom="LSales"></span>
     </div>
-    <form method="post" ievent="submitForm" idom="form" autocomplete="off">
+    <form ievent="submitForm" idom="form" autocomplete="off">
         <div class="project-item">
-            <input type="text" class="project-name " placeholder="888000 重庆解放碑项目" name="project-name">
+            <input idom="LProject" type="text" class="project-name js-reset-filed" placeholder="项目名称" name="name" readonly>
         </div>
         <div class="project_problem">
-            <textarea class="input-textarea input-div" idom="note" placeholder="故障描述" maxlength=64></textarea>
+            <textarea name="description" class="input-textarea input-div js-reset-filed" idom="note" placeholder="故障描述" maxlength=64></textarea>
         </div>
         <div class="submit-picture">
+            <input type="hidden" name="mainImg" value="project_1493538689.png" idom="LFileName">  
             <div class="file-upload ">
-                <!--@@include('global/misc/ImageUploader/main.md.html')-->
-                <div class="file-add">
+                <label for="imageUpload" class="file-add">
+                    <input idom="LImageUpload" class="input-upload" type="file" accept="image/*" name="upload_file">
                     <span class="icon-add-files"></span>
-                </div>
-                <div class="file-error hide" idom="fileError"><i class="icon-mark"></i><span>错误错误</span></div>
-                <div class="fileuploading hide">图片上传中...</div>
+                </label>
+                <div class="fileuploading js-upload-reset hide"><span></span>图片上传中...</div>
+                <div class="file-preview js-upload-reset hide" idom="LFilePreview">
+                    <img src="https://www.lgstatic.com/i/image/M00/17/27/CgpFT1j-tdWARKg5AACJn7Kixf4620.PNG" alt="图片预览">
+                    <span>&times;</span>
+                </div>                
+                <div class="file-error js-upload-reset hide" idom="fileError"><i class="icon-mark"></i><span>图片上传错误, 请重试!</span></div>
             </div>
             <div class="submit-picture-tips">上传故障照片</div>
-        </div>
-        <div class="project-set-user">
-            <input type="text" class=" input-half project-set-user-name" placeholder="委派销售名称  ">
-            <input type="text" class=" input-half project-set-user-id" placeholder="委派销售工号  ">
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">提交</button>
+        </div>        
+        <div class="project-set-user" idom="LAddSales"></div>
+        <div class="deman-footer">
+            <button type="submit" class="btn btn-primary">提交</button>
+            <span idom="LErrorTip" class="text-error"></span>
+        </div>        
     </form>
+    {{IncludeMTPL}}
 </div>

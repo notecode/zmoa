@@ -70,11 +70,11 @@ define(function() {
         CON.prototype.basicInfo = function(json) {
             var onBack = function(mod) {
                 // 项目基本信息
-                mod.setCtx(json.project_info);
+                mod.setCtx(json.project_info, json.user_role === '1');
                 if(mod.parent){
                     mod.parent.close();
                 }
-                project.open(mod, '_blank', { size: ['content', '600px'] });
+                project.open(mod, '_blank', { size: ['content', '600px'], maskCloseable: false });
             };
             project.getIModule('imodule://editDemandMD', null, onBack);
         }
@@ -82,11 +82,11 @@ define(function() {
         CON.prototype.demandInfo = function(json) {
             var onBack = function(mod) {
                 // 项目基本信息
-                // mod.setCtx({});
+                mod.setCtx(json.project_info, json.user_role === '1');
                 if(mod.parent){
                     mod.parent.close();
                 }
-                project.open(mod, '_blank', 'content');
+                project.open(mod, '_blank', { size: 'content', maskCloseable: false});
             };
             project.getIModule('imodule://submitDemandMD', null, onBack);
         }        

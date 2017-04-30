@@ -62,8 +62,10 @@ define(function() {
             $input.val($obj.key);
         }
         // 设置默认值
-        CON.prototype.setCtx = function(obj, txt) {
+        CON.prototype.setCtx = function(obj, isAdmin) {
+            this.isAdmin = isAdmin;
             this.address = obj.all_region_data;
+            this.data = obj;
             var filter = {
                 province: function () {
                     return this.province_name || '所在省份';
@@ -119,7 +121,7 @@ define(function() {
             api_ajax_post('project/edit', data, {
                 succ: function(res) {
                     $tipEl.html('');
-                    _this.showDemand();
+                    _this.showDemand(data);
                 },
                 fail: function(json) {
                     if(!$.isEmptyObject(json)) {
@@ -133,12 +135,17 @@ define(function() {
             return false;
         }
         // 跳转到故障描述
-        CON.prototype.showDemand = function() {
+        CON.prototype.showDemand = function(data) {
+            var _this = this;
+            data.id = this.data.id;
+            data.job_number = this.data.job_number;
+            data.salesman_id = this.data.salesman_id;
+            data.salesman_name = this.data.salesman_name;
             // 关闭基本信息框
             this.parent.close();
             var onBack = function(mod) {
                 // 项目基本信息
-                // mod.setCtx({});
+                mod.setCtx(data, _this.isAdmin);
                 if(mod.parent){
                     mod.parent.close();
                 }
