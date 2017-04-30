@@ -4,10 +4,15 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
     var Module = (function() {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
+            var _this = this;
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
             // 调用图片上传
             this._init();
+            // 图片删除
+            $(this._els.LUploadContent).on('click', '.js-remove-img', function(e) {                
+                _this.removeImg(e.target);            
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
         // 初始化图片上传组件
@@ -24,9 +29,6 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 previewMaxWidth: 114,
                 previewMaxHeight: 70,
                 previewThumbnail: false,
-
-                // 本来此插件会根据浏览器来自行判断是否用iframe-transport。不幸，jimmy同学给捏造了一个window.FormData(见potato.js:122)，
-                // 让插件把IE划归到不需要iframe-transport的行列(见jquery.file-upload.js:55)，结果出问题，两天的折腾。故，这里主动设置一下
                 forceIframeTransport: isLowIE, 
                 xhrFields: {
                     withCredentials: true
@@ -46,7 +48,6 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                            $(mod._els.LFileName).val(json.data.filename)
                        }
                     }).error(function (jqXHR, textStatus, errorThrown) {
-                        console.log('错误');
                         $(_this).parent().removeHide().next().addHide();
                         $(mod._els.fileError).removeHide();
                     });
@@ -60,7 +61,13 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 console.log('一直调用');
             });
         }
-		        
+        // 删除图片
+        CON.prototype.removeImg = function(target) {
+            var $el = $(target);
+            $el.parent().addHide();
+            $(this._els.LFileName).val('');
+            $(this._els.LUploadContent).find('.file-add').removeHide();
+        }
         // 设置默认值
         CON.prototype.setCtx = function(obj, isAdmin) {
             this.info = obj;
@@ -79,6 +86,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             var data = $(target).serializeJSON();
             console.log(data);
             data.projectId = this.info.id;
+            data.name = this.info.name;
 
             api_ajax_post('project/edit_project_desc', data, {
                 succ: function(res) {
@@ -103,6 +111,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             $('.js-upload-reset').addHide();
             $(this._els.LSales).html('');
             $('.file-add').removeHide();
+            $(this._els.LErrorTip).html('');
         }
         return CON;
     })();

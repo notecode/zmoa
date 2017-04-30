@@ -55,7 +55,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             var mod = this;
             var url = make_api_origin() + "/index.php?r=demand/c23";
             $('.input-upload').fileupload({
-                url: url, 
+                url: 'http://zmoa.bxland.com/project/upload_image?time=' + $.now(), 
                 dataType: 'json',
                 autoUpload: false,
                 acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
