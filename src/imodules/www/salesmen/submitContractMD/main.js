@@ -108,10 +108,11 @@ define(function() {
                         if (data && data.project_id) {
                             _this.reset();
                             _this.parent.close();
-                            _this.openBasicInfo(data.project_id, false);
+                            _this.openBasicInfo(data.project_id, data.project_exist === '1');
                         }
                     },
                     fail: function(json) {
+                        console.log(json);
                         project.tip('温馨提示','succ','提交失败', true);
                     }
                 });

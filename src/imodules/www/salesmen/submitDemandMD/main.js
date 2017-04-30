@@ -109,7 +109,6 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         // 刷新列表数据
         CON.prototype.getDataRender = function () {
             if (this.isAdmin) {
-                debugger
                 project.getIModule('imodule://serviceProcess', null, function(mod) {
                     mod.byStatus();
                 });
