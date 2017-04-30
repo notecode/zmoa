@@ -33,16 +33,24 @@
 
     <div class="comments">
         <p class="detail-bei">补充说明</p>
+        <div class="comment-list">
         {{#proj.comments}}
-        <p class="detail-buchong">
-        <span class="pro-bname"><cite>{{user_name}}</cite>{{created}}</span>
-        <span class="pro-bshuo">{{comment}}</span>
-        </p>
+            <p class="detail-buchong">
+                <span class="pro-bname"><cite>{{user_name}}</cite>{{created}}</span>
+                <span class="pro-bshuo">{{comment}}</span>
+            </p>
         {{/proj.comments}}
+        </div>
+        <div class="comment-tpl hide">
+            <p class="detail-buchong">
+                <span class="pro-bname"><cite>我</cite>刚刚</span>
+                <span class="pro-bshuo words"></span>
+            </p>
+        </div>
 
         <div class="edit-shuo clearfix">
-            <input class="edit-input" type="text" placeholder="发表补充说明">
-            <button type="submit" class="btn btn-primary pro-recall-save">提交</button>
+            <input id="my-comment" class="edit-input" type="text" placeholder="发表补充说明">
+            <button type="submit" class="btn btn-primary pro-recall-save" ievent="submitComment">提交</button>
         </div>
     </div>
 

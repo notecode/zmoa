@@ -146,7 +146,8 @@
             float: right;
         }
     }
-    .paiqi-btn {
+
+    .bottom-btn {
         width: 100%;
         height: 0.5rem;
         background: #4785F9;
@@ -158,6 +159,6 @@
         position: fixed;
         left: 0;
         bottom: 0;
+        border: none;
     }
-
 }

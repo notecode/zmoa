@@ -15,7 +15,8 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype._ievent_ = function(data, target, hit) {
+		CON.prototype._ievent_action = function(data, target, hit) {
+            alert(0);
 		}
         
         return CON;
