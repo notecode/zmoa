@@ -378,6 +378,10 @@ define(["/global/iscripts/libs/time/moment.js",
             }
         }
 
+        CON.prototype._ievent_save = function() {
+            alert(0);
+        }
+
         CON.prototype.unitTest0 = function() {
             var seg = this.genPassLines('2017-04-02', '2017-04-05');
             assert(1 == seg.length);
