@@ -197,7 +197,7 @@ $clr-font-dark: #212022;
         border: none;
 
         &:disabled {
-            background-color: #abcaef;
+            opacity: 0.5;
         }
     }
 }

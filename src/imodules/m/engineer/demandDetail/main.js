@@ -4,6 +4,9 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
+            this.cur_status = -1;
+
+            var _this = this;
             var doRender = function(proj) {
                 project.getIModule('imodule://detailsMD', null, function(mod) {
                     mod.render(proj);
@@ -12,6 +15,8 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                 project.getIModule('imodule://sparesMD', null, function(mod) {
                     mod.render(proj);
                 });
+
+                _this.renderBottomBtn(proj);
             }
 
             if (1 == qs('test')) {
@@ -23,16 +28,18 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                     }
                 });
             }
-
         };
-
         potato.createClass(CON, baseIModules.BaseIModule);
         
+        CON.prototype.renderBottomBtn = function(proj) {
+
+        }
+
         CON.prototype._ievent_action = function(data, target, hit) {
             alert(0);
         }
             
-            return CON;
+        return CON;
     })();
 
     return Module;
