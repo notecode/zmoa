@@ -14,6 +14,12 @@ define(function() {
             api_ajax('project/detail/' + qs_proj(), {
                 succ: function(json) {
                     var proj = json.project_info;
+
+                    // 若是“待派人”状态，且是管理员登录，就跳到派人页
+                    if (1 == proj.status && 1 == json.user_role) {
+                        location.href = '/admin/assign.html?project=' + qs_proj();
+                    }
+
                     if (proj.main_img) {
                         proj.hasPic = '';
                         proj.noPic = 'hide';
@@ -75,10 +81,8 @@ define(function() {
                     $(_this._els.mydemandCount).text(json.count)
                 },
                 fail: function(json) {
-
                 }
             });
-            
         }
 
         CON.prototype._ievent_showStatus = function() {
