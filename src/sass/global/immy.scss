@@ -333,7 +333,7 @@
     i.succ{
       @include background('/images/ui/tipson.png',24px,24px,center,center);
     }
-    i.tipfail{
+    i.fail{
       @include background('/images/ui/tipfail.png',24px,24px,center,center);
     }
 

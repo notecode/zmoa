@@ -3,6 +3,7 @@ define(function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
+
             var _this = this;
             // 校验用户名和密码
             $('.js-check-field').keydown(debounce(function (e) {
@@ -28,9 +29,13 @@ define(function() {
                 succ: function(json) {
                     tlog('login succ');
                     // 1: 系统管理员，2: 销售人员，3: 服务人员
-                    project.tip('登录成功', 'succ', '正在为您跳转...', true);
-                    var url = $(document).prop('referrer');
-                    window.location.href = url;
+
+                    // 如果refer是站内页，就跳过去
+                    var refer = $(document).prop('referrer');
+                    if (refer.indexOf(document.domain) != -1) {
+                        project.tip('登录成功', 'succ', '正在为您跳转...', true);
+                        window.location.href = url;
+                    }
                 },
                 fail: function(json) {
                     if (!$.isEmptyObject(json)) {

@@ -213,3 +213,7 @@ gulp.task('dist', function() {
 	gulp.src('dist/www/**/*')
     .pipe(gulp.dest('../notecode/'));
 });
+gulp.task('distm', function() {
+	gulp.src('dist/m/**/*')
+    .pipe(gulp.dest('../martinly/'));
+});

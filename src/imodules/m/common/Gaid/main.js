@@ -14,6 +14,7 @@ define(function() {
                     tlog('hello, welcome login');
                 },
                 fail: function(json) {
+                    tlog(json.errmsg);
                     location.href = '/login.html?msg=should-login';
                 }
             });
