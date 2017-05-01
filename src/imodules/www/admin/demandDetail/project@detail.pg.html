@@ -10,7 +10,7 @@
     <div class="box" id="{{ID}}" {{IMODULE}}>
         <div class="content">
             <div class="my-demand">
-                我提交的需求 · <span idom="mydemandCount">0</span>
+                我提交的需求 · <span idom="mydemandCount"></span>
             </div>
             <div class="de-content">
                 <h2 class="title"><span  idom="deTitle"></span>
@@ -21,7 +21,7 @@
                     
                     {{IncludeMTPL}}
                 </div>
-                <div class="details-btn">
+                <div class="comment-block">
                     <textarea class="pro-recall-textarea" placeholder="发表补充说明" idom="reTextarea"></textarea>
                     <p class="text-error hide" idom="tError">输入内容不能为空</p>
                     <button type="submit" class="btn btn-primary pro-recall-save" ievent="recallSave">保存</button>

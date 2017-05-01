@@ -6,7 +6,6 @@ define(function() {
             this.byDetail();
             this.getMydemand();
             this.tpl = this._els.tpl[0].text;
-            this.proId;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
@@ -25,15 +24,17 @@ define(function() {
 
                     document.title = proj.name;
                     $(_this._els.deTitle).text(proj.status_name);
-                    _this.proId = proj.id;
                     _this.doRender(proj);
 
                     project.getIModule('imodule://controlProcessMD', null, function(mod) {
                         mod.render(proj);
                     });
+
+                    // 后显示“添加补充说明”那块
+                    _this.find('.comment-block').toggle();
                 },
                 fail: function(json) {
-
+                    alert(json.errmsg);
                 }
             });
         }
@@ -49,7 +50,7 @@ define(function() {
             var _this = this;
             var text = $(_this._els.reTextarea).val();
             var data = {
-                projectId : _this.proId,
+                projectId : qs_proj(),
                 comment: text
             };
             if (text == ''){
@@ -58,12 +59,9 @@ define(function() {
                 $(_this._els.tError).addHide();
                 api_ajax_post('project/add_comment_to_project', data, {
                     succ: function(json) {
-                        project.getIModule('imodule://SubmitSuccess', null, function (modal) {
-                            project.open(modal, '_blank', 'content');
-                        });
                     },
                     fail: function(json) {
-                        alert('提交失败')
+                        alert(json.errmsg);
                     }
                 }); 
             }

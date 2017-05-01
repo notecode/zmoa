@@ -215,7 +215,7 @@
             }
         }
     }
-    .details-btn {
+    .comment-block {
         padding: 0px 74px 56px 74px;
         position: relative;
         .text-error {
@@ -225,6 +225,8 @@
             top: 82px;
             left: 75px;
         }
+
+        display: none;
     }
     .pro-recall-textarea{
         margin-bottom: 25px;
