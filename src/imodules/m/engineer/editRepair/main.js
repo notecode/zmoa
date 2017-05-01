@@ -34,7 +34,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
 
                 api_ajax_post('project/add_comment_to_project', data, {
                     succ: function(json) {
-                        alert('保存成功');
+                        _this.transferToComplete();
                     },
                     fail: function(json) {
                         alert(json.errmsg);
@@ -44,6 +44,24 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                 alert('请输入维修记录后，再保存');
             }
 		}
+
+        CON.prototype.transferToComplete = function() {
+            var data = {
+                projectId: qs_proj(),
+                status: 4  // 已完成，待回访
+            };
+            api_ajax_post('project/transfer_status', data, {
+                succ: function(json) {
+                    project.tip('保存成功', 'succ', '');
+                    setTimeout(function() {
+                        location.href = '/project/detail.html?project=' + qs_proj();
+                    }, 3000);
+                },
+                fail: function(json) {
+                    alert(json.errmsg);
+                }
+            });
+        }
         
         return CON;
     })();
