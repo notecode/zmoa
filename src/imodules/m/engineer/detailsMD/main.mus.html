@@ -10,7 +10,9 @@
 <div class="detail-date">
     <span>{{fn.date_start}}-{{fn.date_end}}</span>
 </div>
-<p class="detail-rease">{{proj.apply_environment}}，{{proj.point}}，{{proj.screen_color}}，{{proj.description}}</p>
+<p class="detail-rease">
+    <span class="icon-malfunction"></span><span>{{proj.apply_environment}}，{{proj.point}}，{{proj.screen_color}}，{{proj.description}}</span>
+</p>
 <div class="detail-img">
     <div class="d-img-tip">
         屏幕故障图尚未上传
@@ -19,7 +21,7 @@
         <img src="{{proj.main_img}}" alt="项目图片">
     </div>
 </div>
-<p class="detail-address">{{proj.detail_address}}</p>
+<p class="icon-location detail-address">{{proj.detail_address}}</p>
 
 <div class="detail-other">
     <div class="detail-other-title clearfix">

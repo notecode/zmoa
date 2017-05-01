@@ -46,6 +46,9 @@
             color: #212022;
         }
     }
+    .icon-malfunction {
+        margin-right: 2px;
+    }
     .detail-rease {
         font-size: 0.14rem;
         color: #212022;
@@ -79,6 +82,13 @@
             background: #EBF0F8;
         }
     }
+
+    .icon-location:before {
+        color: #4785f9;
+        font-size: 11px;
+        margin-right: 2px;
+    }
+
     .detail-address {
         padding: 0 0.15rem;
         font-size: 0.12rem;
