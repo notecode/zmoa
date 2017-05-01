@@ -35,30 +35,40 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
             var showBtn = true;
             var btn = this.find('.bottom-btn');
             var status = parseInt(proj.status);
+            var sched = false;  // todo
             switch (status) {
                 case 1: // 已立项，待派人 
-                    btn.text('立即排期');
-                    this.btn_action = function() {
-                        // 跳到排期页
-                        location.href = '/engineer/schedule.html?project=' + qs_proj();
-                    }
+                    var msg = '已结束' 
+                    tlog(msg);
+                    btn.text(msg).prop('disabled', true);
                     break;
-                case 2: // 排期中
-                    btn.text('开始现场服务');
-                    this.btn_action = function() {
-                        // status: 2 -> 3, reload
-                        var data = {
-                            projectId: qs_proj(),
-                            status: 3
-                        };
-                        api_ajax_post('project/transfer_status', data, {
-                            succ: function(json) {
-                                location.reload();
-                            },
-                            fail: function(json) {
-                                alert(json.errmsg);
-                            }
-                        });
+                case 2: // 排期中(分两个阶段：管理员指派人完成、被指派的人排期完成)
+                    if (!sched) {
+                        btn.text('立即排期');
+                        this.btn_action = function() {
+                            // 跳到排期页
+                            location.href = '/engineer/schedule.html?project=' + qs_proj();
+                        }
+                    } else {
+                        btn.text('开始现场服务');
+                        this.btn_action = function() {
+                            // status: 2 -> 3, reload
+                            var data = {
+                                projectId: qs_proj(),
+                                status: 3
+                            };
+                            api_ajax_post('project/transfer_status', data, {
+                                succ: function(json) {
+                                    project.tip('已开始', 'succ', '');
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, 3000);
+                                },
+                                fail: function(json) {
+                                    alert(json.errmsg);
+                                }
+                            });
+                        }
                     }
                     break;
                 case 3: // 服务中
