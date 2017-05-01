@@ -33,8 +33,9 @@ define(function() {
                     // 如果refer是站内页，就跳过去
                     var refer = $(document).prop('referrer');
                     if (refer.indexOf(document.domain) != -1) {
-                        project.tip('登录成功', 'succ', '正在为您跳转...', true);
-                        window.location.href = url;
+                        // 先不用这个提示了
+                        //project.tip('登录成功', 'succ', '正在为您跳转...', true);
+                        window.location.href = refer;
                     }
                 },
                 fail: function(json) {
