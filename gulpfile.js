@@ -210,10 +210,9 @@ gulp.task('zhuanti', ['release'], function() {
 });
 
 gulp.task('dist', function() {
-	gulp.src('dist/www/**/*')
-    .pipe(gulp.dest('../notecode/'));
+	return gulp.src('dist/www/**/*').pipe(gulp.dest('../notecode/'));
 });
 gulp.task('distm', function() {
-	gulp.src('dist/m/**/*')
-    .pipe(gulp.dest('../martinly/'));
+	return gulp.src('dist/m/**/*').pipe(gulp.dest('../martinly/'));
 });
+gulp.task('dist2', ['dist', 'distm']);
