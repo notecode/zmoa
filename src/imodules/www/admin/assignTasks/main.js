@@ -14,11 +14,25 @@ define(["/global/iscripts/libs/time/moment.js",
             api_ajax('project/detail/' + qs_proj(), {
                 succ: function(json) {
                     var proj = json.project_info;
-                    _this.renderDetail(proj);
+                    var is_admin = (1 == json.user_role);
+                    var assigned = (proj.status >= 2);
+                    if (!is_admin || assigned) {
 
-                    project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                        mod.render(proj);
-                    });
+                        if (!is_admin) {
+                            project.tip('您不是管理员，没有派人权限', 'fail', '');
+                            setTimeout(function() {
+                                _this.gotoDetail();
+                            }, 2000);
+                        } else {
+                            _this.gotoDetail();
+                        }
+                    } else {
+                        _this.renderDetail(proj);
+
+                        project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                            mod.render(proj);
+                        });
+                    }
                 }
             });
 
@@ -153,14 +167,24 @@ define(["/global/iscripts/libs/time/moment.js",
             };
             assert(data.projectId);
 
-            api_ajax_post('project/assign_person', data, {
-                succ: function(json) {
-                    project.tip('指派成功', 'succ', '', true);
-                },
-                fail: function(json) {
-                    console.error('assign worker failed');
-                }
-            })
+            var name = this.find('.proj-name').text();
+            var user_name = this.serv.obj_workers[data.userId].name;
+            var msg = '您确定将项目 ' + name + ' 指派 ' + user_name + ' 于 ' + data.date + ' 去维修?';
+
+            var _this = this;
+            if (confirm(msg)) {
+                api_ajax_post('project/assign_person', data, {
+                    succ: function(json) {
+                        project.tip('指派成功', 'succ', '', true);
+                        setTimeout(function() {
+                            _this.gotoDetail();
+                        }, 2000);
+                    },
+                    fail: function(json) {
+                        console.error('assign worker failed');
+                    }
+                })
+            }
         }
 
         CON.prototype.bindEvents = function() {
@@ -196,6 +220,11 @@ define(["/global/iscripts/libs/time/moment.js",
 
             // todo: 点击其他区域，消失
         }
+
+        CON.prototype.gotoDetail = function() {
+            location.href = '/project/detail.html?project=' + qs_proj();
+        }
+
         return CON;
     })();
 
