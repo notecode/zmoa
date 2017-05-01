@@ -24,9 +24,22 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 }
             });
             this.find('.details').append(dom);
+
+            this.bindFoldEvents();
 		}
 		
-		CON.prototype._ievent_ = function(data, target, hit) {
+		CON.prototype.bindFoldEvents = function() {
+            var fold = this.find('.fold-table');
+            var unfold = this.find('.unfold-table');
+            var table = this.find('.info-table');
+
+            var tog = function() {
+                fold.toggle();
+                unfold.toggle();
+                table.toggle();
+            };
+            fold.click(tog);
+            unfold.click(tog);
 		}
         
         return CON;
