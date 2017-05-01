@@ -1,4 +1,4 @@
-define(function() {
+define(["/global/iscripts/tools/slick.js"], function() {
     var Module = (function() {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
@@ -55,6 +55,14 @@ define(function() {
             var _this = this;
             var dom = Mustache.render(this.tpl, ctx); 
             this.find('#task-pane').html(dom);
+
+            $('#task-pane').slick({
+                slidesToShow: 4,
+                speed: 300,
+                infinite: false,
+                prevArrow: $('.icon-left'),
+                nextArrow: $('.icon-right')
+            });
 
             this.find('.task-item').click(function() {
                 var id = $(this).attr('data-id');

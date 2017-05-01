@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     @@include('www/common/InsertTop/main.html',{"title": "服务流程"})
+    <link rel="stylesheet" href="/global/sass/libs/slick.css">
+    <style> .slick-slide { outline: none; } </style>
 </head>
 <body>
 @@include('www/common/Header/main.md.html',{"sh": "hide", "serv": "active"})
@@ -9,6 +11,8 @@
     <style>@@include('{{MCSS}}')</style>
     <div class="box" id="{{ID}}" {{IMODULE}}>
         <div class="content">
+            <span class="icon-left"></span>
+            <span class="icon-right"></span>
             <div class="taskbox-pane" id="task-pane">
                 <!--div class="task-box">
                     <div class="box-title">

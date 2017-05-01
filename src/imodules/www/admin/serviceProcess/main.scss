@@ -12,6 +12,11 @@
         overflow-x: auto;
         white-space: nowrap;
     }
+
+    .icon-left, .icon-right {
+        font-size: 18px;
+        cursor: pointer;
+    }
     
     .taskbox-pane{
         padding-bottom: 64px;
