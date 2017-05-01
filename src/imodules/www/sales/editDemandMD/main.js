@@ -63,9 +63,10 @@ define(function() {
         }
         // 设置默认值
         CON.prototype.setCtx = function(obj, isAdmin) {
-            this.isAdmin = isAdmin;
-            this.address = obj.all_region_data;
+            this.isAdmin = isAdmin;            
             this.data = obj;
+            // 初始化地址数据
+            this.addressItems();
             var filter = {
                 province: function () {
                     return this.province_name || '所在省份';
@@ -91,6 +92,7 @@ define(function() {
                     return name                    
                 }
             }
+             obj.all_region_data = this.address;
             var renderObj = $.extend(obj, filter);
             var domStr = Mustache.render(this.tpl, renderObj);
             $(this._els.LContent).html(domStr);
@@ -152,7 +154,34 @@ define(function() {
                 project.open(mod, '_blank', 'content');
             };
             project.getIModule('imodule://submitDemandMD', null, onBack);
-        } 
+        }
+        // 获取地址列表
+        CON.prototype.addressItems = function() {            
+            var _this = this;
+            var addressCache = window.localStorage.getItem('address');
+            var addressObj = '';
+            try {
+                addressObj = JSON.parse(addressCache);   
+                _this.address = addressObj;
+            } catch (error) {
+                addressObj = {};
+            }            
+            if ($.isEmptyObject(addressObj)) {
+                api_ajax('region/get_region', {
+                    succ: function(data) {
+                        if (data && !$.isEmptyObject(data)) {
+                            _this.address = data;
+                             var domStr = Mustache.render(_this.addressTpl, { items: data.province });
+                             $('.js-addres-city').html(domStr);
+                            window.localStorage.setItem('address', JSON.stringify(data))
+                        }
+                    },
+                    fail: function(json) {
+                        console.log('获取地址数据失败!');                    
+                    }
+                });  
+            }
+        }
         return CON;
     })();
     return Module;

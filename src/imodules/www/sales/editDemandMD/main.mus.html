@@ -68,9 +68,9 @@
                 <span class="js-address-name">{{province}}</span>
                 <span class="icon-circle-down"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" data-type="city">
+            <ul class="dropdown-menu js-addres-city" aria-labelledby="dropdownMenu1" data-type="city">
                 {{#all_region_data.province}}
-                    <li><a href="#" class="js-address-drop" data-id="{{id}}" data-name="{{name}}" data-type="province">{{name}}</a></li>
+                    <li><a href="#" class="js-address-drop" data-id="{{id}}" data-name="{{name}}">{{name}}</a></li>
                 {{/all_region_data.province}}
             </ul>
         </div>
