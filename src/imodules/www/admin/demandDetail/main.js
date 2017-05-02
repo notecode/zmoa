@@ -1,4 +1,4 @@
-define(function() {
+define(["/global/iscripts/libs/time/moment.js"], function(moment) {
     var Module = (function() {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
@@ -30,6 +30,7 @@ define(function() {
 
                     document.title = proj.name;
                     $(_this._els.deTitle).text(proj.status_name);
+                    _this.addScheduleFn(proj);
                     _this.doRender(proj);
 
                     project.getIModule('imodule://controlProcessMD', null, function(mod) {
@@ -49,6 +50,28 @@ define(function() {
             var _this = this;
             var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
+        }
+
+        CON.prototype.addScheduleFn = function(proj) {
+            var worker = proj.service_user || {};
+            proj.fn = {
+                sched: function() {
+                    var start = worker.start_date;
+                    return (start && start.length > 0) ? 'show' : 'hide';
+                },
+                worker: function() {
+                    var name = worker.name;
+                    return (name ? name : '');
+                },
+                sch_start: function() {
+                    var start = worker.start_date;
+                    return start ? moment(start).format('M月DD日') : '';
+                },
+                sch_end: function() {
+                    var end = worker.end_date;
+                    return end ? moment(end).format('M月DD日') : '';
+                }
+            }
         }
 
         //发表补充说明
