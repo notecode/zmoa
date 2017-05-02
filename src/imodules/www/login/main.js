@@ -27,7 +27,7 @@ define(function() {
                         tlog('login succ');
                         // 1: 系统管理员，2: 销售人员，3: 服务人员
                         if (1 == json.role) {
-                            location.href = '/admin/services.html';
+                            location.href = '/admin/index.html';
                         } else if (2 == json.role) {
                             location.href = '/sales/index.html';
                         } else {
