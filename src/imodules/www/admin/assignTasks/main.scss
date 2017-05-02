@@ -22,16 +22,30 @@
             color: $black;
             line-height: 33px;  
             margin: 0;
-            span{
-                color: $blue;
-                font-size: 16px;
+            .circle-dpar {
+                width: 15px;
+                height: 15px;
+                border-radius:15px;
+                background: #003894;
+                display: inline-block;
                 margin-left: 25px;
+                vertical-align: 2px;
+                cursor: pointer;
+
+                span{
+                    color: #fff;
+                    font-size: 12px;
+                    float: left;
+                    margin: 2px 0 0 1px;
+                    display: inline;
+                    transform: scale(0.8);
+                }
             }
         }
     }
     .detail-block{
         width: 426px;
-        padding: 30px 64px;
+        padding: 6px 64px 30px;
         float: left;
         vertical-align: top;
 
@@ -39,7 +53,7 @@
             position: absolute;
             top: 0;
             left: -30px;
-            color: $gray;
+            color: #8b9aab;
             font-size: 16px;
         }
         .pro-name{
@@ -202,6 +216,7 @@
             border-right: 1px solid $bordercolor;
             border-left: 1px solid $bordercolor;
             cursor: pointer;
+            outline: none;
             p{
                 font-size: 14px;
                 line-height: 22px;
@@ -269,9 +284,13 @@
                 height: 46px;
                 line-height: 28px;
                 font-size: 15px;
+                background: #003894;
+                border-radius: 2px;
+                font-size: 15px;
+                border: none;
             }
             .item-distance,.item-date{
-                color: $gray;
+                color: #999;
             }
             .item-icon-free,.item-icon-busy{
                 display: inline-block;

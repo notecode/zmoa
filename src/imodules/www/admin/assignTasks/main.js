@@ -30,7 +30,7 @@ define(["/global/iscripts/libs/time/moment.js",
                         _this.renderDetail(proj);
 
                         project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                            mod.render(proj);
+                            mod.render(proj, is_admin);
                         });
                     }
                 }
