@@ -46,7 +46,7 @@
           .steps span:first-of-type{
             display: block;
             font-size: 14px;
-            color: $gray;
+            color: #999;
             letter-spacing: 0;
             height:20px;
             line-height: 20px;
@@ -80,8 +80,8 @@
           border-radius: 2px;
           padding: 0;
           margin: 0 0 0 0;
-          font-weight:600;
           font-size: 15px;
+          border: none;
         }
       }
   .no-demand{
@@ -101,7 +101,7 @@
       border-radius: 2px;
       padding: 0;
       margin: 68px 0 0 0;
-      font-weight:600;
+      border: none;
     }
   }
   .de-list-box {
