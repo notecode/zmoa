@@ -20,7 +20,6 @@
         font-weight: 100;
         margin: 0;
         margin-bottom: 74px; 
-        color: #333;
     }
     .form{
         width:430px;
@@ -34,19 +33,15 @@
         right: 0;
         input{ 
             font-size: 14px;
-            color: #333;
+            color: #8B9AAb;
             width: 320px;
             height: 50px;
             margin-bottom: 25px;
             padding: 0 15px;
-            background: #f7faff;
+            background: #FFFFFF;
             border: 1px solid #E3E8EE;
             border-radius: 2px;
             outline: none;
-            box-shadow: 3px 3px 10px 0 #e3e8ee;
-        }
-        input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-            background: #f7faff;
         }
 
         button {
@@ -87,17 +82,14 @@
     .flag{
         height: 500px;
         padding-right: 256px; 
-        padding-top: 239px; 
+        padding-top: 195px; 
         float: left;
     }
     .logo{
         display: block;
-        margin-bottom: 22px;
+        margin-bottom: 66px;
     }
     .welcome{
         display: block;
     }
-}
-body {
-    background-color: #f7faff;
 }
