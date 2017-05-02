@@ -82,12 +82,17 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 projectId : qs_proj(),
                 comment: text
             };
+
             if (text == ''){
                 $(_this._els.tError).removeHide();
-            }else{
+            } else {
                 $(_this._els.tError).addHide();
                 api_ajax_post('project/add_comment_to_project', data, {
                     succ: function(json) {
+                        var cmt = _this.find('.comment-tpl > div').clone();
+                        cmt.find('.comment-words').text(text);
+                        _this.find('.comment-list').prepend(cmt);
+                        $(_this._els.reTextarea).val('');
                     },
                     fail: function(json) {
                         alert(json.errmsg);

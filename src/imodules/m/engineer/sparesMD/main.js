@@ -116,7 +116,7 @@ define(function() {
                     succ: function(json) {
                         var cmt = $(_this.tpl).find('.comment-tpl > p').clone();
                         cmt.find('.words').text(txt);
-                        _this.find('.comment-list').append(cmt);
+                        _this.find('.comment-list').prepend(cmt);
                         _this.find('#my-comment').val('');
                     },
                     fail: function(json) {

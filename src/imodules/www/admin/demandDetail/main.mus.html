@@ -95,8 +95,19 @@
 <div class="pro-recall">
     <span class="icon-checkmark"></span>
     <p class="pro-recall-name">补充说明</p>
+    <div class="comment-list">
     {{#comments}}
-    <span class="pro-bname"><cite>{{user_id}}</cite>{{created}}</span>
-    <span class="pro-bshuo">{{comment}}</span>
+        <div>
+            <span class="pro-bname"><cite>{{user_name}}</cite>{{created}}</span>
+            <span class="pro-bshuo">{{comment}}</span>
+        </div>
     {{/comments}}
+    </div>
+
+    <div class="comment-tpl hide">
+        <div>
+            <span class="pro-bname"><cite class="user">我</cite>刚刚</span>
+            <span class="pro-bshuo comment-words"></span>
+        </div>
+    </div>
 </div>
