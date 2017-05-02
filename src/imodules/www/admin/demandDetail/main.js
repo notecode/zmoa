@@ -12,6 +12,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             tlog('will render project: ' + projId);
             this.projId = projId;
             this.clearPrev();
+            $(this.dom).show();
 
             var proj = json.project_info;
             if (proj.main_img) {

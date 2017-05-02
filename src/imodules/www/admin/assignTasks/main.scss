@@ -1,6 +1,8 @@
 @import "src/sass/global/mixin";
 
 #assignTasks {
+    display: none;
+
     .content {
         width: 1320px;
         background-color: #fff;

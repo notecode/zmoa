@@ -16,6 +16,7 @@ define(["/global/iscripts/libs/time/moment.js",
 		CON.prototype.render = function(projId, json) {
             this.projId = projId;
             this.find('.body-block').empty();
+            $(this.dom).show();
 
             var _this = this;
             var doRenderDetail = function(data) {
