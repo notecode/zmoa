@@ -64,9 +64,13 @@
         outline: none;
         border-radius: 2px;
         font-family: PingFangSC-Thin,Microsoft YaHei,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
-        color: #8b9aab;
+        color: #333;
         font-size: 14px;
     }
+    .input-half[readonly="readonly"] {
+      color: #8b9aab;
+    }
+    
     .must{
         background: #F7FAFF!important;
     }
@@ -177,7 +181,7 @@
       width: 660px;
       height: 50px;
       padding: 0 15px;
-      color: #8B9AAB;
+      color: #333;
       border: 1px solid #E3E8EE;
       border-radius: 2px;
       outline: none;
@@ -193,3 +197,7 @@
       outline: none;
     }
 }
+
+::-webkit-input-placeholder{color:#8b9aab;}
+::-moz-placeholder{color:#8b9aab;}
+:-moz-placeholder{color:#8b9aab;}
