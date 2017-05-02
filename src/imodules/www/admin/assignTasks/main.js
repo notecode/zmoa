@@ -48,14 +48,15 @@ define(["/global/iscripts/libs/time/moment.js",
             }
         }
 
-		CON.prototype.renderDetail = function(mock) {
-            var dom = Mustache.render(this.tpl, mock); 
+		CON.prototype.renderDetail = function(info) {
+            info.main_img = proj_img_url(info.main_img)
+            var dom = Mustache.render(this.tpl, info); 
             this.find('.body-block').append(dom);
             this.parent.refreshSize();
 		}
 
-		CON.prototype.renderWorkerStats = function(mock) {
-            var header = this.prepareStatData(mock);
+		CON.prototype.renderWorkerStats = function(stats) {
+            var header = this.prepareStatData(stats);
             var serv_tpl = this.find('#serv-tpl').text();
             var dom = Mustache.render(serv_tpl, {header: header});
             this.find('.body-block').append(dom);

@@ -37,6 +37,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         }
 
         CON.prototype.doRender = function(proj) {
+            proj.main_img = proj_img_url(proj.main_img)
             var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
             this.find('.comment-block').show();

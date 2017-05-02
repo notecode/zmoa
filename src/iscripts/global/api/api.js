@@ -7,8 +7,16 @@ var api = {
 		var url = 'http://zmoa.bxland.com/';
 		tlog(url);
 		return url;
-	})(),
+	})()
 }; 
+
+function proj_img_url(raw) {
+    if (raw && raw.length > 0) {
+        return (api.url + 'files/project/' + raw);
+    } else {
+        return '';
+    }
+}
 
 function api_ajax(uri, cb, config) {
 	_api_ajax('get', uri, null, cb, {}, config);
