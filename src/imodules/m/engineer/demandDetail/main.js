@@ -35,14 +35,16 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
             var showBtn = true;
             var btn = this.find('.bottom-btn');
             var status = parseInt(proj.status);
-            var sched = false;  // todo
+            var srv_u = proj.service_user || {};
+            var sched = (srv_u.start_date && srv_u.end_date);
+
             switch (status) {
                 case 1: // 已立项，待派人 
                     var msg = '已结束' 
                     tlog(msg);
                     btn.text(msg).prop('disabled', true);
                     break;
-                case 2: // 排期中(分两个阶段：管理员指派人完成、被指派的人排期完成)
+                case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
                     if (!sched) {
                         btn.text('立即排期');
                         this.btn_action = function() {
@@ -71,14 +73,14 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                         }
                     }
                     break;
-                case 3: // 服务中
+                case 3: // 服务中(已点击“开始服务”)
                     btn.text('完成现场服务');
                     this.btn_action = function() {
                         // 跳到提交“维修记录”页
                         location.href = '/engineer/log-repair.html?project=' + qs_proj();
                     }
                     break;
-                case 4: // （服务）已完成，待回访
+                case 4: // (服务)已完成，待回访
                     var msg = '服务已完成，待回访' 
                     tlog(msg);
                     btn.text(msg).prop('disabled', true);
