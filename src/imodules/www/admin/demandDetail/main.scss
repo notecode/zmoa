@@ -1,9 +1,7 @@
 @import "src/sass/global/mixin";
 
 #demandDetail{
-    width: 100%;
-    background-color:rgba(0,0,0,0.25);
-    padding: 40px 0;
+    display: none;
 
     #controlProcessMD {
         margin-left: 114px;
@@ -11,22 +9,12 @@
     }
 
     .content {
-        width: 1320px;
-        margin: 0 auto;
-        border-radius: 4px;
-    }
-    .my-demand {
-        font-size: 24px;
-        color: #333;
-    }
-    .de-content {
         width: 740px;
-        margin: 0 auto;
         background-color: #fff;
         border-radius: 4px;
     }
     
-    p{
+    p {
         margin:0;
     }
     .title{

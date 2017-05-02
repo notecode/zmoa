@@ -3,54 +3,44 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.byDetail();
-            this.getMydemand();
             this.tpl = this._els.tpl[0].text;
+            this.projId = null;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        CON.prototype.byDetail = function() {
-            var _this =  this;
-            api_ajax('project/detail/' + qs_proj(), {
-                succ: function(json) {
-                    var proj = json.project_info;
+        CON.prototype.render = function(projId, json) {
+            tlog('will render project: ' + projId);
+            this.projId = projId;
+            this.clearPrev();
+            $(this.dom).show();
 
-                    // 若是“待派人”状态，且是管理员登录，就跳到派人页
-                    if (1 == proj.status && 1 == json.user_role) {
-                        location.href = '/admin/assign.html?project=' + qs_proj();
-                    }
+            var proj = json.project_info;
+            if (proj.main_img) {
+                proj.hasPic = '';
+                proj.noPic = 'hide';
+            } else {
+                proj.hasPic = 'hide';
+                proj.noPic = '';
+            }
 
-                    if (proj.main_img) {
-                        proj.hasPic = '';
-                        proj.noPic = 'hide';
-                    } else {
-                        proj.hasPic = 'hide';
-                        proj.noPic = '';
-                    }
+            document.title = proj.name;
+            $(this._els.deTitle).text(proj.status_name);
+            this.addScheduleFn(proj);
+            this.doRender(proj);
+            this.parent.refreshSize();
 
-                    document.title = proj.name;
-                    $(_this._els.deTitle).text(proj.status_name);
-                    _this.addScheduleFn(proj);
-                    _this.doRender(proj);
+        }
 
-                    project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                        var is_admin = (1 == json.user_role);
-                        mod.render(proj, is_admin);
-                    });
-
-                    // 后显示“添加补充说明”那块
-                    _this.find('.comment-block').toggle();
-                },
-                fail: function(json) {
-                    alert(json.errmsg);
-                }
-            });
+        CON.prototype.clearPrev = function() {
+            this.find('#detailCon').empty();
+            this.find('.comment-block').hide();
         }
 
         CON.prototype.doRender = function(proj) {
-            var _this = this;
+            proj.main_img = proj_img_url(proj.main_img)
             var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
+            this.find('.comment-block').show();
         }
 
         CON.prototype.addScheduleFn = function(proj) {
@@ -80,7 +70,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             var _this = this;
             var text = $(_this._els.reTextarea).val();
             var data = {
-                projectId : qs_proj(),
+                projectId : this.projId,
                 comment: text
             };
 
@@ -100,18 +90,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     }
                 }); 
             }
-        }
-
-        //获取我的需求数
-        CON.prototype.getMydemand = function() {
-            var _this =  this;
-            api_ajax('project/my_projects', {
-                succ: function(json) {
-                    $(_this._els.mydemandCount).text(json.count)
-                },
-                fail: function(json) {
-                }
-            });
         }
 
         CON.prototype._ievent_showStatus = function() {

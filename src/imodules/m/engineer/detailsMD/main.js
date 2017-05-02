@@ -9,6 +9,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 		
 		CON.prototype.render = function(proj) {
             var worker = proj.service_user || {};
+            proj.main_img = proj_img_url(proj.main_img);
             var dom = Mustache.render(this.tpl, {
                 proj: proj,
                 fn: {
