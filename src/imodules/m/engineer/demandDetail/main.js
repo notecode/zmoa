@@ -40,8 +40,8 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
 
             switch (status) {
                 case 1: // 已立项，待派人 
-                    var msg = '已结束' 
-                    tlog(msg);
+                    var msg = '已立项，待派人';
+                    tlog(msg + ' (手机端理论上不应在这个阶段打开此项目)');
                     btn.text(msg).prop('disabled', true);
                     break;
                 case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
