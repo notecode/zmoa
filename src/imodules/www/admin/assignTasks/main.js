@@ -170,9 +170,11 @@ define(["/global/iscripts/libs/time/moment.js",
             var name = this.find('.proj-name').text();
             var user_name = this.serv.obj_workers[data.userId].name;
             var msg = '您确定将项目 ' + name + ' 指派 ' + user_name + ' 于 ' + data.date + ' 去维修?';
+            tlog(msg);
 
             var _this = this;
-            if (confirm(msg)) {
+            //if (confirm(msg)) {
+            if (true) {
                 api_ajax_post('project/assign_person', data, {
                     succ: function(json) {
                         // 不要加这个提示，因为有副作用
