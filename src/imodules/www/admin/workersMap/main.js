@@ -20,7 +20,7 @@ define(["/global/iscripts/libs/time/moment.js",
             var doRender = function(raw) {
                 var newData = _this.prepare(raw);
                 _this.render(newData);
-                _this.renderWorkerList(mock);
+                _this.renderWorkerList(raw);
                 _this.addWorkerListMouseEvens();
             };
 
