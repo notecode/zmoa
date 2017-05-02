@@ -56,18 +56,15 @@ define(["/global/iscripts/tools/slick.js"], function() {
             var dom = Mustache.render(this.tpl, ctx); 
             this.find('#task-pane').html(dom);
 
-            // $('#task-pane').slick({
-            //     slidesToShow: 4,
-            //     speed: 300,
-            //     infinite: false,
-            //     prevArrow: $('.icon-left'),
-            //     nextArrow: $('.icon-right')
-            // });
-
             this.find('.task-item').click(function() {
                 var id = $(this).attr('data-id');
                 tlog('project id: ' + id);
-                window.open('/project/detail.html?project=' + id);
+
+                project.getIModule('imodule://demandDetail', null, function (modal) {
+                    modal.render(id);
+                    var h = $(window).height() - 50;
+                    project.open(modal, '_blank', {size: ['content', h+'px']});
+                });
             });
         }
         CON.prototype._ievent_addDemand = function() {
