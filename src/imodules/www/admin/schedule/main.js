@@ -60,12 +60,14 @@ define(["/global/iscripts/libs/time/moment.js",
                 tlog('bar ' + i + ': [' + the.displace + ', ' + the.during + ']');
 
                 if (the.m_end.isSameOrAfter(tomorrow, 'days')) {
-                    the.tmr_displace = min.twix(tomorrow).count("days") - 1;
-                    the.tmr_during = tomorrow.twix(the.m_end).count("days");
+                    var future_start = the.m_start.isAfter(tomorrow, 'days') ? the.m_start : tomorrow;
+                    the.tmr_displace = min.twix(future_start).count("days") - 1;
+                    the.tmr_during = future_start.twix(the.m_end).count("days");
                     tlog('  future bar ' + i + ': [' + the.tmr_displace + ', ' + the.tmr_during + ']');
                 }
             }
 
+            tlog('If you see NaN above, that means invalid date');
             return {range: range, projects: list};
         }
 
@@ -109,10 +111,11 @@ define(["/global/iscripts/libs/time/moment.js",
                 projects: ctx.projects,
                 util: {
                     bar_start: function() {
-                        return cell_width * this.displace; 
+                        return cell_width * this.displace + 1;
                     },
                     bar_length: function() {
-                        return cell_width * this.during; 
+                        var dur = this.during || 0;
+                        return cell_width * dur;
                     },
                     in_future: function() {
                         return this.tmr_displace ? '' : 'hide';
