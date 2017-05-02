@@ -6,8 +6,13 @@
         <input value="{{name}}" name="name" type="text" class="must input-half demand-name js-check-el" data-tip="项目名称不能为空" placeholder="项目名称">
     </div>
     <div class="line">
-        <input value="{{screen_area}}" name="screenArea" type="text" class="must input-half demand-size js-check-el" data-tip="屏幕面积不能为空" placeholder="屏幕面积">
-        <input value="{{point}}" name="point" type="text" class="must input-half demand-span js-check-el" data-tip="点间距不能为空" placeholder="点间距（如P10、P4）">
+        <div class="line-area">
+            <input value="{{screenArea}}" name="screenArea" type="text" class="must input-half demand-size js-check-el" data-tip="屏幕面积不能为空" placeholder="屏幕面积">
+            <span>㎡</span>
+        </div>
+        <div class="line-distance">
+            <input value="{{point}}" name="point" type="text" class="must input-half demand-span js-check-el" data-tip="点间距不能为空" placeholder="点间距（如P10、P4）">
+        </div>        
     </div>
     <div class="line">
         <div class="dropdown ">

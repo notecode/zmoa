@@ -55,6 +55,16 @@
         justify-content:space-between;
         align-items: flex-end;
         margin-bottom:20px;
+        .line-area,
+        .line-distance {
+            display: inline-block;
+            position: relative;        
+            >span {
+                position: absolute;
+                top: 12px;
+                right: 10px;                
+            }
+        }
     }
     .input-half {
         width: 320px;

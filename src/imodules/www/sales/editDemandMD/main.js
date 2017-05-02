@@ -74,6 +74,13 @@ define(function() {
                 city: function () {
                     return this.city_name || '城市';
                 },
+                screenArea: function() {
+                    var _screenArea = parseInt(this.screen_area, 10);
+                    if (!this._screenArea) {
+                        _screenArea = '';
+                    }                    
+                    return _screenArea;
+                },
                 area: function () {
                     return this.area_name || '区/县';
                 },                                
