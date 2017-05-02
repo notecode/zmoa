@@ -9,6 +9,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         potato.createClass(CON, baseIModules.BaseIModule);
 
         CON.prototype.render = function(projId) {
+            tlog('will render project: ' + projId);
             this.projId = projId;
             this.clearPrev();
 
