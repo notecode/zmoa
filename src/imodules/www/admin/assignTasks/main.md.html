@@ -1,0 +1,71 @@
+
+<div id="{{ID}}" {{IMODULE}}>
+    {{IncludeMCSS}}
+    <div class="content">
+        <div class="title-block">
+            <h2>安排服务人员<span class="circle-dpar"><span class="icon-circle-down" ievent="showStatus"></span></span></h2>
+            @@include('www/admin/controlProcessMD/main.md.html')
+        </div>
+        <div class="body-block">
+        </div>
+    </div>
+
+    {{IncludeMTPL}}
+    <script id="serv-tpl" type="text/tpl">
+         <div class="date-block">
+            <div class="date-list">
+                <div class="date-pre">
+                    <span class="icon-left"></span>
+                </div>
+                <div class="date-pane">
+                    <div class="date-pane-all slick">
+                        {{#header}}
+                        <div class="date-day" data-index="{{index}}" data-date="{{fullDate}}">
+                            <p>
+                                <span>{{date}}</span>
+                                <span class="date-week">周{{weekDay}}</span>
+                            </p>
+                            <p class="free-num"><span>{{free}}</span>人</p>
+                        </div>
+                        {{/header}}
+                    </div>
+                </div>    
+                <div class="date-next">
+                    <span class="icon-right"></span>
+                </div>    
+            </div>
+            <div class="table-label">
+                <span class="table-label-name">姓名</span>
+                <span class="table-label-city">当前位置</span>
+                <span class="table-label-status">状态</span>
+                <span class="table-label-operation">操作</span>
+            </div>
+        </div>
+    </script>
+    <script id="grid-tpl" type="text/tpl">
+        <div class="suppliers-list">
+            {{#workers}}
+            <div class="item" data-index="{{util.index}}">
+                <p class="item-name">{{name}}</p>
+                <p class="item-location">
+                    <span class="item-city">{{util.place}}</span>&nbsp;&nbsp;
+                    <span class="item-distance">{{distance}}km</span>
+                </p>
+                <p class="item-status">
+                    {{#busy}}
+                        <span class="item-icon-busy"></span>&nbsp;&nbsp;
+                        <span class="item-curr-status">服务中</span>&nbsp;&nbsp;
+                        (<span class="item-date">{{util.during}}</span>)
+                    {{/busy}}
+                    {{^busy}}
+                        <span class="item-icon-free"></span>&nbsp;&nbsp;
+                        <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
+                    {{/busy}}
+                </p>
+                <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
+            </div>
+            {{/workers}}
+        </div>
+    </script>
+
+</div>

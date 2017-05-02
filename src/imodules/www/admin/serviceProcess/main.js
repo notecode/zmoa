@@ -57,13 +57,12 @@ define(["/global/iscripts/tools/slick.js"], function() {
             this.find('#task-pane').html(dom);
 
             this.find('.task-item').click(function() {
-                var id = $(this).attr('data-id');
-                tlog('project id: ' + id);
+                var projId = $(this).attr('data-id');
+                tlog('project id: ' + projId);
 
-                project.getIModule('imodule://demandDetail', null, function (modal) {
-                    modal.render(id);
-                    var h = $(window).height() - 50;
-                    project.open(modal, '_blank', {size: ['content', h+'px']});
+                project.getIModule('imodule://detailRouterMD', null, function (mod) {
+                    project.open(mod, '_blank', {size: ['100px', '100px']});
+                    mod.route(projId);
                 });
             });
         }

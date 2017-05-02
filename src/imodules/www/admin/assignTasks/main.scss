@@ -1,14 +1,8 @@
 @import "src/sass/global/mixin";
 
 #assignTasks {
-    .box {
-        width: 100%;
-        background-color:rgba(0,0,0,0.25);
-        padding: 40px 0;
-    }
     .content {
         width: 1320px;
-        margin: 0 auto;
         background-color: #fff;
         border-radius: 4px;
     }

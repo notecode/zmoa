@@ -8,38 +8,29 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        CON.prototype.render = function(projId) {
+        CON.prototype.render = function(projId, json) {
             tlog('will render project: ' + projId);
             this.projId = projId;
             this.clearPrev();
 
-            var _this =  this;
-            api_ajax('project/detail/' + projId, {
-                succ: function(json) {
-                    var proj = json.project_info;
-                    if (proj.main_img) {
-                        proj.hasPic = '';
-                        proj.noPic = 'hide';
-                    } else {
-                        proj.hasPic = 'hide';
-                        proj.noPic = '';
-                    }
+            var proj = json.project_info;
+            if (proj.main_img) {
+                proj.hasPic = '';
+                proj.noPic = 'hide';
+            } else {
+                proj.hasPic = 'hide';
+                proj.noPic = '';
+            }
 
-                    document.title = proj.name;
-                    $(_this._els.deTitle).text(proj.status_name);
-                    _this.addScheduleFn(proj);
-                    _this.doRender(proj);
-                    _this.parent.refreshSize();
+            document.title = proj.name;
+            $(this._els.deTitle).text(proj.status_name);
+            this.addScheduleFn(proj);
+            this.doRender(proj);
+            this.parent.refreshSize();
 
-                    project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                        var is_admin = (1 == json.user_role);
-                        mod.render(proj, is_admin);
-                    });
-
-                },
-                fail: function(json) {
-                    alert(json.errmsg);
-                }
+            project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                var is_admin = (1 == json.user_role);
+                mod.render(proj, is_admin);
             });
         }
 

@@ -9,51 +9,53 @@ define(["/global/iscripts/libs/time/moment.js",
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
             this.serv = null;
-
-            var _this = this;
-            api_ajax('project/detail/' + qs_proj(), {
-                succ: function(json) {
-                    var proj = json.project_info;
-                    var is_admin = (1 == json.user_role);
-                    var assigned = (proj.status >= 2);
-                    if (!is_admin || assigned) {
-
-                        if (!is_admin) {
-                            project.tip('您不是管理员，没有派人权限', 'fail', '');
-                            setTimeout(function() {
-                                _this.gotoDetail();
-                            }, 2000);
-                        } else {
-                            _this.gotoDetail();
-                        }
-                    } else {
-                        _this.renderDetail(proj);
-
-                        project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                            mod.render(proj, is_admin);
-                        });
-                    }
-                }
-            });
-
-            var data = {
-                projectId: qs_proj(),
-                startDate: moment().format('YYYY-MM-DD'),
-                pageSize: 30
-            };
-            api_ajax_post('project/project_schedule', data, {
-                succ: function(json) {
-                    _this.renderWorkerStats(json);
-                    _this.bindEvents();
-                    _this.bindSlick();
-                }
-            });
+            this.projId = null;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
+		CON.prototype.render = function(projId, json) {
+            this.projId = projId;
+            this.find('.body-block').empty();
+
+            var _this = this;
+            var doRenderDetail = function(data) {
+                var proj = json.project_info;
+                _this.renderDetail(proj);
+
+                project.getIModule('imodule://controlProcessMD', null, function(mod) {
+                    var is_admin = (1 == json.user_role);
+                    mod.render(proj, is_admin);
+                });
+            };
+            var doRenderStat = function(data) {
+                _this.renderWorkerStats(data);
+                _this.bindEvents();
+                _this.bindSlick();
+            };
+
+            if (1 == qs('test')) {
+                doRenderDetail(mock_detail);
+                doRenderStat(mock_stat);
+            } else {
+                doRenderDetail(json);
+
+                var data = {
+                    projectId: projId,
+                    startDate: moment().format('YYYY-MM-DD'),
+                    pageSize: 30
+                };
+                api_ajax_post('project/project_schedule', data, {
+                    succ: function(json) {
+                        doRenderStat(json);
+                    }
+                });
+            }
+        }
+
 		CON.prototype.renderDetail = function(mock) {
             var dom = Mustache.render(this.tpl, mock); 
             this.find('.body-block').append(dom);
+            this.parent.refreshSize();
 		}
 
 		CON.prototype.renderWorkerStats = function(mock) {
@@ -63,6 +65,7 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('.body-block').append(dom);
 
             this.renderADay(0);
+            this.parent.refreshSize();
         }
 
         CON.prototype.prepareStatData = function(raw) {
@@ -161,7 +164,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
         CON.prototype.assignTask = function(userIdx) {
             var data = {
-                projectId: qs_proj(),
+                projectId: this.projId,
                 date: this.find('.cur-day').attr('data-date'),
                 userId: this.serv.arr_workers[userIdx].user_id
             };
@@ -176,9 +179,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 api_ajax_post('project/assign_person', data, {
                     succ: function(json) {
                         project.tip('指派成功', 'succ', '', true);
-                        setTimeout(function() {
-                            _this.gotoDetail();
-                        }, 2000);
+                        alert('TODO：加载detail');
                     },
                     fail: function(json) {
                         console.error('assign worker failed');
@@ -219,10 +220,6 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('#controlProcessMD').toggle();
 
             // todo: 点击其他区域，消失
-        }
-
-        CON.prototype.gotoDetail = function() {
-            location.href = '/project/detail.html?project=' + qs_proj();
         }
 
         return CON;
