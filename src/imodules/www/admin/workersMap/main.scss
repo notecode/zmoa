@@ -13,6 +13,9 @@ $coin-size: 8px;
             float: left;
             height: 100%;
             overflow-y: auto;
+            box-shadow: 4px 0 8px 0 rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 1;
         }
         .map-pic {
             margin-left: 290px;
@@ -165,6 +168,8 @@ $coin-size: 8px;
         height: 100%;
         background: #FFF;
         font-size: 14px;
+        background: #FFFFFF;
+        border: 1px solid #E3E8EE;
 
         .title {
             font-size: 15px;
@@ -215,6 +220,12 @@ $coin-size: 8px;
             }
             li:hover {
                 background-color: #F8F8F8;
+                .name  {
+                    color: #333;
+                }
+                .city {
+                    color: #333;
+                }
             }
         }
     }

@@ -5,7 +5,11 @@
 var api = {
 	url: (function() {
 		var url = 'http://zmoa.bxland.com/';
-		tlog(url);
+        var host = location.host;
+        if (host.indexOf('.88ba.com') != -1) {
+            url = location.protocol + '//' + 'oaapi.88ba.com/';
+        }
+		tlog('api: ' + url);
 		return url;
 	})(),
 }; 
