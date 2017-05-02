@@ -34,7 +34,8 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     _this.doRender(proj);
 
                     project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                        mod.render(proj);
+                        var is_admin = (1 == json.user_role);
+                        mod.render(proj, is_admin);
                     });
 
                     // 后显示“添加补充说明”那块
