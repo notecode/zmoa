@@ -5,9 +5,8 @@
   display: none; // default, hidden
   margin-left: 150px;
 
-  .control {
+  .control-list {
     width: 260px;
-    // height: 389px;
     background: #FFFFFF;
     border: 1px solid #E3E8EE;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.07);
@@ -22,14 +21,14 @@
       padding: 20px;
       margin: 0;
     }
-    .control-list {
+    .control {
       margin: 0 20px;
       border-bottom: 1px solid #CCCCCC;
       padding-bottom: 10px;
       margin-top: 11px;
       font-size: 16px;
       line-height: normal;
-
+      cursor: pointer;
       span {
         float: left;
         color: #999;
@@ -49,6 +48,12 @@
           display: inline;
         }
       }
+      &:hover {
+        span {
+          color: #333;
+        }
+      }
+
       &:last-child {
         border-bottom: none;
       }

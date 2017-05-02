@@ -9,24 +9,38 @@ define(function() {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-        CON.prototype.render = function(proj_detail) {
+        CON.prototype.render = function(proj_detail, is_admin) {
             tlog('good guy, You rendered me');
             this.find('[data-status=' + proj_detail.status + ']').addClass('active');
+
+            if (is_admin) {
+                var _this = this;
+                this.find('.control').click(function() {
+                    if (!$(this).hasClass('active')) {
+                        var to = $(this).attr('data-status');
+                        _this.transferToStatus(to);
+                    }
+                });
+            }
         }
 
-        /*
-		CON.prototype.init = function() {
-            var _this = this;
-            var uri = 'project/detail/' + qs_proj();
-            api_ajax(uri, {
+        CON.prototype.transferToStatus = function(status) {
+            var data = {
+                projectId: qs_proj(),
+                status: status
+            };
+            api_ajax_post('project/transfer_status', data, {
                 succ: function(json) {
-                    _this.find('[data-status=' + json.status + ']').addClass('active');
+                    project.tip('操作成功', 'succ', '');
+                    setTimeout(function() {
+                        location.href = '/project/detail.html?project=' + qs_proj();
+                    }, 1000);
                 },
                 fail: function(json) {
+                    alert(json.errmsg);
                 }
             });
-		}
-        */
+        }
 
         return CON;
     })();
