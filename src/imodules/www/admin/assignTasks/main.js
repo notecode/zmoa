@@ -49,7 +49,7 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
 		CON.prototype.renderDetail = function(info) {
-            info.main_img = proj_img_url(info.main_img)
+            info.main_img = proj_img_url(info.main_img);
             var dom = Mustache.render(this.tpl, info); 
             this.find('.body-block').append(dom);
             this.parent.refreshSize();
