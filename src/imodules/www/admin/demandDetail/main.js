@@ -28,10 +28,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.doRender(proj);
             this.parent.refreshSize();
 
-            project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                var is_admin = (1 == json.user_role);
-                mod.render(proj, is_admin);
-            });
         }
 
         CON.prototype.clearPrev = function() {

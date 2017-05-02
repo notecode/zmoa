@@ -15,6 +15,12 @@ define(function() {
                         var h = $(window).height() - 50;
                         project.open(mod, '_self', {size: ['content', h+'px']});
                         mod.render(projId, json);
+
+                        var dest = $(mod.dom).find('.control-process-dest');
+                        project.getIModule('imodule://controlProcessMD', null, function(mod2) {
+                            mod2.render(proj, dest);
+                        });
+
                     });
                 }
             });

@@ -21,11 +21,6 @@ define(["/global/iscripts/libs/time/moment.js",
             var doRenderDetail = function(data) {
                 var proj = json.project_info;
                 _this.renderDetail(proj);
-
-                project.getIModule('imodule://controlProcessMD', null, function(mod) {
-                    var is_admin = (1 == json.user_role);
-                    mod.render(proj, is_admin);
-                });
             };
             var doRenderStat = function(data) {
                 _this.renderWorkerStats(data);
@@ -178,8 +173,12 @@ define(["/global/iscripts/libs/time/moment.js",
             if (confirm(msg)) {
                 api_ajax_post('project/assign_person', data, {
                     succ: function(json) {
-                        project.tip('指派成功', 'succ', '', true);
-                        alert('TODO：加载detail');
+                        // 不要加这个提示，因为有副作用
+                        // project.tip('指派成功', 'succ', '', true);
+                        project.getIModule('imodule://detailRouterMD', null, function (mod) {
+                            project.open(mod, '_self', {size: ['100px', '100px']});
+                            mod.route(_this.projId);
+                        });
                     },
                     fail: function(json) {
                         console.error('assign worker failed');
