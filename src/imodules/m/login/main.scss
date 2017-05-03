@@ -33,12 +33,18 @@
         margin-top: 0.2rem;
         .getcode {
             font-size: 0.14rem;
-            color: #B3B5B7;
+            //color: #B3B5B7;
+            color: #4785F9;
             border: none;
             background: none;
             position: absolute;
             right: 0;
             top: 0.29rem;
+
+            &:disabled {
+                color: #B3B5B7;
+                //background-color: gray;
+            }
         }
    }
    .login-btn {
