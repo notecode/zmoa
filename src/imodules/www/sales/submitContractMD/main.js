@@ -74,7 +74,8 @@ define(function() {
                 if(mod.parent){
                     mod.parent.close();
                 }
-                project.open(mod, '_blank', { size: ['content', '600px'], maskCloseable: false });
+                var h = $(window).height() - 50;
+                project.open(mod, '_blank', {size: ['content', h+'px'], maskCloseable: false });
             };
             project.getIModule('imodule://editDemandMD', null, onBack);
         }
@@ -86,7 +87,7 @@ define(function() {
                 if(mod.parent){
                     mod.parent.close();
                 }
-                project.open(mod, '_blank', { size: 'content', maskCloseable: false});
+                project.open(mod, '_blank', {maskCloseable: false});
             };
             project.getIModule('imodule://submitDemandMD', null, onBack);
         }        
