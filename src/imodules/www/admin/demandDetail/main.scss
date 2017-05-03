@@ -25,7 +25,6 @@
         letter-spacing: 0;
         margin:0;
         margin-left:40px;
-        margin-top:40px;
         padding-top: 35px;
     }
     .circle-dpar{
@@ -203,6 +202,7 @@
             tr td:first-of-type{
                 color: $grayblue;
                 padding:0 0 0 15px;
+                width: 170px;
             }
         }
         .pro-record{
@@ -260,6 +260,7 @@
         padding: 0;
         margin: 0 0 40px 0;
         font-weight:600;
+        border: none;
     }
     .pro-recall-textarea::-webkit-input-placeholder {
         color: #8B9AAB !important; /* WebKit browsers */
