@@ -35,6 +35,10 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 
             document.title = proj.name;
             $(this._els.deTitle).text(proj.status_name);
+            if (5 == proj.status || 6 == proj.status) {
+                // 结束或中止的，就不让显示下拉的菜单了
+                $(this._els.btnDropdown).hide();
+            }
             this.addScheduleFn(proj);
             this.doRender(proj);
             this.parent.refreshSize();
@@ -44,6 +48,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         CON.prototype.clearPrev = function() {
             this.find('#detailCon').empty();
             this.find('.comment-block').hide();
+            $(this._els.btnDropdown).show();
         }
 
         CON.prototype.doRender = function(proj) {
