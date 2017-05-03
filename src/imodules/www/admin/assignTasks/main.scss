@@ -19,29 +19,25 @@
             line-height: 33px;  
             margin: 0;
             .circle-dpar {
-                width: 15px;
-                height: 15px;
-                border-radius:15px;
-                background: #003894;
-                display: inline-block;
                 margin-left: 25px;
                 vertical-align: 2px;
                 cursor: pointer;
 
                 span{
-                    color: #fff;
-                    font-size: 12px;
-                    float: left;
-                    margin: 2px 0 0 1px;
-                    display: inline;
-                    transform: scale(0.8);
+                    color: #003894;
+                    font-size: 15px;
+                }
+            }
+            .unfoldown {
+                span {
+                    transform:rotate(-180deg);
                 }
             }
         }
     }
     .detail-block{
         width: 426px;
-        padding: 6px 64px 30px;
+        padding: 6px 34px 30px 64px;
         float: left;
         vertical-align: top;
 
@@ -115,6 +111,7 @@
             tr td:first-of-type{
                 color: #8b9aab;
                 padding: 13px 15px;
+                width: 120px;
             }
         }
         p {

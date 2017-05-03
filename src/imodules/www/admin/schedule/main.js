@@ -92,7 +92,7 @@ define(["/global/iscripts/libs/time/moment.js",
                             return (1 == this.date()) ? 'date1' : '';
                         },
                         month: function() {
-                            return this.month();
+                            return this.month() + 1;
                         },
                         date: function() {
                             return this.date();

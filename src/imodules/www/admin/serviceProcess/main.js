@@ -8,6 +8,17 @@ define(["/global/iscripts/tools/slick.js"], function() {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
+        // 将页面上的元素挪地方
+        CON.prototype.moveProject = function(projId, statusId) {
+            var proj = this.find('[data-id=' + projId + ']');
+            var name = proj.find('.task-item-name').text();
+            var stat = this.find('[data-status=' + statusId + ']');
+            var stat_name = stat.find('.status-name').text();
+
+            tlog('On UI, move project: [' + projId + ']' + name + ' to status: [' + statusId + ']' + stat_name);
+            stat.find('.task-list').prepend(proj);
+        }
+
         CON.prototype.byStatus = function() {
             var _this =  this;
             api_ajax('project/projects_by_status', {

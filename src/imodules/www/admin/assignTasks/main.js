@@ -179,6 +179,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     succ: function(json) {
                         // 不要加这个提示，因为有副作用
                         // project.tip('指派成功', 'succ', '', true);
+                        project.getIModule('imodule://serviceProcess').moveProject(_this.projId, 2);
                         project.getIModule('imodule://detailRouterMD', null, function (mod) {
                             project.open(mod, '_self', {size: ['100px', '100px']});
                             mod.route(_this.projId);
@@ -219,8 +220,13 @@ define(["/global/iscripts/libs/time/moment.js",
             $('.slick-prev').html('<span class="icon-left"></span>');
         }
 
-        CON.prototype._ievent_showStatus = function() {
+        CON.prototype._ievent_showStatus = function(obj) {
             this.find('#controlProcessMD').toggle();
+            if(this.find('#controlProcessMD').is(':hidden')){
+                $('#iunfold').removeClass('unfoldown');
+            }else {
+                $('#iunfold').addClass('unfoldown');    
+            }
 
             // todo: 点击其他区域，消失
         }

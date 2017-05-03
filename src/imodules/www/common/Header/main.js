@@ -4,20 +4,22 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
+            this.role_allow = parseInt(this.find('#role-allow').text());
             this.reqUserInfo();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.reqUserInfo = function() {
             var _this = this;
+            var allow = this.role_allow;
             api_ajax('user/user_info', {
                 succ: function(json) {
                     _this.find('#user-name').text(json.name);
 
-                    if (3 == json.role) {
+                    if (json.role != allow) {
                         api_ajax('user/logout', {
                             always: function() {
-                                _this.goLogin('you-are-role3');
+                                _this.goLogin('only-role' + allow + '-allowed-but-you-are-role' + json.role);
                             },
                             succ: function(json) {
                             }

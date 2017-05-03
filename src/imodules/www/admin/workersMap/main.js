@@ -129,11 +129,13 @@ define(["/global/iscripts/libs/time/moment.js",
                     var marker = null;
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
-                        this.renderPin(pin, worker.name, proj, cnt <= 1);
+                        var is_free = (cnt <= 1);
+                        this.renderPin(pin, worker.name, proj, is_free);
                         this.renderPane(pin, proj);
                         marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: pin.get(0),
+                            zIndex: is_free ? 100 : 110,
                             offset: new AMap.Pixel(-7, -37)  // 钉子宽14，高37
                         });
                         marker.setMap(this.map);
