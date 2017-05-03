@@ -46,6 +46,8 @@ define(function() {
                 succ: function(json) {
                     // 不要加这个提示，因为有副作用
                     // project.tip('操作成功', 'succ', '', true);
+
+                    project.getIModule('imodule://serviceProcess').moveProject(_this.projId, status);
                     project.getIModule('imodule://detailRouterMD', null, function (mod) {
                         project.open(mod, '_self', {size: ['100px', '100px']});
                         mod.route(_this.projId);
