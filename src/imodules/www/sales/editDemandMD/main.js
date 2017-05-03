@@ -63,46 +63,67 @@ define(function() {
         }
         // 设置默认值
         CON.prototype.setCtx = function(obj, isAdmin) {
+            var _this = this;
             this.isAdmin = isAdmin;            
             this.data = obj;
             // 初始化地址数据
-            this.addressItems();
-            var filter = {
-                province: function () {
-                    return this.province_name || '所在省份';
-                },
-                city: function () {
-                    return this.city_name || '城市';
-                },
-                screenArea: function() {
-                    var _screenArea = parseInt(this.screen_area, 10);
-                    if (!this._screenArea) {
-                        _screenArea = '';
-                    }                    
-                    return _screenArea;
-                },
-                area: function () {
-                    return this.area_name || '区/县';
-                },                                
-                color: function () {
-                    var name = '屏幕颜色';
-                    if (!!this.screen_color) {
-                        name = this.all_screen_color[parseInt(this.screen_color)] || '屏幕颜色'
+            this.addressItems().then(function() {
+                var filter = {
+                        province: function () {
+                            var _id = this.province_id;
+                            var _name = '所在省份';
+                            if (_id) {
+                                _name = _this.address.province.find(function(item) { return item.id === _id }).name;
+                            }
+                            return _name;
+                        },
+                        city: function () {
+                            var _id = this.city_id;
+                            var _name = '城市';
+                            if (_id) {
+                                _name = _this.address.city.find(function(item) { return item.id === _id }).name;
+                            }
+                            return _name;                            
+                        },
+                        screenArea: function() {
+                            var _screenArea = '';
+                            if ($.isNumeric(this.screen_area)) {
+                                _screenArea = parseInt(this.screen_area, 10);
+                            }
+                            return _screenArea || '';
+                        },
+                        area: function () {
+                            var _id = this.area_id;
+                            var _name = '区/县';
+                            if (_id) {
+                                _name = _this.address.area.find(function(item) { return item.id === _id }).name;
+                            }
+                            return _name;                              
+                        },                                
+                        color: function () {
+                            var name = '屏幕颜色';
+                            if (!!this.screen_color) {
+                                name = this.all_screen_color[parseInt(this.screen_color)] || '屏幕颜色'
+                            }
+                            return name
+                        },
+                        isPreparations: function() {
+                            return !(this.preparations && this.preparations.length);
+                        },
+                        environment: function () {
+                            var name = '应用环境';
+                            if (!!this.apply_environment) {
+                                name = this.all_apply_environment[parseInt(this.apply_environment)] || '应用环境'
+                            }
+                            return name                    
+                        }
                     }
-                    return name
-                },
-                environment: function () {
-                    var name = '应用环境';
-                    if (!!this.apply_environment) {
-                        name = this.all_apply_environment[parseInt(this.apply_environment)] || '应用环境'
-                    }
-                    return name                    
-                }
-            }
-             obj.all_region_data = this.address;
-            var renderObj = $.extend(obj, filter);
-            var domStr = Mustache.render(this.tpl, renderObj);
-            $(this._els.LContent).html(domStr);
+                    obj.all_region_data = _this.address;
+                    var renderObj = $.extend(obj, filter);
+                    var domStr = Mustache.render(_this.tpl, renderObj);
+                    $(_this._els.LContent).html(domStr);
+            });
+ 
         }
         // 提交项目基本信息
         // 添加需求
@@ -121,10 +142,16 @@ define(function() {
             }
             var data = $(target).serializeJSON();
             var preparationArr = [];
-            if (!!data.preparation && $.isArray(data.preparation.name)) {
-                data.preparation.name.map(function(item, index) {
-                    preparationArr.push({ name: item, number: data.preparation.number[index] })
-                })
+            if (!!data.preparation) {
+                if ($.isArray(data.preparation.name)) {
+                    data.preparation.name.map(function(item, index) {
+                        if (item && data.preparation.number[index]) {
+                            preparationArr.push({ name: item, number: data.preparation.number[index] })
+                        }
+                    })
+                } else if(!$.isEmptyObject(data.preparation) && data.preparation.name && data.preparation.number) {
+                    preparationArr.push({ name: data.preparation.name, number: data.preparation.number })
+                }
             }
             data.preparation = preparationArr;
             api_ajax_post('project/edit', data, {
@@ -163,20 +190,24 @@ define(function() {
             project.getIModule('imodule://submitDemandMD', null, onBack);
         }
         // 获取地址列表
-        CON.prototype.addressItems = function() {            
+        CON.prototype.addressItems = function() {      
+            var dtd = $.Deferred();
             var _this = this;
             var addressCache = window.localStorage.getItem('address');
             var addressObj = '';
             try {
                 addressObj = JSON.parse(addressCache);   
                 _this.address = addressObj;
+                dtd.resolve();
             } catch (error) {
                 addressObj = {};
+                dtd.reject()
             }            
             if ($.isEmptyObject(addressObj)) {
                 api_ajax('region/get_region', {
                     succ: function(data) {
                         if (data && !$.isEmptyObject(data)) {
+                            dtd.resolve();
                             _this.address = data;
                              var domStr = Mustache.render(_this.addressTpl, { items: data.province });
                              $('.js-addres-city').html(domStr);
@@ -184,10 +215,12 @@ define(function() {
                         }
                     },
                     fail: function(json) {
+                        dtd.reject();
                         console.log('获取地址数据失败!');                    
                     }
                 });  
             }
+            return dtd.promise();
         }
         return CON;
     })();

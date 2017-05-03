@@ -55,9 +55,15 @@
         {{#preparations}}
         <div class="line">
             <input value="{{preparation_type}}" name="preparation[name]" type="text" class="input-half stock-name" placeholder="备料类型">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="input-half stock-num" placeholder="数量">
+            <input value="{{preparation_type_number}}" name="preparation[number]" type="number" class="input-half stock-num" placeholder="数量">
         </div>
         {{/preparations}}
+        {{#isPreparations}}
+        <div class="line">
+            <input name="preparation[name]" type="text" class="input-half stock-name" placeholder="备料类型">
+            <input name="preparation[number]" type="number" class="input-half stock-num" placeholder="数量">
+        </div>        
+        {{/isPreparations}}
     </div>
     <div class="add-stock js-add-stock"><span class="icon-Add-to"></span>添加备品</div>
 </div>

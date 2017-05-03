@@ -6,7 +6,7 @@ define(function() {
             // 初始化内容可以在这里做
             this.tpl = this._els.tpl[0].text;
             var _this = this;
-            $(this._els.LSearch).on('keypress', debounce(function (e) {
+            $(this._els.LSearch).on('keyup', debounce(function (e) {
                 var $target = $(e.target)
                 _this.search($target)
             }, 300));
