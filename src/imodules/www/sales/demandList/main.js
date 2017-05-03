@@ -53,7 +53,7 @@ define(function() {
         // 添加需求
         CON.prototype._ievent_addDemand = function() {
             project.getIModule('imodule://submitContractMD', null, function (modal) {
-                project.open(modal, '_blank', { size: 'content', maskCloseable: false});
+                project.open(modal, '_blank', {maskCloseable: false});
             });
         }
 

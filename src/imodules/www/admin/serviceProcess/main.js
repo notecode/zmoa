@@ -79,7 +79,7 @@ define(["/global/iscripts/tools/slick.js"], function() {
         }
         CON.prototype._ievent_addDemand = function() {
             project.getIModule('imodule://submitContractMD', null, function (modal) {
-                project.open(modal, '_blank', 'content');
+                project.open(modal, '_blank');
             });
         }
 

@@ -185,7 +185,7 @@ define(function() {
                 if(mod.parent){
                     mod.parent.close();
                 }
-                project.open(mod, '_blank', 'content');
+                project.open(mod, '_blank');
             };
             project.getIModule('imodule://submitDemandMD', null, onBack);
         }
