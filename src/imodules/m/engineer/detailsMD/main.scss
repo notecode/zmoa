@@ -80,6 +80,12 @@
             width: 100%;
             height: 100%;
             background: #EBF0F8;
+
+            // to gaoyue: 这个是我临时加的，因为图片太大，太难看。
+            // 还有，几个图标的相关尺寸我用了px，你需要改成rem的你再改。
+            img {
+                width: 300px;
+            }
         }
     }
 
