@@ -11,6 +11,16 @@ define(["/global/iscripts/libs/time/moment.js",
             this.serv = null;
             this.projId = null;
         };
+        var APPLY_ENVIRONMENT = {
+            1: '户外',
+            2: '室内',
+            3: '半户外',
+        };        
+        var SCREEN_COLOR = {
+            1: '双色',
+            2: '单色',
+            3: '全彩',
+        };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.render = function(projId, json) {
@@ -50,6 +60,14 @@ define(["/global/iscripts/libs/time/moment.js",
 
 		CON.prototype.renderDetail = function(info) {
             info.main_img = proj_img_url(info.main_img);
+            info.fn = {
+                applyEnvironment: function() {
+                    return APPLY_ENVIRONMENT[this.apply_environment];
+                },
+                screenColor: function() {
+                    return SCREEN_COLOR[this.screen_color];
+                }
+            };
             var dom = Mustache.render(this.tpl, info); 
             this.find('.body-block').append(dom);
             this.parent.refreshSize();

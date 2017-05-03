@@ -6,6 +6,16 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.tpl = this._els.tpl[0].text;
             this.projId = null;
         };
+        var APPLY_ENVIRONMENT = {
+            1: '户外',
+            2: '室内',
+            3: '半户外',
+        };
+        var SCREEN_COLOR = {
+            1: '双色',
+            2: '单色',
+            3: '全彩',
+        };        
         potato.createClass(CON, baseIModules.BaseIModule);
 
         CON.prototype.render = function(projId, json) {
@@ -37,7 +47,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         }
 
         CON.prototype.doRender = function(proj) {
-            proj.main_img = proj_img_url(proj.main_img)
+            proj.main_img = proj_img_url(proj.main_img)            
             var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
             this.find('.comment-block').show();
@@ -46,6 +56,12 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         CON.prototype.addScheduleFn = function(proj) {
             var worker = proj.service_user || {};
             proj.fn = {
+                applyEnvironment: function() {
+                    return APPLY_ENVIRONMENT[this.apply_environment];
+                },
+                screenColor: function() {
+                    return SCREEN_COLOR[this.screen_color];
+                },                
                 sched: function() {
                     var start = worker.start_date;
                     return (start && start.length > 0) ? 'show' : 'hide';
