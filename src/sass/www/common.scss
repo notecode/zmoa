@@ -98,6 +98,9 @@
   *background-image: url(/global/images/btn-loading@1x.gif);
   -webkit-animation:loader 1s linear infinite;animation:loader 1s linear infinite;
 }
+.btn-primary:hover {
+  background: #00296b!important;
+}
 
 @-webkit-keyframes loader {
   from{
