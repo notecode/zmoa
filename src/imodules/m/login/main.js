@@ -10,6 +10,11 @@ define(function() {
                 console.log('action');
                 _this.fieldCheck();
             }, 300))
+
+            // 防止Enter键触发
+            $('form').submit(function() {
+                  return false;
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		// 校验方法
@@ -28,15 +33,20 @@ define(function() {
             api_ajax_post('user/login', user, {
                 succ: function(json) {
                     tlog('login succ');
-                    // 1: 系统管理员，2: 销售人员，3: 服务人员
 
                     // 如果refer是站内页，就跳过去
                     var refer = $(document).prop('referrer');
-                    if (refer.indexOf(document.domain) != -1) {
-                        // 先不用这个提示了
-                        //project.tip('登录成功', 'succ', '正在为您跳转...', true);
-                        window.location.href = refer;
+                    var origin = document.origin;
+                    if (0 == refer.indexOf(origin)) {
+                        var path = refer.substring(origin.length);
+                        if (path == '/' || path.indexOf('/index.html') == 0) {
+                            refer = ''; // 首页（引导）
+                        }
+                    } else {
+                        refer = '';  // 站外页
                     }
+                   
+                    location.href = (refer.length > 0) ? refer : '/login-succ.html';
                 },
                 fail: function(json) {
                     if (!$.isEmptyObject(json)) {
