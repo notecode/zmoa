@@ -34,16 +34,16 @@ define(["/global/iscripts/tools/slick.js"], function() {
                    
                     for(var j=0; j<result.length; j++){
                          //判断图标的颜色
-                        if(result[j].status_name == '已结束'){
-                            result[j].iconStatus = 'task-over';
-                        }else if(result[j].status_name == '中止'){
-                            result[j].iconStatus = 'task-duan';
+                        if(result[j].id == 5) {  
+                            result[j].iconStatus = 'task-over'; // 已结束
+                        }else if(result[j].id == 6){ 
+                            result[j].iconStatus = 'task-duan'; // 中止
                         }else{
                             result[j].iconStatus = '';
                         }
 
                         //判断是否显示增加新需求的按钮
-                        if(result[j].status_name == '已立项，待派人'){
+                        if(result[j].id == 1) { // '已立项，待派人'
                             result[j].add = '';
                         }else {
                            result[j].add = 'hide'; 
