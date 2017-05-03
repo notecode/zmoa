@@ -3,7 +3,7 @@
     {{IncludeMCSS}}
     <div class="content">
         <div class="title-block">
-            <h2>安排服务人员<span class="circle-dpar"><span class="icon-circle-down" ievent="showStatus"></span></span></h2>
+            <h2>安排服务人员<span class="circle-dpar"  id="iunfold"><span class="icon-Unfolded" ievent="showStatus"></span></span></h2>
             <div class="control-process-dest"></div>
         </div>
         <div class="body-block">
@@ -59,7 +59,7 @@
                     {{/busy}}
                     {{^busy}}
                         <span class="item-icon-free"></span>&nbsp;&nbsp;
-                        <span class="item-curr-status">空闲</span>&nbsp;&nbsp;
+                        <span class="item-curr-status">可派</span>&nbsp;&nbsp;
                     {{/busy}}
                 </p>
                 <button class="btn btn-primary item-operation" evt="chooseSupplier">派他</button>
