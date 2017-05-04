@@ -27,26 +27,24 @@
         margin-left:40px;
         padding-top: 35px;
     }
-    .circle-dpar{
-        margin-left:15px;
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        background: #003894;
-        display: inline-block;
+
+    .circle-dpar {
+        margin-left: 25px;
         vertical-align: 2px;
         cursor: pointer;
-        span {
-            color: #fff;
-            font-size: 12px;
-            float: left;
-            margin: 2px 0 0 1px;
-            display: inline;
-            -webkit-transform: scale(.8);
-            -ms-transform: scale(.8);
-            transform: scale(.8);
+
+        span{
+            color: #003894;
+            font-size: 15px;
+            display: inline-block;
         }
     }
+    .unfoldown {
+        span {
+            transform:rotate(-180deg);
+        }
+    }
+
      .detail-block{
         width: 740px;
         padding: 40px 74px 0px 74px;
