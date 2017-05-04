@@ -34,13 +34,13 @@ define(function() {
                             renderObj.arr = true
                             renderObj.items = data
                         } else if(!$.isEmptyObject(data) && data.errcode) {
-                            project.tip('温馨提示','succ','用户未登陆', true);
+                            project.tip('用户未登陆','succ','', true);
                         }
                         var domStr = Mustache.render(_this.tpl, renderObj); 
                         $(_this._els.LProjects).html(domStr);
                     },
                     fail: function(json) {
-                        project.tip('温馨提示','succ','系统错误', true);
+                        project.tip('系统错误','succ','', true);
                     }
                 });
             }
@@ -115,7 +115,7 @@ define(function() {
                     },
                     fail: function(json) {
                         console.log(json);
-                        project.tip('温馨提示','succ','提交失败', true);
+                        project.tip('提交失败','succ','', true);
                     }
                 });
             } else {

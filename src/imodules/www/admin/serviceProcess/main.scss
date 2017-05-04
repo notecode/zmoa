@@ -73,6 +73,10 @@
                 line-height: 20px;
                 color: $black;
                 margin-bottom: 8px;
+                width: 212px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
             .task-item-time{
                 font-size: 12px;

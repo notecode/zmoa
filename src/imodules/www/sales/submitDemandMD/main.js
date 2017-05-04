@@ -103,7 +103,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                     _this.reset();
                     _this.parent.close();
                     _this.getDataRender();
-                    project.tip('温馨提示','succ','需求提交成功', true);
+                    project.tip('需求提交成功','succ','', true);
                 },
                 fail: function(json) {
                     if(!$.isEmptyObject(json)) {                        
