@@ -9,7 +9,10 @@
             <input type="text" class="project-name" placeholder="输入项目合同编号/名称" name="project-name" idom="LSearch" autoFocus>
         </div>
         <div idom="LProjects" class="project-content"></div>
-        <button type="submit" class="btn btn-primary">提交</button>
+        <div class="sub-con">
+            <button type="submit" class="btn btn-primary">提交</button>
+            <span class="sub-null hide" idom="errorNull">项目不能为空</span>
+        </div>
     </form>
     {{IncludeMTPL}}
 </div>
