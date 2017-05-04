@@ -167,10 +167,8 @@ $clr-font-dark: #212022;
 
                 // 刚刚选中的，还热乎的
                 &.hot {
-                    // todo: 参sketch
-                    background-color: green;
-                    //background: url("{{MIMAGE}}/dash-back.png");
-                    //background: url("{{MIMAGE}}/dash-back-trans.png");
+                    // background-color: green;
+                    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAT0lEQVQoU2N8/OLdfwY8QEZcECzLiE8hXBEjIyNOhTBFINOevHyP3UR0RVitxqYIQyEuRSgK8SmCKySkCKzw////8HAE+Q4XACvEF0wwjQB08z7HY0nvqwAAAABJRU5ErkJggg==);
                 }
             }
         }
