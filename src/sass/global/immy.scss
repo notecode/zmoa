@@ -69,7 +69,7 @@
 
   // “创可贴型” 弹气泡 @2017/05/04
   &.slideUp {
-    border-radius: 100px;
+    border-radius: 2px;
   }
 }
  .pdom-turnContainer > .panel {
@@ -305,12 +305,12 @@
   .-immy-dialog-window.slideUp:nth-of-type(6){margin-bottom: 50px;}
 }
 .-immy-tip{
-  width: 303px;
+  width: 340px;
   height: auto;
   text-align: center;
   padding: 0;
   background: #fff;
-  border-radius: 100px;
+  border-radius: 2px;
   box-shadow: 0 0 6px rgba(0,0,0,.4);
   z-index: 30;
   overflow: hidden;
@@ -318,7 +318,7 @@
   .-immy-tip-title{
     font-size: 18px;
     color: #003399;
-    margin: 17px 0 20px;
+    margin: 23px 0 30px;
 
     i{
       display: inline-block;
