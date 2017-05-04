@@ -9,7 +9,12 @@
         <span>{{screen_color}}</span>,
         <span>{{description}}</span>。
     </p>
-    <img class="pro-img" src="{{main_img}}" width="294" height="182" alt="项目图片" />
+    {{#main_img}}
+        <img class="pro-img" src="{{main_img}}" width="294" height="182" alt="项目图片" />
+    {{/main_img}}
+    {{^main_img}}
+        <div class="pro-noimg">暂无故障图片</div>
+    {{/main_img}}
     <p class="pro-addr">
         <span class="icon-checkmark"></span>
         <span>{{detail_address}}</span>
