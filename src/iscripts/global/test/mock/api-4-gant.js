@@ -2,7 +2,7 @@ define(function() {
 	return {
         project_count: "9",
         min_date: "2017-04-24",
-        max_date: "2017-06-14",
+        max_date: "2017-05-10",
         project_list: [
             {
                 project_id: "2",

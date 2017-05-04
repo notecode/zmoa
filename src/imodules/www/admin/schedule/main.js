@@ -8,7 +8,9 @@ define(["/global/iscripts/libs/time/moment.js",
             this.tpl = this._els.tpl[0].text;
 
             this.leftWidth = 290;
+            this.topHeight = 110; // header和日历高度和
             this.cellWidth = 50;
+            this.cellHeight = 40;
             
             var _this = this;
             var dodo = function(raw) {
@@ -20,7 +22,11 @@ define(["/global/iscripts/libs/time/moment.js",
             };
 
             if (1 == qs('test')) {
-                dodo(mock);
+                if (1 == qs('dummy')) {
+                    dodo({});
+                } else {
+                    dodo(mock);
+                }
             } else {
                 api_ajax('project/project_date_list', {
                     succ: function(json) {
@@ -33,32 +39,48 @@ define(["/global/iscripts/libs/time/moment.js",
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
+        CON.prototype.makeDummyData = function() {
+            var rightWidth = $(window).width() - this.leftWidth;
+            var dayCnt = Math.floor(rightWidth / this.cellWidth);
+            tlog('no schedule data got, so gen days: ' + dayCnt);
+
+            var first = moment().subtract('7', 'days');
+            var last = first.clone().add(dayCnt, 'days');
+
+            var tableHeight = $(window).height() - this.topHeight;
+            var projCnt = Math.floor(tableHeight / this.cellHeight);
+            var projList = Array(projCnt).fill({
+                name: 'dummy',
+                start_date: first.format('YYYY-MM-DD'), 
+                end_date: '' 
+            });
+
+            return {
+                min_date: first.format('YYYY-MM-DD'),
+                max_date: last.format('YYYY-MM-DD'),
+                project_list: projList 
+            };
+        }
+
         // 排期要点：
         // 1. 给定多个range，得到总体最小、最大日期
         // 2. 计算range开始日期距最小日期的差
         // 3. 因工程名和table必须分开，故可能需要js实现hover联动
         CON.prototype.prepare = function(data) {
             var list = data.project_list;
-            list = [];
-            if (list && list.length > 0) {
-                for (var i = 0; i < list.length; i++) {
-                    list[i].m_start = moment(list[i].start_date);
-                    list[i].m_end = moment(list[i].end_date);
-                }
-            } else {
-                var rightWidth = $(window).width() - this.leftWidth;
-                var dayCnt = Math.floor(rightWidth / this.cellWidth);
-                tlog('no schedule data got, so gen days: ' + dayCnt);
-
-                var first = moment().subtract('7', 'days');
-                var last = first.clone().add(dayCnt, 'days');
-                data = {
-                    min_date: first.format('YYYY-MM-DD'),
-                    max_date: last.format('YYYY-MM-DD'),
-                    project_list: [] 
-                };
+            var dummy = false; 
+            if (null == list || 0 == list.length) {
+                data = this.makeDummyData();
+                list = data.project_list;
+                dummy = true;
             }
 
+            for (var i = 0; i < list.length; i++) {
+                list[i].m_start = moment(list[i].start_date);
+                list[i].m_end = moment(list[i].end_date);
+            }
+
+            tlog('date range: [' + data.min_date + ', ' + data.max_date + ']');
             var min = moment(data.min_date);
             var max = moment(data.max_date);
 
@@ -87,7 +109,7 @@ define(["/global/iscripts/libs/time/moment.js",
             }
 
             tlog('If you see NaN above, that means invalid date');
-            return {range: range, projects: list};
+            return {range: range, projects: list, dummy: dummy};
         }
 
         CON.prototype.genReadyToUseData = function(ctx) {
@@ -98,9 +120,10 @@ define(["/global/iscripts/libs/time/moment.js",
                 cells.push(isToday ? 'today' : '');
             }
 
-            var cell_width = 50;
-            var cell_height = 40;
+            var cell_width = this.cellWidth;
+            var cell_height = this.cellHeight;
             return {
+                dummy: ctx.dummy ? 'dummy' : '',
                 width: cell_width * ctx.range.length + 2,
                 height: cell_height * (1 + ctx.projects.length) + 2,
                 total: ctx.projects.length,
@@ -130,7 +153,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 projects: ctx.projects,
                 util: {
                     bar_start: function() {
-                        return cell_width * this.displace + 1;
+                        return cell_width * this.displace;
                     },
                     bar_length: function() {
                         var dur = this.during || 0;
@@ -145,7 +168,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     future_bar_start: function() {
                         var disp = this.tmr_displace;
                         //return cell_width * (disp ? disp : 0);
-                        return disp ? (disp * cell_width + 1) : 0;
+                        return disp ? (disp * cell_width) : 0;
                     },
                     future_bar_length: function() {
                         var dur = this.tmr_during;
