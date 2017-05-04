@@ -21,15 +21,18 @@ $clr-gray: #E3E8EE;
 		.left-list {
 			width: 290px;
 			float: left;
+			border-right: $bdr;
 
             .title {
 	            font-size: 15px;
 	            color: $gray;
-	            height: 50px;
+	            height: 51px;
 	            line-height: 50px;
 	            background-color: #E3E8EE;
 	            position: fixed;
 	            width: 290px;
+	            z-index: 5;
+	            border-right: $bdr;
 	            em {
 	                float: left;
 	                font-style: normal;
@@ -126,8 +129,8 @@ $clr-gray: #E3E8EE;
 				.cell {
 					display: inline-block;
 					width: $cell-width; 
-					height: 48px;; 
-					border-left: $bdr;
+					height: 50px;; 
+					border-right: $bdr;
 					margin: 0px;
 					z-index: 1;
 					text-align: center;
@@ -149,7 +152,7 @@ $clr-gray: #E3E8EE;
 				.bar {
 					position: absolute;
 					background-color: #4990E2;
-					z-index: 10;
+					z-index: 2;
 					border-radius: 7px;
 					top: 13px;
 					height: 14px;
@@ -169,6 +172,17 @@ $clr-gray: #E3E8EE;
 				}
 			}
 
+            .a-row.header-row {
+            	position: fixed;
+            	background-color: #fff;
+            	left: 290px;
+            	z-index: 3;
+            	border-bottom: $bdr;
+            }
+            .rowbox {
+            	margin-top: 49px;
+            }
+
 
             
             .a-row-pro {
@@ -185,6 +199,7 @@ $clr-gray: #E3E8EE;
             	}
             	.bar {
                 	top: 13px;
+                	z-index: 2;
                 }
             }
             
