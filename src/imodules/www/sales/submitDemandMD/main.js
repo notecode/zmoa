@@ -77,7 +77,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 var domStr = Mustache.render(this.tpl, obj); 
                 $(this._els.LAddSales).html(domStr);
             } else {
-                var salesStr = '销售员 ' + obj.salesman_name + ' ' + obj.salesman_id;
+                var salesStr = '销售员 ' + obj.salesman_name + ' ' + obj.job_number;
                 $(this._els.LSales).html(salesStr);
             }            
         }        
