@@ -11,6 +11,9 @@ div[class^="col-"]{
   position: relative;
 }
 
+// 曾经，弹窗的关闭按钮是在mask的右上角显示的（当屏幕<768时才显示在对话框上）。现在UI需要统一都显示在对话框上，所以进行
+// 了调整。调整的地方见下面标有 2017/05/04 的地方被注释的代码
+
 //immy弹窗
 .-immy-dialog-header .tool-close {
   width: 16px;
@@ -20,8 +23,9 @@ div[class^="col-"]{
   margin-right: 10px;
   font-size: 14px;
   color: #333;
-  display: none;
+//  display: none; by notecode 2017/05/04
 }
+
 .-immy-dialog-mask .tool-close{
   position:fixed;
   right:20px;
@@ -33,6 +37,8 @@ div[class^="col-"]{
 .-immy-dialog-mask .tool-close:hover{
   color:$lightgray;
 }
+
+/*   commented by notecode 2017/05/04
 @media screen and (max-width: 768px){
   .-immy-dialog-header .tool-close{
     display:block;
@@ -41,6 +47,8 @@ div[class^="col-"]{
     display:none;
   }
 }
+*/
+
 #MEIQIA-BTN-HOLDER{//美恰客服档住地图缩放按钮
   right: 70px !important;
   z-index: 333 !important;
