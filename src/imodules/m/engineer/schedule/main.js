@@ -125,8 +125,8 @@ define(["/global/iscripts/libs/time/moment.js",
             var tgt = '#month-list';
             this.find(tgt).slick({
                 infinite: false,
-                prevArrow: $('.icon-left'),
-                nextArrow: $('.icon-right')
+                prevArrow: $('.goPrev'),
+                nextArrow: $('.goNext')
             });
 
             var cap0 = $('.month').first().attr('data-caption');
