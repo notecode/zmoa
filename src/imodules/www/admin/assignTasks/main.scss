@@ -181,7 +181,10 @@
             }
         }
         .slick-prev {  /*slick改动*/
-            left: -65px;
+            left: -64px;
+        }
+        .slick-prev:hover, .slick-next:hover {
+            background-color: #fff;
         }
         .date-next, .slick-next{  
             margin-left: -6px;
