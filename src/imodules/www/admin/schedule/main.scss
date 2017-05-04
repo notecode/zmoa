@@ -17,10 +17,9 @@ $clr-gray: #E3E8EE;
 	.total-table {
 		width: 100%;
 		height: 100%;
+		overflow-y: auto;
 		.left-list {
 			width: 290px;
-			height: 100%;
-			overflow-y: auto;
 			float: left;
 
             .title {
@@ -78,7 +77,6 @@ $clr-gray: #E3E8EE;
 		.main-table {
 			margin-left: 290px;
             position: relative;
-            height: 100%;
             overflow-x: auto;
             white-space: nowrap;
 
@@ -161,6 +159,7 @@ $clr-gray: #E3E8EE;
 					}
 				}
 			}
+			
 
             
             .a-row-pro {

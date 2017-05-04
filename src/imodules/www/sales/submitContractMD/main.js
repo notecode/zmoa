@@ -119,7 +119,7 @@ define(function() {
                     }
                 });
             } else {
-                //project.tip('项目不能为空','succ','', false);
+                //project.tip('项目不能为空','succ','', true);
                 $(_this._els.errorNull).removeHide();
             }
             return false;
