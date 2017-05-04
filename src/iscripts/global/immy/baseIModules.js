@@ -706,6 +706,9 @@
                 }
                 if (dialogOptions.type == "slideUp") {
                     dialogOptions = $.extend({"pos": "clientCenterBottom", "offset": [0, 20], "className": "slideUp"},dialogOptions);
+                } else if (dialogOptions.type == "slideUpAutoClose") {
+                    // UI同学说：自动消失的气泡，就不用close按钮了 @2017/05/04
+                    dialogOptions = $.extend({"pos": "clientCenterBottom", "offset": [0, 20], "className": "slideUp", "controls": []},dialogOptions);
                 } else if (dialogOptions.type == "maxWidth") {
                     dialogOptions = $.extend({"pos": "clientCenterCenter", "size": ["84%", "content"]},dialogOptions);
                 } else if (dialogOptions.type == "maxWidthHeight") {

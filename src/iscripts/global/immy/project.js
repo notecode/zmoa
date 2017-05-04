@@ -196,7 +196,7 @@
                 }, 2000)
             }
 
-            var tip = project.open(dom[0], "_blank", "slideUp");
+            var tip = project.open(dom[0], "_blank", (timer ? "slideUpAutoClose" : "slideUp"));
         },
 
         embedCss: function (cssText) {
