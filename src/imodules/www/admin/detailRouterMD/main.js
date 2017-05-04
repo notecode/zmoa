@@ -7,6 +7,7 @@ define(function() {
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.route = function(projId) {
+            var _this = this;
             api_ajax('project/detail/' + projId, {
                 succ: function(json) {
                     var proj = json.project_info;
@@ -22,6 +23,10 @@ define(function() {
                         });
 
                     });
+                },
+                fail: function(json) {
+                    _this.parent.close();
+                    project.tip('请求数据失败: ' + json.errmsg, 'fail', '', true);
                 }
             });
 		}

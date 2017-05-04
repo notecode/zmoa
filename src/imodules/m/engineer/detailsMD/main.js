@@ -6,13 +6,30 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.tpl = this._els.tpl[0].text;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
-		
+
+        var APPLY_ENVIRONMENT = {
+            1: '户外',
+            2: '室内',
+            3: '半户外',
+        };        
+        var SCREEN_COLOR = {
+            1: '双色',
+            2: '单色',
+            3: '全彩',
+        };
+
 		CON.prototype.render = function(proj) {
             var worker = proj.service_user || {};
             proj.main_img = proj_img_url(proj.main_img);
             var dom = Mustache.render(this.tpl, {
                 proj: proj,
                 fn: {
+                    apply_environment: function() {
+                        return APPLY_ENVIRONMENT[proj.apply_environment];
+                    },
+                    screen_color: function() {
+                        return SCREEN_COLOR[proj.screen_color];
+                    },
                     sched: function() {
                         var start = worker.start_date;
                         return (start && start.length > 0) ? 'show' : 'hide';
