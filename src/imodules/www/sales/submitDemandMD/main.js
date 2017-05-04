@@ -85,9 +85,19 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype._ievent_submitForm = function(data, target) {
             var _this = this;
             var data = $(target).serializeJSON();
+            var $tipEl = $(this._els.LErrorTip);
             data.projectId = this.info.id;
             data.name = this.info.name;
-
+            var $checks = $('.js-checki-field');
+            for (var index = 0; index < $checks.length; index++) {
+                var $el = $checks.eq(index);
+                var $tip = $el.data('tip');
+                var $val = $el.val();
+                if (!$val) {
+                    $tipEl.html($tip);
+                    return false
+                }
+            }
             api_ajax_post('project/edit_project_desc', data, {
                 succ: function(res) {
                     _this.reset();

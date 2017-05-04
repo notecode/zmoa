@@ -9,10 +9,10 @@
             <input idom="LProject" type="text" class="project-name js-reset-filed" placeholder="项目名称" name="name" readonly>
         </div>
         <div class="project_problem">
-            <textarea name="description" class="input-textarea input-div js-reset-filed" idom="note" placeholder="故障描述(必填)" maxlength=64></textarea>
+            <textarea name="description" class="input-textarea input-div js-reset-filed js-checki-field" idom="note" placeholder="故障描述(必填)" maxlength=64 data-tip="故障描述不能为空"></textarea>
         </div>
         <div class="submit-picture">
-            <input type="hidden" name="mainImg" value="project_1493538689.png" idom="LFileName">  
+            <input type="hidden" name="mainImg" class="js-checki-field" idom="LFileName" data-tip="故障图片不能为空">  
             <div class="file-upload " idom="LUploadContent">
                 <label for="imageUpload" class="file-add">
                     <input idom="LImageUpload" class="input-upload" type="file" accept="image/*" name="upload_file">
