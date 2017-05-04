@@ -6,14 +6,17 @@ define(["/global/iscripts/libs/time/moment.js",
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-            
 
+            this.leftWidth = 290;
+            this.cellWidth = 50;
+            
             var _this = this;
             var dodo = function(raw) {
                 var ctx = _this.prepare(raw);
                 var toUse = _this.genReadyToUseData(ctx);
                 _this.doRender(toUse);
                 _this.rowHover();
+                _this.scrollFix();
             };
 
             if (1 == qs('test')) {
@@ -27,10 +30,6 @@ define(["/global/iscripts/libs/time/moment.js",
                     }
                 });
             }
-
-            _this.scrollFix();
-
-
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
@@ -40,9 +39,24 @@ define(["/global/iscripts/libs/time/moment.js",
         // 3. 因工程名和table必须分开，故可能需要js实现hover联动
         CON.prototype.prepare = function(data) {
             var list = data.project_list;
-            for (var i = 0; i < list.length; i++) {
-                list[i].m_start = moment(list[i].start_date);
-                list[i].m_end = moment(list[i].end_date);
+            list = [];
+            if (list && list.length > 0) {
+                for (var i = 0; i < list.length; i++) {
+                    list[i].m_start = moment(list[i].start_date);
+                    list[i].m_end = moment(list[i].end_date);
+                }
+            } else {
+                var rightWidth = $(window).width() - this.leftWidth;
+                var dayCnt = Math.floor(rightWidth / this.cellWidth);
+                tlog('no schedule data got, so gen days: ' + dayCnt);
+
+                var first = moment().subtract('7', 'days');
+                var last = first.clone().add(dayCnt, 'days');
+                data = {
+                    min_date: first.format('YYYY-MM-DD'),
+                    max_date: last.format('YYYY-MM-DD'),
+                    project_list: [] 
+                };
             }
 
             var min = moment(data.min_date);
