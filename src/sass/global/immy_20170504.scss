@@ -300,12 +300,12 @@
   .-immy-dialog-window.slideUp:nth-of-type(6){margin-bottom: 50px;}
 }
 .-immy-tip{
-  width: 303px;
+  width: 502px;
   height: auto;
   text-align: center;
   padding: 0;
   background: #fff;
-  border-radius: 100px;
+  border-radius: 5px;
   box-shadow: 0 0 6px rgba(0,0,0,.4);
   z-index: 30;
   overflow: hidden;
@@ -328,21 +328,21 @@
       font-size: 18px;
     }
     i.ask{
-      @include background('/images/ui/icon-ask.png',20px,20px,center,center);
+      @include background('/images/ui/icon-ask.png',24px,24px,center,center);
     }
     i.succ{
-      @include background('/images/ui/tipson.png',20px,20px,center,center);
+      @include background('/images/ui/tipson.png',24px,24px,center,center);
     }
     i.fail{
-      @include background('/images/ui/tipfail.png',20px,20px,center,center);
+      @include background('/images/ui/tipfail.png',24px,24px,center,center);
     }
 
   }
 
   .-immy-tip-note{
-    font-size: 18px;
-    color: #003399;
-    padding: 20px 0 20px;
+    font-size: 14px;
+    color: #b3b5b7;
+    padding: 0 0 26px;
 
     a{
       color: #2A2E33;
@@ -370,7 +370,6 @@
 
     .-immy-tip-title{
       margin: 10px 0 12px;
-      display: none;
     }
   }
 
