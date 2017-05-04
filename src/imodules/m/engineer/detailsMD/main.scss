@@ -9,6 +9,7 @@
             font-size: 0.25rem;
             color: #0F0E10;
             margin-top: 0.2rem;
+            font-weight: 700;
 
             .user-status {
                 color: #4785f9;
@@ -16,7 +17,8 @@
         }
         .user-info {
             position: relative;
-            margin-top: 0.17rem;
+            margin-top: 0.13rem;
+            font-weight: 700;
 
             h6 {
                 font-size: 0.18rem;
@@ -29,16 +31,16 @@
                 color: #B3B5B7;
             }
             .icon-call {
-                font-size: 0.17rem;
+                font-size: 0.20rem;
                 color: #4785f9;
                 position: absolute;
-                top: 0.17rem;
+                top: 0.16rem;
                 right: 0.04rem;
             }
         }
     }
     .detail-date {
-        padding: 0.17rem 0.15rem;
+        padding: 0.13rem 0.15rem;
         border-bottom: 0.01rem solid #E3E8EE;
         margin-bottom: 0.2rem;
         span {
@@ -54,6 +56,7 @@
         color: #212022;
         padding: 0 0.15rem;
         padding-top: 0.2rem;
+        font-weight: 700;
     }
     .detail-img {
         width: 2.89rem;
@@ -84,7 +87,8 @@
             // to gaoyue: 这个是我临时加的，因为图片太大，太难看。
             // 还有，几个图标的相关尺寸我用了px，你需要改成rem的你再改。
             img {
-                width: 300px;
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -103,13 +107,14 @@
         margin-top: 0.15rem;
     }
     .detail-other {
-        padding: 0.2rem 0.15rem 0.2rem;
+        padding: 0.06rem 0.15rem 0.06rem;
         background: #fcfcfc;
         margin-top: 0.25rem;
         .detail-other-title {
             font-size: 0.12rem;
             color: #212022;
             line-height: 0.38rem;
+            font-weight: 700;
 
             .icon-Unfolded {
                 float: right;
@@ -135,11 +140,12 @@
             line-height: 0.35rem;
             font-size: 0.14rem;
             color: #83848E;
-            padding:0 0 0 0.12rem;
+            padding:0.05rem 0 0.05rem 0.12rem;
         }
         tr td:first-of-type{
             color: $grayblue;
-            padding:0 0 0 15px;
+            padding:0.05rem 0 0.05rem 0.15rem;
+            width: 0.91rem;
         }
     }
 }

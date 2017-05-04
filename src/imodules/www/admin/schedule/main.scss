@@ -28,6 +28,8 @@ $clr-gray: #E3E8EE;
 	            height: 50px;
 	            line-height: 50px;
 	            background-color: #E3E8EE;
+	            position: fixed;
+	            width: 290px;
 	            em {
 	                float: left;
 	                font-style: normal;
@@ -56,12 +58,20 @@ $clr-gray: #E3E8EE;
                     display: inline;
                 }
                 .name {
-
+                	width: 154px;
+				    overflow: hidden;
+				    height: 30px;
+				    display: inline-block;
+				    text-overflow: ellipsis;
+				    white-space:nowrap; 
                 }
                 .city {
                     float: right;
                     margin: 0px 0px 0 0;
                 }
+            }
+            .prolist {
+            	margin-top: 49px;
             }
 
             .proj:hover, .proactive {
@@ -79,7 +89,6 @@ $clr-gray: #E3E8EE;
             position: relative;
             overflow-x: auto;
             white-space: nowrap;
-
             .a-row-pro:first-child {
                 
             }
@@ -159,7 +168,7 @@ $clr-gray: #E3E8EE;
 					}
 				}
 			}
-			
+
 
             
             .a-row-pro {
