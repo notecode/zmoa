@@ -4,6 +4,7 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.via_pwd = (qs('via') != 'phone');  // 只要不是?pwd=phone，均以用户名+密码方式登录
+            this.timing = false;
 
             if (this.via_pwd) {
                 this.find('.via-user-pwd').removeClass('hide');
@@ -14,8 +15,6 @@ define(function() {
             var _this = this;
             // 校验用户名和密码
             $('.js-check-field').keydown(debounce(function (e) {
-                console.log('action');
-
                 if (_this.via_pwd) {
                     _this.fieldCheckForPwd();
                 } else {
@@ -50,7 +49,9 @@ define(function() {
 
             // 这几个数字，是预期“快输够”的时候，可用
             if (phone.length > 9) {
-                getPass.attr('disabled', false);
+                if (!this.timing) {
+                    getPass.attr('disabled', false);
+                }
 
                 if (pass.length >= 3) {
                     login.attr('disabled', false);
@@ -68,30 +69,38 @@ define(function() {
             }
 
             var max_cnt = 60;
-            //var max_cnt = 20;
+            //var max_cnt = 10;
             var getPass = $(this._els.getcode); 
             getPass.attr('disabled', true);
+            this.timing = true;
             var cnt = max_cnt;
             var timerId = setInterval(function() {
                 var txt = --cnt + 's后重新获取';
                 getPass.text(txt);
             }, 1000);
 
+            var _this = this;
             setTimeout(function() {
                 tlog(max_cnt + 's passed, enable button again');
                 getPass.attr('disabled', false);
                 getPass.text('获取验证码');
                 clearInterval(timerId);
+                _this.timing = false;
             }, max_cnt * 1000);
 
-            api_ajax_post('user/mobile_send_msg', {mobile: phone}, {
-                succ: function(json) {
-                    tlog('send passcode succ');
-                },
-                fail: function(json) {
-                    tlog(json.errmsg);
-                }
-            });
+            var dbging = (1 == qs('not-get-passcode'));
+            if (!dbging) {
+                api_ajax_post('user/mobile_send_msg', {mobile: phone}, {
+                    succ: function(json) {
+                        tlog('send passcode succ');
+                    },
+                    fail: function(json) {
+                        tlog(json.errmsg);
+                    }
+                });
+            } else {
+                tlog('You are debugging, not call api to get passcode');
+            }
         }
 
         CON.prototype._ievent_login = function() {

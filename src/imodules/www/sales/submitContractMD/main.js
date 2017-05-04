@@ -8,7 +8,8 @@ define(function() {
             var _this = this;
             $(this._els.LSearch).on('keyup', debounce(function (e) {
                 var $target = $(e.target)
-                _this.search($target)
+                _this.search($target);
+                $(_this._els.errorNull).addHide();
             }, 300));
             // 监听项目列表点击事件
             $(this._els.LProjects).on('click', 'p', function(e) {
@@ -118,7 +119,8 @@ define(function() {
                     }
                 });
             } else {
-                project.tip('温馨提示','succ','项目不能为空', true);
+                //project.tip('温馨提示','succ','项目不能为空', true);
+                $(_this._els.errorNull).removeHide();
             }
             return false;
         }

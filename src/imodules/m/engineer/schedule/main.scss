@@ -17,7 +17,7 @@ $clr-font-dark: #212022;
         .month-name {
             display: inline-block;
             width: 85px; 
-            font-size: 15px;
+            font-size: 14px;
             color: $clr-font-dark;
         }
 
@@ -30,6 +30,7 @@ $clr-font-dark: #212022;
     .month, .sun-mon {
         /* border: $bdr;  */
         padding-bottom: 2px;  // 为了不遮住最后一根横线
+        font-size: 14px;
 
         .week-row {
             position: relative;
@@ -167,7 +168,8 @@ $clr-font-dark: #212022;
         color: #212022;
         line-height: 0.38rem;
         padding: 0 0.15rem;
-        margin-top: 0.2rem;
+        margin-top: 25px;
+        font-weight: 700;
     }
 
     .comment {
