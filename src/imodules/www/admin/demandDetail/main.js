@@ -115,6 +115,11 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 
         CON.prototype._ievent_showStatus = function() {
             this.find('#controlProcessMD').toggle();
+            if(this.find('#controlProcessMD').is(':hidden')){
+                $('#iunfold').removeClass('unfoldown');
+            }else {
+                $('#iunfold').addClass('unfoldown');    
+            }
 
             // todo: 点击其他区域，消失
         }

@@ -118,7 +118,7 @@
                 line-height: 20px;
                 color: $black;
                 font-size: 14px;
-                padding:12px 30px;
+                padding:12px 15px;
             }
             tr td:first-of-type{
                 color: #8b9aab;
@@ -181,7 +181,10 @@
             }
         }
         .slick-prev {  /*slick改动*/
-            left: -65px;
+            left: -64px;
+        }
+        .slick-prev:hover, .slick-next:hover {
+            background-color: #fff;
         }
         .date-next, .slick-next{  
             margin-left: -6px;
