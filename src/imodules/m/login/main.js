@@ -26,6 +26,9 @@ define(function() {
             $('form').submit(function() {
                   return false;
             });
+
+            var refer = $(document).prop('referrer');
+            tlog('refer: ' + refer);
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
@@ -126,14 +129,23 @@ define(function() {
 
                     // 如果refer是站内页，就跳过去
                     var refer = $(document).prop('referrer');
+                    tlog('referer: ' + refer);
                     var origin = document.origin;
                     if (0 == refer.indexOf(origin)) {
                         var path = refer.substring(origin.length);
-                        if (path == '/' || path.indexOf('/index.html') == 0) {
-                            refer = ''; // 首页（引导）
+                        var askIdx = path.indexOf('?');
+                        if (askIdx != -1) {
+                            path = path.substring(0, askIdx);
                         }
-                    } else {
-                        refer = '';  // 站外页
+                        if (path == '/' || path.indexOf('/index.html') == 0) { // 首页（引导）
+                            refer = ''; 
+                        } else if (path == '/login.html') { // 本页
+                            refer = '';
+                        }
+                    } else { 
+                        // 0. 直接打开本页，
+                        // 1. 站外页
+                        refer = '';
                     }
                    
                     location.href = (refer.length > 0) ? refer : '/login-succ.html';
