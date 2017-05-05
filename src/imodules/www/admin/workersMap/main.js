@@ -32,6 +32,7 @@ define(["/global/iscripts/libs/time/moment.js",
                         doRender(json);
                     },
                     fail: function(json) {
+                        doRender([]);
                     }
                 });
             }
