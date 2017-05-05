@@ -66,6 +66,9 @@ define(["/global/iscripts/libs/time/moment.js",
                 },
                 screenColor: function() {
                     return SCREEN_COLOR[this.screen_color];
+                },
+                hide_comment: function() {
+                    return (this.comment.length > 0) ? '' : 'hide';
                 }
             };
             var dom = Mustache.render(this.tpl, info); 

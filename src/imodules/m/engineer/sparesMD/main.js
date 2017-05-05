@@ -20,7 +20,12 @@ define(function() {
             this.prepareData(proj);
 
             var dom = Mustache.render(this.tpl, {
-                proj: proj
+                proj: proj,
+                fn: {
+                    hide_comment: function() {
+                        return (this.comment.length > 0) ? '' : 'hide';
+                    }
+                }
             });
 
             this.find('.spares').append(dom);

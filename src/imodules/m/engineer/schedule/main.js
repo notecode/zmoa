@@ -407,7 +407,8 @@ define(["/global/iscripts/libs/time/moment.js",
                 projectId: qs_proj(),
                 startDate: this.selected_range.start,
                 endDate: this.selected_range.end,
-                description: msg.length > 0 ? ('排期日志: ' + msg) : '排期日志（未填写原因）'
+                // description: msg.length > 0 ? ('排期日志: ' + msg) : '排期日志（未填写原因）'
+                description: msg
             };
 
             api_ajax_post('project/mobile_project_edit_schedule', data, {

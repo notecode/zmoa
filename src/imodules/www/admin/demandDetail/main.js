@@ -66,6 +66,9 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 screenColor: function() {
                     return SCREEN_COLOR[this.screen_color];
                 },                
+                hide_comment: function() {
+                    return (this.comment.length > 0) ? '' : 'hide';
+                },
                 sched: function() {
                     var start = worker.start_date;
                     return (start && start.length > 0) ? 'show' : 'hide';
