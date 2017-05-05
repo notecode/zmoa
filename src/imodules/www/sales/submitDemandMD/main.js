@@ -19,9 +19,9 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype._init = function() {
             var isLowIE = (isIE(8) || isIE(9));
             var mod = this;
-            var now = $.now();
+            var url = api.url + 'project/upload_image/project?time=' + $.now();
             $(this._els.LImageUpload).fileupload({
-                url: 'http://zmoa.bxland.com/project/upload_image/project?time=' + now, 
+                url: url,
                 dataType: 'json',
                 autoUpload: false,
                 acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,

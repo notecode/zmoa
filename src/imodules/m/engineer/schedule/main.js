@@ -402,11 +402,12 @@ define(["/global/iscripts/libs/time/moment.js",
         }
 
         CON.prototype._ievent_save = function() {
+            var msg = this.find('#sch-comment').val(); 
             var data = {
                 projectId: qs_proj(),
                 startDate: this.selected_range.start,
                 endDate: this.selected_range.end,
-                description: this.find('#sch-comment').val()
+                description: msg.length > 0 ? ('排期日志: ' + msg) : '排期日志（未填写原因）'
             };
 
             api_ajax_post('project/mobile_project_edit_schedule', data, {
