@@ -30,6 +30,10 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     screen_color: function() {
                         return SCREEN_COLOR[proj.screen_color];
                     },
+                    hide_main_img: function() {
+                        var img = proj.main_img;
+                        return (img && img.length > 0) ? '' : 'hide';
+                    },
                     sched: function() {
                         var start = worker.start_date;
                         return (start && start.length > 0) ? 'show' : 'hide';
