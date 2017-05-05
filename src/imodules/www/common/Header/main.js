@@ -4,6 +4,7 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
+            this.find('.links .active').attr('href', '#').attr('target', '_self');
             this.role_allow = parseInt(this.find('#role-allow').text());
             this.reqUserInfo();
         };
