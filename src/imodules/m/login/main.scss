@@ -4,6 +4,7 @@
     padding: 0 0.3rem;
    .login-title {
         font-size: 0.3rem;
+        font-weight: 700; 
         color: #4785F9;
         padding: 0.3rem 0;
    } 
@@ -12,6 +13,7 @@
    }
    .login-label {
         font-size: 0.12rem;
+        font-weight: 700; 
         color: #212022;
         letter-spacing: 0;
         display: block;
@@ -26,6 +28,7 @@
         font-size: 0.14rem;
         color: #B3B5B7;
         outline: none;
+        margin-left: -1px;
    }
    .login-code {
         width: 100%;
