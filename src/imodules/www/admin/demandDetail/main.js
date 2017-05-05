@@ -33,7 +33,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 proj.noPic = '';
             }
 
-            document.title = proj.name;
             $(this._els.deTitle).text(proj.status_name);
             if (5 == proj.status || 6 == proj.status) {
                 // 结束或中止的，就不让显示下拉的菜单了
