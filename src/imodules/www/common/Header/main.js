@@ -28,7 +28,7 @@ define(function() {
                     }
                 },
                 fail: function(json) {
-                    console.error('尚未登录，或登录已失效');
+                    tlog(json.errmsg);
                     _this.goLogin('you-should-login');
                 }
             });

@@ -73,8 +73,15 @@ define(["/global/iscripts/libs/time/moment.js",
             };
             var dom = Mustache.render(this.tpl, info); 
             this.find('.body-block').append(dom);
+
+            var h = this.parentHeight() - 80;
+            this.find('.detail-block').css('height', h);
             this.parent.refreshSize();
 		}
+
+        CON.prototype.parentHeight = function() {
+            return parseInt(this.parent.dom.style.height);
+        }
 
 		CON.prototype.renderWorkerStats = function(stats) {
             var header = this.prepareStatData(stats);
@@ -171,6 +178,9 @@ define(["/global/iscripts/libs/time/moment.js",
 
             this.find('.date-block').append(grid);
             this.find('.date-day[data-index=' + index + ']').addClass('cur-day');
+
+            var h = this.parentHeight() - (80 + 60 + 40);
+            this.find('.suppliers-list').css('height', h);
 
             var _this = this;
             this.find('[evt=chooseSupplier]').click(function() {
