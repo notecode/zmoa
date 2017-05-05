@@ -127,10 +127,11 @@ define(function() {
                 succ: function(json) {
                     tlog('login succ');
 
-                    // 如果refer是站内页，就跳过去
+                    // 如果refer是站内页，就跳过去; 否则进入“登录成功”页
                     var refer = $(document).prop('referrer');
                     tlog('referer: ' + refer);
-                    var origin = document.origin;
+                    var origin = location.origin;
+
                     if (0 == refer.indexOf(origin)) {
                         var path = refer.substring(origin.length);
                         var askIdx = path.indexOf('?');
