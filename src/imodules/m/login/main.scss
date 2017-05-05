@@ -1,6 +1,11 @@
 @import "src/sass/global/mixin";
 
 #login{
+    // safari 手机需覆盖默认设置
+    input {
+        padding: 0;
+    }
+
     padding: 0 0.3rem;
    .login-title {
         font-size: 0.3rem;
@@ -43,6 +48,7 @@
             position: absolute;
             right: 0;
             top: 0.29rem;
+            padding-right: 2px;
 
             &:disabled {
                 color: #B3B5B7;
