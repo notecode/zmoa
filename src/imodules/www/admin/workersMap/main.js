@@ -15,6 +15,7 @@ define(["/global/iscripts/libs/time/moment.js",
             this.map = null;
             this.flyCanvas = null;
             this.markers = [];
+            this.topzIndex = 111;
 
             var _this = this;
             var doRender = function(raw) {
@@ -281,13 +282,19 @@ define(["/global/iscripts/libs/time/moment.js",
                     var jq = $(mlist[i].getContent());
                     jq.find('.pane').toggle();
                     jq.find('.progress-bar.alone').toggle();
+
+                    if (show && (jq.find('.pane').length > 0)) {
+                        //tlog('top z-index: ' + _this.topzIndex);
+                        // 这要一直往上增，会有什么后果？
+                        mlist[i].setzIndex(_this.topzIndex++); 
+                    }
                 }
             }
 
             $('.worker').mouseenter(function() {
                 var i = $(this).attr('data-index');
                 //tlog('you enter ' + i);
-                togglePanes(i);
+                togglePanes(i, true);
             });
 
             $('.worker').mouseleave(function() {
