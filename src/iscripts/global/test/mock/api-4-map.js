@@ -63,7 +63,7 @@ define(function() {
 
             projects: [
                 {
-                    start_date: "2017-04-22",        
+                    start_date: "2017-05-08",        
                     end_date: "2017-05-28",        
 
                     city_name: "西安",

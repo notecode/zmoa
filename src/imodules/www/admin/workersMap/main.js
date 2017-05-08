@@ -179,7 +179,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 }
 
                 pin.find('.worker-name').text(name);
-                pin.find('.inner-bar').width((60 - 2) * perc);
+                pin.find('.inner-bar').width((60 - 2) * perc); // 注: 在css中设了一个min-width: 6px，否则若width太小，很难看
                 pin.find('.progress-bar').show();
             } else {
                 // 还在老窝

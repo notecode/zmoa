@@ -37,6 +37,7 @@ $coin-size: 8px;
             border: 1px solid #FFF;
             background-color: $clr;
             border-radius: 4px;
+            min-width: 6px;
         }
 
         display: none;
@@ -96,6 +97,13 @@ $coin-size: 8px;
         .progress-bar {
             position: static;
             margin-top: 4px;
+        }
+        .worker-name {
+            font-weight: 700;
+            width: 60px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     .panegress .pane-date{
