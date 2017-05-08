@@ -150,7 +150,10 @@ define(["/global/iscripts/libs/time/moment.js",
                 if (todayServ[i]) { // 说明在服务中
                     var worker = todayServ[i];
                     worker.name = this.serv.obj_workers[worker.user_id].name;
-                    worker.busy = 1;
+                    worker.busy = {
+                        start_date: worker.start_date,
+                        end_date: worker.end_date
+                    };
                     workers.push(worker);
                 } else { // 说明空闲
                     workers.push(this.serv.arr_workers[i]);
