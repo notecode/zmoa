@@ -218,31 +218,33 @@
   left: 50%;
 }
 
+// note: 2017/5/8，升级到最新的chrome之后，打开弹窗时恒出现跑版的问题。跟踪之后，发现是此处动画效果作用不完备。
+// 二哥不才，改不了勇哥的高端代码。故，宁舍弃这个很炫的“飞入”效果，先保证正确。下面3组样式全部注释
 .-immy-loader-in.-immy-loader-transform {
-  transition: none !important;
-  -webkit-transition: none !important;
-  -ms-transition: none !important;
-  transform: translate3d(50%, 0px, 0px);
-  -webkit-transform: translate3d(50%, 0px, 0px);
-  -ms-transform: translate3d(50%, 0px, 0px);
+//  transition: none !important;
+//  -webkit-transition: none !important;
+//  -ms-transition: none !important;
+//  transform: translate3d(50%, 0px, 0px);
+//  -webkit-transform: translate3d(50%, 0px, 0px);
+//  -ms-transform: translate3d(50%, 0px, 0px);
 }
 
 .-immy-loader-out.-immy-loader-transform {
-  transition: none !important;
-  -webkit-transition: none !important;
-  -ms-transition: none !important;
-  transform: translate3d(-50%, 0px, 0px);
-  -webkit-transform: translate3d(-50%, 0px, 0px);
-  -ms-transform: translate3d(-50%, 0px, 0px);
+//  transition: none !important;
+//  -webkit-transition: none !important;
+//  -ms-transition: none !important;
+//  transform: translate3d(-50%, 0px, 0px);
+//  -webkit-transform: translate3d(-50%, 0px, 0px);
+//  -ms-transform: translate3d(-50%, 0px, 0px);
 }
 
 .-immy-loader-reload {
-  transition: none !important;
-  -webkit-transition: none !important;
-  -ms-transition: none !important;
-  transform: translate3d(0, 15px, 0px);
-  -webkit-transform: translate3d(0, 15px, 0px);
-  -ms-transform: translate3d(0, 15px, 0px);
+//  transition: none !important;
+//  -webkit-transition: none !important;
+//  -ms-transition: none !important;
+//  transform: translate3d(0, 15px, 0px);
+//  -webkit-transform: translate3d(0, 15px, 0px);
+//  -ms-transform: translate3d(0, 15px, 0px);
 }
 
 .-immy-dialog-window{
