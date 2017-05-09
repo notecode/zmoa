@@ -91,6 +91,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
                 follow.push(start);
                 raw_worker.task_count = task_cnt; // 改变raw数据，供左边列表用
+                raw_worker.city_name = start.city_name; // 左边列表显示的城市是当前城市，而不恒为老窝
 
                 var worker = {
                     name: raw_worker.user_name,
