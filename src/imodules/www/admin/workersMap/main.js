@@ -67,6 +67,10 @@ define(["/global/iscripts/libs/time/moment.js",
                 var proj = raw_worker.projects ? raw_worker.projects : [];
                 for (var i = proj.length - 1; i >= 0; i--) {
                     var the = proj[i];
+                    if (null == the.start_date || null == the.end_date) {
+                        continue;
+                    }
+
                     // 今天之后的排期, 无条件纳入
                     if (today.isBefore(moment(the.start_date))) {
                         follow.push(the);
@@ -80,7 +84,8 @@ define(["/global/iscripts/libs/time/moment.js",
                             ;
                         }
 
-                        break;
+                        // 因数据有不确定性，故不依赖其严格按照时间顺序，一直遍历完
+                        // break;
                     }
                 }
 

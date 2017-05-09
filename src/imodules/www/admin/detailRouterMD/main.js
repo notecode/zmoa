@@ -18,7 +18,7 @@ define(function() {
                     var imod = (1 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail'; 
                     project.getIModule(imod, null, function (mod) {
                         var h = $(window).height() - 50;
-                        project.open(mod, '_self', {size: ['content', h+'px']});
+                        project.open(mod, '_blank', {size: ['content', h+'px']});
                         mod.render(projId, json);
 
                         var dest = $(mod.dom).find('.control-process-dest');
@@ -26,6 +26,8 @@ define(function() {
                             mod2.render(proj, dest);
                         });
 
+                        // 因此时所在modal没有x按钮，而详情页需要有，故关掉旧的开新的
+                        _this.parent.close();
                     });
                 },
                 fail: function(json) {
