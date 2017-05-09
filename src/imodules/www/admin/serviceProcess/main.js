@@ -72,7 +72,7 @@ define(["/global/iscripts/tools/slick.js"], function() {
                 tlog('project id: ' + projId);
 
                 project.getIModule('imodule://detailRouterMD', null, function (mod) {
-                    project.open(mod, '_blank', {size: ['100px', '100px']});
+                    project.open(mod, '_blank', {size: 'content', controls: []});
                     mod.route(projId);
                 });
             });

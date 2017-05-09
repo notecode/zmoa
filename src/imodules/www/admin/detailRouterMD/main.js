@@ -7,6 +7,10 @@ define(function() {
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.route = function(projId) {
+            // 显示loading动画
+            $(this.dom).show();
+            this.parent.refreshSize();
+
             var _this = this;
             api_ajax('project/detail/' + projId, {
                 succ: function(json) {
