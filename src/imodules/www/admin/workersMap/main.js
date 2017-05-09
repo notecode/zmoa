@@ -128,17 +128,21 @@ define(["/global/iscripts/libs/time/moment.js",
                 for (var j = 0; j < proj_list.length; j++) {
                     var proj = proj_list[j];
                      
+                    // 需求: 
+                    // 1. 当前正在进行的项目用黄色钉子+pane, 
+                    // 2. 若当前无项目(不管未来是否有排期)，用灰色钉子, 无pane
+                    // 3. 将来的排期用coin + pane
                     var marker = null;
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
-                        var is_free = (cnt <= 1);
+                        var is_free = (cnt <= 1 || null == proj.start_date);
                         this.renderPin(pin, worker.name, proj, is_free);
                         this.renderPane(pin, proj);
                         marker = new AMap.Marker({
                             position: [proj.longitude, proj.latitude],
                             content: pin.get(0),
                             zIndex: is_free ? 100 : 110,
-                            offset: new AMap.Pixel(-7, -37)  // 钉子宽14，高37
+                            offset: new AMap.Pixel(-7, -33)  // 钉子宽14，高37(我是真晕，搞不明白41px高的图片为啥弄出来就是37，好生费劲)
                         });
                         marker.setMap(this.map);
                     } else {
@@ -183,10 +187,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 pin.find('.inner-bar').width((60 - 2) * perc); // 注: 在css中设了一个min-width: 6px，否则若width太小，很难看
                 pin.find('.progress-bar').show();
             } else {
-                // 还在老窝
-                pin.find('.worker-name').text(name);
-                pin.find('.progress-bar').remove();
-                pin.find('.dates').remove();
+                console.error('既不是free状态，又没有start_date，你啥意思');
             }
         }
 
