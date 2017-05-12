@@ -112,8 +112,8 @@ define(["/global/iscripts/libs/time/moment.js",
         CON.prototype.render = function(new_data) {
             this.map = new AMap.Map('container', {
                 center: [116.396359,39.909346], // 天安门
+                //zooms: [1, 5], // 可缩放范围
                 zoom: 4
-                //zoom: 11 
             }); 
 
             this.addMarkers(new_data);
@@ -121,6 +121,21 @@ define(["/global/iscripts/libs/time/moment.js",
             var _this = this;
             this.addFlyingLayer(function() {
                 _this.addAllFlyings(new_data);
+            });
+
+            // 为了在放大后不显示公路（因公路颜色和flying线颜色太近），故加事件
+            this.map.on('zoomend', function(e) {
+                var zm = this.getZoom();
+                // tlog('cur zoom: ' + zm);
+                if (zm >= 6) {
+                    if (this.getFeatures() === 'all') {
+                        this.setFeatures(['bg', 'point', 'building']);
+                    }
+                } else {
+                    if (this.getFeatures() !== 'all') {
+                        this.setFeatures('all');
+                    }
+                }
             });
         }
 
