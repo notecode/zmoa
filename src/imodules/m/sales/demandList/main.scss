@@ -1,0 +1,55 @@
+@import "src/sass/global/mixin";
+
+#demandList {
+    .pro-ongoing {
+        width: 100%;
+        background-color: #003894;
+        padding: 0 0.15rem 0.25rem;
+
+        .pro-goingall {
+            font-size: 0.18rem;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            padding-top: 0.2rem;
+        }
+
+        .pro-go-classic {
+            width: 100%;
+            padding-top: 0.25rem;
+            padding-bottom: 0.05rem;
+
+            .p-g-c-one {
+               display: inline-block;
+               width: 40%; 
+               color: #fff;
+               font-size: 0.14rem;
+
+               h2 {
+                font-size: 0.3rem;
+                color: #fff;
+                line-height: 0.42rem;
+                margin: 0;
+               }
+            }
+
+            .p-g-c-one:first-child {
+                width: 55%;
+            }
+        }
+    }
+
+    .pro-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.45rem 0;
+
+        .pro-btn-submit {
+            width: 2rem;
+            height: 0.5rem;
+            border-radius: 2px;
+            background: #003894;
+            outline: none;
+            box-shadow: 0 13px 17px 0 rgba(0,56,148,0.10);
+        }
+    }
+}
