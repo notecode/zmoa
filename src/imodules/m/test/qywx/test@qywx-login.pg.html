@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  @@include('www/common/InsertTop/main.html',{"title": "企业微信授权登录"})
+  <script src="http://rescdn.qqmail.com/node/ww/wwopenmng/js/sso/wwLogin-1.0.0.js"></script>
+</head>
+<body id="{{ID}}" {{IMODULE}}>
+  <div id="wx_reg"></div>
+
+  <a href="https://open.work.weixin.qq.com/wwopen/sso/qrConnect?appid=wwd166efb0a45a080f&agentid=1000002&redirect_uri=http%3A%2F%2Fm2.xxtao.com%3A8080%2Flogin.html&state=web_login@gyoss9">登录</a>
+  @@include('www/common/InsertBottom/main.html')
+</body>
+</html>
