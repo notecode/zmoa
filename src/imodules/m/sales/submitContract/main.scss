@@ -1,0 +1,66 @@
+@import "src/sass/global/mixin";
+
+#submitContract {
+    .demand-submit {
+        width: 100%;
+        padding: 0 0.15rem;
+
+        h2 {
+            font-size: 0.3rem;
+            color: #333333;
+            margin-top: 0.2rem;
+            margin-bottom: 0;
+        }
+
+        .demand-num {
+            padding-top: 0.37rem;
+            font-size: 0.13rem;
+            color: #333333;
+            letter-spacing: 0;
+            line-height: 0.13rem;
+        }
+
+        .num-box {
+            border-bottom: 1px solid #E3E8EE!important;
+            padding-bottom: 0.06rem;
+        }
+
+        .input-num {
+           height: 0.2rem;
+           line-height: 0.2rem;
+           font-size: 0.14rem;
+            width: 100%;
+            border: none;
+            color: #333;
+            outline: none;
+        }
+
+        .association {
+            font-size: 0.14rem;
+            color: #999999;
+            margin-top: 0.1rem;
+            max-height: 1.25rem;
+            overflow-y: auto;
+
+            p {
+                margin: 0;
+                padding: 0.10rem 0;
+            }
+        }
+   }
+
+   .contract-btn {
+        width: 100%;
+        padding: 1rem 0.15rem 0;
+        text-align: right;
+
+        .pro-btn-submit {
+            width: 1.2rem;
+            height: 0.5rem;
+            border-radius: 2px;
+            background: #003894;
+            outline: none;
+            box-shadow: 0 13px 17px 0 rgba(0,56,148,0.10);
+        }
+   }
+}

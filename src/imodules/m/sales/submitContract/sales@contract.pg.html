@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('www/common/InsertTop/main.html',{"title": "项目列表"})
+</head>
+<body id="{{ID}}" {{IMODULE}}>
+    <style>@@include('{{MCSS}}')</style>
+
+    <div class="demand-submit">
+        <h2>提交需求</h2>
+        <p class="demand-num">合同编号</p>
+        <div class="num-box">
+            <input type="text" placeholder="输入项目合同编号" class="input-num"/>
+        </div>
+        <div class="association">
+            <p><span>001222</span>重庆解放碑项目</p>
+            <p><span>001222</span>重庆江北机场新航站楼项目</p>
+        </div>
+    </div>
+    
+
+    <div class="contract-btn">
+    	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
+    </div>
+
+    @@include('www/common/InsertBottom/main.html')
+</body>
+</html>
