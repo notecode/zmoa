@@ -39,9 +39,15 @@ define(["/global/iscripts/libs/time/moment.js",
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        CON.prototype.makeDummyData = function() {
+        // 为了横向铺满，故须知最少要展示多少天
+        CON.prototype.minDayCount = function() {
             var rightWidth = $(window).width() - this.leftWidth;
             var dayCnt = Math.floor(rightWidth / this.cellWidth);
+            return dayCnt;
+        }
+
+        CON.prototype.makeDummyData = function() {
+            var dayCnt = this.minDayCount();
             tlog('no schedule data got, so gen days: ' + dayCnt);
 
             var first = moment().subtract('7', 'days');
@@ -80,9 +86,16 @@ define(["/global/iscripts/libs/time/moment.js",
                 list[i].m_end = moment(list[i].end_date);
             }
 
-            tlog('date range: [' + data.min_date + ', ' + data.max_date + ']');
+            var minDays = this.minDayCount();
             var min = moment(data.min_date);
             var max = moment(data.max_date);
+
+            if (min.twix(max).count('days') < minDays) {
+                max = min.clone().add(minDays, 'days');
+                data.max_date = max.format('YYYY-MM-DD');
+            }
+
+            tlog('date range: [' + data.min_date + ', ' + data.max_date + ']');
 
             var range = [];
             var iter = min.twix(max).iterate("days");
