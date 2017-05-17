@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('www/common/InsertTop/main.html',{"title": "项目信息"})
+</head>
+<body id="{{ID}}" {{IMODULE}}>
+    <style>@@include('{{MCSS}}')</style>
+
+    <div class="detail-info">
+        <h1>填写项目信息</h1>
+        <h6 class="de-xtitle">基础信息</h6>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">合同编号(必填)</span>
+            <input type="text" class="basics-put"/>
+        </div>
+    </div>
+
+    <div class="contract-btn">
+    	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
+    </div>
+
+    @@include('www/common/InsertBottom/main.html')
+</body>
+</html>
