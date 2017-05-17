@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('www/common/InsertTop/main.html',{"title": "提交合同编号"})
+</head>
+<body id="{{ID}}" {{IMODULE}}>
+    <style>@@include('{{MCSS}}')</style>
+
+    <div class="fault">
+        <h2>提交故障信息</h2>
+        <div class="f-person-info clearfix">
+            <span>888001 济南泉城路万达广场</span>
+            <cite>销售  乐乔佳  UNI4</cite>
+        </div>
+        <div class="f-miaoshu">
+            故障描述(必填)
+        </div>
+        <textarea class="f-area"></textarea>
+        <div class="f-load">
+            <span class="icon-malfunction"></span>
+            <p>上传故障照片</p>
+        </div>
+    </div>
+    
+
+    <div class="contract-btn">
+    	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
+    </div>
+
+    @@include('www/common/InsertBottom/main.html')
+</body>
+</html>

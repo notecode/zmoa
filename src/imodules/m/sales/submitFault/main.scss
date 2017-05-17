@@ -1,0 +1,84 @@
+@import "src/sass/global/mixin";
+
+#submitFault {
+    .fault {
+        width: 100%;
+        padding: 0 0.15rem;
+
+        h2 {
+            font-size: 0.3rem;
+            color: #333333;
+            margin: 0;
+            padding-top: 0.2rem;
+        }
+
+        .f-person-info {
+            font-size: 0.13rem;
+            color: #8B9AAB;
+            line-height: 0.13rem;
+            margin-top: 0.10rem;
+
+            span {
+                float: left;
+            }
+
+            cite {
+                float: right;
+                font-style: normal;
+            }
+        }
+
+        .f-miaoshu {
+            font-size: 0.13rem;
+            color: #333333;
+            line-height: 0.13rem;
+            margin-top: 0.3rem;
+        }
+
+        .f-area {
+            width: 100%;
+            height: 1rem;
+            border: 1px solid #e3e8ee;
+            margin-top: 0.16rem;
+            outline: none;
+            padding: 0.08rem 0.15rem;
+            font-size: 0.14rem;
+            color: #333;
+        }
+
+        .f-load {
+            width: 100%;
+            height: 2.14rem;
+            border: 1px dashed #e3e8ee;
+            margin-top: 0.2rem;
+            text-align: center;
+            font-size: 0.15rem;
+            color: #8B9AAB;
+            padding-top: 0.68rem;
+            cursor: pointer;
+
+            .icon-malfunction {
+                font-size: 0.34rem;
+                color: #003894;
+            }
+
+            p {
+                padding-top: 0.2rem;
+            }
+        }
+    }
+   .contract-btn {
+        width: 100%;
+        padding: 0.5rem 0.15rem 0.27rem;
+        text-align: right;
+
+        .pro-btn-submit {
+            width: 1.2rem;
+            height: 0.5rem;
+            border-radius: 2px;
+            background: #003894;
+            outline: none;
+            box-shadow: 0 13px 17px 0 rgba(0,56,148,0.10);
+        }
+   }
+}
