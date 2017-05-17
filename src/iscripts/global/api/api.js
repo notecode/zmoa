@@ -15,7 +15,13 @@ var api = {
 
 		tlog('api: ' + url);
 		return url;
-	})()
+	})(),
+
+    // notecode
+    qywx: {
+        corpID: 'wwd166efb0a45a080f',
+        agentID: 1000002,
+    },
 }; 
 
 function proj_img_url(raw) {
