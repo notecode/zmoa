@@ -11,25 +11,24 @@
     }
 
     .detail-beijian {
-        border-bottom: 1px solid #E3E8EE;
-        padding-bottom: 0.15rem;
-        padding-top: 0.15rem;
+        border-left: 1px solid #E3E8EE;
 
         .detail-bj-name {
             font-size: 0.18rem;
-            color: #212022;
+            color: #333;
             letter-spacing: 0;
             line-height: 0.23rem;
-            padding-left: 0.15rem;
             float: left;
             outline: none;
             border: none;
             font-weight: 700px;
-            width: 2rem;
+            width: 100%;
+            font-size: 0.14rem;
         }
         .detail-bj-count {
             float: right;
-            width: 1.58rem;
+            width: 100%;
+            text-align: center;
             .count-shu {
                 font-size: 0.12rem;
                 color: #83848E;
@@ -44,7 +43,7 @@
                 text-align: center;
                 line-height: 0.16rem;
                 cursor: pointer;
-                color: #4785f9;
+                color: #003894;
             }
             .count-jia {
                 width: 0.22rem;
@@ -56,7 +55,7 @@
                 line-height: 0.19rem;
                 vertical-align: -1px;
                 cursor: pointer;
-                color: #4785f9;
+                color: #003894;
             }
             .count-liang {
                 font-size: 0.15rem;
@@ -70,16 +69,27 @@
         }
 
         .beijian-type {
-           width: 1.5rem;
+           width: 100%;
            border: none; 
-           padding-left: 0.15rem;
            outline: none;
            font-size: 0.14rem;
+           color: #333;
         }
+    }
+
+    .detail-bj-tianjia {
+        width: 100%;
+        padding: 0 0.15rem;
+
+
         .beijian-add {
             font-size: 0.14rem;
-            color: #4785F9;
+            color: #003894;
             letter-spacing: 0; 
+            border: 1px solid #e3e8ee;
+            border-top: none;
+            height: 0.5rem;
+            line-height: 0.5rem;
         }
     }
 
@@ -130,6 +140,39 @@
                 float: right;
             }
         }
+    }
+
+    .spare-list {
+        width: 100%;
+        padding: 0 0.15rem;
+    }
+
+    .spare {
+        width: 100%;
+        border: 1px solid #e3e8ee;
+        border-right: none;
+        height: 0.44rem;
+        line-height: 0.44rem;
+        background-color: #f7faff;
+        font-size: 0.14rem;
+        color: #8B9AAB;
+    }
+
+    .spare-one {
+        width: 50%;
+        float: left;
+        border-right: 1px solid #e3e8ee;
+        padding: 0 0.15rem;
+    }
+
+    .spare-two {
+        width: 50%;
+        float: left;
+        padding: 0 0.15rem;
+        border-right: 1px solid #e3e8ee;
+        border-bottom: 1px solid #e3e8ee;
+        height: 0.5rem;
+        padding-top: 0.12rem;
     }
 
     // 编写维修记录页，不显示“补充说明”
