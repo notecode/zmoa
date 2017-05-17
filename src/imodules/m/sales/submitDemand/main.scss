@@ -235,6 +235,19 @@
         }
     }
 
+    .edit-error {
+        width: 100%;
+        height: 0.32rem;
+        background: #D0011B;
+        font-size: 0.13rem;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 0.32rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
 
     input::-webkit-input-placeholder {
         color: #8B9AAB !important; /* WebKit browsers */
