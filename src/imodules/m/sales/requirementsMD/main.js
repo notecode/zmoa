@@ -1,72 +1,30 @@
-define(["/global/iscripts/libs/time/moment.js"], function(moment) {
+define(function() {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.tpl = this._els.tpl[0].text;
+            this.openDetail();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        var APPLY_ENVIRONMENT = {
-            1: '户外',
-            2: '室内',
-            3: '半户外',
-        };        
-        var SCREEN_COLOR = {
-            1: '双色',
-            2: '单色',
-            3: '全彩',
-        };
-
-		CON.prototype.render = function(proj) {
-            var worker = proj.service_user || {};
-            proj.main_img = proj_img_url(proj.main_img);
-            var dom = Mustache.render(this.tpl, {
-                proj: proj,
-                fn: {
-                    apply_environment: function() {
-                        return APPLY_ENVIRONMENT[proj.apply_environment];
-                    },
-                    screen_color: function() {
-                        return SCREEN_COLOR[proj.screen_color];
-                    },
-                    hide_main_img: function() {
-                        var img = proj.main_img;
-                        return (img && img.length > 0) ? '' : 'hide';
-                    },
-                    sched: function() {
-                        var start = worker.start_date;
-                        return (start && start.length > 0) ? 'show' : 'hide';
-                    },
-                    sch_start: function() {
-                        var start = worker.start_date;
-                        return start ? moment(start).format('M月DD日') : '';
-                    },
-                    sch_end: function() {
-                        var end = worker.end_date;
-                        return end ? moment(end).format('M月DD日') : '';
-                    }
+        //点击展开详细信息
+        CON.prototype.openDetail = function(){
+            $(this._els.openDetail).click(function(){
+                var statusone = $(this).parent().find('.has-first');
+                var statusother = $(this).parent().find('.has-status');
+                if($(this).hasClass('hascurrent')) {
+                    statusone.removeHide();
+                    statusother.addHide();
+                    $(this).removeClass('hascurrent')
+                }else{
+                    statusone.addHide();
+                    statusother.removeHide();
+                    $(this).addClass('hascurrent')
                 }
-            });
-            this.find('.details').append(dom);
-
-            this.bindFoldEvents();
-		}
-		
-		CON.prototype.bindFoldEvents = function() {
-            var fold = this.find('.fold-table');
-            var unfold = this.find('.unfold-table');
-            var table = this.find('.info-table');
-
-            var tog = function() {
-                fold.toggle();
-                unfold.toggle();
-                table.toggle();
-            };
-            fold.click(tog);
-            unfold.click(tog);
-		}
-        
+                
+            })
+        }
+     
         return CON;
     })();
 
