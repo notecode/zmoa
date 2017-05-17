@@ -46,10 +46,13 @@ define(function() {
                 succ: function(json) {
                     // 不要加这个提示，因为有副作用
                     // project.tip('操作成功', 'succ', '', true);
+                    
+                    // 无法直接拿到我所在的dialog，故用这种方式取当前dialog，关闭它
+                    potato.getCurDialog().close();
 
                     project.getIModule('imodule://serviceProcess').moveProject(_this.projId, status);
                     project.getIModule('imodule://detailRouterMD', null, function (mod) {
-                        project.open(mod, '_self', {size: ['100px', '100px']});
+                        project.open(mod, '_blank', {size: 'content', controls: []});
                         mod.route(_this.projId);
                     });
                 },

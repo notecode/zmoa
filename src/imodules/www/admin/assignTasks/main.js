@@ -215,9 +215,11 @@ define(["/global/iscripts/libs/time/moment.js",
                         // project.tip('指派成功', 'succ', '', true);
                         project.getIModule('imodule://serviceProcess').moveProject(_this.projId, 2);
                         project.getIModule('imodule://detailRouterMD', null, function (mod) {
-                            project.open(mod, '_self', {size: ['100px', '100px']});
+                            project.open(mod, '_blank', {size: 'content', controls: []});
                             mod.route(_this.projId);
                         });
+
+                        _this.parent.close();
                     },
                     fail: function(json) {
                         console.error('assign worker failed');
