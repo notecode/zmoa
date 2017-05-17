@@ -9,14 +9,205 @@
     <div class="detail-info">
         <h1>填写项目信息</h1>
         <h6 class="de-xtitle">基础信息</h6>
-        <div class="de-basics clearfix">
+        <div class="de-basics basicone clearfix">
             <span class="basics-tip">合同编号(必填)</span>
             <input type="text" class="basics-put"/>
         </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">项目名称(必填)</span>
+            <input type="text" class="basics-put"/>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">屏幕面积m²(必填)</span>
+            <input type="text" class="basics-put"/>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">屏幕颜色</span>
+            <div class="basics-select">
+                <a class="b-selset-type active" href="javascript:;">全彩</a>
+                <span>/</span>
+                <a class="b-selset-type" href="javascript:;">双色</a>
+                <span>/</span>
+                <a class="b-selset-type" href="javascript:;">单色</a>
+            </div>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">屏幕类型</span>
+            <div class="basics-select">
+                <a class="b-selset-type active" href="javascript:;">户外</a>
+                <span>/</span>
+                <a class="b-selset-type" href="javascript:;">室内</a>
+                <span>/</span>
+                <a class="b-selset-type" href="javascript:;">半户外</a>
+            </div>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">保质期截止日期</span>
+            <input type="text" class="basics-put" placeholder="如2017.08.12"/>
+        </div>
+
+         <h6 class="de-xtitle">配品配件</h6>
+         <ul class="parts clearfix">
+            <li class="clearfix">
+                <div class="parts-title">配件名称</div>
+                <div class="parts-title">备份数量</div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">模组</div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">灯珠</div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">控制卡</div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">电缆</div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">电源</div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="parts-con">
+                    <input type="text" placeholder="配料类型" class="parts-new">
+                </div>
+                <div class="parts-con-ji clearfix">
+                    <span class="count-jian down-count">-</span>
+                    <span class="count-liang spare-count spare-hui">0</span>
+                    <span class="count-jia up-count">+</span>
+                </div>
+            </li>
+            <li class="parts-add">
+                <a href="javascript:;" class="parts-add-btn">+添加</a>
+            </li>
+         </ul>
+
+        <h6 class="de-xtitle">项目所在地（必填）</h6>
+        <div class="de-basics de-cascade">
+            <a class="cascade-option active" href="javascript:;">省份</a>
+            <span>/</span>
+            <a class="cascade-option" href="javascript:;">城市</a>
+            <span>/</span>
+            <a class="cascade-option" href="javascript:;">区 / 县</a>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">&nbsp;</span>
+            <input type="text" class="basics-put" placeholder="项目详细地址" style="text-align: left;"/>
+        </div>
+
+        <h6 class="de-xtitle">联系人</h6>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">姓名(必填)</span>
+            <input type="text" class="basics-put"/>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">联系方式(必填)</span>
+            <input type="text" class="basics-put"/>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">单位名称</span>
+            <input type="text" class="basics-put"/>
+        </div>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">职位</span>
+            <input type="text" class="basics-put"/>
+        </div>
+
+        <h6 class="de-xtitle">补充说明</h6>
+        <div class="de-basics clearfix">
+            <span class="basics-tip">&nbsp;</span>
+            <input type="text" class="basics-put" placeholder="你还想补充点什么？" style="text-align: left;"/>
+        </div>
     </div>
 
-    <div class="contract-btn">
+    <div class="info-btn">
     	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
+    </div>
+
+    <div class="info-mask hide">
+
+    </div>
+    <div class="select-jilian provice hide">
+        <div class="sel-title">
+            选择省份
+        </div>
+        <ul>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+        </ul>
+    </div>
+    <div class="select-jilian city hide">
+        <div class="sel-title">
+            选择城市
+        </div>
+        <ul>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+        </ul>
+    </div>
+    <div class="select-jilian district hide">
+        <div class="sel-title">
+            选择城市
+        </div>
+        <ul>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+            <li>安微省</li>
+            <li>北京市</li>
+        </ul>
     </div>
 
     @@include('www/common/InsertBottom/main.html')
