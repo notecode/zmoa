@@ -7,32 +7,32 @@
     <style>@@include('{{MCSS}}')</style>
 
     <div class="pro-ongoing">
-    	<div class="pro-goingall">平台正在进行的项目(34)</div>
+    	<div class="pro-goingall">平台正在进行的项目(<span idom="lRunning"></span>)</div>
     	<div class="pro-go-classic">
     		<div class="p-g-c-one">
     			<p>待派人</p>
-    			<h2>3</h2>
+    			<h2 idom="lWaitingSend">&nbsp;</h2>
     		</div>
     		<div class="p-g-c-one">
     			<p>排期中</p>
-    			<h2>3</h2>
+    			<h2 idom="lScheduling">&nbsp;</h2>
     		</div>
     	</div>
     	<div class="pro-go-classic">
     		<div class="p-g-c-one">
     			<p>服务中</p>
-    			<h2>3</h2>
+    			<h2 idom="lServing">&nbsp;</h2>
     		</div>
     		<div class="p-g-c-one">
     			<p>待回访</p>
-    			<h2>3</h2>
+    			<h2 idom="lWaitingReturn">&nbsp;</h2>
     		</div>
     	</div>
     </div>
     @@include('m/sales/requirementsMD/main.md.html')
 
     <div class="pro-btn">
-    	<button type="button" class="btn btn-primary pro-btn-submit">添加新需求</button>
+    	<button type="button" class="btn btn-primary pro-btn-submit" ievent="addDemand">添加新需求</button>
     </div>
 
     @@include('www/common/InsertBottom/main.html')

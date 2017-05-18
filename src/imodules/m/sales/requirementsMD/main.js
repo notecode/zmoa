@@ -3,26 +3,51 @@ define(function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.openDetail();
+            this.mgetMyPro();
+            this.tpl = this._els.tpl[0].text;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        //点击展开详细信息
-        CON.prototype.openDetail = function(){
-            $(this._els.openDetail).click(function(){
-                var statusone = $(this).parent().find('.has-first');
-                var statusother = $(this).parent().find('.has-status');
-                if($(this).hasClass('hascurrent')) {
-                    statusone.removeHide();
-                    statusother.addHide();
-                    $(this).removeClass('hascurrent')
-                }else{
-                    statusone.addHide();
-                    statusother.removeHide();
-                    $(this).addClass('hascurrent')
+        CON.prototype.mgetMyPro = function() {
+            var _this = this;
+            api_ajax('project/my_projects', {
+                succ: function(json) {
+                    //判断有无需求
+                    if(json.count <= 0) {
+                        json.noDemand = '';
+                        json.haveDemand = 'hide';
+                    } else {
+                        json.noDemand = 'hide';
+                        json.haveDemand = '';
+                    }
+                    _this.proInfoRender(json);
+                },
+                fail: function(json) {
+
                 }
-                
-            })
+            });
+        }
+
+        CON.prototype.proInfoRender = function(ctx) {
+            var _this = this;
+            var dom = Mustache.render(this.tpl, ctx); 
+            this.find('#myProject').html(dom);
+        }
+
+       
+
+        CON.prototype._ievent_oaa = function(data, target, hit){
+            var statusone = $(target).parent().find('.has-first');
+            var statusother = $(target).parent().find('.has-status');
+            if($(target).hasClass('hascurrent')) {
+                statusone.removeHide();
+                statusother.addHide();
+                $(target).removeClass('hascurrent')
+            }else{
+                statusone.addHide();
+                statusother.removeHide();
+                $(target).addClass('hascurrent')
+            }
         }
      
         return CON;
