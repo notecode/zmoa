@@ -1,113 +1,95 @@
-define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
+define(function() {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
-            this.btn_action = null;
-
+            this.tpl = this._els.tpl[0].text;
             var _this = this;
-            var doRender = function(proj) {
-                project.getIModule('imodule://detailsMD', null, function(mod) {
-                    mod.render(proj);
-                });
 
-                project.getIModule('imodule://sparesMD', null, function(mod) {
-                    mod.render(proj);
-                });
+            //input触发事件
+            $(this._els.LSearch).bind('input propertychange','textarea', debounce(function (e) {
+                var $target = $(e.target)
+                _this.search($target);
+                $(_this._els.errorNull).slideUp();
+            }, 300));
 
-                _this.renderBottomBtn(proj);
-            }
-
-            if (1 == qs('test')) {
-                doRender(mock.project_info);
-            } else {
-                api_ajax('project/detail/' + qs_proj(), {
-                    succ: function(json) {
-                        doRender(json.project_info);
-                    }
-                });
-            }
+            // 监听项目列表点击事件
+            $(this._els.LProjects).on('click', 'p', function(e) {
+                var $this = $(e.target);
+                var item = $this.data();
+                _this.key = item.key + '';
+                _this.id = item.id;
+                setTimeout(function(){
+                    $(_this._els.LSearch).val(item.key + ' ' + item.name);
+                },100)
+                
+            })      
+            
         };
         potato.createClass(CON, baseIModules.BaseIModule);
         
-        CON.prototype.renderBottomBtn = function(proj) {
-            var showBtn = true;
-            var btn = this.find('.bottom-btn');
-            var status = parseInt(proj.status);
-            var srv_u = proj.service_user || {};
-            var sched = (srv_u.start_date && srv_u.end_date);
-
-            switch (status) {
-                case 1: // 已立项，待派人 
-                    var msg = '已立项，待派人';
-                    tlog(msg + ' (手机端理论上不应在这个阶段打开此项目)');
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
-                    if (!sched) {
-                        btn.text('立即排期');
-                        this.btn_action = function() {
-                            // 跳到排期页
-                            location.href = '/engineer/schedule.html?project=' + qs_proj();
+        // 项目模糊搜索
+        CON.prototype.search = function (el) {
+            var key = el.val().trim();
+            var _this = this;
+            if (!!key) {
+                api_ajax_post('project/associate_projects', { projectNameOrContract: key }, {
+                    succ: function(data) {
+                        var renderObj = { arr: false, items: [] }
+                        if ($.isArray(data) && data.length > 0) {
+                            renderObj.arr = true
+                            renderObj.items = data
+                        } else if(!$.isEmptyObject(data) && data.errcode) {
+                            project.tip('用户未登陆','succ','', true);
                         }
-                    } else {
-                        btn.text('开始现场服务');
-                        this.btn_action = function() {
-                            // status: 2 -> 3, reload
-                            var data = {
-                                projectId: qs_proj(),
-                                status: 3
-                            };
-                            api_ajax_post('project/transfer_status', data, {
-                                succ: function(json) {
-                                    project.tip('已开始', 'succ', '');
-                                    setTimeout(function() {
-                                        location.reload();
-                                    }, 3000);
-                                },
-                                fail: function(json) {
-                                    alert(json.errmsg);
-                                }
-                            });
-                        }
+                        var domStr = Mustache.render(_this.tpl, renderObj); 
+                        $(_this._els.LProjects).html(domStr);
+                    },
+                    fail: function(json) {
+                        project.tip('系统错误','succ','', true);
                     }
-                    break;
-                case 3: // 服务中(已点击“开始服务”)
-                    btn.text('完成现场服务');
-                    this.btn_action = function() {
-                        // 跳到提交“维修记录”页
-                        location.href = '/engineer/log-repair.html?project=' + qs_proj();
-                    }
-                    break;
-                case 4: // (服务)已完成，待回访
-                    var msg = '服务已完成，待回访' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 5: // 已结束
-                    var msg = '已结束' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 6: // 已终止
-                    var msg = '已终止' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                default:
-                    tlog('[!!!]Unknown status: ' + status);
-                    showBtn = false;
-                    break;
-            }
-
-            if (showBtn) {
-                btn.toggle();
+                });
             }
         }
 
-        CON.prototype._ievent_action = function(data, target, hit) {
-            this.btn_action();
+        // 添加需求
+        CON.prototype._ievent_submitForm = function(data, target) {
+            var _this = this;
+            var $value = $.trim($(this._els.LSearch).val())
+            var key = $value.split(' ')[0];
+            if (key === this.key) { //输入项目已经存在
+                $value = this.key
+                this.reset();
+                location.href="/sales/demand-detail.html";
+                //this.openBasicInfo(this.id, true);
+                return false;
+            }
+            if(!!$value && key !== this.key) { //输入项目为新项目
+                api_ajax_post('project/add', { contract: $value }, {
+                    succ: function(data) {
+                        if (data && data.project_id) {
+                            _this.reset();
+                            location.href="/sales/demand-detail.html";
+                            //_this.openBasicInfo(data.project_id, data.project_exist === '1');
+                        }
+                    },
+                    fail: function(json) {
+                        console.log(json);
+                        project.tip('提交失败','succ','', true);
+                    }
+                });
+            } else {
+                //project.tip('项目不能为空','error','', false);
+                $(_this._els.errorNull).addClass('slideUp');
+            }
+            return false;
+        }
+
+        // 重置表单数据
+        CON.prototype.reset = function() {
+            $(this._els.LSearch).val('')
+            $(this._els.LProjects).html('');
         }
             
         return CON;
