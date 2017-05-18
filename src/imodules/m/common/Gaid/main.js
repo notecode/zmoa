@@ -38,7 +38,7 @@ define(function() {
                     var qywxCode = qs('code');
                     if (qywxCode && qywxCode.length > 0) {
                         _this.dbg('almost succ: qywxAuthSucc');
-                        _this.qywxAuthSucc();
+                        _this.qywxAuthSucc(qywxCode);
                     } else if ('#from_qywx' == location.hash) {
                         _this.dbg('gotoQywxAuth');
                         _this.gotoQywxAuth();
@@ -50,8 +50,16 @@ define(function() {
             });
 		}
 
-        CON.prototype.qywxAuthSucc = function() {
-            alert('todo: 后端实现code登录接口');
+        CON.prototype.qywxAuthSucc = function(code) {
+            var q = {code: code};
+            api_ajax_with_query('user/login_by_qywx_code', q, {
+                succ: function(json) {
+                    alert('login with code succ');
+                },
+                fail: function(json) {
+                    alert('failed');
+                }
+            });
         }
 
         CON.prototype.gotoQywxAuth = function() {
@@ -60,7 +68,7 @@ define(function() {
             // 必须要清掉末尾的hash(即#xxx部分)，否则在微信中不往下进行
             var toUrl = location.href.split('#')[0];
             this.dbg(toUrl);
-            var urlTpl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={{corpID}}&redirect_uri={{to}}&response_type=code&scope=snsapi_base&agentid={{agentID}}&state=SONG#wechat_redirect";
+            var urlTpl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={{corpID}}&redirect_uri={{to}}&response_type=code&scope=snsapi_userinfo&agentid={{agentID}}&state=foo#wechat_redirect";
             var url = Mustache.render(urlTpl, {
                 corpID: corpID,
                 to: encodeURIComponent(toUrl),
