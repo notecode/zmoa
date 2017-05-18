@@ -336,6 +336,9 @@
     });
 
     $(document).ready(function () {
+        // immy原有的event有问题，故用个第三方的
+        project.events = new EventEmitter();
+
         project.autoCreateIModules();
     });
 })();
