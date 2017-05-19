@@ -110,9 +110,13 @@ define(["/global/iscripts/libs/time/moment.js",
             for (var i = 0; i < list.length; i++) {
                 var the = list[i];
                 the.displace = min.twix(the.m_start).count("days") - 1;
-                // 因接口返回的数据本不含已结束的项目，故，end_date在今天之前的实为还未结束(工程商未及时点“已完成”按钮)，故UI显示成绵延到今天
-                var end = the.m_end.isSameOrAfter(today) ? the.m_end : today;
-                the.during = the.m_start.twix(end).count("days");
+                if (!dummy) {
+                    // 因接口返回的数据本不含已结束的项目，故，end_date在今天之前的实为还未结束(工程商未及时点“已完成”按钮)，故UI显示成绵延到今天
+                    var end = the.m_end.isSameOrAfter(today) ? the.m_end : today;
+                    the.during = the.m_start.twix(end).count("days");
+                } else {
+                    the.during = 0;
+                }
 
                 tlog('bar ' + i + ': [' + the.displace + ', ' + the.during + ']');
 
