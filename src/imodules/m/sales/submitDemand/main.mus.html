@@ -1,0 +1,107 @@
+<h1>填写项目信息</h1>
+<h6 class="de-xtitle">基础信息</h6>
+<div class="de-basics basicone clearfix">
+    <span class="basics-tip">合同编号(必填)</span>
+    <input type="text" class="basics-put" value="{{project_info.contract}}"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">项目名称(必填)</span>
+    <input type="text" class="basics-put" value="{{project_info.name}}"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">屏幕面积m²(必填)</span>
+    <input type="text" class="basics-put" value="{{project_info.screen_area}}"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">屏幕颜色</span>
+    <div class="basics-select colorActive{{project_info.screen_color}}">
+        <a class="b-selset-type color-one" href="javascript:;">全彩</a>
+        <span>/</span>
+        <a class="b-selset-type color-two" href="javascript:;">双色</a>
+        <span>/</span>
+        <a class="b-selset-type color-three" href="javascript:;">单色</a>
+    </div>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">屏幕类型</span>
+    <div class="basics-select envirActive{{project_info.apply_environment}}">
+        <a class="b-selset-type envir-one" href="javascript:;">户外</a>
+        <span>/</span>
+        <a class="b-selset-type envir-two" href="javascript:;">室内</a>
+        <span>/</span>
+        <a class="b-selset-type envir-three" href="javascript:;">半户外</a>
+    </div>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">保质期截止日期</span>
+    <input type="text" class="basics-put" value="{{project_info.expiration_date}}" placeholder="如2017.08.12"/>
+</div>
+
+<h6 class="de-xtitle">备品备料</h6>
+<ul class="parts clearfix">
+    <li class="clearfix">
+        <div class="parts-title">备品名称</div>
+        <div class="parts-title">备份数量</div>
+    </li>
+    {{#project_info.preparations}}
+    <li class="clearfix">
+        <div class="parts-con"><input type="text" placeholder="配料类型" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
+        <div class="parts-con-ji clearfix">
+            <span class="count-jian down-count">-</span>
+            <span class="count-liang spare-count">{{preparation_type_number}}</span>
+            <span class="count-jia up-count">+</span>
+        </div>
+    </li>
+    {{/project_info.preparations}}
+    <li class="clearfix">
+        <div class="parts-con">
+            <input type="text" placeholder="配料类型" class="parts-new">
+        </div>
+        <div class="parts-con-ji clearfix">
+            <span class="count-jian down-count">-</span>
+            <span class="count-liang spare-count spare-hui">0</span>
+            <span class="count-jia up-count">+</span>
+        </div>
+    </li>
+    <li class="parts-add">
+        <a href="javascript:;" class="parts-add-btn">+添加</a>
+    </li>
+ </ul>
+
+<h6 class="de-xtitle">项目所在地（必填）</h6>
+<div class="de-basics de-cascade">
+    <a class="cascade-option proviceval active" href="javascript:;" ievent="provice" data-provice="
+    {{project_info.province_id}}" idom="">省份</a>
+    <span>/</span>
+    <a class="cascade-option" href="javascript:;" ievent="city">城市</a>
+    <span>/</span>
+    <a class="cascade-option" href="javascript:;" ievent="district">区 / 县</a>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">&nbsp;</span>
+    <input type="text" class="basics-put" placeholder="项目详细地址" style="text-align: left;" value="{{project_info.detail_address}}" name="detailAddress"/>
+</div>
+
+<h6 class="de-xtitle">联系人</h6>
+<div class="de-basics clearfix">
+    <span class="basics-tip">姓名(必填)</span>
+    <input type="text" class="basics-put" value="{{project_info.contact_name}}" name="contactName"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">联系方式(必填)</span>
+    <input type="text" class="basics-put" value="{{project_info.contact_phone}}" name="contactPhone"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">单位名称</span>
+    <input type="text" class="basics-put" value="{{project_info.contact_company}}" name="contactCompany"/>
+</div>
+<div class="de-basics clearfix">
+    <span class="basics-tip">职位</span>
+    <input type="text" class="basics-put" value="{{project_info.contact_position}}" name="contactPosition"/>
+</div>
+
+<h6 class="de-xtitle">补充说明</h6>
+<div class="de-basics clearfix">
+    <span class="basics-tip">&nbsp;</span>
+    <input type="text" class="basics-put" placeholder="你还想补充点什么？" style="text-align: left;" value="{{project_info.description}}"/>
+</div>

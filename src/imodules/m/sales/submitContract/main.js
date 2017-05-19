@@ -61,8 +61,8 @@ define(function() {
             if (key === this.key) { //输入项目已经存在
                 $value = this.key
                 this.reset();
-                location.href="/sales/demand-detail.html";
-                //this.openBasicInfo(this.id, true);
+                //location.href="/sales/demand-detail.html";
+                this.openBasicInfo(this.id, true);
                 return false;
             }
             if(!!$value && key !== this.key) { //输入项目为新项目
@@ -70,8 +70,8 @@ define(function() {
                     succ: function(data) {
                         if (data && data.project_id) {
                             _this.reset();
-                            location.href="/sales/demand-detail.html";
-                            //_this.openBasicInfo(data.project_id, data.project_exist === '1');
+                            //location.href="/sales/demand-detail.html";
+                            _this.openBasicInfo(data.project_id, data.project_exist === '1');
                         }
                     },
                     fail: function(json) {
@@ -80,10 +80,29 @@ define(function() {
                     }
                 });
             } else {
-                //project.tip('项目不能为空','error','', false);
                 $(_this._els.errorNull).addClass('slideUp');
             }
             return false;
+        }
+
+        // 根据角色判断打开故障页面还是基本信息页面
+        CON.prototype.openBasicInfo = function(id, isExist) {
+            var _this = this;
+            api_ajax('project/detail/' + id, {
+                succ: function(json) {
+                    //判断有无需求
+                    if (json.user_role !== '1' && isExist) {
+                        //打开故障页面
+                        location.href="/sales/demand-detail.html?project_id="+id;
+                    } else {
+                        //打开基本信息页面
+                        location.href="/sales/fault.html?project_id="+id;
+                    }
+                },
+                fail: function(json) {
+                    console.log(json);
+                }
+            });                     
         }
 
         // 重置表单数据

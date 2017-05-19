@@ -55,15 +55,42 @@
                    display: inline-block;
                    width: 0.5rem;
                    text-align: right;
-
-                   &.active {
-                     color: #666;
-                   }
                 }
 
                 span {
                     display: inline-block;
                     margin: 0 0.07rem 0 0.34rem;
+                }
+            }
+            .basics-select.colorActive1 {
+                .color-two { /*双色*/
+                    color: #666;
+                }
+            }
+            .basics-select.colorActive2 {
+                .color-three {  /*单色*/
+                    color: #666;
+                }
+            }
+            .basics-select.colorActive3 {
+                .color-one { /*全彩*/
+                    color: #666;
+                }
+            }
+
+            .basics-select.envirActive1 {
+                .envir-one { /*户外*/
+                    color: #666;
+                }
+            }
+            .basics-select.envirActive2 {
+                .envir-two {  /*室内*/
+                    color: #666;
+                }
+            }
+            .basics-select.envirActive3 {
+                .envir-three { /*半户外*/
+                    color: #666;
                 }
             }
         }
