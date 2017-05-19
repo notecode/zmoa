@@ -408,7 +408,7 @@ define(["/global/iscripts/libs/time/moment.js",
                 startDate: this.selected_range.start,
                 endDate: this.selected_range.end,
                 // description: msg.length > 0 ? ('排期日志: ' + msg) : '排期日志（未填写原因）'
-                description: msg
+                description: filterCR(msg)
             };
 
             api_ajax_post('project/mobile_project_edit_schedule', data, {

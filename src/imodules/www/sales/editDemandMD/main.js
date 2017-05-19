@@ -141,6 +141,8 @@ define(function() {
                 }
             }
             var data = $(target).serializeJSON();
+            data.description = filterCR(data.description);
+
             var preparationArr = [];
             if (!!data.preparation) {
                 if ($.isArray(data.preparation.name)) {

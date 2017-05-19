@@ -93,8 +93,8 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             var _this = this;
             var text = $(_this._els.reTextarea).val();
             var data = {
-                projectId : this.projId,
-                comment: text
+                projectId: this.projId,
+                comment: filterCR(text)
             };
 
             if (text == ''){

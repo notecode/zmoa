@@ -29,7 +29,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
             if (log.length > 0) {
                 var data = {
                     projectId: qs_proj(),
-                    comment: log 
+                    comment: filterCR(log)
                 };
 
                 api_ajax_post('project/add_comment_to_project', data, {

@@ -7,6 +7,12 @@
 String.prototype.contains = function(it) { 
 	return this.indexOf(it) != -1;  
 }
+// http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+String.prototype.replaceAll = function (find, replace) {
+    var str = this;
+    return str.replace(new RegExp(find, 'g'), replace);
+};
+
 Array.prototype.contains = function(it) { 
 	//return this.indexOf(it) != -1;  
 	// IE8没有indexOf，暂时先用jquery的，先跑起来

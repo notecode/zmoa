@@ -85,6 +85,8 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype._ievent_submitForm = function(data, target) {
             var _this = this;
             var data = $(target).serializeJSON();
+            data.description = filterCR(data.description);
+
             var $tipEl = $(this._els.LErrorTip);
             data.projectId = this.info.id;
             data.name = this.info.name;

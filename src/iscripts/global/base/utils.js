@@ -243,6 +243,15 @@ function is_supplier_map(){
 	return location.pathname.contains('maintenance');
 }
 
+// 过滤掉回车换行: \r\n。因为其导致JSON解析出错，暂先粗暴过滤掉
+// 注意： 
+//    0. replaceAll是自己写的extend，见prototype_ext.js
+//    1. string是传value的，故需如是调用:
+//        foo = filterCR(foo);
+//
+function filterCR(str) {
+    return str.replaceAll('\r\n', '');
+}
 
 // 
 // 标准规则：
