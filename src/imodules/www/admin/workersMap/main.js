@@ -80,12 +80,21 @@ define(["/global/iscripts/libs/time/moment.js",
                         if (today.isSameOrBefore(moment(the.end_date))) {
                             start = the; 
                             task_cnt++;
-                        } else { // 已完成的，忽略
-                            ;
+                        } else {
+                            // 因接口返回的数据为进行中、排期中的项目。故，今天之前的，实际还在进行中(gantt图页有同样逻辑)
+                            the.end_date = today.format('YYYY-MM-DD');
+                            start = the; 
+                            task_cnt++;
                         }
 
-                        // 因数据有不确定性，故不依赖其严格按照时间顺序，一直遍历完
-                        // break;
+                        var nIgnore = proj.length - task_cnt;
+                        if (nIgnore > 0) {
+                            tlog(raw_worker.user_name + ': ' + nIgnore + '个项目被无视(或因有null时间，或被视为已完成)');
+                        }
+
+                        // 后端依然按start_date升序排列，故可信赖。找到一个进行中的，或今天之前的最近一个，即结束。再往前的，就抛掉吧。
+                        // 否则，逻辑已经就太乱了
+                        break;
                     }
                 }
 
@@ -156,7 +165,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     var marker = null;
                     if (0 == j) {
                         var pin = this.find('.tpl .marker-pin').clone();
-                        var is_free = (cnt <= 1 || null == proj.start_date);
+                        var is_free = (null == proj.start_date);
                         this.renderPin(pin, worker.name, proj, is_free);
                         this.renderPane(pin, proj);
                         marker = new AMap.Marker({
