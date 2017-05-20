@@ -28,7 +28,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                             doRender(json.project_info);
                         },
                         fail: function(json) {
-                            alert('todo: 微信设cookie失败');
+                            alert(json.errmsg);
                         }
                     });
                 });
