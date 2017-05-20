@@ -40,9 +40,9 @@ define(function() {
         CON.prototype.qywxAuthSucc = function(code) {
             var _this = this;
             var q = {code: code};
-            api_ajax_with_query('user/login_by_qywx_code', q, {
+            api_ajax_with_query('user/qywx_login', q, {
                 succ: function(json) {
-                    _this.dbg('login_by_qywx_code succ');
+                    _this.dbg('qywx_login succ');
                     _this.emitLoginEnsured();
                 },
                 fail: function(json) {

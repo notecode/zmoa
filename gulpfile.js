@@ -9,9 +9,11 @@ var runSequence = require('run-sequence');
 var site = (argv.site == 'm' || argv.device == 'mobi') ? 'm' : 'www';
 var unsite = (site == 'www') ? 'm' : 'www';
 
-var www_host = argv.sate ? 'www2.satellite.xxtao.com':'www2.xxtao.com'; 
-var host = (site == "www" ? www_host : "m2.xxtao.com");
 var port = (site == "www" ? '8000' : '8080');
+var host = (site == "www" ? "txoa2.wanpinghui.com" : "txoam2.wanpinghui.com");
+if (argv.dev == 1) {
+    host = (site == "www" ? "devoa.wanpinghui.com" : "devoam.wanpinghui.com");
+}
 
 var use_cdn = argv.use_cdn || 0;
 var cdn = argv.cdn || ('http://cdn2.xxtao.com:' + port + '/');
@@ -25,27 +27,8 @@ var stub = argv.stub || 0;
 var mock = argv.mock || 0;
 var min = argv.min || 0;
 
-// which_api: 因为IE8不能完美跨域，故生产环境通过nginx做代理使用api服务（也就避开了跨域问题）。
-// 本地开发时使用api.xxtao.com，外加mock模拟数据进行调试；
-var which_api = '';
-if (argv.which_api) {
-	// 显式指定
-	which_api = argv.which_api;
-} else {
-	if (argv._.indexOf('release') != -1) {
-		; // release时，若不指定，则用''，即当前域名下的/index.php
-	} else if (mock) {
-		// 使用mock-server
-		which_api = 'http://' + host + ':2080'; 
-	} else {
-		// 本地开发(且不使用mock)时
-		which_api = argv.sate ? 'http://api.zhaopaizhizuodian.xxtao.com' : 'http://api.xxtao.com';
-	}
-}
- 
 console.log('===site===     : ' + site);
 console.log('===distSite=== : ' + distSite);
-console.log('===which_api===: ' + which_api);
 
 var cfg = {
     gulp: gulp,
@@ -60,7 +43,6 @@ var cfg = {
     rev: 'jpg|png|gif|jpeg|css|js|tpl|svg',
 	cdn: cdn,
 	local_server: {host: host, port: port},
-	which_api: which_api,
     ver: ver
 };
 
@@ -140,9 +122,7 @@ gulp.task('globalClean', function () {
     return gulp.src(cfg.dist+'/global').pipe(clean());
 });
 
-// 将指定api服务器地址的任务(whichApi)在globalCopy之后执行（dist目录中），但必须在“加版本号”之前
-gulp.task('whichApi', getTask('which_api'));
-gulp.task('global', function(callback){runSequence(['globalCopy','globalMerge'],'whichApi','globalClean','replaceVerison',callback)});
+gulp.task('global', function(callback){runSequence(['globalCopy','globalMerge'],'globalClean','replaceVerison',callback)});
 
 //********************************************
 // 3. 加版本号，为cdn做准备 

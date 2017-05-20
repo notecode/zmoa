@@ -4,15 +4,19 @@
 
 var api = {
 	url: (function() {
-		var url = 'http://zmoa.bxland.com/';
-        var host = location.host;
+        // 缺省用测试环境api: tx == test
+		var prefix = 'txoaapi';
 
+        var host = location.host;
         if (host.indexOf('.wanpinghui.com') != -1) {
-            url = location.protocol + '//' + 'oaapi.wanpinghui.com/';
-        } else if (host.indexOf('.88ba.com') != -1) {
-            url = location.protocol + '//' + 'oaapi.88ba.com/';
+            if (host.indexOf('devoa') == 0) { 
+                prefix = 'devoaapi'; // 本地开发环境
+            } else {
+                prefix  = 'oaapi'; // 生产环境
+            }
         }
 
+        var url = location.protocol + '//' + prefix + '.wanpinghui.com/';
 		tlog('api: ' + url);
 		return url;
 	})(),
