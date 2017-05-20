@@ -2,30 +2,73 @@
 // AUTHOR:   SongErwei
 // ROLE:     api基础、公用方法和对象 
 
+window.zmoa_env = (function() {
+    var host = location.host;
+    if (host.indexOf('.wanpinghui.com') != -1) {
+        if (host.indexOf('devoa') == 0) { 
+            return 'dev'; // 本地开发环境
+        } else if (host.indexOf('txoa') == 0) {
+            return 'test'; // 测试环境
+        } else {
+            return 'prod'; // 生产环境
+        }
+    } else {
+        return 'test';  // oschina上的托管，属于测试环境
+    }
+})();
+
 var api = {
 	url: (function() {
-        // 缺省用测试环境api: tx == test
 		var prefix = 'txoaapi';
-
-        var host = location.host;
-        if (host.indexOf('.wanpinghui.com') != -1) {
-            if (host.indexOf('devoa') == 0) { 
+        switch (window.zmoa_env) {
+            case 'dev':
                 prefix = 'devoaapi'; // 本地开发环境
-            } else {
-                prefix  = 'oaapi'; // 生产环境
-            }
+                break;
+            case 'test':
+                prefix = 'txoaapi'; // 测试环境
+                break;
+            case 'prod':
+                prefix = 'oaapi'; // 生产环境
+                break;
+            default:
+                break;
         }
 
         var url = location.protocol + '//' + prefix + '.wanpinghui.com/';
+        tlog('env: ' + window.zmoa_env);
 		tlog('api: ' + url);
 		return url;
 	})(),
 
     // notecode
-    qywx: {
-        corpID: 'wwd166efb0a45a080f',
-        agentID: 1000002,
-    },
+    qywx: (function() {
+        var acc = {};
+        switch (window.zmoa_env) {
+            case 'dev':
+                acc = {
+                    corpID: 'wwe85720d4242f660f',
+                    agentID: 1000002,
+                };
+                break;
+            case 'test':
+                acc = {
+                    corpID: 'wwe85720d4242f660f',
+                    agentID: 1000003,
+                };
+                break;
+            case 'prod':
+                acc = {
+                    corpID: 'wx2fa18b521c5cf0b0',
+                    agentID: 37,
+                };
+                break;
+            default:
+                break;
+        }
+
+        tlog('qywx: ' + JSON.stringify(acc));
+        return acc;
+    })(),
 }; 
 
 function proj_img_url(raw) {

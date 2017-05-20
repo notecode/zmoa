@@ -9,10 +9,11 @@ var runSequence = require('run-sequence');
 var site = (argv.site == 'm' || argv.device == 'mobi') ? 'm' : 'www';
 var unsite = (site == 'www') ? 'm' : 'www';
 
-var port = (site == "www" ? '8000' : '8080');
 var host = (site == "www" ? "txoa2.wanpinghui.com" : "txoam2.wanpinghui.com");
+var port = (site == "www" ? '8000' : '8080');
 if (argv.dev == 1) {
     host = (site == "www" ? "devoa.wanpinghui.com" : "devoam.wanpinghui.com");
+    port = (site == "www" ? '7000' : '7080');
 }
 
 var use_cdn = argv.use_cdn || 0;

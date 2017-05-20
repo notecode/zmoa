@@ -8,6 +8,7 @@ define(function() {
             this.gaidLogin();
 
             this.isDbg = false;
+            //this.isDbg = true;
             //this.dbg('loaded');
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -64,7 +65,7 @@ define(function() {
                 to: encodeURIComponent(toUrl),
                 agentID: agentID
             });
-            //this.dbg(url);
+            this.dbg(url);
             location.href = url;
         }
 
