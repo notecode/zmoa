@@ -223,6 +223,7 @@ define(["/global/iscripts/libs/time/moment.js",
                     },
                     fail: function(json) {
                         console.error('assign worker failed');
+                        alert(json.errmsg);
                     }
                 })
             }
