@@ -5,14 +5,16 @@
 </head>
 <body id="{{ID}}" {{IMODULE}}>
     <style>@@include('{{MCSS}}')</style>
+    
+    <form ievent="submitForm" idom="form" autocomplete="off">
+        <div class="detail-info" idom="detailInfo">
+            
+        </div>
 
-    <div class="detail-info" idom="detailInfo">
-        
-    </div>
-
-    <div class="info-btn">
-    	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
-    </div>
+        <div class="info-btn">
+        	<button type="submit" class="btn btn-primary pro-btn-submit">提交</button>
+        </div>
+    </form>
 
     <div class="info-mask hide" idom="infoMask" ievent="Mask">
     </div>
@@ -41,7 +43,7 @@
         </ul>
     </div>
 
-    <div class="edit-error hide">
+    <div class="edit-error" idom="LErrorTip">
         项目名称未填
     </div>
 

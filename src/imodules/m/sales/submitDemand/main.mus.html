@@ -1,40 +1,47 @@
 <h1>填写项目信息</h1>
 <h6 class="de-xtitle">基础信息</h6>
+<input type="hidden" value="{{project_info.id}}" name="projectId" >
 <div class="de-basics basicone clearfix">
     <span class="basics-tip">合同编号(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.contract}}" readonly="readonly"/>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.contract}}" readonly="readonly" data-tip="合同编号不能为空" name="contract"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">项目名称(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.name}}"/>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.name}}" data-tip="项目名称不能为空" name="name"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">屏幕面积m²(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.screen_area}}"/>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.screen_area}}" data-tip="屏幕面积不能为空" name="screenArea"/>
 </div>
 <div class="de-basics clearfix">
+    <span class="basics-tip">点间距（如P10、P4）(必填)</span>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.point}}" data-tip="点间距不能为空" name="point"/>
+</div>
+<div class="de-basics clearfix">
+    <input type="hidden" value="{{project_info.screen_color}}" name="screenColor" class="js-check-el" data-tip="颜色不能为空" >
     <span class="basics-tip">屏幕颜色</span>
-    <div class="basics-select colorActive{{project_info.screen_color}}">
-        <a class="b-selset-type color-one" href="javascript:;">全彩</a>
+    <div class="basics-select colorActive{{project_info.screen_color}}" id="basiColor">
+        <a class="b-selset-type color-one" href="javascript:;" data-color="3" ievent="selColor">全彩</a>
         <span>/</span>
-        <a class="b-selset-type color-two" href="javascript:;">双色</a>
+        <a class="b-selset-type color-two" href="javascript:;" data-color="1"  ievent="selColor">双色</a>
         <span>/</span>
-        <a class="b-selset-type color-three" href="javascript:;">单色</a>
+        <a class="b-selset-type color-three" href="javascript:;" data-color="2"  ievent="selColor">单色</a>
     </div>
 </div>
 <div class="de-basics clearfix">
-    <span class="basics-tip">屏幕类型</span>
-    <div class="basics-select envirActive{{project_info.apply_environment}}">
-        <a class="b-selset-type envir-one" href="javascript:;">户外</a>
+    <input type="hidden" value="{{project_info.apply_environment}}" name="applyEnvironment" class="js-check-el" data-tip="应用环境不能为空">
+    <span class="basics-tip">应用环境</span>
+    <div class="basics-select envirActive{{project_info.apply_environment}}" id="basiEnvir">
+        <a class="b-selset-type envir-one" href="javascript:;" data-color="1" ievent="selenvir">户外</a>
         <span>/</span>
-        <a class="b-selset-type envir-two" href="javascript:;">室内</a>
+        <a class="b-selset-type envir-two" href="javascript:;" data-color="2" ievent="selenvir">室内</a>
         <span>/</span>
-        <a class="b-selset-type envir-three" href="javascript:;">半户外</a>
+        <a class="b-selset-type envir-three" href="javascript:;" data-color="3" ievent="selenvir">半户外</a>
     </div>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">保质期截止日期</span>
-    <input type="text" class="basics-put" value="{{project_info.expiration_date}}" placeholder="如2017.08.12"/>
+    <input type="text" class="basics-put" value="{{project_info.expiration_date}}" placeholder="如2017.08.12" name="expirationDate"/>
 </div>
 
 <h6 class="de-xtitle">备品备料</h6>
@@ -47,6 +54,7 @@
     <li class="clearfix">
         <div class="parts-con"><input type="text" placeholder="配料类型" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
         <div class="parts-con-ji clearfix">
+            <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
             <span class="count-jian down-count" ievent="subtract">-</span>
             <span class="count-liang spare-count" idom="apareNum">{{preparation_type_number}}</span>
             <span class="count-jia up-count" ievent="theSum">+</span>
@@ -55,9 +63,10 @@
     {{/project_info.preparations}}
     <li class="clearfix">
         <div class="parts-con">
-            <input type="text" placeholder="配料类型" class="parts-new">
+            <input type="text" placeholder="配料类型" class="parts-new" name="preparation[name]">
         </div>
         <div class="parts-con-ji clearfix">
+            <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
             <span class="count-jian down-count"  ievent="subtract">-</span>
             <span class="count-liang spare-count spare-hui"  idom="apareNum">0</span>
             <span class="count-jia up-count"  ievent="theSum">+</span>
@@ -70,6 +79,9 @@
 
 <h6 class="de-xtitle">项目所在地（必填）</h6>
 <div class="de-basics de-cascade">
+    <input type="hidden" value="{{project_info.province_id}}" name="provinceId" class="js-check-el" data-tip="省份不能为空" id="textPro">
+    <input type="hidden" value="{{project_info.city_id}}" name="cityId" class="js-check-el" data-tip="城市不能为空"  id="textCity">
+    <input type="hidden" value="{{project_info.area_id}}" name="areaId" class="js-check-el" data-tip="区县不能为空"  id="textArea">
     <a class="cascade-option proviceval active" href="javascript:;" ievent="provice" data-provice="
     {{project_info.province_id}}" idom="proDom">省份</a>
     <span>/</span>
@@ -79,17 +91,17 @@
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">&nbsp;</span>
-    <input type="text" class="basics-put" placeholder="项目详细地址" style="text-align: left;" value="{{project_info.detail_address}}" name="detailAddress"/>
+    <input type="text" class="basics-put js-check-el" placeholder="项目详细地址" style="text-align: left;" value="{{project_info.detail_address}}" name="detailAddress" data-tip="项目详细地址不能为空"/>
 </div>
 
 <h6 class="de-xtitle">联系人</h6>
 <div class="de-basics clearfix">
     <span class="basics-tip">姓名(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.contact_name}}" name="contactName"/>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.contact_name}}" name="contactName" data-tip="联络人姓名不能为空"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">联系方式(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.contact_phone}}" name="contactPhone"/>
+    <input type="text" class="basics-put js-check-el" value="{{project_info.contact_phone}}" name="contactPhone" data-tip="联系方式不能为空"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">单位名称</span>
@@ -103,5 +115,5 @@
 <h6 class="de-xtitle">补充说明</h6>
 <div class="de-basics clearfix">
     <span class="basics-tip">&nbsp;</span>
-    <input type="text" class="basics-put" placeholder="你还想补充点什么？" style="text-align: left;" value="{{project_info.description}}"/>
+    <input type="text" class="basics-put" placeholder="你还想补充点什么？" name="description" style="text-align: left;" value="{{project_info.description}}"/>
 </div>

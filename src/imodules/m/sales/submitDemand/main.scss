@@ -275,6 +275,21 @@
         position: fixed;
         top: 0;
         left: 0;
+        transform: translate3d(0px, -40px, 0px);
+        -webkit-transform: translate3d(0px, -40px, 0px);
+        -ms-transform: translate3d(0px, -40px, 0px);
+        opacity: 0;
+        transition: -webkit-transform 600ms ease-in-out 0s;
+        transition: transform 600ms ease-in-out 0s;
+        transition: transform 600ms ease-in-out 0s, -webkit-transform 300ms ease-in-out 0s;
+        -webkit-transition: -webkit-transform 600ms ease-in-out 0s;
+        -ms-transition: -ms-transform 600ms ease-in-out 0s; 
+    }
+    .edit-error.slideUp {
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
     }
 
 

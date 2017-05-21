@@ -131,6 +131,7 @@ define(function() {
             var addressId = $data.id + '';
             var type = $ul.data('type');
             $('.proviceval').html($data.name);
+            $('#textPro').val($data.id);
             if (!!type) {
                 var cityArr = this.address[type].filter(function(item) { 
                     return item.parent_id === addressId;
@@ -141,8 +142,11 @@ define(function() {
                 if (type === 'city') {
                     $('.cityeval').html('城市');
                     $('.areaeval').html('区/县');
+                    $('#textCity').val('');
+                    $('#textArea').val('');
                 } else {
                     $('.areaeval').html('区/县');
+                    $('#textArea').val('');
                 }
             }
             $(this._els.infoMask).addHide();
@@ -156,6 +160,7 @@ define(function() {
             var addressId = $data.id + '';
             var type = $ul.data('type');
             $('.cityeval').html($data.name);
+            $('#textCity').val($data.id);
             if (!!type) {
                 var cityArr = this.address[type].filter(function(item) { 
                     return item.parent_id === addressId;
@@ -163,12 +168,6 @@ define(function() {
                 var domStr = Mustache.render(this.areaTpl, { items: cityArr });
                 $(this._els.selectedar).html(domStr);
 
-                if (type === 'city') {
-                    $('.cityeval').html('城市');
-                    $('.areaeval').html('区/县');
-                } else {
-                    $('.areaeval').html('区/县');
-                }
             }
 
             $(this._els.infoMask).addHide();
@@ -182,6 +181,7 @@ define(function() {
             var addressId = $data.id + '';
             var type = $ul.data('type');
             $('.areaeval').html($data.name);
+            $('#textArea').val($data.id);
             $(this._els.infoMask).addHide();
             $(this._els.selDistrict).addHide();
         }
@@ -192,6 +192,7 @@ define(function() {
             if (num > 0){
                 $(target).next().text(num-1);
                 $(target).next().removeClass('spare-hui');
+                $(target).parent().find('.apareHid').val(num - 1);
             } 
 
             if(num < 2){
@@ -204,6 +205,7 @@ define(function() {
             var num = parseInt($(target).prev().text());
             $(target).prev().text(num + 1);
             $(target).prev().addClass('spare-hui');
+            $(target).parent().find('.apareHid').val(num + 1);
 
             if(num >= 0){
                 $(target).prev().removeClass('spare-hui');
@@ -213,6 +215,76 @@ define(function() {
         CON.prototype._ievent_partsAdd = function(){
             var domStr = Mustache.render(this.stockTpl);
             $('.parts').append(domStr);
+        }
+
+         // 添加需求
+        CON.prototype._ievent_submitForm = function(el, target) {
+            var _this = this;
+            var $tipEl = $(this._els.LErrorTip);
+            var $checks = $('.js-check-el');
+            
+            for (var index = 0; index < $checks.length; index++) {
+                var $el = $checks.eq(index);
+                var $tip = $el.data('tip');
+                var $val = $el.val().trim();
+                if (!$val) {
+                    $tipEl.html($tip);
+                    $tipEl.addClass('slideUp');
+                    return false
+                }
+            }
+
+            var data = $(target).serializeJSON();
+            data.description = filterCR(data.description);
+
+            var preparationArr = [];
+            if (!!data.preparation) {
+                if ($.isArray(data.preparation.name)) {
+                    data.preparation.name.map(function(item, index) {
+                        if (item && data.preparation.number[index]) {
+                            preparationArr.push({ name: item, number: data.preparation.number[index] })
+                        }
+                    })
+                } else if(!$.isEmptyObject(data.preparation) && data.preparation.name && data.preparation.number) {
+                    preparationArr.push({ name: data.preparation.name, number: data.preparation.number })
+                }
+            }
+            data.preparation = preparationArr;
+            api_ajax_post('project/edit', data, {
+                succ: function(res) {
+                    $tipEl.html('');
+                    $tipEl.removeClass('slideUp');
+                    //打开故障页面
+                    location.href="/sales/fault.html?project_id="+_this.id;
+                },
+                fail: function(json) {
+                    if(!$.isEmptyObject(json)) {
+                        $tipEl.html(json.errmsg);
+                    } else {
+                        $tipEl.html('系统错误');
+                    }
+                    
+                }
+            });
+            return false;
+        }
+
+        //给颜色的input赋值
+        CON.prototype._ievent_selColor = function(data, target){
+            var colorId = parseInt($(target).data().color);
+            $('#basiColor').removeClass();
+            $('#basiColor').addClass('basics-select');
+            $('#basiColor').addClass('colorActive'+colorId);
+            $('#basiColor').prev().prev().val(colorId);
+        }
+
+        //给颜环境的input赋值
+        CON.prototype._ievent_selenvir = function(data, target){
+            var colorId = parseInt($(target).data().color);
+            $('#basiEnvir').removeClass();
+            $('#basiEnvir').addClass('basics-select');
+            $('#basiEnvir').addClass('envirActive'+colorId);
+            $('#basiEnvir').prev().prev().val(colorId);
         }
 
         return CON;
