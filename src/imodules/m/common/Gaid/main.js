@@ -40,7 +40,7 @@ define(function() {
 
         CON.prototype.qywxAuthSucc = function(code) {
             var _this = this;
-            var q = {code: code};
+            var q = {code: code, state: qs('state')};
             api_ajax_with_query('user/qywx_login', q, {
                 succ: function(json) {
                     _this.dbg('qywx_login succ');
@@ -48,6 +48,7 @@ define(function() {
                 },
                 fail: function(json) {
                     _this.dbg(JSON.stringify(json));
+                    alert(json.errmsg);
                 }
             });
         }
@@ -59,7 +60,7 @@ define(function() {
             var toUrl = location.href.split('#')[0];
             this.dbg(toUrl);
             var baseUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?";
-            var q = "appid={{corpID}}&redirect_uri={{to}}&response_type=code&scope=snsapi_privateinfo&agentid={{agentID}}&state=foo#wechat_redirect";
+            var q = "appid={{corpID}}&redirect_uri={{to}}&response_type=code&scope=snsapi_privateinfo&agentid={{agentID}}&state=login_in_qywx#wechat_redirect";
             var url = Mustache.render(baseUrl + q, {
                 corpID: corpID,
                 to: encodeURIComponent(toUrl),

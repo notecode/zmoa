@@ -9,12 +9,13 @@ define(function() {
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.fooQywx = function() {
+            var url = location.protocol + '//' + location.host + '/login-succ.html';
             window.WwLogin({
                 "id": "wx_reg",  
-                "appid": "wwd166efb0a45a080f",
-                "agentid": "1000002",
-                "redirect_uri": encodeURIComponent("http://m2.xxtao.com:8080/login.html"),
-                "state": "SONG",
+                "appid": api.qywx.corpID,
+                "agentid": api.qywx.agentID,
+                "redirect_uri": encodeURIComponent(url),
+                "state": "login_on_zmoa",
             });
         }
 
