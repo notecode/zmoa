@@ -20,7 +20,7 @@
         <div class="sel-title">
             选择省份
         </div>
-        <ul class="js-addres-city">
+        <ul class="js-addres-city" data-type="city">
             
         </ul>
     </div>
@@ -28,38 +28,16 @@
         <div class="sel-title">
             选择城市
         </div>
-        <ul idom="selected">
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
-            <li ievent="clickCit">安微省</li>
-            <li ievent="clickCit">北京市</li>
+        <ul idom="selectedcc"  data-type="area">
+           
         </ul>
     </div>
     <div class="select-jilian district hide"  idom="selDistrict">
         <div class="sel-title">
             选择区 / 县
         </div>
-        <ul idom="selected">
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
-            <li ievent="clickDis">安微省</li>
-            <li ievent="clickDis">北京市</li>
+        <ul idom="selectedar">
+           
         </ul>
     </div>
 
@@ -72,6 +50,31 @@
         {{#items}}
         <li ievent="clickPro" data-id="{{id}}" data-parent="{{parent_id}}" data-name="{{name}}">{{name}}</li>
         {{/items}}
+    </script>
+
+    <script idom="tpl" type="x-tmpl-mustache">
+        {{#items}}
+        <li ievent="clickCit" data-id="{{id}}" data-parent="{{parent_id}}" data-name="{{name}}">{{name}}</li>
+        {{/items}}
+    </script>
+
+    <script idom="tpl" type="x-tmpl-mustache">
+        {{#items}}
+        <li ievent="clickDis" data-id="{{id}}" data-parent="{{parent_id}}" data-name="{{name}}">{{name}}</li>
+        {{/items}}
+    </script>
+
+    <script idom="tpl" type="x-tmpl-mustache">
+        <li class="clearfix">
+            <div class="parts-con">
+                <input type="text" placeholder="配料类型" class="parts-new">
+            </div>
+            <div class="parts-con-ji clearfix">
+                <span class="count-jian down-count"  ievent="subtract">-</span>
+                <span class="count-liang spare-count spare-hui"  idom="apareNum">0</span>
+                <span class="count-jia up-count"  ievent="theSum">+</span>
+            </div>
+        </li>
     </script>
 
     @@include('www/common/InsertBottom/main.html')

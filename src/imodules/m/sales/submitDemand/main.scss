@@ -114,23 +114,10 @@
             border-right: 1px solid #e3e8ee;
             border-top: 1px solid #e3e8ee;
             margin-top: 0.15rem;
+            margin-bottom: 0;
 
             li {
                 width: 100%;
-            }
-
-            .parts-add {
-                width: 100%;
-                border-left: 1px solid #e3e8ee;
-                border-bottom: 1px solid #e3e8ee;
-                height: 0.5rem;
-                text-align: center;
-                line-height: 0.5rem;
-
-                .parts-add-btn {
-                    font-size: 0.15rem;
-                    color: #003894;
-                }
             }
 
             li div {
@@ -203,6 +190,21 @@
                 .spare-hui {
                     opacity: 0.6;
                 }
+            }
+        }
+
+        .parts-add {
+            width: 100%;
+            border-left: 1px solid #e3e8ee;
+            border-right: 1px solid #e3e8ee;
+            border-bottom: 1px solid #e3e8ee;
+            height: 0.5rem;
+            text-align: center;
+            line-height: 0.5rem;
+
+            .parts-add-btn {
+                font-size: 0.15rem;
+                color: #003894;
             }
         }
    }

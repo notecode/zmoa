@@ -2,7 +2,7 @@
 <h6 class="de-xtitle">基础信息</h6>
 <div class="de-basics basicone clearfix">
     <span class="basics-tip">合同编号(必填)</span>
-    <input type="text" class="basics-put" value="{{project_info.contract}}"/>
+    <input type="text" class="basics-put" value="{{project_info.contract}}" readonly="readonly"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">项目名称(必填)</span>
@@ -47,9 +47,9 @@
     <li class="clearfix">
         <div class="parts-con"><input type="text" placeholder="配料类型" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
         <div class="parts-con-ji clearfix">
-            <span class="count-jian down-count">-</span>
-            <span class="count-liang spare-count">{{preparation_type_number}}</span>
-            <span class="count-jia up-count">+</span>
+            <span class="count-jian down-count" ievent="subtract">-</span>
+            <span class="count-liang spare-count" idom="apareNum">{{preparation_type_number}}</span>
+            <span class="count-jia up-count" ievent="theSum">+</span>
         </div>
     </li>
     {{/project_info.preparations}}
@@ -58,24 +58,24 @@
             <input type="text" placeholder="配料类型" class="parts-new">
         </div>
         <div class="parts-con-ji clearfix">
-            <span class="count-jian down-count">-</span>
-            <span class="count-liang spare-count spare-hui">0</span>
-            <span class="count-jia up-count">+</span>
+            <span class="count-jian down-count"  ievent="subtract">-</span>
+            <span class="count-liang spare-count spare-hui"  idom="apareNum">0</span>
+            <span class="count-jia up-count"  ievent="theSum">+</span>
         </div>
     </li>
-    <li class="parts-add">
-        <a href="javascript:;" class="parts-add-btn">+添加</a>
-    </li>
  </ul>
+<div class="parts-add" ievent="partsAdd">
+    <a href="javascript:;" class="parts-add-btn">+添加</a>
+</div>
 
 <h6 class="de-xtitle">项目所在地（必填）</h6>
 <div class="de-basics de-cascade">
     <a class="cascade-option proviceval active" href="javascript:;" ievent="provice" data-provice="
-    {{project_info.province_id}}" idom="">省份</a>
+    {{project_info.province_id}}" idom="proDom">省份</a>
     <span>/</span>
-    <a class="cascade-option" href="javascript:;" ievent="city">城市</a>
+    <a class="cascade-option cityeval" href="javascript:;" ievent="city" data-city="{{project_info.city_id}}">城市</a>
     <span>/</span>
-    <a class="cascade-option" href="javascript:;" ievent="district">区 / 县</a>
+    <a class="cascade-option areaeval" href="javascript:;" ievent="district" data-area="{{project_info.area_id}}">区 / 县</a>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">&nbsp;</span>
