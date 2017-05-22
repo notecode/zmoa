@@ -1,0 +1,45 @@
+@import "src/sass/global/mixin";
+
+#myRunning{
+    .mr-title {
+        font-size: 0.24rem;
+        color: #333333;
+        padding: 0.2rem 0.15rem;
+    }
+    .mr-content {
+        width: 100%;
+        border-top: 1px solid #e3e8ee;
+    }
+    .mr-lsit {
+        width: 100%;
+        padding: 0 0.15rem 0.17rem;
+        border-bottom: 1px solid #e3e8ee;
+
+        h6 {
+            font-size: 0.16rem;
+            color: #333333;
+            margin: 0;
+            padding-top: 0.17rem;
+
+            .icon-project {
+                font-size: 0.2rem;
+                color: #003894;
+                margin-right: 0.15rem;
+                vertical-align: -0.03rem;
+            }
+        }
+
+        p {
+            padding-left: 0.35rem;
+            font-size: 0.12rem;
+            color: #999999;
+            padding-top: 0.1rem;
+            margin-bottom: 0;
+
+            .icon-time {
+                margin-right: 0.06rem;
+                color: #003894;
+            }
+        }
+    }
+}
