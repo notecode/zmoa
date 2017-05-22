@@ -1,113 +1,140 @@
-define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
+define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js', 
+        '/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload-process.js',
+        '/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload-image.js'], function() {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
+            _this = this;
+            this.setDefault();
+            this._init();
+            this.isAdmin;
+            this.name;
 
-            this.btn_action = null;
+            // 图片删除
+            $(this._els.LUploadContent).on('click', '.js-remove-img', function(e) {                
+                _this.removeImg(e.target);            
+            });
 
-            var _this = this;
-            var doRender = function(proj) {
-                project.getIModule('imodule://detailsMD', null, function(mod) {
-                    mod.render(proj);
-                });
-
-                project.getIModule('imodule://sparesMD', null, function(mod) {
-                    mod.render(proj);
-                });
-
-                _this.renderBottomBtn(proj);
-            }
-
-            if (1 == qs('test')) {
-                doRender(mock.project_info);
-            } else {
-                api_ajax('project/detail/' + qs_proj(), {
-                    succ: function(json) {
-                        doRender(json.project_info);
-                    }
-                });
-            }
+          
         };
         potato.createClass(CON, baseIModules.BaseIModule);
-        
-        CON.prototype.renderBottomBtn = function(proj) {
-            var showBtn = true;
-            var btn = this.find('.bottom-btn');
-            var status = parseInt(proj.status);
-            var srv_u = proj.service_user || {};
-            var sched = (srv_u.start_date && srv_u.end_date);
 
-            switch (status) {
-                case 1: // 已立项，待派人 
-                    var msg = '已立项，待派人';
-                    tlog(msg + ' (手机端理论上不应在这个阶段打开此项目)');
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
-                    if (!sched) {
-                        btn.text('立即排期');
-                        this.btn_action = function() {
-                            // 跳到排期页
-                            location.href = '/engineer/schedule.html?project=' + qs_proj();
-                        }
-                    } else {
-                        btn.text('开始现场服务');
-                        this.btn_action = function() {
-                            // status: 2 -> 3, reload
-                            var data = {
-                                projectId: qs_proj(),
-                                status: 3
-                            };
-                            api_ajax_post('project/transfer_status', data, {
-                                succ: function(json) {
-                                    project.tip('已开始', 'succ', '');
-                                    setTimeout(function() {
-                                        location.reload();
-                                    }, 3000);
-                                },
-                                fail: function(json) {
-                                    alert(json.errmsg);
-                                }
-                            });
-                        }
-                    }
-                    break;
-                case 3: // 服务中(已点击“开始服务”)
-                    btn.text('完成现场服务');
-                    this.btn_action = function() {
-                        // 跳到提交“维修记录”页
-                        location.href = '/engineer/log-repair.html?project=' + qs_proj();
-                    }
-                    break;
-                case 4: // (服务)已完成，待回访
-                    var msg = '服务已完成，待回访' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 5: // 已结束
-                    var msg = '已结束' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                case 6: // 已终止
-                    var msg = '已终止' 
-                    tlog(msg);
-                    btn.text(msg).prop('disabled', true);
-                    break;
-                default:
-                    tlog('[!!!]Unknown status: ' + status);
-                    showBtn = false;
-                    break;
-            }
+        // 初始化图片上传组件
+        CON.prototype._init = function() {
+            var isLowIE = (isIE(8) || isIE(9));
+            var mod = this;
+            var url = api.url + 'project/upload_image/project?time=' + $.now();
+            $(this._els.LImageUpload).fileupload({
+                url: url,
+                dataType: 'json',
+                autoUpload: false,
+                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                maxFileSize: 999000,
+                previewMaxWidth: 320,
+                previewMaxHeight: 214,
+                previewThumbnail: false,
+                forceIframeTransport: isLowIE, 
+                xhrFields: {
+                    withCredentials: true
+                }
+            }).on('fileuploadadd', function (e, data) {
+                 var _this = this;
+                 $(mod._els.fileError).addHide();
+                // 上传数据，隐藏按钮
+                $.each(data.files, function (index, file) {
+                    $(_this).parent().addHide().next().removeHide();
+                    potato.application.addLoadingItem();
 
-            if (showBtn) {
-                btn.toggle();
-            }
+                    data.submit().success(function (json, textStatus, jqXHR) {
+                       $(_this).parent().next().addHide();
+                       console.log(json)
+                       if (json && !json.error_code) {
+                           $(mod._els.LFilePreview).removeHide().find('img').attr('src', json.data.filepath);
+                           $(mod._els.LFileName).val(json.data.filename)
+                       }else{
+                       }
+                    }).error(function (jqXHR, textStatus, errorThrown) {
+                        console.log(1111)
+                        $('.file-add').removeHide();
+                        $('.fileuploading').addHide();
+                        $(mod._els.fileError).removeHide();
+                    });
+                });
+            }).on('fileuploadprogress', function(e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                console.log(progress);
+                $(this).parent().addHide().next().find('span').html(progress + '%')
+            }).on('fileuploadprocessalways', function (e, data) {
+                var _this = this;
+                //console.log('一直调用');
+            });
         }
 
-        CON.prototype._ievent_action = function(data, target, hit) {
-            this.btn_action();
+         // 删除图片
+        CON.prototype.removeImg = function(target) {
+            var $el = $(target);
+            $el.parent().addHide();
+            $(this._els.LFileName).val('');
+            $(this._els.LUploadContent).find('.file-add').removeHide();
+        }
+        
+        //设置默认值
+        CON.prototype.setDefault = function(){
+            var _this = this;
+            var id = qs('project_id');
+            api_ajax('project/detail/' + id, {
+                succ: function(json) {
+                    var data = json.project_info;
+                    _this.isAdmin = json.user_role;
+                    _this.name = data.name;
+                    $(_this._els.infoContract).html(data.contract+'&nbsp;&nbsp;'+data.name);
+                    $(_this._els.infoSales).html('销售&nbsp;&nbsp;' + data.salesman_name+'&nbsp;&nbsp;'+data.job_number);
+                },
+                fail: function(json) {
+
+                }
+            });
+        }
+
+        // 提交数据
+        CON.prototype._ievent_submitForm = function(data, target) {
+            var _this = this;
+            var data = $(target).serializeJSON();
+            data.description = filterCR(data.description);
+
+            var $tipEl = $(_this._els.LErrorTip);
+            data.projectId = qs('project_id');
+            data.name = this.name;
+            var $checks = $('.js-checki-field');
+            for (var index = 0; index < $checks.length; index++) {
+                var $el = $checks.eq(index);
+                var $tip = $el.data().tip;
+                var $val = $el.val();
+                if (!$val) {
+                    $tipEl.html($tip);
+                    $tipEl.addClass('slideUp');
+                    return false
+                }
+            }
+            api_ajax_post('project/edit_project_desc', data, {
+                succ: function(res) {
+                    //_this.getDataRender();
+                    project.tip('需求提交成功','succ','', true);
+                    setTimeout(function(){
+                        location.href = '/sales/index.html';
+                    },800)
+                },
+                fail: function(json) {
+                    if(!$.isEmptyObject(json)) {                        
+                        $(_this._els.LErrorTip).html(json.errmsg);
+                    } else {
+                        $(_this._els.LErrorTip).html('系统未知错误');
+                    }
+                    
+                }
+            });
+            return false;
         }
             
         return CON;

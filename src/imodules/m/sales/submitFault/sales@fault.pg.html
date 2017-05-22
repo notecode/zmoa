@@ -6,27 +6,47 @@
 <body id="{{ID}}" {{IMODULE}}>
     <style>@@include('{{MCSS}}')</style>
 
+    <form ievent="submitForm" idom="form" autocomplete="off">
     <div class="fault">
         <h2>提交故障信息</h2>
         <div class="f-person-info clearfix">
-            <span>888001 济南泉城路万达广场</span>
-            <cite>销售  乐乔佳  UNI4</cite>
+            <span idom="infoContract">&nbsp;</span>
+            <cite idom="infoSales"></cite>
         </div>
         <div class="f-miaoshu">
             故障描述(必填)
         </div>
-        <textarea class="f-area"></textarea>
-        <div class="f-load">
-            <span class="icon-malfunction"></span>
-            <p>上传故障照片</p>
+        <textarea class="f-area js-checki-field" name="description" maxlength=64 data-tip="故障描述不能为空"></textarea>
+
+        <div class="picture">
+            <input type="hidden" name="mainImg" class="js-checki-field" idom="LFileName" data-tip="故障图片不能为空"> 
+            <div class="f-load" idom="LUploadContent">
+                <label for="imageUpload" class="file-add">
+                    <input idom="LImageUpload" class="input-upload" type="file" accept="image/*" name="upload_file">
+                    <span class="icon-malfunction"></span>
+                    <p>上传故障照片</p>
+                </label>
+                <div class="fileuploading js-upload-reset hide"><span></span>图片上传中...</div>
+                <div class="file-preview js-upload-reset hide" idom="LFilePreview">
+                    <div class="picb">
+                        <img src="https://www.lgstatic.com/i/image/M00/17/27/CgpFT1j-tdWARKg5AACJn7Kixf4620.PNG" alt="图片预览">
+                    </div>
+                    <span class="js-remove-img">&times;</span>
+                </div>                
+                <div class="file-error js-upload-reset hide" idom="fileError"><i class="icon-mark"></i><span>图片上传错误, 请重试!</span></div>
+               
+            </div>
         </div>
     </div>
     
 
     <div class="contract-btn">
-    	<button type="button" class="btn btn-primary pro-btn-submit">提交</button>
+    	<button type="submit" class="btn btn-primary pro-btn-submit">提交</button>
     </div>
-
+    </form>
+    <div class="edit-error" idom="LErrorTip">
+        erterterterter
+    </div>
     @@include('www/common/InsertBottom/main.html')
 </body>
 </html>
