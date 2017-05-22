@@ -14,20 +14,22 @@ define(function() {
                 $(_this._els.errorNull).slideUp();
             }, 300));
 
-            // 监听项目列表点击事件
-            $(this._els.LProjects).on('click', 'p', function(e) {
-                var $this = $(e.target);
-                var item = $this.data();
-                _this.key = item.key + '';
-                _this.id = item.id;
-                setTimeout(function(){
-                    $(_this._els.LSearch).val(item.key + ' ' + item.name);
-                },100)
-                
-            })      
+           
             
         };
         potato.createClass(CON, baseIModules.BaseIModule);
+
+        // 监听项目列表点击事件
+        CON.prototype._ievent_listP = function(data, target, hit){
+            var _this = this;
+            var $this = $(target);
+            var item = $this.data();
+            _this.key = item.key + '';
+            _this.id = item.id;
+            setTimeout(function(){
+                $(_this._els.LSearch).val(item.key + ' ' + item.name);
+            },100)
+        }
         
         // 项目模糊搜索
         CON.prototype.search = function (el) {
