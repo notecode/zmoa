@@ -10,6 +10,7 @@
             color: #333333;
             margin-top: 0.2rem;
             margin-bottom: 0;
+            font-family: PingFangSC-Thin;
         }
 
         .demand-num {
@@ -26,13 +27,13 @@
         }
 
         .input-num {
-           height: 0.2rem;
            line-height: 0.2rem;
            font-size: 0.14rem;
             width: 100%;
             border: none;
             color: #333;
             outline: none;
+            padding: 0;
         }
 
         .association {
