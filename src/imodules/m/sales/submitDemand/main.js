@@ -11,6 +11,9 @@ define(function() {
             this.id = qs('project_id');
             this.provinceId = '';
             this.mgetMyPro();
+            this.clickpro();
+            this.clickcit();
+            this.clickarea();
             
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -124,66 +127,78 @@ define(function() {
             $(this._els.selDistrict).addHide();
         }
 
-        CON.prototype._ievent_clickPro = function(data, target, hit){
-            var $el =  $(target);
-            var $data = $el.data();
-            var $ul = $el.closest('ul');
-            var addressId = $data.id + '';
-            var type = $ul.data('type');
-            $('.proviceval').html($data.name);
-            $('#textPro').val($data.id);
-            if (!!type) {
-                var cityArr = this.address[type].filter(function(item) { 
-                    return item.parent_id === addressId;
-                });
-                var domStr = Mustache.render(this.cityTpl, { items: cityArr });
-                $(this._els.selectedcc).html(domStr);
+        //CON.prototype._ievent_clickPro = function(data, target, hit){
+        CON.prototype.clickpro = function(){
+            var _this = this;
+            $('.js-addres-city').on('click','li',function(e){
+                var $el =  $(e.target);
+                var $data = $el.data();
+                var $ul = $el.closest('ul');
+                var addressId = $data.id + '';
+                var type = $ul.data('type');
+                $('.proviceval').html($data.name);
+                $('#textPro').val($data.id);
+                if (!!type) {
+                    var cityArr = _this.address[type].filter(function(item) { 
+                        return item.parent_id === addressId;
+                    });
+                    var domStr = Mustache.render(_this.cityTpl, { items: cityArr });
+                    $(_this._els.selectedcc).html(domStr);
 
-                if (type === 'city') {
-                    $('.cityeval').html('城市');
-                    $('.areaeval').html('区/县');
-                    $('#textCity').val('');
-                    $('#textArea').val('');
-                } else {
-                    $('.areaeval').html('区/县');
-                    $('#textArea').val('');
+                    if (type === 'city') {
+                        $('.cityeval').html('城市');
+                        $('.areaeval').html('区/县');
+                        $('#textCity').val('');
+                        $('#textArea').val('');
+                    } else {
+                        $('.areaeval').html('区/县');
+                        $('#textArea').val('');
+                    }
                 }
-            }
-            $(this._els.infoMask).addHide();
-            $(this._els.selProvice).addHide();
+                $(_this._els.infoMask).addHide();
+                $(_this._els.selProvice).addHide();
+            })
         }
 
-        CON.prototype._ievent_clickCit = function(data, target, hit){
-            var $el =  $(target);
-            var $data = $el.data();
-            var $ul = $el.closest('ul');
-            var addressId = $data.id + '';
-            var type = $ul.data('type');
-            $('.cityeval').html($data.name);
-            $('#textCity').val($data.id);
-            if (!!type) {
-                var cityArr = this.address[type].filter(function(item) { 
-                    return item.parent_id === addressId;
-                });
-                var domStr = Mustache.render(this.areaTpl, { items: cityArr });
-                $(this._els.selectedar).html(domStr);
+        //CON.prototype._ievent_clickCit = function(data, target, hit){
+        CON.prototype.clickcit = function(){
+            var _this = this;
+            $(_this._els.selectedcc).on('click','li',function(e){
+                var $el =  $(e.target);
+                var $data = $el.data();
+                var $ul = $el.closest('ul');
+                var addressId = $data.id + '';
+                var type = $ul.data('type');
+                $('.cityeval').html($data.name);
+                $('#textCity').val($data.id);
+                if (!!type) {
+                    var cityArr = _this.address[type].filter(function(item) { 
+                        return item.parent_id === addressId;
+                    });
+                    var domStr = Mustache.render(_this.areaTpl, { items: cityArr });
+                    $(_this._els.selectedar).html(domStr);
 
-            }
+                }
 
-            $(this._els.infoMask).addHide();
-            $(this._els.selCity).addHide();
+                $(_this._els.infoMask).addHide();
+                $(_this._els.selCity).addHide();
+            });
         }
 
-        CON.prototype._ievent_clickDis = function(data, target, hit){
-            var $el =  $(target);
-            var $data = $el.data();
-            var $ul = $el.closest('ul');
-            var addressId = $data.id + '';
-            var type = $ul.data('type');
-            $('.areaeval').html($data.name);
-            $('#textArea').val($data.id);
-            $(this._els.infoMask).addHide();
-            $(this._els.selDistrict).addHide();
+        //CON.prototype._ievent_clickDis = function(data, target, hit){
+        CON.prototype.clickarea = function(){
+            var _this = this;
+            $(_this._els.selectedar).on('click','li',function(e){
+                var $el =  $(e.target);
+                var $data = $el.data();
+                var $ul = $el.closest('ul');
+                var addressId = $data.id + '';
+                var type = $ul.data('type');
+                $('.areaeval').html($data.name);
+                $('#textArea').val($data.id);
+                $(_this._els.infoMask).addHide();
+                $(_this._els.selDistrict).addHide();
+            });
         }
 
         //备品数量减少
