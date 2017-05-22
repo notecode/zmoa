@@ -9,8 +9,8 @@ var runSequence = require('run-sequence');
 var site = (argv.site == 'm' || argv.device == 'mobi') ? 'm' : 'www';
 var unsite = (site == 'www') ? 'm' : 'www';
 
-//var host = (site == "www" ? "txoa2.wanpinghui.com" : "txoam2.wanpinghui.com");
-var host = (site == "www" ? "www2.xxtao.com" : "m2.xxtao.com");
+//var host = (site == "www" ? "www2.xxtao.com" : "m2.xxtao.com");
+var host = (site == "www" ? "txoa2.wanpinghui.com" : "txoam2.wanpinghui.com");
 var port = (site == "www" ? '8000' : '8080');
 if (argv.dev == 1) {
     host = (site == "www" ? "devoa.wanpinghui.com" : "devoam.wanpinghui.com");

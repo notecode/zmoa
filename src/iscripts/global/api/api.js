@@ -37,9 +37,9 @@ var api = {
         var url = location.protocol + '//' + prefix + '.wanpinghui.com/';
 
         // temp
-        if (window.zmoa_env == 'test') {
-            url = 'http://zmoa.bxland.com/';
-        }
+        //if (window.zmoa_env == 'test') {
+        //    url = 'http://zmoa.bxland.com/';
+        //}
 
         tlog('env: ' + window.zmoa_env);
 		tlog('api: ' + url);
