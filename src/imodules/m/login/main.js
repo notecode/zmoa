@@ -149,7 +149,7 @@ define(function() {
                         refer = '';
                     }
                    
-                    location.href = (refer.length > 0) ? refer : '/login-succ.html';
+                    location.href = (refer.length > 0) ? refer : '/router.html';
                 },
                 fail: function(json) {
                     if (!$.isEmptyObject(json)) {
