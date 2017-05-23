@@ -26,8 +26,10 @@ define(function() {
 
             api_ajax('project/detail/' + id, {
                 succ: function(json) {
-                    //颜色
-
+                    //判断面积是否为0
+                    if(json.project_info.screen_area == 0){
+                        json.project_info.screen_area = '';
+                    }
                     var dom = Mustache.render(_this.tpl, json); 
                     $(_this._els.detailInfo).html(dom);
 
