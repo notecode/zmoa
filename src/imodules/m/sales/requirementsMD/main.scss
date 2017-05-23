@@ -10,7 +10,7 @@
             font-size: 0.18rem;
             color: #333333;
             margin: 0;
-            padding: 0.25rem 0.15rem 0.2rem;
+            padding: 0.28rem 0.15rem 0.23rem;
             font-family: PingFangSC-Thin;
         }
 
@@ -23,8 +23,9 @@
             .has-l-btn {
                 position: absolute;
                 right: 0.17rem;
-                top: 0.15rem;
+                top: 0.17rem;
                 z-index: 2;
+                font-size: 0.12rem;
             }
             .hascurrent {
                 transform: rotate(-45deg);
@@ -33,7 +34,7 @@
             .h-d-project {
                 font-size: 0.16rem;
                 color: #333333;
-                margin: 0.16rem 0 0.08rem;
+                margin: 0.17rem 0 0.1rem;
                 font-family: PingFangSC-Thin;
 
                 .font-malf {
@@ -51,7 +52,7 @@
                     color: #999999;
                     padding-left: 0.37rem;
                     margin: 0;
-                    padding-bottom: 0.16rem;
+                    padding-bottom: 0.33rem;
                     position: relative;
 
                     .stage-dot {
@@ -69,7 +70,7 @@
                     &:before {
                         content: "";
                         width: 0.01rem;
-                        height: 0.31rem;
+                        height: 0.41rem;
                         background-color: #e3e8ee; 
                         display: block;
                         position: absolute;
@@ -80,12 +81,16 @@
                     &:last-child:before {
                         content:none;
                     }
+               }
+               .st-five {
+                    padding-bottom: 0.17rem;
                } 
             }
 
             .has-first {
                 .stage {
                     color: #003894;
+                    padding-bottom: 0.17rem;
                     .stage-dot {
                         background-color: #003894; 
                         border: 1px solid transparent;
