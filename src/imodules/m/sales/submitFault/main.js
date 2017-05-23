@@ -116,6 +116,9 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 if (!$val) {
                     $tipEl.html($tip);
                     $tipEl.addClass('slideUp');
+                    setTimeout(function(){
+                        $tipEl.removeClass('slideUp');
+                    },4000)
                     return false
                 }
             }

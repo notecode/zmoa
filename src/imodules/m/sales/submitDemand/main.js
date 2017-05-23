@@ -245,7 +245,7 @@ define(function() {
          // 添加需求
         CON.prototype._ievent_submitForm = function(el, target) {
             var _this = this;
-            var $tipEl = $(this._els.LErrorTip);
+            var $tipEl = $(_this._els.LErrorTip);
             var $checks = $('.js-check-el');
             
             for (var index = 0; index < $checks.length; index++) {
@@ -255,6 +255,9 @@ define(function() {
                 if (!$val) {
                     $tipEl.html($tip);
                     $tipEl.addClass('slideUp');
+                    setTimeout(function(){
+                        $tipEl.removeClass('slideUp');
+                    },4000)
                     return false
                 }
             }

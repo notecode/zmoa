@@ -11,7 +11,6 @@ define(function() {
             $(this._els.LSearch).bind('input propertychange','textarea', debounce(function (e) {
                 var $target = $(e.target)
                 _this.search($target);
-                $(_this._els.errorNull).slideUp();
             }, 300));
 
             $(this._els.LProjects).on('click','p',function(e){
@@ -95,6 +94,9 @@ define(function() {
                 });
             } else {
                 $(_this._els.errorNull).addClass('slideUp');
+                setTimeout(function(){
+                    $(_this._els.errorNull).removeClass('slideUp');
+                },4000)
             }
             return false;
         }
