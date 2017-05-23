@@ -1,0 +1,18 @@
+<div class="mr-title">
+    我执行中的项目({{count}})
+</div>
+
+<div class="mr-content">
+    {{#list}}
+    <div class="mr-lsit clearfix">
+        <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
+        {{#start_date}}
+        <p><span class="icon-time"></span>{{start_date}} - {{end_date}}</p>
+        {{/start_date}}
+
+        {{^start_date}}
+        <p><span class="icon-time"></span>未排期</p>
+        {{/start_date}}
+    </div>
+    {{/list}}
+</div>
