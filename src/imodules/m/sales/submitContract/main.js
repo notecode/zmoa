@@ -16,7 +16,7 @@ define(function() {
 
             $(this._els.LProjects).on('click','p',function(e){
                 var _this = this;
-                var $this = $(e.target);
+                var $this = $(this);
                 var item = $this.data();
                 _this.key = item.key + '';
                 _this.id = item.id;
