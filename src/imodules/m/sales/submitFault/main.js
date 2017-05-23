@@ -133,8 +133,16 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 fail: function(json) {
                     if(!$.isEmptyObject(json)) {                        
                         $(_this._els.LErrorTip).html(json.errmsg);
+                        $(_this._els.LErrorTip).addClass('slideUp');
+                        setTimeout(function(){
+                            $(_this._els.LErrorTip).removeClass('slideUp');
+                        },4000)
                     } else {
                         $(_this._els.LErrorTip).html('系统未知错误');
+                        $(_this._els.LErrorTip).addClass('slideUp');
+                        setTimeout(function(){
+                            $(_this._els.LErrorTip).removeClass('slideUp');
+                        },4000)
                     }
                     
                 }
