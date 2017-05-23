@@ -4,7 +4,7 @@
 
 <div class="mr-content">
     {{#list}}
-    <div class="mr-lsit clearfix">
+    <div class="mr-lsit clearfix" data-id="{{id}}" idom="runList">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
         {{#start_date}}
         <p><span class="icon-time"></span>{{start_date}} - {{end_date}}</p>

@@ -4,7 +4,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-
+            this.turnFor();
             var _this = this;
             project.events.addListener('login.ensured', function(event) {
                 _this.getList();
@@ -35,6 +35,14 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 
                 }
             });
+        }
+
+        CON.prototype.turnFor = function(){
+            var _this = this;
+            $(this._els.proRunning).on('click','.mr-lsit',function(e){
+                var pid = $(this).data().id;
+                location.href='/project/detail.html?projectId=' + pid;
+            })
         }
         
         return CON;
