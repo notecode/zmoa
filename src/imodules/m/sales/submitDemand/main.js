@@ -14,6 +14,7 @@ define(function() {
             this.clickpro();
             this.clickcit();
             this.clickarea();
+            this.closemask();
             
         };
         potato.createClass(CON, baseIModules.BaseIModule);
@@ -122,11 +123,15 @@ define(function() {
             $(this._els.selDistrict).removeHide();
         }
 
-        CON.prototype._ievent_Mask = function(){
-            $(this._els.infoMask).addHide();
-            $(this._els.selProvice).addHide();
-            $(this._els.selCity).addHide();
-            $(this._els.selDistrict).addHide();
+        //CON.prototype._ievent_Mask = function(){
+        CON.prototype.closemask = function(){
+            var _this = this;
+            $(this._els.infoMask).click(function(){
+                $(_this._els.infoMask).addHide();
+                $(_this._els.selProvice).addHide();
+                $(_this._els.selCity).addHide();
+                $(_this._els.selDistrict).addHide();
+            })
         }
 
         //CON.prototype._ievent_clickPro = function(data, target, hit){
