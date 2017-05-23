@@ -288,8 +288,16 @@ define(function() {
                 fail: function(json) {
                     if(!$.isEmptyObject(json)) {
                         $tipEl.html(json.errmsg);
+                        $tipEl.addClass('slideUp');
+                        setTimeout(function(){
+                            $tipEl.removeClass('slideUp');
+                        },4000)
                     } else {
                         $tipEl.html('系统错误');
+                        $tipEl.addClass('slideUp');
+                        setTimeout(function(){
+                            $tipEl.removeClass('slideUp');
+                        },4000)
                     }
                     
                 }
