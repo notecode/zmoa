@@ -16,6 +16,10 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             var _this = this;
             api_ajax('project/engineer_going_projects', {
                 succ: function(json) {
+                    if (json.userName) {
+                        document.title = json.userName;
+                    }
+
                     for (var i=0; i<json.list.length; i++){
                         if(json.list[i].start_date) {
                             json.list[i].start_date = moment(json.list[i].start_date).format('M月DD日');
