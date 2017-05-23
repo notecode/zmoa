@@ -53,7 +53,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype._init = function() {
             var isLowIE = (isIE(8) || isIE(9));
             var mod = this;
-            var url = api.url + 'project/upload_image?time=' + $.now();
+            var url = api.url + 'project/upload_image/project?time=' + $.now();
             $('.input-upload').fileupload({
                 url: url,
                 dataType: 'json',
@@ -83,17 +83,21 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                     data.submit().success(function (json, textStatus, jqXHR) {
                         olog('[<resp]: ', json);
                         potato.application.removeLoadingItem();
-                        if ('1' == json.succ) {
+
+                        cb && cb.always && cb.always(json);
+                        var ec = json.errcode;
+                        if (null == ec || 0 == ec) {
                             $(_this).parents('.filearea').find('i.hide').text(json.image);
                             if (isLowIE) {
                                 // ie8/9不能预览，只能上传成功后再显示url了
-                                mod.setOrgImage(json.image);
+                                mod.setOrgImage(json.data.filepath);
                             }
+                            cb && cb.succ && cb.succ(json);
                         } else {
                             // 上传失败，恢复原始状态
                             $(_this).parent().removeHide();
+                            cb && cb.fail && cb.fail(json);
                         }
-                        api_std_succ_callback(cb, json);
                     }).error(function (jqXHR, textStatus, errorThrown) {
                         tlog('upload error: ' + textStatus, + ', ' + errorThrown);
                         potato.application.removeLoadingItem();
