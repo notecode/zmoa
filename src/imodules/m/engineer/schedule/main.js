@@ -27,16 +27,18 @@ define(["/global/iscripts/libs/time/moment.js",
             if (1 == qs("test")) {
                 doRender(mock);
             } else {
-                var data = {
-                    projectId: qs_proj()
-                };
-                api_ajax_post('project/mobile_show_start_serving', data, {
-                    succ: function(json) {
-                        doRender(json);
-                    },
-                    fail: function(json) {
-                        alert(json.errmsg);
-                    }
+                project.events.addListener('login.ensured', function(event) {
+                    var data = {
+                        projectId: qs_proj()
+                    };
+                    api_ajax_post('project/mobile_show_start_serving', data, {
+                        succ: function(json) {
+                            doRender(json);
+                        },
+                        fail: function(json) {
+                            alert(json.errmsg);
+                        }
+                    });
                 });
             }
 //            this.foo();

@@ -4,7 +4,11 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-            this.getList();
+
+            var _this = this;
+            project.events.addListener('login.ensured', function(event) {
+                _this.getList();
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		

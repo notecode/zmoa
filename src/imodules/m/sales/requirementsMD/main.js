@@ -3,8 +3,12 @@ define(function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.mgetMyPro();
             this.tpl = this._els.tpl[0].text;
+
+            var _this = this;
+            project.events.addListener('login.ensured', function(event) {
+                _this.mgetMyPro();
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 

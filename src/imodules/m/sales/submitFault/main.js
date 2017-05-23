@@ -5,8 +5,12 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            _this = this;
-            this.setDefault();
+
+            var _this = this;
+            project.events.addListener('login.ensured', function(event) {
+                _this.setDefault();
+            });
+
             this._init();
             this.isAdmin;
             this.name;
@@ -15,8 +19,6 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             $(this._els.LUploadContent).on('click', '.js-remove-img', function(e) {                
                 _this.removeImg(e.target);            
             });
-
-          
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 

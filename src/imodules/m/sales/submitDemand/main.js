@@ -10,12 +10,15 @@ define(function() {
             this.stockTpl = this._els.tpl[4].text;
             this.id = qs('project_id');
             this.provinceId = '';
-            this.mgetMyPro();
-            this.clickpro();
-            this.clickcit();
-            this.clickarea();
-            this.closemask();
-            
+
+            var _this = this;
+            project.events.addListener('login.ensured', function(event) {
+                _this.mgetMyPro();
+                _this.clickpro();
+                _this.clickcit();
+                _this.clickarea();
+                _this.closemask();
+            });
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
