@@ -12,13 +12,13 @@ define(function() {
             this.provinceId = '';
 
             var _this = this;
-            project.events.addListener('login.ensured', function(event) {
+            //project.events.addListener('login.ensured', function(event) {
                 _this.mgetMyPro();
                 _this.clickpro();
                 _this.clickcit();
                 _this.clickarea();
                 _this.closemask();
-            });
+            //});
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 

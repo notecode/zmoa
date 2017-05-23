@@ -14,13 +14,13 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
             if (1 == qs('test')) {
                 doRender(mock.project_info);
             } else {
-                project.events.addListener('login.ensured', function(event) {
+                //project.events.addListener('login.ensured', function(event) {
                     api_ajax('project/detail/' + qs_proj(), {
                         succ: function(json) {
                             doRender(json.project_info);
                         }
                     });
-                });
+                //});
             }
         };
         potato.createClass(CON, baseIModules.BaseIModule);

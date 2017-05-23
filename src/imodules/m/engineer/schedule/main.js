@@ -27,7 +27,7 @@ define(["/global/iscripts/libs/time/moment.js",
             if (1 == qs("test")) {
                 doRender(mock);
             } else {
-                project.events.addListener('login.ensured', function(event) {
+                //project.events.addListener('login.ensured', function(event) {
                     var data = {
                         projectId: qs_proj()
                     };
@@ -39,7 +39,7 @@ define(["/global/iscripts/libs/time/moment.js",
                             alert(json.errmsg);
                         }
                     });
-                });
+                //});
             }
 //            this.foo();
 //            this.unitTest();

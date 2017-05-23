@@ -7,9 +7,9 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             baseIModules.BaseIModule.call(this, dom);
 
             var _this = this;
-            project.events.addListener('login.ensured', function(event) {
+            //project.events.addListener('login.ensured', function(event) {
                 _this.setDefault();
-            });
+            //});
 
             this._init();
             this.isAdmin;

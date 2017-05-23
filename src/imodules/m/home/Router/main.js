@@ -4,7 +4,7 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
-            project.events.addListener('login.ensured', function(event) {
+            //project.events.addListener('login.ensured', function(event) {
                 api_ajax('user/user_info', {
                     succ: function(json) {
                         var role = json.role;
@@ -17,7 +17,7 @@ define(function() {
                         }
                     }
                 });
-            });
+            //});
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
