@@ -38,6 +38,7 @@ define(function() {
                     $(_this._els.detailInfo).html(dom);
 
                     _this.addressItems();
+                    _this.partsNull();
                 },
                 fail: function(json) {
 
@@ -214,32 +215,66 @@ define(function() {
         //备品数量减少
         CON.prototype._ievent_subtract = function(data, target, hit){
             var num = parseInt($(target).next().text());
-            if (num > 0){
-                $(target).next().text(num-1);
-                $(target).next().removeClass('spare-hui');
-                $(target).parent().find('.apareHid').val(num - 1);
-            } 
+            var numName = $(target).parents('li').find('.parts-new').val().trim();
+            var $tipEl = $(this._els.LErrorTip);
 
-            if(num < 2){
-                $(target).next().addClass('spare-hui');
+            //当备品名称不为空时才可点击数量
+            if(numName){
+                if (num > 0){
+                    $(target).next().text(num-1);
+                    $(target).next().removeClass('spare-hui');
+                    $(target).parent().find('.apareHid').val(num - 1);
+                } 
+
+                if(num < 2){
+                    $(target).next().addClass('spare-hui');
+                }
+            } else {
+                $tipEl.html('备品名称不能为空');
+                $tipEl.addClass('slideUp');
+                setTimeout(function(){
+                    $tipEl.removeClass('slideUp');
+                },4000)
             }
         }
 
         //备品数量增加
         CON.prototype._ievent_theSum = function(data, target, hit){
             var num = parseInt($(target).prev().text());
-            $(target).prev().text(num + 1);
-            $(target).prev().addClass('spare-hui');
-            $(target).parent().find('.apareHid').val(num + 1);
+            var numName = $(target).parents('li').find('.parts-new').val().trim();
+            var $tipEl = $(this._els.LErrorTip);
+            
+            //当备品名称不为空时才可点击数量
+            if(numName){
+                $(target).prev().text(num + 1);
+                $(target).prev().addClass('spare-hui');
+                $(target).parent().find('.apareHid').val(num + 1);
 
-            if(num >= 0){
-                $(target).prev().removeClass('spare-hui');
+                if(num >= 0){
+                    $(target).prev().removeClass('spare-hui');
+                }
+            } else {
+                $tipEl.html('备品名称不能为空');
+                $tipEl.addClass('slideUp');
+                setTimeout(function(){
+                    $tipEl.removeClass('slideUp');
+                },4000)
             }
         }
         //备品添加
         CON.prototype._ievent_partsAdd = function(){
             var domStr = Mustache.render(this.stockTpl);
             $('.parts').append(domStr);
+        }
+
+        //当备品名称为空时，备品数量设置为0；
+        CON.prototype.partsNull = function(){
+            $('.parts-new').bind('input propertychange','textarea', debounce(function (e) {
+                var $target = $(e.target)
+                if($target.val().trim() == ''){
+                    $target.parents('li').find('.spare-count').text(0).addClass('spare-hui');
+                }
+            }, 100));
         }
 
          // 添加需求

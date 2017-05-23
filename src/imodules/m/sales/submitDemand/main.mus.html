@@ -3,7 +3,7 @@
 <input type="hidden" value="{{project_info.id}}" name="projectId" >
 <div class="de-basics basicone clearfix">
     <span class="basics-tip">合同编号(必填)</span>
-    <input type="text" class="basics-put js-check-el" value="{{project_info.contract}}" readonly="readonly" data-tip="合同编号不能为空" name="contract"/>
+    <input type="text" class="basics-put js-check-el infocontract" value="{{project_info.contract}}" readonly="readonly" data-tip="合同编号不能为空" name="contract"/>
 </div>
 <div class="de-basics clearfix">
     <span class="basics-tip">项目名称(必填)</span>
@@ -52,7 +52,7 @@
     </li>
     {{#project_info.preparations}}
     <li class="clearfix">
-        <div class="parts-con"><input type="text" placeholder="配料类型" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
+        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
         <div class="parts-con-ji clearfix">
             <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
             <span class="count-jian down-count" ievent="subtract">-</span>
@@ -63,7 +63,7 @@
     {{/project_info.preparations}}
     <li class="clearfix">
         <div class="parts-con">
-            <input type="text" placeholder="配料类型" class="parts-new" name="preparation[name]">
+            <input type="text" placeholder="输入名称" class="parts-new" name="preparation[name]" idom="partsNull">
         </div>
         <div class="parts-con-ji clearfix">
             <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
@@ -95,7 +95,7 @@
 </div>
 
 <h6 class="de-xtitle">联系人</h6>
-<div class="de-basics clearfix">
+<div class="de-basics lxname clearfix">
     <span class="basics-tip">姓名(必填)</span>
     <input type="text" class="basics-put js-check-el" value="{{project_info.contact_name}}" name="contactName" data-tip="联络人姓名不能为空"/>
 </div>
