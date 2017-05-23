@@ -33,10 +33,12 @@ define(function() {
                 // mod.setOrgImage(org);
             });
 
+            /*
             debug.debug('a debug log');
             debug.info('a info log');
             debug.warn('a warn log');
             debug.error('a error log');
+            */
 
             this._input();
         };
