@@ -6,13 +6,13 @@
     {{#list}}
     <div class="mr-lsit clearfix" data-id="{{id}}" idom="runList">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
-        {{#start_date}}
-        <p><span class="icon-time"></span>{{start_date}} - {{end_date}}</p>
-        {{/start_date}}
+        {{#start}}
+        <p><span class="icon-time"></span>{{start}} - {{end}}</p>
+        {{/start}}
 
-        {{^start_date}}
+        {{^start}}
         <p><span class="icon-time"></span>未排期</p>
-        {{/start_date}}
+        {{/start}}
     </div>
     {{/list}}
 </div>

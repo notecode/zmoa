@@ -21,11 +21,11 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     }
 
                     for (var i=0; i<json.list.length; i++){
-                        if(json.list[i].start_date) {
-                            json.list[i].start_date = moment(json.list[i].start_date).format('M月DD日');
-                        }
-                        if(json.list[i].end_date) {
-                            json.list[i].end_date = moment(json.list[i].end_date).format('M月DD日');
+                        // notecode: 没有end_date，视为未排期(因为排期必须是有起止时间的)。
+                        //           如果仅有start_date，那是管理员派人的时间
+                        if (json.list[i].start_date && json.list[i].end_date) {
+                            json.list[i].start = moment(json.list[i].start_date).format('M月DD日');
+                            json.list[i].end = moment(json.list[i].end_date).format('M月DD日');
                         }
                     }
                     var dom = Mustache.render(_this.tpl, json); 
