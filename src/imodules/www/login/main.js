@@ -3,9 +3,24 @@ define(function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
+
+            this.bind_qywx_login();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
+		CON.prototype.bind_qywx_login = function() {
+            var url = location.protocol + '//' + location.host + '/admin/index.html';
+            tlog('qywx login redirect_url: ' + url);
+
+            window.WwLogin({
+                "id": "wx_reg",  
+                "appid": api.qywx.corpID,
+                "agentid": api.qywx.agentID,
+                "redirect_uri": encodeURIComponent(url),
+                "state": "login_on_zmoa",
+            });
+        }
+
         CON.prototype._ievent_login = function() {
             this.find('.error-tips').hide();
 

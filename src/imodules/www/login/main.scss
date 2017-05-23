@@ -1,6 +1,13 @@
 @import "src/sass/global/mixin";
 
 #login {
+    #wx_reg {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: none;
+    }
+
   display: table;
     position: absolute;
     width: 100%;
