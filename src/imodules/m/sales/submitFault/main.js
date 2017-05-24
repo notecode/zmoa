@@ -94,7 +94,17 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                     $(_this._els.infoSales).html('销售&nbsp;&nbsp;' + data.salesman_name+'&nbsp;&nbsp;'+data.job_number);
                 },
                 fail: function(json) {
-
+                    if(!$.isEmptyObject(json)) {  
+                        project.tip(json.errmsg,'fail','', true);
+                        setTimeout(function(){
+                            location.href="/sales/index.html";
+                        },3000)
+                    } else {
+                        project.tip('系统错误','fail','', true);
+                        setTimeout(function(){
+                            location.href="/sales/index.html";
+                        },3000)
+                    }
                 }
             });
         }
