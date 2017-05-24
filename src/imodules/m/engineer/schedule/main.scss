@@ -204,6 +204,14 @@ $clr-font-dark: #212022;
             border: none;
         } 
     }
+    .schbtn {
+        width: 100%;
+        background-color: #fff;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 0.5rem;
+    }
 
     .bottom-btn {
         width: 100%;
@@ -214,13 +222,12 @@ $clr-font-dark: #212022;
         font-size: 0.15rem;
         text-align: center;
         line-height: 0.5rem;
-        position: fixed;
-        left: 0;
-        bottom: 0;
         border: none;
 
         &:disabled {
             opacity: 0.5;
         }
     }
+    .slick-slide {display: none;}
+    .slick-active {display: block;}
 }
