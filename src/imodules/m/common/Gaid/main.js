@@ -19,7 +19,7 @@ define(function() {
          * 2. 向api请求user_info，以确定当前是否是登录。若已登录，则emitEvent('login.ensured')，通知router跳转到身份相应的首页;
          *    若未登录，带上本页(即router.html)作为redirect_uri，去open.weixin.qq.com请求授权
          * 3. 若授权成功(会带回code参数)，自然就再加载本页(router.html)。(此时自然是又请求user_info，当然又是未登录)。发现有code，
-         *    则带上code到我们api请求登录(qywx_login)
+         *    则带上code到我们api请求登录(即qywx_login接口，后端拿code换回用户id及详细信息等)
          * 4. 若登录成功，则同第2步中登录成功一样逻辑：emitEvent('login.ensured')，router跳转相应身份首页
          *
          * 总结：
