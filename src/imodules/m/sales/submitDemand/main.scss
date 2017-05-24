@@ -255,6 +255,15 @@
         position: fixed;
         right: 0;
         top: 0;
+        transform: translate3d(3rem, 0px, 0px);
+        -webkit-transform: translate3d(3rem, 0px, 0px);
+        -ms-transform: translate3d(3rem, 0px, 0px);
+        opacity: 0;
+        transition: -webkit-transform 600ms ease-in-out 0s;
+        transition: transform 600ms ease-in-out 0s;
+        transition: transform 600ms ease-in-out 0s, -webkit-transform 300ms ease-in-out 0s;
+        -webkit-transition: -webkit-transform 600ms ease-in-out 0s;
+        -ms-transition: -ms-transform 600ms ease-in-out 0s; 
 
         .sel-title {
             font-size: 0.3rem;
@@ -277,6 +286,12 @@
                 border-bottom: 1px solid #e3e8ee;
             }
         }
+    }
+    .select-jilian.slideUp {
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
     }
 
     .edit-error {

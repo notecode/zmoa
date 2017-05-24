@@ -114,17 +114,20 @@ define(function() {
         
         CON.prototype._ievent_provice = function(){
             $(this._els.infoMask).removeHide();
-            $(this._els.selProvice).removeHide();
+            //$(this._els.selProvice).removeHide();
+            $(this._els.selProvice).addClass('slideUp');
         }
 
         CON.prototype._ievent_city = function(){
             $(this._els.infoMask).removeHide();
-            $(this._els.selCity).removeHide();
+            //$(this._els.selCity).removeHide();
+            $(this._els.selCity).addClass('slideUp');
         }
 
         CON.prototype._ievent_district = function(){
             $(this._els.infoMask).removeHide();
-            $(this._els.selDistrict).removeHide();
+            //$(this._els.selDistrict).removeHide();
+            $(this._els.selDistrict).addClass('slideUp');
         }
 
         //CON.prototype._ievent_Mask = function(){
@@ -132,9 +135,9 @@ define(function() {
             var _this = this;
             $(this._els.infoMask).click(function(){
                 $(_this._els.infoMask).addHide();
-                $(_this._els.selProvice).addHide();
-                $(_this._els.selCity).addHide();
-                $(_this._els.selDistrict).addHide();
+                $(_this._els.selProvice).removeClass('slideUp');
+                $(_this._els.selCity).removeClass('slideUp');
+                $(_this._els.selDistrict).removeClass('slideUp');
             })
         }
 
@@ -167,7 +170,7 @@ define(function() {
                     }
                 }
                 $(_this._els.infoMask).addHide();
-                $(_this._els.selProvice).addHide();
+                $(_this._els.selProvice).removeClass('slideUp');
             })
         }
 
@@ -192,7 +195,7 @@ define(function() {
                 }
 
                 $(_this._els.infoMask).addHide();
-                $(_this._els.selCity).addHide();
+                $(_this._els.selCity).removeClass('slideUp');
             });
         }
 
@@ -208,7 +211,7 @@ define(function() {
                 $('.areaeval').html($data.name);
                 $('#textArea').val($data.id);
                 $(_this._els.infoMask).addHide();
-                $(_this._els.selDistrict).addHide();
+                $(_this._els.selDistrict).removeClass('slideUp');
             });
         }
 
