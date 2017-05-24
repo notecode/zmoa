@@ -4,6 +4,8 @@
   @@include('www/common/InsertTop/main.html',{"title": ""})
 </head>
 <body id="{{ID}}" {{IMODULE}}>
+  <!-- Gaid模块必须得有。router页就指望着它来登录的 -->
+  @@include('m/common/Gaid/main.md.html')
   @@include('www/common/InsertBottom/main.html')
 </body>
 </html>
