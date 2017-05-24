@@ -13,12 +13,27 @@ define(function() {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
+        /*
+         * 企业号授权登录流程:
+         * 1. 点击"进入系统"，则打开router.html页(该页加载有本模块，即Gaid)，并带有#from_qywx标识
+         * 2. 向api请求user_info，以确定当前是否是登录。若已登录，则emitEvent('login.ensured')，通知router跳转到身份相应的首页;
+         *    若未登录，带上本页(即router.html)作为redirect_uri，去open.weixin.qq.com请求授权
+         * 3. 若授权成功(会带回code参数)，自然就再加载本页(router.html)。(此时自然是又请求user_info，当然又是未登录)。发现有code，
+         *    则带上code到我们api请求登录(qywx_login)
+         * 4. 若登录成功，则同第2步中登录成功一样逻辑：emitEvent('login.ensured')，router跳转相应身份首页
+         *
+         * 总结：
+         *   1. 未登录时到router页，会加载两次（第2次是微信授权跳回来，这个无法避免）
+         *   2. 若本已登录，则只需加载一次router页
+         *
+         */
+
 		CON.prototype.gaidLogin = function() {
             var _this = this;
             var allow = this.role_allow;
             api_ajax('user/user_info', {
                 succ: function(json) {
-                    _this.emitLoginEnsured();
+                    _this.emitLoginEnsured(json);
                 },
                 fail: function(json) {
                     tlog(json.errmsg);
@@ -44,7 +59,7 @@ define(function() {
             api_ajax_with_query('user/qywx_login', q, {
                 succ: function(json) {
                     _this.dbg('qywx_login succ');
-                    _this.emitLoginEnsured();
+                    _this.emitLoginEnsured(json);
                 },
                 fail: function(json) {
                     _this.dbg(JSON.stringify(json));
@@ -70,12 +85,12 @@ define(function() {
             location.href = url;
         }
 
-        CON.prototype.emitLoginEnsured = function() {
+        CON.prototype.emitLoginEnsured = function(json) {
             this.dbg('logged in');
 
             // 确保当前是有用户登录状态，这个前提下，再通知其他地方去请求api
             tlog('Yeah, you logged in properly. Now notify others...');
-            project.events.emitEvent('login.ensured');
+            project.events.emitEvent('login.ensured', [json]); // 注意: 参数必须用数组，这是apply方法的要求。花掉我近1小时
         }
 
         CON.prototype.goLogin = function(msg) {

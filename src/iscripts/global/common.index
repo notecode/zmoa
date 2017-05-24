@@ -14,7 +14,7 @@
 @@include('global/libs/number_format.js')
 @@include('global/libs/wow.min.js')
 @@include('global/libs/jquery.lazyload.js')
-@@include('global/libs/EventEmitter-4.0.3.min.js')
+@@include('global/libs/EventEmitter.min.js')
 @@include('global/immy/libs/helpers.js')
 @@include('global/immy/libs/potato2.js')
 @@include('global/immy/libs/potato_dom.js')
