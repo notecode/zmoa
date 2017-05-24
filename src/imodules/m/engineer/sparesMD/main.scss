@@ -2,8 +2,8 @@
 
 #sparesMD {
     .detail-bei {
-        font-size: 0.12rem;
-        color: #212022;
+        font-size: 0.13rem;
+        color: #333;
         line-height: 0.38rem;
         padding: 0 0.15rem;
         margin-top: 0.2rem;
@@ -14,16 +14,15 @@
         border-left: 1px solid #E3E8EE;
 
         .detail-bj-name {
-            font-size: 0.18rem;
             color: #333;
             letter-spacing: 0;
             line-height: 0.23rem;
             float: left;
             outline: none;
             border: none;
-            font-weight: 700px;
             width: 100%;
             font-size: 0.14rem;
+            font-family: PingFangSC-Thin;
         }
         .detail-bj-count {
             float: right;
