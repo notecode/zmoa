@@ -73,9 +73,9 @@ define(function() {
         CON.prototype.emitLoginEnsured = function() {
             this.dbg('logged in');
 
-            // 确保当前是有用户登录状态，这个前提下，再通知其他地方去请求api。以求避免一些非预期的情况
-            //tlog('Yeah, you logged in properly. Now notify others...');
-            //project.events.emitEvent('login.ensured');
+            // 确保当前是有用户登录状态，这个前提下，再通知其他地方去请求api
+            tlog('Yeah, you logged in properly. Now notify others...');
+            project.events.emitEvent('login.ensured');
         }
 
         CON.prototype.goLogin = function(msg) {
