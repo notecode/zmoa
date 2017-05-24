@@ -81,6 +81,9 @@
                     &:last-child:before {
                         content:none;
                     }
+                    .currentStage {
+                        font-style: normal;
+                    }
                }
                .st-five {
                     padding-bottom: 0.17rem;
