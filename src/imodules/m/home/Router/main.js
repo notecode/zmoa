@@ -18,10 +18,14 @@ define(function() {
                             alert('亲爱的管理员，请您在电脑上登录网站进行管理.');
                             api_ajax('user/logout');
                         }
+                    },
+                    fail: function(json) {
+                        alert(json.errmsg);
                     }
                 });
             });
             
+            // 重要: 为了保证event在addListener之后emit，故后加载Gaid模块
 		    project.getIModule("imodule://Gaid");
         };
         potato.createClass(CON, baseIModules.BaseIModule);
