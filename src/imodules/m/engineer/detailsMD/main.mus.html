@@ -1,14 +1,17 @@
 
 <div class="detail-user">
-    <h3><span class="user-status">维修</span> · {{proj.name}}</h3>
+    <h3><span class="user-status"></span>{{proj.name}}</h3>
     <div class="user-info">
         <h6>{{proj.contact_name}}</h6>
         <p>{{proj.contact_company}} {{proj.contact_position}}</p>
-        <a href="tel:{{proj.contact_phone}}"><span class="icon-call"></span></a>
+        <a  class="icon-call" href="tel:{{proj.contact_phone}}"><span></span></a>
     </div>
 </div>
 <div class="detail-date {{fn.sched}}">
     <span>{{fn.sch_start}}-{{fn.sch_end}}</span>
+</div>
+<div class="rease-title">
+    故障原因：
 </div>
 <p class="detail-rease">
     <span class="icon-malfunction"></span><span>{{fn.apply_environment}}，{{proj.point}}，{{fn.screen_color}}，{{proj.description}}</span>
@@ -21,7 +24,7 @@
         <img src="{{proj.main_img}}" alt="项目图片">
     </div>
 </div>
-<p class="icon-location detail-address">{{proj.detail_address}}</p>
+<p class="detail-address"><span class="icon-location"></span>{{proj.detail_address}}</p>
 
 <div class="detail-other">
     <div class="detail-other-title clearfix">
