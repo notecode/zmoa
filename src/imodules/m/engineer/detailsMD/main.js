@@ -25,10 +25,10 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 proj: proj,
                 fn: {
                     apply_environment: function() {
-                        return APPLY_ENVIRONMENT[proj.apply_environment];
+                        return proj.apply_environment = APPLY_ENVIRONMENT[proj.apply_environment];
                     },
                     screen_color: function() {
-                        return SCREEN_COLOR[proj.screen_color];
+                        return proj.screen_color = SCREEN_COLOR[proj.screen_color];
                     },
                     hide_main_img: function() {
                         var img = proj.main_img;

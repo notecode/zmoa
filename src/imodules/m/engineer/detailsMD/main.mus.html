@@ -39,45 +39,45 @@
                 <td class="td-contract-no">{{proj.contract}}</td>
             </tr>
             <tr>
-                <td>大小</td>
-                <td class="td-screen-size">{{proj.screen_area}}m²</td>
-            </tr>
-            <tr>
-                <td>颜色</td>
+                <td>屏幕颜色</td>
                 <td class="td-screen-type">{{proj.screen_color}}</td>
             </tr>
             <tr>
-                <td>间距</td>
+                <td>屏幕面积</td>
+                <td class="td-screen-size">{{proj.screen_area}}m²</td>
+            </tr>
+            <tr>
+                <td>点间距</td>
                 <td class="td-screen-span">{{proj.point}}</td>
             </tr>
             <tr>
-                <td>模组</td>
-                <!-- <td class="td-screen-span">洲明 Upanel R2 2.6mm SMD2121</td> -->
-                <td class="td-screen-span"></td>
+                <td>应用环境</td>
+                <td class="td-screen-span">{{proj.apply_environment}}</td>
             </tr>
             <tr>
-                <td>IC芯片</td>
-                <!-- <td class="td-screen-environment">士兰明芯 T2</td> -->
-                <td class="td-screen-environment"></td>
+                <td>保质期截止</td>
+                <td class="td-screen-span">{{proj.expiration_date}}</td>
             </tr>
             <tr>
-                <td>电源</td>
-                <!-- <td class="td-demand-date">诚联 R317 2016</td> -->
-                <td class="td-demand-date"></td>
+                <td>项目地址</td>
+                <td class="td-screen-span">{{proj.detail_address}}</td>
             </tr>
             <tr>
-                <td>控制卡</td>
-                <!-- <td class="td-demand-res">诺瓦 w578</td> -->
-                <td class="td-demand-res"></td>
+                <td>销售人员</td>
+                <td class="td-screen-span">{{proj.salesman_name}}</td>
             </tr>
             <tr>
+                <td>销售员工号</td>
+                <td class="td-screen-span">{{proj.job_number}}</td>
+            </tr>
+            <!--tr>
                 <td>备品</td>
                 <td class="td-demand-addr">
                     {{#proj.preparations}}
                         {{preparation_type}}: {{preparation_type_number}}; &nbsp;
                     {{/proj.preparations}}
                 </td>
-            </tr>
+            </tr-->
         </tbody>
     </table>
 </div>
