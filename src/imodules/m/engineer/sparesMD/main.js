@@ -49,8 +49,13 @@ define(function() {
             var _this = this;
             var update = function(tgt, up) {
                 var jq = $(tgt).siblings('.spare-count');
-                var jqT = $(tgt).parent().siblings('.spare-type').val();
+                var jqT = $(tgt).parents('.detail-beijian').find('.spare-type').val();
                 var org = parseInt(jq.text());
+                if(jq.text().trim() < 0){
+                    jq.addClass('spare-hui');
+                }else{
+                    jq.removeClass('spare-hui');
+                }
                 if (up) {
                     if ('' == jqT) {
                         alert('请先填写备料类型');

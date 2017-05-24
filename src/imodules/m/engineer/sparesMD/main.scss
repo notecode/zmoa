@@ -66,6 +66,9 @@
                 width: 19px;
                 text-align: center;
             }
+            .spare-hui {
+                opacity: 0.5;
+            }
         }
 
         .beijian-type {
@@ -130,6 +133,7 @@
                 font-size: 0.14rem;
                 padding: 0 0.15rem;
                 float: left;
+                box-shadow: none;
             }
             .pro-recall-save {
                 width: 0.8rem;
