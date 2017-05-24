@@ -423,10 +423,10 @@ define(["/global/iscripts/libs/time/moment.js",
             });
         }
 
-        CON.prototype._ievent_goBack = function() {
-            tlog('go-back to detail');
-            history.back();
-        }
+        // CON.prototype._ievent_goBack = function() {
+        //     tlog('go-back to detail');
+        //     history.back();
+        // }
 
         CON.prototype.unitTest0 = function() {
             var seg = this.genPassLines('2017-04-02', '2017-04-05');
