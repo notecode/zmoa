@@ -3,13 +3,11 @@
 #detailsMD {
     .detail-user {
         padding: 0 0.15rem 0.17rem;
-        border-bottom: 0.01rem solid #E3E8EE;
 
         h3 {
             font-size: 0.25rem;
             color: #0F0E10;
             margin-top: 0.2rem;
-            font-weight: 700;
             font-family: PingFangSC-Thin;
 
             .user-status {
@@ -22,7 +20,6 @@
 
             h6 {
                 font-size: 0.18rem;
-                font-weight: 700;
                 color: #212022;
                 margin-top: 0;
                 margin-bottom: 0.06rem;
@@ -54,6 +51,7 @@
         padding: 0.16rem 0.15rem;
         border-bottom: 0.01rem solid #E3E8EE;
         margin-bottom: 0.25rem;
+        border-top: 0.01rem solid #E3E8EE;
         span {
             font-size: 0.14rem;
             color: #212022;

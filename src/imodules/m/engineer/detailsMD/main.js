@@ -35,8 +35,8 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                         return (img && img.length > 0) ? '' : 'hide';
                     },
                     sched: function() {
-                        var start = worker.start_date;
-                        return (start && start.length > 0) ? 'show' : 'hide';
+                        var end = worker.end_date;
+                        return (end && end.length > 0) ? 'show' : 'hide';
                     },
                     sch_start: function() {
                         var start = worker.start_date;
