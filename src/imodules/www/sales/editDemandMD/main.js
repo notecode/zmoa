@@ -7,6 +7,10 @@ define(function() {
             this.tpl = this._els.tpl[0].text;
             this.addressTpl = this._els.tpl[1].text;
             this.stockTpl = this._els.tpl[2].text;
+
+            // 关于lastComment，请参见m端本功能的代码。可查找last_comment
+            this.initLastComment = '';
+
             // 基础信息下拉
             $(this._els.LContent).on('click', '.js-event-drop', function(e) {
                 e.preventDefault();
@@ -68,6 +72,10 @@ define(function() {
             this.data = obj;
             // 初始化地址数据
             this.addressItems().then(function() {
+                var last_comment = (obj.comments.length > 0) ? obj.comments[0].comment : '';
+                _this.initLastComment = last_comment;
+                obj.last_comment = last_comment;
+
                 var filter = {
                         province: function () {
                             var _id = this.province_id;
@@ -140,8 +148,10 @@ define(function() {
                     return false
                 }
             }
+
             var data = $(target).serializeJSON();
-            data.description = filterCR(data.description);
+            var lastC = filterCR(data.last_comment);
+            data.last_comment = (lastC != this.initLastComment) ? lastC : ''; 
 
             var preparationArr = [];
             if (!!data.preparation) {

@@ -11,6 +11,11 @@ define(function() {
             this.id = qs('project_id');
             this.provinceId = '';
 
+            // 最末的“补充说明”稍麻烦：
+            // 1. 取comments中最后一条展示
+            // 2. 如果修改了，才需提交一条comment给后端（通过edit接口的last_comment参数）
+            this.initLastComment = '';
+
             var _this = this;
             //project.events.addListener('login.ensured', function(event) {
                 _this.mgetMyPro();
@@ -30,10 +35,16 @@ define(function() {
 
             api_ajax('project/detail/' + id, {
                 succ: function(json) {
-                    //判断面积是否为0
+                    // 判断面积是否为0
                     if(json.project_info.screen_area == 0){
                         json.project_info.screen_area = '';
                     }
+
+                    // 展示最新一条comment。因返回的数据是以时间由新到旧排的，故取第0条
+                    var comments = json.project_info.comments;
+                    json.project_info.last_comment = (comments.length > 0) ? comments[0].comment : '';
+                    _this.initLastComment = json.project_info.last_comment;
+
                     var dom = Mustache.render(_this.tpl, json); 
                     $(_this._els.detailInfo).html(dom);
 
@@ -301,7 +312,8 @@ define(function() {
             }
 
             var data = $(target).serializeJSON();
-            data.description = filterCR(data.description);
+            var lastC = filterCR(data.last_comment);
+            data.last_comment = (lastC != this.initLastComment) ? lastC : '';
 
             var preparationArr = [];
             if (!!data.preparation) {
