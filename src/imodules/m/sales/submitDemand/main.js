@@ -33,7 +33,6 @@ define(function() {
             var _this = this;
             var id=this.id;
             var localaddress = window.localStorage.getItem('address');
-
             api_ajax('project/detail/' + id, {
                 succ: function(json) {
                     // 判断面积是否为0
@@ -53,7 +52,7 @@ define(function() {
                     _this.partsNull();
                 },
                 fail: function(json) {
-
+                    alert('请求失败')
                 }
             });
         }
@@ -315,6 +314,8 @@ define(function() {
             var data = $(target).serializeJSON();
             var lastC = filterCR(data.last_comment);
             data.last_comment = (lastC != this.initLastComment) ? lastC : '';
+
+
 
             var preparationArr = [];
             if (!!data.preparation) {
