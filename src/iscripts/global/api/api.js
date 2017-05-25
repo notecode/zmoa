@@ -61,6 +61,10 @@ var api = {
                     corpID: 'wwe85720d4242f660f',
                     agentID: 1000003,
                 };
+                
+                //
+                // half_prod_env:  即企业微信用洲明的，OA系统暂还用txoa。若用此方式，注释下面break。后端也有相应修改
+                //
                 break;
             case 'prod':
                 acc = {
