@@ -135,6 +135,9 @@ input,textarea {
   padding: 0;
   margin: 0;
   box-shadow: none;
+  appearance:button;
+ -moz-appearance:button; /* Firefox */
+ -webkit-appearance:button; /* 去掉手机中input的内阴影Safari 和 Chrome */
 }
 
 body {font-family: "PingFangSC-Thin", "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", Georgia, "Times New Roman", Times, serif;}
