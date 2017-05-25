@@ -26,31 +26,33 @@ define(function() {
                     }
 
                     //未展开时的当前状态
-                    for(var i=0; i<json.list.length; i++){
-                        switch (parseInt(json.list[i].status)) {
-                            case 1: // 已立项，待派人 
-                                //$(_this._els.curStage).text('已立项，待派人');
-                                json.list[i].currentStatus = '已立项，待派人';
-                                break;
-                            case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
-                                json.list[i].currentStatus = '排期中';
-                                break;
-                            case 3: // 服务中(已点击“开始服务”)
-                                //$(_this._els.curStage).text('服务中');
-                                json.list[i].currentStatus = '服务中';
-                                break;
-                            case 4: // (服务)已完成，待回访
-                                //$(_this._els.curStage).text('已完成，待回访');
-                                json.list[i].currentStatus = '已完成，待回访';
-                                break;
-                            case 5: // 已结束
-                                //$(_this._els.curStage).text('已结束');
-                                json.list[i].currentStatus = '已结束';
-                                break;
-                            default:
-                                //$(_this._els.curStage).text('已立项，待派人');
-                                json.list[i].currentStatus = '已立项，待派人';
-                                break;
+                    if(json.list){
+                        for(var i=0; i<json.list.length; i++){
+                            switch (parseInt(json.list[i].status)) {
+                                case 1: // 已立项，待派人 
+                                    //$(_this._els.curStage).text('已立项，待派人');
+                                    json.list[i].currentStatus = '已立项，待派人';
+                                    break;
+                                case 2: // 排期中(又细分2个阶段：已派人，但未排期；已排期，但未开始服务)
+                                    json.list[i].currentStatus = '排期中';
+                                    break;
+                                case 3: // 服务中(已点击“开始服务”)
+                                    //$(_this._els.curStage).text('服务中');
+                                    json.list[i].currentStatus = '服务中';
+                                    break;
+                                case 4: // (服务)已完成，待回访
+                                    //$(_this._els.curStage).text('已完成，待回访');
+                                    json.list[i].currentStatus = '已完成，待回访';
+                                    break;
+                                case 5: // 已结束
+                                    //$(_this._els.curStage).text('已结束');
+                                    json.list[i].currentStatus = '已结束';
+                                    break;
+                                default:
+                                    //$(_this._els.curStage).text('已立项，待派人');
+                                    json.list[i].currentStatus = '已立项，待派人';
+                                    break;
+                            }
                         }
                     }
                     _this.proInfoRender(json);
