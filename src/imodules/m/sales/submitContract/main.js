@@ -3,9 +3,8 @@ define(function() {
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-
             this.tpl = this._els.tpl[0].text;
-            var _this = this;
+            this.key = '';
 
             //input触发事件
             $(this._els.LSearch).bind('input propertychange','textarea', debounce(function (e) {
@@ -13,19 +12,15 @@ define(function() {
                 _this.search($target);
             }, 300));
 
+            var _this = this;
             $(this._els.LProjects).on('click','p',function(e){
-                var _this = this;
-                var $this = $(this);
-                var item = $this.data();
+                var item = $(this).data();
                 _this.key = item.key + '';
                 _this.id = item.id;
                 setTimeout(function(){
                     $('.input-num').val(item.key + ' ' + item.name);
                 },100)
             })
-
-           
-            
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 
@@ -53,7 +48,7 @@ define(function() {
                             renderObj.arr = true
                             renderObj.items = data
                         } else if(!$.isEmptyObject(data) && data.errcode) {
-                            project.tip('用户未登陆','succ','', true);
+                            project.tip('用户未登录','succ','', true);
                         }
                         var domStr = Mustache.render(_this.tpl, renderObj); 
                         $(_this._els.LProjects).html(domStr);
