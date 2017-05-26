@@ -39,7 +39,12 @@ define(function() {
         }
 
 		CON.prototype._ievent_logout = function(data, target, hit) {
-            this.goLogin('intended-logout');
+            var _this = this;
+            api_ajax('user/logout', {
+                always: function() {
+                    _this.goLogin('intended-logout');
+                }
+            });
 		}
         
         return CON;
