@@ -262,11 +262,11 @@
         -webkit-transform: translate3d(3rem, 0px, 0px);
         -ms-transform: translate3d(3rem, 0px, 0px);
         opacity: 0;
-        transition: -webkit-transform 600ms ease-in-out 0s;
-        transition: transform 600ms ease-in-out 0s;
-        transition: transform 600ms ease-in-out 0s, -webkit-transform 300ms ease-in-out 0s;
-        -webkit-transition: -webkit-transform 600ms ease-in-out 0s;
-        -ms-transition: -ms-transform 600ms ease-in-out 0s;
+        transition: -webkit-transform 200ms ease-in-out 0s;
+        transition: transform 200ms ease-in-out 0s;
+        transition: transform 200ms ease-in-out 0s, -webkit-transform 100ms ease-in-out 0s;
+        -webkit-transition: -webkit-transform 200ms ease-in-out 0s;
+        -ms-transition: -ms-transform 200ms ease-in-out 0s;
         box-shadow: -6px 0px 8px rgba(0,0,0,.1); 
 
         .sel-title {
