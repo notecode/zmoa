@@ -19,6 +19,18 @@ Array.prototype.contains = function(it) {
 	return ($.inArray(it, this) != -1);
 }
 
+// 写成prototype报错，故写成一般的function
+// https://stackoverflow.com/questions/7306669/how-to-get-all-properties-values-of-a-javascript-object-without-knowing-the-key
+function ObjectValues(obj) {
+    var v = [];
+    for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            v.push(obj[key]);
+        }
+    }
+    return v;
+}
+
 // 在数字前补0，保证长度为n
 //copyfrom: http://stackoverflow.com/questions/8513032/less-than-10-add-0-to-number
 Number.prototype.pad = function(n) {

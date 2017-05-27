@@ -135,7 +135,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
             this.serv = {
                 obj_workers: raw_workers,
-                arr_workers: Object.values(raw_workers),
+                arr_workers: ObjectValues(raw_workers),
                 grid: servGrid
             }
 
