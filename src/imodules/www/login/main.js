@@ -4,7 +4,7 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
 
-            this.bind_qywx_login();
+            //this.bind_qywx_login();
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
