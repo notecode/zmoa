@@ -17,9 +17,13 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             var _this = this;
             api_ajax('project/engineer_going_projects', {
                 succ: function(json) {
+                    
+                    // 微信对动态改变的标题似乎处理不太好。故先不改了
+                    /*
                     if (json.userName) {
                         document.title = json.userName;
                     }
+                    */
 
                     for (var i=0; i<json.list.length; i++){
                         // notecode: 没有end_date，视为未排期(因为排期必须是有起止时间的)。
@@ -33,7 +37,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     $(_this._els.proRunning).html(dom);
                 },
                 fail: function(json) {
-
+                    alert(json.errmsg);
                 }
             });
         }
