@@ -6,9 +6,10 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.tpl = this._els.tpl[0].text;
             this.turnFor();
             var _this = this;
-            //project.events.addListener('login.ensured', function(event) {
+            project.events.addListener('login.ensured', function(event) {
                 _this.getList();
-            //});
+            });
+		    project.getIModule("imodule://Gaid"); // 后加载，以保证addListener已执行
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		

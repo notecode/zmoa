@@ -17,13 +17,14 @@ define(function() {
             this.initLastComment = '';
 
             var _this = this;
-            //project.events.addListener('login.ensured', function(event) {
+            project.events.addListener('login.ensured', function(event) {
                 _this.mgetMyPro();
                 _this.clickpro();
                 _this.clickcit();
                 _this.clickarea();
                 _this.closemask();
-            //});
+            });
+		    project.getIModule("imodule://Gaid"); // 后加载，以保证addListener已执行
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 

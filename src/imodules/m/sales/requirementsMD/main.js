@@ -6,9 +6,12 @@ define(function() {
             this.tpl = this._els.tpl[0].text;
 
             var _this = this;
-            //project.events.addListener('login.ensured', function(event) {
+            project.events.addListener('login.ensured', function(event) {
                 _this.mgetMyPro();
-            //});
+            });
+
+            // 此为module，不是page。所在page已有下面这句，故这里就不需要了
+		    // project.getIModule("imodule://Gaid"); 
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 

@@ -7,9 +7,10 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             baseIModules.BaseIModule.call(this, dom);
 
             var _this = this;
-            //project.events.addListener('login.ensured', function(event) {
+            project.events.addListener('login.ensured', function(event) {
                 _this.setDefault();
-            //});
+            });
+		    project.getIModule("imodule://Gaid"); // 后加载，以保证addListener已执行
 
             this._init();
             this.isAdmin;

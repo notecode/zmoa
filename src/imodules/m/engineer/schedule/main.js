@@ -27,7 +27,7 @@ define(["/global/iscripts/libs/time/moment.js",
             if (1 == qs("test")) {
                 doRender(mock);
             } else {
-                //project.events.addListener('login.ensured', function(event) {
+                project.events.addListener('login.ensured', function(event) {
                     var data = {
                         projectId: qs_proj()
                     };
@@ -39,8 +39,10 @@ define(["/global/iscripts/libs/time/moment.js",
                             alert(json.errmsg);
                         }
                     });
-                //});
+                });
             }
+
+		    project.getIModule("imodule://Gaid"); // 后加载，以保证addListener已执行
 //            this.foo();
 //            this.unitTest();
         };
