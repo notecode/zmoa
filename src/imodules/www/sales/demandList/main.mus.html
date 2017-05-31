@@ -13,8 +13,13 @@
         <div class="has-demand" data-id="{{id}}">
             <div class="demand-list">
                 <div class="demand-name">
-                    <span class="icon-xiangmu"></span >
-                    <span class="demand-name-span"><cite class="de-adres" title="{{name}}">{{name}}</cite>（{{contract}}）</span>
+                    <p>
+                        <span class="icon-xiangmu"></span >
+                        <span class="demand-name-span"><cite class="de-adres" title="{{name}}">{{name}}</cite>（{{contract}}）</span>
+                    </p>
+                    <div class="demand-ntime">
+                        <span class="icon-checkmark icondtime"></span>{{transfer_time}}
+                    </div>
                 </div>
                 <div class="demand-state" id="state{{status}}">
                     <div id="progressBar">
