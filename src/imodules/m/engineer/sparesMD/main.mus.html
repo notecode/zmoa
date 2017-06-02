@@ -1,13 +1,16 @@
 
 <div class="spares-body">
-    <p class="detail-bei">备品备件</p>
+    <p class="detail-bei">产品配件</p>
     <div class="spare-list">
         <div class="spare clearfix">
             <div class="spare-one">
-                备件名称
+                配件名称
+            </div>
+            <div class="spare-one apare-mid">
+                配件规格
             </div>
             <div class="spare-one">
-                备份数量
+                配件数量
             </div>
         </div>
         {{#proj.preparations}}
@@ -15,11 +18,12 @@
             <div class="spare-two">
                 <input class="detail-bj-name spare-type" value="{{preparation_type}}" readonly>
             </div>
+             <div class="spare-two apare-mid">
+                <input class="detail-bj-name spare-type" value="规格" readonly>
+            </div>
             <div class="spare-two">
                 <div class="detail-bj-count">
-                    <span class="count-jian down-count">-</span>
-                    <span class="count-liang spare-count">{{preparation_type_number}}</span>
-                    <span class="count-jia up-count">+</span>
+                    <input class="detail-bj-name count-put" type="text" placeholder="输入数量" value="{{preparation_type_number}}" readonly>
                 </div>
             </div>
         </div>
@@ -31,12 +35,11 @@
             <div class="spare-two">
                 <input class="beijian-type spare-type" type="text" placeholder="输入名称">
             </div>
+            <div class="spare-two apare-mid">
+                <input class="detail-bj-name spare-type" placeholder="输入规格" readonly>
+            </div>
             <div class="spare-two">
-                <div class="detail-bj-count">
-                    <span class="count-jian down-count">-</span>
-                    <span class="count-liang spare-count spare-hui">0</span>
-                    <span class="count-jia up-count">+</span>
-                </div>
+                <input class="detail-bj-name count-put" type="text" placeholder="输入数量">
             </div>
         </div>
     </div>

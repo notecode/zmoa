@@ -24,6 +24,10 @@
             font-size: 0.14rem;
             font-family: PingFangSC-Thin;
         }
+
+        .count-put {
+           font-family: PingFangSC-Semibold;
+        }
         .detail-bj-count {
             float: right;
             width: 100%;
@@ -162,14 +166,15 @@
     }
 
     .spare-one {
-        width: 50%;
+        width: 30%;
         float: left;
         border-right: 1px solid #e3e8ee;
         padding: 0 0.15rem;
     }
 
+    
     .spare-two {
-        width: 50%;
+        width: 30%;
         float: left;
         padding: 0 0.15rem;
         border-right: 1px solid #e3e8ee;
@@ -177,6 +182,11 @@
         height: 0.5rem;
         padding-top: 0.12rem;
     }
+
+    .apare-mid {
+        width: 40%;
+    }
+
 
     // 编写维修记录页，不显示“补充说明”
     .hide-comments {
