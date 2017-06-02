@@ -141,7 +141,7 @@
                 border-left: 1px solid #e3e8ee;
                 border-bottom: 1px solid #e3e8ee!important;
                 float: left;
-                width: 50%;
+                width: 0.9rem;
                 font-size: 0.14rem;
                 color: #333;
                 padding: 0 0.1rem;
@@ -154,18 +154,21 @@
                 line-height: 0.44rem;
             }
 
+            li div.parts-spec {
+                width: 1.63rem;
+            }
+
             .parts-con {
                 height: 0.5rem;
                 line-height: 0.5rem;
-
-                .parts-new {
-                    width:100%;
-                    outline: none;
-                    font-size: 0.14rem;
-                    border: none;
-                    line-height: 0.2rem;
-                    color: #333;
-                }
+            }
+            .parts-new {
+                width:100%;
+                outline: none;
+                font-size: 0.14rem;
+                border: none;
+                line-height: 0.2rem;
+                color: #333;
             }
             .parts-con-ji {
                 height: 0.5rem;

@@ -44,32 +44,29 @@
     <input type="text" class="basics-put" value="{{project_info.expiration_date}}" placeholder="如2017-08-12" name="expirationDate"/>
 </div>
 
-<h6 class="de-xtitle">备品备料</h6>
+<h6 class="de-xtitle">产品配件</h6>
 <ul class="parts clearfix">
     <li class="clearfix">
-        <div class="parts-title">备品名称</div>
+        <div class="parts-title">配件名称</div>
+        <div class="parts-title parts-spec">配件规格</div>
         <div class="parts-title">备份数量</div>
     </li>
     {{#project_info.preparations}}
     <li class="clearfix">
         <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
+        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="规格" name=""></div>
+
         <div class="parts-con-ji clearfix">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
-            <span class="count-jian down-count" ievent="subtract">-</span>
-            <span class="count-liang spare-count" idom="apareNum">{{preparation_type_number}}</span>
-            <span class="count-jia up-count" ievent="theSum">+</span>
+            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="parts-new apareHid">
         </div>
     </li>
     {{/project_info.preparations}}
     <li class="clearfix">
-        <div class="parts-con">
-            <input type="text" placeholder="输入名称" class="parts-new" name="preparation[name]" idom="partsNull">
-        </div>
+        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
+        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="" name=""></div>
+
         <div class="parts-con-ji clearfix">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="hidden" class="apareHid">
-            <span class="count-jian down-count"  ievent="subtract">-</span>
-            <span class="count-liang spare-count spare-hui"  idom="apareNum">0</span>
-            <span class="count-jia up-count"  ievent="theSum">+</span>
+            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="parts-new apareHid" placeholder="输入数量">
         </div>
     </li>
  </ul>
