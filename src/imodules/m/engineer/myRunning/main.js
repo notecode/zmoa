@@ -44,10 +44,21 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 
         CON.prototype.turnFor = function(){
             var _this = this;
-            $(this._els.proRunning).on('click','.mr-lsit',function(e){
+            $(this._els.proRunning).on('click','.list-implement',function(e){
                 var pid = $(this).data().id;
                 location.href='/project/detail.html?projectId=' + pid;
             })
+
+            $(this._els.proRunning).on('click','.list-depot',function(e){
+                $(_this._els.rMask).removeHide();
+                $(_this._els.depotRepair).addClass('slideUp');
+            })
+        }
+
+        CON.prototype._ievent_closeMask = function(data, target, hit){
+            var _this = this;
+            $(target).addHide();
+            $(_this._els.depotRepair).removeClass('slideUp');
         }
         
         return CON;

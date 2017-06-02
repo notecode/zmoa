@@ -1,6 +1,7 @@
 @import "src/sass/global/mixin";
 
 #myRunning{
+    padding-bottom: 0.65rem;
     .mr-title {
         font-size: 0.24rem;
         color: #333333;
@@ -43,5 +44,90 @@
                 color: #003894;
             }
         }
+    }
+
+    .mr-deport {
+        padding-top: 0.45rem;
+    }
+
+    .r-mask {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.25);
+    }
+
+    .depot-repair {
+        width: 3.15rem;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transform: translate3d(3rem, 0px, 0px);
+        -webkit-transform: translate3d(3rem, 0px, 0px);
+        -ms-transform: translate3d(3rem, 0px, 0px);
+        opacity: 0;
+        transition: -webkit-transform 200ms ease-in-out 0s;
+        transition: transform 200ms ease-in-out 0s;
+        transition: transform 200ms ease-in-out 0s, -webkit-transform 100ms ease-in-out 0s;
+        -webkit-transition: -webkit-transform 200ms ease-in-out 0s;
+        -ms-transition: -ms-transform 200ms ease-in-out 0s;
+        box-shadow: -6px 0px 8px rgba(0,0,0,.1); 
+
+        h6 {
+            font-family: PingFangSC-Thin;
+            font-size: 0.18rem;
+            color: #333333;
+            margin: 0;
+            padding: 0.25rem 0.15rem;
+        }
+
+        .depot-con {
+            width: 100%;
+            border-top: 1px solid #e3e8ee;
+
+            .depot-list {
+                width: 100%;
+                border-bottom: 1px solid #e3e8ee;
+                padding: 0.09rem 0.15rem;
+                font-family: PingFangSC-Thin;
+                font-size: 0.14rem;
+                color: #333333;
+
+                span {
+                    float: left;
+                    margin-top: 0.06rem;
+                    display: inline;
+                }
+
+                a {
+                    float: right;
+                    width: 0.57rem;
+                    height: 0.32rem;
+                    background: #003894;
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    line-height: 0.32rem;
+                    font-size: 0.14rem;
+                    color: #FFFFFF;
+                }
+
+                cite {
+                    font-style: normal;
+                    color: #3f3f3f;
+                }
+            }
+        }
+    }
+
+    .depot-repair.slideUp {
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
     }
 }
