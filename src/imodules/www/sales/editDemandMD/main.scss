@@ -210,6 +210,69 @@
       font-size: 14px;
       color: #333;
     }
+
+    /*产品配件*/
+    .access-parts {
+      width: 100%;
+      padding: 0;
+      border-top: 1px solid #e3e8ee;
+      border-left: 1px solid #e3e8ee;
+      font-size: 14px;
+      margin-bottom: 0;
+
+      .access-li {
+        list-style: none;
+        .access-liput {
+          float: left;
+          width: 205px;
+          border-right: 1px solid #e3e8ee;
+          border-bottom: 1px solid #e3e8ee;
+          font-size: 14px;
+          padding: 15px 15px;
+
+          input {
+            border: none;
+            padding: 0;
+            color: #333;
+            width: 100%;
+            outline: none;
+          }
+        }
+        .acc-liputwid {
+          width: 249px;
+        }
+      }
+
+      .access-head {
+        background: #F7FAFF;
+        color: #8b9aab;
+        height: 49px;
+        line-height: 49px;
+
+        .access-liput {
+          padding: 0 15px;
+        }
+      }
+    }
+
+    .access-add {
+      width: 100%;
+      text-align: center;
+      border: 1px solid #e3e8ee;
+      border-top: none;
+      height: 50px;
+      line-height: 50px;
+
+      .acc-add-to {
+        font-size: 14px;
+        color: #003894;
+
+        .icon-Add-to {
+          margin-right: 10px;
+          vertical-align: -1px;
+        }
+      }
+    }
 }
 
 ::-webkit-input-placeholder{color:#8b9aab;}
