@@ -1,0 +1,109 @@
+@import "src/sass/global/mixin";
+
+#serviceProcessFactory{
+    position: relative;
+    width: 100%;
+    padding: 40px 60px 40px 60px;
+    background-color: #f7faff;
+    
+    .content {
+        width: 100%;
+        border-radius: 4px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .icon-left, .icon-right {
+        font-size: 18px;
+        cursor: pointer;
+    }
+    
+    .taskbox-pane{
+        padding-bottom: 64px;
+        height: 100%;
+    }
+    .task-box{
+        width: 290px;
+        height: 679px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+        overflow: hidden;
+        overflow-y: auto;
+        background: #FFFFFF;
+        border: 1px solid $backblue;
+        box-shadow: 0 2px 6px 0 rgba(227,232,238,0.70);
+        border-radius: 4px;
+       
+        .box-title{
+            width: 100%;
+            height: 60px;
+            padding: 19px 15px;
+            line-height: 22px;
+            font-size: 16px;
+            color: $blue;
+            background: $backblue;
+            position: relative;
+            .icon-Add-to {
+                float: right;
+                margin-top: 3px;
+                display: inline;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+        .task-item {
+            height: 85px;
+            padding: 20px 20px 20px 50px;
+            border-bottom:1px solid $backblue;
+            position: relative;
+            cursor: pointer;
+
+            .icon-xiangmu {
+                position: absolute;
+                left: 18px;
+                top:20px;
+                font-size: 20px;
+                color: #003894;
+            }
+
+            .task-item-name{
+                font-size: 14px;
+                line-height: 20px;
+                color: $black;
+                margin-bottom: 8px;
+                width: 212px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .task-item-time{
+                font-size: 12px;
+                line-height: 17px;
+                color: #999;
+            }
+
+            &:hover {
+                background-color: #fbfbfb;
+            }
+        }
+
+
+    }
+    .task-over {
+         .task-item{
+            .icon-xiangmu {
+                color: #61A417;
+            }
+        }
+    }
+    .task-duan {
+         .task-item{
+            .icon-xiangmu {
+                color: #999;
+            }
+        }
+    }
+
+}
