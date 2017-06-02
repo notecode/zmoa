@@ -85,7 +85,7 @@
                         font-style: normal;
                     }
                }
-               .st-five {
+               .st-six {
                     padding-bottom: 0.17rem;
                } 
             }
@@ -204,6 +204,31 @@
                 }
 
                 .st-five {
+                    color: #003894;
+
+                    .stage-dot {
+                        background-color: #003894; 
+                        border: 1px solid transparent;
+                    }
+                }
+            }
+
+            /*状态6*/
+            .has-status.status6 {
+                .st-one, .st-two, .st-three, .st-four, .st-five {
+                    color: #003894;
+
+                    .stage-dot {
+                        background-color: #003894; 
+                        border: 1px solid transparent;
+                    }
+
+                    &:before {
+                        background-color: #003894; 
+                    }
+                }
+
+                .st-six {
                     color: #003894;
 
                     .stage-dot {
