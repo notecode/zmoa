@@ -1,0 +1,109 @@
+@import "src/sass/global/mixin";
+
+#inMaintenanceMD {
+  padding: 0 40px;
+
+  .com-schedule {
+    width: 898px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    .percentage-num {
+      float: left;
+      font-size: 14px;
+      color: #8b9aab;
+      width: 41px;
+      margin-top: 8px;
+      display: inline;
+    }
+
+    .percentage {
+      width: 677px;
+      height:8px;
+      overflow: hidden;
+      position: relative;
+      background-color: #e3e8ee;
+      border-radius: 100px;
+      float: left;
+      margin-top: 13px;
+      display: inline;
+
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100px;
+        width: 15%;
+        height: 8px;
+        overflow: hidden;
+        background-color: #003894;
+      }
+    }
+
+    .percent-btn {
+      width: 70px;
+      height: 32px;
+      float: left;
+      border-radius: 100px;
+      background-color: #003894;
+      text-align: center;
+      line-height: 32px;
+      font-size: 15px;
+      color: #fff;
+      margin-left: 32px;
+      display: inline;
+    }
+  }
+
+  .schtabel {
+    width: 818px;
+    border: 1px solid #e3e8ee;
+
+    td {
+      border: 1px solid #e3e8ee;
+      font-size: 14px;
+      color: #333;
+      padding: 0 15px;
+      height: 50px;
+      line-height: 50px;
+
+      .sch-sel {
+        margin-right: 26px;
+        color: #8b9aab;
+
+        cite {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          border: 1px solid #e3e8ee;
+          border-radius: 50%;
+          vertical-align: -2px;
+          margin-right: 9px;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .wx-time {
+        color: #3f3f3f;
+      }
+
+      .current {
+        cite.active {
+          background-color: #e3e8ee;
+        }
+        cite.specactive {
+          background-color: #61a417;
+          border-color: #61a417;
+        }
+      }
+    }
+
+    .schhead td {
+      background-color: #f7faff;
+      color: #8b9aab;
+    }
+  }
+}
