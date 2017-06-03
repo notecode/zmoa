@@ -1,4 +1,8 @@
 <div class="information-basic">
+    <div class="title">收件单号</div>
+    <div class="pro-send">
+        <input type="text" placeholder="输入寄件单号">
+    </div>
     <div class="title">基础信息</div>
     <input type="hidden" value="{{id}}" name="projectId" >
     <div class="line">
@@ -48,6 +52,26 @@
         </div>
     </div>
     <input value="{{expiration_date}}" name="expirationDate" type="text" class="demand-time" placeholder="保质期截止日期（如2017-08-12）">
+</div>
+<div class="information-stock">
+    <div class="title">录入维修配件</div>
+    <div class="stock-list js-stock-list">
+        {{#preparations}}
+        <div class="line">
+            <input value="" name="" type="text" class="input-half-san stock-name" placeholder="配件名称">
+            <input value="" name="" type="text" class="input-half-san stock-name" placeholder="配件规格">
+            <input value="" name="" type="number" class="input-half-san stock-num" placeholder="配件数量">
+        </div>
+        {{/preparations}}
+        {{#isPreparations}}
+        <div class="line">
+            <input name="" type="text" class="input-half-san stock-name" placeholder="配件名称">
+            <input name="" type="text" class="input-half-san stock-name" placeholder="配件规格">
+            <input name="" type="number" class="input-half-san stock-num" placeholder="配件数量">
+        </div>      
+        {{/isPreparations}}
+    </div>
+    <div class="add-stock js-add-stock"><span class="icon-Add-to"></span>添加配件</div>
 </div>
 <!--div class="information-stock">
     <div class="title">备品备料</div>
