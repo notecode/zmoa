@@ -78,6 +78,14 @@
             line-height: 17px;
             margin-bottom: 30px;
         }
+        .pro-fault {
+            font-size: 14px;
+            color: #333;
+            line-height: 20px;
+            margin-bottom: 10px;
+            position: relative;
+            font-family: PingFangSC-Regular;
+        }
         .pro-info{
             font-size: 14px;
             color: $gray;
@@ -86,7 +94,7 @@
             position: relative;
         }
         .pro-img{
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         .pro-noimg {
             width: 294px;
@@ -96,14 +104,19 @@
             color: #8B9AAB;
             line-height: 182px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
         .pro-addr{
-            font-size: 14px;
+            font-size: 12px;
             color: $gray;
             line-height: 20px;
             margin-bottom: 30px;
-            position: relative;
+
+            .icon-addr {
+                position: static;
+                font-size: 12px;
+                color: #003894;
+            }
         }
         .pro-note{
             font-size: 14px;
@@ -114,6 +127,8 @@
         }
         .table-bordered{
             width: 100%;
+            border-radius: 4px;
+            margin-bottom: 30px;
             td{
                 height: 44px;
                 line-height: 20px;
@@ -148,6 +163,56 @@
             color: #999;
             margin-top: 10px;
             margin-bottom: 24px;
+        }
+
+        /*产品配件*/
+        .fixbox {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .info-fixing {
+            border: 1px solid #E0E1E6;
+            border-right: none;
+            width: 100%;
+            border-radius: 4px;
+
+            td {
+                border-top: 1px solid #e0e1e6;
+                border-right: 1px solid #e0e1e6;
+                font-size: 14px;
+                color: #333;
+                padding: 13px 15px;
+            }
+
+            .tabhead td {
+                background: #F7FAFF;
+                color: #8b9aab;
+            }
+        }
+
+        .fixing-more {
+            width: 100%;
+            border: 1px solid #E0E1E6;
+            border-top: none;
+            text-align: center;
+            height: 42px;
+            line-height: 42px;
+
+            .view-more {
+                font-family: PingFangSC-Thin;
+                font-size: 14px;
+                color: #003894;
+            }
+        }
+
+        /*快递单号*/
+        .oddnum {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        .pro-oddnum {
+            margin-bottom: 12px;
         }
     }
     .date-block{

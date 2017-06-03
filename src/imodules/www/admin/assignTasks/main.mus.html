@@ -2,8 +2,11 @@
     <h3 class="pro-name"><span class="icon-xiangmu"></span><span class="proj-name">{{name}}</span></h3>
     <h4 class="pro-client"><span class="pro-client-name">{{contact_name}}</span><span>{{contact_phone}}</span></h4>
     <p class="pro-pos"><small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small></p>
-    <p class="pro-info">
+    <p class="pro-fault">
         <span class="icon-checkmark"></span>
+        <span>故障原因：</span>
+    </p>
+    <p class="pro-info">
         <span>{{fn.applyEnvironment}}, {{point}}, {{fn.screenColor}}, {{description}}</span>
     </p>
     {{#main_img}}
@@ -13,7 +16,7 @@
         <div class="pro-noimg">暂无故障图片</div>
     {{/main_img}}
     <p class="pro-addr">
-        <span class="icon-checkmark"></span>
+        <span class="icon-xiangmu icon-addr"></span>
         <span>{{detail_address}}</span>
     </p>
     <p class="pro-note">
@@ -55,7 +58,11 @@
                 </td>
             </tr>
             <tr>
-                <td>项目地址</td>
+                <td>项目地区</td>
+                <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{detail_address}}</td>
+            </tr>
+            <tr>
+                <td>项目详细地址</td>
                 <td>{{detail_address}}</td>
             </tr>
             <tr>
@@ -77,6 +84,39 @@
             </tr>
         </tbody>
     </table>
+    <p class="pro-info pro-comment-title">
+        <span class="icon-checkmark"></span>
+        <span>产品配件</span>
+    </p>
+    <div class="fixbox">
+        <table class="info-fixing">
+            <tr class="tabhead">
+                <td width="100">配件名称</td>
+                <td>配件规格</td>
+                <td width="90">备份数量</td>
+            </tr>
+            <tr>
+                <td>灯珠</td>
+                <td>洲明300-2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>灯珠</td>
+                <td>洲明300-2</td>
+                <td>3</td>
+            </tr>
+        </table>
+        <div class="fixing-more">
+            <a href="javascript:;" class="view-more">查看更多</a>
+        </div>
+    </div>
+    <p class="pro-info pro-oddnum">
+        <span class="icon-checkmark"></span>
+        <span>收件快递单号</span>
+    </p>
+    <div class="oddnum">
+        DAKH39758392
+    </div>
     <p class="pro-info pro-comment-title">
         <span class="icon-checkmark"></span>
         <span>补充说明</span>
