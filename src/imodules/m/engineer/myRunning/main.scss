@@ -57,6 +57,7 @@
         top: 0;
         left: 0;
         background: rgba(0,0,0,0.25);
+        cursor: pointer;  // 在iOS safari上无此属性就不能响应点击事件
     }
 
     .depot-repair {
@@ -104,7 +105,12 @@
                     display: inline;
                 }
 
-                a {
+                cite {
+                    font-style: normal;
+                    color: #3f3f3f;
+                }
+
+                .repair_done {
                     float: right;
                     width: 0.57rem;
                     height: 0.32rem;
@@ -114,11 +120,6 @@
                     line-height: 0.32rem;
                     font-size: 0.14rem;
                     color: #FFFFFF;
-                }
-
-                cite {
-                    font-style: normal;
-                    color: #3f3f3f;
                 }
             }
         }

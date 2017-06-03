@@ -6,22 +6,25 @@
 <body id="{{ID}}" {{IMODULE}}>
     {{IncludeMCSS}}
     <div class="running" idom="proRunning"></div>
+
     <div class="r-mask hide" idom="rMask" ievent="closeMask"></div>
     <div class="depot-repair" idom="depotRepair">
-    	<h6>深圳市南山区紫光信息港</h6>
-    	<div class="depot-con">
-    		<div class="depot-list clearfix">
-    			<span>模组 <cite>洲明300-2</cite></span> <a href="javascript:;">完成</a>
-    		</div>
-    		<div class="depot-list clearfix">
-    			<span>模组 <cite>洲明300-2</cite></span> <a href="javascript:;">完成</a>
-    		</div>
-    		<div class="depot-list clearfix">
-    			<span>控制卡 <cite>洲明300-2</cite></span> <a href="javascript:;">完成</a>
-    		</div>
-    	</div>
+        <div idom="popup"></div>
     </div>
+
     {{IncludeMTPL}}
+    <script idom="tpl" type="text/tpl">
+        <div data-id="{{id}}">
+            <h6>{{name}}</h6>
+            <div class="depot-con">
+                {{#repair_parts}}
+                <div class="depot-list clearfix">
+                    <span>{{name}} <cite>{{spec}}</cite></span><i class="repair_done" data-id="{{id}}">完成</i>
+                </div>
+                {{/repair_parts}}
+            </div>
+        </div>
+    </script>
 </div>
 
 @@include('www/common/InsertBottom/main.html')

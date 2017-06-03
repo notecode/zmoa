@@ -4,7 +4,7 @@
 
 <div class="mr-content">
     {{#projects.list}}
-    <div class="mr-lsit list-implement clearfix" data-id="{{id}}" idom="runList">
+    <div class="mr-lsit list-implement clearfix project" data-id="{{id}}" data-type="{{type}}">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
         {{#start}}
         <p><span class="icon-time"></span>{{start}} - {{end}}</p>
@@ -23,7 +23,7 @@
 
 <div class="mr-content">
     {{#backProjects.list}}
-    <div class="mr-lsit list-depot clearfix">
+    <div class="mr-lsit list-depot clearfix project" data-id="{{id}}" data-type="{{type}}">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
         <p><span class="icon-time"></span>维修配件 {{number}}件</p>
     </div>
