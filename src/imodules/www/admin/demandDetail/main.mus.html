@@ -15,6 +15,7 @@
     <span class="pro-service-time">{{fn.sch_start}}-{{fn.sch_end}}提供服务</span>
 </p>
 <p class="pro-info">
+    <span class="gz-reason">故障原因：</span>
     <span class="icon-checkmark"></span>
     <span>{{description}}</span>
 </p>
@@ -23,7 +24,7 @@
     <img class="pro-img {{hasPic}}" src="{{main_img}}" width="294" alt="故障图片" />
 </div>
 <p class="pro-addr">
-    <span class="icon-checkmark"></span>
+    <span class="icon-checkmark icondress"></span>
     <span>{{detail_address}}</span>
 </p>
 <!--项目信息-->
@@ -66,7 +67,11 @@
             </td>
         </tr>
         <tr>
-            <td>项目地址</td>
+            <td>项目地区</td>
+            <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu"></td>
+        </tr>
+        <tr>
+            <td>项目详细地址</td>
             <td class="td-demand-addr">{{detail_address}}</td>
         </tr>
         <tr>
@@ -87,6 +92,33 @@
         </tr>
     </tbody>
 </table>
+
+<p class="pro-info pro-comment-title">
+    <span class="icon-checkmark"></span>
+    <span>产品配件</span>
+</p>
+<div class="fixbox">
+    <table class="info-fixing">
+        <tr class="tabhead">
+            <td width="170">配件名称</td>
+            <td>配件规格</td>
+            <td width="170">备份数量</td>
+        </tr>
+        <tr>
+            <td>灯珠</td>
+            <td>洲明300-2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>灯珠</td>
+            <td>洲明300-2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <div class="fixing-more">
+        <a href="javascript:;" class="view-more">查看更多</a>
+    </div>
+</div>
 
 <!--补充说明-->
 <div class="pro-recall">

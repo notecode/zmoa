@@ -42,6 +42,11 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.doRender(proj);
             this.parent.refreshSize();
 
+            //获取项目地址（和assignTasks共用一个获取地址的方法就可以）
+            project.getIModule('imodule://assignTasks', null, function(mod) {
+                mod.detailAddress();
+            });
+
         }
 
         CON.prototype.clearPrev = function() {
