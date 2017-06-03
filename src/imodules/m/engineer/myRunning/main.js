@@ -15,24 +15,18 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 		
 		CON.prototype.getList = function() {
             var _this = this;
-            api_ajax('project/engineer_going_projects', {
+            api_ajax('project/projects_for_engineer', {
                 succ: function(json) {
-                    
-                    // 微信对动态改变的标题似乎处理不太好。故先不改了
-                    /*
-                    if (json.userName) {
-                        document.title = json.userName;
-                    }
-                    */
-
-                    for (var i=0; i<json.list.length; i++){
+                    var list0 = json.projects.list;
+                    for (var i = 0; i < list0.length; i++){
                         // notecode: 没有end_date，视为未排期(因为排期必须是有起止时间的)。
                         //           如果仅有start_date，那是管理员派人的时间
-                        if (json.list[i].start_date && json.list[i].end_date) {
-                            json.list[i].start = moment(json.list[i].start_date).format('M月DD日');
-                            json.list[i].end = moment(json.list[i].end_date).format('M月DD日');
+                        if (list0[i].start_date && list0[i].end_date) {
+                            list0[i].start = moment(list0[i].start_date).format('M月DD日');
+                            list0[i].end = moment(list0[i].end_date).format('M月DD日');
                         }
                     }
+
                     var dom = Mustache.render(_this.tpl, json); 
                     $(_this._els.proRunning).html(dom);
                 },

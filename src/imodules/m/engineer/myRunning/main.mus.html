@@ -1,9 +1,9 @@
 <div class="mr-title">
-    我执行中的项目({{count}})
+    我执行中的项目({{projects.count}})
 </div>
 
 <div class="mr-content">
-    {{#list}}
+    {{#projects.list}}
     <div class="mr-lsit list-implement clearfix" data-id="{{id}}" idom="runList">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
         {{#start}}
@@ -14,18 +14,18 @@
         <p><span class="icon-time"></span>未排期</p>
         {{/start}}
     </div>
-    {{/list}}
+    {{/projects.list}}
 </div>
 
 <div class="mr-title mr-deport">
-    返厂维修项目(3)
+    返厂维修项目({{backProjects.count}})
 </div>
 
 <div class="mr-content">
-    {{#list}}
+    {{#backProjects.list}}
     <div class="mr-lsit list-depot clearfix">
         <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
-        <p><span class="icon-time"></span>维修配件 13件</p>
+        <p><span class="icon-time"></span>维修配件 {{number}}件</p>
     </div>
-    {{/list}}
+    {{/backProjects.list}}
 </div>
