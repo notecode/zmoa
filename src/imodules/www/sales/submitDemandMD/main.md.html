@@ -1,13 +1,16 @@
 <div id="{{ID}}" {{IMODULE}}>
     {{IncludeMCSS}}
-    <div class="submit-title">
+    <div class="submit-title clearfix">
         <span class="submit-title-name">提交新需求</span>
+        <span class="sub-service-type">厂外服务</span>
+    </div>
+    <div class="infomation clearfix">
+        <span class="inm-hetong"  idom="inmName"></span>
         <span class="project-put-user" idom="LSales"></span>
     </div>
     <form ievent="submitForm" idom="form" autocomplete="off">
-        <div class="project-item">
-            <input idom="LProject" type="text" class="project-name js-reset-filed" placeholder="项目名称" name="name" readonly>
-        </div>
+        <input type="hidden" idom="LProject" class="project-name js-reset-filed" placeholder="项目名称" name="name" readonly>
+        <div class="project-set-user" idom="LAddSales"></div>
         <div class="project_problem">
             <textarea name="description" class="input-textarea input-div js-reset-filed js-checki-field" idom="note" placeholder="故障描述(必填)" maxlength=64 data-tip="故障描述不能为空"></textarea>
         </div>
@@ -25,8 +28,7 @@
                 <div class="file-error js-upload-reset hide" idom="fileError"><i class="icon-mark"></i><span>图片上传错误, 请重试!</span></div>
             </div>
             <div class="submit-picture-tips">上传故障照片</div>
-        </div>        
-        <div class="project-set-user" idom="LAddSales"></div>
+        </div>
         <div class="deman-footer">
             <button type="submit" class="btn btn-primary">提交</button>
             <span idom="LErrorTip" class="text-error"></span>

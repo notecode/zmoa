@@ -9,10 +9,6 @@
     font-size: 30px;
     color: #333333;
     letter-spacing: 0;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     .project-put-user {
       height: 20px;
       line-height: 20px;
@@ -21,6 +17,24 @@
       letter-spacing: 0;
       position: relative;
       top: -6px;
+    }
+
+    .sub-service-type {
+      width: 90px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border: 1px solid #E3E8EE;
+      border-radius: 100px;
+      font-family: PingFangSC-Thin;
+      font-size: 13px;
+      color: #8B9AAB;
+      float: right;
+      margin-top: 9px;
+      display: inline;
+    }
+    .submit-title-name {
+      float: left;
     }
   }
   .input-half {
@@ -63,7 +77,7 @@
     border: 1px solid #E3E8EE;
     border-radius: 2px;
     resize: none;
-    margin: 20px 0;
+    margin: 22px 0 20px;
     color: #8B9AAB;
   }
   .input-div::-webkit-input-placeholder {
@@ -89,7 +103,7 @@
       width: 113px;
       height: 70px;
       background: #F7FAFF;
-      border: 1px solid #E3E8EE;
+      border: 1px dashed #E3E8EE;
       border-radius: 2px;
       position: relative;
     }
@@ -110,7 +124,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 31px;
+    margin-top: 22px;
   }
   .btn {
     width: 120px;
@@ -199,6 +213,21 @@
       -ms-filter: 'alpha(opacity=0)';
       direction: ltr;
       cursor: pointer;
+    }
+  }
+
+  .infomation {
+    width: 100%;
+    color: #999;
+    font-size: 12px;
+    margin-top: 16px;
+    padding-bottom: 8px;
+
+    .inm-hetong {
+      float: left;
+    }
+    .project-put-user {
+      float: right;
     }
   }
 }

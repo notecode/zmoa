@@ -10,10 +10,6 @@
     font-size: 30px;
     color: #333333;
     letter-spacing: 0;
-    display:-webkit-flex;
-    display:flex;
-    justify-content:space-between;
-    align-items: flex-end;
     .project-put-user{
       height:20px;
       line-height:20px;
@@ -22,6 +18,24 @@
       letter-spacing: 0;
       position: relative;
       top: -6px;
+    }
+
+    .sub-service-type {
+      width: 90px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border: 1px solid #E3E8EE;
+      border-radius: 100px;
+      font-family: PingFangSC-Thin;
+      font-size: 13px;
+      color: #8B9AAB;
+      float: right;
+      margin-top: 9px;
+      display: inline;
+    }
+    .submit-title-name {
+      float: left;
     }
   }
   
@@ -78,5 +92,4 @@
     font-weight:600;
     border: none;
   }
-  
 }

@@ -72,12 +72,13 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         CON.prototype.setCtx = function(obj, isAdmin) {
             this.info = obj;
             this.isAdmin = isAdmin;
-            $(this._els.LProject).val(obj.contract + ' ' + obj.name);
+            $(this._els.LProject).val(obj.contract + '　' + obj.name);
+            $(this._els.inmName).text(obj.contract + '　' + obj.name);
             if (isAdmin) {
                 var domStr = Mustache.render(this.tpl, obj); 
                 $(this._els.LAddSales).html(domStr);
             } else {
-                var salesStr = '销售员 ' + obj.salesman_name + ' ' + obj.job_number;
+                var salesStr = '销售员　' + obj.salesman_name + '　' + obj.job_number;
                 $(this._els.LSales).html(salesStr);
             }            
         }        
