@@ -215,17 +215,6 @@ define(["/global/iscripts/libs/time/moment.js",
             $('.slick-prev').html('<span class="icon-left"></span>');
         }
 
-        CON.prototype._ievent_showStatus = function(obj) {
-            this.find('#controlProcessMD').toggle();
-            if(this.find('#controlProcessMD').is(':hidden')){
-                $('#iunfold').removeClass('unfoldown');
-            }else {
-                $('#iunfold').addClass('unfoldown');    
-            }
-
-            // todo: 点击其他区域，消失
-        }
-
         return CON;
     })();
 

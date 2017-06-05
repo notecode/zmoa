@@ -9,7 +9,7 @@ define(function() {
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-        CON.prototype.render = function(proj_detail, dest) {
+        CON.prototype.render = function(proj, dest) {
             tlog('good guy, You rendered me');
             $(this.dom).hide();
 
@@ -19,8 +19,8 @@ define(function() {
                 ctrl.off('click');
             }
 
-            this.find('[data-status=' + proj_detail.status + ']').addClass('active');
-            this.projId = proj_detail.id;
+            this.find('[data-status=' + proj.status + ']').addClass('active');
+            this.projId = proj.id;
 
             var _this = this;
             this.find('.control').click(function() {

@@ -19,8 +19,23 @@ define(function() {
 
             dest.append($(this.dom));
             cb && cb();
+
+            this.bindDrop();
         }
 		
+        CON.prototype.bindDrop = function() {
+            var _this = this;
+            $(this._els.showDropMenu).off('click').on('click', function() {
+                tlog('drop');
+                _this.find('#controlProcessMD').toggle();
+                if(_this.find('#controlProcessMD').is(':hidden')){
+                    $('#iunfold').removeClass('unfoldown');
+                }else {
+                    $('#iunfold').addClass('unfoldown');    
+                }
+            })
+        }
+
         /*
             $(this._els.deTitle).text(proj.status_name);
             if (5 == proj.status || 6 == proj.status) {
