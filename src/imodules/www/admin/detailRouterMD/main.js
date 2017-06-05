@@ -17,7 +17,11 @@ define(function() {
                     var proj = json.project_info;
                     var isFactory = proj.type;
                     var status = proj.status;
-                    var imod = (1 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail'; 
+                    if(isFactory == 0) {
+                        var imod = (1 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail'; 
+                    }else{
+                       var imod = (0 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail';  
+                    }
                     project.getIModule(imod, null, function (mod) {
                         var h = $(window).height() - 50;
                         project.open(mod, '_blank', {size: ['content', h+'px']});
