@@ -51,22 +51,22 @@
         <div class="parts-title parts-spec">配件规格</div>
         <div class="parts-title">备份数量</div>
     </li>
-    {{#project_info.preparations}}
+    {{#project_info.parts}}
     <li class="clearfix">
-        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
-        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="规格" name=""></div>
+        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{name}}" name="parts[name]"></div>
+        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="{{spec}}" name="parts[spec]"></div>
 
         <div class="parts-con-ji clearfix">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="parts-new apareHid">
+            <input value="{{backup_number}}" name="parts[backup_number]" type="text" class="parts-new apareHid">
         </div>
     </li>
-    {{/project_info.preparations}}
+    {{/project_info.parts}}
     <li class="clearfix">
-        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{preparation_type}}" name="preparation[name]"></div>
-        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="" name=""></div>
+        <div class="parts-con"><input type="text" placeholder="输入名称" class="parts-new" value="{{name}}" name="parts[name]"></div>
+        <div class="parts-con parts-spec"><input type="text" placeholder="输入规格" class="parts-new" value="{{spec}}" name="parts[spec]"></div>
 
         <div class="parts-con-ji clearfix">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="text" class="parts-new apareHid" placeholder="输入数量">
+            <input value="{{backup_number}}" name="parts[backup_number]" type="text" class="parts-new apareHid" placeholder="输入数量">
         </div>
     </li>
  </ul>

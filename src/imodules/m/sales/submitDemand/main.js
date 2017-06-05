@@ -315,21 +315,27 @@ define(function() {
             var lastC = filterCR(data.last_comment);
             data.last_comment = (lastC != this.initLastComment) ? lastC : '';
 
-
-
-            var preparationArr = [];
-            if (!!data.preparation) {
-                if ($.isArray(data.preparation.name)) {
-                    data.preparation.name.map(function(item, index) {
-                        if (item && data.preparation.number[index]) {
-                            preparationArr.push({ name: item, number: data.preparation.number[index] })
+            var partsArr = [];
+            if (!!data.parts) {
+                if ($.isArray(data.parts.name)) {
+                    data.parts.name.map(function(item, index) {
+                        if (item && data.parts.spec[index] && data.parts.backup_number[index]) {
+                            partsArr.push({
+                                name: item, 
+                                spec: data.parts.spec[index],
+                                backup_number: data.parts.backup_number[index]
+                            })
                         }
                     })
-                } else if(!$.isEmptyObject(data.preparation) && data.preparation.name && data.preparation.number) {
-                    preparationArr.push({ name: data.preparation.name, number: data.preparation.number })
+                } else if(!$.isEmptyObject(data.parts) && data.parts.name && data.parts.spec && data.parts.backup_number) {
+                    partsArr.push({ 
+                        name: data.parts.name, 
+                        spec: data.parts.spec,
+                        backup_number: data.parts.backup_number
+                    });
                 }
             }
-            data.preparation = preparationArr;
+            data.parts = partsArr;
             api_ajax_post('project/edit', data, {
                 succ: function(res) {
                     $tipEl.html('');
