@@ -51,7 +51,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             this.find('.details').append(dom);
 
             this.bindFoldEvents();
-            this.detailAddress();
 		}
 		
 		CON.prototype.bindFoldEvents = function() {
@@ -67,48 +66,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             fold.click(tog);
             unfold.click(tog);
 		}
-
-        // 获取地址列表
-        CON.prototype.detailAddress = function() {   
-            var provinceName = '省份';
-            var cityName = "城市";
-            var areaName = "区/县";
-
-            api_ajax('region/get_region', {
-                succ: function(data) {
-                    var pId = $('.xm-diqu').data().provice;
-                    var cId = $('.xm-diqu').data().city;
-                    var aId = $('.xm-diqu').data().area;
-
-                    if (data) {
-                        //根据省份id查找省份名称
-                        for (var i=0; i<data.province.length; i++){
-                            if (parseInt(data.province[i].id) == parseInt(pId)){
-                                provinceName = data.province[i].name;
-                            }
-                        }
-
-                        //根据城市id查找城市名称
-                        for (var i=0; i<data.city.length; i++){
-                            if (parseInt(data.city[i].id) == parseInt(cId)){
-                                cityName = data.city[i].name;
-                            }
-                        }
-
-                        //根据区域id查找区域名称
-                        for (var i=0; i<data.area.length; i++){
-                            if (parseInt(data.area[i].id) == parseInt(aId)){
-                                areaName = data.area[i].name;
-                            }
-                        }
-                        $('.xm-diqu').html(provinceName+cityName+areaName);
-                    }
-                },
-                fail: function(json) {
-                    console.log('获取地址数据失败!');                    
-                }
-            });  
-        }
         
         return CON;
     })();

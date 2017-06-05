@@ -34,7 +34,6 @@ define(["/global/iscripts/libs/time/moment.js",
                 var projectId = proj.id;
 
                 _this.renderDetail(proj);
-                _this.detailAddress();
                 //_this.inrepair(projectId);
             };
             var doRenderStat = function(data) {
@@ -270,48 +269,6 @@ define(["/global/iscripts/libs/time/moment.js",
             }
 
             // todo: 点击其他区域，消失
-        }
-
-        // 获取地址列表
-        CON.prototype.detailAddress = function() {   
-            var provinceName = '省份';
-            var cityName = "城市";
-            var areaName = "区/县";
-
-            api_ajax('region/get_region', {
-                succ: function(data) {
-                    var pId = $('.xm-diqu').data().provice;
-                    var cId = $('.xm-diqu').data().city;
-                    var aId = $('.xm-diqu').data().area;
-
-                    if (data) {
-                        //根据省份id查找省份名称
-                        for (var i=0; i<data.province.length; i++){
-                            if (parseInt(data.province[i].id) == parseInt(pId)){
-                                provinceName = data.province[i].name;
-                            }
-                        }
-
-                        //根据城市id查找城市名称
-                        for (var i=0; i<data.city.length; i++){
-                            if (parseInt(data.city[i].id) == parseInt(cId)){
-                                cityName = data.city[i].name;
-                            }
-                        }
-
-                        //根据区域id查找区域名称
-                        for (var i=0; i<data.area.length; i++){
-                            if (parseInt(data.area[i].id) == parseInt(aId)){
-                                areaName = data.area[i].name;
-                            }
-                        }
-                        $('.xm-diqu').html(provinceName+cityName+areaName);
-                    }
-                },
-                fail: function(json) {
-                    console.log('获取地址数据失败!');                    
-                }
-            });  
         }
 
         //判断是返厂服务或者是厂外服务---以修改标题
