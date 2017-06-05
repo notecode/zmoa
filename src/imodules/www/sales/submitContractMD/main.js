@@ -5,6 +5,8 @@ define(function() {
             baseIModules.BaseIModule.call(this, dom);
             // 初始化内容可以在这里做
             this.tpl = this._els.tpl[0].text;
+            this.is_back_proj = false;
+
             var _this = this;
             $(this._els.LSearch).on('keyup', debounce(function (e) {
                 var $target = $(e.target)
@@ -21,6 +23,11 @@ define(function() {
             })            
         };
         potato.createClass(CON, baseIModules.BaseIModule);
+
+        CON.prototype.setBackProj = function(back_proj) {
+            this.is_back_proj = back_proj;
+            this.find('.sub-service-type').text('返修服务');
+        }
 
         // 项目模糊搜索
         CON.prototype.search = function (el) {
@@ -105,7 +112,11 @@ define(function() {
                 return false;
             }
             if(!!$value && key !== this.key) {
-                api_ajax_post('project/add', { contract: $value }, {
+                var data = { 
+                    contract: $value,
+                    is_back_project: this.is_back_proj ? 1 : 0,
+                };
+                api_ajax_post('project/add', data, {
                     succ: function(data) {
                         if (data && data.project_id) {
                             _this.reset();

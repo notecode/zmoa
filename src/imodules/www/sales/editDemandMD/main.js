@@ -163,7 +163,8 @@ define(function() {
                 data.repair_parts = this.collectParts(data.repair_parts, 'number');
             }
 
-            api_ajax_post('project/edit', data, {
+            var uri = (this.data.type == 1) ? 'project/edit_back_project' : 'project/edit';
+            api_ajax_post(uri, data, {
                 succ: function(res) {
                     $tipEl.html('');
                     _this.showDemand(data);
