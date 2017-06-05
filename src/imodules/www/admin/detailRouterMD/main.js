@@ -14,13 +14,10 @@ define(function() {
             var _this = this;
             api_ajax('project/detail/' + projId, {
                 succ: function(json) {
-                    var proj = json.project_info;
-                    var status = proj.status;
-                    var imod = (1 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail'; 
-                    project.getIModule(imod, null, function (mod) {
+                    project.getIModule('imodule://detailFrameMD', null, function (mod) {
                         var h = $(window).height() - 50;
                         project.open(mod, '_blank', {size: ['content', h+'px']});
-                        mod.render(projId, json);
+                        mod.render(projId, json.project_info);
 
                         // 因此时所在modal没有x按钮，而详情页需要有，故关掉旧的开新的
                         _this.parent.close();
