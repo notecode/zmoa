@@ -4,6 +4,97 @@
     {
       "icon": {
         "paths": [
+          "M348.832 0c-194.368 0-348.832 153.472-348.832 346.592 0 257.472 348.832 643.648 348.832 643.648s348.832-386.208 348.832-643.648c0-193.088-154.464-346.592-348.832-346.592v0zM348.832 470.368c-69.76 0-124.576-54.464-124.576-123.776s54.816-123.776 124.576-123.776c69.76 0 124.576 54.464 124.576 123.776s-54.816 123.776-124.576 123.776v0z"
+        ],
+        "attrs": [
+          {
+            "fill": "rgb(0, 56, 148)"
+          }
+        ],
+        "width": 736,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "location"
+        ],
+        "colorPermutations": {
+          "119198271139154171122723223812552552551561481": [
+            {
+              "f": 0
+            }
+          ]
+        }
+      },
+      "attrs": [
+        {
+          "fill": "rgb(0, 56, 148)"
+        }
+      ],
+      "properties": {
+        "order": 1105,
+        "id": 16,
+        "name": "location",
+        "prevSize": 32,
+        "code": 59663
+      },
+      "setIdx": 3,
+      "setId": 7,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M512 1004.32c-271.904 0-492.32-220.416-492.32-492.32s220.416-492.32 492.32-492.32c271.904 0 492.32 220.416 492.32 492.32s-220.416 492.32-492.32 492.32zM512 964.928c250.144 0 452.928-202.784 452.928-452.928s-202.784-452.928-452.928-452.928c-250.144 0-452.928 202.784-452.928 452.928s202.784 452.928 452.928 452.928z",
+          "M531.68 531.68v-256h-39.392v295.392h295.392v-39.392z"
+        ],
+        "attrs": [
+          {
+            "fill": "rgb(0, 56, 148)"
+          },
+          {
+            "fill": "rgb(0, 56, 148)"
+          }
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "time"
+        ],
+        "colorPermutations": {
+          "119198271139154171122723223812552552551561481": [
+            {
+              "f": 0
+            },
+            {
+              "f": 0
+            }
+          ]
+        }
+      },
+      "attrs": [
+        {
+          "fill": "rgb(0, 56, 148)"
+        },
+        {
+          "fill": "rgb(0, 56, 148)"
+        }
+      ],
+      "properties": {
+        "order": 1106,
+        "id": 15,
+        "name": "time",
+        "prevSize": 32,
+        "code": 59664
+      },
+      "setIdx": 3,
+      "setId": 7,
+      "iconIdx": 1
+    },
+    {
+      "icon": {
+        "paths": [
           "M800.672 421.574l-268.22 268.22c-12.288 12.288-32.154 12.288-44.442 0l-264.67-264.67c-6.144-6.144-9.216-14.199-9.216-22.255s3.072-16.111 9.216-22.255h-0.068c12.288-12.288 32.222-12.288 44.51 0l242.415 242.483 246.033-245.965c12.288-12.288 32.154-12.288 44.442 0s12.288 32.154 0 44.442zM511.973 0.027c-282.761 0-512 229.171-512 512 0 282.761 229.239 512 512 512 282.829 0 512-229.239 512-512 0-282.829-229.171-512-512-512z"
         ],
         "attrs": [
@@ -37,9 +128,9 @@
         "prevSize": 32,
         "code": 59662
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 0
+      "iconIdx": 2
     },
     {
       "icon": {
@@ -87,9 +178,9 @@
         "prevSize": 32,
         "code": 59648
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 1
+      "iconIdx": 3
     },
     {
       "icon": {
@@ -127,9 +218,9 @@
         "prevSize": 32,
         "code": 59649
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 2
+      "iconIdx": 4
     },
     {
       "icon": {
@@ -167,9 +258,9 @@
         "prevSize": 32,
         "code": 59650
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 3
+      "iconIdx": 5
     },
     {
       "icon": {
@@ -207,9 +298,9 @@
         "prevSize": 32,
         "code": 59651
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 4
+      "iconIdx": 6
     },
     {
       "icon": {
@@ -247,9 +338,9 @@
         "prevSize": 32,
         "code": 59652
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 5
+      "iconIdx": 7
     },
     {
       "icon": {
@@ -287,9 +378,9 @@
         "prevSize": 32,
         "code": 59653
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 6
+      "iconIdx": 8
     },
     {
       "icon": {
@@ -327,9 +418,9 @@
         "prevSize": 32,
         "code": 59654
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 7
+      "iconIdx": 9
     },
     {
       "icon": {
@@ -367,9 +458,9 @@
         "prevSize": 32,
         "code": 59655
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 8
+      "iconIdx": 10
     },
     {
       "icon": {
@@ -401,9 +492,9 @@
         "prevSize": 32,
         "code": 59656
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 9
+      "iconIdx": 11
     },
     {
       "icon": {
@@ -441,9 +532,9 @@
         "prevSize": 32,
         "code": 59657
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 10
+      "iconIdx": 12
     },
     {
       "icon": {
@@ -481,9 +572,9 @@
         "prevSize": 32,
         "code": 59658
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 11
+      "iconIdx": 13
     },
     {
       "icon": {
@@ -525,15 +616,15 @@
         }
       ],
       "properties": {
-        "order": 668,
+        "order": 1107,
         "id": 2,
         "name": "Add-to1",
         "prevSize": 32,
         "code": 59659
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 12
+      "iconIdx": 14
     },
     {
       "icon": {
@@ -571,9 +662,9 @@
         "prevSize": 32,
         "code": 59660
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 13
+      "iconIdx": 15
     },
     {
       "icon": {
@@ -651,9 +742,9 @@
         "prevSize": 32,
         "code": 59661
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 7,
-      "iconIdx": 14
+      "iconIdx": 16
     }
   ],
   "height": 1024,

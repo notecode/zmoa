@@ -84,38 +84,16 @@
                 <td width="324">配件规格</td>
                 <td>是否需要维修</td>
             </tr>
+            {{#repair_parts}}
             <tr>
-                <td>模组</td>
-                <td>SD600E发送盒</td>
+                <td>{{name}}</td>
+                <td>{{spec}}</td>
                 <td>
                     <span class="sch-sel current"><cite class="active"></cite>是</span>
                     <span class="sch-sel"><cite class="active"></cite>否</span>
                 </td>
             </tr>
-            <tr>
-                <td>模组</td>
-                <td>SD600E发送盒</td>
-                <td>
-                    <span class="sch-sel current"><cite class="active"></cite>是</span>
-                    <span class="sch-sel"><cite class="active"></cite>否</span>
-                </td>
-            </tr>
-            <tr>
-                <td>控制卡</td>
-                <td>ssskjldj视频处理器</td>
-                <td>
-                    <span class="sch-sel current"><cite class="active"></cite>是</span>
-                    <span class="sch-sel"><cite class="active"></cite>否</span>
-                </td>
-            </tr>
-            <tr>
-                <td>模组</td>
-                <td>SD600E发送盒</td>
-                <td>
-                    <span class="sch-sel current"><cite class="active"></cite>是</span>
-                    <span class="sch-sel"><cite class="active"></cite>否</span>
-                </td>
-            </tr>
+            {{/repair_parts}}
        </table>
     </div>
     </script>
