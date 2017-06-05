@@ -32,6 +32,11 @@ define(function() {
                     if(json.list){
                         for(var i=0; i<json.list.length; i++){
                             switch (parseInt(json.list[i].status)) {
+                                case -1: // 已驳回
+                                case 0:  // 待审批
+                                    json.list[i].status = 0;
+                                    json.list[i].currentStatus = '已立项，待审批';
+                                    break;
                                 case 1: // 已立项，待派人 
                                     //$(_this._els.curStage).text('xxx');
                                     json.list[i].currentStatus = '已审批，待派人';
@@ -48,7 +53,8 @@ define(function() {
                                 case 5: // 已结束
                                     json.list[i].currentStatus = '已结束';
                                     break;
-                                default: // -1(待审批), -2(已驳回)暂都这里来
+                                default:
+                                    json.list[i].status = 0;
                                     json.list[i].currentStatus = '已立项，待审批';
                                     break;
                             }
