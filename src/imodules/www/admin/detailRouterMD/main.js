@@ -15,11 +15,14 @@ define(function() {
             api_ajax('project/detail/' + projId, {
                 succ: function(json) {
                     var proj = json.project_info;
+                    var isFactory = proj.type;
+                    var status = proj.status;
                     var imod = (1 == proj.status) ? 'imodule://assignTasks' : 'imodule://demandDetail'; 
                     project.getIModule(imod, null, function (mod) {
                         var h = $(window).height() - 50;
                         project.open(mod, '_blank', {size: ['content', h+'px']});
                         mod.render(projId, json);
+                        mod.isReturnTofactory(isFactory, status);
 
                         var dest = $(mod.dom).find('.control-process-dest');
                         project.getIModule('imodule://controlProcessMD', null, function(mod2) {

@@ -1,0 +1,62 @@
+@import "src/sass/global/mixin";
+
+#controlProcessFactoryMD {
+  position: absolute;
+  display: none; // default, hidden
+  margin-left: 150px;
+
+  .control-list {
+    width: 260px;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EE;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.07);
+    border-radius: 2px;
+    position: relative;
+    z-index: 100;
+    padding-bottom: 10px;
+
+    h6 {
+      font-size: 20px;
+      color: #333333;
+      padding: 20px;
+      margin: 0;
+    }
+    .control {
+      margin: 0 20px;
+      border-bottom: 1px solid #E3E8EE;
+      padding-bottom: 12px;
+      margin-top: 13px;
+      font-size: 14px;
+      line-height: normal;
+      cursor: pointer;
+      span {
+        float: left;
+        color: #999;
+      }
+      cite {
+        float: right;
+        font-size: 14px;
+        margin-top: 4px;
+        display: inline;
+        display: none;
+      }
+      &.active {
+        span {
+          color: #333;
+        }
+        cite {
+          display: inline;
+        }
+      }
+      &:hover {
+        span {
+          color: #333;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@
     {{IncludeMCSS}}
     <div class="content">
         <div class="title-block">
-            <h2><span>安排服务人员</span><span class="circle-dpar" id="iunfold"><span class="icon-Unfolded" ievent="showStatus"></span></span></h2>
+            <h2><span idom="serviceTit">安排服务人员</span><span class="circle-dpar" id="iunfold"><span class="icon-Unfolded" ievent="showStatus"></span></span></h2>
             <div class="control-process-dest"></div>
         </div>
         <div class="body-block">
@@ -12,7 +12,7 @@
 
     {{IncludeMTPL}}
     <script id="serv-tpl" type="text/tpl">
-         <div class="date-block">
+         <div class="date-block" id="dateBlock">
             <div class="date-list">
                 <div class="date-pre">
                     <span class="icon-left"></span>
@@ -66,6 +66,58 @@
             </div>
             {{/workers}}
         </div>
+    </script>
+
+    <script id="repair-tpl" type="text/tpl">
+    <div class="factory-test">
+       <div class="com-schedule clearfix">
+            <span class="percentage-num">15%</span>
+            <div class="percentage">
+                <p></p>
+            </div>
+            <a href="#" class="percent-btn hide">指派</a>
+            <button class="percent-mit">提交</button>
+       </div>
+       <table class="schtabel">
+            <tr class="schhead">
+                <td width="220">配件名称</td>
+                <td width="324">配件规格</td>
+                <td>是否需要维修</td>
+            </tr>
+            <tr>
+                <td>模组</td>
+                <td>SD600E发送盒</td>
+                <td>
+                    <span class="sch-sel current"><cite class="active"></cite>是</span>
+                    <span class="sch-sel"><cite class="active"></cite>否</span>
+                </td>
+            </tr>
+            <tr>
+                <td>模组</td>
+                <td>SD600E发送盒</td>
+                <td>
+                    <span class="sch-sel current"><cite class="active"></cite>是</span>
+                    <span class="sch-sel"><cite class="active"></cite>否</span>
+                </td>
+            </tr>
+            <tr>
+                <td>控制卡</td>
+                <td>ssskjldj视频处理器</td>
+                <td>
+                    <span class="sch-sel current"><cite class="active"></cite>是</span>
+                    <span class="sch-sel"><cite class="active"></cite>否</span>
+                </td>
+            </tr>
+            <tr>
+                <td>模组</td>
+                <td>SD600E发送盒</td>
+                <td>
+                    <span class="sch-sel current"><cite class="active"></cite>是</span>
+                    <span class="sch-sel"><cite class="active"></cite>否</span>
+                </td>
+            </tr>
+       </table>
+    </div>
     </script>
 
 </div>

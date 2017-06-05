@@ -31,8 +31,11 @@ define(["/global/iscripts/libs/time/moment.js",
             var _this = this;
             var doRenderDetail = function(data) {
                 var proj = json.project_info;
+                var projectId = proj.id;
+
                 _this.renderDetail(proj);
                 _this.detailAddress();
+                _this.inrepair(projectId);
             };
             var doRenderStat = function(data) {
                 _this.renderWorkerStats(data);
@@ -310,6 +313,36 @@ define(["/global/iscripts/libs/time/moment.js",
                 }
             });  
         }
+
+        //判断是返厂服务或者是厂外服务---以修改标题
+        CON.prototype.isReturnTofactory = function(isFactory, status){
+           //isFactory=0为厂外；isFactory=1返厂
+           //status=1为待测试；=2为维修中；=3为待寄件；=4为待回访；=5为已结束
+           if(isFactory == 1){
+                $(this._els.serviceTit).text('测试中');
+
+                if(status == 1) {
+            
+                }
+           } else {
+                $(this._els.serviceTit).text('安排服务人员');
+           }
+
+        }
+
+        // CON.prototype.inrepair = function(projectId){
+        //     api_ajax('project/parts_repair_status/'+projectId, {
+        //         succ: function(json) {
+                    
+        //             // var dom = Mustache.render($('#repair-tpl').text(), json); 
+        //             // $('.body-block').append(dom);
+
+        //         },
+        //         fail: function(json) {
+
+        //         }
+        //     });
+        // }
 
         return CON;
     })();
