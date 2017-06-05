@@ -35,7 +35,7 @@ define(["/global/iscripts/libs/time/moment.js",
 
                 _this.renderDetail(proj);
                 _this.detailAddress();
-                _this.inrepair(projectId);
+                //_this.inrepair(projectId);
             };
             var doRenderStat = function(data) {
                 _this.renderWorkerStats(data);

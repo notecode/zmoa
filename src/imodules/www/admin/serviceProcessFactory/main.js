@@ -43,7 +43,7 @@ define(["/global/iscripts/tools/slick.js"], function() {
                         }
 
                         //判断是否显示增加新需求的按钮
-                        if(result[j].id == 1) { // '已立项，待派人'
+                        if(result[j].status == 0) { // '已收件，待测试'
                             result[j].add = '';
                         }else {
                            result[j].add = 'hide'; 
