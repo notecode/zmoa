@@ -13,18 +13,34 @@ define(function() {
                 _this.parent.refreshSize();
             }
 
+            var ctx = this.genCtx(proj);
+
             project.getIModule('imodule://statusBarMD', null, function(mod) {
+                $(mod.dom).remove();
                 mod.render(proj, _this.find('.status-block'), resize);
             });
 
             project.getIModule('imodule://demandDetailOnLeftMD', null, function(mod) {
-                var h = _this.parentHeight() - 80;
-                mod.render(proj, _this.find('.left-detail-block'), h, resize);
+                $(mod.dom).remove();
+
+                if (ctx.bLeftDetail) {
+                    var h = _this.parentHeight() - 80;
+                    mod.render(proj, _this.find('.left-detail-block'), h, resize);
+                }
             });
 
+            project.getIModule(ctx.bodyMod, null, function(mod) {
+                var h = _this.parentHeight() - 80;
+                mod.render(proj, _this.find('.body-block'), h, resize);
+            });
+		}
+
+        CON.prototype.genCtx = function(proj) {
+            var bLeftDetail = false; 
             var bodyMod = '';
             switch (proj.status) {
                 case '1':
+                    bLeftDetail = true;
                     bodyMod = 'imodule://assignTasks';
                     break;
                 default:
@@ -32,11 +48,11 @@ define(function() {
                     break;
             }
 
-            project.getIModule(bodyMod, null, function(mod) {
-                var h = _this.parentHeight() - 80;
-                mod.render(proj, _this.find('.body-block'), h, resize);
-            });
-		}
+            return {
+                bLeftDetail: bLeftDetail,
+                bodyMod: bodyMod,
+            };
+        }
 
         CON.prototype.parentHeight = function() {
             return parseInt(this.parent.dom.style.height);

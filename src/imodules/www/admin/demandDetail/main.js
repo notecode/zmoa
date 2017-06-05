@@ -18,13 +18,12 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
         };        
         potato.createClass(CON, baseIModules.BaseIModule);
 
-        CON.prototype.render = function(projId, json) {
-            tlog('will render project: ' + projId);
-            this.projId = projId;
+        CON.prototype.render = function(proj, dest, maxHeight, cb) {
+            tlog('will render project: ' + proj.id);
+            this.projId = proj.id;
             this.clearPrev();
             $(this.dom).show();
 
-            var proj = json.project_info;
             if (proj.main_img) {
                 proj.hasPic = '';
                 proj.noPic = 'hide';
@@ -33,20 +32,16 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 proj.noPic = '';
             }
 
-            $(this._els.deTitle).text(proj.status_name);
-            if (5 == proj.status || 6 == proj.status) {
-                // 结束或中止的，就不让显示下拉的菜单了
-                $(this._els.btnDropdown).hide();
-            }
             this.addScheduleFn(proj);
             this.doRender(proj);
-            this.parent.refreshSize();
+
+            $(dest).html($(this.dom));
+            cb && cb();
         }
 
         CON.prototype.clearPrev = function() {
             this.find('#detailCon').empty();
             this.find('.comment-block').hide();
-            $(this._els.btnDropdown).show();
         }
 
         CON.prototype.doRender = function(proj) {
