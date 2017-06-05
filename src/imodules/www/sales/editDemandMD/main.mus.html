@@ -1,4 +1,11 @@
 <div class="information-basic">
+    <div class="{{show_if_back_proj}}">
+        <div class="title">收件单号</div>
+        <div class="pro-send">
+            <input type="text" placeholder="输入寄件单号">
+        </div>
+    </div
+
     <div class="title">基础信息</div>
     <input type="hidden" value="{{id}}" name="projectId" >
     <div class="line">
@@ -49,24 +56,27 @@
     </div>
     <input value="{{expiration_date}}" name="expirationDate" type="text" class="demand-time" placeholder="保质期截止日期（如2017-08-12）">
 </div>
-<!--div class="information-stock">
-    <div class="title">备品备料</div>
+<div class="information-stock {{show_if_back_proj}}">
+    <div class="title">录入维修配件</div>
     <div class="stock-list js-stock-list">
-        {{#preparations}}
+        {{#repair_parts}}
         <div class="line">
-            <input value="{{preparation_type}}" name="preparation[name]" type="text" class="input-half stock-name" placeholder="备料类型">
-            <input value="{{preparation_type_number}}" name="preparation[number]" type="number" class="input-half stock-num" placeholder="数量">
+            <input value="{{name}}" name="repair_parts[name]" type="text" class="input-half-san stock-name" placeholder="配件名称">
+            <input value="{{spec}}" name="repair_parts[spec]" type="text" class="input-half-san stock-name" placeholder="配件规格">
+            <input value="{{number}}" name="repair_parts[number]" type="number" class="input-half-san stock-num" placeholder="配件数量">
         </div>
-        {{/preparations}}
-        {{#isPreparations}}
+        {{/repair_parts}}
+        {{^repair_parts}}
         <div class="line">
-            <input name="preparation[name]" type="text" class="input-half stock-name" placeholder="备料类型">
-            <input name="preparation[number]" type="number" class="input-half stock-num" placeholder="数量">
-        </div>        
-        {{/isPreparations}}
+            <input name="repair_parts[name]" type="text" class="input-half-san stock-name" placeholder="配件名称">
+            <input name="repair_parts[spec]" type="text" class="input-half-san stock-name" placeholder="配件规格">
+            <input name="repair_parts[number]" type="number" class="input-half-san stock-num" placeholder="配件数量">
+        </div>      
+        {{/repair_parts}}
     </div>
-    <div class="add-stock js-add-stock"><span class="icon-Add-to"></span>添加备品</div>
-</div-->
+    <div class="add-stock js-add-stock"><span class="icon-Add-to"></span>添加配件</div>
+</div>
+
 <div class="information-accessory">
     <div class="title">产品配件</div>
     <ul class="access-parts clearfix">
@@ -81,26 +91,28 @@
                 备份数量
             </div>
         </li>
+        {{#parts}}
         <li class="access-li clearfix">
             <div class="access-liput">
-                <input type="text" value="模组">
+                <input name="parts[name]" type="text" value="{{name}}">
             </div>
             <div class="access-liput acc-liputwid">
-                <input type="text" value="洲明300-2">
+                <input name="parts[spec]" type="text" value="{{spec}}">
             </div>
             <div class="access-liput">
-                <input type="text" value="2">
+                <input name="parts[backup_number]" type="text" value="{{backup_number}}">
             </div>
         </li>
+        {{/parts}}
         <li class="access-li clearfix">
             <div class="access-liput">
-                <input type="text" value="" placeholder="输入名称">
+                <input name="parts[name]" type="text" value="" placeholder="输入名称">
             </div>
             <div class="access-liput acc-liputwid">
-                <input type="text" value="" placeholder="输入规格">
+                <input name="parts[spec]" type="text" value="" placeholder="输入规格">
             </div>
             <div class="access-liput">
-                <input type="text" value="" placeholder="输入数量">
+                <input name="parts[backup_number]" type="text" value="" placeholder="输入数量">
             </div>
         </li>
     </ul>

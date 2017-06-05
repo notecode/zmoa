@@ -54,8 +54,8 @@ define(function() {
                     $(this._els.LContent).find('.js-area-name').html('区/县');
                 }
             }
-
         }
+
         // 颜色选择下拉框
         CON.prototype.dropDown = function(target) {
             var $el = $(target);
@@ -65,6 +65,7 @@ define(function() {
             $button.children('.js-drop-name').html($obj.name);
             $input.val($obj.key);
         }
+
         // 设置默认值
         CON.prototype.setCtx = function(obj, isAdmin) {
             var _this = this;
@@ -77,62 +78,65 @@ define(function() {
                 obj.last_comment = last_comment;
 
                 var filter = {
-                        province: function () {
-                            var _id = this.province_id;
-                            var _name = '所在省份';
-                            if (_id) {
-                                _name = _this.address.province.find(function(item) { return item.id === _id }).name;
-                            }
-                            return _name;
-                        },
-                        city: function () {
-                            var _id = this.city_id;
-                            var _name = '城市';
-                            if (_id) {
-                                _name = _this.address.city.find(function(item) { return item.id === _id }).name;
-                            }
-                            return _name;                            
-                        },
-                        screenArea: function() {
-                            var _screenArea = '';
-                            if ($.isNumeric(this.screen_area)) {
-                                _screenArea = parseInt(this.screen_area, 10);
-                            }
-                            return _screenArea || '';
-                        },
-                        area: function () {
-                            var _id = this.area_id;
-                            var _name = '区/县';
-                            if (_id) {
-                                _name = _this.address.area.find(function(item) { return item.id === _id }).name;
-                            }
-                            return _name;                              
-                        },                                
-                        color: function () {
-                            var name = '屏幕颜色';
-                            if (!!this.screen_color) {
-                                name = this.all_screen_color[parseInt(this.screen_color)] || '屏幕颜色'
-                            }
-                            return name
-                        },
-                        isPreparations: function() {
-                            return !(this.preparations && this.preparations.length);
-                        },
-                        environment: function () {
-                            var name = '应用环境';
-                            if (!!this.apply_environment) {
-                                name = this.all_apply_environment[parseInt(this.apply_environment)] || '应用环境'
-                            }
-                            return name                    
+                    show_if_back_proj: function() {
+                        return (this.type == 1) ? 'show' : 'hide';
+                    },
+                    province: function () {
+                        var _id = this.province_id;
+                        var _name = '所在省份';
+                        if (_id) {
+                            _name = _this.address.province.find(function(item) { return item.id === _id }).name;
                         }
+                        return _name;
+                    },
+                    city: function () {
+                        var _id = this.city_id;
+                        var _name = '城市';
+                        if (_id) {
+                            _name = _this.address.city.find(function(item) { return item.id === _id }).name;
+                        }
+                        return _name;                            
+                    },
+                    screenArea: function() {
+                        var _screenArea = '';
+                        if ($.isNumeric(this.screen_area)) {
+                            _screenArea = parseInt(this.screen_area, 10);
+                        }
+                        return _screenArea || '';
+                    },
+                    area: function () {
+                        var _id = this.area_id;
+                        var _name = '区/县';
+                        if (_id) {
+                            _name = _this.address.area.find(function(item) { return item.id === _id }).name;
+                        }
+                        return _name;                              
+                    },                                
+                    color: function () {
+                        var name = '屏幕颜色';
+                        if (!!this.screen_color) {
+                            name = this.all_screen_color[parseInt(this.screen_color)] || '屏幕颜色'
+                        }
+                        return name
+                    },
+                    environment: function () {
+                        var name = '应用环境';
+                        if (!!this.apply_environment) {
+                            name = this.all_apply_environment[parseInt(this.apply_environment)] || '应用环境'
+                        }
+                        return name                    
                     }
-                    obj.all_region_data = _this.address;
-                    var renderObj = $.extend(obj, filter);
-                    var domStr = Mustache.render(_this.tpl, renderObj);
-                    $(_this._els.LContent).html(domStr);
+                }
+                obj.all_region_data = _this.address;
+                var renderObj = $.extend(obj, filter);
+                var domStr = Mustache.render(_this.tpl, renderObj);
+                $(_this._els.LContent).html(domStr);
+
+                var serv = (obj.type == 1) ? '返修服务' : '厂外服务';
+                _this.find('.service-type').text(serv);
             });
- 
         }
+
         // 提交项目基本信息
         // 添加需求
         CON.prototype._ievent_submitForm = function(el, target) {
@@ -153,19 +157,12 @@ define(function() {
             var lastC = filterCR(data.last_comment);
             data.last_comment = (lastC != this.initLastComment) ? lastC : ''; 
 
-            var preparationArr = [];
-            if (!!data.preparation) {
-                if ($.isArray(data.preparation.name)) {
-                    data.preparation.name.map(function(item, index) {
-                        if (item && data.preparation.number[index]) {
-                            preparationArr.push({ name: item, number: data.preparation.number[index] })
-                        }
-                    })
-                } else if(!$.isEmptyObject(data.preparation) && data.preparation.name && data.preparation.number) {
-                    preparationArr.push({ name: data.preparation.name, number: data.preparation.number })
-                }
+            data.parts = this.collectParts(data.parts, 'backup_number');
+            if (this.data.type == 1) {
+                // 返修项目的维修配件
+                data.repair_parts = this.collectParts(data.repair_parts, 'number');
             }
-            data.preparation = preparationArr;
+
             api_ajax_post('project/edit', data, {
                 succ: function(res) {
                     $tipEl.html('');
@@ -182,6 +179,28 @@ define(function() {
             });
             return false;
         }
+
+        CON.prototype.collectParts = function(parts, num_key) {
+            var partsArr = [];
+            if (parts) {
+                if ($.isArray(parts.name)) {
+                    parts.name.map(function(item, index) {
+                        if (item && parts.spec[index] && parts[num_key][index]) {
+                            var obj = {};
+                            obj.name = item;
+                            obj.spec = parts.spec[index];  
+                            obj[num_key] = parts[num_key][index];
+
+                            partsArr.push(obj);
+                        }
+                    })
+                } else if (parts.name && parts.spec && parts[num_key]) {
+                    partsArr.push(parts);
+                }
+            }
+            return partsArr;
+        }
+
         // 跳转到故障描述
         CON.prototype.showDemand = function(data) {
             var _this = this;
