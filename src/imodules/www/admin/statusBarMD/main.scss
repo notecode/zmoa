@@ -1,0 +1,30 @@
+@import "src/sass/global/mixin";
+
+#statusBarMD {
+    height: 80px;
+    padding: 24px 30px;
+    border-bottom: 1px solid $bordercolor;
+
+    h2{
+        font-size: 24px;            
+        color: $black;
+        line-height: 33px;  
+        margin: 0;
+        .circle-dpar {
+            margin-left: 25px;
+            vertical-align: 2px;
+            cursor: pointer;
+
+            span{
+                color: #003894;
+                font-size: 15px;
+                display: inline-block;
+            }
+        }
+        .unfoldown {
+            span {
+                transform:rotate(-180deg);
+            }
+        }
+    }
+}

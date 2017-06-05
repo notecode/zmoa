@@ -30,9 +30,6 @@ define(function() {
                 }
             });
 
-            // 挂到目标位置(因为是2个module共用，只有一份实例，就共享吧)
-            var destId = dest.parents('#assignTasks, #demandDetail').attr('id');
-            tlog('hook controlProcessMD for module: ' + destId);
             dest.append($(this.dom));
         }
 
@@ -44,9 +41,6 @@ define(function() {
             var _this = this;
             api_ajax_post('project/transfer_status', data, {
                 succ: function(json) {
-                    // 不要加这个提示，因为有副作用
-                    // project.tip('操作成功', 'succ', '', true);
-                    
                     // 无法直接拿到我所在的dialog，故用这种方式取当前dialog，关闭它
                     potato.getCurDialog().close();
 

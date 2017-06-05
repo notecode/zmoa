@@ -1,0 +1,132 @@
+<div class="">
+    <h3 class="pro-name"><span class="icon-xiangmu"></span><span class="proj-name">{{name}}</span></h3>
+    <h4 class="pro-client"><span class="pro-client-name">{{contact_name}}</span><span>{{contact_phone}}</span></h4>
+    <p class="pro-pos"><small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small></p>
+    <p class="pro-fault">
+        <span class="icon-checkmark"></span>
+        <span>故障原因：</span>
+    </p>
+    <p class="pro-info">
+        <span>{{fn.applyEnvironment}}, {{point}}, {{fn.screenColor}}, {{description}}</span>
+    </p>
+    {{#main_img}}
+        <img class="pro-img" src="{{main_img}}" width="294" height="182" alt="项目图片" />
+    {{/main_img}}
+    {{^main_img}}
+        <div class="pro-noimg">暂无故障图片</div>
+    {{/main_img}}
+    <p class="pro-addr">
+        <span class="icon-xiangmu icon-addr"></span>
+        <span>{{detail_address}}</span>
+    </p>
+    <p class="pro-note">
+        <span class="icon-checkmark"></span>
+        <span>项目记录</span>
+    </p>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td>合同编号</td>
+                <td>{{contract}}</td>
+            </tr>
+            <tr>
+                <td>屏幕颜色</td>
+                <td>{{fn.screenColor}}</td>
+            </tr>
+            <tr>
+                <td>屏幕面积</td>
+                <td>{{screen_area}}m²</td>
+            </tr>
+            <tr>
+                <td>点间距</td>
+                <td>{{point}}</td>
+            </tr>
+            <tr>
+                <td>应用环境</td>
+                <td>{{fn.applyEnvironment}}</td>
+            </tr>
+            <tr>
+                <td>保质期至</td>
+                <td>{{expiration_date}}</td>
+            </tr>
+            <tr>
+                <td>备品备料</td>
+                <td>
+                {{#preparations}}
+                    {{preparation_type}}×{{preparation_type_number}}, <br/>
+                {{/preparations}}
+                </td>
+            </tr>
+            <tr>
+                <td>项目地区</td>
+                <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{province}}{{city}}{{area}}</td>
+            </tr>
+            <tr>
+                <td>项目详细地址</td>
+                <td>{{detail_address}}</td>
+            </tr>
+            <tr>
+                <td>项目联络人</td>
+                <td>{{contact_name}}</td>
+            </tr>
+            <tr>
+                <td>联络人电话</td>
+                <td>{{contact_phone}}</td>
+            </tr>
+            <tr>
+                <td>销售人员</td>
+                <td>{{salesman_name}}</td>
+            </tr>
+            <tr>
+                <td>销售员工号</td>
+                <!-- <td>{{salesman_id}}</td> -->
+                <td>{{job_number}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="pro-info pro-comment-title">
+        <span class="icon-checkmark"></span>
+        <span>产品配件</span>
+    </p>
+    <div class="fixbox">
+        <table class="info-fixing">
+            <tr class="tabhead">
+                <td width="100">配件名称</td>
+                <td>配件规格</td>
+                <td width="90">备份数量</td>
+            </tr>
+            <tr>
+                <td>灯珠</td>
+                <td>洲明300-2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>灯珠</td>
+                <td>洲明300-2</td>
+                <td>3</td>
+            </tr>
+        </table>
+        <div class="fixing-more">
+            <a href="javascript:;" class="view-more">查看更多</a>
+        </div>
+    </div>
+    <p class="pro-info pro-oddnum">
+        <span class="icon-checkmark"></span>
+        <span>收件快递单号</span>
+    </p>
+    <div class="oddnum">
+        DAKH39758392
+    </div>
+    <p class="pro-info pro-comment-title">
+        <span class="icon-checkmark"></span>
+        <span>补充说明</span>
+    </p>
+
+    {{#comments}}
+    <div class="{{fn.hide_comment}}">
+        <h5 class="pro-bname"><cite>{{user_name}}</cite>{{created}}</h5>
+        <h6 class="pro-bshuo">{{comment}}</h6>
+    </div>
+    {{/comments}}
+</div>
+      

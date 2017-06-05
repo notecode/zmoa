@@ -7,19 +7,9 @@ define(["/global/iscripts/libs/time/moment.js",
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.tpl = this._els.tpl[0].text;
+            
             this.serv = null;
             this.projId = null;
-        };
-        var APPLY_ENVIRONMENT = {
-            1: '户外',
-            2: '室内',
-            3: '半户外',
-        };        
-        var SCREEN_COLOR = {
-            1: '双色',
-            2: '单色',
-            3: '全彩',
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -31,10 +21,19 @@ define(["/global/iscripts/libs/time/moment.js",
             var _this = this;
             var doRenderDetail = function(data) {
                 var proj = json.project_info;
-                var projectId = proj.id;
 
-                _this.renderDetail(proj);
-                //_this.inrepair(projectId);
+                project.getIModule('imodule://statusBarMD', null, function(mod) {
+                    mod.render(proj, _this.find('.status-block'), function() {
+                        _this.parent.refreshSize();
+                    });
+                });
+
+                project.getIModule('imodule://demandDetailOnLeftMD', null, function(mod) {
+                    var h = _this.parentHeight() - 80;
+                    mod.render(proj, _this.find('.left-detail-block'), h, function() {
+                        _this.parent.refreshSize();
+                    });
+                });
             };
             var doRenderStat = function(data) {
                 _this.renderWorkerStats(data);
@@ -59,31 +58,6 @@ define(["/global/iscripts/libs/time/moment.js",
                     }
                 });
             }
-        }
-
-		CON.prototype.renderDetail = function(info) {
-            info.main_img = proj_img_url(info.main_img);
-            info.fn = {
-                applyEnvironment: function() {
-                    return APPLY_ENVIRONMENT[this.apply_environment];
-                },
-                screenColor: function() {
-                    return SCREEN_COLOR[this.screen_color];
-                },
-                hide_comment: function() {
-                    return (this.comment.length > 0) ? '' : 'hide';
-                }
-            };
-            var dom = Mustache.render(this.tpl, info); 
-            this.find('.body-block').append(dom);
-
-            var h = this.parentHeight() - 80;
-            this.find('.detail-block').css('height', h);
-            this.parent.refreshSize();
-		}
-
-        CON.prototype.parentHeight = function() {
-            return parseInt(this.parent.dom.style.height);
         }
 
 		CON.prototype.renderWorkerStats = function(stats) {
@@ -260,6 +234,10 @@ define(["/global/iscripts/libs/time/moment.js",
             $('.slick-prev').html('<span class="icon-left"></span>');
         }
 
+        CON.prototype.parentHeight = function() {
+            return parseInt(this.parent.dom.style.height);
+        }
+
         CON.prototype._ievent_showStatus = function(obj) {
             this.find('#controlProcessMD').toggle();
             if(this.find('#controlProcessMD').is(':hidden')){
@@ -286,20 +264,6 @@ define(["/global/iscripts/libs/time/moment.js",
            }
 
         }
-
-        // CON.prototype.inrepair = function(projectId){
-        //     api_ajax('project/parts_repair_status/'+projectId, {
-        //         succ: function(json) {
-                    
-        //             // var dom = Mustache.render($('#repair-tpl').text(), json); 
-        //             // $('.body-block').append(dom);
-
-        //         },
-        //         fail: function(json) {
-
-        //         }
-        //     });
-        // }
 
         return CON;
     })();
