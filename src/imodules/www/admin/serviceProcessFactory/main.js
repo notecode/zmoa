@@ -21,7 +21,7 @@ define(["/global/iscripts/tools/slick.js"], function() {
 
         CON.prototype.byStatus = function() {
             var _this =  this;
-            api_ajax('project/projects_by_status', {
+            api_ajax('project/back_projects_by_status', {
                 succ: function(json) {
                     //将返回的数据转为数组
                     var result = [];
