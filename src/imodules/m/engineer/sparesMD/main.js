@@ -11,9 +11,11 @@ define(function() {
 		
 		CON.prototype.prepareData = function(proj) {
             var spares = proj.preparations;
-            for (var i = 0; i < spares.length; i++) {
-                this.old_spares.push(spares[i].preparation_type);
-            } 
+            if(spares){
+                for (var i = 0; i < spares.length; i++) {
+                    this.old_spares.push(spares[i].preparation_type);
+                } 
+            }
         }
 
 		CON.prototype.render = function(proj) {
