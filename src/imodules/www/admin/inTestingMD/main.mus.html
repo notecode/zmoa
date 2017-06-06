@@ -1,0 +1,25 @@
+<div class="com-schedule clearfix">
+    <span class="percentage-num" idom="tageNum"><span id="tageNum">15</span>%</span>
+    <div class="percentage">
+        <p id="Percentage"></p>
+    </div>
+    <a href="#" class="percent-btn hide">指派</a>
+    <button class="percent-mit" disabled>提交</button>
+</div>
+<table class="schtabel">
+    <tr class="schhead">
+        <td width="220">配件名称</td>
+        <td width="324">配件规格</td>
+        <td>是否需要维修</td>
+    </tr>
+    {{#repair_parts}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{spec}}</td>
+        <td>
+            <span class="sch-sel needRepair {{isrepair}}" ievent="Repair"><cite class="yes"></cite>是</span>
+            <span class="sch-sel {{isrepair}}" ievent="Repair"><cite class="no"></cite>否</span>
+        </td>
+    </tr>
+    {{/repair_parts}}
+</table>

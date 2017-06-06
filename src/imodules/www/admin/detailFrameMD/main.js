@@ -29,6 +29,7 @@ define(function() {
                 }
             });
 
+            
             project.getIModule(ctx.bodyMod, null, function(mod) {
                 var h = _this.parentHeight() - 80;
                 mod.render(proj, _this.find('.body-block'), h, resize);
@@ -38,15 +39,29 @@ define(function() {
         CON.prototype.genCtx = function(proj) {
             var bLeftDetail = false; 
             var bodyMod = '';
-            switch (proj.status) {
-                case '1':
-                    bLeftDetail = true;
-                    bodyMod = 'imodule://assignTasks';
-                    break;
-                default:
-                    bodyMod = 'imodule://demandDetail';
-                    break;
+
+            if(proj.type == 0){
+                switch (proj.status) {
+                    case '1':
+                        bLeftDetail = true;
+                        bodyMod = 'imodule://assignTasks';
+                        break;
+                    default:
+                        bodyMod = 'imodule://demandDetail';
+                        break;
+                }
+            } else {
+                switch (proj.status) {
+                    case '0':
+                        bLeftDetail = true;
+                        bodyMod = 'imodule://inTestingMD';
+                        break;
+                    default:
+                        bodyMod = 'imodule://demandDetail';
+                        break;
+                }
             }
+            
 
             return {
                 bLeftDetail: bLeftDetail,

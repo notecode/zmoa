@@ -2,6 +2,15 @@
 
 #inTestingMD {
   padding: 0 40px;
+  width: 1320px;
+
+  .tbox {
+    width: 857px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 82px;
+  }
 
   .com-schedule {
     width: 898px;
@@ -64,9 +73,11 @@
       color: #fff;
       margin-left: 32px;
       display: inline;
-      opacity: 0.5;
       border: none;
       outline: none;
+    }
+    .percent-mit[disabled] {
+      opacity: 0.5;
     }
   }
 
@@ -85,6 +96,7 @@
       .sch-sel {
         margin-right: 80px;
         color: #8b9aab;
+        cursor: pointer;
 
         cite {
           display: inline-block;
@@ -99,14 +111,12 @@
         &:last-child {
           margin-right: 0;
         }
-      }
 
-      .wx-time {
-        color: #3f3f3f;
-      }
 
-      .current {
-        cite.active {
+        &.active1 .yes {
+          background-color: #e3e8ee;
+        }
+        &.active2 .no {
           background-color: #e3e8ee;
         }
         cite.specactive {
@@ -114,6 +124,12 @@
           border-color: #61a417;
         }
       }
+
+      .wx-time {
+        color: #3f3f3f;
+      }
+
+      
     }
 
     .schhead td {
