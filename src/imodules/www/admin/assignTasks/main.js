@@ -1,5 +1,4 @@
 define(["/global/iscripts/libs/time/moment.js",
-        "/global/iscripts/test/mock/api-4-project-detail.js",
         "/global/iscripts/test/mock/api-4-assign.js",
         "/global/iscripts/tools/slick.js"], 
         function(moment, mock_detail, mock_stat) {
@@ -7,93 +6,49 @@ define(["/global/iscripts/libs/time/moment.js",
 		var baseIModules = project.baseIModules;
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
-            this.tpl = this._els.tpl[0].text;
+            
             this.serv = null;
             this.projId = null;
-        };
-        var APPLY_ENVIRONMENT = {
-            1: '户外',
-            2: '室内',
-            3: '半户外',
-        };        
-        var SCREEN_COLOR = {
-            1: '双色',
-            2: '单色',
-            3: '全彩',
+            this.contMaxH = null;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype.render = function(projId, json) {
-            this.projId = projId;
-            this.find('.body-block').empty();
-            $(this.dom).show();
+		CON.prototype.render = function(proj, dest, maxH, cb) {
+            this.projId = proj.id;
+            this.contMaxH = maxH;
 
             var _this = this;
-            var doRenderDetail = function(data) {
-                var proj = json.project_info;
-                var projectId = proj.id;
-
-                _this.renderDetail(proj);
-                //_this.inrepair(projectId);
-            };
-            var doRenderStat = function(data) {
-                _this.renderWorkerStats(data);
+            var doRenderStat = function(data, dest, cb) {
+                _this.renderWorkerStats(data, dest, cb);
                 _this.bindEvents();
                 _this.bindSlick();
             };
 
             if (1 == qs('test')) {
-                doRenderDetail(mock_detail);
-                doRenderStat(mock_stat);
+                doRenderStat(mock_stat, dest, cb);
             } else {
-                doRenderDetail(json);
-
                 var data = {
-                    projectId: projId,
+                    projectId: this.projId,
                     startDate: moment().format('YYYY-MM-DD'),
                     pageSize: 30
                 };
                 api_ajax_post('project/project_schedule', data, {
                     succ: function(json) {
-                        doRenderStat(json);
+                        doRenderStat(json, dest, cb);
                     }
                 });
             }
         }
 
-		CON.prototype.renderDetail = function(info) {
-            info.main_img = proj_img_url(info.main_img);
-            info.fn = {
-                applyEnvironment: function() {
-                    return APPLY_ENVIRONMENT[this.apply_environment];
-                },
-                screenColor: function() {
-                    return SCREEN_COLOR[this.screen_color];
-                },
-                hide_comment: function() {
-                    return (this.comment.length > 0) ? '' : 'hide';
-                }
-            };
-            var dom = Mustache.render(this.tpl, info); 
-            this.find('.body-block').append(dom);
-
-            var h = this.parentHeight() - 80;
-            this.find('.detail-block').css('height', h);
-            this.parent.refreshSize();
-		}
-
-        CON.prototype.parentHeight = function() {
-            return parseInt(this.parent.dom.style.height);
-        }
-
-		CON.prototype.renderWorkerStats = function(stats) {
+		CON.prototype.renderWorkerStats = function(stats, dest, cb) {
             var header = this.prepareStatData(stats);
             var serv_tpl = this.find('#serv-tpl').text();
             var dom = Mustache.render(serv_tpl, {header: header});
-            this.find('.body-block').append(dom);
-
+            this.find('.content').html(dom);
             this.renderADay(0);
-            this.parent.refreshSize();
+
+            $(dest).html($(this.dom));
+            cb && cb();
         }
 
         CON.prototype.prepareStatData = function(raw) {
@@ -185,7 +140,7 @@ define(["/global/iscripts/libs/time/moment.js",
             this.find('.date-block').append(grid);
             this.find('.date-day[data-index=' + index + ']').addClass('cur-day');
 
-            var h = this.parentHeight() - (80 + 60 + 40);
+            var h = this.contMaxH - (60 + 40);
             this.find('.suppliers-list').css('height', h);
 
             var _this = this;
@@ -259,47 +214,6 @@ define(["/global/iscripts/libs/time/moment.js",
             $('.slick-next').html('<span class="icon-right"></span>');
             $('.slick-prev').html('<span class="icon-left"></span>');
         }
-
-        CON.prototype._ievent_showStatus = function(obj) {
-            this.find('#controlProcessMD').toggle();
-            if(this.find('#controlProcessMD').is(':hidden')){
-                $('#iunfold').removeClass('unfoldown');
-            }else {
-                $('#iunfold').addClass('unfoldown');    
-            }
-
-            // todo: 点击其他区域，消失
-        }
-
-        //判断是返厂服务或者是厂外服务---以修改标题
-        CON.prototype.isReturnTofactory = function(isFactory, status){
-           //isFactory=0为厂外；isFactory=1返厂
-           //status=1为待测试；=2为维修中；=3为待寄件；=4为待回访；=5为已结束
-           if(isFactory == 1){
-                $(this._els.serviceTit).text('测试中');
-
-                if(status == 1) {
-            
-                }
-           } else {
-                $(this._els.serviceTit).text('安排服务人员');
-           }
-
-        }
-
-        // CON.prototype.inrepair = function(projectId){
-        //     api_ajax('project/parts_repair_status/'+projectId, {
-        //         succ: function(json) {
-                    
-        //             // var dom = Mustache.render($('#repair-tpl').text(), json); 
-        //             // $('.body-block').append(dom);
-
-        //         },
-        //         fail: function(json) {
-
-        //         }
-        //     });
-        // }
 
         return CON;
     })();

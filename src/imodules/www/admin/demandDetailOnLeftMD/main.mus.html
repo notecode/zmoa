@@ -1,4 +1,4 @@
-<div class="detail-block">
+<div class="">
     <h3 class="pro-name"><span class="icon-xiangmu"></span><span class="proj-name">{{name}}</span></h3>
     <h4 class="pro-client"><span class="pro-client-name">{{contact_name}}</span><span>{{contact_phone}}</span></h4>
     <p class="pro-pos"><small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small></p>
@@ -16,12 +16,12 @@
         <div class="pro-noimg">暂无故障图片</div>
     {{/main_img}}
     <p class="pro-addr">
-        <span class="icon-location icon-addr"></span>
+        <span class="icon-xiangmu icon-addr"></span>
         <span>{{detail_address}}</span>
     </p>
     <p class="pro-note">
         <span class="icon-checkmark"></span>
-        <span>项目信息</span>
+        <span>项目记录</span>
     </p>
     <table class="table table-bordered">
         <tbody>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>项目地区</td>
-                <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{detail_address}}</td>
+                <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{province}}{{city}}{{area}}</td>
             </tr>
             <tr>
                 <td>项目详细地址</td>
