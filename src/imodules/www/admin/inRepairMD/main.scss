@@ -2,6 +2,15 @@
 
 #inRepairMD {
   padding: 0 40px;
+  width: 1320px;
+
+  .pairbox {
+    width: 857px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 82px;
+  }
 
   .com-schedule {
     width: 898px;
@@ -33,7 +42,7 @@
         top: 0;
         left: 0;
         border-radius: 100px;
-        width: 15%;
+        width: 0%;
         height: 8px;
         overflow: hidden;
         background-color: #003894;
@@ -47,11 +56,15 @@
       border-radius: 100px;
       background-color: #003894;
       text-align: center;
-      line-height: 32px;
       font-size: 15px;
       color: #fff;
       margin-left: 32px;
       display: inline;
+      border: none;
+      outline: none;
+    }
+    .percent-btn[disabled] {
+      opacity: 0.5;
     }
   }
 
@@ -70,6 +83,7 @@
       .sch-sel {
         margin-right: 26px;
         color: #8b9aab;
+        cursor: pointer;
 
         cite {
           display: inline-block;
@@ -90,15 +104,27 @@
         color: #3f3f3f;
       }
 
-      .current {
-        cite.active {
+      .current1 {
+        cite.adopt {
           background-color: #e3e8ee;
         }
-        cite.specactive {
+      }
+
+      .current2 {
+        cite.maintenance {
+          background-color: #e3e8ee;
+        }
+      }
+
+      .current3 {
+        cite.completed {
           background-color: #61a417;
           border-color: #61a417;
         }
       }
+
+
+        
     }
 
     .schhead td {

@@ -13,12 +13,13 @@
         <td>是否需要维修</td>
     </tr>
     {{#repair_parts}}
-    <tr>
+    <tr class="schbody">
         <td>{{name}}</td>
         <td>{{spec}}</td>
         <td>
             <span class="sch-sel needRepair {{isrepair}}" ievent="Repair"><cite class="yes"></cite>是</span>
             <span class="sch-sel {{isrepair}}" ievent="Repair"><cite class="no"></cite>否</span>
+            <input type="hidden" value="" class="status">
         </td>
     </tr>
     {{/repair_parts}}

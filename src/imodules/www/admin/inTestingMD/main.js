@@ -12,7 +12,7 @@ define(function() {
             this.contMaxH = maxH;
 
             var _this = this;
-            dest.append($(this.dom));
+            dest.html($(this.dom));
             cb && cb();
 
 
@@ -20,9 +20,9 @@ define(function() {
                 succ: function(json) {
                     if(json.repair_parts){
                         for(var i=0; i<json.repair_parts.length; i++) {
-                            if(json.repair_parts[i].status == 0) {//为0是需要维修，为1则不需要
+                            if(json.repair_parts[i].status == 1) {//为0是无需维修，为1则需要
                                 json.repair_parts[i].isrepair = 'active1';
-                            }else if(json.repair_parts[i].status == 1){
+                            }else if(json.repair_parts[i].status == 0){
                                 json.repair_parts[i].isrepair = 'active2';
                             }else {
                                 json.repair_parts[i].isrepair = ' ';
@@ -32,7 +32,6 @@ define(function() {
                     var dom = Mustache.render(_this.tpl, json);
                     $(_this._els.testBox).html(dom);
 
-                    _this.submitProgress();
                 },
                 fail: function(json) {
                     tlog('failed');
@@ -42,8 +41,8 @@ define(function() {
 
         CON.prototype.submitProgress = function(){
             var _this = this;
-            var repairLen = $('.needRepair').length;
-            var selectedLen = $('.active1').length/2;
+            var repairLen = $('.schbody').length;
+            var selectedLen = $('.hasVal').length;
             $('#tageNum').html(selectedLen/repairLen*100);
             $('#Percentage').css('width',selectedLen/repairLen*100 + '%');
 
@@ -55,10 +54,19 @@ define(function() {
         }
 
         CON.prototype._ievent_Repair = function(data, target, hit){
+            var obj = $(target).parent();
             if($(target).index() == 0){
-                $(target).addClass('active1').siblings().removeClass('active2');
+                obj.find('.sch-sel').addClass('active1').siblings().removeClass('active2');
+                obj.find('.status').val(0);
+                obj.find('.status').addClass('hasVal');
+            }else if($(target).index() == 1){
+                obj.find('.sch-sel').addClass('active2').siblings().removeClass('active1'); 
+                obj.find('.status').val(1);
+                obj.find('.status').addClass('hasVal');
             }else{
-               $(target).addClass('active2').siblings().removeClass('active1'); 
+                $(target).removeClass('active1 active2'); 
+                obj.find('.status').val('');
+                obj.find('.status').removeClass('hasVal');
             }
 
             this.submitProgress();

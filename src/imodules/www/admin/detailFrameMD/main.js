@@ -56,6 +56,10 @@ define(function() {
                         bLeftDetail = true;
                         bodyMod = 'imodule://inTestingMD';
                         break;
+                    case '-1':
+                        bLeftDetail = true;
+                        bodyMod = 'imodule://inRepairMD';
+                        break;
                     default:
                         bodyMod = 'imodule://demandDetail';
                         break;
