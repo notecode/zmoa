@@ -78,6 +78,9 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 sch_end: function() {
                     var end = worker.end_date;
                     return end ? moment(end).format('M月DD日') : '';
+                },
+                showRepairParts: function() {
+                    return (repair_parts && repair_parts.length > 0) ? 'show' : 'hide';
                 }
             }
         }

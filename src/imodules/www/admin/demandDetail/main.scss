@@ -1,6 +1,6 @@
 @import "src/sass/global/mixin";
 
-#demandDetail{
+#demandDetail {
     display: none;
 
     #controlProcessMD {
@@ -300,6 +300,30 @@
             font-size: 14px;
             color: #333;
             padding: 13px 15px;
+
+            .repair-person {
+                color: #333;
+                font-size: 14px;
+
+                .icon-success {
+                    position: static;
+                    color: #77c61b;
+                    font-size: 14px;
+                    margin-right: 10px;
+                    vertical-align: -1px;
+                }
+                cite {
+                    font-family: PingFangSC-Thin;
+                    font-size: 14px;
+                    color: #3F3F3F;
+                    font-style: normal;
+                }
+            }
+
+            .repair-adopt {
+                padding-left: 24px;
+                color: #8b9aab;
+            }
         }
 
         .tabhead td {
@@ -321,6 +345,35 @@
             font-size: 14px;
             color: #003894;
         }
+    }
+
+    /*寄件*/
+    .pro-send {
+        width: 592px;
+        height: 50px;
+        background: #F7FAFF;
+        border: 1px solid #E3E8EE;
+        border-radius: 2px; 
+        padding: 0 15px;
+        margin-bottom: 30px;
+
+        input {
+            height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+            width: 100%;
+            color: #333;
+            border: none;
+            background: #F7FAFF;
+            outline: none;
+        }
+    }
+    .send-num {
+        font-size: 14px;
+        color: #999999;
+        margin-bottom: 32px;
+        margin-top: -4px;
     }
 
 }

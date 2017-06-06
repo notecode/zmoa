@@ -6,14 +6,60 @@
     <span class="pro-client-name">{{contact_name}}</span>
     <span>{{contact_phone}}</span>
 </h4>
+
 <p class="pro-pos">
     <small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small>
 </p>
+
 <p class="pro-service {{fn.sched}}">
     <span class="icon-checkmark"></span>
     <span class="pro-service-name">{{fn.worker}}</span>
     <span class="pro-service-time">{{fn.sch_start}}-{{fn.sch_end}}提供服务</span>
 </p>
+
+<div class="{{fn.showExpSend}}">
+    <p class="pro-note">
+        <span class="icon-checkmark"></span>
+        <span>寄件单号</span>
+    </p>
+    <div class="pro-send">
+        <input type="text" placeholder="输入寄件单号">
+    </div>
+    <div class="send-num">{{express_send}}</div>
+</div>
+
+<div class="{{fn.showRepairParts}}">
+    <p class="pro-note">
+        <span class="icon-checkmark"></span>
+        <span>返厂维修配件</span>
+    </p>
+
+    <div class="fixbox">
+        <table class="info-fixing">
+            <tr class="tabhead">
+                <td width="150">配件名称</td>
+                <td>配件规格</td>
+                <td width="203">维修人员</td>
+            </tr>
+            {{#repair_parts}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{spec}}</td>
+                {{#finisher_id}}
+                <td><p class="repair-person"><span class="icon-success"></span>{{finisher_name}}<cite>（{{finish_date}}）</cite></p></td>
+                {{/finisher_id}}
+                {{^finisher_id}}
+                <td><span class="repair-adopt">测试通过</span></td>
+                {{/finisher_id}}
+            </tr>
+            {{/repair_parts}}
+        </table>
+        <div class="fixing-more">
+            <a href="javascript:;" class="view-more">查看更多</a>
+        </div>
+    </div>
+</div>
+
 <p class="pro-info">
     <span class="gz-reason">故障原因：</span>
     <span class="icon-checkmark"></span>
@@ -59,16 +105,8 @@
             <td class="td-demand-date">{{expiration_date}}</td>
         </tr>
         <tr>
-            <td>备品备料</td>
-            <td class="td-demand-res">
-                {{#preparations}}
-                <span>{{preparation_type}}×{{preparation_type_number}}、</span>
-                {{/preparations}}
-            </td>
-        </tr>
-        <tr>
             <td>项目地区</td>
-            <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu"></td>
+            <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{province}}{{city}}{{area}}</td>
         </tr>
         <tr>
             <td>项目详细地址</td>
@@ -104,20 +142,25 @@
             <td>配件规格</td>
             <td width="170">备份数量</td>
         </tr>
+        {{#parts}}
         <tr>
-            <td>灯珠</td>
-            <td>洲明300-2</td>
-            <td>3</td>
+            <td>{{name}}</td>
+            <td>{{spec}}</td>
+            <td>{{backup_number}}</td>
         </tr>
-        <tr>
-            <td>灯珠</td>
-            <td>洲明300-2</td>
-            <td>3</td>
-        </tr>
+        {{/parts}}
     </table>
     <div class="fixing-more">
         <a href="javascript:;" class="view-more">查看更多</a>
     </div>
+</div>
+
+<div class="{{fn.showExpRecv}}">
+    <p class="pro-note">
+        <span class="icon-checkmark"></span>
+        <span>寄件快递单号</span>
+    </p>
+    <div class="send-num">{{express_recv}}</div>
 </div>
 
 <!--补充说明-->

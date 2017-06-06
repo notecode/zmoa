@@ -50,14 +50,6 @@
                 <td>{{expiration_date}}</td>
             </tr>
             <tr>
-                <td>备品备料</td>
-                <td>
-                {{#preparations}}
-                    {{preparation_type}}×{{preparation_type_number}}, <br/>
-                {{/preparations}}
-                </td>
-            </tr>
-            <tr>
                 <td>项目地区</td>
                 <td data-provice="{{province_id}}" data-city="{{city_id}}" data-area="{{area_id}}" class="xm-diqu">{{province}}{{city}}{{area}}</td>
             </tr>
@@ -95,16 +87,13 @@
                 <td>配件规格</td>
                 <td width="90">备份数量</td>
             </tr>
+            {{#parts}}
             <tr>
-                <td>灯珠</td>
-                <td>洲明300-2</td>
-                <td>3</td>
+                <td>{{name}}</td>
+                <td>{{spec}}</td>
+                <td>{{backup_number}}</td>
             </tr>
-            <tr>
-                <td>灯珠</td>
-                <td>洲明300-2</td>
-                <td>3</td>
-            </tr>
+            {{/parts}}
         </table>
         <div class="fixing-more">
             <a href="javascript:;" class="view-more">查看更多</a>
