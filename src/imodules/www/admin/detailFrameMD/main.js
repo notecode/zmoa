@@ -1,8 +1,8 @@
 define(function() {
     var Module = (function() {
 		var baseIModules = project.baseIModules;
-        var CON = function(dom) {
-            baseIModules.BaseIModule.call(this, dom);
+        var CON = function(dom, parent) {
+            baseIModules.BaseIModule.call(this, dom, parent, {container: true});
             //this.tpl = this._els.tpl[0].text;
         };
         potato.createClass(CON, baseIModules.BaseIModule);
