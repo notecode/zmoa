@@ -24,18 +24,21 @@ define(function() {
         }
 		
         CON.prototype.bindDrop = function() {
+            $('#iunfold').removeClass('unfoldown');    
+
             var _this = this;
             $(this._els.showDropMenu).off('click').on('click', function() {
                 tlog('drop');
                 _this.find('#controlProcessMD').toggle();
-                if(_this.find('#controlProcessMD').is(':hidden')){
+                if (_this.find('#controlProcessMD').is(':hidden')) {
                     $('#iunfold').removeClass('unfoldown');
-                }else {
+                } else {
                     $('#iunfold').addClass('unfoldown');    
                 }
             })
         }
 
+        // todo
         /*
             $(this._els.deTitle).text(proj.status_name);
             if (5 == proj.status || 6 == proj.status) {
