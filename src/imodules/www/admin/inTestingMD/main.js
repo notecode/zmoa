@@ -12,6 +12,10 @@ define(function() {
             this.contMaxH = maxH;
 
             var _this = this;
+            // if($('#inRepairMD')){
+            //     $('#inRepairMD').hide();
+            // }
+            // $('#inTestingMD').show();
             dest.html($(this.dom));
             cb && cb();
 
@@ -32,6 +36,7 @@ define(function() {
                     var dom = Mustache.render(_this.tpl, json);
                     $(_this._els.testBox).html(dom);
 
+                    _this.clickTest()
                 },
                 fail: function(json) {
                     tlog('failed');
@@ -43,33 +48,36 @@ define(function() {
             var _this = this;
             var repairLen = $('.schbody').length;
             var selectedLen = $('.hasVal').length;
-            $('#tageNum').html(selectedLen/repairLen*100);
-            $('#Percentage').css('width',selectedLen/repairLen*100 + '%');
+            $('#tTageNum').html(selectedLen/repairLen*100);
+            $('#tPercentage').css('width',selectedLen/repairLen*100 + '%');
 
-            if($('#tageNum').html() > 0){
+            if($('#tTageNum').html() > 0){
                 $('.percent-mit').removeAttr('disabled');
             }else{
                 $('.percent-mit').attr("disabled", true);
             }
         }
 
-        CON.prototype._ievent_Repair = function(data, target, hit){
-            var obj = $(target).parent();
-            if($(target).index() == 0){
-                obj.find('.sch-sel').addClass('active1').siblings().removeClass('active2');
-                obj.find('.status').val(0);
-                obj.find('.status').addClass('hasVal');
-            }else if($(target).index() == 1){
-                obj.find('.sch-sel').addClass('active2').siblings().removeClass('active1'); 
-                obj.find('.status').val(1);
-                obj.find('.status').addClass('hasVal');
-            }else{
-                $(target).removeClass('active1 active2'); 
-                obj.find('.status').val('');
-                obj.find('.status').removeClass('hasVal');
-            }
+        CON.prototype.clickTest = function(){
+            var _this = this;
+            $(this._els.testBox).on('click', '.sch-sel', function(){
+                var obj = $(this).parent();
+                if($(this).index() == 0){
+                    obj.find('.sch-sel').addClass('active1').siblings().removeClass('active2');
+                    obj.find('.status').val(0);
+                    obj.find('.status').addClass('hasVal');
+                }else if($(this).index() == 1){
+                    obj.find('.sch-sel').addClass('active2').siblings().removeClass('active1'); 
+                    obj.find('.status').val(1);
+                    obj.find('.status').addClass('hasVal');
+                }else{
+                    obj.find('.sch-sel').removeClass('active1 active2'); 
+                    obj.find('.status').val('');
+                    obj.find('.status').removeClass('hasVal');
+                }
 
-            this.submitProgress();
+                _this.submitProgress();
+            })
         }
        
 

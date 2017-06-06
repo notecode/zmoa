@@ -13,6 +13,10 @@ define(function() {
             this.contMaxH = maxH;
 
             var _this = this;
+            // if($('#inTestingMD')){
+            //     $('#inTestingMD').hide();
+            // }
+            // $('#inRepairMD').show();
             dest.html($(this.dom));
             cb && cb();
 
@@ -34,6 +38,8 @@ define(function() {
                     }
                     var dom = Mustache.render(_this.tpl, json);
                     $(_this._els.pairbox).html(dom);
+
+                    _this.clickRepair();
                 },
                 fail: function(json) {
                     tlog('failed');
@@ -55,26 +61,35 @@ define(function() {
             }
         }
 
-        CON.prototype._ievent_wRepair = function(data, target, hit){
-            if($(target).index() == 0){
-                $(target).parent().find('.sch-sel').addClass('current1').siblings().removeClass('current2 current3');
-                $(target).parent().find('.status').val(0);
-                $(target).parent().find('.status').addClass('hasVal');
-            }else if($(target).index() == 1){
-               $(target).parent().find('.sch-sel').addClass('current2').siblings().removeClass('current1 current3');
-               $(target).parent().find('.status').val(1); 
-                $(target).parent().find('.status').addClass('hasVal');
-            }else if($(target).index() == 2){
-                $(target).parent().find('.sch-sel').addClass('current3').siblings().removeClass('current1 current2');
-                $(target).parent().find('.status').val(2); 
-                $(target).parent().find('.status').addClass('hasVal');
-            }else{
-                $(target).parent().find('.sch-sel').removeClass('current1 current2 current3');
-                $(target).parent().find('.status').val(''); 
-                $(target).parent().find('.status').removeClass('hasVal');
-            }
+        //CON.prototype._ievent_wRepair = function(data, target, hit){
+        CON.prototype.clickRepair = function(){
+            var _this = this;
+            $(this._els.pairbox).on('click', '.sch-sel', function(){
+                var obj = $(this).parent();
+                if($(this).index() == 0){
+                    obj.find('.sch-sel').addClass('current1').siblings().removeClass('current2 current3');
+                    obj.find('.status').val(0);
+                    obj.find('.status').addClass('hasVal');
+                }else if($(this).index() == 1){
+                    obj.find('.sch-sel').addClass('current2').siblings().removeClass('current1 current3');
+                    obj.find('.status').val(1); 
+                    obj.find('.status').addClass('hasVal');
+                }else if($(this).index() == 2){
+                    obj.find('.sch-sel').addClass('current3').siblings().removeClass('current1 current2');
+                    obj.find('.status').val(2); 
+                    obj.find('.status').addClass('hasVal');
+                }else{
+                    obj.find('.sch-sel').removeClass('current1 current2 current3');
+                    obj.find('.status').val(''); 
+                    obj.find('.status').removeClass('hasVal');
+                }
 
-            this.Progress();
+                _this.Progress();
+            });
+        }
+
+        CON.prototype._ievent_assign = function(){
+
         }
 
         return CON;
