@@ -1,6 +1,6 @@
 @import "src/sass/global/mixin";
 
-#serviceProcess{
+#serviceProcessMD {
     position: relative;
     width: 100%;
     padding: 40px 60px 40px 60px;
@@ -88,9 +88,8 @@
                 background-color: #fbfbfb;
             }
         }
-
-
     }
+
     .task-over {
          .task-item{
             .icon-xiangmu {

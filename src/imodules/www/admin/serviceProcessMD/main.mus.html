@@ -1,8 +1,8 @@
-{{#persons}}
-<div class="task-box {{iconStatus}}" data-status="{{id}}">
+{{#status_list}}
+<div class="task-box {{fn.extTask}}" data-status="{{status}}">
     <div class="box-title">
         <span class="status-name">{{status_name}}</span>·<span>{{count}}</span>
-        <span class="icon-Add-to {{add}}" ievent="addDemand"></span>
+        <span class="icon-Add-to {{fn.showAddBtn}}" ievent="addDemand"></span>
     </div>
 
     <div class="task-list">
@@ -15,4 +15,4 @@
     {{/list}}
     </div>
 </div>
-{{/persons}}
+{{/status_list}}

@@ -26,7 +26,8 @@ define(function() {
 
         CON.prototype.setBackProj = function(back_proj) {
             this.is_back_proj = back_proj;
-            this.find('.sub-service-type').text('返修服务');
+            var t = back_proj ? '返修服务' : '厂外服务';
+            this.find('.sub-service-type').text(t);
         }
 
         // 项目模糊搜索

@@ -26,68 +26,52 @@
 
 .icon-location:before {
   content: "\e90f";
-  color: #003894;
 }
 .icon-time:before {
   content: "\e910";
-  color: #003894;
 }
 .icon-Unfolded:before {
   content: "\e90e";
-  color: #003894;
 }
 .icon-xiangmu:before {
   content: "\e900";
-  color: #003894;
 }
 .icon-weixiu:before {
   content: "\e901";
-  color: #e3e8ee;
 }
 .icon-uni:before {
   content: "\e902";
-  color: #e3e8ee;
 }
 .icon-success:before {
   content: "\e903";
-  color: #77c61b;
 }
 .icon-right:before {
   content: "\e904";
-  color: #8b9aab;
 }
 .icon-personnel:before {
   content: "\e905";
-  color: #e3e8ee;
 }
 .icon-Order:before {
   content: "\e906";
-  color: #fff;
 }
 .icon-left:before {
   content: "\e907";
-  color: #8b9aab;
 }
 .icon-close:before {
   content: "\e908";
 }
 .icon-circle-down:before {
   content: "\e909";
-  color: #8b9aab;
 }
 .icon-checkmark:before {
   content: "\e90a";
-  color: #8b9aab;
 }
 .icon-Add-to1:before {
   content: "\e90b";
-  color: #fff;
 }
 .icon-Add-to:before {
   content: "\e90c";
-  color: #fff;
 }
 .icon-add-files:before {
   content: "\e90d";
-  color: #003894;
 }
