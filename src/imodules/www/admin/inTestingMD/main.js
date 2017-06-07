@@ -4,6 +4,7 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
+            this.projId = '';
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
@@ -37,6 +38,8 @@ define(function() {
                     $(_this._els.testBox).html(dom);
 
                     _this.clickTest()
+
+                    $('#proID').val(proj.id);
                 },
                 fail: function(json) {
                     tlog('failed');
@@ -77,6 +80,38 @@ define(function() {
                 }
 
                 _this.submitProgress();
+            })
+        }
+
+        CON.prototype._ievent_testingSubmit = function(el, target){
+            var data = $(target).serializeJSON();
+            var statusArr = [];
+            if (!!data.repair_parts) {
+                if ($.isArray(data.repair_parts.id)) {
+                    data.repair_parts.id.map(function(item, index) {
+                        if (item && data.repair_parts.status[index] && data.repair_parts.id[index]) {
+                            statusArr.push({
+                                id: data.repair_parts.id[index],
+                                status: data.repair_parts.status[index]
+                            })
+                        }
+                    })
+                } else if(!$.isEmptyObject(data.repair_parts) && data.repair_parts.id && data.repair_parts.status) {
+                    statusArr.push({ 
+                        id: data.repair_parts.id,
+                        status: data.repair_parts.status
+                    });
+                }
+            } 
+            data.repair_parts = statusArr;
+
+            api_ajax_post('project/post_parts_repair_status', data, {
+                succ: function(json) {
+                    
+                },
+                fail: function(json) {
+                    alert('提交失败');
+                }
             })
         }
        
