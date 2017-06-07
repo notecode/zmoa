@@ -56,7 +56,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                         var msg = '已驳回';
                         btn_main.text(msg).prop('disabled', true);
                     } else if (isSales) {
-                        location.href = '/sales/demand-detail.html?project=' + qs_proj();
+                        location.href = '/sales/project/edit.html?project=' + qs_proj();
                     }
                     break;
                 case 0: // 待审批

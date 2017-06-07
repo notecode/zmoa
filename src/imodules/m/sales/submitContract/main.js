@@ -103,7 +103,7 @@ define(function() {
                     //判断有无需求
                     if (json.user_role !== '1' && isExist) {
                         //打开基本信息页面
-                        location.href="/sales/demand-detail.html?project_id="+id;
+                        location.href="/sales/project/edit.html?project_id="+id;
                     } else {
                         //打开故障页面
                         location.href="/sales/fault.html?project_id="+id;
