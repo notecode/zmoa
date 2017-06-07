@@ -68,7 +68,6 @@ define(function() {
             if (key === this.key) { //输入项目已经存在
                 $value = this.key
                 this.reset();
-                //location.href="/sales/demand-detail.html";
                 this.openBasicInfo(this.id, true);
                 return false;
             }
@@ -78,7 +77,6 @@ define(function() {
                         if (data && data.project_id) {
                             _this.reset();
                             data.project_exist = '1';
-                            //location.href="/sales/demand-detail.html";
                             _this.openBasicInfo(data.project_id, data.project_exist);
                         }
                     },

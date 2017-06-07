@@ -8,7 +8,7 @@ define(function() {
             this.cityTpl = this._els.tpl[2].text;
             this.areaTpl = this._els.tpl[3].text;
             this.stockTpl = this._els.tpl[4].text;
-            this.id = qs('project_id');
+            this.id = qs_proj();
             this.provinceId = '';
 
             // 最末的“补充说明”稍麻烦：

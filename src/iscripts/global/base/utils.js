@@ -53,7 +53,7 @@ function qs(name) {
 }
 
 function qs_proj() {
-	return qs('project') || qs('projectId');
+	return qs('project') || qs('projectId') || qs('project_id');
 }
 
 /*

@@ -41,6 +41,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
         
         CON.prototype.renderBottomBtn = function(proj, role) {
             var isAppr = (role == 4); 
+            var isSales = (role == 2);
             var showBtn = true;
             var showBoth = false;
             var btn_main = this.find('.btn-main');
@@ -54,8 +55,8 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                     if (isAppr) {
                         var msg = '已驳回';
                         btn_main.text(msg).prop('disabled', true);
-                    } else {
-                        alert('todo: 跳到编辑页');
+                    } else if (isSales) {
+                        location.href = '/sales/demand-detail.html?project=' + qs_proj();
                     }
                     break;
                 case 0: // 待审批
