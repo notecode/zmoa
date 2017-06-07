@@ -1,0 +1,15 @@
+
+<div>
+    <div class="mr-title">
+        待审批的项目({{count}})
+    </div>
+
+    <div class="mr-content">
+        {{#list}}
+        <div class="mr-lsit list-implement clearfix project" data-id="{{id}}">
+            <h6><span class="icon-project"></span>{{name}}（{{contract}}）</h6>
+            <p><span class="icon-time"></span>{{modified_4ui}}</p>
+        </div>
+        {{/list}}
+    </div>
+</div>

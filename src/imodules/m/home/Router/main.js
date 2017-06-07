@@ -12,6 +12,8 @@ define(function() {
                     location.href = '/sales/index.html';
                 } else if (3 == role) {
                     location.href = '/engineer/running-project.html';
+                } else if (4 == role) {
+                    location.href = '/sales/pending.html';
                 } else {
                     alert('亲爱的管理员，请您在电脑上登录网站进行管理.');
                     api_ajax('user/logout');
