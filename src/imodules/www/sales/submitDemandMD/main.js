@@ -69,7 +69,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
             $(this._els.LUploadContent).find('.file-add').removeHide();
         }
         // 设置默认值
-        CON.prototype.setCtx = function(obj, isAdmin) {
+        CON.prototype.setCtx = function(obj, isAdmin, isBack) {
             this.info = obj;
             this.isAdmin = isAdmin;
             $(this._els.LProject).val(obj.contract + '　' + obj.name);
@@ -81,6 +81,9 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
                 var salesStr = '销售员　' + obj.salesman_name + '　' + obj.job_number;
                 $(this._els.LSales).html(salesStr);
             }            
+
+            var t = isBack ? '返修服务' : '厂外服务';
+            this.find('.sub-service-type').text(t);
         }        
         // 添加需求
         CON.prototype._ievent_submitForm = function(data, target) {

@@ -2,7 +2,7 @@
     <div class="{{show_if_back_proj}}">
         <div class="title">收件单号</div>
         <div class="pro-send">
-            <input type="text" placeholder="输入寄件单号">
+            <input value={{express.recv}} name="recvExpress" type="text" class="must js-check-el" data-tip="收件单号不能为空" placeholder="快递单号（必填）">
         </div>
     </div
 
@@ -100,7 +100,7 @@
                 <input name="parts[spec]" type="text" value="{{spec}}">
             </div>
             <div class="access-liput">
-                <input name="parts[backup_number]" type="text" value="{{backup_number}}">
+                <input name="parts[backup_number]" type="number" value="{{backup_number}}">
             </div>
         </li>
         {{/parts}}
@@ -112,7 +112,7 @@
                 <input name="parts[spec]" type="text" value="" placeholder="输入规格">
             </div>
             <div class="access-liput">
-                <input name="parts[backup_number]" type="text" value="" placeholder="输入数量">
+                <input name="parts[backup_number]" type="number" value="" placeholder="输入数量">
             </div>
         </li>
     </ul>

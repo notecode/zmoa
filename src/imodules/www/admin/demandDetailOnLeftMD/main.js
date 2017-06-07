@@ -31,9 +31,9 @@ define(function() {
                 hide_comment: function() {
                     return (this.comment.length > 0) ? '' : 'hide';
                 },
-                hide_numbers: function() {//判断如果是厂外服务，则不显示快递单号
-                    return (info.type == 0) ? 'hide' : '';
-                }
+                showRecvExpress: function() {
+                    return (this.type == 1) ? 'show' : 'hide';
+                },
             };
 
 

@@ -213,7 +213,7 @@ define(function() {
             this.parent.close();
             var onBack = function(mod) {
                 // 项目基本信息
-                mod.setCtx(data, _this.isAdmin);
+                mod.setCtx(data, _this.isAdmin, (data.type == 1));
                 if(mod.parent){
                     mod.parent.close();
                 }
