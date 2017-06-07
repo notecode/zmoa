@@ -84,6 +84,7 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
 
             var t = isBack ? '返修服务' : '厂外服务';
             this.find('.sub-service-type').text(t);
+            isAdmin ? $(this._els.conserType).removeHide() : $(this._els.conserType).addHide();
         }        
         // 添加需求
         CON.prototype._ievent_submitForm = function(data, target) {

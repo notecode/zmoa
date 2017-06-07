@@ -137,6 +137,12 @@ define(function() {
             return false;
         }
 
+        CON.prototype.role = function(isSales){
+            if(isSales == 1) {
+                $(this._els.serviceType).addHide();
+            }
+        }
+
         return CON;
     })();
     return Module;

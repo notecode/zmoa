@@ -141,6 +141,9 @@ define(function() {
 
                 var serv = (obj.type == 1) ? '返修服务' : '厂外服务';
                 _this.find('.service-type').text(serv);
+
+                isAdmin ? $(_this._els.serviceType).removeHide() : $(_this._els.serviceType).addHide();
+                    
             });
         }
 

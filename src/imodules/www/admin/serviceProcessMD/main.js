@@ -46,7 +46,7 @@ define(function() {
                     },
                     showAddBtn: function() {
                         var st = this.status;
-                        return (1 == st || (_this.isBackProj && 0 == st)) ? 'show' : 'hide';
+                        return (this.status_name == '已立项，待派人' || (_this.isBackProj && 0 == st)) ? 'show' : 'hide';
                     }
                 }
             };

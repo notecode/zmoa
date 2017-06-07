@@ -52,9 +52,19 @@ define(function() {
         }
         // 添加需求
         CON.prototype._ievent_addDemand = function() {
-            project.getIModule('imodule://submitContractMD', null, function (modal) {
-                project.open(modal, '_blank', {maskCloseable: false});
-            });
+            // project.getIModule('imodule://submitContractMD', null, function (modal) {
+            //     project.open(modal, '_blank', {maskCloseable: false});
+            // });
+            var isSales = 1;
+            var onBack = function(mod) {
+                // 输入合同编号
+                mod.role(isSales);
+                if(mod.parent){
+                    mod.parent.close();
+                }
+                project.open(mod, '_blank');
+            };
+            project.getIModule('imodule://submitContractMD', null, onBack);
         }
 
         return CON;
