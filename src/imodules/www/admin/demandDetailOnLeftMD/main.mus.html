@@ -16,7 +16,7 @@
         <div class="pro-noimg">暂无故障图片</div>
     {{/main_img}}
     <p class="pro-addr">
-        <span class="icon-xiangmu icon-addr"></span>
+        <span class="icon-location icon-addr"></span>
         <span>{{detail_address}}</span>
     </p>
     <p class="pro-note">
@@ -99,12 +99,12 @@
             <a href="javascript:;" class="view-more">查看更多</a>
         </div>
     </div>
-    <p class="pro-info pro-oddnum">
+    <p class="pro-info pro-oddnum {{fn.hide_numbers}}">
         <span class="icon-checkmark"></span>
         <span>收件快递单号</span>
     </p>
-    <div class="oddnum">
-        DAKH39758392
+    <div class="oddnum {{fn.hide_numbers}}">
+        {{express_recv}}
     </div>
     <p class="pro-info pro-comment-title">
         <span class="icon-checkmark"></span>
