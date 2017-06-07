@@ -69,13 +69,12 @@
     <script idom="tpl" type="x-tmpl-mustache">
         <li class="clearfix">
             <div class="parts-con">
-                <input type="text" name="parts[name]" placeholder="配料类型" class="parts-new">
-            </div>
+                <input type="text" placeholder="输入名称" class="parts-new" name="parts[name]"></div>
+            <div class="parts-con parts-spec">
+            <input type="text" placeholder="输入规格" class="parts-new"  name="parts[spec]"></div>
+
             <div class="parts-con-ji clearfix">
-                <input value="" name="parts[backup_number]" type="hidden" class="apareHid">
-                <span class="count-jian down-count"  ievent="subtract">-</span>
-                <span class="count-liang spare-count spare-hui" idom="apareNum">0</span>
-                <span class="count-jia up-count"  ievent="theSum">+</span>
+                <input  name="parts[backup_number]" type="text" class="parts-new apareHid" placeholder="输入数量">
             </div>
         </li>
     </script>
