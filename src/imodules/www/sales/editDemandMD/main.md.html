@@ -24,9 +24,23 @@
     </script>
     <script idom="tpl" type="x-tmpl-mustache">
         <div class="line">
-            <input name="preparation[name]" type="text" class=" input-half stock-name" placeholder="备料类型">
-            <input name="preparation[number]" type="number" class=" input-half stock-num" placeholder="数量">
+            <input name="repair_parts[name]" type="text" class="input-half-san stock-name" placeholder="配件名称">
+            <input name="repair_parts[spec]" type="text" class="input-half-san stock-name" placeholder="配件规格">
+            <input name="repair_parts[number]" type="number" class="input-half-san stock-num" placeholder="配件数量">
         </div>
+    </script>   
+    <script idom="tpl" type="x-tmpl-mustache">
+        <li class="access-li clearfix">
+            <div class="access-liput">
+                <input name="parts[name]" type="text" value="" placeholder="输入名称">
+            </div>
+            <div class="access-liput acc-liputwid">
+                <input name="parts[spec]" type="text" value="" placeholder="输入规格">
+            </div>
+            <div class="access-liput">
+                <input name="parts[backup_number]" type="text" value="" placeholder="输入数量">
+            </div>
+        </li>
     </script>    
 
 </div>

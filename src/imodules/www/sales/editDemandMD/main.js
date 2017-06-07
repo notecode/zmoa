@@ -7,6 +7,7 @@ define(function() {
             this.tpl = this._els.tpl[0].text;
             this.addressTpl = this._els.tpl[1].text;
             this.stockTpl = this._els.tpl[2].text;
+            this.accessoryTpl = this._els.tpl[3].text;
 
             // 关于lastComment，请参见m端本功能的代码。可查找last_comment
             this.initLastComment = '';
@@ -26,6 +27,12 @@ define(function() {
                 e.preventDefault();
                 var domStr = Mustache.render(_this.stockTpl);
                 $('.js-stock-list').append(domStr);
+            });
+            // 添加产品配件
+            $(this._els.LContent).on('click', '.js-add-accessory', function(e) {
+                e.preventDefault();
+                var domStr = Mustache.render(_this.accessoryTpl);
+                $('.access-parts').append(domStr);
             });
             
         };

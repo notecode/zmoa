@@ -51,8 +51,8 @@ define(function() {
             var _this = this;
             var repairLen = $('.schbody').length;
             var selectedLen = $('.hasVal').length;
-            $('#tTageNum').html(selectedLen/repairLen*100);
-            $('#tPercentage').css('width',selectedLen/repairLen*100 + '%');
+            $('#tTageNum').html(Math.round(selectedLen/repairLen*100));
+            $('#tPercentage').css('width',Math.round(selectedLen/repairLen*100) + '%');
 
             if($('#tTageNum').html() > 0){
                 $('.percent-mit').removeAttr('disabled');
