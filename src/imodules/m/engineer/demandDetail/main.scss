@@ -11,11 +11,8 @@
         left: 0;
         bottom: 0;
         border: none;
-
-        &:disabled {
-            opacity: 0.5;
-        }
     }
+
     .bottom-btnone {
         width: 50%;
         color: #fff;
@@ -28,6 +25,10 @@
         padding: 0;
         outline: none;
         display: inline-block!important;
+
+        &:disabled {
+            opacity: 0.5;
+        }
     }
 
     .bottom-btnone:first-child {
@@ -45,5 +46,9 @@
         padding: 0;
         outline: none;
         display: inline-block!important;
+
+        &:disabled {
+            opacity: 0.5;
+        }
     }
 }

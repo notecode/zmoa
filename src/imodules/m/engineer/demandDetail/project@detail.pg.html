@@ -9,12 +9,12 @@
     @@include('m/engineer/detailsMD/main.md.html')
     @@include('m/engineer/sparesMD/main.md.html', {"comment": "show"})
 
-    <div class="btn-box-one clearfix">
-    	<button class="bottom-btnone">已远程服务</button>
-    	<button class="bottom-btnone" ievent="action">立即排期</button>
+    <div class="btn-box-one clearfix hide two-btns">
+    	<button class="bottom-btnone btn-left" ievent="leftAction"></button>
+    	<button class="bottom-btnone btn-main" ievent="mainAction"></button>
     </div>
-    <div class="btn-box-one clearfix hide">
-    	<button class="bottom-btntwo">开始现场服务</button>
+    <div class="btn-box-one clearfix hide single-btn">
+    	<button class="bottom-btntwo btn-main" ievent="mainAction"></button>
     </div>
     @@include('www/common/InsertBottom/main.html')
 </body>
