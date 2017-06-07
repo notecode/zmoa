@@ -14,7 +14,7 @@
 <p class="pro-service {{fn.sched}}">
     <span class="icon-checkmark"></span>
     <span class="pro-service-name">{{fn.worker}}</span>
-    <span class="pro-service-time">{{fn.sch_start}}-{{fn.sch_end}}提供服务</span>
+    <span class="pro-service-time">{{fn.sch_start}}-{{fn.sch_end}} {{fn.doing}}</span>
 </p>
 
 <div class="{{fn.showExpSend}}">
@@ -22,7 +22,7 @@
         <span class="icon-checkmark"></span>
         <span>寄件单号</span>
     </p>
-    <div class="pro-send">
+    <div class="pro-send {{fn.showEnterNum}}">
         <input type="text" placeholder="输入寄件单号">
     </div>
     <div class="send-num">{{express_send}}</div>
@@ -70,7 +70,7 @@
     <img class="pro-img {{hasPic}}" src="{{main_img}}" width="294" alt="故障图片" />
 </div>
 <p class="pro-addr">
-    <span class="icon-checkmark icondress"></span>
+    <span class="icon-location icondress"></span>
     <span>{{detail_address}}</span>
 </p>
 <!--项目信息-->
@@ -131,7 +131,7 @@
     </tbody>
 </table>
 
-<p class="pro-info pro-comment-title">
+<p class="pro-info pro-peijian">
     <span class="icon-checkmark"></span>
     <span>产品配件</span>
 </p>
@@ -155,10 +155,10 @@
     </div>
 </div>
 
-<div class="{{fn.showExpRecv}}">
+<div class="{{fn.showExpSend}}">
     <p class="pro-note">
         <span class="icon-checkmark"></span>
-        <span>寄件快递单号</span>
+        <span>收件快递单号</span>
     </p>
     <div class="send-num">{{express_recv}}</div>
 </div>

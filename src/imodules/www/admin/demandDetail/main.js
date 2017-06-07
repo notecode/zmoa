@@ -81,6 +81,24 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 },
                 showRepairParts: function() {
                     return (this.repair_parts && this.repair_parts.length > 0) ? 'show' : 'hide';
+                },
+                showExpSend: function() {
+                    return (this.type == 1) ? '' : 'hide';
+                },
+                showEnterNum: function() {
+                    return (this.status == -3 || this.status == -4) ? 'hide' : '';
+                },
+                doing: function() {
+                   if (this.type == 0) {
+                        switch (this.status) {
+                            case '2':
+                                return '派单成功，尚未排期';
+                                break;
+                            default:
+                                return '提供服务';
+                                break;
+                        }
+                   }
                 }
             }
         }

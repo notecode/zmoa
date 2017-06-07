@@ -54,7 +54,7 @@ define(function() {
             $('#tTageNum').html(Math.round(selectedLen/repairLen*100));
             $('#tPercentage').css('width',Math.round(selectedLen/repairLen*100) + '%');
 
-            if($('#tTageNum').html() > 0){
+            if($('#tTageNum').html() == 100){
                 $('.percent-mit').removeAttr('disabled');
             }else{
                 $('.percent-mit').attr("disabled", true);
