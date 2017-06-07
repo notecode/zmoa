@@ -53,6 +53,7 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
 
         CON.prototype.addScheduleFn = function(proj) {
             var worker = proj.service_user || {};
+            var done = (worker.end_date || worker.stroy == 5); // 5为远程服务
             proj.fn = {
                 applyEnvironment: function() {
                     return APPLY_ENVIRONMENT[this.apply_environment];
@@ -63,10 +64,25 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 hide_comment: function() {
                     return (this.comment.length > 0) ? '' : 'hide';
                 },
-                sched: function() {
+
+                // 提供维修服务的人相关
+                showService: function() {
                     var start = worker.start_date;
-                    return (start && start.length > 0) ? 'show' : 'hide';
+                    return (start && start.length > 0) ? '' : 'hide';
                 },
+                showNotDone: function() {
+                    return (!done) ? '' : 'hide';
+                },
+                showDone: function() {
+                    return done ? '' : 'hide';
+                },
+                showNotRemote: function() {
+                    return (worker.story != 5) ? '' : 'hide'; 
+                },
+                showRemote: function() {
+                    return (worker.story == 5) ? '' : 'hide';  
+                },
+
                 worker: function() {
                     var name = worker.name;
                     return (name ? name : '');
@@ -77,10 +93,11 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 },
                 sch_end: function() {
                     var end = worker.end_date;
-                    return end ? moment(end).format('M月DD日') : '';
+                    return end ? moment(end).format('-M月DD日') : '';
                 },
+
                 showRepairParts: function() {
-                    return (this.repair_parts && this.repair_parts.length > 0) ? 'show' : 'hide';
+                    return (this.repair_parts && this.repair_parts.length > 0) ? '' : 'hide';
                 },
                 showExpSend: function() {
                     return (this.type == 1) ? '' : 'hide';
@@ -88,18 +105,6 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                 showEnterNum: function() {
                     return (this.status == -3 || this.status == -4) ? 'hide' : '';
                 },
-                doing: function() {
-                   if (this.type == 0) {
-                        switch (this.status) {
-                            case '2':
-                                return '派单成功，尚未排期';
-                                break;
-                            default:
-                                return '提供服务';
-                                break;
-                        }
-                   }
-                }
             }
         }
 

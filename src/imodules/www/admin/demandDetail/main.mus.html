@@ -11,10 +11,11 @@
     <small class="pro-pos-company">{{contact_company}}</small>&nbsp;&nbsp;<small>{{contact_position}}</small>
 </p>
 
-<p class="pro-service {{fn.sched}}">
+<p class="pro-service {{fn.showService}}">
     <span class="icon-checkmark"></span>
     <span class="pro-service-name">{{fn.worker}}</span>
-    <span class="pro-service-time">{{fn.sch_start}}-{{fn.sch_end}} {{fn.doing}}</span>
+    <span class="pro-service-time {{fn.showNotDone}}">{{fn.sch_start}} 派单成功，尚未排期</span>
+    <span class="pro-service-time {{fn.showDone}}">{{fn.sch_start}}{{fn.sch_end}} <span class="{{fn.showNotRemote}}">提供服务</span><span class="remote {{fn.showRemote}}">提供远程服务</span></span>
 </p>
 
 <div class="{{fn.showExpSend}}">

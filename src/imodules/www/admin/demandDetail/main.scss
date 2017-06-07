@@ -112,9 +112,13 @@
             .pro-service-name{
                 color: $lightblack;
             }
-            .pro-service-time{
+            .pro-service-time {
                 color: #999;;
                 margin-left:20px;
+
+                .remote {
+                    color: #003894; 
+                }
             }
         }
         .pro-info{
