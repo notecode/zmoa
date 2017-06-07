@@ -9,7 +9,7 @@ define(function() {
 
         CON.prototype.render = function(proj, dest, cb) {
             // todo: 显示status
-            $(this._els.serviceTit).text('todo');
+            $(this._els.serviceTit).text(proj.status_name);
             
             var _this = this;
             project.getIModule('imodule://controlProcessMD', null, function(mod) {
