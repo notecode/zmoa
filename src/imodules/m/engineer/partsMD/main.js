@@ -4,23 +4,10 @@ define(function() {
         var CON = function(dom) {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
-
-            this.old_parts = [];
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
-		CON.prototype.prepareData = function(proj) {
-            var parts = proj.preparations;
-            if(parts){
-                for (var i = 0; i < parts.length; i++) {
-                    this.old_parts.push(parts[i].preparation_type);
-                } 
-            }
-        }
-
 		CON.prototype.render = function(proj) {
-            this.prepareData(proj);
-
             var dom = Mustache.render(this.tpl, {
                 proj: proj,
                 fn: {
@@ -31,87 +18,52 @@ define(function() {
             });
 
             this.find('.parts').append(dom);
-            this.bindSpareEvents(this.find('.spare-list'));
-
-            this.addBlankSpare();
 		}
 		
-		CON.prototype._ievent_newSpare = function(data, target, hit) {
-            tlog('newSpare');
-            this.addBlankSpare(this.find('.parts'));
-		}
+		CON.prototype._ievent_newParts = function(data, target, hit) {
+            tlog('newParts');
+            var parts = $(this.tpl).find('.parts-tpl > div').clone();
+            parts.addClass('newbie');
+            this.find('.parts-list').append(parts);
 
-        CON.prototype.addBlankSpare = function() {
-            var spare = $(this.tpl).find('.spare-tpl > div').clone();
-            this.bindSpareEvents(spare);
-            this.find('.spare-list').append(spare);
+            this.find('[idom=btnAdd]').addHide();
+            this.find('[idom=btnPost]').removeHide();
         }
 
-        CON.prototype.bindSpareEvents = function(jq) {
+        CON.prototype._ievent_postParts = function(type, num, ui) {
             var _this = this;
-            var update = function(tgt, up) {
-                var jq = $(tgt).siblings('.spare-count');
-                var jqT = $(tgt).parents('.detail-beijian').find('.spare-type').val();
-                var org = parseInt(jq.text());
-                if(jq.text().trim() < 0){
-                    jq.addClass('spare-hui');
-                }else{
-                    jq.removeClass('spare-hui');
-                }
-                if (up) {
-                    if ('' == jqT) {
-                        alert('请先填写备料类型');
-                    } else {
-                        var n = org + 1;
-                        _this.postSpare(jqT, n, jq);
-                    }
-                } else {
-                    if (org > 0) {
-                        var n = org - 1;
-                        _this.postSpare(jqT, n, jq);
-                    }
-                }
-            }
+            var jq = this.find('.newbie');
+            var name = jq.find('[idom=name]').val();
+            var spec = jq.find('[idom=spec]').val();
+            var num =  jq.find('[idom=num]').val();
 
-            $(jq).find('.up-count').click(function(e) {
-                update(e.target, true);
-            });
-            $(jq).find('.down-count').click(function(e) {
-                update(e.target, false);
-            });
-        }
+            if (name != '' && spec != '' && num > 0) {
+                var data = {
+                    projectId: qs_proj(),
+                    parts: [
+                        { name: name, spec: spec, backup_number: num },
+                    ]
+                };
+                api_ajax_post('project/post_more_parts', data, {
+                    succ: function(json) {
+                        _this.find('.newbie').removeClass('newbie');
+                        _this.find('[idom=btnPost]').addHide();
+                        _this.find('[idom=btnAdd]').removeHide();
+                    },
+                    fail: function(json) {
+                        alert(json.errmsg);
+                    }
+                })
 
-        CON.prototype.postSpare = function(type, num, ui) {
-            var uri = '';
-            var add = false;
-            if (-1 == this.old_parts.indexOf(type)) {
-                add = true;
-                uri = 'project/mobile_add_preparation';
-                tlog('new spare type: ' + type + ', num: ' + num);
             } else {
-                uri = 'project/mobile_update_preparation_number';
-                tlog('update spare num for: ' + type + ' to num: ' + num);
-            }
-
-            var data = {
-                projectId: qs_proj(),
-                preparationType: type,
-                preparationTypeNumber: num
-            };
-
-            var _this = this;
-            api_ajax_post(uri, data, {
-                //always: function(json) {
-                succ: function(json) {
-                    ui.text(num);
-                    if (add) {
-                        _this.old_parts.push(type);
-                    }
-                },
-                fail: function(json) {
-                    alert(json.errmsg);
+                if (name == '') {
+                    alert('请输入配件名称');
+                } else if (spec == '') {
+                    alert('请输入配件规格');
+                } else {
+                    alert('配件数量不正确');
                 }
-            });
+            }
         }
 
         CON.prototype._ievent_submitComment = function() {
@@ -124,7 +76,6 @@ define(function() {
                 };
 
                 api_ajax_post('project/add_comment_to_project', data, {
-                    //always: function(json) {
                     succ: function(json) {
                         var cmt = $(_this.tpl).find('.comment-tpl > p').clone();
                         cmt.find('.words').text(txt);

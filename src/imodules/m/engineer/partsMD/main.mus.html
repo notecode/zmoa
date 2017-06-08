@@ -1,54 +1,54 @@
 
 <div class="parts-body">
     <p class="detail-bei">产品配件</p>
-    <div class="spare-list">
-        <div class="spare clearfix">
-            <div class="spare-one">
+    <div class="parts-list">
+        <div class="parts clearfix">
+            <div class="parts-one">
                 配件名称
             </div>
-            <div class="spare-one apare-mid">
+            <div class="parts-one apare-mid">
                 配件规格
             </div>
-            <div class="spare-one">
+            <div class="parts-one">
                 配件数量
             </div>
         </div>
-        {{#proj.preparations}}
+        {{#proj.parts}}
         <div class="detail-beijian clearfix">
-            <div class="spare-two">
-                <input class="detail-bj-name spare-type" value="{{preparation_type}}" readonly>
+            <div class="parts-two">
+                <input class="detail-bj-name parts-type" value="{{name}}" readonly>
             </div>
-             <div class="spare-two apare-mid">
-                <input class="detail-bj-name spare-type" value="规格" readonly>
+            <div class="parts-two apare-mid">
+                <input class="detail-bj-name parts-type" value="{{spec}}" readonly>
             </div>
-            <div class="spare-two">
+            <div class="parts-two">
                 <div class="detail-bj-count">
-                    <input class="detail-bj-name count-put" type="text" placeholder="输入数量" value="{{preparation_type_number}}" readonly>
+                    <input class="detail-bj-name count-put" type="text" value="{{backup_number}}" readonly>
                 </div>
             </div>
         </div>
-        {{/proj.preparations}}
+        {{/proj.parts}}
     </div>
 
-    <div class="spare-tpl hide">
+    <div class="parts-tpl hide">
         <div class="detail-beijian clearfix">
-            <div class="spare-two">
-                <input class="beijian-type spare-type" type="text" placeholder="输入名称">
+            <div class="parts-two">
+                <input class="detail-bj-name parts-type" idom="name" placeholder="输入名称">
             </div>
-            <div class="spare-two apare-mid">
-                <input class="detail-bj-name spare-type" placeholder="输入规格" >
+            <div class="parts-two apare-mid">
+                <input class="detail-bj-name parts-type" idom="spec" placeholder="输入规格" >
             </div>
-            <div class="spare-two">
-                <input class="detail-bj-name count-put" type="text" placeholder="输入数量">
+            <div class="parts-two">
+                <input class="detail-bj-name count-put" type="number" idom="num" placeholder="输入数量">
             </div>
         </div>
     </div>
 
     <div class="detail-bj-tianjia text-center clearfix">
-        <div class="beijian-add" ievent="newSpare">+添加</div>
+        <div class="beijian-add" idom="btnAdd" ievent="newParts">+添加</div>
     </div>
     <div class="pj-block">
-        <button class="btn btn-primary pj-btn">确认</button>
+        <button class="hide btn btn-primary pj-btn" idom="btnPost" ievent="postParts">确认</button>
     </div>
 
     <div class="comments">
