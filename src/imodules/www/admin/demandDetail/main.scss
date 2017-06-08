@@ -247,6 +247,10 @@
 
         display: none;
     }
+    .btn-block {
+        padding: 0px 74px 15px 74px;
+        position: relative;
+    }
     .pro-recall-textarea{
         margin-bottom: 25px;
         outline: none;
@@ -276,6 +280,22 @@
         margin: 0 0 40px 0;
         font-weight:600;
         border: none;
+    }
+    .upplementary {
+        width: 70px;
+        height: 50px;
+        background: $blue;
+        border-radius: 2px;
+        padding: 0;
+        margin: 0 0 40px 0;
+        font-weight:600;
+        border: none;
+        position: absolute;
+        right: 75px;;
+        top: 29px;
+        span {
+            font-size: 24px;
+        }
     }
     .pro-recall-textarea::-webkit-input-placeholder {
         color: #8B9AAB !important; /* WebKit browsers */
