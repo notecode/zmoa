@@ -27,12 +27,16 @@ define(function() {
                         for(var i=0; i<json.repair_parts.length; i++) {
                             if(json.repair_parts[i].status == 0) {//为0是测试通过，1等待维修,2是已完成
                                 json.repair_parts[i].isrepair = 'current1';
+                                json.repair_parts[i].haveStatus = 'hasVal';
                             }else if(json.repair_parts[i].status == 1){
                                 json.repair_parts[i].isrepair = 'current2';
+                                json.repair_parts[i].haveStatus = 'hasVal';
                             }else if(json.repair_parts[i].status == 2){
                                 json.repair_parts[i].isrepair = 'current3';
+                                json.repair_parts[i].haveStatus = 'hasVal';
                             }else {
                                 json.repair_parts[i].isrepair = ' ';
+                                json.repair_parts[i].haveStatus = '';
                             }
                         }
                     }
@@ -40,6 +44,7 @@ define(function() {
                     $(_this._els.pairbox).html(dom);
 
                     _this.clickRepair();
+                    _this.Progress();
                 },
                 fail: function(json) {
                     tlog('failed');
