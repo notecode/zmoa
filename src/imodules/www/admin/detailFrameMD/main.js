@@ -29,18 +29,33 @@ define(function() {
                 }
             });
 
-            
+            project.getIModule('imodule://progressBarMD', null, function(mod) {
+                mod.showMe(ctx.bProgressBar);
+            });
+
             project.getIModule(ctx.bodyMod, null, function(mod) {
-                var h = _this.parentHeight() - 80;
+                var h = _this.parentHeight() - (80 + ctx.extH);
                 mod.render(proj, _this.find('.body-block'), h, resize);
             });
 		}
 
+        CON.prototype.renderBodyBlock = function(imod, proj) {
+            var _this = this;
+            project.getIModule(imod, null, function(mod) {
+                var h = _this.parentHeight() - (80 + 80);
+                mod.render(proj, _this.find('.body-block'), h, function() {
+                    _this.parent.refreshSize();
+                });
+            });
+        }
+
         CON.prototype.genCtx = function(proj) {
             var bLeftDetail = false; 
+            var bProgressBar = false;
             var bodyMod = '';
+            var extH = 0;
 
-            if(proj.type == 0){
+            if (proj.type == 0) {
                 switch (proj.status) {
                     case '1':
                         bLeftDetail = true;
@@ -54,11 +69,15 @@ define(function() {
                 switch (proj.status) {
                     case '0':
                         bLeftDetail = true;
+                        bProgressBar = true;
                         bodyMod = 'imodule://inTestingMD';
+                        extH = 80;
                         break;
                     case '-1':
                         bLeftDetail = true;
+                        bProgressBar = true;
                         bodyMod = 'imodule://inRepairMD';
+                        extH = 80;
                         break;
                     default:
                         bodyMod = 'imodule://demandDetail';
@@ -66,10 +85,11 @@ define(function() {
                 }
             }
             
-
             return {
                 bLeftDetail: bLeftDetail,
+                bProgressBar: bProgressBar,
                 bodyMod: bodyMod,
+                extH: extH,
             };
         }
 

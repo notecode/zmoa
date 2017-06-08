@@ -1,84 +1,12 @@
 @import "src/sass/global/mixin";
 
 #inTestingMD {
-  padding: 0 40px;
   width: 1320px;
 
   .tbox {
     width: 857px;
     display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 82px;
-  }
-
-  .com-schedule {
-    width: 898px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-
-    .percentage-num {
-      float: left;
-      font-size: 14px;
-      color: #8b9aab;
-      width: 41px;
-      margin-top: 8px;
-      display: inline;
-    }
-
-    .percentage {
-      width: 677px;
-      height:8px;
-      overflow: hidden;
-      position: relative;
-      background-color: #e3e8ee;
-      border-radius: 100px;
-      float: left;
-      margin-top: 13px;
-      display: inline;
-
-      p {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 100px;
-        width: 0%;
-        height: 8px;
-        overflow: hidden;
-        background-color: #003894;
-      }
-    }
-
-    .percent-btn {
-      width: 70px;
-      height: 32px;
-      float: left;
-      border-radius: 100px;
-      background-color: #003894;
-      text-align: center;
-      line-height: 32px;
-      font-size: 15px;
-      color: #fff;
-      margin-left: 32px;
-      display: inline;
-    }
-    .percent-mit {
-      width: 70px;
-      height: 32px;
-      float: left;
-      border-radius: 100px;
-      background-color: #003894;
-      text-align: center;
-      font-size: 15px;
-      color: #fff;
-      margin-left: 32px;
-      display: inline;
-      border: none;
-      outline: none;
-    }
-    .percent-mit[disabled] {
-      opacity: 0.5;
-    }
+    padding-left: 40px;
   }
 
   .schtabel {
