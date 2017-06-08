@@ -2,14 +2,19 @@
 
 #statusBarMD {
     height: 80px;
-    padding: 24px 30px;
-    border-bottom: 1px solid $bordercolor;
+    width: 100%;
 
     h2 {
         font-size: 24px;            
         color: $black;
-        line-height: 33px;  
+        height: 80px;
         margin: 0;
+        padding: 24px 30px;
+        border-bottom: 1px solid #dadee4;
+
+        .title-size {
+            font-size: 30px;
+        }
         .circle-dpar {
             margin-left: 25px;
             vertical-align: 2px;
@@ -26,5 +31,10 @@
                 transform:rotate(-180deg);
             }
         }
+    }
+
+    h2.othertit {
+        border: none;
+        padding: 40px 40px 0px;
     }
 }

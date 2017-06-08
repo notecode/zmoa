@@ -9,7 +9,22 @@ define(function() {
 
         CON.prototype.render = function(proj, dest, cb) {
             // todo: 显示status
+            if(proj.status == 0 || proj.status == -1 || proj.status == 1) {
+                $(this._els.serviceTit).removeClass('title-size');
+                $(this._els.statusBar).removeClass('othertit');
+            }else{
+                $(this._els.serviceTit).addClass('title-size');
+                $(this._els.statusBar).addClass('othertit');
+            }
             $(this._els.serviceTit).text(proj.status_name);
+
+            if(proj.status == 0) {
+                $(this._els.serviceTit).text('测试中');
+            }
+
+            if(proj.status == 1) {
+                $(this._els.serviceTit).text('安排服务人员');
+            }
             
             var _this = this;
             project.getIModule('imodule://controlProcessMD', null, function(mod) {
