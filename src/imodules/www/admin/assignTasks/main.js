@@ -165,12 +165,10 @@ define(["/global/iscripts/libs/time/moment.js",
             tlog(msg);
 
             var _this = this;
-            //if (confirm(msg)) {
             if (true) {
                 api_ajax_post('project/assign_person', data, {
                     succ: function(json) {
                         window.onStatusTransfered4UI(_this.projId, 2);
-                        _this.parent.close();
                     },
                     fail: function(json) {
                         console.error('assign worker failed');

@@ -66,8 +66,6 @@ define(function() {
             var uri = isBack ? 'project/back_project_transfer_status' : 'project/transfer_status';
             api_ajax_post(uri, data, {
                 succ: function(json) {
-                    // 无法直接拿到我所在的dialog，故用这种方式取当前dialog，关闭它
-                    potato.getCurDialog().close();
                     window.onStatusTransfered4UI(_this.projId, status);
                 },
                 fail: function(json) {
