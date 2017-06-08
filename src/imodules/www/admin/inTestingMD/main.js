@@ -10,17 +10,7 @@ define(function() {
 		
         CON.prototype.render = function(proj, dest, maxH, cb) {
             this.projId = proj.id;
-            this.contMaxH = maxH;
-
             var _this = this;
-            // if($('#inRepairMD')){
-            //     $('#inRepairMD').hide();
-            // }
-            // $('#inTestingMD').show();
-            dest.html($(this.dom));
-            cb && cb();
-
-
             api_ajax('project/parts_repair_status/' + this.projId, {
                 succ: function(json) {
                     if(json.repair_parts){
@@ -34,12 +24,21 @@ define(function() {
                             }
                         }
                     }
+
                     var dom = Mustache.render(_this.tpl, json);
                     $(_this._els.testBox).html(dom);
 
-                    _this.clickTest()
+                    dest.html($(_this.dom));
+                    cb && cb();
 
-                    $('#proID').val(proj.id);
+                    project.getIModule('imodule://progressBarMD', null, function(mod) {
+                        mod.initRender('提交', false, 0, function(btn) {
+                            _this.find('.btn-submit').click();
+                        });
+                    });
+
+                    _this.bindClickTest();
+                    _this.bindSubm();
                 },
                 fail: function(json) {
                     tlog('failed');
@@ -47,23 +46,9 @@ define(function() {
             });
         }
 
-        CON.prototype.submitProgress = function(){
+        CON.prototype.bindClickTest = function(){
             var _this = this;
-            var repairLen = $('.schbody').length;
-            var selectedLen = $('.hasVal').length;
-            $('#tTageNum').html(Math.round(selectedLen/repairLen*100));
-            $('#tPercentage').css('width',Math.round(selectedLen/repairLen*100) + '%');
-
-            if($('#tTageNum').html() == 100){
-                $('.percent-mit').removeAttr('disabled');
-            }else{
-                $('.percent-mit').attr("disabled", true);
-            }
-        }
-
-        CON.prototype.clickTest = function(){
-            var _this = this;
-            $(this._els.testBox).on('click', '.sch-sel', function(){
+            $(this._els.testBox).off('click.test').on('click.test', '.sch-sel', function(){
                 var obj = $(this).parent();
                 if($(this).index() == 0){
                     obj.find('.sch-sel').addClass('active1').siblings().removeClass('active2');
@@ -79,40 +64,51 @@ define(function() {
                     obj.find('.status').removeClass('hasVal');
                 }
 
-                _this.submitProgress();
+                project.getIModule('imodule://progressBarMD', null, function(mod) {
+                    var repairLen = $('.schbody').length;
+                    var selectedLen = $('.hasVal').length;
+                    var perc = (repairLen / selectedLen) * 100;
+                    mod.updatePercent(perc);
+                });
             })
         }
 
-        CON.prototype._ievent_testingSubmit = function(el, target){
-            var data = $(target).serializeJSON();
-            var statusArr = [];
-            if (!!data.repair_parts) {
-                if ($.isArray(data.repair_parts.id)) {
-                    data.repair_parts.id.map(function(item, index) {
-                        if (item && data.repair_parts.status[index] && data.repair_parts.id[index]) {
-                            statusArr.push({
-                                id: data.repair_parts.id[index],
-                                status: data.repair_parts.status[index]
-                            })
-                        }
-                    })
-                } else if(!$.isEmptyObject(data.repair_parts) && data.repair_parts.id && data.repair_parts.status) {
-                    statusArr.push({ 
-                        id: data.repair_parts.id,
-                        status: data.repair_parts.status
-                    });
-                }
-            } 
-            data.repair_parts = statusArr;
+        CON.prototype.bindSubm = function() {
+            var _this = this;
+            $(this._els.testBox).off('click.subm').on('click.subm', '.btn-submit', function() {
+                tlog('submit');
+                var data = _this.find('[idom=theForm]').serializeJSON();
+                var statusArr = [];
+                if (!!data.repair_parts) {
+                    if ($.isArray(data.repair_parts.id)) {
+                        data.repair_parts.id.map(function(item, index) {
+                            if (item && data.repair_parts.status[index] && data.repair_parts.id[index]) {
+                                statusArr.push({
+                                    id: data.repair_parts.id[index],
+                                    status: data.repair_parts.status[index]
+                                })
+                            }
+                        })
+                    } else if(!$.isEmptyObject(data.repair_parts) && data.repair_parts.id && data.repair_parts.status) {
+                        statusArr.push({ 
+                            id: data.repair_parts.id,
+                            status: data.repair_parts.status
+                        });
+                    }
+                } 
+                data.repair_parts = statusArr;
 
-            api_ajax_post('project/post_parts_repair_status', data, {
-                succ: function(json) {
-                    
-                },
-                fail: function(json) {
-                    alert('提交失败');
-                }
-            })
+                api_ajax_post('project/post_parts_repair_status', data, {
+                    succ: function(json) {
+                        if (0 == json.not_tested) {
+                            window.onStatusTransfered4UI(_this.projId, -1);
+                        }
+                    },
+                    fail: function(json) {
+                        alert(json.errmsg);
+                    }
+                });
+            });
         }
        
 

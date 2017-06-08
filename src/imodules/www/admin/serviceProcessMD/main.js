@@ -86,5 +86,15 @@ define(function() {
 
         return CON;
     })();
+
+    // 供几个模块用，故写成全局的
+    window.onStatusTransfered4UI = function(projId, status) {
+        project.getIModule('imodule://serviceProcessMD').moveProject(projId, status);
+        project.getIModule('imodule://detailRouterMD', null, function (mod) {
+            project.open(mod, '_blank', {size: 'content', controls: []});
+            mod.route(projId);
+        });
+    }
+
     return Module;
 });

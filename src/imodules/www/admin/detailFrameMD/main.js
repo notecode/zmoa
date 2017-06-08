@@ -29,7 +29,10 @@ define(function() {
                 }
             });
 
-            
+            project.getIModule('imodule://progressBarMD', null, function(mod) {
+                mod.showMe(ctx.bProgressBar);
+            });
+
             project.getIModule(ctx.bodyMod, null, function(mod) {
                 var h = _this.parentHeight() - 80;
                 mod.render(proj, _this.find('.body-block'), h, resize);
@@ -38,9 +41,10 @@ define(function() {
 
         CON.prototype.genCtx = function(proj) {
             var bLeftDetail = false; 
+            var bProgressBar = false;
             var bodyMod = '';
 
-            if(proj.type == 0){
+            if (proj.type == 0) {
                 switch (proj.status) {
                     case '1':
                         bLeftDetail = true;
@@ -54,10 +58,12 @@ define(function() {
                 switch (proj.status) {
                     case '0':
                         bLeftDetail = true;
+                        bProgressBar = true;
                         bodyMod = 'imodule://inTestingMD';
                         break;
                     case '-1':
                         bLeftDetail = true;
+                        bProgressBar = true;
                         bodyMod = 'imodule://inRepairMD';
                         break;
                     default:
@@ -69,6 +75,7 @@ define(function() {
 
             return {
                 bLeftDetail: bLeftDetail,
+                bProgressBar: bProgressBar,
                 bodyMod: bodyMod,
             };
         }

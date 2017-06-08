@@ -169,14 +169,7 @@ define(["/global/iscripts/libs/time/moment.js",
             if (true) {
                 api_ajax_post('project/assign_person', data, {
                     succ: function(json) {
-                        // 不要加这个提示，因为有副作用
-                        // project.tip('指派成功', 'succ', '', true);
-                        project.getIModule('imodule://serviceProcess').moveProject(_this.projId, 2);
-                        project.getIModule('imodule://detailRouterMD', null, function (mod) {
-                            project.open(mod, '_blank', {size: 'content', controls: []});
-                            mod.route(_this.projId);
-                        });
-
+                        window.onStatusTransfered4UI(_this.projId, 2);
                         _this.parent.close();
                     },
                     fail: function(json) {

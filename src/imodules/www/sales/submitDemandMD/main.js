@@ -126,17 +126,15 @@ define(['/global/iscripts/libs/blueimp/JQueryFileUpload/jquery.fileupload.js',
         // 刷新列表数据
         CON.prototype.getDataRender = function () {
             if (this.isAdmin) {
-                project.getIModule('imodule://serviceProcess', null, function(mod) {
-                    mod.byStatus();
-                });
+                project.getIModule('imodule://serviceProcessMD').render();
             } else {
                 project.getIModule('imodule://demandList', null, function(mod) {
                     mod.getProInfo();
                     mod.getMyPro();
                 });                
             }
-
         }
+
         // 重置数据
         CON.prototype.reset = function() {
             // 重置表单

@@ -1,30 +1,23 @@
-<form ievent="testingSubmit">
-<input type="hidden" value="" name="projectId" id="proID">
-<div class="com-schedule clearfix">
-    <span class="percentage-num" idom="tageNum"><span id="tTageNum">0</span>%</span>
-    <div class="percentage">
-        <p id="tPercentage"></p>
-    </div>
-    <a href="#" class="percent-btn hide">指派</a>
-    <button class="percent-mit" disabled type="submit">提交</button>
-</div>
-<table class="schtabel">
-    <tr class="schhead">
-        <td width="220">配件名称</td>
-        <td width="324">配件规格</td>
-        <td>是否需要维修</td>
-    </tr>
-    {{#repair_parts}}
-    <tr class="schbody">
-        <td>{{name}}</td>
-        <td>{{spec}}</td>
-        <td>
-            <span class="sch-sel needRepair {{isrepair}}" ievent="Repair"><cite class="yes"></cite>是</span>
-            <span class="sch-sel {{isrepair}}" ievent="Repair"><cite class="no"></cite>否</span>
-            <input type="hidden" value="" class="status" name="repair_parts[status]">
-            <input type="hidden" value="{{id}}" name="repair_parts[id]" class="sid">
-        </td>
-    </tr>
-    {{/repair_parts}}
-</table>
+<form ievent="" idom="theForm" autocomplete="off">
+    <input type="hidden" value="{{id}}" name="projectId">
+    <table class="schtabel">
+        <tr class="schhead">
+            <td width="220">配件名称</td>
+            <td width="324">配件规格</td>
+            <td>是否需要维修</td>
+        </tr>
+        {{#repair_parts}}
+        <tr class="schbody">
+            <td>{{name}}</td>
+            <td>{{spec}}</td>
+            <td>
+                <span class="sch-sel needRepair {{isrepair}}" ievent="Repair"><cite class="yes"></cite>是</span>
+                <span class="sch-sel {{isrepair}}" ievent="Repair"><cite class="no"></cite>否</span>
+                <input type="hidden" value="" class="status" name="repair_parts[status]">
+                <input type="hidden" value="{{id}}" name="repair_parts[id]" class="sid">
+            </td>
+        </tr>
+        {{/repair_parts}}
+    </table>
+    <button class="hide percent-mit btn-submit" type="button">提交</button>
 </form>

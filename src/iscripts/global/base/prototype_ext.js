@@ -44,6 +44,14 @@ $.prototype.is_not = function(sel) {
 	return (!this.is(sel));
 }
 
+$.prototype.showMe = function(b) {
+  if (b) {
+    this.show();
+  } else {
+    this.hide();
+  }
+}
+
 // 适用于只能点击一次的，以防连续点击
 $.prototype.one_click = function(handler) {
 	return this.one('click', function() {
