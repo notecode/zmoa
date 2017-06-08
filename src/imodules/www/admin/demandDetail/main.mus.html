@@ -24,9 +24,9 @@
         <span>寄件单号</span>
     </p>
     <div class="pro-send {{fn.showEnterNum}}">
-        <input type="text" placeholder="输入寄件单号">
+        <input type="text" idom="sendExp" placeholder="输入寄件单号">
     </div>
-    <div class="send-num">{{express_send}}</div>
+    <div class="send-num">{{express.send}}</div>
 </div>
 
 <div class="{{fn.showRepairParts}}">
@@ -161,7 +161,7 @@
         <span class="icon-checkmark"></span>
         <span>收件快递单号</span>
     </p>
-    <div class="send-num">{{express_recv}}</div>
+    <div class="send-num">{{express.recv}}</div>
 </div>
 
 <!--补充说明-->

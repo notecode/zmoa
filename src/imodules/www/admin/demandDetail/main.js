@@ -49,6 +49,18 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
             var dom = Mustache.render(this.tpl, proj); 
             this.find('#detailCon').append(dom);
             this.find('.comment-block').show();
+
+            this.bindEvents();
+        }
+
+        CON.prototype.bindEvents = function() {
+            var _this = this;
+            this.find('[idom=saveCmt]').off('click').on('click', function() {
+                _this.saveComment();
+            });
+            this.find('[idom=saveAll]').off('click').on('click', function() {
+                _this.saveAll();
+            })
         }
 
         CON.prototype.addScheduleFn = function(proj) {
@@ -103,24 +115,24 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                     return (this.type == 1) ? '' : 'hide';
                 },
                 showEnterNum: function() {
-                    return (this.status == -3 || this.status == -4) ? 'hide' : '';
+                    // -2: 已完成，待寄件
+                    return (this.status == -2) ? '' : 'hide';
                 },
             }
         }
 
-        //发表补充说明
-        CON.prototype._ievent_recallSave = function() {
+        CON.prototype.saveComment = function() {
             var _this = this;
             var text = $(_this._els.reTextarea).val();
-            var data = {
-                projectId: this.projId,
-                comment: filterCR(text)
-            };
-
-            if (text == ''){
-                $(_this._els.tError).removeHide();
+            if (text == '') {
+                $(_this._els.tError).text('内容不能为空').removeHide();
             } else {
-                $(_this._els.tError).addHide();
+                $(_this._els.tError).text('').addHide();
+
+                var data = {
+                    projectId: this.projId,
+                    comment: filterCR(text)
+                };
                 api_ajax_post('project/add_comment_to_project', data, {
                     succ: function(json) {
                         var cmt = _this.find('.comment-tpl > div').clone();
@@ -132,6 +144,37 @@ define(["/global/iscripts/libs/time/moment.js"], function(moment) {
                         alert(json.errmsg);
                     }
                 }); 
+            }
+        }
+
+        CON.prototype.saveAll = function() {
+            var text = $(this._els.reTextarea).val();
+            if (text.length > 0) {
+                this.saveComment();
+            }
+
+            var _this = this;
+            var jq = this.find('[idom=sendExp]');
+            if (jq.is_visible()) {
+                var exp = jq.val();
+                if (exp == '') {
+                    $(_this._els.tError).text('请输入寄件单号').removeHide();
+                } else {
+                    $(_this._els.tError).text('').addHide();
+                    var data = {
+                        projectId: this.projId,
+                        sendExpress: exp
+                    };
+                    api_ajax_post('project/post_send_express', data, {
+                        succ: function(json) {
+                            // 寄件已完成
+                            window.onStatusTransfered4UI(_this.projId, -3);
+                        },
+                        fail: function(json) {
+                            $(_this._els.tError).text(json.errmsg).removeHide();
+                        }
+                    });
+                }
             }
         }
 
