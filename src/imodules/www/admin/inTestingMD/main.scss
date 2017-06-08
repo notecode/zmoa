@@ -1,15 +1,12 @@
 @import "src/sass/global/mixin";
 
 #inTestingMD {
-  padding: 0 40px;
   width: 1320px;
 
   .tbox {
     width: 857px;
     display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 162px;
+    padding-left: 40px;
   }
 
   .schtabel {

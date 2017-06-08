@@ -1,15 +1,12 @@
 @import "src/sass/global/mixin";
 
 #inRepairMD {
-  padding: 0 40px;
   width: 1320px;
 
-  .pairbox {
+  .tbox {
     width: 857px;
     display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 82px;
+    padding-left: 40px;
   }
 
   .schtabel {

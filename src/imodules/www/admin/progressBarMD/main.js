@@ -21,7 +21,27 @@ define(function() {
 
             this.onAction = onAction;
 		}
-		
+
+		CON.prototype.initRender4Switch = function(caption, bAlwaysEnable, percent, proj) {
+            this.initRender(caption, bAlwaysEnable, percent);
+            this.onAction = function(btn) {
+                var imod = null;
+                if ('指派' == btn.text()) {
+                    imod = 'imodule://assignTasks';
+                    btn.text('关闭');
+                } else if ('关闭' == btn.text()) {
+                    imod = 'imodule://inRepairMD';
+                    btn.text('指派');
+                }
+
+                if (imod) {
+                    project.getIModule('imodule://detailFrameMD').renderBodyBlock(imod, proj);
+                } else {
+                    console.error('progress switch error');
+                }
+            }
+		}
+
         CON.prototype.updatePercent = function(percent) {
             this.find('#tageNum').html(percent);
             this.find('#Percentage').css('width', percent + '%');

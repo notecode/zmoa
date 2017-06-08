@@ -65,10 +65,8 @@ define(function() {
                 }
 
                 project.getIModule('imodule://progressBarMD', null, function(mod) {
-                    var repairLen = $('.schbody').length;
-                    var selectedLen = $('.hasVal').length;
-                    var perc = (repairLen / selectedLen) * 100;
-                    mod.updatePercent(perc);
+                    var perc = _this.find('.hasVal').length / _this.find('.schbody').length;
+                    mod.updatePercent(perc * 100);
                 });
             })
         }
