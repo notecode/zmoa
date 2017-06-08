@@ -98,6 +98,16 @@
             line-height: 0.5rem;
         }
     }
+    .pj-block {
+        padding: 0 0.15rem;
+
+        button.pj-btn {
+            width: 100%;
+            border-radius: 0;
+            outline: none;
+            background-color: #003894;
+        }
+    }
 
     .comments {
         .detail-buchong {
