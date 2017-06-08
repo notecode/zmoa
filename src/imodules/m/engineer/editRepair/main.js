@@ -6,7 +6,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
             this.tpl = this._els.tpl[0].text;
 
             var doRender = function(proj) {
-                project.getIModule('imodule://sparesMD', null, function(mod) {
+                project.getIModule('imodule://partsMD', null, function(mod) {
                     mod.render(proj);
                 });
             }

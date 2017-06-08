@@ -13,7 +13,7 @@ define(["/global/iscripts/test/mock/api-4-project-detail.js"], function(mock) {
                     mod.render(proj);
                 });
 
-                project.getIModule('imodule://sparesMD', null, function(mod) {
+                project.getIModule('imodule://partsMD', null, function(mod) {
                     mod.render(proj);
                 });
 

@@ -5,15 +5,15 @@ define(function() {
             baseIModules.BaseIModule.call(this, dom);
             this.tpl = this._els.tpl[0].text;
 
-            this.old_spares = [];
+            this.old_parts = [];
         };
         potato.createClass(CON, baseIModules.BaseIModule);
 		
 		CON.prototype.prepareData = function(proj) {
-            var spares = proj.preparations;
-            if(spares){
-                for (var i = 0; i < spares.length; i++) {
-                    this.old_spares.push(spares[i].preparation_type);
+            var parts = proj.preparations;
+            if(parts){
+                for (var i = 0; i < parts.length; i++) {
+                    this.old_parts.push(parts[i].preparation_type);
                 } 
             }
         }
@@ -30,7 +30,7 @@ define(function() {
                 }
             });
 
-            this.find('.spares').append(dom);
+            this.find('.parts').append(dom);
             this.bindSpareEvents(this.find('.spare-list'));
 
             this.addBlankSpare();
@@ -38,7 +38,7 @@ define(function() {
 		
 		CON.prototype._ievent_newSpare = function(data, target, hit) {
             tlog('newSpare');
-            this.addBlankSpare(this.find('.spares'));
+            this.addBlankSpare(this.find('.parts'));
 		}
 
         CON.prototype.addBlankSpare = function() {
@@ -84,7 +84,7 @@ define(function() {
         CON.prototype.postSpare = function(type, num, ui) {
             var uri = '';
             var add = false;
-            if (-1 == this.old_spares.indexOf(type)) {
+            if (-1 == this.old_parts.indexOf(type)) {
                 add = true;
                 uri = 'project/mobile_add_preparation';
                 tlog('new spare type: ' + type + ', num: ' + num);
@@ -105,7 +105,7 @@ define(function() {
                 succ: function(json) {
                     ui.text(num);
                     if (add) {
-                        _this.old_spares.push(type);
+                        _this.old_parts.push(type);
                     }
                 },
                 fail: function(json) {
