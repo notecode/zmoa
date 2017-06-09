@@ -143,6 +143,8 @@ define(function() {
                 _this.find('.service-type').text(serv);
 
                 isAdmin ? $(_this._els.serviceType).removeHide() : $(_this._els.serviceType).addHide();
+                isAdmin ? $('.sendNum').addClass('js-check-el') : $('.sendNum').removeClass('js-check-el');
+
                     
             });
         }
@@ -171,6 +173,8 @@ define(function() {
             if (this.data.type == 1) {
                 // 返修项目的维修配件
                 data.repair_parts = this.collectParts(data.repair_parts, 'number');
+            } else {
+                $(_this._els.sendNum).removeAttr('name');
             }
 
             var uri = (this.data.type == 1) ? 'project/edit_back_project' : 'project/edit';
